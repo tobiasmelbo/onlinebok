@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Funksjoner &#8212; Programmering med Tobias.</title>
+    <title>Ordbøker &#8212; Programmering med Tobias.</title>
   
   
   
@@ -61,12 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Intro/Funksjoner';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Intro/Ordbøker';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Lister" href="Lister.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,14 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro%20til%20Python.html">Intro til Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Intro%20til%20Python.html">Intro til Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Vilk%C3%A5r.html">Vilkår</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lister.html">Lister</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
 </ul>
@@ -215,7 +212,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Intro/Funksjoner.ipynb" target="_blank"
+      <li><a href="../_sources/Intro/Ordbøker.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,9 +281,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -297,25 +292,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Funksjoner</h1>
+    <h1>Ordbøker</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre-og-return-verdier">Parametre og <code class="docutils literal notranslate"><span class="pre">return</span></code>-verdier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-parametre">Flere parametre</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -325,92 +306,42 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="funksjoner">
-<h1>Funksjoner<a class="headerlink" href="#funksjoner" title="Permalink to this heading">#</a></h1>
-<p>Vi kan tenke på en funksjon som en oppgave som kan inneholde flere instruksjoner. For å kjøre en funksjon gjør vi et <em>kall</em> på funksjonen.</p>
+  <section id="ordboker">
+<span id="id1"></span><h1>Ordbøker<a class="headerlink" href="#ordboker" title="Permalink to this heading">#</a></h1>
+<p>Ordbøker (<em>dictionaries</em>) er en måte å lagre data. I lister finner vi igjen data ved å bruke rekkefølgen i listen. I ordbøker lagrer vi data i par med <code class="docutils literal notranslate"><span class="pre">keys</span></code> og <code class="docutils literal notranslate"><span class="pre">values</span></code>, nøkler og verdier. En nøkkel er forbundet med sin verdi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hils</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hei!&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut &quot;Hei!&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span> <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span><span class="p">}</span>
 
-<span class="n">hils</span><span class="p">()</span>            <span class="c1"># Et kall på funksjonen hils().</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&quot;NO&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hei!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Norge
 </pre></div>
 </div>
 </div>
 </div>
-<p>Når vi skriver <code class="docutils literal notranslate"><span class="pre">hils()</span></code> gjør vi et kall på funksjonen. Da gjennomføres det som står med innrykk.</p>
-<section id="parametre-og-return-verdier">
-<h2>Parametre og <code class="docutils literal notranslate"><span class="pre">return</span></code>-verdier<a class="headerlink" href="#parametre-og-return-verdier" title="Permalink to this heading">#</a></h2>
-<p>Ofte ønsker vi å sette variabler <em>inn</em> i en funksjon, la gjøre funksjonen gjøre noe, og så få <em>ut</em> noe.</p>
-<p>Det vi setter inn kalles funksjonens <strong>parameter</strong>. Det vi får ut kalles funksjonens <strong><code class="docutils literal notranslate"><span class="pre">return</span></code>-verdi</strong>.</p>
+<p>I koden over lager vi landkoder.  <code class="docutils literal notranslate"><span class="pre">&quot;NO&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;SE&quot;</span></code> er landkodene, og <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;Sverige&quot;</span></code> er de tilhørende landene. Vi knytter sammen nøklene og verdiene med kolon <code class="docutils literal notranslate"><span class="pre">:</span></code>. For å hente verdier fra ordboken <code class="docutils literal notranslate"><span class="pre">land</span></code> så skriver vi inn nøkkelen (f.eks <code class="docutils literal notranslate"><span class="pre">land[&quot;NO&quot;]</span></code>) og så får vi ut verdien (f.eks<code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code>).</p>
+<p>Dersom vi skal sette sammen en enkel ordbok så er det vanlig å gjøre det over flere linjer. Det er litt mer oversiktlig enn eksemplet over.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dobbelt</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># x er navnet på funksjonens parameter</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>    <span class="c1"># return-verdien er 2 ganger x.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span>
+<span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">dobbelt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># 2 settes inn som parameter til funksjonen</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&quot;SE&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sverige
 </pre></div>
 </div>
 </div>
 </div>
-<p>Når vi kjører funksjonen med funksjonskallet <code class="docutils literal notranslate"><span class="pre">dobbelt(2)</span></code> så skjer dette:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> settes inn i funksjonen som <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
-<li><p>funksjonen returnerer to ganger <code class="docutils literal notranslate"><span class="pre">x</span></code>, som blir <code class="docutils literal notranslate"><span class="pre">4</span></code></p></li>
-</ul>
-<p>Derfor skrives <code class="docutils literal notranslate"><span class="pre">4</span></code> ut.</p>
-</section>
-<section id="flere-parametre">
-<h2>Flere parametre<a class="headerlink" href="#flere-parametre" title="Permalink to this heading">#</a></h2>
-<p>Vi kan også gi en funksjon flere parametre ved å skille de med komma.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">størst</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">a</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">b</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">størst</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">størst</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-1
-</pre></div>
-</div>
-</div>
-</div>
-<p>Denne funksjonen returnerer det som er størst av enten <code class="docutils literal notranslate"><span class="pre">a</span></code> eller <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
-</section>
-<hr class="docutils" />
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Lag en funksjon som tar et navn som parameter og skriver ut <code class="docutils literal notranslate"><span class="pre">Hei,</span> <span class="pre">&lt;navn&gt;!</span></code></p>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<aside class="sidebar">
-<p>Med Pytagoras læresetning kan vi finne den lengste siden i en rettvinklet trekant med formelen <span class="math notranslate nohighlight">\(c = \sqrt{a^2+b^2}\)</span>.</p>
-</aside>
-<p>Lag en funksjon som tar lengden av to sider <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> som parameter og returnerer lengden av den lengste siden <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
-<p>Test funksjonen med trekanten <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">4</span></code>. Dette skal gi <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -444,15 +375,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Lister.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lister</p>
-      </div>
-    </a>
 </div></div>
   
 </div>
@@ -462,26 +384,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametre-og-return-verdier">Parametre og <code class="docutils literal notranslate"><span class="pre">return</span></code>-verdier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-parametre">Flere parametre</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

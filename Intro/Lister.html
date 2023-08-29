@@ -313,6 +313,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sortere-en-liste">Sortere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -464,6 +466,66 @@ Gamma
 </div>
 </div>
 </section>
+<section id="reversere-en-liste">
+<h2>Reversere en liste<a class="headerlink" href="#reversere-en-liste" title="Permalink to this heading">#</a></h2>
+<p>For å reversere en liste kan vi bruke den innebygde <code class="docutils literal notranslate"><span class="pre">reverse()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">liste</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;C&#39;, &#39;B&#39;, &#39;A&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sortere-en-liste">
+<h2>Sortere en liste<a class="headerlink" href="#sortere-en-liste" title="Permalink to this heading">#</a></h2>
+<p>For å sortere en liste kan vi bruke den innebygde <code class="docutils literal notranslate"><span class="pre">sort()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tallliste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">strengliste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Bjarne&quot;</span><span class="p">,</span> <span class="s2">&quot;Cecilie&quot;</span><span class="p">,</span> <span class="s2">&quot;Arne&quot;</span><span class="p">]</span>
+
+<span class="n">tallliste</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">strengliste</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tallliste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">strengliste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 4, 9]
+[&#39;Arne&#39;, &#39;Bjarne&#39;, &#39;Cecilie&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at den sorterer tall i stigende rekkefølge og strenger i alfabetisk rekkefølge. Vi kan også bytte om på rekkefølgen ved å bruke <code class="docutils literal notranslate"><span class="pre">reverse=True</span></code> som parameter til <code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">talliste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="n">talliste</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">talliste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[9, 4, 3, 2]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
@@ -478,6 +540,7 @@ Gamma
 <li><p>Skriv ut lengden til listen.</p></li>
 <li><p>Skriv ut den siste middagen i listen. Dette skal kunne fungere selv om man legger til flere middager i listen.</p></li>
 <li><p>Skriv ut en tilfeldig middag fra listen.</p></li>
+<li><p>Sorter listen i alfabetisk rekkefølge og skriv den ut.</p></li>
 </ol>
 </section>
 <section id="oppgave-2">
@@ -491,6 +554,7 @@ Gamma
 <li><p>Skriv ut hva som er den største høyden.</p></li>
 <li><p>Skriv ut hva som er den minste høyden.</p></li>
 <li><p>Skriv ut gjennomsnittet av høydene.</p></li>
+<li><p>Skriv ut listen i synkende rekkefølge.</p></li>
 </ol>
 </section>
 <section id="oppgave-3-utfordring">
@@ -584,6 +648,8 @@ Gamma
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sortere-en-liste">Sortere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
