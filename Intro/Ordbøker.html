@@ -61,9 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Intro/Ordbøker';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Funksjoner" href="Funksjoner.html" />
+    <link rel="prev" title="Lister" href="Lister.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,13 +152,14 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Intro%20til%20Python.html">Intro til Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Intro%20til%20Python.html">Intro til Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Vilk%C3%A5r.html">Vilkår</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lister.html">Lister</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Ordbøker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
@@ -281,7 +286,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -297,6 +304,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-fjerne-data">Legge til og fjerne data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -308,7 +331,8 @@ document.write(`
                   
   <section id="ordboker">
 <span id="id1"></span><h1>Ordbøker<a class="headerlink" href="#ordboker" title="Permalink to this heading">#</a></h1>
-<p>Ordbøker (<em>dictionaries</em>) er en måte å lagre data. I lister finner vi igjen data ved å bruke rekkefølgen i listen. I ordbøker lagrer vi data i par med <code class="docutils literal notranslate"><span class="pre">keys</span></code> og <code class="docutils literal notranslate"><span class="pre">values</span></code>, nøkler og verdier. En nøkkel er forbundet med sin verdi.</p>
+<p>Denne siden forutsetter at du har vært igjennom <a class="reference internal" href="Lister.html#lister"><span class="std std-ref">Lister</span></a>.</p>
+<p>Ordbøker (<em>dictionaries</em>) er en måte å lagre data. I <a class="reference internal" href="Lister.html#lister"><span class="std std-ref">Lister</span></a> lagrer vi data i en rekkefølge. I ordbøker lagrer vi data i par med <code class="docutils literal notranslate"><span class="pre">keys</span></code> og <code class="docutils literal notranslate"><span class="pre">values</span></code>, nøkler og verdier. En nøkkel er forbundet med sin verdi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span> <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span><span class="p">}</span>
@@ -342,6 +366,123 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="legge-til-og-fjerne-data">
+<h2>Legge til og fjerne data<a class="headerlink" href="#legge-til-og-fjerne-data" title="Permalink to this heading">#</a></h2>
+<p>For å legge til data så setter vi en ny nøkkel lik en verdi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span>
+<span class="p">}</span>
+
+<span class="n">land</span><span class="p">[</span><span class="s2">&quot;DK&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Danmark&quot;</span> <span class="c1"># Verdien &quot;Danmark&quot; legges inn i ordboken under nøkkelen &quot;DK&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&quot;DK&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Danmark
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan fjerne data ved å bruke <code class="docutils literal notranslate"><span class="pre">pop()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DK&quot;</span> <span class="p">:</span> <span class="s2">&quot;Danmark&quot;</span>
+<span class="p">}</span>
+
+<span class="n">land</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;NO&quot;</span><span class="p">)</span> <span class="c1"># Fjerner både nøkkel og verdi for nøkkelen &quot;NO&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;SE&#39;: &#39;Sverige&#39;, &#39;DK&#39;: &#39;Danmark&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lokker-og-ordboker">
+<h2>Løkker og ordbøker<a class="headerlink" href="#lokker-og-ordboker" title="Permalink to this heading">#</a></h2>
+<p>Vi kan gå igjennom ordbøker med <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker på denne måten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">land</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>         <span class="c1"># Skriver ut nøkkelen</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>   <span class="c1"># Skriver ut verdien til nøkkelen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NO
+Norge
+SE
+Sverige
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Lag en ordbok <code class="docutils literal notranslate"><span class="pre">elev</span></code> som skal ha fag som nøkler og karakterer som verdier. Den kan starte slik</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elev</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Norsk&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">&quot;Gym&quot;</span> <span class="p">:</span> <span class="mi">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Legg til fire nye fag og karakterer. Du kan bestemme både fag og karakterer.</p></li>
+<li><p>Lag en løkke som skriver ut alle fagene og karakterene med en setning <code class="docutils literal notranslate"><span class="pre">Eleven</span> <span class="pre">har</span> <span class="pre">&lt;karakter&gt;</span> <span class="pre">i</span> <span class="pre">faget</span> <span class="pre">&lt;fag&gt;</span></code>.</p></li>
+<li><p>Finn og skriv ut karaktersnittet til eleven.</p></li>
+</ol>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Ordbøker kan også ha lister og andre ordbøker som verdier.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">klasse</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Navn&quot;</span> <span class="p">:</span> <span class="s2">&quot;10F&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fag&quot;</span> <span class="p">:</span> <span class="s2">&quot;Naturfag&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Karakterer&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Finn gjennomsnittet av karakterene ved å bruke ordboken <code class="docutils literal notranslate"><span class="pre">klasse</span></code>.</p>
+</section>
+<section id="oppgave-3-utfordring">
+<h3>Oppgave 3 (utfordring)<a class="headerlink" href="#oppgave-3-utfordring" title="Permalink to this heading">#</a></h3>
+<p>En vanlig måte å lagre farger på er ved å oppgi en verdi for hver farge. Tallene er heltall i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>. Vi bruker  <code class="docutils literal notranslate"><span class="pre">&quot;R&quot;</span></code> for rød, <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> for grønn og <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code> for blå.</p>
+<ol class="arabic simple">
+<li><p>Lag en ordbok som heter <code class="docutils literal notranslate"><span class="pre">farge</span></code>.</p></li>
+<li><p>Nøklene til ordboken skal hete <code class="docutils literal notranslate"><span class="pre">&quot;R&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>. Disse skal ha tilfeldige verdier i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>.</p></li>
+</ol>
+<p>Vi skal generere en hel fargepallett.</p>
+<ol class="arabic simple" start="3">
+<li><p>Lag en liste <code class="docutils literal notranslate"><span class="pre">farger</span></code> som skal inneholde ti tilfeldig genererte farger som ordbøker slik du har laget over.</p></li>
+</ol>
+</section>
+<section id="oppgave-4-utfordring">
+<h3>Oppgave 4 (utfordring)<a class="headerlink" href="#oppgave-4-utfordring" title="Permalink to this heading">#</a></h3>
+<p>I <em>Dungeons &amp; Dragons</em> har man</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -375,6 +516,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Lister.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lister</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Funksjoner.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funksjoner</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -384,6 +543,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-fjerne-data">Legge til og fjerne data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
