@@ -372,28 +372,6 @@ document.write(`
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linjer</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hydrogen,[1],Gass 
-
-Helium,[2],Gass 
-
-Litium,[2,1],Fast 
-
-Beryllium,[2,2],Fast
-</pre></div>
-</div>
-</div>
-</div>
 <p>Noen ganger ønsker vi å hente ut deler av linjene. For å gjøre dette kan vi bruke <code class="docutils literal notranslate"><span class="pre">string.split()</span></code>-metoden. Den deler opp linjen på et tegn og lager en liste.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
