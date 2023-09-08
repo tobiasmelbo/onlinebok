@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Intro/Lister';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ordbøker" href="Ordb%C3%B8ker.html" />
+    <link rel="next" title="Funksjoner" href="Funksjoner.html" />
     <link rel="prev" title="Løkker" href="L%C3%B8kker.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -159,8 +159,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Vilk%C3%A5r.html">Vilkår</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Lister</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ordb%C3%B8ker.html">Ordbøker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Funksjoner.html">Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Ekstra/Ekstra%20Python.html">Ekstra Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Ekstra/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ekstra/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ekstra/Arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ekstra/Plotting.html">Plotting</a></li>
 </ul>
 </li>
 </ul>
@@ -314,6 +320,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekk-om-noe-er-i-en-liste">Sjekk om noe er i en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sortere-en-liste">Sortere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
@@ -462,6 +469,25 @@ Gamma
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alfa
 Beta
 Gamma
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sjekk-om-noe-er-i-en-liste">
+<h2>Sjekk om noe er i en liste<a class="headerlink" href="#sjekk-om-noe-er-i-en-liste" title="Permalink to this heading">#</a></h2>
+<p>For å raskt sjekke om et element er i en liste kan vi bruke <code class="docutils literal notranslate"><span class="pre">in</span></code>-nøkkelordet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">løsninger</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">løsninger</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2 er en løsning!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 er en løsning!
 </pre></div>
 </div>
 </div>
@@ -636,11 +662,11 @@ Gamma
       </div>
     </a>
     <a class="right-next"
-       href="Ordb%C3%B8ker.html"
+       href="Funksjoner.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ordbøker</p>
+        <p class="prev-next-title">Funksjoner</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -667,6 +693,7 @@ Gamma
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekk-om-noe-er-i-en-liste">Sjekk om noe er i en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sortere-en-liste">Sortere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
