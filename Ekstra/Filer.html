@@ -328,10 +328,10 @@ document.write(`
                   
   <section id="filer">
 <h1>Filer<a class="headerlink" href="#filer" title="Permalink to this heading">#</a></h1>
-<p>Vi kan lage og lese av filer i Python. Dette er nyttig for å lagre informasjon og for å analysere data.</p>
+<p>Vi kan både lese og skrive filer i Python. Dette er nyttig for å lagre informasjon og for å analysere data.</p>
 <section id="skrive-til-fil">
 <h2>Skrive til fil<a class="headerlink" href="#skrive-til-fil" title="Permalink to this heading">#</a></h2>
-<p>Vi kan skrive til fil på følgende måte.</p>
+<p>Vi kan skrive en fil på følgende måte</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hydrogen,[1],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Helium,[2],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -364,7 +364,7 @@ document.write(`
 </section>
 <section id="lese-fra-fil">
 <h2>Lese fra fil<a class="headerlink" href="#lese-fra-fil" title="Permalink to this heading">#</a></h2>
-<p>Vi kan lese fra filer på følgende måte</p>
+<p>Vi kan lese fra en fil på følgende måte</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
 
