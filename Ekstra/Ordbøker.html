@@ -315,7 +315,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-fjerne-data">Legge til og fjerne data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
@@ -342,16 +342,18 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span> <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span><span class="p">}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&quot;NO&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&quot;SE&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Norge
+Sverige
 </pre></div>
 </div>
 </div>
 </div>
-<p>I koden over lager vi landkoder.  <code class="docutils literal notranslate"><span class="pre">&quot;NO&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;SE&quot;</span></code> er landkodene, og <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;Sverige&quot;</span></code> er de tilhørende landene. Vi knytter sammen nøklene og verdiene med kolon <code class="docutils literal notranslate"><span class="pre">:</span></code>. For å hente verdier fra ordboken <code class="docutils literal notranslate"><span class="pre">land</span></code> så skriver vi inn nøkkelen (f.eks <code class="docutils literal notranslate"><span class="pre">land[&quot;NO&quot;]</span></code>) og så får vi ut verdien (f.eks<code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code>).</p>
+<p>I koden over lager vi landkoder.  <code class="docutils literal notranslate"><span class="pre">&quot;NO&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;SE&quot;</span></code> er nøklene, og <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;Sverige&quot;</span></code> er de tilhørende verdiene. Vi knytter sammen nøklene og verdiene med kolon <code class="docutils literal notranslate"><span class="pre">:</span></code>. For å hente verdier fra ordboken <code class="docutils literal notranslate"><span class="pre">land</span></code> så skriver vi inn nøkkelen med <code class="docutils literal notranslate"><span class="pre">land[&quot;NO&quot;]</span></code> og så får vi ut verdien <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code>.</p>
 <p>Dersom vi skal sette sammen en enkel ordbok så er det vanlig å gjøre det over flere linjer. Det er litt mer oversiktlig enn eksemplet over.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -359,26 +361,42 @@ document.write(`
     <span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span>
     <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nøklene og verdiene i en ordbok trenger ikke være strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mai</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">17</span> <span class="p">:</span> <span class="s2">&quot;Nasjonaldag!&quot;</span><span class="p">,</span>        <span class="c1"># Nøkkelen 17 har verdien &quot;Nasjonaldag!&quot;</span>
+    <span class="s2">&quot;erVår&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>             <span class="c1"># Nøkkelen &quot;erVår&quot; har verdien True</span>
+    <span class="kc">True</span> <span class="p">:</span> <span class="s2">&quot;Det er mai!&quot;</span>       <span class="c1"># Nøkkelen True har verdien &quot;Det er mai!&quot;</span>
+<span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&quot;SE&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mai</span><span class="p">[</span><span class="mi">17</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mai</span><span class="p">[</span><span class="s2">&quot;erVår&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mai</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sverige
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nasjonaldag!
+True
+Det er mai!
 </pre></div>
 </div>
 </div>
 </div>
-<section id="legge-til-og-fjerne-data">
-<h2>Legge til og fjerne data<a class="headerlink" href="#legge-til-og-fjerne-data" title="Permalink to this heading">#</a></h2>
+<section id="legge-til-endre-og-fjerne-data">
+<h2>Legge til, endre og fjerne data<a class="headerlink" href="#legge-til-endre-og-fjerne-data" title="Permalink to this heading">#</a></h2>
 <p>For å legge til data så setter vi en ny nøkkel lik en verdi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># Tom ordbok</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{}</span>                <span class="c1"># Tom ordbok</span>
 
-<span class="n">land</span><span class="p">[</span><span class="s2">&quot;NO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Norge&quot;</span>   <span class="c1"># Verdien &quot;Norge&quot; legges inn i ordboken under nøkkelen &quot;NO&quot;</span>
-<span class="n">land</span><span class="p">[</span><span class="s2">&quot;DK&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Danmark&quot;</span> <span class="c1"># Verdien &quot;Danmark&quot; legges inn i ordboken under nøkkelen &quot;DK&quot;</span>
+<span class="n">land</span><span class="p">[</span><span class="s2">&quot;NO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Norge&quot;</span>     <span class="c1"># Verdien &quot;Norge&quot; legges inn i ordboken under nøkkelen &quot;NO&quot;</span>
+<span class="n">land</span><span class="p">[</span><span class="s2">&quot;DK&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Danmark&quot;</span>   <span class="c1"># Verdien &quot;Danmark&quot; legges inn i ordboken under nøkkelen &quot;DK&quot;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
 </pre></div>
@@ -386,6 +404,26 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;NO&#39;: &#39;Norge&#39;, &#39;DK&#39;: &#39;Danmark&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å endre på data kan vi sette en eksisterende nøkkel til en ny verdi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;DK&quot;</span> <span class="p">:</span> <span class="s2">&quot;Danmark&quot;</span><span class="p">}</span>  <span class="c1"># En ordbok med en nøkkel</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
+
+<span class="n">land</span><span class="p">[</span><span class="s2">&quot;DK&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Donkey Kong&quot;</span> <span class="c1"># Nøkkelen &quot;DK&quot; får en ny verdi &quot;Donkey Kong&quot; 🐒</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;DK&#39;: &#39;Danmark&#39;}
+{&#39;DK&#39;: &#39;Donkey Kong&#39;}
 </pre></div>
 </div>
 </div>
@@ -473,6 +511,9 @@ Sverige
 <p>En vanlig måte å lagre farger på er ved å oppgi en verdi for hver farge. Tallene er heltall i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>. Vi bruker  <code class="docutils literal notranslate"><span class="pre">&quot;R&quot;</span></code> for rød, <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> for grønn og <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code> for blå.</p>
 <p>Lag en liste <code class="docutils literal notranslate"><span class="pre">farger</span></code> som skal inneholde ti tilfeldig genererte farger som ordbøker.</p>
 <p>Nøklene til ordbøkene skal hete <code class="docutils literal notranslate"><span class="pre">&quot;R&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>. Disse skal ha tilfeldige verdier i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>.</p>
+<blockquote>
+<div><p>En del av utskriften til listen <code class="docutils literal notranslate"><span class="pre">farger</span></code> vil kunne se ut som dette: <code class="docutils literal notranslate"><span class="pre">[{'R':</span> <span class="pre">124,</span> <span class="pre">'G':</span> <span class="pre">52,</span> <span class="pre">'B':</span> <span class="pre">230},</span> <span class="pre">{'R':</span> <span class="pre">32,</span> <span class="pre">'G':</span> <span class="pre">89,</span> <span class="pre">'B':</span> <span class="pre">10},</span> <span class="pre">...]</span></code></p>
+</div></blockquote>
 </section>
 </section>
 </section>
@@ -544,7 +585,7 @@ Sverige
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-fjerne-data">Legge til og fjerne data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>

@@ -317,9 +317,24 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorregning">Vektorregning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-funksjonen"><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace-funksjonen-og-matematiske-funksjoner"><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen og matematiske funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-funksjonen"><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-funksjonen"><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flip-funksjonen"><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-funksjonen"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-verdier">Legge til og trekke fra verdier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-elementer">Legge til og trekke fra elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -334,7 +349,7 @@ document.write(`
   <section id="arrays">
 <span id="id1"></span><h1>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">#</a></h1>
 <p>En array er en måte å lagre data på. Arrays likner på <a class="reference internal" href="../Intro/Lister.html#lister"><span class="std std-ref">Lister</span></a>, men har flere viktige forskjeller.</p>
-<p>For å bruke arrays må vi bruke en pakke. Vi bruker pakken <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Mange Python-installasjoner vil inkludere denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> i terminalvinduet.</p>
+<p>For å bruke arrays må vi bruke en pakke som heter <code class="docutils literal notranslate"><span class="pre">numpy</span></code>. Mange Python-installasjoner vil inkludere denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> i terminalvinduet.</p>
 <p>Når vi har <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-pakken kan vi lage en array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -352,7 +367,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Arrays kan bare ha elementer med data av samme type.</p>
+<p>Arrays kan bare ha elementer med data av samme type. Hvis man legger inn flere typer data vil alle blir gjort om til samme datatype.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -372,8 +387,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Her ser vi at alle elementene i <code class="docutils literal notranslate"><span class="pre">array</span></code> har blitt gjort om til tekststrenger, og at alle elementene i <code class="docutils literal notranslate"><span class="pre">array2</span></code> har blitt gjort om til flyttall.</p>
-<p>En annen vesentlig forskjell er at det går mye raskere å finne elementer i arrays enn i lister, men det tar mye lengre tid å legge til og trekke ut elementer fra en array.</p>
+<p>Her ser vi at alle elementene i <code class="docutils literal notranslate"><span class="pre">array</span></code> har blitt gjort om til tekststrenger, og at alle elementene i <code class="docutils literal notranslate"><span class="pre">array2</span></code> har blitt gjort om til flyttall. Dette kalles <em>upcasting</em>. Vi trenger ikke tenke på dette om vi bare jobber med samme type elementer i et array.</p>
 <section id="vektorregning">
 <h2>Vektorregning<a class="headerlink" href="#vektorregning" title="Permalink to this heading">#</a></h2>
 <p>Arrays er vektorer. Det gjør at vi kan bruke de til vektorregning.</p>
@@ -399,11 +413,12 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Legger vi sammen lister, så settes de sammen til en ny større liste. Altså blir <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">1]</span> <span class="pre">+</span> <span class="pre">[1,</span> <span class="pre">1]</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>. Legger vi sammen arrays så fungerer det på samme måte som i vektorregningen. Altså at <span class="math notranslate nohighlight">\([1, 1] + [1, 1] = [1+1, 1+1] = [2, 2]\)</span></p>
+<p>Legger vi sammen lister, så settes de sammen til en ny større liste. Altså blir <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">1]</span> <span class="pre">+</span> <span class="pre">[1,</span> <span class="pre">1]</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">1]</span></code>.</p>
+<p>Legger vi sammen arrays så fungerer det på samme måte som i vektorregningen. Altså at <span class="math notranslate nohighlight">\([1, 1] + [1, 1] = [1+1, 1+1] = [2, 2]\)</span></p>
 </section>
 <section id="arange-funksjonen">
 <h2><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen<a class="headerlink" href="#arange-funksjonen" title="Permalink to this heading">#</a></h2>
-<p>Vi ønsker noen gang å lage arrays med tall i stigende rekkefølge. Det kan vi gjøre med <code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen.</p>
+<p>For å lage arrays med tall i stigende rekkefølge kan vi bruke <code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -422,16 +437,130 @@ document.write(`
 </div>
 </div>
 </div>
+<p>På samme måte som i <code class="docutils literal notranslate"><span class="pre">range()</span></code>-funksjonen er slutten i <code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen ikke inkluderende. Det vil si at den bare går <em>til</em> sluttverdien, ikke <em>til og med</em>.</p>
 </section>
-<section id="zeros-funksjonen">
-<h2><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen<a class="headerlink" href="#zeros-funksjonen" title="Permalink to this heading">#</a></h2>
-<p>Hvis vi ønsker å lage mange nuller så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen. Legger vi en tuppel (f.eks <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">3)</span></code>) inn som parameter, så får vi en todimensjonell array.</p>
+<section id="linspace-funksjonen-og-matematiske-funksjoner">
+<h2><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen og matematiske funksjoner<a class="headerlink" href="#linspace-funksjonen-og-matematiske-funksjoner" title="Permalink to this heading">#</a></h2>
+<p>For å lage en jevn fordeling av tall i et intervall kan vi bruke <code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen. Denne er veldig nyttig til plotting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>      <span class="c1"># Lager en array med 5 nuller</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>  <span class="c1"># Lager en 5x5 array med nuller</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># 5 tall mellom 0 og 2 (inkluderende)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span> <span class="c1"># 10 tall mellom -5 og 5 (inkluderende)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.  0.5 1.  1.5 2. ]
+[-5.         -3.88888889 -2.77777778 -1.66666667 -0.55555556  0.55555556
+  1.66666667  2.77777778  3.88888889  5.        ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dette er veldig nyttig når vi skal lage <code class="docutils literal notranslate"><span class="pre">x</span></code>-verdier for matematiske funksjoner.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># 50 tall mellom -5 og 5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x-verdier:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y-verdier (x**2):&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x-verdier: [-2. -1.  0.  1.  2.]
+y-verdier (x**2): [4. 1. 0. 1. 4.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="concatenate-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen<a class="headerlink" href="#concatenate-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>Hvis vi ønsker å legge sammen arrays til nye større arrays kan vi bruke <code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 1 2 3]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sort-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen<a class="headerlink" href="#sort-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>For å få en sortert array (stigende) kan vi bruke <code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Lager et array med nuller.</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Setter hvert element til en tilfeldig verdi.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> <span class="c1"># Skriver ut arrayet.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sortert array:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># Skriver ut det sorterte arrayet.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [ 6.  5.  3. 10.  5.  6.  9.  1.  1.  6.]
+Sortert array: [ 1.  1.  3.  5.  5.  6.  6.  6.  9. 10.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="flip-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen<a class="headerlink" href="#flip-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>For å få en reversert array kan vi bruke <code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reversert array:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [1 2 3 4 5 6 7 8 9]
+Reversert array: [9 8 7 6 5 4 3 2 1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zeros-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen<a class="headerlink" href="#zeros-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>Hvis vi ønsker å fylle en array med mange nuller så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen. Legger vi en tuppel (f.eks <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">3)</span></code>) inn som parameter, så får vi en todimensjonell array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># Lager en array med 5 nuller</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span> <span class="c1"># Lager en 5x5 array med nuller</span>
 </pre></div>
 </div>
 </div>
@@ -444,6 +573,33 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Det finnes også en funksjon som heter <code class="docutils literal notranslate"><span class="pre">ones()</span></code>. Kanskje du klarer å tenke deg frem til hva den gjør?</p>
+</section>
+<section id="reshape-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen<a class="headerlink" href="#reshape-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>Hvis vi ønsker å gjøre endre på formen til en array kan vi bruke <code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Lager en array med tallene fra og med en til 10.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Omformet (3, 3):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span> <span class="c1"># Omformer arrayet til (3, 3). 3 rader og 3 kolonner.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [1 2 3 4 5 6 7 8 9]
+Omformet (3, 3):
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="finne-elementer-indeksere">
 <h2>Finne elementer (indeksere)<a class="headerlink" href="#finne-elementer-indeksere" title="Permalink to this heading">#</a></h2>
@@ -452,49 +608,166 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="c1"># 1 dimensjon</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="c1"># 2 dimensjoner</span>
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">arr2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Skriver ut første element i listen</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-[[1 2 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan indeksere 2d-arrays på denne måten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># Hele arrayen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element i posisjon [0][0]: &quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Skriver elementet i første rad og første kolonne</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element i posisjon [1][1]: &quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Skriver elementet i andre rad og andre kolonne</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
  [4 5 6]
  [7 8 9]]
-2
+Element i posisjon [0][0]:  1
+Element i posisjon [1][1]:  5
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="legge-til-og-trekke-fra-verdier">
-<h2>Legge til og trekke fra verdier<a class="headerlink" href="#legge-til-og-trekke-fra-verdier" title="Permalink to this heading">#</a></h2>
-<p>Vi kan legge til elementer ved å bruke <code class="docutils literal notranslate"><span class="pre">numpy.append()</span></code>-funksjonen. Merk at denne fungerer veldig annerledes fra den vanlige <code class="docutils literal notranslate"><span class="pre">append()</span></code>-metoden for lister.</p>
-<p>Vi kan trekke fra elementer ved å bruke <code class="docutils literal notranslate"><span class="pre">numpy.delete()</span></code>-funksjonen. Merk at denne fungerer veldig annerledes fra den vanlige <code class="docutils literal notranslate"><span class="pre">pop()</span></code>-metoden for lister.</p>
+<section id="shape-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen<a class="headerlink" href="#shape-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>Vi ønsker noen ganger å se hvilken form en array har. Til det kan vi bruke <code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>   <span class="c1"># Lager et array som kalles arr</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1"># Legger til elementet 4 på slutten av listen</span>
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>     <span class="c1"># Fjerner elementet ved indeksen 0</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at formen på arrayet er 2x3. To rader og tre kolonner.</p>
+</section>
+<section id="legge-til-og-trekke-fra-elementer">
+<h2>Legge til og trekke fra elementer<a class="headerlink" href="#legge-til-og-trekke-fra-elementer" title="Permalink to this heading">#</a></h2>
+<p>Vi kan legge til elementer i arrays ved å bruke <code class="docutils literal notranslate"><span class="pre">append()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># Lager et array som kalles arr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># Legger til elementet 4 på slutten av arrayet</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 3 4]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[1 2 3 4]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Vi kan trekke fra elementer i arrays ved å bruke <code class="docutils literal notranslate"><span class="pre">delete()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># Lager et array som kalles arr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1"># Fjerner elementet med indeks 0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[2 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at <code class="docutils literal notranslate"><span class="pre">np.append()</span></code> og <code class="docutils literal notranslate"><span class="pre">np.delete()</span></code> fungerer annerledes enn <code class="docutils literal notranslate"><span class="pre">append()</span></code>- og <code class="docutils literal notranslate"><span class="pre">pop()</span></code>-metodene i Python.</p>
+<p><code class="docutils literal notranslate"><span class="pre">append()</span></code>- og <code class="docutils literal notranslate"><span class="pre">pop()</span></code> legger til eller fjerner elementer i en liste.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.append()</span></code> og <code class="docutils literal notranslate"><span class="pre">np.delete()</span></code> returnerer en ny array. Enten med et nytt element, eller med et element fjernet.</p>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>I denne oppgaven skal du lage flere arrays.</p>
+<ol class="arabic simple">
+<li><p>Skriv ut en array som inneholder alle oddetallene fra og med 1 til og med 19.</p></li>
+<li><p>Skriv ut en array som inneholder alle oddetallene fra og med 1 til og med 19, baklengs.</p></li>
+<li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med nuller.</p></li>
+<li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med enere</p></li>
+</ol>
+</section>
+</section>
+<section id="oppgave-2">
+<h2>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h2>
+<p>Lag en array med lengde 9 fylt med tilfeldige tall mellom 1 og 10 (inkluderende).</p>
+<ol class="arabic simple">
+<li><p>Skriv ut arrayet.</p></li>
+<li><p>Skriv ut arrayet, sortert.</p></li>
+<li><p>Skriv ut det sorterte arrayet, omformet til (3, 3).</p></li>
+</ol>
+</section>
+<section id="oppgave-3">
+<h2>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h2>
+<p>Lag en array med navn <code class="docutils literal notranslate"><span class="pre">x</span></code> fylt med 9 verdier jevnt fordelt mellom -2 og 2.</p>
+<ol class="arabic simple">
+<li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> som tar en <code class="docutils literal notranslate"><span class="pre">x</span></code> som parameter og returnerer abs(x)</p></li>
+<li><p>Lag en array <code class="docutils literal notranslate"><span class="pre">y</span></code> ved å sette inn arrayet <code class="docutils literal notranslate"><span class="pre">x</span></code> i funksjonen <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Skriv ut både <code class="docutils literal notranslate"><span class="pre">x</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+</ol>
+<p>Se på utskriften av <code class="docutils literal notranslate"><span class="pre">x</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span></code>. Hva gjør <code class="docutils literal notranslate"><span class="pre">abs()</span></code>-funksjonen?</p>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Skriv ut gangetabellen med alle tallene fra og med <code class="docutils literal notranslate"><span class="pre">1</span></code> til og med <code class="docutils literal notranslate"><span class="pre">10</span></code> ved å lage en todimensjonell array.</p>
+<p>En mulig utskrift kan se slik ut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span>  <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span>   <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span>  <span class="mi">10</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">2</span>   <span class="mi">4</span>   <span class="mi">6</span>   <span class="mi">8</span>  <span class="mi">10</span>  <span class="mi">12</span>  <span class="mi">14</span>  <span class="mi">16</span>  <span class="mi">18</span>  <span class="mi">20</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">3</span>   <span class="mi">6</span>   <span class="mi">9</span>  <span class="mi">12</span>  <span class="mi">15</span>  <span class="mi">18</span>  <span class="mi">21</span>  <span class="mi">24</span>  <span class="mi">27</span>  <span class="mi">30</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">4</span>   <span class="mi">8</span>  <span class="mi">12</span>  <span class="mi">16</span>  <span class="mi">20</span>  <span class="mi">24</span>  <span class="mi">28</span>  <span class="mi">32</span>  <span class="mi">36</span>  <span class="mi">40</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">5</span>  <span class="mi">10</span>  <span class="mi">15</span>  <span class="mi">20</span>  <span class="mi">25</span>  <span class="mi">30</span>  <span class="mi">35</span>  <span class="mi">40</span>  <span class="mi">45</span>  <span class="mi">50</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">6</span>  <span class="mi">12</span>  <span class="mi">18</span>  <span class="mi">24</span>  <span class="mi">30</span>  <span class="mi">36</span>  <span class="mi">42</span>  <span class="mi">48</span>  <span class="mi">54</span>  <span class="mi">60</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">7</span>  <span class="mi">14</span>  <span class="mi">21</span>  <span class="mi">28</span>  <span class="mi">35</span>  <span class="mi">42</span>  <span class="mi">49</span>  <span class="mi">56</span>  <span class="mi">63</span>  <span class="mi">70</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">8</span>  <span class="mi">16</span>  <span class="mi">24</span>  <span class="mi">32</span>  <span class="mi">40</span>  <span class="mi">48</span>  <span class="mi">56</span>  <span class="mi">64</span>  <span class="mi">72</span>  <span class="mi">80</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">9</span>  <span class="mi">18</span>  <span class="mi">27</span>  <span class="mi">36</span>  <span class="mi">45</span>  <span class="mi">54</span>  <span class="mi">63</span>  <span class="mi">72</span>  <span class="mi">81</span>  <span class="mi">90</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">10</span>  <span class="mi">20</span>  <span class="mi">30</span>  <span class="mi">40</span>  <span class="mi">50</span>  <span class="mi">60</span>  <span class="mi">70</span>  <span class="mi">80</span>  <span class="mi">90</span> <span class="mi">100</span><span class="p">]]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Hint: Det kan være lurt å starte med å lage en array som <code class="docutils literal notranslate"><span class="pre">np.zeros((10,</span> <span class="pre">10)).astype(int)</span></code>. <code class="docutils literal notranslate"><span class="pre">.astype()</span></code>-metoden endrer arrayet slik at det i utgangspunktet blir fylt med heltall, ikke flyttall. Deretter må vi lage løkker for å indeksere og sette elementer i arrayet.</p>
+</div></blockquote>
+<p>Bonus: Modifiser programmet slik at man kan skrive inn dimensjonene for gangetabellen</p>
+</section>
 </section>
 </section>
 
@@ -567,9 +840,24 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorregning">Vektorregning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-funksjonen"><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace-funksjonen-og-matematiske-funksjoner"><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen og matematiske funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-funksjonen"><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-funksjonen"><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flip-funksjonen"><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-funksjonen"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-verdier">Legge til og trekke fra verdier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-elementer">Legge til og trekke fra elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

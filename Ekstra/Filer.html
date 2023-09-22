@@ -348,9 +348,9 @@ document.write(`
 </div>
 <p>Merk at <code class="docutils literal notranslate"><span class="pre">\n</span></code> betyr linjeskifte. Skriver vi ikke <code class="docutils literal notranslate"><span class="pre">\n</span></code> så får vi alt skrevet på samme linje.</p>
 <p>I stedet for å skrive filen linje for linje kan vi bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;løkke.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;løkke.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">writeline</span><span class="p">(</span><span class="s2">&quot;Linje &quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">writeline</span><span class="p">(</span><span class="s2">&quot;Linje &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Da får vi filen <code class="docutils literal notranslate"><span class="pre">løkke.txt</span></code>.</p>
