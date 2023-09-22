@@ -319,9 +319,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-funksjonen"><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace-funksjonen-og-matematiske-funksjoner"><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen og matematiske funksjoner</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-funksjonen"><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-funksjonen"><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flip-funksjonen"><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-funksjonen"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>
@@ -504,6 +504,29 @@ y-verdier (x**2): [4. 1. 0. 1. 4.]
 </div>
 </div>
 </section>
+<section id="zeros-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen<a class="headerlink" href="#zeros-funksjonen" title="Permalink to this heading">#</a></h2>
+<p>Hvis vi ønsker å fylle en array med mange nuller så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen. Legger vi en tuppel (f.eks <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">3)</span></code>) inn som parameter, så får vi en todimensjonell array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># Lager en array med 5 nuller</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span> <span class="c1"># Lager en 5x5 array med nuller</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0.]
+[[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Det finnes også en funksjon som heter <code class="docutils literal notranslate"><span class="pre">ones()</span></code>. Kanskje du klarer å tenke deg frem til hva den gjør?</p>
+</section>
 <section id="sort-funksjonen">
 <h2><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen<a class="headerlink" href="#sort-funksjonen" title="Permalink to this heading">#</a></h2>
 <p>For å få en sortert array (stigende) kan vi bruke <code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen.</p>
@@ -523,8 +546,8 @@ y-verdier (x**2): [4. 1. 0. 1. 4.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [ 5.  4.  2. 10.  2.  2. 10.  3.  7.  5.]
-Sortert array: [ 2.  2.  2.  3.  4.  5.  5.  7. 10. 10.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [ 4.  4. 10.  7.  2.  7.  1.  8.  6.  4.]
+Sortert array: [ 1.  2.  4.  4.  4.  6.  7.  7.  8. 10.]
 </pre></div>
 </div>
 </div>
@@ -551,29 +574,6 @@ Reversert array: [9 8 7 6 5 4 3 2 1]
 </div>
 </div>
 </div>
-</section>
-<section id="zeros-funksjonen">
-<h2><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen<a class="headerlink" href="#zeros-funksjonen" title="Permalink to this heading">#</a></h2>
-<p>Hvis vi ønsker å fylle en array med mange nuller så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen. Legger vi en tuppel (f.eks <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">3)</span></code>) inn som parameter, så får vi en todimensjonell array.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># Lager en array med 5 nuller</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span> <span class="c1"># Lager en 5x5 array med nuller</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0.]
-[[0. 0. 0.]
- [0. 0. 0.]
- [0. 0. 0.]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Det finnes også en funksjon som heter <code class="docutils literal notranslate"><span class="pre">ones()</span></code>. Kanskje du klarer å tenke deg frem til hva den gjør?</p>
 </section>
 <section id="reshape-funksjonen">
 <h2><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen<a class="headerlink" href="#reshape-funksjonen" title="Permalink to this heading">#</a></h2>
@@ -706,9 +706,7 @@ Element i posisjon [1][1]:  5
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 3]
+[2 3]
 </pre></div>
 </div>
 </div>
@@ -727,7 +725,7 @@ Element i posisjon [1][1]:  5
 <li><p>Skriv ut en array som inneholder alle oddetallene fra og med 1 til og med 19.</p></li>
 <li><p>Skriv ut en array som inneholder alle oddetallene fra og med 1 til og med 19, baklengs.</p></li>
 <li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med nuller.</p></li>
-<li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med enere</p></li>
+<li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med enere.</p></li>
 </ol>
 </section>
 </section>
@@ -844,9 +842,9 @@ Element i posisjon [1][1]:  5
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-funksjonen"><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace-funksjonen-og-matematiske-funksjoner"><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen og matematiske funksjoner</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-funksjonen"><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-funksjonen"><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flip-funksjonen"><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-funksjonen"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>

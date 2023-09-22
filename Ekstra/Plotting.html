@@ -336,7 +336,7 @@ document.write(`
   <section id="plotting">
 <h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h1>
 <p>I denne delen skal vi lære om plotting.</p>
-<p>For å plotte skal vi bruke en pakke som heter <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>. Mange Python-installasjoner vil inkludere denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code> i terminalvinduet.</p>
+<p>For å plotte skal vi bruke en pakke som heter <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Mange Python-installasjoner vil inkludere denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code> i terminalvinduet.</p>
 <section id="et-enkelt-plot">
 <h2>Et enkelt plot<a class="headerlink" href="#et-enkelt-plot" title="Permalink to this heading">#</a></h2>
 <p>La oss plotte den matematiske funksjonen <span class="math notranslate nohighlight">\(x^2\)</span> i intervallet <span class="math notranslate nohighlight">\([0, 5]\)</span>.</p>
@@ -360,8 +360,6 @@ document.write(`
 <img alt="../_images/9180863d34c114538ec045a399cbacbc3a624ccab58056b0d2b63469397a8851.png" src="../_images/9180863d34c114538ec045a399cbacbc3a624ccab58056b0d2b63469397a8851.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>-funksjonen er den som tegner opp funksjonen. Den tar <code class="docutils literal notranslate"><span class="pre">x</span></code>-verdiene og <code class="docutils literal notranslate"><span class="pre">y</span></code>-verdiene som parameter.</p>
-<p><code class="docutils literal notranslate"><span class="pre">show()</span></code>-funksjonen er den som viser plottet til slutt.</p>
 </section>
 <section id="stil">
 <h2>Stil<a class="headerlink" href="#stil" title="Permalink to this heading">#</a></h2>
@@ -385,13 +383,14 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-verdier&quot;</span><span class="p">)</span> <span class="c1"># Gir navn til y-aksen</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;f(x)=x**2&quot;</span><span class="p">)</span> <span class="c1"># label gir navn til funksjonen</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;g(x)=x**3&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># label gir navn til funksjonen, color gir farge</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span> <span class="c1"># Viser rutenett</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># Lager boksen med funksjonenes navn</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Viser plottet</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/56e7586d3c0cdaf0fd917106cb2043f29f6c35a13553a063a3c107b3f213d1a9.png" src="../_images/56e7586d3c0cdaf0fd917106cb2043f29f6c35a13553a063a3c107b3f213d1a9.png" />
+<img alt="../_images/d1743e855c6cf5772884e1774495ec41452ad093fb99ebc5f98b96316f41ab04.png" src="../_images/d1743e855c6cf5772884e1774495ec41452ad093fb99ebc5f98b96316f41ab04.png" />
 </div>
 </div>
 <p>“Wow! For et fint plott! 🤓” - En fornøyd mattelærer (sikkert)</p>
@@ -427,12 +426,12 @@ document.write(`
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Lag en array <code class="docutils literal notranslate"><span class="pre">x</span></code> som skal være 100 jevnt fordelte verdier i intervallet <span class="math notranslate nohighlight">\([-2, 2]\)</span>.</p>
+<p>Lag en array <code class="docutils literal notranslate"><span class="pre">x</span></code> som skal ha 100 jevnt fordelte tall i intervallet <span class="math notranslate nohighlight">\([-2, 2]\)</span>.</p>
 <p>Plott disse matematiske funksjonene i samme koordinatsystem:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g(x) = abs(x)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(h(x) = -x^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h(x) = x^4\)</span></p></li>
 </ol>
 <p>Få med <code class="docutils literal notranslate"><span class="pre">legend()</span></code> og tittel. Gi funksjonene dine egne farger. Se gjerne <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">dokumentasjonen</a> for de ulike fargene.</p>
 </section>
