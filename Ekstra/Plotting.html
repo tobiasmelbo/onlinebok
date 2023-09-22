@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Ekstra/Plotting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -289,7 +291,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -305,6 +309,21 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-plot">Et enkelt plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot"><code class="docutils literal notranslate"><span class="pre">scatter</span></code>-plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotte-fra-fil">Plotte fra fil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -316,6 +335,104 @@ document.write(`
                   
   <section id="plotting">
 <h1>Plotting<a class="headerlink" href="#plotting" title="Permalink to this heading">#</a></h1>
+<p>I denne delen skal vi lære om plotting.</p>
+<p>For å plotte skal vi bruke en pakke som heter <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>. Mange Python-installasjoner vil inkludere denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code> i terminalvinduet.</p>
+<section id="et-enkelt-plot">
+<h2>Et enkelt plot<a class="headerlink" href="#et-enkelt-plot" title="Permalink to this heading">#</a></h2>
+<p>La oss plotte den matematiske funksjonen <span class="math notranslate nohighlight">\(x^2\)</span> i intervallet <span class="math notranslate nohighlight">\([0, 5]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># Hundre punkter mellom 0 og 5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Setter x inn i funksjonen f. y blir funksjonsverdier</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Lager plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Viser plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9180863d34c114538ec045a399cbacbc3a624ccab58056b0d2b63469397a8851.png" src="../_images/9180863d34c114538ec045a399cbacbc3a624ccab58056b0d2b63469397a8851.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">plot()</span></code>-funksjonen er den som tegner opp funksjonen. Den tar <code class="docutils literal notranslate"><span class="pre">x</span></code>-verdiene og <code class="docutils literal notranslate"><span class="pre">y</span></code>-verdiene som parameter.</p>
+<p><code class="docutils literal notranslate"><span class="pre">show()</span></code>-funksjonen er den som viser plottet til slutt.</p>
+</section>
+<section id="stil">
+<h2>Stil<a class="headerlink" href="#stil" title="Permalink to this heading">#</a></h2>
+<p>“Du må ha med navn på aksene! 😠” - En gretten mattelærer (sikkert)</p>
+<p>La oss få med litt stil på plottene våre.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sammenlikning av x**2 og x**3&quot;</span><span class="p">)</span> <span class="c1"># Tittel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-verdier&quot;</span><span class="p">)</span> <span class="c1"># Gir navn til x-aksen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y-verdier&quot;</span><span class="p">)</span> <span class="c1"># Gir navn til y-aksen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;f(x)=x**2&quot;</span><span class="p">)</span> <span class="c1"># label gir navn til funksjonen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;g(x)=x**3&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># label gir navn til funksjonen, color gir farge</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># Lager boksen med funksjonenes navn</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Viser plottet</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/56e7586d3c0cdaf0fd917106cb2043f29f6c35a13553a063a3c107b3f213d1a9.png" src="../_images/56e7586d3c0cdaf0fd917106cb2043f29f6c35a13553a063a3c107b3f213d1a9.png" />
+</div>
+</div>
+<p>“Wow! For et fint plott! 🤓” - En fornøyd mattelærer (sikkert)</p>
+<p>Undersøk koden grundig. Legg merke til hvordan vi kan sette inn funksjonsverdier i selve <code class="docutils literal notranslate"><span class="pre">plot()</span></code>-funksjonen.</p>
+<p>Legg også merke til hvordan vi kan plotte flere grafer med <code class="docutils literal notranslate"><span class="pre">plot()</span></code> før vi kjører <code class="docutils literal notranslate"><span class="pre">show()</span></code>-funksjonen. Vi kan tenke på <code class="docutils literal notranslate"><span class="pre">plot()</span></code> som en funksjon som <em>tegner</em> og <code class="docutils literal notranslate"><span class="pre">show()</span></code> som å en funksjon som <em>viser</em> det vi har tegnet.</p>
+</section>
+<section id="scatter-plot">
+<h2><code class="docutils literal notranslate"><span class="pre">scatter</span></code>-plot<a class="headerlink" href="#scatter-plot" title="Permalink to this heading">#</a></h2>
+<p>Noen ganger ønsker vi å plotte punkter. Da kan vi bruke <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1"># 9 x-verdier mellom -5 og 5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/83cea15ab8299e10a25ab1d66af151aba898718a5eec6f8e26ba1548e9f5b192.png" src="../_images/83cea15ab8299e10a25ab1d66af151aba898718a5eec6f8e26ba1548e9f5b192.png" />
+</div>
+</div>
+</section>
+<section id="plotte-fra-fil">
+<h2>Plotte fra fil<a class="headerlink" href="#plotte-fra-fil" title="Permalink to this heading">#</a></h2>
+<p>Noen ganger kommer data i form av filer.</p>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -367,6 +484,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-plot">Et enkelt plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot"><code class="docutils literal notranslate"><span class="pre">scatter</span></code>-plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotte-fra-fil">Plotte fra fil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
