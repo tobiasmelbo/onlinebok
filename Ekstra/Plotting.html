@@ -319,7 +319,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-plot">Et enkelt plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot"><code class="docutils literal notranslate"><span class="pre">scatter</span></code>-plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fra-datafil">Plot fra datafil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 </ul>
@@ -423,90 +422,6 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="plot-fra-datafil">
-<h2>Plot fra datafil<a class="headerlink" href="#plot-fra-datafil" title="Permalink to this heading">#</a></h2>
-<p>Nå skal vi lære å plotte fra reelle datasett.</p>
-<p>Jeg vil ta utgangspunkt i en tabell fra SSB over utslipp av CO2-ekvivalenter fra Olje- og Gassutvinningsindustrien fra 1990-2022. Tabellen finner du her <a class="reference external" href="https://www.ssb.no/statbank/table/13931/">SSB: Tabell 13931</a>.</p>
-<p>På SSB sine nettsider kan man velge det man ønsker å ha med i en tabell. Denne tabellen kan lastes ned som flere ulike filtyper. Jeg har valgt <code class="docutils literal notranslate"><span class="pre">Semikolonseparert</span> <span class="pre">med</span> <span class="pre">overskrift</span> <span class="pre">(csv)</span></code> i dette eksempelet.</p>
-<p>Jeg har kalt filen for <code class="docutils literal notranslate"><span class="pre">utslipp.csv</span></code>. Begynnelsen ser slik ut:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;13931: Klimagasser AR5, etter kilde (aktivitet), komponent, år og statistikkvariabel&quot;</span>
-
-<span class="s2">&quot;kilde (aktivitet)&quot;</span><span class="p">;</span><span class="s2">&quot;komponent&quot;</span><span class="p">;</span><span class="s2">&quot;år&quot;</span><span class="p">;</span><span class="s2">&quot;Utslipp til luft (1 000 tonn CO2-ekvivalenter, AR5)&quot;</span>
-<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1990&quot;</span><span class="p">;</span><span class="mi">8217</span>
-<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1991&quot;</span><span class="p">;</span><span class="mi">8107</span>
-<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1992&quot;</span><span class="p">;</span><span class="mi">8710</span>
-<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1993&quot;</span><span class="p">;</span><span class="mi">9241</span>
-<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1994&quot;</span><span class="p">;</span><span class="mi">10032</span>
-<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1995&quot;</span><span class="p">;</span><span class="mi">10211</span>
-<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1996&quot;</span><span class="p">;</span><span class="mi">11104</span>
-<span class="o">...</span>
-</pre></div>
-</div>
-<p>Først må jeg dele opp filen i linjer.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;utslipp.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-
-    <span class="c1"># Hopper over de tre første linjene.</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-
-    <span class="c1"># Lager liste med alle de resterende linjene.</span>
-    <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-
-    <span class="c1"># Går igjennom listen</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linjer</span><span class="p">:</span>
-        <span class="n">linje</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;utslipp.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="c1"># Hopper over de tre første linjene.</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\interactiveshell.py:284,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;utslipp.csv&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Dersom jeg splitter linjene på <code class="docutils literal notranslate"><span class="pre">;</span></code> så er årstallet ved indeks <code class="docutils literal notranslate"><span class="pre">2</span></code> og CO2-ekvivalentene ved indeks <code class="docutils literal notranslate"><span class="pre">3</span></code>. Disse legger jeg i hvert sitt array slik at jeg kan plotte de mot hverandre med årstall som <code class="docutils literal notranslate"><span class="pre">x</span></code> og CO2-ekvivalenter som <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;utslipp.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-
-    <span class="c1"># Hopper over de tre første linjene.</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-
-    <span class="c1"># Lager liste med alle de resterende linjene.</span>
-    <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-
-    <span class="c1"># Går igjennom listen</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linjer</span><span class="p">:</span>
-        <span class="n">linje</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
@@ -594,7 +509,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-plot">Et enkelt plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot"><code class="docutils literal notranslate"><span class="pre">scatter</span></code>-plot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-fra-datafil">Plot fra datafil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 </ul>
