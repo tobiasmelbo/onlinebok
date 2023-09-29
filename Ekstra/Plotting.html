@@ -454,6 +454,24 @@ document.write(`
 </div>
 </div>
 <p>Fint, men for å unngå at plottet ser ut som en badeball så kan vi bytte ut fargene <code class="docutils literal notranslate"><span class="pre">['red',</span> <span class="pre">'blue',</span> <span class="pre">'green',</span> <span class="pre">'orange']</span></code> med fargene fra en litt finere fargepalett <code class="docutils literal notranslate"><span class="pre">['tab:red',</span> <span class="pre">'tab:blue',</span> <span class="pre">'tab:green',</span> <span class="pre">'tab:orange']</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">frukter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;eple&#39;</span><span class="p">,</span> <span class="s1">&#39;blåbær&#39;</span><span class="p">,</span> <span class="s1">&#39;drue&#39;</span><span class="p">,</span> <span class="s1">&#39;appelsin&#39;</span><span class="p">]</span>
+<span class="n">antall</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+<span class="n">fargeliste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:green&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:orange&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">frukter</span><span class="p">,</span> <span class="n">antall</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">fargeliste</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Antall frukter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a5dbefd1234858f0710caf3e63ffd13249928cc2be892116bc79570b360b8ee5.png" src="../_images/a5dbefd1234858f0710caf3e63ffd13249928cc2be892116bc79570b360b8ee5.png" />
+</div>
+</div>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
@@ -464,7 +482,7 @@ document.write(`
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(g(x) = abs(x)\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(h(x) = x^4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h(x) = abs(x^3)\)</span></p></li>
 </ol>
 <p>Få med <code class="docutils literal notranslate"><span class="pre">legend()</span></code> og tittel. Gi funksjonene dine egne farger. Se gjerne <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html#css-colors">dokumentasjonen</a> for de ulike fargene.</p>
 </section>
