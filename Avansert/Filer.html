@@ -1,0 +1,816 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Filer &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Filer';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arrays" href="Arrays.html" />
+    <link rel="prev" title="Ordbøker" href="Ordb%C3%B8ker.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../start.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Vilk%C3%A5r.html">Vilkår</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Avansert%20Python.html">Avansert Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20reelle%20datasett.html">Plotting av reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Regresjon.html">Regresjon</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Avansert/Filer.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Filer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-fil">Skrive fil ✍️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-pa-en-fil">Legge til på en fil 📝</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handtere-ae-o-og-a">Håndtere æ, ø og å</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lese-fra-fil">Lese fra fil 📖</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoppe-over-linjer">Hoppe over linjer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-metoder">String-metoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-split-metoden"><code class="docutils literal notranslate"><span class="pre">string.split()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-lower-og-string-upper-metoden"><code class="docutils literal notranslate"><span class="pre">string.lower()</span></code>- og <code class="docutils literal notranslate"><span class="pre">string.upper()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-replace-metoden"><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-strip-metoden"><code class="docutils literal notranslate"><span class="pre">string.strip()</span></code>-metoden</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="filer">
+<span id="id1"></span><h1>Filer<a class="headerlink" href="#filer" title="Permalink to this heading">#</a></h1>
+<p>Vi kan både lese og skrive filer i Python.</p>
+<section id="skrive-fil">
+<h2>Skrive fil ✍️<a class="headerlink" href="#skrive-fil" title="Permalink to this heading">#</a></h2>
+<p>Vi kan skrive en fil på følgende måte</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hydrogen,H,[1],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Helium,He,[2],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Litium,Li,[2,1],Fast </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kjører vi programmet over så får vi filen <code class="docutils literal notranslate"><span class="pre">atomer.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hydrogen</span><span class="p">,</span><span class="n">H</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span>
+<span class="n">Helium</span><span class="p">,</span><span class="n">He</span><span class="p">,[</span><span class="mi">2</span><span class="p">],</span><span class="n">Gass</span>
+<span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">\n</span></code> betyr linjeskifte. Skriver vi ikke <code class="docutils literal notranslate"><span class="pre">\n</span></code> så får vi alt skrevet på samme linje.</p>
+<p>Vi kan også skrive filer ved å bruke <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;løkke.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">writeline</span><span class="p">(</span><span class="s2">&quot;Linje &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Da får vi filen <code class="docutils literal notranslate"><span class="pre">løkke.txt</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Linje</span> <span class="mi">0</span>
+<span class="n">Linje</span> <span class="mi">1</span>
+<span class="n">Linje</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Merk deg</p>
+<p>Når vi skriver ting med innrykk etter <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open(&quot;løkke.txt&quot;,</span> <span class="pre">&quot;w&quot;)</span> <span class="pre">as</span> <span class="pre">file:</span></code> så er filen åpen. Det er bare i dette området man har tilgang til <code class="docutils literal notranslate"><span class="pre">file</span></code>. Når man går ut fra innrykkene, så lukkes filen.</p>
+<p>Det finnes også andre måter å åpne og lukke filer som ikke bruker innrykk.</p>
+</div>
+</section>
+<section id="legge-til-pa-en-fil">
+<h2>Legge til på en fil 📝<a class="headerlink" href="#legge-til-pa-en-fil" title="Permalink to this heading">#</a></h2>
+<p>Tegnet <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open(&quot;atomer.txt&quot;,</span> <span class="pre">&quot;w&quot;)</span> <span class="pre">as</span> <span class="pre">file:</span></code> står for <em>write</em>. Når vi bruker <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> skriver vi en fil helt fra starten av. Alt som stod der før vil bli slettet.</p>
+<p>Hvis vi ønsker å legge til tekst på en allerede eksisterende fil kan vi bruke <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>. Dette står for <em>append</em>, som betyr <em>å legge til på slutten av</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sølv,Ag,[2,8,18,18,1],Fast&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Hvis vi kjører dette programmet ser vi at filen <code class="docutils literal notranslate"><span class="pre">atomer.txt</span></code> blir til:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hydrogen,H,[1],Gass 
+Helium,He,[2],Gass 
+Litium,Li,[2,1],Fast 
+S�lv,Ag,[2,8,18,18,1],Fast
+</pre></div>
+</div>
+<p>Sånn kan man legge til data på en allerede eksisterende fil!</p>
+<p>… men hvorfor blir ordet <code class="docutils literal notranslate"><span class="pre">Sølv</span></code> skrevet som <code class="docutils literal notranslate"><span class="pre">S�lv</span></code>?</p>
+</section>
+<section id="handtere-ae-o-og-a">
+<h2>Håndtere æ, ø og å<a class="headerlink" href="#handtere-ae-o-og-a" title="Permalink to this heading">#</a></h2>
+<p>De nordiske bokstavene skaper noen gang problemer når vi leser og skriver filer.</p>
+<p>Hvis vi legger til <code class="docutils literal notranslate"><span class="pre">encoding</span> <span class="pre">=</span> <span class="pre">&quot;utf-8&quot;</span></code> til som parameter for <code class="docutils literal notranslate"><span class="pre">open()</span></code>-funksjonen så velges riktig sett med tegn.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hydrogen,H,[1],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Helium,He,[2],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Litium,Li,[2,1],Fast </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sølv,Ag,[2,8,18,18,1],Fast&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Da får vi filen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hydrogen</span><span class="p">,</span><span class="n">H</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span> 
+<span class="n">Helium</span><span class="p">,</span><span class="n">He</span><span class="p">,[</span><span class="mi">2</span><span class="p">],</span><span class="n">Gass</span> 
+<span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Fast</span> 
+<span class="n">Sølv</span><span class="p">,</span><span class="n">Ag</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Fast</span>
+</pre></div>
+</div>
+</section>
+<section id="lese-fra-fil">
+<h2>Lese fra fil 📖<a class="headerlink" href="#lese-fra-fil" title="Permalink to this heading">#</a></h2>
+<p>Vi kan lese fra en fil på følgende måte</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># Alle linjene lagres i listen &quot;linjer&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">linjer</span><span class="p">)</span> <span class="c1"># Skriver ut linjene som en liste</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hydrogen,H,[1],Gass \n&#39;, &#39;Helium,He,[2],Gass \n&#39;, &#39;Litium,Li,[2,1],Fast \n&#39;, &#39;Sølv,Ag,[2,8,18,18,1],Fast&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Som vi ser er <code class="docutils literal notranslate"><span class="pre">linjer</span></code> en liste med strings.</p>
+<p>Vi kan skrive ut hver enkelt linje på denne måten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># Alle linjene lagres i listen &quot;linjer&quot;</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linjer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># x er hver enkelt linje</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hydrogen,H,[1],Gass 
+
+Helium,He,[2],Gass 
+
+Litium,Li,[2,1],Fast 
+
+Sølv,Ag,[2,8,18,18,1],Fast
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> når vi ønsker å lese fra en fil. Du klarer kanskje å gjette hva <code class="docutils literal notranslate"><span class="pre">r</span></code> står for på engelsk?</p>
+<section id="hoppe-over-linjer">
+<h3>Hoppe over linjer<a class="headerlink" href="#hoppe-over-linjer" title="Permalink to this heading">#</a></h3>
+<p>Datafiler har ofte noen linjer med informasjon som ikke er selve datasettet som vi ønsker å lese.</p>
+<p>Her er en datafil fra SSB.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;13931: Klimagasser AR5, etter kilde (aktivitet), komponent, år og statistikkvariabel&quot;</span>
+
+<span class="s2">&quot;kilde (aktivitet)&quot;</span><span class="p">;</span><span class="s2">&quot;komponent&quot;</span><span class="p">;</span><span class="s2">&quot;år&quot;</span><span class="p">;</span><span class="s2">&quot;Utslipp til luft (1 000 tonn CO2-ekvivalenter, AR5)&quot;</span>
+<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1990&quot;</span><span class="p">;</span><span class="mi">8217</span>
+<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1991&quot;</span><span class="p">;</span><span class="mi">8107</span>
+<span class="s2">&quot;1 Olje- og gassutvinning&quot;</span><span class="p">;</span><span class="s2">&quot;Klimagasser i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1992&quot;</span><span class="p">;</span><span class="mi">8710</span>
+</pre></div>
+</div>
+<p>Vi ønsker bare å lese av dataene fra og med linje 4. For å gjøre det kan vi hoppe over tre linjer med <code class="docutils literal notranslate"><span class="pre">file.readline()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;oljegass.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopper over en linje</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopper over en linje</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopper over en linje</span>
+    <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># Lagrer resten av linjene i variablen linjer</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">linjer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1990&quot;;8217\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1991&quot;;8107\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1992&quot;;8710\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1993&quot;;9241\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1994&quot;;10032\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1995&quot;;10211\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1996&quot;;11104\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1997&quot;;11616\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1998&quot;;11273\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;1999&quot;;11771\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2000&quot;;13124\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2001&quot;;14110\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2002&quot;;13814\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2003&quot;;13961\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2004&quot;;14195\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2005&quot;;14153\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2006&quot;;13750\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2007&quot;;15217\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2008&quot;;14914\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2009&quot;;13817\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2010&quot;;13999\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2011&quot;;13688\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2012&quot;;13794\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2013&quot;;13730\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2014&quot;;14427\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2015&quot;;14948\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2016&quot;;14619\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2017&quot;;14319\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2018&quot;;14155\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2019&quot;;13982\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2020&quot;;13268\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2021&quot;;12186\n&#39;, &#39;&quot;1 Olje- og gassutvinning&quot;;&quot;Klimagasser i alt&quot;;&quot;2022&quot;;12153\n&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Som vi ser blir <code class="docutils literal notranslate"><span class="pre">linjer</span></code> en liste med strings. Hver string er en linje med data, og ingen av de første tre linjene blir med i dataene.</p>
+</section>
+</section>
+<section id="string-metoder">
+<h2>String-metoder<a class="headerlink" href="#string-metoder" title="Permalink to this heading">#</a></h2>
+<p>Nå har vi lært oss å hente ut linjer fra en datafil. Hver linje er en string. Her kommer en del metoder som er tilknyttet strings og kan være nyttige. En mer komplett oversikt kan du for eksempel finne på <a class="reference external" href="https://www.w3schools.com/python/python_ref_string.asp">W3Schools (String Methods)</a>.</p>
+<p>Merk deg at ingen av metodene under endrer på strings, de bare returnerer nye strings som er endret på en eller annen måte. Dette er i motsetning til listemetodene <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">sort()</span></code> og <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> som faktisk endrer på listene når man kaller på metodene.</p>
+<section id="string-split-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">string.split()</span></code>-metoden<a class="headerlink" href="#string-split-metoden" title="Permalink to this heading">#</a></h3>
+<p>Vi ønsker ofte å dele tekst opp i biter. <code class="docutils literal notranslate"><span class="pre">split()</span></code>-metoden tar en string som parameter. Denne kalles en <em>separator</em>. Metoden deler teksten opp på hver separator og returnerer en liste med tekstbiter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linje</span> <span class="o">=</span> <span class="s2">&quot;Hydrogen,[1],Gass&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">))</span> <span class="c1"># Hele linjen, splittet på &quot;,&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Atomnavn</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Energinivåer</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">linje</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># Tilstand ved romtemperatur</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hydrogen&#39;, &#39;[1]&#39;, &#39;Gass&#39;]
+Hydrogen
+[1]
+Gass
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eksempelet over deler opp en string på <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code>.</p>
+<p>Et annet vanlig bruksområde er å splitte på mellomrom <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> for å få en liste med hvert ord i setninger. Vi trenger ikke en parameter til <code class="docutils literal notranslate"><span class="pre">split()</span></code>-metoden for å splitte på mellomrom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">setning</span> <span class="o">=</span> <span class="s2">&quot;Jeg elsker Python!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">setning</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))</span> <span class="c1"># Splitter på mellomrom</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">setning</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="c1"># Splitter også på mellomrom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Jeg&#39;, &#39;elsker&#39;, &#39;Python!&#39;]
+[&#39;Jeg&#39;, &#39;elsker&#39;, &#39;Python!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-lower-og-string-upper-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">string.lower()</span></code>- og <code class="docutils literal notranslate"><span class="pre">string.upper()</span></code>-metoden<a class="headerlink" href="#string-lower-og-string-upper-metoden" title="Permalink to this heading">#</a></h3>
+<p>Noen ganger ønsker vi å gjøre alle bokstaver i en tekst til stor bokstav eller liten bokstav. <code class="docutils literal notranslate"><span class="pre">lower()</span></code>-metoden returnerer en tekst med små bokstaver og <code class="docutils literal notranslate"><span class="pre">upper()</span></code>-returnerer en tekst med store bokstaver.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Ja&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> <span class="c1"># Teksten i store bokstaver</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="c1"># Teksten i små bokstaver</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JA
+ja
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dette kan være nyttig når man skal sjekke <code class="docutils literal notranslate"><span class="pre">input()</span></code> i et program.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inputTekst</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Svar: &quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">inputTekst</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ja&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bra!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Eksempelet over vil skrive ut <code class="docutils literal notranslate"><span class="pre">&quot;Bra!&quot;</span></code> uansett om man skriver <code class="docutils literal notranslate"><span class="pre">&quot;JA&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Ja&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;ja&quot;</span></code> eller <code class="docutils literal notranslate"><span class="pre">&quot;jA&quot;</span></code>. På den måten slipper man å sjekke alle alternativene. Dette gjør et program med <code class="docutils literal notranslate"><span class="pre">input()</span></code> litt mer brukervennlig.</p>
+</section>
+<section id="string-replace-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code>-metoden<a class="headerlink" href="#string-replace-metoden" title="Permalink to this heading">#</a></h3>
+<p>Noen ganger ønsker vi å fjerne eller bytte ut deler av en tekst. Det første parameteret til <code class="docutils literal notranslate"><span class="pre">replace()</span></code>-metoden er den teksten som skal byttes ut, det andre parametret er den teksten som det skal byttes til. <code class="docutils literal notranslate"><span class="pre">replace()</span></code>-metoden returnerer da en tekst hvor de spesifiserte bitene av teksten er byttet ut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Jeg hater å programmere!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;hater&quot;</span><span class="p">,</span> <span class="s2">&quot;elsker&quot;</span><span class="p">))</span> <span class="c1"># Bytter om alle forekomster av &quot;hater&quot; til &quot;elsker&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jeg elsker å programmere!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan også bruke dette til å fjerne biter av tekst ved å bytte ut tekstbiten med en tom tekst.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Jeg liker ikke å programmere. Det er ikke gøy.&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; ikke&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span> <span class="c1"># Fjerner alle biter av teksten hvor det står &quot; ikke&quot;.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jeg liker å programmere. Det er gøy.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-strip-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">string.strip()</span></code>-metoden<a class="headerlink" href="#string-strip-metoden" title="Permalink to this heading">#</a></h3>
+<p>Vi kan fjerne flere tegn i starten og i slutten av en string ved å bruke <code class="docutils literal notranslate"><span class="pre">strip()</span></code>-metoden. Uten parameter fjerner metoden mellomrom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;  Python er kult :)  &quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="c1"># Fjerner mellomromene på starten og slutten</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Python er kult :)  
+Python er kult :)
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">strip()</span></code>-metoden kan også fjerne spesifikke karakterer, enten en eller flere.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot; ...Python, et fantastisk språk... &quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot; .&quot;</span><span class="p">))</span> <span class="c1"># Fjerner alle forekomster av både mellomrom &quot; &quot; og &quot;.&quot;.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Python, et fantastisk språk
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Lag en fil (for hånd) som heter <code class="docutils literal notranslate"><span class="pre">atomer.txt</span></code> og legg den i samme mappe som Python-programmet ditt.</p>
+<p>Filen skal se slik ut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hydrogen</span><span class="p">,</span><span class="n">H</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span> 
+<span class="n">Helium</span><span class="p">,</span><span class="n">He</span><span class="p">,[</span><span class="mi">2</span><span class="p">],</span><span class="n">Gass</span> 
+<span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Fast</span> 
+<span class="n">Sølv</span><span class="p">,</span><span class="n">Ag</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Fast</span>
+</pre></div>
+</div>
+<p>For hver linje i filen skal det skrives ut denne setningen</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;&lt;navn&gt;</span> <span class="pre">har</span> <span class="pre">det</span> <span class="pre">kjemiske</span> <span class="pre">symbolet</span> <span class="pre">&lt;kjemisk</span> <span class="pre">symbol&gt;</span> <span class="pre">og</span> <span class="pre">har</span> <span class="pre">elektronskallene</span> <span class="pre">&lt;elektronskall&gt;.</span> <span class="pre">I</span> <span class="pre">romtemperatur</span> <span class="pre">er</span> <span class="pre">dette</span> <span class="pre">stoffet</span> <span class="pre">&lt;tilstand&gt;&quot;</span></code>.</p>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Å nei… noen har gjort teksten min korrupt! 😨</p>
+<p><code class="docutils literal notranslate"><span class="pre">tekst</span> <span class="pre">=</span> <span class="pre">&quot;..,.,.</span> <span class="pre">j.Eg</span> <span class="pre">e.lsk.er</span> <span class="pre">Py.th..on</span>&#160; <span class="pre">,.</span> <span class="pre">,.&quot;</span></code></p>
+<p>Fiks denne teksten ved å bruke string-metoder (men du kan ikke erstatte hele teksten på en gang).</p>
+</section>
+<section id="oppgave-3-utfordring">
+<h3>Oppgave 3 (utfordring)<a class="headerlink" href="#oppgave-3-utfordring" title="Permalink to this heading">#</a></h3>
+<p>I denne oppgaven skal vi lage en treningslogger for rekorder i styrketrening.</p>
+<p>Man skal kunne legge inn øvelser og vise statistikk.</p>
+<p>Brukeren skal spørres om man ønsker å legge inn øvelser eller vise statistikk.</p>
+<ol class="arabic simple">
+<li><p>Når man skal legge inn øvelser skal brukeren bli spurt om hva øvelsen heter og hvor mye vekt man klarte. Dette skal legges til en fil som heter <code class="docutils literal notranslate"><span class="pre">&quot;rekorder.txt&quot;</span></code>. En tekst kan legges inn i filen som for eksempel: `”Markløft,180\n”.</p></li>
+<li><p>Når brukeren ønsker å vise statistikk skal det skrives ut en liste over hver øvelse og hva som er maks vekt gjort for den øvelsen. Hvis en øvelse er lagt inn flere ganger, er det bare den med størst vekt som skal skrives ut.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Avansert"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ordb%C3%B8ker.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ordbøker</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Arrays.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arrays</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-fil">Skrive fil ✍️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-pa-en-fil">Legge til på en fil 📝</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handtere-ae-o-og-a">Håndtere æ, ø og å</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lese-fra-fil">Lese fra fil 📖</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoppe-over-linjer">Hoppe over linjer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-metoder">String-metoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-split-metoden"><code class="docutils literal notranslate"><span class="pre">string.split()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-lower-og-string-upper-metoden"><code class="docutils literal notranslate"><span class="pre">string.lower()</span></code>- og <code class="docutils literal notranslate"><span class="pre">string.upper()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-replace-metoden"><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-strip-metoden"><code class="docutils literal notranslate"><span class="pre">string.strip()</span></code>-metoden</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

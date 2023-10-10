@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Proteinsyntesen &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Naturfag/Proteinsyntesen';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Informasjonsteknologi 2 💾" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html" />
+    <link rel="prev" title="Naturfag 🦠" href="Naturfag.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../start.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Vilk%C3%A5r.html">Vilkår</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20reelle%20datasett.html">Plotting av reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Regresjon.html">Regresjon</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Naturfag.html">Naturfag 🦠</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Proteinsyntesen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Naturfag/Proteinsyntesen.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Proteinsyntesen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-proteinsyntesen">Hva er proteinsyntesen?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-og-trna">mRNA og tRNA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="proteinsyntesen">
+<span id="id1"></span><h1>Proteinsyntesen<a class="headerlink" href="#proteinsyntesen" title="Permalink to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Forutsetninger</p>
+<p>Dette programmeringsprosjektet forutsetter at man har vært gjennom delkapitlene</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#variabler-og-syntaks"><span class="std std-ref">Variabler og syntaks</span></a></p></li>
+<li><p><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html#lokker"><span class="std std-ref">Løkker</span></a></p></li>
+<li><p><a class="reference internal" href="../Grunnleggende/Lister.html#lister"><span class="std std-ref">Lister</span></a></p></li>
+</ul>
+</div>
+<section id="hva-er-proteinsyntesen">
+<h2>Hva er proteinsyntesen?<a class="headerlink" href="#hva-er-proteinsyntesen" title="Permalink to this heading">#</a></h2>
+<p>Proteiner er livsnødvendige stoffer som finnes i alt fra skjelett til muskler, hår, hud, blod og organer.</p>
+<p>Proteiner består av lange kjeder med aminosyrer. Aminosyrene fungerer litt som legoklosser, og det er i all hovedsak 20 forskjellige aminosyrer som bygger opp proteiner. Rekkefølgen og utseendet av den lange kjeden med aminosyrer er det som bestemmer egenskapene til proteinet.</p>
+<p>Kroppen må sette sammen disse legoklossene i riktig rekkefølge for at proteinet skal gjøre det det er ment til å gjøre.</p>
+<section id="dna-molekylet">
+<h3>DNA-molekylet 🧬<a class="headerlink" href="#dna-molekylet" title="Permalink to this heading">#</a></h3>
+<p>Når man bygger lego så har man ofte en slags manual, eller en oppskrift, på hvordan man skal sette sammen klossene for å få en bil, en tiger eller en Millenium Falcon™️. Hvor sitter denne <em>oppskriften</em> i kroppen? Vel, den sitter som en kode lagret i hver enkelt celle; i et molekyl som heter <em>DNA-molekylet</em> 🧬</p>
+<p>DNA-molekylet ser ut som en dobbel spiral. Hvert “trappetrinn” består av et par baser. Det er fire baser å velge mellom i DNA: Adenin, Tymin, Cytosin og Guanin (eller bare A, T, C og G). Disse kommer alltid i par, så hvis det står A på den ene siden, så står det T på den andre. Står det C på den ene siden, så står det G på den andre siden.</p>
+<p>Vi kan se for oss at en bit av DNA-molekylet ser slik ut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TACACCTAGCATATT</span>
+<span class="n">ATGTGGATCGTATAA</span>
+</pre></div>
+</div>
+<p>DNA-molekylet befinner seg i cellekjernen. For at denne biten med DNA skal kunne bli til et protein så må den kopieres, flyttes ut og leses av.</p>
+</section>
+<section id="mrna-og-trna">
+<h3>mRNA og tRNA<a class="headerlink" href="#mrna-og-trna" title="Permalink to this heading">#</a></h3>
+<p>Inne i cellekjernen kopieres en bit av DNA om til et nytt molekyl som heter mRNA.</p>
+<p>Selv om det er to sider til et DNA-molekyl, trenger vi bare å se på en side.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span><span class="p">:</span>
+<span class="n">TACACCTAGCATATT</span>
+</pre></div>
+</div>
+<p>Når mRNA skal kopiere dette segmentet så tar vi de motsatte baseparene, men basen Tymin byttes ut med Uracil.</p>
+<ul class="simple">
+<li><p>A -&gt; U</p></li>
+<li><p>T -&gt; A</p></li>
+<li><p>C -&gt; G</p></li>
+<li><p>G -&gt; C</p></li>
+</ul>
+<p>Kopien av DNA-molekylet over ser da slik ut.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
+<span class="n">AUGUGGAUCGUAUAA</span>
+</pre></div>
+</div>
+<p>Dette mRNA-molekylet sendes så ut av cellekjernen og til ribosomene i cellen. En kombinasjon av tre baser kalles for en <em>triplett</em>. Hver triplett koder for en aminosyre eller et signal. Hver tRNA-bit gjenkjenner en triplett og setter riktig aminosyre der. Dermed bygges proteinet i riktig rekkefølge.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
+<span class="n">AUG</span> <span class="n">UGG</span> <span class="n">AUC</span> <span class="n">GUA</span> <span class="n">UAA</span>
+
+<span class="n">Tilsvarer</span> <span class="n">aminosyrene</span><span class="p">:</span>
+<span class="n">Metionin</span><span class="p">(</span><span class="n">START</span><span class="p">)</span> <span class="n">Tryptofan</span> <span class="n">Isoleucin</span> <span class="n">Valin</span> <span class="n">STOPP</span>
+</pre></div>
+</div>
+<p>En triplett (AUG) koder for starten av proteinet. Denne koder også for metionin. Det er også tre tripletter som koder for et sluttsignal av proteinsyntesen (UAA, UAG, UGA).</p>
+<p>Proteiner består vanligvis av hundrevis og noen ganger tusenvis av aminosyrer. Da blir det litt vanskelig å sitte å oversette base for base for å finne ut hvordan proteinet vil se ut fra en DNA-sekvens. Heldigvis har vi datamaskiner som kan gjøre dette litt kjappere, og det er det vi skal gjøre i dette programmeringsprosjektet.</p>
+</section>
+</section>
+<section id="programmering-av-proteinsyntesen">
+<h2>Programmering av proteinsyntesen<a class="headerlink" href="#programmering-av-proteinsyntesen" title="Permalink to this heading">#</a></h2>
+<p>Før vi begynner med programmering av proteinsyntesen må vi kunne litt om <em>ordbøker</em> i Python.</p>
+<p>Ordbøker er objekter som oversetter en ting til en annen, for eksempel kan de oversette et ord til et annet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ordbok</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DK&quot;</span> <span class="p">:</span> <span class="s2">&quot;Danmark&quot;</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ordbok</span><span class="p">[</span><span class="s2">&quot;NO&quot;</span><span class="p">])</span> <span class="c1"># Setter inn &quot;NO&quot; i ordboken, og får ut &quot;Norge&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ordbok</span><span class="p">[</span><span class="s2">&quot;SE&quot;</span><span class="p">])</span> <span class="c1"># Setter inn &quot;SE&quot; i ordboken, og får ut &quot;Sverige&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ordbok</span><span class="p">[</span><span class="s2">&quot;DK&quot;</span><span class="p">])</span> <span class="c1"># Setter inn &quot;DK&quot; i ordboken, og får ut &quot;Danmark&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Norge
+Sverige
+Danmark
+</pre></div>
+</div>
+</div>
+</div>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>La oss ta for oss denne DNA-sekvensen</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TACCGTAATATC</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Lag et Python-program som lagrer denne DNA-sekvensen som en variabel <code class="docutils literal notranslate"><span class="pre">DNA</span></code> med en verdi <code class="docutils literal notranslate"><span class="pre">&quot;TACCGTAATATC&quot;</span></code>.</p></li>
+<li><p>Skriv ut DNA-sekvensen med <code class="docutils literal notranslate"><span class="pre">print(DNA)</span></code></p></li>
+</ol>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Lag en ordbok med navn <code class="docutils literal notranslate"><span class="pre">DNA_til_RNA</span></code> som oversetter basene i DNA til mRNA</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code> skal oversettes til <code class="docutils literal notranslate"><span class="pre">&quot;U&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;T&quot;</span></code> skal oversettes til <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;C&quot;</span></code> skal oversettes til <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> skal oversettes til <code class="docutils literal notranslate"><span class="pre">&quot;C&quot;</span></code></p></li>
+</ul>
+<p>Test ordboken ved å skrive <code class="docutils literal notranslate"><span class="pre">print(DNA_til_RNA[&quot;A&quot;])</span></code>. Dette skal skrive ut <code class="docutils literal notranslate"><span class="pre">U</span></code>. Gjør det samme med <code class="docutils literal notranslate"><span class="pre">T</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code> og <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Vi kan gå gjennom tekster i Python akkurat som om det var en liste med bokstaver. Her er et eksempel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;ABC&quot;</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tekst</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">[</span><span class="n">n</span><span class="p">])</span> <span class="c1"># Skriver ut hver bokstav</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
+B
+C
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Lag en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke som går gjennom <code class="docutils literal notranslate"><span class="pre">DNA</span></code> og skriver ut hver bokstav sånn som i eksempelet over.</p></li>
+<li><p>Modifiser programmet ditt til å sette inn hver bokstav i ordboken <code class="docutils literal notranslate"><span class="pre">DNA_til_RNA</span></code> og skriv ut bokstaven som kommer ut av ordboken (altså basen som skal være i mRNA).</p></li>
+</ol>
+</section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>I Python kan vi legge til tekst på en eksisterende tekst med <code class="docutils literal notranslate"><span class="pre">+=</span></code>. Her er et eksempel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># En tom tekst</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">tekst</span> <span class="o">+=</span> <span class="s2">&quot;A&quot;</span> <span class="c1"># Legger til &quot;A&quot; hver gang</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AAA
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Lag en variabel <code class="docutils literal notranslate"><span class="pre">mRNA</span></code> som en tom tekst.</p></li>
+<li><p>Modifiser programmet ditt fra tidligere til å legge til hver base som kommer ut av ordboken, til <code class="docutils literal notranslate"><span class="pre">mRNA</span></code>-teksten.</p></li>
+<li><p>Skriv ut teksten <code class="docutils literal notranslate"><span class="pre">mRNA</span></code>.</p></li>
+</ol>
+<p>Du skal nå ha et program som skriver ut en DNA-sekvens og den tilsvarende mRNA-sekvensen. En mulig utskrift kan se slik ut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span><span class="p">:</span>  <span class="n">TACCGTAATATC</span>
+<span class="n">mRNA</span><span class="p">:</span> <span class="n">AUGGCAUUAUAG</span>
+</pre></div>
+</div>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>Det er greit hvis kodeeksempelet her er litt vanskelig å forstå. Her er fokuset å bruke koden til det vi trenger. Se gjerne <a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html#for-lokker-med-startverdi-og-steglengde"><span class="std std-ref">for-løkker med startverdi og steglengde</span></a> og <a class="reference internal" href="../Grunnleggende/Lister.html#slicing"><span class="std std-ref">Hente ut flere objekter (slicing)</span></a> om du ønsker å forstå detaljene her.</p>
+</div></blockquote>
+<p>Her kommer det et eksempel på hvordan man kan trekke ut tre og tre bokstaver.</p>
+<p>Ved å bruke <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker på en annen måte kan vi gå gjennom hver tredje bokstav, i stedet for hver bokstav. Kombinerer vi dette med en spesiell måte å velge fra lister så kan vi dele opp en tekst i tre og tre bokstaver.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;ABCDEF&quot;</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tekst</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">[</span><span class="n">n</span><span class="p">:</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ABC
+DEF
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Naturfag"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Naturfag.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Naturfag 🦠</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Informasjonsteknologi 2 💾</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-proteinsyntesen">Hva er proteinsyntesen?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-og-trna">mRNA og tRNA</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
