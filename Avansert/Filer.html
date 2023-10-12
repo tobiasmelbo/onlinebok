@@ -360,13 +360,13 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hydrogen,H,[1],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Helium,He,[2],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Litium,Li,[2,1],Fast </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Litium,Li,[2 1],Fast </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Kjører vi programmet over så får vi filen <code class="docutils literal notranslate"><span class="pre">atomer.txt</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hydrogen</span><span class="p">,</span><span class="n">H</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span>
 <span class="n">Helium</span><span class="p">,</span><span class="n">He</span><span class="p">,[</span><span class="mi">2</span><span class="p">],</span><span class="n">Gass</span>
-<span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span>
+<span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span> <span class="mi">1</span><span class="p">],</span><span class="n">Gass</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">\n</span></code> betyr linjeskifte. Skriver vi ikke <code class="docutils literal notranslate"><span class="pre">\n</span></code> så får vi alt skrevet på samme linje.</p>
@@ -400,7 +400,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Hydrogen,H,[1],Gass 
 Helium,He,[2],Gass 
 Litium,Li,[2,1],Fast 
-S�lv,Ag,[2,8,18,18,1],Fast
+S�lv,Ag,[2 8 18 18 1],Fast
 </pre></div>
 </div>
 <p>Sånn kan man legge til data på en allerede eksisterende fil!</p>
@@ -413,15 +413,15 @@ S�lv,Ag,[2,8,18,18,1],Fast
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hydrogen,H,[1],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Helium,He,[2],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Litium,Li,[2,1],Fast </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sølv,Ag,[2,8,18,18,1],Fast&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Litium,Li,[2 1],Fast </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sølv,Ag,[2 8 18 18 1],Fast&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Da får vi filen:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hydrogen</span><span class="p">,</span><span class="n">H</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span> 
 <span class="n">Helium</span><span class="p">,</span><span class="n">He</span><span class="p">,[</span><span class="mi">2</span><span class="p">],</span><span class="n">Gass</span> 
-<span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Fast</span> 
-<span class="n">Sølv</span><span class="p">,</span><span class="n">Ag</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">Fast</span>
+<span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span> <span class="mi">1</span><span class="p">],</span><span class="n">Fast</span> 
+<span class="n">Sølv</span><span class="p">,</span><span class="n">Ag</span><span class="p">,[</span><span class="mi">2</span> <span class="mi">8</span> <span class="mi">18</span> <span class="mi">18</span> <span class="mi">1</span><span class="p">],</span><span class="n">Fast</span>
 </pre></div>
 </div>
 </section>
@@ -438,7 +438,7 @@ S�lv,Ag,[2,8,18,18,1],Fast
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hydrogen,H,[1],Gass \n&#39;, &#39;Helium,He,[2],Gass \n&#39;, &#39;Litium,Li,[2,1],Fast \n&#39;, &#39;Sølv,Ag,[2,8,18,18,1],Fast&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hydrogen,H,[1],Gass \n&#39;, &#39;Helium,He,[2],Gass \n&#39;, &#39;Litium,Li,[2 1],Fast \n&#39;, &#39;Sølv,Ag,[2 8 18 18 1],Fast&#39;]
 </pre></div>
 </div>
 </div>
@@ -460,14 +460,14 @@ S�lv,Ag,[2,8,18,18,1],Fast
 
 Helium,He,[2],Gass 
 
-Litium,Li,[2,1],Fast 
+Litium,Li,[2 1],Fast 
 
-Sølv,Ag,[2,8,18,18,1],Fast
+Sølv,Ag,[2 8 18 18 1],Fast
 </pre></div>
 </div>
 </div>
 </div>
-<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> når vi ønsker å lese fra en fil. Du klarer kanskje å gjette hva <code class="docutils literal notranslate"><span class="pre">r</span></code> står for på engelsk?</p>
+<p>Vi bruker altså <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> når vi ønsker å lese fra en fil. Du klarer kanskje å gjette hva <code class="docutils literal notranslate"><span class="pre">r</span></code> står for på engelsk?</p>
 <section id="hoppe-over-linjer">
 <h3>Hoppe over linjer<a class="headerlink" href="#hoppe-over-linjer" title="Permalink to this heading">#</a></h3>
 <p>Datafiler har ofte noen linjer med informasjon som ikke er selve datasettet som vi ønsker å lese.</p>
