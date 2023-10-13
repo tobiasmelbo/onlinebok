@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Proteinsyntesen &#8212; Programmering med Tobias.</title>
+    <title>Proteinsyntesen (under arbeid) &#8212; Programmering med Tobias.</title>
   
   
   
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Naturfag.html">Naturfag 🦠</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Proteinsyntesen</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Proteinsyntesen (under arbeid)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a></li>
@@ -310,7 +310,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Proteinsyntesen</h1>
+    <h1>Proteinsyntesen (under arbeid)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -344,8 +344,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="proteinsyntesen">
-<span id="id1"></span><h1>Proteinsyntesen<a class="headerlink" href="#proteinsyntesen" title="Permalink to this heading">#</a></h1>
+  <section id="proteinsyntesen-under-arbeid">
+<span id="proteinsyntesen"></span><h1>Proteinsyntesen (under arbeid)<a class="headerlink" href="#proteinsyntesen-under-arbeid" title="Permalink to this heading">#</a></h1>
 <div class="note admonition">
 <p class="admonition-title">Forutsetninger</p>
 <p>Dette programmeringsprosjektet forutsetter at man har vært gjennom delkapitlene</p>
@@ -512,7 +512,7 @@ C
 <blockquote>
 <div><p>Det er greit hvis kodeeksempelet her er litt vanskelig å forstå. Her er fokuset å bruke koden til det vi trenger. Se gjerne <a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html#for-lokker-med-startverdi-og-steglengde"><span class="std std-ref">for-løkker med startverdi og steglengde</span></a> og <a class="reference internal" href="../Grunnleggende/Lister.html#slicing"><span class="std std-ref">Hente ut flere objekter (slicing)</span></a> om du ønsker å forstå detaljene her.</p>
 </div></blockquote>
-<p>Her kommer det et eksempel på hvordan man kan trekke ut tre og tre bokstaver.</p>
+<p>Her kommer det et eksempel på hvordan man kan trekke ut tre og tre bokstaver fra en tekst.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;ABCDEF&quot;</span>
@@ -525,6 +525,46 @@ C
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ABC
 DEF
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;TACCGTAATATC&quot;</span>
+
+<span class="n">DNA_til_RNA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;T&quot;</span> <span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;C&quot;</span> <span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G&quot;</span> <span class="p">:</span> <span class="s2">&quot;C&quot;</span>
+<span class="p">}</span>
+
+<span class="n">RNA</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">DNA</span><span class="p">)):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">DNA</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+    <span class="n">RNA</span> <span class="o">+=</span> <span class="n">DNA_til_RNA</span><span class="p">[</span><span class="n">base</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DNA:&quot;</span><span class="p">,</span> <span class="n">DNA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RNA:&quot;</span><span class="p">,</span> <span class="n">RNA</span><span class="p">)</span>
+
+<span class="n">triplett_til_aminosyre</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;UUU&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span> 
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">RNA</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">RNA</span><span class="p">[</span><span class="n">n</span><span class="p">:</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DNA: TACCGTAATATC
+RNA: AUGGCAUUAUAG
+AUG
+GCA
+UUA
+UAG
 </pre></div>
 </div>
 </div>

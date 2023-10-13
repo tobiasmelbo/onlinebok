@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen (under arbeid)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a></li>
@@ -326,6 +326,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot"><code class="docutils literal notranslate"><span class="pre">scatter</span></code>-plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plot"><code class="docutils literal notranslate"><span class="pre">bar</span></code>-plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pie-plot"><code class="docutils literal notranslate"><span class="pre">pie()</span></code>-plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -471,6 +472,29 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="pie-plot">
+<h2><code class="docutils literal notranslate"><span class="pre">pie()</span></code>-plot<a class="headerlink" href="#pie-plot" title="Permalink to this heading">#</a></h2>
+<p>Vi kan lage sektordiagrammer eller kakediagrammer med <code class="docutils literal notranslate"><span class="pre">plt.pie()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">frukter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;eple&#39;</span><span class="p">,</span> <span class="s1">&#39;blåbær&#39;</span><span class="p">,</span> <span class="s1">&#39;drue&#39;</span><span class="p">,</span> <span class="s1">&#39;appelsin&#39;</span><span class="p">]</span>
+<span class="n">antall</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+<span class="n">fargeliste</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:green&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:orange&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">antall</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">frukter</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">fargeliste</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.1f%%</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Antall frukter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f0e2706254109eecf7b86fda7f9b0ee7677fe47546ccefbecb934c0f057bbe23.png" src="../_images/f0e2706254109eecf7b86fda7f9b0ee7677fe47546ccefbecb934c0f057bbe23.png" />
+</div>
+</div>
+<p>Vi ser at sektordiagrammet fungerer ganske likt som søylediagrammet. Parameteren <code class="docutils literal notranslate"><span class="pre">autopct</span></code> gjør sånn at de prosentvise inndelingene skrives inn i hver sektor.</p>
+</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
@@ -565,6 +589,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot"><code class="docutils literal notranslate"><span class="pre">scatter</span></code>-plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-plot"><code class="docutils literal notranslate"><span class="pre">bar</span></code>-plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pie-plot"><code class="docutils literal notranslate"><span class="pre">pie()</span></code>-plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
