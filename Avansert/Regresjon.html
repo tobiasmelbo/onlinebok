@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen (under arbeid)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a></li>
@@ -384,8 +384,8 @@ document.write(`
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
 
 <span class="n">pol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">deg</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pol</span><span class="p">)</span> <span class="c1"># Skriver ut funksjonsuttrykket for linjen</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Funksjonsuttrykk:&quot;</span><span class="p">,</span> <span class="n">pol</span><span class="p">)</span> <span class="c1"># Skriver ut funksjonsuttrykket for linjen</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI i 2023 ifølge modellen:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">pol</span><span class="p">(</span><span class="mi">8</span><span class="p">)))</span> <span class="c1"># Skriver ut KPI fra modellen.</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Datapunkter&quot;</span><span class="p">)</span>
@@ -398,7 +398,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>110.67499999999997 + 11.941666666666686 x**1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Funksjonsuttrykk: 110.67499999999997 + 11.941666666666686 x**1
 KPI i 2023 ifølge modellen: 126
 </pre></div>
 </div>
@@ -420,8 +420,8 @@ KPI i 2023 ifølge modellen: 126
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
 
 <span class="n">pol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">deg</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pol</span><span class="p">)</span> <span class="c1"># Skriver ut funksjonsuttrykket for linjen</span>
 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Funksjonsuttrykk:&quot;</span><span class="p">,</span> <span class="n">pol</span><span class="p">)</span> <span class="c1"># Skriver ut funksjonsuttrykket for linjen</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI i 2023 ifølge modellen:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">pol</span><span class="p">(</span><span class="mi">8</span><span class="p">)))</span> <span class="c1"># Skriver ut KPI fra modellen.</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Datapunkter&quot;</span><span class="p">)</span>
@@ -434,7 +434,7 @@ KPI i 2023 ifølge modellen: 126
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>108.41874999999996 + 11.941666666666686 x**1 + 5.264583333333324 x**2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Funksjonsuttrykk: 108.41874999999996 + 11.941666666666686 x**1 + 5.264583333333324 x**2
 KPI i 2023 ifølge modellen: 132
 </pre></div>
 </div>
@@ -478,7 +478,7 @@ KPI i 2023 ifølge modellen: 132
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Koeffisienter B, a, k: [441.4070449  232.58325342   0.51951266]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tobiasmelb\AppData\Local\Temp\ipykernel_4336\3620722994.py:9: RuntimeWarning: overflow encountered in power
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tobiasmelb\AppData\Local\Temp\ipykernel_22808\3620722994.py:9: RuntimeWarning: overflow encountered in power
   return B/(1 + a * np.e**(-k * x))
 </pre></div>
 </div>
