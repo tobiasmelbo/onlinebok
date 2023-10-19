@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen (under arbeid)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a></li>
@@ -322,13 +322,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-objekter">Hente ut objekter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-flere-objekter-slicing">Hente ut flere objekter (slicing)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-objekter">Hente objekter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-flere-objekter-slicing">Hente flere objekter (slicing)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-listen">Lengden av listen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fjerne-objekter">Fjerne objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekk-om-noe-er-i-en-liste">Sjekk om noe er i en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
@@ -372,9 +373,9 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="hente-ut-objekter">
-<h2>Hente ut objekter<a class="headerlink" href="#hente-ut-objekter" title="Permalink to this heading">#</a></h2>
-<p>Vi kan hente ut enkelte objekter fra en liste ved å bruke <em>indeksen</em> til objektet.</p>
+<section id="hente-objekter">
+<h2>Hente objekter<a class="headerlink" href="#hente-objekter" title="Permalink to this heading">#</a></h2>
+<p>Vi kan hente enkelte objekter fra en liste ved å bruke <em>indeksen</em> til objektet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alfa&quot;</span><span class="p">,</span> <span class="s2">&quot;Beta&quot;</span><span class="p">,</span> <span class="s2">&quot;Gamma&quot;</span><span class="p">]</span>
@@ -397,8 +398,8 @@ Gamma
 <p class="admonition-title">Merk deg</p>
 <p>I Python teller vi fra null i lister og <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker.</p>
 </div>
-<section id="hente-ut-flere-objekter-slicing">
-<span id="slicing"></span><h3>Hente ut flere objekter (slicing)<a class="headerlink" href="#hente-ut-flere-objekter-slicing" title="Permalink to this heading">#</a></h3>
+<section id="hente-flere-objekter-slicing">
+<span id="slicing"></span><h3>Hente flere objekter (slicing)<a class="headerlink" href="#hente-flere-objekter-slicing" title="Permalink to this heading">#</a></h3>
 <p>Vi kan hente ut flere objekter fra en liste ved å bruke en spesiell måte å indeksere som kalles <em>list slicing</em> på engelsk 🔪</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -485,6 +486,27 @@ Gamma
 </div>
 </div>
 </div>
+</section>
+<section id="fjerne-objekter">
+<h2>Fjerne objekter<a class="headerlink" href="#fjerne-objekter" title="Permalink to this heading">#</a></h2>
+<p>Vi kan fjerne objekter ved en spesifikk posisjon ved å bruke <code class="docutils literal notranslate"><span class="pre">pop()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
+
+<span class="n">liste</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Fjerner objektet ved indeks 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;3&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at objektet ved indeks <code class="docutils literal notranslate"><span class="pre">1</span></code> har blitt fjernet. Det betyr altså at det andre elementet i listen har blitt fjernet.</p>
 </section>
 <section id="ga-igjennom-alle-elementer">
 <h2>Gå igjennom alle elementer<a class="headerlink" href="#ga-igjennom-alle-elementer" title="Permalink to this heading">#</a></h2>
@@ -722,13 +744,14 @@ Gamma
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-objekter">Hente ut objekter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-flere-objekter-slicing">Hente ut flere objekter (slicing)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-objekter">Hente objekter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-flere-objekter-slicing">Hente flere objekter (slicing)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-listen">Lengden av listen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fjerne-objekter">Fjerne objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekk-om-noe-er-i-en-liste">Sjekk om noe er i en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
