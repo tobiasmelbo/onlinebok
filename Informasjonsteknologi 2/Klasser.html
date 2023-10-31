@@ -337,9 +337,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-metoden"><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
@@ -530,9 +532,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001F1945D1E10&gt;
-&lt;__main__.Farge object at 0x000001F1945D3070&gt;
-&lt;__main__.Farge object at 0x000001F1945D1DE0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x0000022170851990&gt;
+&lt;__main__.Farge object at 0x0000022170850070&gt;
+&lt;__main__.Farge object at 0x00000221708530D0&gt;
 </pre></div>
 </div>
 </div>
@@ -572,15 +574,54 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(31, 35, 92)
-(14, 158, 106)
-(94, 23, 251)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(203, 190, 230)
+(80, 233, 59)
+(6, 105, 208)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Vi ser at <code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen skriver ut dataene på måten som vi spesifiserte i <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden!</p>
 </section>
+</section>
+<section id="a-sjekke-typen-til-et-objekt">
+<h2>Å sjekke typen til et objekt.<a class="headerlink" href="#a-sjekke-typen-til-et-objekt" title="Permalink to this heading">#</a></h2>
+<p>Noen ganger ønsker vi å sjekke om et objekt har riktig type. For å gjøre det kan vi bruke <code class="docutils literal notranslate"><span class="pre">type()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elev</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+    
+<span class="k">class</span> <span class="nc">Lærer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+
+<span class="c1"># En funksjon som tar inn et objekt og hilser ulikt avhengig av hvilken type objekt det er.</span>
+<span class="k">def</span> <span class="nf">hils</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Elev</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hei, &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">navn</span> <span class="o">+</span> <span class="s2">&quot;. Har du gjort leksene dine?&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Lærer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hei, &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">navn</span> <span class="o">+</span> <span class="s2">&quot;. Har du drukket kaffen din enda?&quot;</span><span class="p">)</span>
+
+<span class="c1"># Lager en elev og hilser</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">Elev</span><span class="p">(</span><span class="s2">&quot;Bernica&quot;</span><span class="p">)</span>
+<span class="n">hils</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+
+<span class="c1"># Lager en lærer og hilser</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="n">Lærer</span><span class="p">(</span><span class="s2">&quot;Tobias&quot;</span><span class="p">)</span>
+<span class="n">hils</span><span class="p">(</span><span class="n">person2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hei, Bernica. Har du gjort leksene dine?
+Hei, Tobias. Har du drukket kaffen din enda?
+</pre></div>
+</div>
+</div>
+</div>
+<p>Funksjonen <code class="docutils literal notranslate"><span class="pre">hils()</span></code> svarer ulikt til ulike objekter ved å sjekke hvilken type objekt det er med <code class="docutils literal notranslate"><span class="pre">type()</span></code>-funksjonen.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -589,7 +630,10 @@ Mario er ved ( 1 , 0 )
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>Kopier <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen fra eksemplet over.</p>
 <p>Det finnes en sopp i posisjonen <span class="math notranslate nohighlight">\((2,1)\)</span>.</p>
-<p>Lag et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt som starter i <span class="math notranslate nohighlight">\((0,0)\)</span> og bruk metodene til å få <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objektet til å gå bort, hoppe, ta soppen og lande igjen.</p>
+<ol class="arabic simple">
+<li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt som starter i <span class="math notranslate nohighlight">\((0,0)\)</span>.</p></li>
+<li><p>Bruk metodene for å simulere at <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objektet går bort, hopper, tar soppen og lander igjen.</p></li>
+</ol>
 </section>
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
@@ -599,6 +643,17 @@ Mario er ved ( 1 , 0 )
 <li><p>Legg til en metode som heter <code class="docutils literal notranslate"><span class="pre">tut()</span></code>. Denne skal printe en tutelyd som tekst (f.eks <code class="docutils literal notranslate"><span class="pre">Tut!</span></code>).</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekt, skriv ut bilmerket og bruk <code class="docutils literal notranslate"><span class="pre">tut()</span></code>-metoden til objektet.</p></li>
 </ol>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>. Den skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">liste</span></code> som er tom fra starten av.</p>
+<ol class="arabic simple">
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">leggTil()</span></code> som legger inn en karakter i listen.</p></li>
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">seksere()</span></code> som returnerer antall seksere i listen.</p></li>
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">gjennomsnitt()</span></code> som returnerer gjennomsnittet av karakterene.</p></li>
+</ol>
+<p>Opprett et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>, legg inn 5 karakterer, skriv ut antall seksere og gjennomsnittet ved å bruke metodene til objektet.</p>
+<p>Bonus: Lag en <strong>str</strong>()-metode som gjør at man får en hensiktsmessig utskrift når printer et <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>-objekt.</p>
 </section>
 </section>
 </section>
@@ -674,9 +729,11 @@ Mario er ved ( 1 , 0 )
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-metoden"><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
