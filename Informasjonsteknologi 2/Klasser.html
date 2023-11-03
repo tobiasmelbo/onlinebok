@@ -338,10 +338,17 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dunder-metoder">Dunder-metoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem-metoden"><code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iadd-metoden"><code class="docutils literal notranslate"><span class="pre">__iadd__()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-metoden"><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
 </ul>
 </li>
 </ul>
@@ -532,9 +539,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x0000022170851990&gt;
-&lt;__main__.Farge object at 0x0000022170850070&gt;
-&lt;__main__.Farge object at 0x00000221708530D0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001D435743EB0&gt;
+&lt;__main__.Farge object at 0x000001D435740B80&gt;
+&lt;__main__.Farge object at 0x000001D435743220&gt;
 </pre></div>
 </div>
 </div>
@@ -574,9 +581,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(203, 190, 230)
-(80, 233, 59)
-(6, 105, 208)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(119, 51, 119)
+(247, 116, 97)
+(102, 237, 157)
 </pre></div>
 </div>
 </div>
@@ -623,6 +630,108 @@ Hei, Tobias. Har du drukket kaffen din enda?
 </div>
 <p>Funksjonen <code class="docutils literal notranslate"><span class="pre">hils()</span></code> svarer ulikt til ulike objekter ved å sjekke hvilken type objekt det er med <code class="docutils literal notranslate"><span class="pre">type()</span></code>-funksjonen.</p>
 </section>
+<section id="dunder-metoder">
+<h2>Dunder-metoder<a class="headerlink" href="#dunder-metoder" title="Permalink to this heading">#</a></h2>
+<p>Dunder-metoder (<em>double-underscore methods</em>) er metoder som har navn som starter og slutter med <code class="docutils literal notranslate"><span class="pre">__</span></code>. Vi har sett to eksempler allerede: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> og <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>. Dunder-metoder kan utvide objekters funksjonalitet til å fungere med eksisterende Python-funksjonalitet som printing med <code class="docutils literal notranslate"><span class="pre">print()</span></code>, indeksering med <code class="docutils literal notranslate"><span class="pre">[]</span></code>, legge til med <code class="docutils literal notranslate"><span class="pre">+=</span></code> osv…</p>
+<section id="getitem-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden<a class="headerlink" href="#getitem-metoden" title="Permalink to this heading">#</a></h3>
+<p>Vi kan indeksere i et objekt som en liste hvis vi utvider klassen med <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elevliste</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liste</span> <span class="o">=</span> <span class="n">liste</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+        <span class="k">return</span> <span class="n">string</span>
+    
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">elevliste</span> <span class="o">=</span> <span class="n">Elevliste</span><span class="p">([</span><span class="s2">&quot;Lasse&quot;</span><span class="p">,</span> <span class="s2">&quot;Isak&quot;</span><span class="p">,</span> <span class="s2">&quot;Nicolai&quot;</span><span class="p">,</span> <span class="s2">&quot;Stian&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lasse Isak Nicolai Stian 
+Isak
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iadd-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">__iadd__()</span></code>-metoden<a class="headerlink" href="#iadd-metoden" title="Permalink to this heading">#</a></h3>
+<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">+=</span></code>-operatoren på et objekt hvis vi utvider klassen med <code class="docutils literal notranslate"><span class="pre">__iadd__()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elevliste</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liste</span> <span class="o">=</span> <span class="n">liste</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+        <span class="k">return</span> <span class="n">string</span>
+    
+    <span class="k">def</span> <span class="fm">__iadd__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Elevliste</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">)</span>
+
+<span class="n">elevliste</span> <span class="o">=</span> <span class="n">Elevliste</span><span class="p">([</span><span class="s2">&quot;Isidor&quot;</span><span class="p">,</span> <span class="s2">&quot;Beate&quot;</span><span class="p">,</span> <span class="s2">&quot;Nicolai&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">)</span>
+<span class="n">elevliste</span> <span class="o">+=</span> <span class="s2">&quot;Kristoffer&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Isidor Beate Nicolai 
+Isidor Beate Nicolai Kristoffer 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="len-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden<a class="headerlink" href="#len-metoden" title="Permalink to this heading">#</a></h3>
+<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">len(obj)</span></code>-funksjonen i Python hvis vi utvider klassen vår med <code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elevliste</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liste</span> <span class="o">=</span> <span class="n">liste</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+        <span class="k">return</span> <span class="n">string</span>
+    
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">)</span>
+
+<span class="n">elevliste</span> <span class="o">=</span> <span class="n">Elevliste</span><span class="p">([</span><span class="s2">&quot;Linnea&quot;</span><span class="p">,</span> <span class="s2">&quot;André&quot;</span><span class="p">,</span> <span class="s2">&quot;Kieran&quot;</span><span class="p">,</span> <span class="s2">&quot;Isak&quot;</span><span class="p">,</span> <span class="s2">&quot;Nicolai&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elevliste</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linnea André Kieran Isak Nicolai 
+5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
@@ -653,7 +762,19 @@ Hei, Tobias. Har du drukket kaffen din enda?
 <li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">gjennomsnitt()</span></code> som returnerer gjennomsnittet av karakterene.</p></li>
 </ol>
 <p>Opprett et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>, legg inn 5 karakterer, skriv ut antall seksere og gjennomsnittet ved å bruke metodene til objektet.</p>
-<p>Bonus: Lag en <strong>str</strong>()-metode som gjør at man får en hensiktsmessig utskrift når printer et <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>-objekt.</p>
+<p>Bonus: Utvid klassen med en <strong>str</strong>()-metode som gjør at man får en hensiktsmessig utskrift når printer et <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>-objekt.</p>
+</section>
+<section id="oppgave-4-utfordring">
+<h3>Oppgave 4 (utfordring)<a class="headerlink" href="#oppgave-4-utfordring" title="Permalink to this heading">#</a></h3>
+<p>Kopier inn klassen <code class="docutils literal notranslate"><span class="pre">Bil</span></code> fra den tidligere oppgaven.</p>
+<ol class="arabic simple">
+<li><p>Utvid <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som returnerer bilmerket slik at vi kan bruke <code class="docutils literal notranslate"><span class="pre">print()</span></code> på <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter.</p></li>
+</ol>
+<p>Lag en ny klasse <code class="docutils literal notranslate"><span class="pre">PHus</span></code> som skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">plasser</span></code> som er tom fra starten av, i tillegg skal man kunne legge inn en maksgrense for antall biler som parameter til konstruktøren.</p>
+<ol class="arabic simple" start="2">
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">parker()</span></code> som legger en bil inn i <code class="docutils literal notranslate"><span class="pre">plasser</span></code>-listen, men dersom antall biler er over maksgrensen skal det printes at det ikke er plass og at bilen ikke ble lagt til.</p></li>
+<li><p>Utvid klassen <code class="docutils literal notranslate"><span class="pre">PHus()</span></code> med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som skriver ut bilmerkene til alle bilene som er parkert.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -730,10 +851,17 @@ Hei, Tobias. Har du drukket kaffen din enda?
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dunder-metoder">Dunder-metoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem-metoden"><code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iadd-metoden"><code class="docutils literal notranslate"><span class="pre">__iadd__()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-metoden"><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
 </ul>
 </li>
 </ul>
