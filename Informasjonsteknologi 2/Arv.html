@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Arv';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Klasser" href="Klasser.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,7 +149,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
@@ -171,8 +172,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen (under arbeid)</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Klasser.html">Klasser</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Arv</a></li>
 </ul>
 </li>
 </ul>
@@ -298,7 +300,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -314,6 +318,24 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-og-type"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -325,6 +347,165 @@ document.write(`
                   
   <section id="arv">
 <h1>Arv<a class="headerlink" href="#arv" title="Permalink to this heading">#</a></h1>
+<p>Arv er når man har en mer generell klasse som man lager subklasser av. Dette er veldig nyttig når vi skal modellere ting med objekter.</p>
+<section id="eksempel-bompengesystem">
+<h2>Eksempel: Bompengesystem<a class="headerlink" href="#eksempel-bompengesystem" title="Permalink to this heading">#</a></h2>
+<p>I dette eksempelet skal vi lage et bompengesystem.</p>
+<p>En bil er en form for kjøretøy. Hvis vi lager en klasse <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, så vil vi at <code class="docutils literal notranslate"><span class="pre">Bil</span></code> skal <em>arve</em> fra denne klassen.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Bil</span></code> er en <em>subklasse</em> av <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, mens <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> er bilers <em>superklasse</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
+    
+    <span class="k">def</span> <span class="nf">tut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Bil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span> <span class="c1"># Arver data og metoder fra Kjøretøy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">bil</span> <span class="o">=</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+<span class="n">bil</span><span class="o">.</span><span class="n">tut</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tut!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at alle <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>-objekter skal ha et <code class="docutils literal notranslate"><span class="pre">merke</span></code> og kan tute med <code class="docutils literal notranslate"><span class="pre">tut()</span></code>. Selv om metoden <code class="docutils literal notranslate"><span class="pre">tut()</span></code> ikke står under <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen, så ser vi at <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objektet har arvet denne metoden fra <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>-klassen.</p>
+</section>
+<section id="isinstance-og-type">
+<h2><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#isinstance-og-type" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(&lt;objekt&gt;,</span> <span class="pre">&lt;klasse&gt;)</span></code> lar oss sjekke om et objekt tilhører en klasse. Vi kan også sjekke superklasser med <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type(&lt;objekt&gt;)</span></code> lar oss sjekke om et objekt tilhører en spesifikk klasse. Dette lar oss ikke sjekke superklasser.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
+    
+    <span class="k">def</span> <span class="nf">tut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Bil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span> <span class="c1"># Arver data og metoder fra Kjøretøy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">bil</span> <span class="o">=</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">bil</span><span class="p">,</span> <span class="n">Kjøretøy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">bil</span><span class="p">,</span> <span class="n">Bil</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">bil</span><span class="p">)</span> <span class="o">==</span> <span class="n">Kjøretøy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">bil</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objektet gjelder både som <code class="docutils literal notranslate"><span class="pre">Bil</span></code> og <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> med <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>, men bare som <code class="docutils literal notranslate"><span class="pre">Bil</span></code> med <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
+</section>
+<section id="utvidet-eksempel-bompengesystem">
+<h2>Utvidet eksempel: Bompengesystem<a class="headerlink" href="#utvidet-eksempel-bompengesystem" title="Permalink to this heading">#</a></h2>
+<p>La oss utvide bompengesystemet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
+    
+    <span class="k">def</span> <span class="nf">tut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Lastebil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="k">class</span> <span class="nc">Bil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">class</span> <span class="nc">ELBil</span><span class="p">(</span><span class="n">Bil</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pris</span><span class="o">/</span><span class="mi">2</span>
+
+<span class="n">lastebil</span> <span class="o">=</span> <span class="n">Lastebil</span><span class="p">(</span><span class="s2">&quot;Mercedes&quot;</span><span class="p">)</span>
+<span class="n">bil</span> <span class="o">=</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+<span class="n">elbil</span> <span class="o">=</span> <span class="n">ELBil</span><span class="p">(</span><span class="s2">&quot;Tesla&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pris for lastebil:&quot;</span><span class="p">,</span> <span class="n">lastebil</span><span class="o">.</span><span class="n">pris</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pris for bil:&quot;</span><span class="p">,</span> <span class="n">bil</span><span class="o">.</span><span class="n">pris</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pris for elbil:&quot;</span><span class="p">,</span> <span class="n">elbil</span><span class="o">.</span><span class="n">pris</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pris for lastebil: 200
+Pris for bil: 50
+Pris for elbil: 25.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Studer eksempelet nøye.</p>
+<p>Vi ser at <code class="docutils literal notranslate"><span class="pre">Lastebil</span></code> og <code class="docutils literal notranslate"><span class="pre">Bil</span></code> arver fra <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> og har sine egne priser. <code class="docutils literal notranslate"><span class="pre">ELBil</span></code> arver fra <code class="docutils literal notranslate"><span class="pre">Bil</span></code> og har halvparten av prisen til <code class="docutils literal notranslate"><span class="pre">Bil</span></code>.</p>
+<section id="objektorienterte-modeller">
+<h3>Objektorienterte modeller<a class="headerlink" href="#objektorienterte-modeller" title="Permalink to this heading">#</a></h3>
+<p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1 🚗<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Kopier alle klassene fra eksempelet med bompengesystemet.</p>
+<ol class="arabic simple">
+<li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">bom(x)</span></code> som tar inn et objekt <code class="docutils literal notranslate"><span class="pre">x</span></code>. Funksjonen skal skrive ut hvilken type kjøretøy som kjører igjennom bommen, hvilket merke den har og hva prisen blir.</p></li>
+<li><p>Test funksjonen ved å lage et objekt av hver type, <code class="docutils literal notranslate"><span class="pre">Bil</span></code>, <code class="docutils literal notranslate"><span class="pre">Lastebil</span></code> og <code class="docutils literal notranslate"><span class="pre">ELBil</span></code>.</p></li>
+</ol>
+<blockquote>
+<div><p>Mulig utskrift: <code class="docutils literal notranslate"><span class="pre">En</span> <span class="pre">ELBil</span> <span class="pre">med</span> <span class="pre">merke</span> <span class="pre">Tesla</span> <span class="pre">har</span> <span class="pre">passert</span> <span class="pre">og</span> <span class="pre">må</span> <span class="pre">betale</span> <span class="pre">25kr</span></code>.</p>
+</div></blockquote>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2 🐄<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>I denne oppgaven skal vi organisere husdyr.</p>
+<ol class="arabic simple">
+<li><p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Husdyr</span></code>. Alle <code class="docutils literal notranslate"><span class="pre">Husdyr</span></code>-objekter skal ha et navn som settes som parameter til konstruktøren.</p></li>
+<li><p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Kylling</span></code>. Den skal arve fra <code class="docutils literal notranslate"><span class="pre">Husdyr</span></code> og ha en metode <code class="docutils literal notranslate"><span class="pre">lyd()</span></code> som returnerer <code class="docutils literal notranslate"><span class="pre">&quot;Kykkeliky!&quot;</span></code>.</p></li>
+<li><p>Lag to nye selvvalgte husdyr som også arver fra <code class="docutils literal notranslate"><span class="pre">Husdyr</span></code>-klassen. De skal også ha sin egen <code class="docutils literal notranslate"><span class="pre">lyd()</span></code>-metode som printer en egen lyd.</p></li>
+</ol>
+<p>Fint! Nå skal vi organisere disse dyrene i en liste.</p>
+<ol class="arabic simple" start="4">
+<li><p>Lag en liste med husdyr som heter <code class="docutils literal notranslate"><span class="pre">husdyrliste</span></code>. Legg inn et objekt av hver subklasse av <code class="docutils literal notranslate"><span class="pre">Husdyr</span></code> inn i denne listen.</p></li>
+<li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">hils(x)</span></code> som tar et objekt <code class="docutils literal notranslate"><span class="pre">x</span></code> som parameter. Den skal skrive ut navnet til dyret og hvilken lyd det lager ved å bruke <code class="docutils literal notranslate"><span class="pre">lyd()</span></code>-metoden.</p></li>
+<li><p>Send hvert objekt i husdyrlisten inn i <code class="docutils literal notranslate"><span class="pre">hils()</span></code>-funksjonen.</p></li>
+</ol>
+<blockquote>
+<div><p>Mulig utskrift: <code class="docutils literal notranslate"><span class="pre">Bertha</span> <span class="pre">sier</span> <span class="pre">Kykkeliky!</span></code></p>
+</div></blockquote>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -358,6 +539,15 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Klasser.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Klasser</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -367,6 +557,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-og-type"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

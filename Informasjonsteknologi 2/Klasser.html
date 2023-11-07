@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Klasser';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arv" href="Arv.html" />
     <link rel="prev" title="Informasjonsteknologi 2 💾" href="Informasjonsteknologi%202.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
 </ul>
 </li>
 </ul>
@@ -333,7 +335,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-nytt-eksempel-mario">Et nytt eksempel: Mario</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-lage-og-lagre-flere-objekter">Å lage og lagre flere objekter</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-flere-objekter-i-en-liste">Eksempel: Flere objekter i en liste</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-metoden"><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden</a></li>
 </ul>
 </li>
@@ -345,10 +347,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🚗</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏫</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 💸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🅿️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6 📦</a></li>
 </ul>
 </li>
 </ul>
@@ -368,6 +372,7 @@ document.write(`
 <ul class="simple">
 <li><p>Strings er objekter</p></li>
 <li><p>Lister er objekter</p></li>
+<li><p>Ordbøker er objekter</p></li>
 <li><p>Pakker er objekter</p></li>
 <li><p>Filer er objekter</p></li>
 <li><p>… og masse, masse mer</p></li>
@@ -414,7 +419,7 @@ Teller: 1
 </div>
 </div>
 </div>
-<p>Dette programmet lager en klasse <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Deretter opprettes et objekt <code class="docutils literal notranslate"><span class="pre">t</span></code> som er av klassen <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Så bruker vi <code class="docutils literal notranslate"><span class="pre">tell()</span></code>-metoden (som er innebygd i objektet <code class="docutils literal notranslate"><span class="pre">t</span></code>) for å telle oppover.</p>
+<p>Dette programmet lager en klasse <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Deretter opprettes et objekt <code class="docutils literal notranslate"><span class="pre">t</span></code> som er av klassen <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Så bruker vi <code class="docutils literal notranslate"><span class="pre">tell()</span></code>-metoden (som er innebygd i objektet <code class="docutils literal notranslate"><span class="pre">t</span></code>) for å telle oppover. Hver gang vi gjør et kall på <code class="docutils literal notranslate"><span class="pre">tell()</span></code>-metoden, øker antallet.</p>
 <section id="konstruktoren-og-metoder">
 <h3>Konstruktøren og metoder<a class="headerlink" href="#konstruktoren-og-metoder" title="Permalink to this heading">#</a></h3>
 <p><em>Konstruktøren</em> <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> er en spesiell funksjon som lar oss definere hva som skal skje når et objekt opprettes. Vi kan for eksempel bestemme hvilke data som objektet skal inneholde fra starten av.</p>
@@ -507,9 +512,9 @@ Mario er ved ( 1 , 0 )
 <p>Legg merke til konstruktøren i <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen. <code class="docutils literal notranslate"><span class="pre">self</span></code>-parameteret er nødvendig for å kunne sette data som objektet skal inneholde, men utenom <code class="docutils literal notranslate"><span class="pre">self</span></code> har funksjonen to parametre, <code class="docutils literal notranslate"><span class="pre">x</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span></code>. Disse gjør at vi kan (og må) definere en startposisjon når vi oppretter <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekter, som du ser i koden når vi lager et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt med <code class="docutils literal notranslate"><span class="pre">Mario(0,</span> <span class="pre">0)</span></code>.</p>
 <p>I tillegg kan vi se at metodene <code class="docutils literal notranslate"><span class="pre">beveg_høyre()</span></code>, <code class="docutils literal notranslate"><span class="pre">beveg_venstre()</span></code>, <code class="docutils literal notranslate"><span class="pre">hopp()</span></code> og <code class="docutils literal notranslate"><span class="pre">fall()</span></code> kaller på en annen metode i samme objekt ved navn <code class="docutils literal notranslate"><span class="pre">skriv_posisjon()</span></code>. Det gjør at objektets posisjon skrives ut hver gang objektet flyttes på.</p>
 </section>
-<section id="a-lage-og-lagre-flere-objekter">
-<h2>Å lage og lagre flere objekter<a class="headerlink" href="#a-lage-og-lagre-flere-objekter" title="Permalink to this heading">#</a></h2>
-<p>Vi ønsker ofte å lagre objekter i en liste.</p>
+<section id="eksempel-flere-objekter-i-en-liste">
+<h2>Eksempel: Flere objekter i en liste<a class="headerlink" href="#eksempel-flere-objekter-i-en-liste" title="Permalink to this heading">#</a></h2>
+<p>Vi ønsker ofte å lagre objekter i lister.</p>
 <p>Farger lagres ofte digitalt som en kombinasjon av rød, grønn og blå. Hver verdi lagres i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>. Vi kan for eksempel representere sort som <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, hvit som <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></code>, rød som <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, grønn som <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></code>, blå som <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255)</span></code> og gul som <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">0)</span></code>.</p>
 <p>La oss lage en klasse <code class="docutils literal notranslate"><span class="pre">Farge</span></code> som gjør at vi kan lage <code class="docutils literal notranslate"><span class="pre">Farge</span></code>-objekter med forskjellige farger. Deretter kan vi lagre disse i en liste.</p>
 <div class="cell docutils container">
@@ -539,9 +544,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x00000259DF175AE0&gt;
-&lt;__main__.Farge object at 0x00000259DF177340&gt;
-&lt;__main__.Farge object at 0x00000259DF177160&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001EC2EAF5BA0&gt;
+&lt;__main__.Farge object at 0x000001EC2EAF7A30&gt;
+&lt;__main__.Farge object at 0x000001EC2EAF41C0&gt;
 </pre></div>
 </div>
 </div>
@@ -581,9 +586,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(45, 124, 54)
-(85, 67, 161)
-(229, 11, 45)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(122, 253, 141)
+(0, 201, 244)
+(244, 217, 74)
 </pre></div>
 </div>
 </div>
@@ -632,10 +637,10 @@ Hei, Tobias. Har du drukket kaffen din enda?
 </section>
 <section id="dunder-metoder">
 <h2>Dunder-metoder<a class="headerlink" href="#dunder-metoder" title="Permalink to this heading">#</a></h2>
-<p>Dunder-metoder (<em>double-underscore methods</em>) er metoder som har navn som starter og slutter med <code class="docutils literal notranslate"><span class="pre">__</span></code>. Vi har sett to eksempler allerede: <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> og <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>. Dunder-metoder kan utvide objekters funksjonalitet til å fungere med eksisterende Python-funksjonalitet som printing med <code class="docutils literal notranslate"><span class="pre">print()</span></code>, indeksering med <code class="docutils literal notranslate"><span class="pre">[]</span></code>, legge til med <code class="docutils literal notranslate"><span class="pre">+=</span></code> osv…</p>
+<p>Dunder-metoder (<em>double-underscore methods</em>) er metoder som har navn som starter og slutter med <code class="docutils literal notranslate"><span class="pre">__</span></code>. Vi har sett to eksempler allerede; <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> og <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>. Dunder-metoder kan utvide objekters funksjonalitet til å fungere med eksisterende operatorer og funksjoner som å printe med <code class="docutils literal notranslate"><span class="pre">print()</span></code>, indeksere med <code class="docutils literal notranslate"><span class="pre">[]</span></code>, legge til med <code class="docutils literal notranslate"><span class="pre">+=</span></code> osv…</p>
 <section id="getitem-metoden">
 <h3><code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden<a class="headerlink" href="#getitem-metoden" title="Permalink to this heading">#</a></h3>
-<p>Vi kan indeksere i et objekt som en liste hvis vi utvider klassen med <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden.</p>
+<p>Vi kan indeksere i et objekt med klammeparantes <code class="docutils literal notranslate"><span class="pre">[]</span></code> som en liste hvis vi utvider klassen med <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elevliste</span><span class="p">:</span>
@@ -701,7 +706,7 @@ Isidor Beate Nicolai Kristoffer
 </section>
 <section id="len-metoden">
 <h3><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden<a class="headerlink" href="#len-metoden" title="Permalink to this heading">#</a></h3>
-<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">len(obj)</span></code>-funksjonen i Python hvis vi utvider klassen vår med <code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden.</p>
+<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">len()</span></code>-funksjonen på objektet vårt hvis vi utvider klassen vår med <code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elevliste</span><span class="p">:</span>
@@ -730,13 +735,14 @@ Isidor Beate Nicolai Kristoffer
 </div>
 </div>
 </div>
+<p>Dunder-metoder lar oss altså spesifisere hvordan vi ønsker at objektene våre skal fungere i koden med de operatorene og funksjonene som vi kjenner til fra før av. En oversikt over flere dunder-metoder kan du finne i dokumentasjonen <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html">her</a>.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 1 🍄<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>Kopier <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen fra eksemplet over.</p>
 <p>Det finnes en sopp i posisjonen <span class="math notranslate nohighlight">\((2,1)\)</span>.</p>
 <ol class="arabic simple">
@@ -745,7 +751,7 @@ Isidor Beate Nicolai Kristoffer
 </ol>
 </section>
 <section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 2 🚗<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal vi lage en enkel klasse.</p>
 <ol class="arabic simple">
 <li><p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Bil</span></code>. Bil-objekter skal ha et <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> som en string. <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> skal settes som parameter til konstruktøren.</p></li>
@@ -754,7 +760,7 @@ Isidor Beate Nicolai Kristoffer
 </ol>
 </section>
 <section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 3 🏫<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
 <p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>. Den skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">liste</span></code> som er tom fra starten av.</p>
 <ol class="arabic simple">
 <li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">leggTil()</span></code> som legger inn en karakter i listen.</p></li>
@@ -764,8 +770,17 @@ Isidor Beate Nicolai Kristoffer
 <p>Opprett et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>, legg inn 5 karakterer, skriv ut antall seksere og gjennomsnittet ved å bruke metodene til objektet.</p>
 <p>Bonus: Utvid klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som gjør at man får en hensiktsmessig utskrift når printer et <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>-objekt.</p>
 </section>
-<section id="oppgave-4-utfordring">
-<h3>Oppgave 4 (utfordring)<a class="headerlink" href="#oppgave-4-utfordring" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-4">
+<h3>Oppgave 4 💸<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Lag en Python-klasse kalt “Bankkonto” med “kontonummer” og “saldo” som data. Disse skal settes som parameter til konstruktøren.</p>
+<ol class="arabic simple">
+<li><p>Legg til metoder for innskudd og uttak fra kontoen, og skriv ut saldoen etter hver operasjon.</p></li>
+<li><p>Legg til en feilmelding når man prøver å ta ut mer penger enn man har.</p></li>
+<li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code>-objekt og test om metodene dine fungerer som de skal.</p></li>
+</ol>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5 🅿️<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
 <p>Kopier inn klassen <code class="docutils literal notranslate"><span class="pre">Bil</span></code> fra den tidligere oppgaven.</p>
 <ol class="arabic simple">
 <li><p>Utvid <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som returnerer bilmerket slik at vi kan bruke <code class="docutils literal notranslate"><span class="pre">print()</span></code> på <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter.</p></li>
@@ -776,6 +791,12 @@ Isidor Beate Nicolai Kristoffer
 <li><p>Utvid klassen <code class="docutils literal notranslate"><span class="pre">PHus</span></code> med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som skriver ut bilmerkene til alle bilene som er parkert.</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objekt og legg inn <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter helt til maksgrensen er nådd. Skriv ut <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objektet til slutt.</p></li>
 </ol>
+</section>
+<section id="oppgave-6">
+<h3>Oppgave 6 📦<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
+<p>Lag en klasse “Varelager” som inneholder en liste over varer. Listen skal være tom når objektet dannes.</p>
+<p>Varene skal være ordbøker med nøklene “navn,” “pris,” og “antall på lager”.</p>
+<p>Legg til metoder for å legge til varer i lageret, fjerne varer fra lageret og skrive ut en liste over tilgjengelige varer.</p>
 </section>
 </section>
 </section>
@@ -820,6 +841,15 @@ Isidor Beate Nicolai Kristoffer
         <p class="prev-next-title">Informasjonsteknologi 2 💾</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Arv.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arv</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -847,7 +877,7 @@ Isidor Beate Nicolai Kristoffer
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-nytt-eksempel-mario">Et nytt eksempel: Mario</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-lage-og-lagre-flere-objekter">Å lage og lagre flere objekter</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-flere-objekter-i-en-liste">Eksempel: Flere objekter i en liste</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-metoden"><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden</a></li>
 </ul>
 </li>
@@ -859,10 +889,12 @@ Isidor Beate Nicolai Kristoffer
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🚗</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏫</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 💸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🅿️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6 📦</a></li>
 </ul>
 </li>
 </ul>

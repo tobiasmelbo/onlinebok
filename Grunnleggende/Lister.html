@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
 </ul>
 </li>
 </ul>
@@ -325,10 +326,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-objekter">Hente objekter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-flere-objekter-slicing">Hente flere objekter (slicing)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-objekter">Hente objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-listen">Lengden av listen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
@@ -337,10 +335,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekk-om-noe-er-i-en-liste">Sjekk om noe er i en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sortere-en-liste">Sortere en liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-metoden"><code class="docutils literal notranslate"><span class="pre">count()</span></code>-metoden</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍲</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🧍‍♀️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring) 🎲</a></li>
 </ul>
 </li>
 </ul>
@@ -401,29 +400,24 @@ Gamma
 <p class="admonition-title">Merk deg</p>
 <p>I Python teller vi fra null i lister og <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker.</p>
 </div>
-<section id="hente-flere-objekter-slicing">
-<span id="slicing"></span><h3>Hente flere objekter (slicing)<a class="headerlink" href="#hente-flere-objekter-slicing" title="Permalink to this heading">#</a></h3>
+<div class="tip admonition" id="slicing">
+<p class="admonition-title">Hente flere objekter (slicing)</p>
 <p>Vi kan hente ut flere objekter fra en liste ved å bruke en spesiell måte å indeksere som kalles <em>list slicing</em> på engelsk 🔪</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Indeksene fra og med 0 til 3 (ikke med 3)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span> <span class="c1"># Indeksene fra og med 3 til 6 (ikke med 6)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">liste</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span> <span class="c1"># Indeksene fra og med 6 til 9 (ikke med 9)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2]
-[3, 4, 5]
-[6, 7, 8]
+<p>Dette programmet gir oss</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>Som vi ser kan vi hente ut flere objekter fra en liste ved å indeksere på denne måten: <code class="docutils literal notranslate"><span class="pre">liste[x:y]</span></code>. Da får vi alle objektene fra og med indeks <code class="docutils literal notranslate"><span class="pre">x</span></code> til og med <code class="docutils literal notranslate"><span class="pre">y-1</span></code>.</p>
-</section>
+</div>
 </section>
 <section id="lengden-av-listen">
 <h2>Lengden av listen<a class="headerlink" href="#lengden-av-listen" title="Permalink to this heading">#</a></h2>
@@ -630,12 +624,32 @@ Gamma
 </div>
 </div>
 </section>
+<section id="count-metoden">
+<h2><code class="docutils literal notranslate"><span class="pre">count()</span></code>-metoden<a class="headerlink" href="#count-metoden" title="Permalink to this heading">#</a></h2>
+<p>For å telle antallet av et spesifikt objekt i en liste kan vi bruke <code class="docutils literal notranslate"><span class="pre">count()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Firere:&quot;</span><span class="p">,</span> <span class="n">liste</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># Skriver ut hvor mange firere som er i listen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Toere:&quot;</span><span class="p">,</span> <span class="n">liste</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Skriver ut hvor mange toere som er i listen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Firere: 2
+Toere: 1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Lag en liste med forskjellige middager 🍲.</p>
+<h3>Oppgave 1 🍲<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Lag en liste med forskjellige middager.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">middager</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
@@ -648,8 +662,8 @@ Gamma
 </ol>
 </section>
 <section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Lag en liste med forskjellige høyder 🧍‍♀️. Du kan samle inn fra folk du kjenner, eller finne på noen selv.</p>
+<h3>Oppgave 2 🧍‍♀️<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Lag en liste med forskjellige høyder. Du kan samle inn fra folk du kjenner, eller finne på noen selv.</p>
 <aside class="sidebar">
 <p>Man finner gjennomsnitt ved å ta summen av alle tallene, og dele på hvor mange tall det er.</p>
 <p>Gjennomsnittet av tallene <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code> og <code class="docutils literal notranslate"><span class="pre">3</span></code> er <span class="math notranslate nohighlight">\(\frac{1+2+3}{3}=2\)</span></p>
@@ -662,11 +676,11 @@ Gamma
 </ol>
 </section>
 <section id="oppgave-3-utfordring">
-<h3>Oppgave 3 (utfordring)<a class="headerlink" href="#oppgave-3-utfordring" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 3 (utfordring) 🎲<a class="headerlink" href="#oppgave-3-utfordring" title="Permalink to this heading">#</a></h3>
 <blockquote>
 <div><p><em>Se <a class="reference internal" href="Kalkulatorer%20og%20pakker.html#random-pakken"><span class="std std-ref">random-pakken</span></a> under <a class="reference internal" href="Kalkulatorer%20og%20pakker.html#kalkulatorer-og-pakker"><span class="std std-ref">Kalkulatorer og pakker</span></a> for hvordan man kan generere tilfeldige tall</em> og <a class="reference internal" href="L%C3%B8kker.html#lokker"><span class="std std-ref">Løkker</span></a> for hvordan man lager løkker.</p>
 </div></blockquote>
-<p>Vi skal se litt nærmere på terningkast 🎲.</p>
+<p>Vi skal se litt nærmere på terningkast.</p>
 <p>Start med en tom liste som heter <code class="docutils literal notranslate"><span class="pre">terningkast</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">terningkast</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
@@ -747,10 +761,7 @@ Gamma
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-objekter">Hente objekter</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-flere-objekter-slicing">Hente flere objekter (slicing)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-objekter">Hente objekter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lengden-av-listen">Lengden av listen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maksimum-minimum-og-sum">Maksimum, minimum og sum</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-objekter">Legge til objekter</a></li>
@@ -759,10 +770,11 @@ Gamma
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sjekk-om-noe-er-i-en-liste">Sjekk om noe er i en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reversere-en-liste">Reversere en liste</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sortere-en-liste">Sortere en liste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#count-metoden"><code class="docutils literal notranslate"><span class="pre">count()</span></code>-metoden</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍲</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🧍‍♀️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring) 🎲</a></li>
 </ul>
 </li>
 </ul>
