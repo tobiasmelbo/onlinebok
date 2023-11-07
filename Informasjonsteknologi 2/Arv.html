@@ -325,10 +325,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-og-type"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
@@ -469,10 +467,10 @@ Pris for elbil: 25.0
 </div>
 <p>Studer eksempelet nøye.</p>
 <p>Vi ser at <code class="docutils literal notranslate"><span class="pre">Lastebil</span></code> og <code class="docutils literal notranslate"><span class="pre">Bil</span></code> arver fra <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> og har sine egne priser. <code class="docutils literal notranslate"><span class="pre">ELBil</span></code> arver fra <code class="docutils literal notranslate"><span class="pre">Bil</span></code> og har halvparten av prisen til <code class="docutils literal notranslate"><span class="pre">Bil</span></code>.</p>
-<section id="objektorienterte-modeller">
-<h3>Objektorienterte modeller<a class="headerlink" href="#objektorienterte-modeller" title="Permalink to this heading">#</a></h3>
-<p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
 </section>
+<section id="objektorienterte-modeller">
+<h2>Objektorienterte modeller<a class="headerlink" href="#objektorienterte-modeller" title="Permalink to this heading">#</a></h2>
+<p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -509,7 +507,7 @@ Pris for elbil: 25.0
 </section>
 <section id="oppgave-3">
 <h3>Oppgave 3 💸<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
-<p>Vi skal lage et system for bankkontoer.</p>
+<p>I denne oppgaven skal vi lage et system for bankkontoer.</p>
 <ol class="arabic simple">
 <li><p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code>. En bankkonto skal ha en <code class="docutils literal notranslate"><span class="pre">saldo</span></code> (tall) som settes som parameter til konstruktøren.</p></li>
 <li><p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Sparekonto</span></code>. En <code class="docutils literal notranslate"><span class="pre">Sparekonto</span></code> skal arve fra <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code> og i tillegg ha en <code class="docutils literal notranslate"><span class="pre">rente</span></code> på 3.5%. Det kan være lurt å lagre dette som et desimaltall istedet.</p></li>
@@ -521,6 +519,7 @@ Pris for elbil: 25.0
 <li><p>Utvid <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code> med en metode <code class="docutils literal notranslate"><span class="pre">oppdater()</span></code>. Denne skal regne ut hvor mye penger man skal få i rente og legge det til på saldoen.</p></li>
 <li><p>Opprett et <code class="docutils literal notranslate"><span class="pre">Sparekonto</span></code>-objekt og et <code class="docutils literal notranslate"><span class="pre">Brukskonto</span></code>-objekt med like mye penger i saldo. Hvor mye penger har hver konto i saldo etter fem oppdateringer?</p></li>
 </ol>
+<p>Bonus: Gjør slik at man får en feilmelding (eller bare printet til terminalen) når man forsøker å opprette et objekt av <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code> (altså ikke <code class="docutils literal notranslate"><span class="pre">Sparekonto</span></code> eller <code class="docutils literal notranslate"><span class="pre">Brukskonto</span></code>). Dette kan du gjøre ved å endre på <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>-metoden eller <code class="docutils literal notranslate"><span class="pre">__new__()</span></code>-metoden.</p>
 </section>
 </section>
 </section>
@@ -585,10 +584,8 @@ Pris for elbil: 25.0
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-og-type"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
