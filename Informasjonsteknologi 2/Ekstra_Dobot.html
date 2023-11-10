@@ -326,8 +326,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koordinatsystemet">Koordinatsystemet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viktige-kommandoer">Viktige kommandoer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setptpcommonparams-api-v-a-isqueued">SetPTPCommonParams(api, v, a, isQueued)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sethomeparams-api-x-y-z-r-isqueued">SetHOMEParams(api, x,  y, z, r, isQueued)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-setptpcommonparams-api-v-a-isqueued">dType.SetPTPCommonParams(api, v, a, isQueued)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-sethomeparams-api-x-y-z-r-isqueued">dType.SetHOMEParams(api, x,  y, z, r, isQueued)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-getpose-api">dType.GetPose(api)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-setptpcmd-api-x-y-z-r-isqueued">dType.SetPTPCmd(api, x, y, z, r, isQueued)</a></li>
 </ul>
@@ -360,8 +360,8 @@ document.write(`
 </section>
 <section id="viktige-kommandoer">
 <h2>Viktige kommandoer<a class="headerlink" href="#viktige-kommandoer" title="Permalink to this heading">#</a></h2>
-<section id="setptpcommonparams-api-v-a-isqueued">
-<h3>SetPTPCommonParams(api, v, a, isQueued)<a class="headerlink" href="#setptpcommonparams-api-v-a-isqueued" title="Permalink to this heading">#</a></h3>
+<section id="dtype-setptpcommonparams-api-v-a-isqueued">
+<h3>dType.SetPTPCommonParams(api, v, a, isQueued)<a class="headerlink" href="#dtype-setptpcommonparams-api-v-a-isqueued" title="Permalink to this heading">#</a></h3>
 <p>For å sette fart og akselerasjon bruker vi <code class="docutils literal notranslate"><span class="pre">SetPTPCommonParams</span></code>.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">api</span></code> setter vi til <code class="docutils literal notranslate"><span class="pre">api</span></code> for alle kommandoer.</p></li>
@@ -374,8 +374,8 @@ document.write(`
 </div>
 <p>Det er fint å starte med halv fart og akselerasjon i begynnelsen.</p>
 </section>
-<section id="sethomeparams-api-x-y-z-r-isqueued">
-<h3>SetHOMEParams(api, x,  y, z, r, isQueued)<a class="headerlink" href="#sethomeparams-api-x-y-z-r-isqueued" title="Permalink to this heading">#</a></h3>
+<section id="dtype-sethomeparams-api-x-y-z-r-isqueued">
+<h3>dType.SetHOMEParams(api, x,  y, z, r, isQueued)<a class="headerlink" href="#dtype-sethomeparams-api-x-y-z-r-isqueued" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">HOME</span></code> er startstedet til armen. Denne kommandoen tar et sett med koordinater som vi ønsker som en startposisjon for armen.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SetHOMEParams</span><span class="p">(</span><span class="n">api</span><span class="p">,</span> <span class="mi">145</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -463,8 +463,8 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koordinatsystemet">Koordinatsystemet</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viktige-kommandoer">Viktige kommandoer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setptpcommonparams-api-v-a-isqueued">SetPTPCommonParams(api, v, a, isQueued)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sethomeparams-api-x-y-z-r-isqueued">SetHOMEParams(api, x,  y, z, r, isQueued)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-setptpcommonparams-api-v-a-isqueued">dType.SetPTPCommonParams(api, v, a, isQueued)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-sethomeparams-api-x-y-z-r-isqueued">dType.SetHOMEParams(api, x,  y, z, r, isQueued)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-getpose-api">dType.GetPose(api)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtype-setptpcmd-api-x-y-z-r-isqueued">dType.SetPTPCmd(api, x, y, z, r, isQueued)</a></li>
 </ul>
