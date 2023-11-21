@@ -169,11 +169,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Formler.html">Formler</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen (under arbeid)</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Gjenbrukbar kode</a></li>
@@ -328,6 +332,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-og-bruke-programmer-i-andre-programmer">Lage og bruke programmer i andre programmer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjon-med-docstrings">Dokumentasjon med docstrings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generere-dokumentasjon-med-pydoc">Generere dokumentasjon med <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -405,7 +410,7 @@ Sirkel med radius: 2, areal: 12.57 og omkrets: 12.57
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Dette programmet gir en klasse som gjør at man kan lage et skalerbart sirkelobjekt.</span>
 
-<span class="sd">Typisk eksempel av bruk:</span>
+<span class="sd">Typisk eksempel på bruk:</span>
 
 <span class="sd">    sirkel = Sirkel(1)</span>
 <span class="sd">    print(sirkel)</span>
@@ -455,77 +460,21 @@ Sirkel med radius: 2, areal: 12.57 og omkrets: 12.57
 </div>
 </div>
 </div>
-<p>Vi kan nå enkelt hente dokumentasjonen til dette programmet ved å bruke <code class="docutils literal notranslate"><span class="pre">help()</span></code>-funksjonen i Python.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sirkelregner</span>
-<span class="n">help</span><span class="p">(</span><span class="n">sirkelregner</span><span class="p">)</span>
+<p>Vi kan nå enkelt hente hele dokumentasjonen til dette programmet ved å bruke <code class="docutils literal notranslate"><span class="pre">help()</span></code>-funksjonen i Python.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sirkelregner</span>
+<span class="n">help</span><span class="p">(</span><span class="n">sirkelregner</span><span class="p">)</span>               <span class="c1"># Gir hele dokumentasjonen</span>
+<span class="n">help</span><span class="p">(</span><span class="n">sirkelregner</span><span class="o">.</span><span class="n">Sirkel</span><span class="p">)</span>        <span class="c1"># Gir dokumentasjonen for Sirkel-klassen</span>
+<span class="n">help</span><span class="p">(</span><span class="n">sirkelregner</span><span class="o">.</span><span class="n">Sirkel</span><span class="o">.</span><span class="n">skaler</span><span class="p">)</span> <span class="c1"># Gir dokumentasjonen for skaler()-metoden</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module sirkelregner:
-
-NAME
-    sirkelregner - Dette programmet gir en klasse som gjør at man kan lage et skalerbart sirkelobjekt.
-
-DESCRIPTION
-    Typisk eksempel av bruk:
-    
-        sirkel = Sirkel(1)
-        print(sirkel)
-        sirkel.skaler(2)
-        print(sirkel)
-
-CLASSES
-    builtins.object
-        Sirkel
-    
-    class Sirkel(builtins.object)
-     |  Sirkel(r)
-     |  
-     |  En klasse som håndterer sirkelobjekter
-     |  
-     |  Attributes:
-     |      r: en radius som et tall.
-     |      areal: arealet regnet fra radius
-     |      omkrets: omkretsen regnet fra radius
-     |  
-     |  Methods defined here:
-     |  
-     |  __init__(self, r)
-     |      Initialiserer et sirkelobjekt med en radius r.
-     |      
-     |      Args:
-     |          r: en radius som et tall
-     |  
-     |  __str__(self)
-     |      Gir en string når man printer sirkelobjekter.
-     |      
-     |      Returns:
-     |          En string som inneholder radius, areal og omkrets av sirkelen.
-     |  
-     |  skaler(self, k)
-     |      Skalerer sirkelobjektet med en faktor k.
-     |      
-     |      Args:
-     |          k: en faktor (tall) som skal ganges med radius.
-     |  
-     |  ----------------------------------------------------------------------
-     |  Data descriptors defined here:
-     |  
-     |  __dict__
-     |      dictionary for instance variables (if defined)
-     |  
-     |  __weakref__
-     |      list of weak references to the object (if defined)
-
-FILE
-    c:\users\skmel\onedrive - viken fylkeskommune\dokumenter\informatikk\bok\informasjonsteknologi 2\sirkelregner.py
+</section>
+<section id="generere-dokumentasjon-med-pydoc">
+<h2>Generere dokumentasjon med <code class="docutils literal notranslate"><span class="pre">pydoc</span></code><a class="headerlink" href="#generere-dokumentasjon-med-pydoc" title="Permalink to this heading">#</a></h2>
+<p>Python-installasjoner kommer med pakken <code class="docutils literal notranslate"><span class="pre">pydoc</span></code> som lar oss skrive dokumentasjonen fra docstrings over til en <code class="docutils literal notranslate"><span class="pre">.html</span></code>-fil som kan åpnes i nettleseren. Dette gjør vi ved å sørge for at terminalvinduet er åpnet i mappen som man har pakken og skrive</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pydoc</span> <span class="o">-</span><span class="n">w</span> <span class="n">sirkelregner</span>
 </pre></div>
 </div>
-</div>
-</div>
+<p>Erstatt <code class="docutils literal notranslate"><span class="pre">sirkelregner</span></code> med din pakkes navn. Da vil du få en <code class="docutils literal notranslate"><span class="pre">.html</span></code>-fil med litt retro stil, men som forklarer metoder og objekter i programmet ditt.</p>
 </section>
 </section>
 
@@ -598,6 +547,7 @@ FILE
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-og-bruke-programmer-i-andre-programmer">Lage og bruke programmer i andre programmer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjon-med-docstrings">Dokumentasjon med docstrings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generere-dokumentasjon-med-pydoc">Generere dokumentasjon med <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
 </ul>
   </nav></div>
 
