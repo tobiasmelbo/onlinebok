@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Formler.html">Formler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Formler%20og%20f%C3%B8lger.html">Formler og følger</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -453,7 +453,7 @@ True
 <span class="k">class</span> <span class="nc">ELBil</span><span class="p">(</span><span class="n">Bil</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pris</span><span class="o">/</span><span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">25</span>
 
 <span class="n">lastebil</span> <span class="o">=</span> <span class="n">Lastebil</span><span class="p">(</span><span class="s2">&quot;Mercedes&quot;</span><span class="p">)</span>
 <span class="n">bil</span> <span class="o">=</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
@@ -468,7 +468,7 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pris for lastebil: 200
 Pris for bil: 50
-Pris for elbil: 25.0
+Pris for elbil: 25
 </pre></div>
 </div>
 </div>
@@ -480,7 +480,7 @@ Pris for elbil: 25.0
 <h2>Objektorienterte modeller<a class="headerlink" href="#objektorienterte-modeller" title="Permalink to this heading">#</a></h2>
 <p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
 <a class="reference internal image-reference" href="../_images/klassemodell.png"><img alt="Et bilde av en klassemodell. Øverst er det skrevet &quot;Kjøretøy&quot;. I raden under er det skrevet &quot;Lastebil&quot; og &quot;Bil&quot;. Det er piler fra &quot;Kjøretøy&quot; til &quot;Lastebil&quot; og &quot;Bil&quot;. I nederste rad er det bare skrevet &quot;ELBil&quot;. Det er en pil fra &quot;Bil&quot; til &quot;ELBil&quot;." class="align-center" src="../_images/klassemodell.png" style="width: 365.0px; height: 324.0px;" /></a>
-<p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>.</p>
+<p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Det vil si at klassene får flere, mere spesifikke, egenskaper. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>. Det vil si at klassene får færre, mer generelle, egenskaper.</p>
 <p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://miro.com/nb/">Miro</a>, men man kan fint bruke for eksempel Paint eller PowerPoint.</p>
 </section>
 <hr class="docutils" />
