@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Proteinsyntesen (under arbeid) &#8212; Programmering med Tobias.</title>
+    <title>Trådløs kommunikasjon 📡 &#8212; Programmering med Tobias.</title>
   
   
   
@@ -61,7 +61,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Naturfag/Proteinsyntesen';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Naturfag/Trådløs kommunikasjon';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Naturfag/Proteinsyntesen.ipynb" target="_blank"
+      <li><a href="../_sources/Naturfag/Trådløs kommunikasjon.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +314,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Proteinsyntesen (under arbeid)</h1>
+    <h1>Trådløs kommunikasjon 📡</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -324,12 +324,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-proteinsyntesen">Hva er proteinsyntesen?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-og-trna">mRNA og tRNA</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
             </nav>
         </div>
@@ -341,67 +336,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="proteinsyntesen-under-arbeid">
-<span id="proteinsyntesen"></span><h1>Proteinsyntesen (under arbeid)<a class="headerlink" href="#proteinsyntesen-under-arbeid" title="Permalink to this heading">#</a></h1>
+  <section id="tradlos-kommunikasjon">
+<h1>Trådløs kommunikasjon 📡<a class="headerlink" href="#tradlos-kommunikasjon" title="Permalink to this heading">#</a></h1>
+<p>I dette opplegget skal vi bruke Microbit til å sende meldinger over radio.</p>
 <div class="note admonition">
 <p class="admonition-title">Forutsetninger</p>
-<p>Jeg anbefaler at man har vært igjennom disse delkapitlene før man går igjennom dette prosjektet.</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#variabler-og-syntaks"><span class="std std-ref">Variabler og syntaks</span></a></p></li>
-<li><p><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html#lokker"><span class="std std-ref">Løkker</span></a></p></li>
-<li><p><a class="reference internal" href="../Grunnleggende/Lister.html#lister"><span class="std std-ref">Lister</span></a></p></li>
-</ul>
+<p>Dette opplegget fortusetter ingen tidligere programmeringskunnskaper, men kan lett gjøres enda mer utforskende og spennende om man kan litt Python.</p>
 </div>
-<section id="hva-er-proteinsyntesen">
-<h2>Hva er proteinsyntesen?<a class="headerlink" href="#hva-er-proteinsyntesen" title="Permalink to this heading">#</a></h2>
-<p>Proteiner er livsnødvendige stoffer som finnes i alt fra skjelett til muskler, hår, hud, blod og organer.</p>
-<p>Proteiner består av lange kjeder med aminosyrer. Aminosyrene fungerer litt som legoklosser, og det er i all hovedsak 20 forskjellige aminosyrer som bygger opp proteiner. Rekkefølgen og utseendet av den lange kjeden med aminosyrer er det som bestemmer egenskapene til proteinet.</p>
-<p>Kroppen må sette sammen disse legoklossene i riktig rekkefølge for at proteinet skal gjøre det det er ment til å gjøre.</p>
-<section id="dna-molekylet">
-<h3>DNA-molekylet 🧬<a class="headerlink" href="#dna-molekylet" title="Permalink to this heading">#</a></h3>
-<p>Når man bygger lego så har man ofte en slags manual, eller en oppskrift, på hvordan man skal sette sammen klossene for å få en bil, en tiger eller en Millenium Falcon™️. Hvor sitter denne <em>oppskriften</em> i kroppen? Vel, den sitter som en kode lagret i hver enkelt celle; i et molekyl som heter <em>DNA-molekylet</em> 🧬</p>
-<p>DNA-molekylet ser ut som en dobbel spiral. Hvert «trappetrinn» består av et par baser. Det er fire baser å velge mellom i DNA: Adenin, Tymin, Cytosin og Guanin (eller bare A, T, C og G). Disse kommer alltid i par, så hvis det står A på den ene siden, så står det T på den andre. Står det C på den ene siden, så står det G på den andre siden.</p>
-<p>Vi kan se for oss at en bit av DNA-molekylet ser slik ut:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TACACCTAGCATATT</span>
-<span class="n">ATGTGGATCGTATAA</span>
-</pre></div>
-</div>
-<p>DNA-molekylet befinner seg i cellekjernen. For at denne biten med DNA skal kunne bli til et protein så må den kopieres, flyttes ut og leses av.</p>
-</section>
-<section id="mrna-og-trna">
-<h3>mRNA og tRNA<a class="headerlink" href="#mrna-og-trna" title="Permalink to this heading">#</a></h3>
-<p>Inne i cellekjernen kopieres en bit av DNA om til et nytt molekyl som heter mRNA.</p>
-<p>Selv om det er to sider til et DNA-molekyl, trenger vi bare å se på en side.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span><span class="p">:</span>
-<span class="n">TACACCTAGCATATT</span>
-</pre></div>
-</div>
-<p>Når mRNA skal kopiere dette segmentet så tar vi de motsatte baseparene, men basen Tymin byttes ut med Uracil.</p>
-<ul class="simple">
-<li><p>A -&gt; U</p></li>
-<li><p>T -&gt; A</p></li>
-<li><p>C -&gt; G</p></li>
-<li><p>G -&gt; C</p></li>
-</ul>
-<p>Kopien av DNA-molekylet over ser da slik ut.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
-<span class="n">AUGUGGAUCGUAUAA</span>
-</pre></div>
-</div>
-<p>Dette mRNA-molekylet sendes så ut av cellekjernen og til ribosomene i cellen. En kombinasjon av tre baser kalles for en <em>triplett</em>. Hver triplett koder for en aminosyre eller et signal. Hver tRNA-bit gjenkjenner en triplett og setter riktig aminosyre der. Dermed bygges proteinet i riktig rekkefølge.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
-<span class="n">AUG</span> <span class="n">UGG</span> <span class="n">AUC</span> <span class="n">GUA</span> <span class="n">UAA</span>
-
-<span class="n">Tilsvarer</span> <span class="n">aminosyrene</span><span class="p">:</span>
-<span class="n">Metionin</span><span class="p">(</span><span class="n">START</span><span class="p">)</span> <span class="n">Tryptofan</span> <span class="n">Isoleucin</span> <span class="n">Valin</span> <span class="n">STOPP</span>
-</pre></div>
-</div>
-<p>En triplett (AUG) koder for starten av proteinet. Denne koder også for metionin. Det er også tre tripletter som koder for et sluttsignal av proteinsyntesen (UAA, UAG, UGA).</p>
-<p>Proteiner består vanligvis av hundrevis og noen ganger tusenvis av aminosyrer. Da blir det litt vanskelig å sitte å oversette base for base for å finne ut hvordan proteinet vil se ut fra en DNA-sekvens. Heldigvis har vi datamaskiner som kan gjøre dette litt kjappere, og det er det vi skal gjøre i dette programmeringsprosjektet.</p>
-</section>
-</section>
-<section id="programmering-av-proteinsyntesen">
-<h2>Programmering av proteinsyntesen<a class="headerlink" href="#programmering-av-proteinsyntesen" title="Permalink to this heading">#</a></h2>
+<p>For å programmerere skal vi bruke nettsiden <a class="reference external" href="https://python.microbit.org/v/3/">https://python.microbit.org/v/3/</a>.</p>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -454,12 +398,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-proteinsyntesen">Hva er proteinsyntesen?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-og-trna">mRNA og tRNA</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 </ul>
   </nav></div>
 
