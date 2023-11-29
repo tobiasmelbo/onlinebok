@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Avansert Python';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Ordbøker" href="Ordb%C3%B8ker.html" />
+    <link rel="next" title="Arrays" href="Arrays.html" />
     <link rel="prev" title="Funksjoner" href="../Grunnleggende/Funksjoner.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
@@ -161,8 +161,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Avansert Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Ordb%C3%B8ker.html">Ordbøker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting.html">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20reelle%20datasett.html">Plotting av reelle datasett</a></li>
@@ -175,6 +173,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Gjenbrukbar%20kode.html">Gjenbrukbar kode</a></li>
@@ -334,7 +334,7 @@ document.write(`
 <p>I dette kapitlet skal vi jobbe med litt mer avanserte emner. Vi skal se på ordbøker som er en datastruktur som er nyttig for flere bruksområder. Deretter skal vi lære om arrays og hvordan vi kan lese og skrive til filer for å kunne jobbe med ekte datafiler. Vi skal også lære å plotte matematiske funksjoner og data fra reelle datasett, samt lage matematiske modeller med regresjon.</p>
 <div class="note admonition">
 <p class="admonition-title">Til læreren 🧑‍🏫</p>
-<p>Dette kapitlet bygger videre på emnene fra introduksjonskapitlet. <a class="reference internal" href="Ordb%C3%B8ker.html#ordboker"><span class="std std-ref">Ordbøker</span></a> kan hoppes over i mange fag, men brukes i noen prosjekter (programmering av proteinsyntesen) og er sentralt i Informasjonsteknologi 2. <a class="reference internal" href="Filer.html#filer"><span class="std std-ref">Filer</span></a>, <a class="reference internal" href="Arrays.html#arrays"><span class="std std-ref">Arrays</span></a>, <a class="reference internal" href="Plotting.html#plotting"><span class="std std-ref">Plotting</span></a>, <a class="reference internal" href="Plotting%20av%20reelle%20datasett.html#plotting-av-reelle-datasett"><span class="std std-ref">Plotting av reelle datasett</span></a> og <a class="reference internal" href="Regresjon.html#regresjon"><span class="std std-ref">Regresjon</span></a> bygger videre på hverandre. Disse delkapitlene kan være en ressurs til å jobbe med kompetansemålene som handler om å modellere fra reelle datasett som finnes i flere fag.</p>
+<p>Dette kapitlet bygger videre på emnene fra introduksjonskapitlet. <a class="reference internal" href="../Informasjonsteknologi%202/Ordb%C3%B8ker.html#ordboker"><span class="std std-ref">Ordbøker</span></a> kan hoppes over i mange fag, men brukes i noen prosjekter (programmering av proteinsyntesen) og er sentralt i Informasjonsteknologi 2. <a class="reference internal" href="../Informasjonsteknologi%202/Filer.html#filer"><span class="std std-ref">Filer</span></a>, <a class="reference internal" href="Arrays.html#arrays"><span class="std std-ref">Arrays</span></a>, <a class="reference internal" href="Plotting.html#plotting"><span class="std std-ref">Plotting</span></a>, <a class="reference internal" href="Plotting%20av%20reelle%20datasett.html#plotting-av-reelle-datasett"><span class="std std-ref">Plotting av reelle datasett</span></a> og <a class="reference internal" href="Regresjon.html#regresjon"><span class="std std-ref">Regresjon</span></a> bygger videre på hverandre. Disse delkapitlene kan være en ressurs til å jobbe med kompetansemålene som handler om å modellere fra reelle datasett som finnes i flere fag.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -381,11 +381,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Ordb%C3%B8ker.html"
+       href="Arrays.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Ordbøker</p>
+        <p class="prev-next-title">Arrays</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

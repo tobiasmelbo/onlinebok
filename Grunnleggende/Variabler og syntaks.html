@@ -163,8 +163,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting.html">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20reelle%20datasett.html">Plotting av reelle datasett</a></li>
@@ -177,6 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Gjenbrukbar%20kode.html">Gjenbrukbar kode</a></li>
@@ -405,7 +405,24 @@ document.write(`
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen kan også skrive ut tekst eller flere variabler med mellomrom dersom vi skiller variablene med komma.</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen kan også skrive ut en kombinasjon av tekst og variabler ved å bruke <em>f-strings</em>. Da setter vi en <code class="docutils literal notranslate"><span class="pre">f</span></code> før en string, og setter variabler inn med krøllparanteser <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> pluss </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> er lik </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 pluss 3 er lik 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan også printe variabler og tekst ved å skille de med komma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -550,20 +567,26 @@ document.write(`
 <li><p>Vi ser at <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">3</span></code> gir <code class="docutils literal notranslate"><span class="pre">2</span></code> fordi <span class="math notranslate nohighlight">\(3\)</span> går opp i <span class="math notranslate nohighlight">\(7\)</span> to ganger.</p></li>
 <li><p>Vi ser at <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">%</span> <span class="pre">3</span></code> gir <code class="docutils literal notranslate"><span class="pre">1</span></code> fordi resten blir <span class="math notranslate nohighlight">\(1\)</span> når <span class="math notranslate nohighlight">\(3\)</span> har gått opp i <span class="math notranslate nohighlight">\(7\)</span> to ganger.</p></li>
 </ul>
-<p>Legg også merke til at dersom resten blir <code class="docutils literal notranslate"><span class="pre">0</span></code> så er tallet <em>delbart</em>. Med andre ord kan vi sjekke om <code class="docutils literal notranslate"><span class="pre">a</span></code> er delbart med <code class="docutils literal notranslate"><span class="pre">b</span></code> ved å sjekke om <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> gir <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Dersom resten blir <code class="docutils literal notranslate"><span class="pre">0</span></code> så er tallet <em>delbart</em>. Med andre ord kan vi sjekke om <code class="docutils literal notranslate"><span class="pre">a</span></code> er delbart med <code class="docutils literal notranslate"><span class="pre">b</span></code> ved å sjekke om <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">%</span> <span class="pre">b</span></code> gir <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">187</span> <span class="o">%</span> <span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">187</span> <span class="o">//</span> <span class="mi">11</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+17
 </pre></div>
 </div>
 </div>
 </div>
-<p>Programmet over viser at <span class="math notranslate nohighlight">\(187\)</span> er delbart med <span class="math notranslate nohighlight">\(11\)</span>.</p>
+<p>Programmet over viser at</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(187\)</span> er delbart med <span class="math notranslate nohighlight">\(11\)</span> fordi resten er <code class="docutils literal notranslate"><span class="pre">0</span></code></p></li>
+<li><p>… og at <span class="math notranslate nohighlight">\(11\)</span> går opp <code class="docutils literal notranslate"><span class="pre">17</span></code> ganger i tallet <span class="math notranslate nohighlight">\(187\)</span>.</p></li>
+</ul>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
