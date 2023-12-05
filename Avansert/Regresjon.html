@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
     <link rel="next" title="Matematikk 1T 📗" href="../Matematikk%201T/Matematikk%201T.html" />
-    <link rel="prev" title="Plotting" href="Plotting.html" />
+    <link rel="prev" title="Plotting: Enkle Datasett" href="Plotting%20av%20enkle%20datasett.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -164,7 +164,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Avansert%20Python.html">Avansert Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Regresjon</a></li>
 </ul>
 </li>
@@ -329,17 +330,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon-med-polynomer">Regresjon med polynomer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linje">Linje</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#andregradsfunksjon-grad-2">Andregradsfunksjon (grad 2)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon-med-generelle-funksjonsuttrykk">Regresjon med generelle funksjonsuttrykk</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-lineaere-funksjoner">Eksempel: Lineære funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-inn-verdier-i-modellen">Sette inn verdier i modellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andre-matematiske-funksjoner">Andre matematiske funksjoner</a></li>
 </ul>
             </nav>
         </div>
@@ -354,13 +347,13 @@ document.write(`
   <section id="regresjon">
 <span id="id1"></span><h1>Regresjon<a class="headerlink" href="#regresjon" title="Permalink to this heading">#</a></h1>
 <p>Når vi jobber med reelle datasett ønsker vi ofte å finne ut hvilken matematisk funksjon som passer best til dataene.</p>
-<p>Når vi har funnet en matematisk funksjon er mulighetene mange. Vi kan lage en modell som ser hva som har skjedd imellom, før og etter datapunktene våre. Som en slags data-trollmann kan vi altså både spå fremtiden og se tilbake i tid 🧙‍♂️🔮</p>
-<p>Her kommer et eksempel på hvordan konsumprisindeksen (KPI) har økt siden 2015.</p>
+<p>Når vi har funnet en matematisk funksjon er mulighetene mange. Vi kan lage en modell som ser hva som har skjedd <em>mellom</em>, <em>før</em> og <em>etter</em> datapunktene våre. Som en slags data-trollmann kan vi altså både spå fremtiden og se tilbake i tid 🧙‍♂️🔮</p>
+<p>La oss starte med eksempelet om konsumprisindeks fra tidligere.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span> <span class="c1"># År etter 2015</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]</span> <span class="c1"># År etter 2015</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">]</span> <span class="c1"># Konsumprisindeks</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -371,160 +364,160 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/626827a3f8964a5cf783da51563cf343a90d323a7314687f18d0211b39ac3210.png" src="../_images/626827a3f8964a5cf783da51563cf343a90d323a7314687f18d0211b39ac3210.png" />
+<img alt="../_images/a95ae2f5bda1cacf5a347f71d64980c2e355fa244a330bae986eb7eee2d2606b.png" src="../_images/a95ae2f5bda1cacf5a347f71d64980c2e355fa244a330bae986eb7eee2d2606b.png" />
 </div>
 </div>
-<p>Hvilken matematisk funksjon tror du passer best her?</p>
-<section id="regresjon-med-polynomer">
-<h2>Regresjon med polynomer<a class="headerlink" href="#regresjon-med-polynomer" title="Permalink to this heading">#</a></h2>
-<p>For å lage en polynomfunksjon som passer til et sett med data kan vi bruke <code class="docutils literal notranslate"><span class="pre">np.polynomial.Polynomial.fit()</span></code>. Denne returnerer et polynom som er tilpasset dataene.</p>
-<p>Eksempelvis kan vi skrive <code class="docutils literal notranslate"><span class="pre">np.polynomial.Polynomial.fit(x,</span> <span class="pre">y,</span> <span class="pre">deg</span> <span class="pre">=</span> <span class="pre">1)</span></code> for å få et polynom av grad <code class="docutils literal notranslate"><span class="pre">1</span></code> fra x-verdiene i arrayet <code class="docutils literal notranslate"><span class="pre">x</span></code> og y-verdiene i arrayet <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
-<section id="linje">
-<h3>Linje<a class="headerlink" href="#linje" title="Permalink to this heading">#</a></h3>
-<p>En linje er et polynom av grad 1. Vi kan finne den linjen som passer best til dataene på denne måten.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
-
-<span class="n">pol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">deg</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Funksjonsuttrykk:&quot;</span><span class="p">,</span> <span class="n">pol</span><span class="o">.</span><span class="n">convert</span><span class="p">())</span> <span class="c1"># Skriver ut funksjonsuttrykket for linjen</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI i 2023 ifølge modellen:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">pol</span><span class="p">(</span><span class="mi">8</span><span class="p">)))</span> <span class="c1"># Skriver ut KPI fra modellen.</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Datapunkter&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pol</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Regresjon - Linje&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År etter 2015&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsumprisindeks (KPI)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Funksjonsuttrykk: 98.73333333333328 + 3.411904761904767 x**1
-KPI i 2023 ifølge modellen: 126
-</pre></div>
-</div>
-<img alt="../_images/c3bc485d6451f1806f29396789223985a55a40b59a863e1a8c86441a7615fdfe.png" src="../_images/c3bc485d6451f1806f29396789223985a55a40b59a863e1a8c86441a7615fdfe.png" />
-</div>
-</div>
-<p>Vi ser at funksjonsuttrykket blir en typisk linje på formen <span class="math notranslate nohighlight">\(ax + b\)</span>.</p>
-<p>Når vi skriver <code class="docutils literal notranslate"><span class="pre">pol(8)</span></code> får vi konsumprisindeksen modellen tilsier at det vil bli i 2023.</p>
-<div class="warning admonition">
-<p class="admonition-title">Skrive ut polynomet</p>
-<p>Når vi skal skrive ut polynomet må vi bruke <code class="docutils literal notranslate"><span class="pre">.convert()</span></code>-funksjonen. Hvis ikke får vi feil koeffisienter.</p>
-</div>
-</section>
-<section id="andregradsfunksjon-grad-2">
-<h3>Andregradsfunksjon (grad 2)<a class="headerlink" href="#andregradsfunksjon-grad-2" title="Permalink to this heading">#</a></h3>
-<p>Ved å skrive <code class="docutils literal notranslate"><span class="pre">deg</span> <span class="pre">=</span> <span class="pre">2</span></code> som parameter i <code class="docutils literal notranslate"><span class="pre">np.polynomial.Polynomial.fit()</span></code> kan vi få en andregradsfunksjon.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
-
-<span class="n">pol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polynomial</span><span class="o">.</span><span class="n">Polynomial</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">deg</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Funksjonsuttrykk:&quot;</span><span class="p">,</span> <span class="n">pol</span><span class="o">.</span><span class="n">convert</span><span class="p">())</span> <span class="c1"># Skriver ut funksjonsuttrykket for linjen</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI i 2023 ifølge modellen:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">pol</span><span class="p">(</span><span class="mi">8</span><span class="p">)))</span> <span class="c1"># Skriver ut KPI fra modellen.</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Datapunkter&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pol</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Regresjon - Andregradsfunksjon&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År etter 2015&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsumprisindeks (KPI)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Funksjonsuttrykk: 101.7416666666666 + 0.40357142857143957 x**1 + 0.4297619047619039 x**2
-KPI i 2023 ifølge modellen: 132
-</pre></div>
-</div>
-<img alt="../_images/8c43f61c8ef7f9e723bf9d0ec6cef15ae8f4f93113d7b307045b3a3ed49fc5d1.png" src="../_images/8c43f61c8ef7f9e723bf9d0ec6cef15ae8f4f93113d7b307045b3a3ed49fc5d1.png" />
-</div>
-</div>
-<p>Ved å endre <code class="docutils literal notranslate"><span class="pre">deg</span></code>-parameteren til <code class="docutils literal notranslate"><span class="pre">np.polynomial.Polynomial.fit()</span></code> kan vi gjøre regresjon med polynomer av enda høyere grad.</p>
-</section>
-</section>
-<section id="regresjon-med-generelle-funksjonsuttrykk">
-<h2>Regresjon med generelle funksjonsuttrykk<a class="headerlink" href="#regresjon-med-generelle-funksjonsuttrykk" title="Permalink to this heading">#</a></h2>
+<p>Hvilken type matematisk funksjon tror du passer best her? En lineær funksjon? En andregradsfunksjon? Eller kanskje en eksponentiell funksjon?</p>
 <blockquote>
-<div><p>Denne delen krever <code class="docutils literal notranslate"><span class="pre">scipy</span></code>-pakken. Mange Python-installasjoner har denne allerede, men man kan også installere den ved å kjøre <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">scipy</span></code> i terminalvinduet.</p>
+<div><p>I denne delen skal vi bruke <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen fra <code class="docutils literal notranslate"><span class="pre">scipy</span></code>-pakken. Det kan hende du må installere denne ved å kjøre <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">scipy</span></code> i terminalvinduet.</p>
 </div></blockquote>
-<p>Hvis vi ønsker å tilpasse en annen type matematisk funksjon enn polynomer kan vi bruke <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code>-funksjonen.</p>
-<p>Da må vi spesifisere hvilken form den matematiske funksjonen vil ha.</p>
-<p>I dette eksempelet vil jeg tilpasse en logistisk funksjon på formen <span class="math notranslate nohighlight">\(f(x)=\frac{B}{1+a\cdot e^{-kx}}\)</span>.</p>
+<section id="eksempel-lineaere-funksjoner">
+<h2>Eksempel: Lineære funksjoner<a class="headerlink" href="#eksempel-lineaere-funksjoner" title="Permalink to this heading">#</a></h2>
+<p>Lineære funksjoner har funksjonsuttrykk på formen <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span>. Ved å bruke <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen kan vi finne hva <em>koeffisientene</em> <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> må være for at funksjonsuttrykket skal passe best mulig til datapunktene.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">181</span><span class="p">,</span> <span class="mi">317</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">415</span><span class="p">,</span> <span class="mi">431</span><span class="p">])</span>
+<span class="c1"># Datapunkter (i arrays)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="c1"># Skriver inn variabel og koeffisienter</span>
-    <span class="k">return</span> <span class="n">B</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">k</span> <span class="o">*</span> <span class="n">x</span><span class="p">))</span>
+<span class="c1"># Definerer den matematiske funksjonen</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># popt er koeffisientene. pcov er kovariansen til koeffisientene</span>
+<span class="c1"># Finner koeffisienter</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Koeffisienter B, a, k:&quot;</span><span class="p">,</span> <span class="n">popt</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="c1"># Skriver ut a-verdien</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Skriver ut b-verdien</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Datapunkter&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Tilpasset potensfunksjon x^a&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;tab:red&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År etter 2015&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsumprisindeks (KPI)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Koeffisienter B, a, k: [441.4070449  232.58325342   0.51951266]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: 3.4119048825839484
+b: -6776.255005495699
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\tobiasmelb\AppData\Local\Temp\ipykernel_25048\3620722994.py:9: RuntimeWarning: overflow encountered in power
-  return B/(1 + a * np.e**(-k * x))
+<img alt="../_images/5dc617956384ef41f92c11bf8c57afddac5cef45bb06ffdebfd591d71de6874f.png" src="../_images/5dc617956384ef41f92c11bf8c57afddac5cef45bb06ffdebfd591d71de6874f.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen fant altså koeffisientene til å være <span class="math notranslate nohighlight">\(a\approx 3.41\)</span> og <span class="math notranslate nohighlight">\(b\approx -6776.26\)</span>. Det vil si at funksjonsuttrykket for grafen kan skrives som <span class="math notranslate nohighlight">\(f(x)=3.41x - 6776.26\)</span>.</p>
+<p>Siden koeffisienten <span class="math notranslate nohighlight">\(a\approx 3.41\)</span> kan vi si at konsumprisindeksen i gjennomsnitt stiger med <span class="math notranslate nohighlight">\(3.41\)</span> per år, ifølge modellen vår.</p>
+<div class="note admonition">
+<p class="admonition-title">Noen kommentarer til koden</p>
+<ul class="simple">
+<li><p>Vi må gjøre listene med data om til arrays med <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> for å kunne bruke <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>-funksjonen på denne måten.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>-funksjonen gir ut flere verdier i en liste, men vi er bare interessert i den første verdien i denne listen, som er en liste med koeffisientene. Derfor skriver vi <code class="docutils literal notranslate"><span class="pre">koeffisienter</span> <span class="pre">=</span> <span class="pre">curve_fit(f,</span> <span class="pre">x,</span> <span class="pre">y)[0]</span></code></p></li>
+</ul>
+</div>
+</section>
+<section id="sette-inn-verdier-i-modellen">
+<h2>Sette inn verdier i modellen<a class="headerlink" href="#sette-inn-verdier-i-modellen" title="Permalink to this heading">#</a></h2>
+<p>La oss bruke modellen vår til å spå fremtiden eller se tilbake i tid.</p>
+<ul class="simple">
+<li><p>Hva sier modellen oss at konsumprisindeksen blir i 2030?</p></li>
+<li><p>Hva sier modellen vår at konsumprisindeksen var i 2005?</p></li>
+</ul>
+<p>Når vi har brukt <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> for å finne koeffisientene <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> er det enkelt å finne konsumprisindeksen i et gitt år ved å skrive <code class="docutils literal notranslate"><span class="pre">f(år,</span> <span class="pre">a,</span> <span class="pre">b)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Datapunkter (i arrays)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
+
+<span class="c1"># Definerer den matematiske funksjonen</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Finner koeffisienter</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI i 2030 (modell):&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mi">2030</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI i 2005 (modell):&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
 </pre></div>
 </div>
-<img alt="../_images/5b70bd08d4fe82c720a93510516a932b0d12db51c475a163d834525f07b03331.png" src="../_images/5b70bd08d4fe82c720a93510516a932b0d12db51c475a163d834525f07b03331.png" />
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KPI i 2030 (modell): 149.91190614971583
+KPI i 2005 (modell): 64.6142840851171
+</pre></div>
 </div>
 </div>
-<p>Legg merke til funksjonskallet <code class="docutils literal notranslate"><span class="pre">f(x,</span> <span class="pre">*popt)</span></code> i nest siste linje. <code class="docutils literal notranslate"><span class="pre">*popt</span></code> er det samme som å sette inn koeffisientene <code class="docutils literal notranslate"><span class="pre">B,</span> <span class="pre">a,</span> <span class="pre">k</span></code>, fordi <code class="docutils literal notranslate"><span class="pre">popt</span></code> er en array med koefissienter. Dermed settes alle parameterene <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">B,</span> <span class="pre">a,</span> <span class="pre">k</span></code> inn i funksjonen <code class="docutils literal notranslate"><span class="pre">f(x,</span> <span class="pre">B,</span> <span class="pre">a,</span> <span class="pre">k)</span></code>.</p>
-</section>
-<hr class="docutils" />
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Finn SSB Tabell 05803: Endringer i befolkningen i løpet av året etter år og statistikkvariabel.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Hvordan passer modellen?</p>
+<p>Modellen sier altså at konsumprisindeksen i <span class="math notranslate nohighlight">\(2030\)</span> kommer til å bli omtrent <span class="math notranslate nohighlight">\(149.91\)</span>.</p>
+<p>Den sier også at konsumprisindeksen i <span class="math notranslate nohighlight">\(2005\)</span> var omtrent <span class="math notranslate nohighlight">\(64.61\)</span>. Den var faktisk <span class="math notranslate nohighlight">\(82.3\)</span>.</p>
+<p>Det kan være flere grunner for at modellen vår ikke passer godt med virkeligheten.</p>
 <ol class="arabic simple">
-<li><p>Velg «Befolkning 1. januar» og «Alle år».</p></li>
-<li><p>Last ned dataene som fil og kall den «befolkning.csv».</p></li>
-<li><p>Plott datapunktene.</p></li>
-<li><p>Gjør en lineær regresjon og plott det i samme vindu.</p></li>
-<li><p>Gjør en polynomregresjon av grad 3 og plott det i samme vindu.</p></li>
-<li><p>Gjør en regresjon med en funksjon på formen <span class="math notranslate nohighlight">\(A^x\)</span> og plott det i samme vindu.</p></li>
+<li><p>Vi har for få datapunkter.</p></li>
+<li><p>Det siste datapunktet gikk opp mye mer enn alle de andre. Hva skjedde i 2022?</p></li>
+<li><p>Å bruke en lineær funksjon var kanskje ikke riktig valg.</p></li>
 </ol>
-<p>Skriv ut befolkningstallet i 2050 for alle de tre modellene. Hvilken tror du passer best?</p>
+</div>
 </section>
-<section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Her (<a class="reference external" href="https://www.uio.no/studier/emner/matnat/natfag/NAT3000/h21/datafiler/antall-meldte-covid-19.txt">lenke</a>) er en datafil for hvor mange som ble syke med covid i 2020 og 2021</p>
-<ol class="arabic simple">
-<li><p>Lag en array med kumulativt antall syke.</p></li>
-<li><p>Gjør en regresjonsanalyse med en funksjonstype som du velger selv.</p></li>
-<li><p>Plott datapunktene og regresjonsmodellen i samme plott.</p></li>
-<li><p>Regn ut hvor mange syke det kommer til å være 1. Jan, 2023 ifølge modellen din.</p></li>
-</ol>
-</section>
+<section id="andre-matematiske-funksjoner">
+<h2>Andre matematiske funksjoner<a class="headerlink" href="#andre-matematiske-funksjoner" title="Permalink to this heading">#</a></h2>
+<p>La oss prøve å lage en modell med en andregradsfunksjon. Andregradsfunksjoner har funksjonsuttrykk på formen <span class="math notranslate nohighlight">\(f(x)=ax^2 + bx + c\)</span>.</p>
+<p>Det eneste vi må endre i koden over er hvordan vi definerer den matematiske funksjonen og hvilke koeffisienter vi skal finne med <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Datapunkter (i arrays)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
+
+<span class="c1"># Definerer den matematiske funksjonen</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">c</span>
+
+<span class="c1"># Finner koeffisienter</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="c1"># Skriver ut a-verdien</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Skriver ut b-verdien</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c:&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="c1"># Skriver ut c-verdien</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;tab:red&quot;</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År etter 2015&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Konsumprisindeks (KPI)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: 0.4297619048563457
+b: -1731.5369051521418
+c: 1744218.5753940183
+</pre></div>
+</div>
+<img alt="../_images/94864da88be381ff49260b88feaa06e06ed740a0959cff8416d1862683e8dff3.png" src="../_images/94864da88be381ff49260b88feaa06e06ed740a0959cff8416d1862683e8dff3.png" />
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen fant altså koeffisientene til å være <span class="math notranslate nohighlight">\(a\approx 0.43\)</span>, <span class="math notranslate nohighlight">\(b\approx -1731.54\)</span> og <span class="math notranslate nohighlight">\(c\approx 1744218.58\)</span>. Det vil si at funksjonsuttrykket for grafen kan skrives som <span class="math notranslate nohighlight">\(f(x)=0.43x^2 - 1731.54x + 1744218.58\)</span>.</p>
+<p>På samme måte kan vi også finne modeller med andre matematiske funksjonstyper som</p>
+<ul class="simple">
+<li><p>Tredjegradsfunksjoner <span class="math notranslate nohighlight">\(f(x)=ax^3+bx^2+cx+d\)</span></p></li>
+<li><p>Eksponentialfunksjoner <span class="math notranslate nohighlight">\(f(x)=ab^x\)</span></p></li>
+<li><p>Potensfunksjoner <span class="math notranslate nohighlight">\(f(x)=ax^b\)</span></p></li>
+<li><p>Sinusfunksjoner <span class="math notranslate nohighlight">\(f(x)=A*sin(kx + \phi) + d\)</span></p></li>
+</ul>
 </section>
 </section>
 
@@ -560,12 +553,12 @@ KPI i 2023 ifølge modellen: 132
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Plotting.html"
+       href="Plotting%20av%20enkle%20datasett.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Plotting</p>
+        <p class="prev-next-title">Plotting: Enkle Datasett</p>
       </div>
     </a>
     <a class="right-next"
@@ -595,17 +588,9 @@ KPI i 2023 ifølge modellen: 132
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon-med-polynomer">Regresjon med polynomer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linje">Linje</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#andregradsfunksjon-grad-2">Andregradsfunksjon (grad 2)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon-med-generelle-funksjonsuttrykk">Regresjon med generelle funksjonsuttrykk</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-lineaere-funksjoner">Eksempel: Lineære funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-inn-verdier-i-modellen">Sette inn verdier i modellen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andre-matematiske-funksjoner">Andre matematiske funksjoner</a></li>
 </ul>
   </nav></div>
 

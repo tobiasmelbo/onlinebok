@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Naturfag 🦠 &#8212; Programmering med Tobias.</title>
+    <title>Plotting: Matematiske funksjoner &#8212; Programmering med Tobias.</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Naturfag/Naturfag';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Plotting av matematiske funksjoner';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Informasjonsteknologi 2 💾" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html" />
-    <link rel="prev" title="Tallfølger" href="../Matematikk%201T/Tallf%C3%B8lger.html" />
+    <link rel="next" title="Plotting: Enkle Datasett" href="Plotting%20av%20enkle%20datasett.html" />
+    <link rel="prev" title="Arrays" href="Arrays.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -160,18 +162,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Arrays.html">Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Regresjon.html">Regresjon</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Avansert%20Python.html">Avansert Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Plotting: Matematiske funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Naturfag 🦠</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Ordb%C3%B8ker.html">Ordbøker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Mer%20om%20arrays.html">Mer om arrays</a></li>
@@ -236,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Naturfag/Naturfag.ipynb" target="_blank"
+      <li><a href="../_sources/Avansert/Plotting av matematiske funksjoner.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +307,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -316,11 +320,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Naturfag 🦠</h1>
+    <h1>Plotting: Matematiske funksjoner</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-plot">Et enkelt plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -330,14 +347,93 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="naturfag">
-<span id="id1"></span><h1>Naturfag 🦠<a class="headerlink" href="#naturfag" title="Permalink to this heading">#</a></h1>
-<p>Dette kapitlet inneholder noen forskjellige programmeringsprosjekter ment for naturfag.</p>
-<div class="note admonition">
-<p class="admonition-title">Til læreren 🧑‍🏫</p>
-<p>Til hvert prosjekt er det en oversikt over delkapitler i denne boken som er en forutsetning for å jobbe med programmeringen i prosjektet. I tillegg starter alle sidene med en liten introduksjon av relevant fagstoff fra naturfag, men det anbefales at dere har vært igjennom fagstoffet på forhånd.</p>
-<p>Hvert prosjekt er knyttet til relevante temaer, men felles for alle er at elevene skal kunne <em>vurdere og lage programmer som modellerer naturfaglige fenomener</em>.</p>
+  <section id="plotting-matematiske-funksjoner">
+<span id="id1"></span><h1>Plotting: Matematiske funksjoner<a class="headerlink" href="#plotting-matematiske-funksjoner" title="Permalink to this heading">#</a></h1>
+<p>I denne delen skal vi lære om plotting.</p>
+<p>For å plotte skal vi bruke en pakke som heter <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Mange Python-installasjoner vil inkludere denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code> i terminalvinduet.</p>
+<section id="et-enkelt-plot">
+<h2>Et enkelt plot<a class="headerlink" href="#et-enkelt-plot" title="Permalink to this heading">#</a></h2>
+<p>La oss plotte den matematiske funksjonen <span class="math notranslate nohighlight">\(x^2\)</span> i intervallet <span class="math notranslate nohighlight">\([0, 5]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># Definerer funksjonen</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># Hundre punkter mellom 0 og 5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Setter x inn i funksjonen f. y blir da funksjonsverdier</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Lager plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Viser plot</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/757d3bcdff63efbec7001ffb94df12408e4b07cfa4c4b592ccd20d9fec5653e8.png" src="../_images/757d3bcdff63efbec7001ffb94df12408e4b07cfa4c4b592ccd20d9fec5653e8.png" />
+</div>
+</div>
+</section>
+<section id="stil">
+<h2>Stil<a class="headerlink" href="#stil" title="Permalink to this heading">#</a></h2>
+<p>«Du må ha med navn på aksene! 😠» - En gretten mattelærer (sikkert)</p>
+<p>La oss få med litt stil på plottene våre.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sammenlikning av x**2 og x**3&quot;</span><span class="p">)</span> <span class="c1"># Tittel</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x-verdier&quot;</span><span class="p">)</span> <span class="c1"># Gir navn til x-aksen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;funksjonsverdier&quot;</span><span class="p">)</span> <span class="c1"># Gir navn til y-aksen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;f(x)=x**2&quot;</span><span class="p">)</span> <span class="c1"># label gir navn til funksjonen</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;g(x)=x**3&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># label gir navn til funksjonen, color gir farge</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span> <span class="c1"># Viser rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># Lager boksen med funksjonenes navn</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># Viser plottet</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9ff6d792f1d3e267c6c5bf688da2a005e88473a4784b89cd47b87dfbba48f976.png" src="../_images/9ff6d792f1d3e267c6c5bf688da2a005e88473a4784b89cd47b87dfbba48f976.png" />
+</div>
+</div>
+<p>«Wow! For et fint plott! 🤓» - En fornøyd mattelærer (sikkert)</p>
+<p>Undersøk koden grundig. Legg merke til hvordan vi kan sette inn funksjonsverdier i selve <code class="docutils literal notranslate"><span class="pre">plot()</span></code>-funksjonen.</p>
+<p>Legg også merke til hvordan vi kan plotte flere grafer med <code class="docutils literal notranslate"><span class="pre">plot()</span></code> før vi kjører <code class="docutils literal notranslate"><span class="pre">show()</span></code>-funksjonen. Vi kan tenke på <code class="docutils literal notranslate"><span class="pre">plot()</span></code> som en funksjon som <em>tegner</em> og <code class="docutils literal notranslate"><span class="pre">show()</span></code> som å en funksjon som <em>viser det vi har tegnet</em>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Endre på aksene</p>
+<p>Aksene for plottet settes automatisk, men hvis vi ønsker å endre på disse så kan vi bruke <code class="docutils literal notranslate"><span class="pre">plt.xlim()</span></code>- og <code class="docutils literal notranslate"><span class="pre">plt.ylim()</span></code>-funksjonene.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlim(start,</span> <span class="pre">slutt)</span></code> gjør at plottet bare viser <code class="docutils literal notranslate"><span class="pre">x</span></code>-verdier mellom <code class="docutils literal notranslate"><span class="pre">start</span></code> og <code class="docutils literal notranslate"><span class="pre">slutt</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylim(start,</span> <span class="pre">slutt)</span></code> gjør at plottet bare viser <code class="docutils literal notranslate"><span class="pre">y</span></code>-verdier mellom <code class="docutils literal notranslate"><span class="pre">start</span></code> og <code class="docutils literal notranslate"><span class="pre">slutt</span></code>.</p></li>
+</ul>
+</div>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Lag en array <code class="docutils literal notranslate"><span class="pre">x</span></code> med 100 jevnt fordelte tall i intervallet <span class="math notranslate nohighlight">\([-2, 2]\)</span>.</p>
+<p>Plott disse matematiske funksjonene i samme koordinatsystem:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g(x) = abs(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h(x) = abs(x^3)\)</span></p></li>
+</ol>
+<p>Få med <code class="docutils literal notranslate"><span class="pre">legend()</span></code> og tittel. Gi funksjonene dine egne farger. Se gjerne <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html#css-colors">dokumentasjonen</a> for de ulike fargene.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -353,7 +449,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Naturfag"
+            path: "./Avansert"
         },
         predefinedOutput: true
     }
@@ -372,20 +468,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Matematikk%201T/Tallf%C3%B8lger.html"
+       href="Arrays.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Tallfølger</p>
+        <p class="prev-next-title">Arrays</p>
       </div>
     </a>
     <a class="right-next"
-       href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html"
+       href="Plotting%20av%20enkle%20datasett.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Informasjonsteknologi 2 💾</p>
+        <p class="prev-next-title">Plotting: Enkle Datasett</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -398,6 +494,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-plot">Et enkelt plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stil">Stil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
