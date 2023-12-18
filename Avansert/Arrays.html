@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Arrays';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
@@ -171,7 +173,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Ordb%C3%B8ker.html">Ordbøker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Mer%20om%20arrays.html">Mer om arrays</a></li>
@@ -329,6 +330,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace-funksjonen"><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regne-ut-x-verdier-og-y-verdier-for-funksjoner">Regne ut <span class="math notranslate nohighlight">\(x\)</span>-verdier og <span class="math notranslate nohighlight">\(y\)</span>-verdier for funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-punkter">Skrive ut punkter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -361,27 +369,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Arrays kan bare ha elementer med data av samme type. Hvis man legger inn flere typer data vil alle blir gjort om til samme datatype.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Alfa&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
-<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">array2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39; &#39;Alfa&#39; &#39;True&#39;]
-[1.   2.   3.14]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Her ser vi at alle elementene i <code class="docutils literal notranslate"><span class="pre">array</span></code> har blitt gjort om til tekststrenger, og at alle elementene i <code class="docutils literal notranslate"><span class="pre">array2</span></code> har blitt gjort om til flyttall.</p>
 <section id="linspace-funksjonen">
 <h2><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen<a class="headerlink" href="#linspace-funksjonen" title="Permalink to this heading">#</a></h2>
 <p>For å lage en jevn fordeling av tall i et intervall kan vi bruke <code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen. Dette er nyttig for å lage <code class="docutils literal notranslate"><span class="pre">x</span></code>-verdier til en matematisk funksjon.</p>
@@ -402,7 +389,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Her kommer et eksempel på hvordan vi kan lage verdier med <code class="docutils literal notranslate"><span class="pre">linspace()</span></code> og bruke det til å finne tilsvarende <code class="docutils literal notranslate"><span class="pre">y</span></code>-verdier.</p>
+</section>
+<section id="regne-ut-x-verdier-og-y-verdier-for-funksjoner">
+<h2>Regne ut <span class="math notranslate nohighlight">\(x\)</span>-verdier og <span class="math notranslate nohighlight">\(y\)</span>-verdier for funksjoner<a class="headerlink" href="#regne-ut-x-verdier-og-y-verdier-for-funksjoner" title="Permalink to this heading">#</a></h2>
+<p>Her kommer et eksempel på hvordan vi kan lage <code class="docutils literal notranslate"><span class="pre">x</span></code>-verdier med <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> og bruke det til å finne tilsvarende <code class="docutils literal notranslate"><span class="pre">y</span></code>-verdier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -425,6 +415,68 @@ y-verdier: [4. 1. 0. 1. 4.]
 </div>
 </div>
 </div>
+<p>Forsøk å se for deg hvordan funksjonen ser ut ved å se på disse verdiene. Tegn den gjerne, hvis du gidder.</p>
+</section>
+<section id="skrive-ut-punkter">
+<h2>Skrive ut punkter<a class="headerlink" href="#skrive-ut-punkter" title="Permalink to this heading">#</a></h2>
+<p>Vi kan skrive ut hvert punktene til en funksjon ved å bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># 5 tall mellom -5 og 5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span> <span class="c1"># Skriver ut hvert punkt (x, y)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.0, 4.0)
+(-1.0, 1.0)
+(0.0, 0.0)
+(1.0, 1.0)
+(2.0, 4.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ved å endre på <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>-funksjonen og funksjonsuttrykket kan vi nå skrive ut så mange punkter vi ønsker fra en vilkårlig matematisk funksjon. <em>Sykt fett!</em> 🤙</p>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Ta gjerne utgangspunkt i det siste eksempelet over når du gjør disse oppgavene.</p>
+</div></blockquote>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>I denne oppgaven skal vi lage en andregradsfunksjon <span class="math notranslate nohighlight">\(f(x)=x^2-1\)</span></p>
+<ol class="arabic simple">
+<li><p>Lag en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> som regner ut <code class="docutils literal notranslate"><span class="pre">x**2-1</span></code> og returnerer svaret.</p></li>
+<li><p>Lag en array <code class="docutils literal notranslate"><span class="pre">x</span></code> med <span class="math notranslate nohighlight">\(9\)</span> jevnt fordelte tall mellom <span class="math notranslate nohighlight">\(-2\)</span> og <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
+<li><p>Regn ut <span class="math notranslate nohighlight">\(y\)</span>-verdiene med <code class="docutils literal notranslate"><span class="pre">y=f(x)</span></code>.</p></li>
+</ol>
+<p>Skriv ut <span class="math notranslate nohighlight">\(x\)</span>-verdiene og <span class="math notranslate nohighlight">\(y\)</span>-verdiene som punkter til slutt.</p>
+<ul class="simple">
+<li><p>Bruk punktene til å tegne funksjonen for hånd.</p></li>
+<li><p>Bruk verdiene og tegningen til å finne <span class="math notranslate nohighlight">\(x\)</span>-verdiene hvor funksjonen krysser <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
+</ul>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Overskuddet <span class="math notranslate nohighlight">\(O(x)\)</span> til en bedrift etter å ha produsert <span class="math notranslate nohighlight">\(x\)</span> enheter er gitt ved <span class="math notranslate nohighlight">\(O(x)=-x^2+50x-96\)</span>.</p>
+<p>Lag <span class="math notranslate nohighlight">\(51\)</span> jevnt fordelte <span class="math notranslate nohighlight">\(x\)</span>-verdier mellom <span class="math notranslate nohighlight">\(0\)</span> og <span class="math notranslate nohighlight">\(50\)</span>, finn <span class="math notranslate nohighlight">\(y\)</span>-verdiene og skriv ut punktene med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke.</p>
+<ul class="simple">
+<li><p>Hvor mange enheter må bedriften lage for å tjene penger?</p></li>
+<li><p>Hvor mange enheter må bedriften lage for å tjene mest mulig penger? Hvor mye tjener de da?</p></li>
+</ul>
+<p>Skriv svarene som en kommentar.</p>
+</section>
 </section>
 </section>
 
@@ -496,6 +548,13 @@ y-verdier: [4. 1. 0. 1. 4.]
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linspace-funksjonen"><code class="docutils literal notranslate"><span class="pre">linspace()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regne-ut-x-verdier-og-y-verdier-for-funksjoner">Regne ut <span class="math notranslate nohighlight">\(x\)</span>-verdier og <span class="math notranslate nohighlight">\(y\)</span>-verdier for funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-punkter">Skrive ut punkter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
