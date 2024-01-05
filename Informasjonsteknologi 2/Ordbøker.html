@@ -181,6 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gjenbrukbar%20kode.html">Gjenbrukbar kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spill%20med%20Pygame.html">Spill med Pygame</a></li>
 </ul>
 </li>
 </ul>
@@ -331,10 +332,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lister-av-ordboker">Lister av ordbøker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 </ul>
 </li>
 </ul>
@@ -379,13 +382,13 @@ Sverige
 </div>
 </div>
 </div>
-<p>Nøklene og verdiene i en ordbok trenger ikke være strings.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mai</span> <span class="o">=</span> <span class="p">{</span>
+<div class="note admonition">
+<p class="admonition-title">Nøklene og verdiene i en ordbok trenger ikke være strings!</p>
+<p>Nøklene og verdiene i en ordbok kan være av mange forskjellige typer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mai</span> <span class="o">=</span> <span class="p">{</span>
     <span class="mi">17</span> <span class="p">:</span> <span class="s2">&quot;Nasjonaldag!&quot;</span><span class="p">,</span>        <span class="c1"># Nøkkelen 17 har verdien &quot;Nasjonaldag!&quot;</span>
     <span class="s2">&quot;erVår&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>             <span class="c1"># Nøkkelen &quot;erVår&quot; har verdien True</span>
-    <span class="kc">True</span> <span class="p">:</span> <span class="s2">&quot;Det er mai!&quot;</span>       <span class="c1"># Nøkkelen True har verdien &quot;Det er mai!&quot;</span>
+    <span class="kc">True</span> <span class="p">:</span> <span class="s2">&quot;Det er mai!&quot;</span>        <span class="c1"># Nøkkelen True har verdien &quot;Det er mai!&quot;</span>
 <span class="p">}</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">mai</span><span class="p">[</span><span class="mi">17</span><span class="p">])</span>
@@ -393,13 +396,11 @@ Sverige
 <span class="nb">print</span><span class="p">(</span><span class="n">mai</span><span class="p">[</span><span class="kc">True</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nasjonaldag!
+<p>gir</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Nasjonaldag!
 True
 Det er mai!
 </pre></div>
-</div>
 </div>
 </div>
 <section id="legge-til-endre-og-fjerne-data">
@@ -425,7 +426,10 @@ Det er mai!
 <p>For å endre på data kan vi sette en eksisterende nøkkel til en ny verdi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;DK&quot;</span> <span class="p">:</span> <span class="s2">&quot;Danmark&quot;</span><span class="p">}</span>  <span class="c1"># En ordbok med en nøkkel</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DK&quot;</span> <span class="p">:</span> <span class="s2">&quot;Danmark&quot;</span>
+<span class="p">}</span> 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
 
@@ -436,8 +440,8 @@ Det er mai!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;DK&#39;: &#39;Danmark&#39;}
-{&#39;DK&#39;: &#39;Donkey Kong&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;NO&#39;: &#39;Norge&#39;, &#39;DK&#39;: &#39;Danmark&#39;}
+{&#39;NO&#39;: &#39;Norge&#39;, &#39;DK&#39;: &#39;Donkey Kong&#39;}
 </pre></div>
 </div>
 </div>
@@ -475,20 +479,54 @@ Det er mai!
 <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">land</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>         <span class="c1"># Skriver ut nøkkelen</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>   <span class="c1"># Skriver ut verdien til nøkkelen</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nøkkel:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>         <span class="c1"># Skriver ut nøkkelen</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Verdi:&quot;</span><span class="p">,</span> <span class="n">land</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>   <span class="c1"># Skriver ut verdien til nøkkelen</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NO
-Norge
-SE
-Sverige
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nøkkel: NO
+Verdi: Norge
+Nøkkel: SE
+Verdi: Sverige
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="lister-av-ordboker">
+<h2>Lister av ordbøker<a class="headerlink" href="#lister-av-ordboker" title="Permalink to this heading">#</a></h2>
+<p>Det kan være nyttig å lage flere ordbok-objekter og lagre de i en liste.</p>
+<p>La oss lage en liste <code class="docutils literal notranslate"><span class="pre">elevliste</span></code> som skal inneholde ordbøker med fag som nøkler og tilfeldige karakterer som verdier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">elevliste</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="c1"># Lager ordboken elev</span>
+    <span class="n">elev</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="c1"># Legger inn karakterer</span>
+    <span class="n">elev</span><span class="p">[</span><span class="s2">&quot;Norsk&quot;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">elev</span><span class="p">[</span><span class="s2">&quot;Gym&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">elev</span><span class="p">[</span><span class="s2">&quot;Matte&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+    <span class="c1"># Legger ordboken inn i listen</span>
+    <span class="n">elevliste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elev</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;Norsk&#39;: 6, &#39;Gym&#39;: 1, &#39;Matte&#39;: 5}, {&#39;Norsk&#39;: 4, &#39;Gym&#39;: 6, &#39;Matte&#39;: 2}, {&#39;Norsk&#39;: 5, &#39;Gym&#39;: 1, &#39;Matte&#39;: 1}]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Som vi ser har vi nå laget en liste som er fylt med ordbøker. Hvert element i listen skal representere en tilfeldig elev.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -520,11 +558,16 @@ Sverige
 </div>
 <p>Finn gjennomsnittet av karakterene ved å bruke ordboken <code class="docutils literal notranslate"><span class="pre">klasse</span></code>.</p>
 </section>
-<section id="oppgave-3-utfordring">
-<h3>Oppgave 3 (utfordring)<a class="headerlink" href="#oppgave-3-utfordring" title="Permalink to this heading">#</a></h3>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Ta utgangspunkt i eksempelet over som lager en liste av ordbøker.</p>
+<p>Utvid programmet til å skrive ut snittkarakteren til hver elev.</p>
+</section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
 <p>En vanlig måte å lagre farger på er ved å oppgi en verdi for hver farge. Tallene er heltall i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>. Vi bruker  <code class="docutils literal notranslate"><span class="pre">&quot;R&quot;</span></code> for rød, <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> for grønn og <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code> for blå.</p>
-<p>Lag en liste <code class="docutils literal notranslate"><span class="pre">farger</span></code> som skal inneholde ti tilfeldig genererte farger som ordbøker.</p>
-<p>Nøklene til ordbøkene skal hete <code class="docutils literal notranslate"><span class="pre">&quot;R&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>. Disse skal ha tilfeldige verdier i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>.</p>
+<p>Lag en liste <code class="docutils literal notranslate"><span class="pre">farger</span></code> som skal inneholde <span class="math notranslate nohighlight">\(5\)</span> tilfeldig genererte farger som ordbøker.</p>
+<p>Nøklene til ordbøkene skal være <code class="docutils literal notranslate"><span class="pre">&quot;R&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;B&quot;</span></code>. Disse skal ha tilfeldige verdier i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>.</p>
 <blockquote>
 <div><p>En del av utskriften til listen <code class="docutils literal notranslate"><span class="pre">farger</span></code> vil kunne se ut som dette: <code class="docutils literal notranslate"><span class="pre">[{'R':</span> <span class="pre">124,</span> <span class="pre">'G':</span> <span class="pre">52,</span> <span class="pre">'B':</span> <span class="pre">230},</span> <span class="pre">{'R':</span> <span class="pre">32,</span> <span class="pre">'G':</span> <span class="pre">89,</span> <span class="pre">'B':</span> <span class="pre">10},</span> <span class="pre">...]</span></code></p>
 </div></blockquote>
@@ -601,10 +644,12 @@ Sverige
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lister-av-ordboker">Lister av ordbøker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
 </ul>
 </li>
 </ul>

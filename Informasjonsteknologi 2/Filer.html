@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gjenbrukbar%20kode.html">Gjenbrukbar kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spill%20med%20Pygame.html">Spill med Pygame</a></li>
 </ul>
 </li>
 </ul>
@@ -424,7 +425,7 @@ S�lv,Ag,[2 8 18 18 1],Fast
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sølv,Ag,[2 8 18 18 1],Fast&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Da får vi filen:</p>
+<p>Da får vi skrevet filen:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hydrogen</span><span class="p">,</span><span class="n">H</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">Gass</span> 
 <span class="n">Helium</span><span class="p">,</span><span class="n">He</span><span class="p">,[</span><span class="mi">2</span><span class="p">],</span><span class="n">Gass</span> 
 <span class="n">Litium</span><span class="p">,</span><span class="n">Li</span><span class="p">,[</span><span class="mi">2</span> <span class="mi">1</span><span class="p">],</span><span class="n">Fast</span> 
@@ -445,23 +446,7 @@ S�lv,Ag,[2 8 18 18 1],Fast
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># Alle linjene lagres i listen &quot;linjer&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">linjer</span><span class="p">)</span> <span class="c1"># Skriver ut linjene som en liste</span>
-
-<span class="nn">File ~\AppData\Local\Programs\Python\Python310\lib\site-packages\IPython\core\interactiveshell.py:284,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">284</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;atomer.txt&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Hydrogen,H,[1],Gass \n&#39;, &#39;Helium,He,[2],Gass \n&#39;, &#39;Litium,Li,[2 1],Fast \n&#39;, &#39;Sølv,Ag,[2 8 18 18 1],Fast&#39;]
 </pre></div>
 </div>
 </div>
