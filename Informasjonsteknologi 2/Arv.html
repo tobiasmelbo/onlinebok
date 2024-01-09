@@ -329,9 +329,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-og-type"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
@@ -355,7 +355,7 @@ document.write(`
 <p>Arv er når man har en mer generell klasse som man lager subklasser av. Dette er veldig nyttig når vi skal modellere ting med objekter.</p>
 <section id="eksempel-bompengesystem">
 <h2>Eksempel: Bompengesystem<a class="headerlink" href="#eksempel-bompengesystem" title="Permalink to this heading">#</a></h2>
-<p>I dette eksempelet skal vi lage et bompengesystem.</p>
+<p>I dette eksempelet skal vi lage et bompengesystem for ulike kjøretøy. Ulike kjøretøy betaler ofte ulikt.</p>
 <p>En bil er en form for kjøretøy. Hvis vi lager en klasse <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, så vil vi at <code class="docutils literal notranslate"><span class="pre">Bil</span></code> skal <em>arve</em> fra denne klassen.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Bil</span></code> er en <em>subklasse</em> av <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, mens <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> er bilers <em>superklasse</em>.</p>
 <div class="cell docutils container">
@@ -385,12 +385,9 @@ document.write(`
 </div>
 <p>Vi ser at alle <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>-objekter skal ha et <code class="docutils literal notranslate"><span class="pre">merke</span></code> og kan tute med <code class="docutils literal notranslate"><span class="pre">tut()</span></code>. Selv om metoden <code class="docutils literal notranslate"><span class="pre">tut()</span></code> ikke står under <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen, så ser vi at <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objektet har arvet denne metoden fra <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>-klassen.</p>
 </section>
-<section id="isinstance-og-type">
-<h2><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#isinstance-og-type" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">isinstance(&lt;objekt&gt;,</span> <span class="pre">&lt;klasse&gt;)</span></code> lar oss sjekke om et objekt tilhører en klasse. Vi kan også sjekke superklasser med <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type(&lt;objekt&gt;)</span></code> lar oss sjekke om et objekt tilhører en spesifikk klasse. Dette lar oss ikke sjekke superklasser.</p></li>
-</ul>
+<section id="a-sjekke-typen-til-et-objekt">
+<h2>Å sjekke typen til et objekt<a class="headerlink" href="#a-sjekke-typen-til-et-objekt" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">type()</span></code>-funksjonen lar oss sjekke om et objekt tilhører en spesifikk klasse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
@@ -407,24 +404,29 @@ document.write(`
 
 <span class="n">bil</span> <span class="o">=</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">bil</span><span class="p">,</span> <span class="n">Kjøretøy</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">bil</span><span class="p">,</span> <span class="n">Bil</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">bil</span><span class="p">)</span> <span class="o">==</span> <span class="n">Kjøretøy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">bil</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">bil</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bil</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-True
-False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Bil&#39;&gt;
 True
 </pre></div>
 </div>
 </div>
 </div>
-<p>Vi ser at <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objektet gjelder både som <code class="docutils literal notranslate"><span class="pre">Bil</span></code> og <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> med <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>, men bare som <code class="docutils literal notranslate"><span class="pre">Bil</span></code> med <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
+<p>Vi ser at typen til bil er <code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'__main__.Bil'&gt;</span></code>. <code class="docutils literal notranslate"><span class="pre">type(bil)</span> <span class="pre">==</span> <span class="pre">Bil</span></code> er <code class="docutils literal notranslate"><span class="pre">True</span></code> fordi <code class="docutils literal notranslate"><span class="pre">bil</span></code> er et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Bil</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Hvordan sjekke superklasser</p>
+<p>I eksempelet over vil <code class="docutils literal notranslate"><span class="pre">type(bil)</span> <span class="pre">==</span> <span class="pre">Kjøretøy</span></code> evalueres til <code class="docutils literal notranslate"><span class="pre">False</span></code>. Hvorfor?</p>
+<p>Vi kan tenke oss at <code class="docutils literal notranslate"><span class="pre">type()</span></code>-funksjonen sjekker <em>navnet</em> til klassen. Dette navnet er <code class="docutils literal notranslate"><span class="pre">&quot;Bil&quot;</span></code>, ikke <code class="docutils literal notranslate"><span class="pre">&quot;Kjøretøy&quot;</span></code>.</p>
+<p>Men en bil er jo et kjøretøy også. Hvis vi ønsker å sjekke typen på en klasse som også gir <code class="docutils literal notranslate"><span class="pre">True</span></code> for en superklasse kan vi bruke <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>-funksjonen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">bil</span><span class="p">,</span> <span class="n">Kjøretøy</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Programmet over vil evalueres til <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</div>
 </section>
 <section id="utvidet-eksempel-bompengesystem">
 <h2>Utvidet eksempel: Bompengesystem<a class="headerlink" href="#utvidet-eksempel-bompengesystem" title="Permalink to this heading">#</a></h2>
@@ -473,13 +475,34 @@ Pris for elbil: 25
 </div>
 <p>Studer eksempelet nøye.</p>
 <p>Vi ser at <code class="docutils literal notranslate"><span class="pre">Lastebil</span></code> og <code class="docutils literal notranslate"><span class="pre">Bil</span></code> arver fra <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> og har sine egne priser. <code class="docutils literal notranslate"><span class="pre">ELBil</span></code> arver fra <code class="docutils literal notranslate"><span class="pre">Bil</span></code> og har halvparten av prisen til <code class="docutils literal notranslate"><span class="pre">Bil</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Hvordan hindre at objekter lages av en spesiell klasse</p>
+<p>Noen ganger ønsker vi at man ikke skal kunne lage objekter av en klasse. I eksempelet over ønsker vi ikke at noen skal lage objekter av klassen <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, bare <code class="docutils literal notranslate"><span class="pre">Bil</span></code>, <code class="docutils literal notranslate"><span class="pre">Lastebil</span></code> og <code class="docutils literal notranslate"><span class="pre">ELBil</span></code>.</p>
+<p>For å hindre dette kan vi modifisere konstruktøren til å sende en feilmelding om man lager et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, men ikke de som arver fra den.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">Kjøretøy</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Du kan ikke lage objekter av klassen Kjøretøy. Bruk subklassene i stedet.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
+</pre></div>
+</div>
+<p>Brukeren kan fortsatt lage objekter av subklassene, men om brukeren prøver å lage et objekt med</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bil</span> <span class="o">=</span> <span class="n">Kjøretøy</span><span class="p">(</span><span class="s2">&quot;Volvo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Så får brukeren feilmeldingen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">Exception</span><span class="p">:</span> <span class="n">Du</span> <span class="n">kan</span> <span class="n">ikke</span> <span class="n">lage</span> <span class="n">objekter</span> <span class="n">av</span> <span class="n">klassen</span> <span class="n">Kjøretøy</span><span class="o">.</span> <span class="n">Bruk</span> <span class="n">subklassene</span> <span class="n">i</span> <span class="n">stedet</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
 </section>
-<section id="objektorienterte-modeller">
-<h2>Objektorienterte modeller<a class="headerlink" href="#objektorienterte-modeller" title="Permalink to this heading">#</a></h2>
+<section id="objektorienterte-modeller-uml">
+<h2>Objektorienterte modeller: UML<a class="headerlink" href="#objektorienterte-modeller-uml" title="Permalink to this heading">#</a></h2>
 <p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
-<a class="reference internal image-reference" href="../_images/klassemodell.png"><img alt="Et bilde av en klassemodell. Øverst er det skrevet &quot;Kjøretøy&quot;. I raden under er det skrevet &quot;Lastebil&quot; og &quot;Bil&quot;. Det er piler fra &quot;Kjøretøy&quot; til &quot;Lastebil&quot; og &quot;Bil&quot;. I nederste rad er det bare skrevet &quot;ELBil&quot;. Det er en pil fra &quot;Bil&quot; til &quot;ELBil&quot;." class="align-center" src="../_images/klassemodell.png" style="width: 365.0px; height: 324.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/klassemodell.png"><img alt="Et bilde av en klassemodell. UML-diagrammer har bokser tre deler. En med navnet, en med attributtene, og en med metodene. Bildet avbilder flere klasser, og da går det en pil fra subklassene til superklassen." class="align-center" src="../_images/klassemodell.png" style="width: 380.0px; height: 339.0px;" /></a>
+<p>I UML-diagrammer er det vanlig å representere klasser som bokser med tre deler; en del for navnet til klassen, en del for attributtene og en del for metodene. Pilene representerer arv. Subklasser har piler som peker til superklasser.</p>
 <p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Det vil si at klassene får flere, mere spesifikke, egenskaper. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>. Det vil si at klassene får færre, mer generelle, egenskaper.</p>
-<p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://miro.com/nb/">Miro</a>, men man kan fint bruke for eksempel Paint eller PowerPoint.</p>
+<p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://miro.com/nb/">Miro</a>, men man kan fint bruke for eksempel Paint <a class="reference external" href="http://Paint.net">Paint.net</a> eller PowerPoint.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -624,9 +647,9 @@ Pris for elbil: 25
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isinstance-og-type"><code class="docutils literal notranslate"><span class="pre">isinstance()</span></code> og <code class="docutils literal notranslate"><span class="pre">type()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller">Objektorienterte modeller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
