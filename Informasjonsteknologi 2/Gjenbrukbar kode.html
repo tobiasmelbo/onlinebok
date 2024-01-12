@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Plotting: Reelle datasett med Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
@@ -328,6 +329,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-hints">Type hints</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-og-bruke-programmer-i-andre-programmer">Lage og bruke programmer i andre programmer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjon-med-docstrings">Dokumentasjon med docstrings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generere-dokumentasjon-med-pydoc">Generere dokumentasjon med <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
@@ -345,6 +347,45 @@ document.write(`
   <section id="gjenbrukbar-kode">
 <h1>Gjenbrukbar kode<a class="headerlink" href="#gjenbrukbar-kode" title="Permalink to this heading">#</a></h1>
 <p>Hvis den koden vi skriver skal kunne være <em>gjenbrukbar</em> er vi nødt til å skrive oversiktlig kode. I tillegg er det nyttig å skrive god <em>dokumentasjon</em> slik at andre kan bruke programmet vårt uten å måtte lese hele kildekoden selv.</p>
+<section id="type-hints">
+<h2>Type hints<a class="headerlink" href="#type-hints" title="Permalink to this heading">#</a></h2>
+<p>I funksjoner og metoder trenger vi ikke å definere hvilken type data vi forventer som argument, og heller ikke hvilken type data som funksjonen returnerer. Det er vi nødt til i andre språk som Java. La oss se på et eksempel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elev</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+    
+    <span class="k">def</span> <span class="nf">hils</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kompis_navn</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">navn</span><span class="si">}</span><span class="s2"> hilser på </span><span class="si">{</span><span class="n">kompis_navn</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">elev</span> <span class="o">=</span> <span class="n">Elev</span><span class="p">(</span><span class="s2">&quot;Linnea&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elev</span><span class="o">.</span><span class="n">hils</span><span class="p">(</span><span class="s2">&quot;Beate&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linnea hilser på Beate
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">hils()</span></code>-metoden skal ta en string <code class="docutils literal notranslate"><span class="pre">kompis_navn</span></code> og returnere en string <code class="docutils literal notranslate"><span class="pre">f{self.navn}</span> <span class="pre">hilser</span> <span class="pre">på</span> <span class="pre">{kompis_navn}</span></code>, men det er ingenting som hindrer oss i å skrive inn feil datatyper og det er heller ingenting som sier oss at metoden skal returnere en string, med mindre vi leser koden.</p>
+<p>For å signalisere hvilke datatyper vi forventer som argument, og hvilke datatyper som returneres, kan vi bruke <em>type hints</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elev</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+    
+    <span class="k">def</span> <span class="nf">hils</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kompis_navn</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">navn</span><span class="si">}</span><span class="s2"> hilser på </span><span class="si">{</span><span class="n">kompis_navn</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Der det står <code class="docutils literal notranslate"><span class="pre">kompis_navn</span> <span class="pre">:</span> <span class="pre">str</span></code> mener vi altså at variabelen med navn <code class="docutils literal notranslate"><span class="pre">kompis_navn</span></code> burde være en <code class="docutils literal notranslate"><span class="pre">str</span></code>. Pilen <code class="docutils literal notranslate"><span class="pre">-&gt;</span> <span class="pre">str</span></code> betyr at funksjonen skal returnere en <code class="docutils literal notranslate"><span class="pre">str</span></code>. Dette sier til brukeren hva som returneres og hva som skal puttes inn som argument. Dette vises for eksempel i VSCode og dokumentasjonen vi lager senere.</p>
+</section>
 <section id="lage-og-bruke-programmer-i-andre-programmer">
 <h2>Lage og bruke programmer i andre programmer<a class="headerlink" href="#lage-og-bruke-programmer-i-andre-programmer" title="Permalink to this heading">#</a></h2>
 <p>Det er enkelt å lage og bruke programmer i andre programmer. Vi lager først en Python-fil som definerer funksjoner og klasser, og deretter bruker vi <code class="docutils literal notranslate"><span class="pre">import</span></code> for å hente inn klassene og funksjonene til et annet program.</p>
@@ -357,17 +398,17 @@ document.write(`
 
 <span class="k">class</span> <span class="nc">Sirkel</span><span class="p">:</span>
     <span class="c1"># Konstruktøren</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span> <span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">areal</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">**</span> <span class="mi">2</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">omkrets</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span>
     
     <span class="c1"># Skalerer sirkelen med en faktor k</span>
-    <span class="k">def</span> <span class="nf">skaler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">skaler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span> <span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span>
 
     <span class="c1"># Returnerer en string når man printer objekter av klassen</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Sirkel med radius: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="si">}</span><span class="s2">, areal: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">areal</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2"> og omkrets: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">omkrets</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
@@ -427,7 +468,8 @@ Sirkel med radius: 2, areal: 12.57 og omkrets: 12.57
 <span class="sd">        omkrets: omkretsen regnet fra radius</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+    <span class="c1"># Konstruktøren</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span> <span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialiserer et sirkelobjekt med en radius r.</span>
 <span class="sd">        </span>
 <span class="sd">        Args:</span>
@@ -438,7 +480,7 @@ Sirkel med radius: 2, areal: 12.57 og omkrets: 12.57
         <span class="bp">self</span><span class="o">.</span><span class="n">omkrets</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span>
     
     <span class="c1"># Skalerer sirkelen med en faktor k</span>
-    <span class="k">def</span> <span class="nf">skaler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">skaler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span> <span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Skalerer sirkelobjektet med en faktor k.</span>
 <span class="sd">        </span>
 <span class="sd">        Args:</span>
@@ -447,7 +489,7 @@ Sirkel med radius: 2, areal: 12.57 og omkrets: 12.57
         <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span>
 
     <span class="c1"># Returnerer en string når man printer objekter av klassen</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gir en string når man printer sirkelobjekter.</span>
 <span class="sd">        </span>
 <span class="sd">        Returns:</span>
@@ -472,7 +514,7 @@ Sirkel med radius: 2, areal: 12.57 og omkrets: 12.57
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pydoc</span> <span class="o">-</span><span class="n">w</span> <span class="n">sirkelregner</span>
 </pre></div>
 </div>
-<p>Erstatt <code class="docutils literal notranslate"><span class="pre">sirkelregner</span></code> med din pakkes navn. Da vil du få en <code class="docutils literal notranslate"><span class="pre">.html</span></code>-fil med litt retro stil, men som forklarer metoder og objekter i programmet ditt.</p>
+<p>Erstatt <code class="docutils literal notranslate"><span class="pre">sirkelregner</span></code> med din pakkes navn. Da vil du få en <code class="docutils literal notranslate"><span class="pre">.html</span></code>-fil med litt retro stil, men som forklarer metoder og objekter i programmet ditt, og som kan sendes videre til brukeren.</p>
 </section>
 </section>
 
@@ -543,6 +585,7 @@ Sirkel med radius: 2, areal: 12.57 og omkrets: 12.57
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-hints">Type hints</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-og-bruke-programmer-i-andre-programmer">Lage og bruke programmer i andre programmer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjon-med-docstrings">Dokumentasjon med docstrings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generere-dokumentasjon-med-pydoc">Generere dokumentasjon med <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>

@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Plotting: Reelle datasett med Pandas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
@@ -356,7 +357,7 @@ document.write(`
 <section id="eksempel-bompengesystem">
 <h2>Eksempel: Bompengesystem<a class="headerlink" href="#eksempel-bompengesystem" title="Permalink to this heading">#</a></h2>
 <p>I dette eksempelet skal vi lage et bompengesystem for ulike kjøretøy. Ulike kjøretøy betaler ofte ulikt.</p>
-<p>En bil er en form for kjøretøy. Hvis vi lager en klasse <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, så vil vi at <code class="docutils literal notranslate"><span class="pre">Bil</span></code> skal <em>arve</em> fra denne klassen.</p>
+<p>En bil er en form for kjøretøy. Hvis vi lager en klasse <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, så vil vi at <code class="docutils literal notranslate"><span class="pre">Bil</span></code> skal <em>arve</em> fra denne klassen, fordi en bil også er et kjøretøy.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Bil</span></code> er en <em>subklasse</em> av <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code>, mens <code class="docutils literal notranslate"><span class="pre">Kjøretøy</span></code> er bilers <em>superklasse</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,10 +500,10 @@ Pris for elbil: 25
 <section id="objektorienterte-modeller-uml">
 <h2>Objektorienterte modeller: UML<a class="headerlink" href="#objektorienterte-modeller-uml" title="Permalink to this heading">#</a></h2>
 <p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
-<a class="reference internal image-reference" href="../_images/klassemodell.png"><img alt="Et bilde av en klassemodell. UML-diagrammer har bokser tre deler. En med navnet, en med attributtene, og en med metodene. Bildet avbilder flere klasser, og da går det en pil fra subklassene til superklassen." class="align-center" src="../_images/klassemodell.png" style="width: 380.0px; height: 339.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/klassemodell.png"><img alt="Et bilde av en klassemodell. UML-diagrammer har bokser tre deler. En med navnet, en med attributtene, og en med metodene. Bildet avbilder flere klasser, og da går det en pil fra subklassene til superklassen." class="align-center" src="../_images/klassemodell.png" style="width: 598.5px; height: 527.5px;" /></a>
 <p>I UML-diagrammer er det vanlig å representere klasser som bokser med tre deler; en del for navnet til klassen, en del for attributtene og en del for metodene. Pilene representerer arv. Subklasser har piler som peker til superklasser.</p>
 <p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Det vil si at klassene får flere, mere spesifikke, egenskaper. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>. Det vil si at klassene får færre, mer generelle, egenskaper.</p>
-<p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://miro.com/nb/">Miro</a>, men man kan fint bruke for eksempel Paint <a class="reference external" href="http://Paint.net">Paint.net</a> eller PowerPoint.</p>
+<p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://draw.io/">Draw.io</a>.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">

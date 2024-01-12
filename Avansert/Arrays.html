@@ -166,6 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Plotting: Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
@@ -420,7 +421,7 @@ y-verdier: [4. 1. 0. 1. 4.]
 </section>
 <section id="skrive-ut-punkter">
 <h2>Skrive ut punkter<a class="headerlink" href="#skrive-ut-punkter" title="Permalink to this heading">#</a></h2>
-<p>Vi kan skrive ut hvert punktene til en funksjon ved å bruke en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke.</p>
+<p>Vi kan skrive ut flere punkter fra en matematisk funksjon med en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke. Da kan vi få en anelse over hvordan den ser ut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -446,7 +447,7 @@ y-verdier: [4. 1. 0. 1. 4.]
 </div>
 </div>
 </div>
-<p>Ved å endre på <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>-funksjonen og funksjonsuttrykket kan vi nå skrive ut så mange punkter vi ønsker fra en vilkårlig matematisk funksjon. <em>Sykt fett!</em> 🤙</p>
+<p>Ved å endre på <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>-funksjonen og funksjonsuttrykket kan vi nå skrive ut så mange punkter vi ønsker fra en vilkårlig matematisk funksjon. <em>Sykt fett, dude!</em> 🤙</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -456,13 +457,8 @@ y-verdier: [4. 1. 0. 1. 4.]
 </div></blockquote>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>I denne oppgaven skal vi lage en andregradsfunksjon <span class="math notranslate nohighlight">\(f(x)=x^2-1\)</span></p>
-<ol class="arabic simple">
-<li><p>Lag en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span> som regner ut <code class="docutils literal notranslate"><span class="pre">x**2-1</span></code> og returnerer svaret.</p></li>
-<li><p>Lag en array <code class="docutils literal notranslate"><span class="pre">x</span></code> med <span class="math notranslate nohighlight">\(9\)</span> jevnt fordelte tall mellom <span class="math notranslate nohighlight">\(-2\)</span> og <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
-<li><p>Regn ut <span class="math notranslate nohighlight">\(y\)</span>-verdiene med <code class="docutils literal notranslate"><span class="pre">y=f(x)</span></code>.</p></li>
-</ol>
-<p>Skriv ut <span class="math notranslate nohighlight">\(x\)</span>-verdiene og <span class="math notranslate nohighlight">\(y\)</span>-verdiene som punkter til slutt.</p>
+<p>I denne oppgaven skal vi lage en andregradsfunksjon <span class="math notranslate nohighlight">\(g(x)=x^2-1\)</span></p>
+<p>Bruk eksempelet over til å skrive ut punkter fra funksjonen <code class="docutils literal notranslate"><span class="pre">g(x)</span></code> med <span class="math notranslate nohighlight">\(9\)</span> jevnt fordelte <span class="math notranslate nohighlight">\(x\)</span>-verdier mellom <span class="math notranslate nohighlight">\(-2\)</span> og <span class="math notranslate nohighlight">\(2\)</span>.</p>
 <ul class="simple">
 <li><p>Bruk punktene til å tegne funksjonen for hånd.</p></li>
 <li><p>Bruk verdiene og tegningen til å finne <span class="math notranslate nohighlight">\(x\)</span>-verdiene hvor funksjonen krysser <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
