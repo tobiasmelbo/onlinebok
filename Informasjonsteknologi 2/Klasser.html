@@ -170,11 +170,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20Intro.html">Intro til Micro:bit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Micro:bit og trådløs kommunikasjon</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Ordb%C3%B8ker.html">Ordbøker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mer%20om%20arrays.html">Mer om arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
@@ -387,13 +392,13 @@ document.write(`
 <h2>Objekter<a class="headerlink" href="#objekter" title="Permalink to this heading">#</a></h2>
 <p>Kort sagt kan vi si at et <em>objekt</em> er noe som kan</p>
 <ol class="arabic simple">
-<li><p>inneholde data</p></li>
+<li><p>inneholde data (attributter)</p></li>
 <li><p>gjøre ting (metoder)</p></li>
 </ol>
 <section id="id1">
 <h3>Klasser<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>For å lage et objekt må vi spesifisere hvilke data som objektet kan inneholde, og hvilke ting objektet kan gjøre.</p>
-<p>En slik oppskrift for hvordan objekter skal være kalles for en <em>klasse</em>.</p>
+<p>En slik oppskrift kalles for en <em>klasse</em>.</p>
 </section>
 </section>
 <section id="et-enkelt-eksempel-teller">
@@ -427,8 +432,8 @@ Teller: 1
 <p>Dette programmet lager en klasse <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Deretter opprettes et objekt <code class="docutils literal notranslate"><span class="pre">t</span></code> som er av klassen <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Så bruker vi <code class="docutils literal notranslate"><span class="pre">tell()</span></code>-metoden (som er innebygd i objektet <code class="docutils literal notranslate"><span class="pre">t</span></code>) for å telle oppover. Hver gang vi gjør et kall på <code class="docutils literal notranslate"><span class="pre">tell()</span></code>-metoden, øker antallet.</p>
 <section id="konstruktoren-og-metoder">
 <h3>Konstruktøren og metoder<a class="headerlink" href="#konstruktoren-og-metoder" title="Permalink to this heading">#</a></h3>
-<p><em>Konstruktøren</em> <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> er en spesiell funksjon som lar oss definere hva som skal skje når et objekt opprettes. Vi kan for eksempel bestemme hvilke data som objektet skal inneholde fra starten av.</p>
-<p><em>Metoder</em> er funksjoner som definerer hva et objekt kan gjøre. Hvis man skal kunne bruke eller endre objektets data må man ha <code class="docutils literal notranslate"><span class="pre">self</span></code> som parameter i funksjonen.</p>
+<p><em>Konstruktøren</em> <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> er en spesiell metode som lar oss definere hva som skal skje når et objekt opprettes. Når vi oppretter et objekt så kjøres konstruktøren. Det er vanlig å sette objekters attributter her.</p>
+<p><em>Metoder</em> er funksjoner som definerer hva et objekt kan gjøre.</p>
 </section>
 </section>
 <section id="et-nytt-eksempel-mario">
@@ -549,9 +554,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x0000024046884400&gt;
-&lt;__main__.Farge object at 0x0000024046887250&gt;
-&lt;__main__.Farge object at 0x00000240468840A0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x0000013242875A80&gt;
+&lt;__main__.Farge object at 0x0000013242877220&gt;
+&lt;__main__.Farge object at 0x0000013242877190&gt;
 </pre></div>
 </div>
 </div>
@@ -591,9 +596,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(31, 92, 138)
-(179, 8, 47)
-(200, 189, 107)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(218, 84, 89)
+(55, 27, 65)
+(249, 133, 112)
 </pre></div>
 </div>
 </div>

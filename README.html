@@ -7,7 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Søk - Programmering med Tobias.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Programmering med Tobias &#8212; Programmering med Tobias.</title>
   
   
   
@@ -59,12 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Søk" href="#" />
+    <link rel="search" title="Søk" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -92,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -169,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Naturfag/Microbit%20Intro.html">Intro til Micro:bit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Micro:bit og trådløs kommunikasjon</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -231,6 +230,54 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -262,7 +309,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -271,42 +320,83 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Søk</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Feil</p>
-        <p>Please activate JavaScript to enable the search functionality.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Programmering med Tobias</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">🧑‍🏫 Introduksjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boken">📖 Boken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitler">📚 Kapitler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kontakt">💌 Kontakt</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="programmering-med-tobias">
+<h1>Programmering med Tobias<a class="headerlink" href="#programmering-med-tobias" title="Permalink to this heading">#</a></h1>
+<section id="introduksjon">
+<h2>🧑‍🏫 Introduksjon<a class="headerlink" href="#introduksjon" title="Permalink to this heading">#</a></h2>
+<p>Hei! 👋 Jeg heter Tobias og jobber som lærer på videregående 🤓</p>
+<p>Jeg skriver denne nettboken for å dele undervisningsopplegg og fagstoff om programmering i Python 🐍</p>
+</section>
+<section id="boken">
+<h2>📖 Boken<a class="headerlink" href="#boken" title="Permalink to this heading">#</a></h2>
+<p>Du finner en lenke til boken <a class="reference external" href="https://tobiasmelbo.github.io/onlinebok">her</a>. Boken er åpen og gratis for alle som skulle ønske å bruke den. Den oppdateres ofte, så derfor anbefaler jeg å bruke nettsiden, men man kan laste den ned og printe ut hvis man skulle ønske det også.</p>
+</section>
+<section id="kapitler">
+<h2>📚 Kapitler<a class="headerlink" href="#kapitler" title="Permalink to this heading">#</a></h2>
+<p>Boken er inndelt på følgende måte.</p>
+<ul class="simple">
+<li><p><em>Grunnleggende Python</em> handler om noen av de grunnleggende strukturene i Python. Alt fra variabler og pakker til funksjoner dekkes her. Innholdet er ment til å være nok til å kunne lage grunnleggende programmer i Python.</p></li>
+<li><p><em>Avansert Python</em> handler om dataanalyse. Arrays, plotting og regresjon er tema her. Disse temaene er felles for flere fag i videregående skole.</p></li>
+<li><p><em>Matematikk 1T</em> har undervisningsopplegg for Matematikk 1T.</p></li>
+<li><p><em>Naturfag</em> har undervisningsopplegg for Naturfag.</p></li>
+<li><p><em>Informasjonstenkologi 2</em> har undervisningsopplegg for Informasjonsteknologi 2. Dette innebærer en grundigere gjennomgang av noen av de mer grunnleggende temaene og et fokus på objektorientert programmering og modellering.</p></li>
+</ul>
+</section>
+<section id="kontakt">
+<h2>💌 Kontakt<a class="headerlink" href="#kontakt" title="Permalink to this heading">#</a></h2>
+<p>Send meg en mail : 📧 <a class="reference external" href="mailto:tobiasmelb&#37;&#52;&#48;afk&#46;no">tobiasmelb<span>&#64;</span>afk<span>&#46;</span>no</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
 
               
               
@@ -325,6 +415,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduksjon">🧑‍🏫 Introduksjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boken">📖 Boken</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapitler">📚 Kapitler</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kontakt">💌 Kontakt</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
