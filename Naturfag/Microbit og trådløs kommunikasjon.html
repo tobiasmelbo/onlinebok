@@ -337,7 +337,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bade-sender-og-mottaker">Både sender og mottaker 📡</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalstyrke">Signalstyrke 📶</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-teste-signalstyrke">Oppgave: Teste signalstyrke 📶</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sender">Sender</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mottaker">Mottaker</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instruksjoner">Instruksjoner</a></li>
 </ul>
             </nav>
         </div>
@@ -359,7 +364,7 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">radio</span>
 
-<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># Velg et eget gruppenummer</span>
 
 <span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -374,9 +379,50 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="signalstyrke">
-<h2>Signalstyrke 📶<a class="headerlink" href="#signalstyrke" title="Permalink to this heading">#</a></h2>
-<p>For å teste signalstyrke kan vi ha</p>
+<section id="oppgave-teste-signalstyrke">
+<h2>Oppgave: Teste signalstyrke 📶<a class="headerlink" href="#oppgave-teste-signalstyrke" title="Permalink to this heading">#</a></h2>
+<p>For å teste signalstyrke trenger vi en sender og en mottaker.</p>
+<section id="sender">
+<h3>Sender<a class="headerlink" href="#sender" title="Permalink to this heading">#</a></h3>
+<p>Senderen kan ha denne koden som sender en melding hvert femte sekund.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Ping&quot;</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="mottaker">
+<h3>Mottaker<a class="headerlink" href="#mottaker" title="Permalink to this heading">#</a></h3>
+<p>Mottakeren kan ha denne koden som mottar et signal og skriver ut signalstyrken når den gjør det.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">radio</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">signal</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">recieve_full</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">signal</span><span class="p">:</span>
+        <span class="n">message</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="n">signal</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">rssi</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="instruksjoner">
+<h2>Instruksjoner<a class="headerlink" href="#instruksjoner" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Sett opp sender og mottaker etter koden over.</p></li>
+<li><p>Varier på lengden mellom sender og mottakker. Hvor langt kan dere gå før dere ikke får signal?</p></li>
+<li><p>Forsøk å putte senderen i en mikrobølgeovn (ikke skru den på 💀).</p></li>
+<li><p>Er mikrobølgeovnen helt tett for stråling?</p></li>
+</ol>
 </section>
 </section>
 
@@ -448,7 +494,12 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bade-sender-og-mottaker">Både sender og mottaker 📡</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signalstyrke">Signalstyrke 📶</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-teste-signalstyrke">Oppgave: Teste signalstyrke 📶</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sender">Sender</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mottaker">Mottaker</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instruksjoner">Instruksjoner</a></li>
 </ul>
   </nav></div>
 
