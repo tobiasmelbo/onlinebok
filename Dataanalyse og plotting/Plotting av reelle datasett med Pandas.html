@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Plotting av reelle datasett med Pandas';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Plotting av reelle datasett med Pandas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
     <link rel="next" title="Regresjon" href="Regresjon.html" />
@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Avansert%20Python.html">Avansert Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
@@ -170,8 +170,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til Micro:bit</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20Intro.html">Intro til Micro:bit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
 </ul>
@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Avansert/Plotting av reelle datasett med Pandas.ipynb" target="_blank"
+      <li><a href="../_sources/Dataanalyse og plotting/Plotting av reelle datasett med Pandas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +362,7 @@ document.write(`
 <section id="lese-inn-i-pandas">
 <h2>Lese inn i Pandas<a class="headerlink" href="#lese-inn-i-pandas" title="Permalink to this heading">#</a></h2>
 <p>La oss ta utgangspunkt i et datasett fra SSB om konsumprisindeksen fra og med 1930 til og med 2023.</p>
-<p>Du kan laste ned datafilen <a class="reference download internal" download="" href="../_downloads/94aba8ae819f2847edf97f8df0f81c4e/konsumprisindeks.csv"><span class="xref download myst">her</span></a>.</p>
+<p>Du kan laste ned datafilen <a class="reference download internal" download="" href="../_downloads/7890a897250b5972e2b5eec6e6f9616b/konsumprisindeks.csv"><span class="xref download myst">her</span></a>.</p>
 <p>Hvis vi åpner filen <code class="docutils literal notranslate"><span class="pre">konsumprisindeks.csv</span></code> får vi en fil hvor de første linjene ser slik ut:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">År</span><span class="p">;</span><span class="n">Årsgj</span><span class="o">.</span><span class="n">snitt2</span><span class="p">;</span><span class="n">Jan</span><span class="p">;</span><span class="n">Feb</span><span class="p">;</span><span class="n">Mar</span><span class="p">;</span><span class="n">Apr</span><span class="p">;</span><span class="n">Mai</span><span class="p">;</span><span class="n">Jun</span><span class="p">;</span><span class="n">Jul</span><span class="p">;</span><span class="n">Aug</span><span class="p">;</span><span class="n">Sep</span><span class="p">;</span><span class="n">Okt</span><span class="p">;</span><span class="n">Nov</span><span class="p">;</span><span class="n">Des</span>
 <span class="mi">2023</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">127</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">9</span>
@@ -435,7 +435,7 @@ document.write(`
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal vi plotte boligprisindeks for brukte boliger i Oslo/Bærum fra og med <span class="math notranslate nohighlight">\(1992\)</span> til og med <span class="math notranslate nohighlight">\(2022\)</span>.</p>
-<p>Last ned datafilen <a class="reference download internal" download="" href="../_downloads/0c419fe01e6c3fbb942f24791cd14e13/boligpriser.csv"><span class="xref download myst">her</span></a>.</p>
+<p>Last ned datafilen <a class="reference download internal" download="" href="../_downloads/ef68b0926da75b5f8902876563042a9a/boligpriser.csv"><span class="xref download myst">her</span></a>.</p>
 <p>Starten av datafilen står under. Legg merke til at desimaltallene er skrevet med punktum <code class="docutils literal notranslate"><span class="pre">.</span></code> her, ikke komma <code class="docutils literal notranslate"><span class="pre">,</span></code> som i eksempelet over. Legg også merke til at navnet på kolonnene må skrives <em>helt</em> likt som i filen.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Region&quot;</span><span class="p">;</span><span class="s2">&quot;Boligtype&quot;</span><span class="p">;</span><span class="s2">&quot;År&quot;</span><span class="p">;</span><span class="s2">&quot;Prisindeks for brukte boliger&quot;</span>
 <span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1992&quot;</span><span class="p">;</span><span class="mf">13.6</span>
@@ -462,7 +462,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Avansert"
+            path: "./Dataanalyse og plotting"
         },
         predefinedOutput: true
     }
