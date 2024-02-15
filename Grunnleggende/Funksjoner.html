@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Grunnleggende%20Python.html">Grunnleggende Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Vilk%C3%A5r.html">Vilkår</a></li>
+<li class="toctree-l2"><a class="reference internal" href="If-setninger.html">If-setninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lister.html">Lister</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Funksjoner</a></li>
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til Micro:bit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
@@ -339,7 +339,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumenter-og-return-verdier">Argumenter og <code class="docutils literal notranslate"><span class="pre">return</span></code>-verdier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-parametre">Flere parametre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-argumenter">Flere argumenter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -406,9 +406,9 @@ document.write(`
 <p>Derfor skrives <code class="docutils literal notranslate"><span class="pre">4</span></code> ut.</p>
 <p>Nå kan vi lage matematiske funksjoner!</p>
 </section>
-<section id="flere-parametre">
-<h2>Flere parametre<a class="headerlink" href="#flere-parametre" title="Permalink to this heading">#</a></h2>
-<p>Vi kan også gi en funksjon flere argumenter ved å skille de med komma.</p>
+<section id="flere-argumenter">
+<h2>Flere argumenter<a class="headerlink" href="#flere-argumenter" title="Permalink to this heading">#</a></h2>
+<p>Vi kan gi en funksjon flere argumenter ved å skille de med komma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">størst</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -456,7 +456,7 @@ document.write(`
 <aside class="sidebar">
 <p>Med Pytagoras læresetning kan vi finne den lengste siden i en rettvinklet trekant med formelen <span class="math notranslate nohighlight">\(c = \sqrt{a^2+b^2}\)</span>.</p>
 </aside>
-<p>Lag en funksjon som tar lengden av to sider <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> som parameter og returnerer lengden av den lengste siden <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
+<p>Lag en funksjon som tar lengden av to sider <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> som argumenter og returnerer lengden av den lengste siden <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
 <p>Test funksjonen med trekanten <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">4</span></code>. Dette skal gi <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
 </section>
 <section id="oppgave-5">
@@ -545,7 +545,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumenter-og-return-verdier">Argumenter og <code class="docutils literal notranslate"><span class="pre">return</span></code>-verdier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-parametre">Flere parametre</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-argumenter">Flere argumenter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>

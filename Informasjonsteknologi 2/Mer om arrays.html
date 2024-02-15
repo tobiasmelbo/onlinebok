@@ -154,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Vilk%C3%A5r.html">Vilkår</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til Micro:bit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
@@ -416,7 +416,7 @@ document.write(`
 </section>
 <section id="zeros-funksjonen">
 <h2><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen<a class="headerlink" href="#zeros-funksjonen" title="Permalink to this heading">#</a></h2>
-<p>Hvis vi ønsker å fylle en array med mange nuller så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen. Legger vi en tuppel (f.eks <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">3)</span></code>) inn som parameter, så får vi en todimensjonell array.</p>
+<p>Hvis vi ønsker å fylle en array med mange nuller så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen. Legger vi en tuppel (f.eks <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">3)</span></code>) inn som argument, så får vi en todimensjonell array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -456,8 +456,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [ 4. 10.  7.  1.  2.  7.  7.  2.  8.  3.]
-Sortert array: [ 1.  2.  2.  3.  4.  7.  7.  7.  8. 10.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [ 2.  7.  9.  8. 10.  8.  7.  1.  7.  9.]
+Sortert array: [ 1.  2.  7.  7.  7.  8.  8.  9.  9. 10.]
 </pre></div>
 </div>
 </div>
@@ -651,7 +651,7 @@ Element i posisjon [1][1]:  5
 <h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
 <p>Lag en array med navn <code class="docutils literal notranslate"><span class="pre">x</span></code> fylt med 9 verdier jevnt fordelt mellom -2 og 2.</p>
 <ol class="arabic simple">
-<li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> som tar en <code class="docutils literal notranslate"><span class="pre">x</span></code> som parameter og returnerer <code class="docutils literal notranslate"><span class="pre">abs(x)</span></code>.</p></li>
+<li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> som tar en <code class="docutils literal notranslate"><span class="pre">x</span></code> som argument og returnerer <code class="docutils literal notranslate"><span class="pre">abs(x)</span></code>.</p></li>
 <li><p>Lag en array <code class="docutils literal notranslate"><span class="pre">y</span></code> ved å sette inn arrayet <code class="docutils literal notranslate"><span class="pre">x</span></code> i funksjonen <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
 <li><p>Skriv ut både <code class="docutils literal notranslate"><span class="pre">x</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
 </ol>

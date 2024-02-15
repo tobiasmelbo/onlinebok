@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Vilk%C3%A5r.html">Vilkår</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til Micro:bit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
@@ -521,7 +521,7 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 </div>
-<p>Legg merke til konstruktøren i <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen. <code class="docutils literal notranslate"><span class="pre">self</span></code>-parameteret er nødvendig for å kunne sette data som objektet skal inneholde, men utenom <code class="docutils literal notranslate"><span class="pre">self</span></code> har funksjonen to parametre, <code class="docutils literal notranslate"><span class="pre">x</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span></code>. Disse gjør at vi kan (og må) definere en startposisjon når vi oppretter <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekter, som du ser i koden når vi lager et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt med <code class="docutils literal notranslate"><span class="pre">Mario(0,</span> <span class="pre">0)</span></code>.</p>
+<p>Legg merke til konstruktøren i <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen. <code class="docutils literal notranslate"><span class="pre">self</span></code>-argumentet er nødvendig for å kunne sette data som objektet skal inneholde, men utenom <code class="docutils literal notranslate"><span class="pre">self</span></code> har funksjonen to argumenter, <code class="docutils literal notranslate"><span class="pre">x</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span></code>. Disse gjør at vi kan (og må) definere en startposisjon når vi oppretter <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekter, som du ser i koden når vi lager et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt med <code class="docutils literal notranslate"><span class="pre">Mario(0,</span> <span class="pre">0)</span></code>.</p>
 <p>I tillegg kan vi se at metodene <code class="docutils literal notranslate"><span class="pre">beveg_høyre()</span></code>, <code class="docutils literal notranslate"><span class="pre">beveg_venstre()</span></code>, <code class="docutils literal notranslate"><span class="pre">hopp()</span></code> og <code class="docutils literal notranslate"><span class="pre">fall()</span></code> kaller på en annen metode i samme objekt ved navn <code class="docutils literal notranslate"><span class="pre">skriv_posisjon()</span></code>. Det gjør at objektets posisjon skrives ut hver gang objektet flyttes på.</p>
 </section>
 <section id="eksempel-flere-objekter-i-en-liste">
@@ -556,9 +556,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001EB57A37C40&gt;
-&lt;__main__.Farge object at 0x000001EB57A34700&gt;
-&lt;__main__.Farge object at 0x000001EB57A37D60&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001B4944E7BB0&gt;
+&lt;__main__.Farge object at 0x000001B4944E43A0&gt;
+&lt;__main__.Farge object at 0x000001B4944E4F40&gt;
 </pre></div>
 </div>
 </div>
@@ -598,9 +598,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100, 77, 122)
-(141, 253, 17)
-(11, 46, 78)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(135, 87, 54)
+(180, 77, 246)
+(80, 168, 242)
 </pre></div>
 </div>
 </div>
@@ -766,7 +766,7 @@ Isidor Beate Nicolai Kristoffer
 <h3>Oppgave 2 🚗<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal vi lage en enkel klasse.</p>
 <ol class="arabic simple">
-<li><p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Bil</span></code>. Bil-objekter skal ha en attributt <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> som en string. <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> skal settes som parameter til konstruktøren.</p></li>
+<li><p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Bil</span></code>. Bil-objekter skal ha en attributt <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> som en string. <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> skal settes som argument til konstruktøren.</p></li>
 <li><p>Legg til en metode som heter <code class="docutils literal notranslate"><span class="pre">tut()</span></code>. Denne skal printe en tutelyd som tekst (f.eks <code class="docutils literal notranslate"><span class="pre">Tut!</span></code>).</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekt, skriv ut bilmerket og bruk <code class="docutils literal notranslate"><span class="pre">tut()</span></code>-metoden til objektet.</p></li>
 </ol>
@@ -784,7 +784,7 @@ Isidor Beate Nicolai Kristoffer
 </section>
 <section id="oppgave-4">
 <h3>Oppgave 4 💸<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
-<p>Lag en Python-klasse kalt «Bankkonto» med «kontonummer» og «saldo» som attributter. Disse skal settes som parameter til konstruktøren.</p>
+<p>Lag en Python-klasse kalt «Bankkonto» med «kontonummer» og «saldo» som attributter. Disse skal settes som argument til konstruktøren.</p>
 <ol class="arabic simple">
 <li><p>Legg til metoder for innskudd og uttak fra kontoen, og skriv ut saldoen etter hver operasjon.</p></li>
 <li><p>Legg til en feilmelding når man prøver å ta ut mer penger enn man har.</p></li>
@@ -797,7 +797,7 @@ Isidor Beate Nicolai Kristoffer
 <ol class="arabic simple">
 <li><p>Utvid <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som returnerer bilmerket slik at vi kan bruke <code class="docutils literal notranslate"><span class="pre">print()</span></code> på <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter.</p></li>
 </ol>
-<p>Lag en ny klasse <code class="docutils literal notranslate"><span class="pre">PHus</span></code> som skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">plasser</span></code> som er tom fra starten av, i tillegg skal man kunne legge inn en maksgrense for antall biler som parameter til konstruktøren.</p>
+<p>Lag en ny klasse <code class="docutils literal notranslate"><span class="pre">PHus</span></code> som skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">plasser</span></code> som er tom fra starten av, i tillegg skal man kunne legge inn en maksgrense for antall biler som argument til konstruktøren.</p>
 <ol class="arabic simple" start="2">
 <li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">parker()</span></code> som legger en bil inn i <code class="docutils literal notranslate"><span class="pre">plasser</span></code>-listen, men dersom antall biler er over maksgrensen skal det printes at det ikke er plass og at bilen ikke ble lagt til.</p></li>
 <li><p>Utvid klassen <code class="docutils literal notranslate"><span class="pre">PHus</span></code> med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som skriver ut bilmerkene til alle bilene som er parkert.</p></li>

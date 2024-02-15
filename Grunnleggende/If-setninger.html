@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Vilkår &#8212; Programmering med Tobias.</title>
+    <title>If-setninger &#8212; Programmering med Tobias.</title>
   
   
   
@@ -61,7 +61,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Grunnleggende/Vilkår';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Grunnleggende/If-setninger';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
     <link rel="next" title="Løkker" href="L%C3%B8kker.html" />
@@ -154,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Grunnleggende%20Python.html">Grunnleggende Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Vilkår</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">If-setninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lister.html">Lister</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Funksjoner.html">Funksjoner</a></li>
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til Micro:bit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
@@ -244,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Grunnleggende/Vilkår.ipynb" target="_blank"
+      <li><a href="../_sources/Grunnleggende/If-setninger.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +326,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Vilkår</h1>
+    <h1>If-setninger</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -337,7 +337,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utsagn">Utsagn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Vilkår</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">If-setninger</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -355,9 +355,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="vilkar">
-<span id="id1"></span><h1>Vilkår<a class="headerlink" href="#vilkar" title="Permalink to this heading">#</a></h1>
-<p>Vilkår (<em><code class="docutils literal notranslate"><span class="pre">if</span></code>-statements</em>) er en måte for å sjekke om et utsagn er sant, og så gjøre en del av koden bare <em>dersom</em> det er sant. Da kan programmet reagere ulikt til forskjellige scenarioer.</p>
+  <section id="if-setninger">
+<span id="id1"></span><h1>If-setninger<a class="headerlink" href="#if-setninger" title="Permalink to this heading">#</a></h1>
+<p>If-setninger (<em><code class="docutils literal notranslate"><span class="pre">if</span></code>-statements</em>) er en måte for å sjekke om et utsagn er sant, og så gjøre en del av koden bare <em>dersom</em> det er sant. Da kan programmet reagere ulikt til forskjellige scenarioer.</p>
 <section id="utsagn">
 <h2>Utsagn<a class="headerlink" href="#utsagn" title="Permalink to this heading">#</a></h2>
 <p>Utsagn er påstander som kan være sanne eller usanne. <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
@@ -491,8 +491,8 @@ True
 <p>Der vi får <code class="docutils literal notranslate"><span class="pre">False</span></code> er utsagnet galt. Der vi får <code class="docutils literal notranslate"><span class="pre">True</span></code> er utsagnet riktig. Gå igjennom eksempelet og sørg for at du forstår hvorfor det blir skrevet ut <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code> for de forskjellige utsagnene.</p>
 </section>
 <section id="id2">
-<h2>Vilkår<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>Nå kan vi begynne å skrive vilkår.</p>
+<h2>If-setninger<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Nå kan vi begynne å skrive if-setninger.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -509,7 +509,7 @@ True
 </div>
 </div>
 </div>
-<p>Legg merke til at linjen med <code class="docutils literal notranslate"><span class="pre">print()</span></code> er skrevet med et innrykk. Dette kan du lage selv ved å trykke på TAB-knappen på tastaturet. Det som er skrevet med innrykk etter et vilkår <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b:</span></code> skjer bare dersom utsagnet <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er sant.</p>
+<p>Legg merke til at linjen med <code class="docutils literal notranslate"><span class="pre">print()</span></code> er skrevet med et innrykk. Dette kan du lage selv ved å trykke på TAB-knappen på tastaturet. Det som er skrevet med innrykk etter en if-setning <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b:</span></code> skjer bare dersom utsagnet <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er sant.</p>
 <p>Forsøk å endre programmet slik at <code class="docutils literal notranslate"><span class="pre">a</span></code> ikke er mindre enn <code class="docutils literal notranslate"><span class="pre">b</span></code>. Da vil du se at linjen med <code class="docutils literal notranslate"><span class="pre">print()</span></code> ikke gjennomføres.</p>
 <p>Vi kan også sjekke flere ulike scenarioer.</p>
 <div class="cell docutils container">
@@ -664,7 +664,7 @@ True
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utsagn">Utsagn</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Vilkår</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">If-setninger</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>

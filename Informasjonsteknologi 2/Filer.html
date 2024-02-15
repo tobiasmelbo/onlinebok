@@ -154,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Vilk%C3%A5r.html">Vilkår</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til Micro:bit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
@@ -425,7 +425,7 @@ S�lv,Ag,[2 8 18 18 1],Fast
 <section id="handtere-ae-o-og-a">
 <h2>Håndtere æ, ø og å<a class="headerlink" href="#handtere-ae-o-og-a" title="Permalink to this heading">#</a></h2>
 <p>De nordiske bokstavene skaper noen gang problemer når vi leser og skriver filer.</p>
-<p>Hvis vi legger til <code class="docutils literal notranslate"><span class="pre">encoding</span> <span class="pre">=</span> <span class="pre">&quot;utf-8&quot;</span></code> til som parameter for <code class="docutils literal notranslate"><span class="pre">open()</span></code>-funksjonen så velges riktig sett med tegn.</p>
+<p>Hvis vi legger til <code class="docutils literal notranslate"><span class="pre">encoding</span> <span class="pre">=</span> <span class="pre">&quot;utf-8&quot;</span></code> til som argument for <code class="docutils literal notranslate"><span class="pre">open()</span></code>-funksjonen så velges riktig sett med tegn.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hydrogen,H,[1],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Helium,He,[2],Gass </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -524,7 +524,7 @@ Sølv,Ag,[2 8 18 18 1],Fast
 <p>Merk deg at ingen av metodene under endrer på strings, de bare returnerer nye strings som er endret på en eller annen måte. Dette er i motsetning til listemetodene <code class="docutils literal notranslate"><span class="pre">append()</span></code>, <code class="docutils literal notranslate"><span class="pre">sort()</span></code> og <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> som faktisk endrer på listene når man kaller på metodene.</p>
 <section id="string-split-metoden">
 <h3><code class="docutils literal notranslate"><span class="pre">string.split()</span></code>-metoden<a class="headerlink" href="#string-split-metoden" title="Permalink to this heading">#</a></h3>
-<p>Vi ønsker ofte å dele tekst opp i biter. <code class="docutils literal notranslate"><span class="pre">split()</span></code>-metoden tar en string som parameter. Denne kalles en <em>separator</em>. Metoden deler teksten opp på hver separator og returnerer en liste med tekstbiter.</p>
+<p>Vi ønsker ofte å dele tekst opp i biter. <code class="docutils literal notranslate"><span class="pre">split()</span></code>-metoden tar en string som argument. Denne kalles en <em>separator</em>. Metoden deler teksten opp på hver separator og returnerer en liste med tekstbiter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linje</span> <span class="o">=</span> <span class="s2">&quot;Hydrogen,[1],Gass&quot;</span>
@@ -546,7 +546,7 @@ Gass
 </div>
 </div>
 <p>Eksempelet over deler opp en string på <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code>.</p>
-<p>Et annet vanlig bruksområde er å splitte på mellomrom <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> for å få en liste med hvert ord i setninger. Vi trenger ikke en parameter til <code class="docutils literal notranslate"><span class="pre">split()</span></code>-metoden for å splitte på mellomrom.</p>
+<p>Et annet vanlig bruksområde er å splitte på mellomrom <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> for å få en liste med hvert ord i setninger. Vi trenger ikke en argument til <code class="docutils literal notranslate"><span class="pre">split()</span></code>-metoden for å splitte på mellomrom.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">setning</span> <span class="o">=</span> <span class="s2">&quot;Jeg elsker Python!&quot;</span>
@@ -594,7 +594,7 @@ ja
 </section>
 <section id="string-replace-metoden">
 <h3><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code>-metoden<a class="headerlink" href="#string-replace-metoden" title="Permalink to this heading">#</a></h3>
-<p>Noen ganger ønsker vi å fjerne eller bytte ut deler av en tekst. Det første parameteret til <code class="docutils literal notranslate"><span class="pre">replace()</span></code>-metoden er den teksten som skal byttes ut, det andre parametret er den teksten som det skal byttes til. <code class="docutils literal notranslate"><span class="pre">replace()</span></code>-metoden returnerer da en tekst hvor de spesifiserte bitene av teksten er byttet ut.</p>
+<p>Noen ganger ønsker vi å fjerne eller bytte ut deler av en tekst. Det første argumentet til <code class="docutils literal notranslate"><span class="pre">replace()</span></code>-metoden er den teksten som skal byttes ut, det andre parametret er den teksten som det skal byttes til. <code class="docutils literal notranslate"><span class="pre">replace()</span></code>-metoden returnerer da en tekst hvor de spesifiserte bitene av teksten er byttet ut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Jeg hater å programmere!&quot;</span>
@@ -627,7 +627,7 @@ ja
 </section>
 <section id="string-strip-metoden">
 <h3><code class="docutils literal notranslate"><span class="pre">string.strip()</span></code>-metoden<a class="headerlink" href="#string-strip-metoden" title="Permalink to this heading">#</a></h3>
-<p>Vi kan fjerne flere tegn i starten og i slutten av en string ved å bruke <code class="docutils literal notranslate"><span class="pre">strip()</span></code>-metoden. Uten parameter fjerner metoden mellomrom.</p>
+<p>Vi kan fjerne flere tegn i starten og i slutten av en string ved å bruke <code class="docutils literal notranslate"><span class="pre">strip()</span></code>-metoden. Uten argument fjerner metoden mellomrom.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;  Python er kult :)  &quot;</span>
