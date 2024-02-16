@@ -348,7 +348,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
@@ -414,22 +413,22 @@ document.write(`
 <span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">random</span></code>-pakken<a class="headerlink" href="#random-pakken" title="Permalink to this heading">#</a></h3>
 <p>Pakken <code class="docutils literal notranslate"><span class="pre">random</span></code> gir oss tilfeldige tall. Ikke bare er det gøy å leke med, men det er også nyttig for å simulere ting.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">random.random()</span></code> er en funksjon som gir oss et tilfeldig tall fra og med null og opp til 1. Altså <span class="math notranslate nohighlight">\([0,1\rangle\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.choice(&lt;liste&gt;)</span></code> er en funksjon som velger et tilfeldig element fra en liste.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">random.randint(&lt;start&gt;,</span> <span class="pre">&lt;slutt&gt;)</span></code> er en funksjon som gir oss et tifeldig tall fra og med startverdien til og med sluttverdien.</p></li>
 </ul>
 <p>Her er noen eksempler</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span><span class="p">,</span> <span class="n">randint</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">randint</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="p">())</span>      <span class="c1"># Gir oss et tilfeldig tall fra og med null og opp til 1.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># Gir oss et tall fra og med 1 til og med 6 (akkurat som et terningkast).</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;Arne&quot;</span><span class="p">,</span> <span class="s2">&quot;Bjarne&quot;</span><span class="p">,</span> <span class="s2">&quot;Cecilie&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.485185376791205
-4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cecilie
+2
 </pre></div>
 </div>
 </div>
@@ -491,19 +490,6 @@ document.write(`
 </aside>
 <p>Lag en kalkulator som tar et tall <code class="docutils literal notranslate"><span class="pre">r</span></code> som input og skriver ut omkretsen og arealet til en sirkel.</p>
 <p>Skriv ut svarene rundet av til to desimaler.</p>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
-<p>Vi skal lage et program som simulerer terningkast.</p>
-<ol class="arabic simple">
-<li><p>Lag en variabel <code class="docutils literal notranslate"><span class="pre">a</span></code> som skal være et tall fra input fra brukeren.</p></li>
-<li><p>Lag en variabel <code class="docutils literal notranslate"><span class="pre">b</span></code> som skal være et tilfeldig tall mellom <code class="docutils literal notranslate"><span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">6</span></code>.</p></li>
-<li><p>Skriv ut <code class="docutils literal notranslate"><span class="pre">Terningkast:</span> </code> etterfulgt av verdien til <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
-</ol>
-<p>Prøv programmet et par ganger. Klarer du å gjette riktig?</p>
-<p>Bonus:</p>
-<p>Modifiser <code class="docutils literal notranslate"><span class="pre">terningkast</span></code> til å bli en verdi mellom <code class="docutils literal notranslate"><span class="pre">1</span></code> og <code class="docutils literal notranslate"><span class="pre">5379616</span></code>.</p>
-<p>Å gjette riktig tall nå er like sannsynlig som å vinne førstepremien i lotto 💸</p>
 </section>
 </section>
 </section>
@@ -585,7 +571,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
 </ul>
 </li>
 </ul>
