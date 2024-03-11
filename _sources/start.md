@@ -20,4 +20,4 @@ Det første kapitlet, {ref}`Grunnleggende Python`, er ment som en introduksjon t
 Det finnes også et kapittel for hvert fag som inneholder fagstoff og oppgaver.
 ```
 
-Send meg en mail : 📧 tobiasmelb@viken.no
+Send meg en mail : 📧 tobiasmelb@viken.no eller tobiasmelb@afk.no
