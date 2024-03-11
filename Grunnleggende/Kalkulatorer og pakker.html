@@ -1,0 +1,624 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="nb" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Kalkulatorer og pakker &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Grunnleggende/Kalkulatorer og pakker';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="If-setninger" href="If-setninger.html" />
+    <link rel="prev" title="Variabler og syntaks" href="Variabler%20og%20syntaks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../start.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Grunnleggende%20Python.html">Grunnleggende Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Kalkulatorer og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="If-setninger.html">If-setninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funksjoner.html">Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Plotting: Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">Spill: Grunnstofftreneren 🧑‍🔬</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Mer%20om%20arrays.html">Arrays II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Reelle%20datasett.html">Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Gjenbrukbar%20kode.html">Gjenbrukbar kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Spill%20med%20Pygame.html">Spill med Pygame</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Grunnleggende/Kalkulatorer og pakker.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kalkulatorer og pakker</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pakker">Pakker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-pakken"><code class="docutils literal notranslate"><span class="pre">math</span></code>-pakken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-pakken"><code class="docutils literal notranslate"><span class="pre">random</span></code>-pakken</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avrunding">Avrunding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="kalkulatorer-og-pakker">
+<span id="id1"></span><h1>Kalkulatorer og pakker<a class="headerlink" href="#kalkulatorer-og-pakker" title="Permalink to this heading">#</a></h1>
+<p>I denne delen skal vi lære hvordan vi kan bruke pakker, lage enkle kalkulatorer og generere tilfeldige tall.</p>
+<section id="pakker">
+<h2>Pakker<a class="headerlink" href="#pakker" title="Permalink to this heading">#</a></h2>
+<p>Python har mange innebygde funksjoner, men noen funksjoner ligger i pakker som vi må importere. Det finnes utrolig mange pakker og noen av disse har utrolig mange funksjoner, men vi skal ta noen funksjoner fra noen få pakker.</p>
+<section id="math-pakken">
+<h3><code class="docutils literal notranslate"><span class="pre">math</span></code>-pakken<a class="headerlink" href="#math-pakken" title="Permalink to this heading">#</a></h3>
+<p>Pakken <code class="docutils literal notranslate"><span class="pre">math</span></code> gir oss flere nyttige verktøy.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">math.sqrt(&lt;tall&gt;)</span></code> er en funksjon som gir oss kvadratroten av et tall.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">math.pi</span></code> gir oss <span class="math notranslate nohighlight">\(\pi\)</span>.</p></li>
+</ul>
+<p>Her er noen eksempler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>     <span class="c1"># Gir oss kvadratroten av 4.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>          <span class="c1"># Gir oss pi.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+<p>Man kan også importere bare de tingene man trenger. Det kan gjøre koden litt enklere.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="random-pakken">
+<span id="id2"></span><h3><code class="docutils literal notranslate"><span class="pre">random</span></code>-pakken<a class="headerlink" href="#random-pakken" title="Permalink to this heading">#</a></h3>
+<p>Pakken <code class="docutils literal notranslate"><span class="pre">random</span></code> gir oss tilfeldige tall. Ikke bare er det gøy å leke med, men det er også nyttig for å simulere ting.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">random.choice(&lt;liste&gt;)</span></code> er en funksjon som velger et tilfeldig element fra en liste.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random.randint(&lt;start&gt;,</span> <span class="pre">&lt;slutt&gt;)</span></code> er en funksjon som gir oss et tifeldig tall fra og med startverdien til og med sluttverdien.</p></li>
+</ul>
+<p>Her er noen eksempler</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span><span class="p">,</span> <span class="n">randint</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;Arne&quot;</span><span class="p">,</span> <span class="s2">&quot;Bjarne&quot;</span><span class="p">,</span> <span class="s2">&quot;Cecilie&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bjarne
+3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this heading">#</a></h2>
+<p>Vi kan ta input fra brukeren med <code class="docutils literal notranslate"><span class="pre">input()</span></code>-funksjonen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">navn</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Navn: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hei,&quot;</span><span class="p">,</span> <span class="n">navn</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dette programmet spør brukeren om navnet, og skriver ut <code class="docutils literal notranslate"><span class="pre">Hei,</span> <span class="pre">&lt;navn&gt;</span></code>. Prøv det selv!</p>
+<p>All input er tekst. Hvis vi ønsker tall, må vi gjøre teksten om til et tall. Det enkleste er å sende teksten igjennom <code class="docutils literal notranslate"><span class="pre">float()</span></code>-funksjonen. Alternativt kan vi bruke <code class="docutils literal notranslate"><span class="pre">int()</span></code>-funksjonen hvis vi ønsker heltall som input.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;a: &quot;</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;b: &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summen av &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;og&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot;er&quot;</span><span class="p">,</span>  <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dette programmet tar to tall <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> og skriver ut summen deres. Prøv det selv!</p>
+</section>
+<section id="avrunding">
+<h2>Avrunding<a class="headerlink" href="#avrunding" title="Permalink to this heading">#</a></h2>
+<p>Vi kan runde av lange desimaltall ved å bruke <code class="docutils literal notranslate"><span class="pre">round</span></code>-funksjonen. Denne ligger ikke i en pakke og må derfor ikke importeres.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>           <span class="c1"># Skriver ut pi med mange desimaler</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># Skriver ut pi rundet av til to desimaler.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+3.14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Merk deg</p>
+<p><code class="docutils literal notranslate"><span class="pre">round()</span></code>-funksjonen runder ikke alltid opp på tall som ender med <code class="docutils literal notranslate"><span class="pre">.5</span></code>, til tross for at det er noe vi lærer at er riktig på skolen.</p>
+<p>Dette gjør funksjonen for å unngå å runde <em>opp</em> mer enn man runder <em>ned</em> i et tallmateriale, siden mange datasett ofte har tall som ender i <code class="docutils literal notranslate"><span class="pre">.5</span></code>.</p>
+<p>Utforsk gjerne hvordan dette fungerer selv!</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Lag en kalkulator som tar et tall som input og skriver ut kvadratroten av tallet.</p>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<aside class="sidebar">
+<p>Formelen for omkretsen til en sirkel er <span class="math notranslate nohighlight">\(2\pi r\)</span>.</p>
+<p>Formelen for arealet til en sirkel er <span class="math notranslate nohighlight">\(\pi r^2\)</span>.</p>
+</aside>
+<p>Lag en kalkulator som tar et tall <code class="docutils literal notranslate"><span class="pre">r</span></code> som input og skriver ut omkretsen og arealet til en sirkel.</p>
+<p>Skriv ut svarene rundet av til to desimaler.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Grunnleggende"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Variabler%20og%20syntaks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Variabler og syntaks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="If-setninger.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">If-setninger</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pakker">Pakker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-pakken"><code class="docutils literal notranslate"><span class="pre">math</span></code>-pakken</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-pakken"><code class="docutils literal notranslate"><span class="pre">random</span></code>-pakken</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avrunding">Avrunding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
