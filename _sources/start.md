@@ -13,11 +13,12 @@ Nettboken er delt opp i de følgene kapitlene:
 :class: note
 Hvert kapittel og hvert prosjekt har en kommentar som denne. Her beskriver jeg hvilke delkapitler som er en forutsetning for å kunne gjøre prosjektet eller kapitlet, slik at det blir enklere å legge inn i en undervisningsplan.
 
-Det første kapitlet, {ref}`Grunnleggende Python`, er ment som en introduksjon til noen grunnleggende konsepter i Python.
+- {ref}`Grunnleggende Python` er ment som en introduksjon til noen grunnleggende konsepter i Python.
 
-{ref}`Avansert Python` bygger videre på det første kapitlet og er ment som et tillegg til de mer teoretiske fagene.
+- {ref}`Avansert Python` tar de grunnleggende tingene videre for de som skal programmere mye.
 
-Det finnes også et kapittel for hvert fag som inneholder fagstoff og oppgaver.
+- {ref}`Dataanalyse og plotting` handler om dataanalyse og plotting og er ment for de fagene hvor elever skal analysere reelle datasett.
+
 ```
 
 Send meg en mail : 📧 tobiasmelb@viken.no eller tobiasmelb@afk.no
