@@ -162,17 +162,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Plotting: Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Regresjon.html">Regresjon</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
@@ -187,11 +187,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Reelle%20datasett.html">Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Gjenbrukbar%20kode.html">Gjenbrukbar kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Spill%20med%20Pygame.html">Spill med Pygame</a></li>
 </ul>
 </li>
@@ -401,6 +405,16 @@ document.write(`
 2  117.5  117.2  118.1  118.9  
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\skmel\AppData\Local\Temp\ipykernel_9432\1594394975.py:1: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -424,7 +438,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c083ed7c841218931499563326910d240a20c5416a1029c43b9c7c44a947f6ac.png" src="../_images/c083ed7c841218931499563326910d240a20c5416a1029c43b9c7c44a947f6ac.png" />
+<img alt="../_images/2c13fb7122272884c783bce6ad73ec6263eff46a6620fa84e9af465ed34b7da7.png" src="../_images/2c13fb7122272884c783bce6ad73ec6263eff46a6620fa84e9af465ed34b7da7.png" />
 </div>
 </div>
 <p>Wow! Nå har vi fått plottet konsumprisindeksen over <span class="math notranslate nohighlight">\(93\)</span> år! Tenk hvor lang tid det hadde tatt hvis vi måtte skrive inn hvert punkt!</p>

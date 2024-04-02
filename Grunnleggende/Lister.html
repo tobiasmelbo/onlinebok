@@ -162,17 +162,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Plotting: Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
@@ -187,11 +187,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Reelle%20datasett.html">Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Gjenbrukbar%20kode.html">Gjenbrukbar kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Spill%20med%20Pygame.html">Spill med Pygame</a></li>
 </ul>
 </li>
@@ -366,7 +370,7 @@ document.write(`
 <p>Lister (<em>lists</em>) brukes til å lagre flere objekter i én variabel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alfa&quot;</span><span class="p">,</span> <span class="s2">&quot;Beta&quot;</span><span class="p">,</span> <span class="s2">&quot;Gamma&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Alfa&quot;</span><span class="p">,</span> <span class="s2">&quot;Beta&quot;</span><span class="p">,</span> <span class="s2">&quot;Gamma&quot;</span><span class="p">]</span> 
 </pre></div>
 </div>
 </div>
