@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Testing II';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Dokumentasjon" href="Dokumentasjon.html" />
+    <link rel="prev" title="Testing" href="Testing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -148,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
@@ -182,7 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
@@ -190,6 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Unntak.html">Unntak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Testing.html">Testing</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Testing II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spill%20med%20Pygame.html">Spill med Pygame</a></li>
 </ul>
@@ -341,6 +344,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-med-unittest">Testing med <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🌡️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -354,14 +362,133 @@ document.write(`
                   
   <section id="testing-ii">
 <h1>Testing II<a class="headerlink" href="#testing-ii" title="Permalink to this heading">#</a></h1>
-<p>Testing med <code class="docutils literal notranslate"><span class="pre">assert</span></code> er en enkel måte å teste ting, men for å lage mer avanserte tester kommer vi til å se på den innebygde pakken <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.</p>
+<p>Når vi skal teste større ting er det hensiktsmessig å lage et <em>testprogram</em>. Det skal vi gjøre ved å bruke den innebygde pakken <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.</p>
 <section id="testing-med-unittest">
 <h2>Testing med <code class="docutils literal notranslate"><span class="pre">unittest</span></code><a class="headerlink" href="#testing-med-unittest" title="Permalink to this heading">#</a></h2>
+<p>La oss ta utgangspunkt i programmet <code class="docutils literal notranslate"><span class="pre">sirkelregner.py</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Sirkel</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Radius kan ikke være negativ.&quot;</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">areal</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">omkrets</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span>
+    
+    <span class="c1"># Skalerer sirkelen med en faktor k</span>
+    <span class="k">def</span> <span class="nf">skaler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Skaleringsfaktoren må være et tall.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Skaleringsfaktoren kan ikke være negativ&quot;</span><span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span>
+
+    <span class="c1"># Returnerer en string når man printer objekter av klassen</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Sirkel med radius: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, areal: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">areal</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> og omkrets: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">omkrets</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nå skal vi lage et testprogram. Vi kommer til å kalle testprogrammet <code class="docutils literal notranslate"><span class="pre">test_sirkelregner.py</span></code>.</p>
+<p>Her er noen av tingene vi skal teste.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=nlCKrKGHSSk">https://www.youtube.com/watch?v=nlCKrKGHSSk</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=6tNS--WetLI">https://www.youtube.com/watch?v=6tNS–WetLI</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=1Lfv5tUGsn8">https://www.youtube.com/watch?v=1Lfv5tUGsn8</a></p></li>
+<li><p>Vi skal få en <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dersom vi prøver å sette en negativ radius.</p></li>
+<li><p>Vi skal få en <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom skaleringsfaktoren ikke er et tall.</p></li>
+<li><p>Vi skal få en <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dersom skaleringsfaktoren er negativ.</p></li>
+<li><p>Vi skal få areal og omkrets lik <code class="docutils literal notranslate"><span class="pre">0</span></code> dersom radius er lik <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Arealet skal øke med en faktor <code class="docutils literal notranslate"><span class="pre">4</span></code> dersom vi skalerer med skaleringsfaktor <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+<li><p>Omkretsen skal øke med en faktor <code class="docutils literal notranslate"><span class="pre">2</span></code> dersom vi skalerer med skaleringsfaktor <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
 </ul>
+<p>Vårt testprogram <code class="docutils literal notranslate"><span class="pre">test_sirkelregner.py</span></code> kan se slik ut:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sirkelregner</span> <span class="k">as</span> <span class="nn">sr</span>
+<span class="kn">import</span> <span class="nn">unittest</span><span class="o">,</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">TestSirkelregner</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="c1"># Testmetode for konstruktøren</span>
+    <span class="k">def</span> <span class="nf">test_konstruktør</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Sjekker at vi får ValueError med negativ radius</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">sr</span><span class="o">.</span><span class="n">Sirkel</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Sjekker noen regneeksempler</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">Sirkel</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">areal</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">Sirkel</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">areal</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">Sirkel</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">omkrets</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">sr</span><span class="o">.</span><span class="n">Sirkel</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">omkrets</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Testmetode for skaleringsmetoden</span>
+    <span class="k">def</span> <span class="nf">test_skalering</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Lager et eksempel</span>
+        <span class="n">sirkel</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">Sirkel</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Sjekker at vi får TypeError med feil type skaleringsfaktor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">sirkel</span><span class="o">.</span><span class="n">skaler</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Sjekker at vi får ValueError med negativ skaleringsfaktor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">sirkel</span><span class="o">.</span><span class="n">skaler</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Sjekker at skaleringen blir riktig</span>
+        <span class="n">areal_før</span><span class="p">,</span> <span class="n">omkrets_før</span> <span class="o">=</span> <span class="n">sirkel</span><span class="o">.</span><span class="n">areal</span><span class="p">,</span> <span class="n">sirkel</span><span class="o">.</span><span class="n">omkrets</span>
+        <span class="n">sirkel</span><span class="o">.</span><span class="n">skaler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">areal_etter</span><span class="p">,</span> <span class="n">omkrets_etter</span> <span class="o">=</span> <span class="n">sirkel</span><span class="o">.</span><span class="n">areal</span><span class="p">,</span> <span class="n">sirkel</span><span class="o">.</span><span class="n">omkrets</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">areal_etter</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">areal_før</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">omkrets_etter</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">omkrets_før</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å kjøre testprogrammet bruker vi <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">test_sirkelregner.py</span></code> i terminalvinduet.</p>
+<p>Da får vi utskriften:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ran</span> <span class="mi">2</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
+
+<span class="n">OK</span>
+</pre></div>
+</div>
+<p>Det betyr at testene gikk gjennom uten feil. Koden fungerer som forventet 👍</p>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1 🌡️<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>I denne oppgaven skal vi lage et testprogram før vi lager et program.</p>
+<p>Til slutt skal <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> skal inneholde en klasse <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> som har en temperatur i celsius som argument. <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> skal også ha to metoder. <code class="docutils literal notranslate"><span class="pre">som_kelvin()</span></code> skal returnere temperaturen som kelvin. <code class="docutils literal notranslate"><span class="pre">som_fahrenheit()</span></code> skal returnere temperaturen som fahrenheit.</p>
+<ol class="arabic simple">
+<li><p>Lag to filer <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> og <code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code> i samme mappe.</p></li>
+<li><p>Sett opp <code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code> og lag noen tomme testmetoder <code class="docutils literal notranslate"><span class="pre">test_konstruktør</span></code>, <code class="docutils literal notranslate"><span class="pre">test_fahrenheit</span></code> og <code class="docutils literal notranslate"><span class="pre">test_kelvin</span></code>. (Du kan bruke <code class="docutils literal notranslate"><span class="pre">pass</span></code> for å lage metoder som ikke gjør noen ting)</p></li>
+<li><p>Lag noen tester for <code class="docutils literal notranslate"><span class="pre">test_konstruktør</span></code>. Testene kan være:</p></li>
+</ol>
+<ul class="simple">
+<li><p>At man får <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dersom man setter temperaturen til noe under <code class="docutils literal notranslate"><span class="pre">273.15</span></code>.</p></li>
+<li><p>At man får <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom temperaturen ikke er et tall.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Lag noen tester for <code class="docutils literal notranslate"><span class="pre">test_fahrenheit</span></code>. Testene kan være:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Noen eksempler på temperaturer som er forventet. Finn gjerne en kalkulator eller tabell på nett.</p></li>
+</ul>
+<ol class="arabic simple" start="5">
+<li><p>Lag noen tester for <code class="docutils literal notranslate"><span class="pre">test_kelvin</span></code>. Testene kan være:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Noen eksempler på temperaturer som er forventet. Finn gjerne en kalkulator eller tabell på nett.</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Lag <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> og sjekk at alle testene går gjennom med <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">test_temperatur.py</span></code> underveis.</p></li>
+</ol>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Finn et av de objektorienterte programmene du har laget tidligere. Lag et testprogram for dette.</p>
+</section>
 </section>
 </section>
 
@@ -396,6 +523,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Testing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Testing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Dokumentasjon.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Dokumentasjon</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -415,6 +560,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-med-unittest">Testing med <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🌡️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
