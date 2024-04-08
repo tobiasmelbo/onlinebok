@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Informasjonsteknologi 2 💾 &#8212; Programmering med Tobias.</title>
+    <title>Spill &#8212; Programmering med Tobias.</title>
   
   
   
@@ -61,11 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Informasjonsteknologi 2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Spill';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Pseudokode og flytskjema" href="Pseudokode%20og%20flytskjema.html" />
-    <link rel="prev" title="Tallfølger" href="../Matematikk%201T/Tallf%C3%B8lger.html" />
+    <link rel="prev" title="Brukergrensesnitt" href="Brukergrensesnitt.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -184,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
@@ -195,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Testing%20II.html">Testing II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Brukergrensesnitt.html">Brukergrensesnitt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Spill</a></li>
 </ul>
 </li>
 </ul>
@@ -252,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Informasjonsteknologi 2/Informasjonsteknologi 2.ipynb" target="_blank"
+      <li><a href="../_sources/Informasjonsteknologi 2/Spill.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +320,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -332,11 +333,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Informasjonsteknologi 2 💾</h1>
+    <h1>Spill</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-grunnleggende-eksempel">Et grunnleggende eksempel.</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -346,22 +355,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="informasjonsteknologi-2">
-<span id="id1"></span><h1>Informasjonsteknologi 2 💾<a class="headerlink" href="#informasjonsteknologi-2" title="Permalink to this heading">#</a></h1>
-<p>I dette kapitlet skal vi jobbe med noen ting som er relevant for Informasjonsteknologi 2. Det er også lov å følge kapitlet selv om man ikke har IT2 🤓.</p>
-<p>Vi skal lære å</p>
-<ul class="simple">
-<li><p>bruke klasser, programmere objektorientert og lage objektorienterte modeller 🚗</p></li>
-<li><p>lage egne pakker og dokumentasjon 📦📄</p></li>
-<li><p>bruke strategier for testing av programkode ✅</p></li>
-<li><p>… og å lage spill og grafikk med <code class="docutils literal notranslate"><span class="pre">pygame</span></code>-pakken 👾</p></li>
-</ul>
-<div class="note admonition">
-<p class="admonition-title">Til læreren 🧑‍🏫</p>
-<p>Man bør ha vært gjennom <a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html#grunnleggende-python"><span class="std std-ref">Grunnleggende Python</span></a>, <a class="reference internal" href="../Avansert/Avansert%20Python.html#avansert-python"><span class="std std-ref">Avansert Python</span></a> og <a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html#dataanalyse-og-plotting"><span class="std std-ref">Dataanalyse og plotting</span></a> før man begynner på dette kapittelet.</p>
+  <section id="spill">
+<h1>Spill<a class="headerlink" href="#spill" title="Permalink to this heading">#</a></h1>
+<p>Å lage spill er en fin måte å øve seg på objektorientert programmering. For å lage spill kommer vi til å bruke <code class="docutils literal notranslate"><span class="pre">pygame</span></code>-pakken.</p>
+<p>Du kan finne dokumentasjonen til Pygame på <a class="reference external" href="https://www.pygame.org/docs/">denne nettsiden</a>.</p>
+<section id="et-grunnleggende-eksempel">
+<h2>Et grunnleggende eksempel.<a class="headerlink" href="#et-grunnleggende-eksempel" title="Permalink to this heading">#</a></h2>
+<p>Her er et enkelt eksempel som viser hvordan vi kan sette opp et spill med <code class="docutils literal notranslate"><span class="pre">pygame</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
+ 
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span> <span class="c1"># Setter skjermen til 500x500 piksler.</span>
+
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># Avslutter løkken</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Fyller skjermen med hvit farge</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Her skal vi putte spillets logikk, som å tegne figurer og oppdatere posisjonen deres.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Oppdaterer hele skjermen</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+    <span class="c1"># Forsikrer at spillet kjører i maksimalt 60 FPS.</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># Avslutter spillet</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-</div>
+<p>Dette spillet viser en hvit skjerm og avslutter programmet om vi lukker vinduet.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -396,22 +431,13 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Matematikk%201T/Tallf%C3%B8lger.html"
+       href="Brukergrensesnitt.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Tallfølger</p>
+        <p class="prev-next-title">Brukergrensesnitt</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Pseudokode%20og%20flytskjema.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Pseudokode og flytskjema</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -422,6 +448,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-grunnleggende-eksempel">Et grunnleggende eksempel.</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
