@@ -356,6 +356,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-10">Oppgave 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-11">Oppgave 11</a></li>
 </ul>
 </li>
 </ul>
@@ -396,8 +400,14 @@ document.write(`
 </ul>
 <div class="note dropdown admonition">
 <p class="admonition-title">Løsning</p>
-<p>Pseudokode har uformell syntaks som ligner på vanlig menneskespråk og brukes ofte i planleggingsfasen av programmering.</p>
-<p>Pseudokode er <strong>ikke</strong> ment til å kjøres direkte på en datamaskin.</p>
+<p>Pseudokode har uformell syntaks som ligner på vanlig menneskespråk og brukes ofte i planleggingsfasen av programmering. Pseudokode er <strong>ikke</strong> ment til å kjøres direkte på en datamaskin.</p>
+<ul class="simple">
+<li><p>Den har uformell syntaks. ❌</p></li>
+<li><p>Den ligner på vanlig menneskespråk. ❌</p></li>
+<li><p>Den kan kjøres direkte på en datamaskin. ✅</p></li>
+<li><p>Den brukes ofte i planleggingsfasen av programmering. ❌</p></li>
+</ul>
+<p>Merk at oppgaven spør om hva som <strong>ikke</strong> er et kjennetegn for pseudokode.</p>
 </div>
 </section>
 <section id="oppgave-2">
@@ -666,7 +676,7 @@ document.write(`
 <p>c) Implementer pseudokoden i ditt programmeringsspråk. Listen skal leses inn automatisk, og den ferdig sorterte listen skal skrives til terminalvinduet eller vises i programmet.</p>
 <div class="note dropdown admonition">
 <p class="admonition-title">Løsning</p>
-<p>Her er en implementasjon av pseudokoden i Python. Jeg stusser litt med formuleringen av at <em>listen skal leses inn automatisk</em> og tolker det heller som at vi skal lage en funksjon som fungerer med lister som argument.</p>
+<p>Her er en implementasjon av pseudokoden i Python. Jeg stusser litt med formuleringen av at <em>listen skal leses inn automatisk</em> og tolker det heller som at vi skal lage en funksjon som tar en liste som et argument og returnerer en sortert versjon av listen.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sortert</span><span class="p">(</span><span class="n">a</span> <span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">bytt_plass</span><span class="p">(</span><span class="n">a</span> <span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">i</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
@@ -690,6 +700,119 @@ document.write(`
 <span class="sd">&quot;&quot;&quot; Utskrift </span>
 <span class="sd">print(a)          -&gt; [8, 5, 2, 6, 12]</span>
 <span class="sd">print(sortert(a)) -&gt; [2, 5, 6, 8, 12]</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="oppgave-8">
+<h3>Oppgave 8<a class="headerlink" href="#oppgave-8" title="Permalink to this heading">#</a></h3>
+<p>Kommer</p>
+</section>
+<section id="oppgave-9">
+<h3>Oppgave 9<a class="headerlink" href="#oppgave-9" title="Permalink to this heading">#</a></h3>
+<p>Kommer</p>
+</section>
+<section id="oppgave-10">
+<h3>Oppgave 10<a class="headerlink" href="#oppgave-10" title="Permalink to this heading">#</a></h3>
+<p>Kommer</p>
+</section>
+<section id="oppgave-11">
+<h3>Oppgave 11<a class="headerlink" href="#oppgave-11" title="Permalink to this heading">#</a></h3>
+<p>Du skal lage et program som leser inn og presenterer informasjon fra et datasett. Du finner datasettet i forberedelsesdelen for eksamen H23 på <a class="reference external" href="https://sokeresultat.udir.no/eksamensoppgaver.html">UDIR sine nettsider (lenke)</a>.</p>
+<p>Programmet du lager i denne oppgaven skal inneholde en flerlinjet kommentar øverst som beskriver vurderinger og antagelser du har gjort. Du kan velge om du svarer på oppgave a og b i samme oversikt, eller om du lager en oversikt for hvert oppgavepunkt.</p>
+<p>a) Lag et program som finner og presenterer de ti landene i datasettet som har flest YouTube-kanaler.</p>
+<p>b) Utvid programmet til å regne ut og presentere gjennomsnittlig tall på abonnementer og videovisninger per kanal hvor hvert av disse landene.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Her er et forslag for en kode som viser en oversikt over både a) og b).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Jeg hopper over den første linjen i datafilen. Denne inneholder ikke data, men labels for data &quot;rank,Youtuber,subscribers ...&quot;.</span>
+
+<span class="sd">Jeg ignorerer også alle kanaler med land &quot;nan&quot;, siden vi skal analysere data om land og forskjeller mellom disse.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Funksjon som gir mer naturlig utskrift av tall.</span>
+<span class="k">def</span> <span class="nf">tallutskrift</span><span class="p">(</span><span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)[:</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; milliarder&quot;</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)[:</span><span class="o">-</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; millioner&quot;</span>
+    <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; tusen&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;Global YouTube Statistics.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>             <span class="c1"># Hopper over en linje</span>
+    <span class="n">linjer</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>   <span class="c1"># Leser av resten av linjene</span>
+
+<span class="c1"># Finner alle land</span>
+<span class="n">land_liste</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linjer</span><span class="p">:</span>
+    <span class="n">land</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">7</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">land</span> <span class="o">!=</span> <span class="s2">&quot;nan&quot;</span><span class="p">:</span>
+        <span class="n">land_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
+
+<span class="c1"># Finner hvor mange forekomster det er av hvert land og setter det i en ordbok (&quot;United States&quot; : 313 ...)</span>
+<span class="n">land_counts</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">land</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">land_liste</span><span class="p">):</span>
+    <span class="n">land_counts</span><span class="p">[</span><span class="n">land</span><span class="p">]</span> <span class="o">=</span> <span class="n">land_liste</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">land</span><span class="p">)</span>
+
+<span class="c1"># Finner de top 10 mest populære landene (etter antall kanaler)</span>
+<span class="n">antall_kanaler</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">land_counts</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">topp_10_land</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">land_counts</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">land_counts</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">antall_kanaler</span><span class="p">[</span><span class="n">n</span><span class="p">]:</span>
+            <span class="n">topp_10_land</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Skriver ut informasjon fra topp 10 land</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topp 10 land:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">land</span> <span class="ow">in</span> <span class="n">topp_10_land</span><span class="p">:</span>
+    <span class="c1"># Finner gjennomsnittlig antall abonnementer og videovisninger</span>
+    <span class="n">abonnementer</span><span class="p">,</span> <span class="n">videovisninger</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linjer</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="n">land</span><span class="p">:</span>
+            <span class="n">abonnementer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]))</span>
+            <span class="n">videovisninger</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">land</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">land_counts</span><span class="p">[</span><span class="n">land</span><span class="p">]</span><span class="si">}</span><span class="s2"> kanaler)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Gjennomsnittlig mengde abonnementer: </span><span class="si">{</span><span class="n">tallutskrift</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">abonnementer</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">abonnementer</span><span class="p">)))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;    Gjennomsnittlig mengde videovisninger: </span><span class="si">{</span><span class="n">tallutskrift</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">videovisninger</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">videovisninger</span><span class="p">)))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Utskrift:</span>
+<span class="sd">Topp 10 land:</span>
+<span class="sd">United States (313 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 23 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 11 milliarder</span>
+<span class="sd">India (168 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 25 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 13 milliarder</span>
+<span class="sd">Brazil (62 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 19 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 7 milliarder</span>
+<span class="sd">United Kingdom (43 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 21 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 10 milliarder</span>
+<span class="sd">Mexico (33 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 18 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 6 milliarder</span>
+<span class="sd">Indonesia (28 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 19 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 5 milliarder</span>
+<span class="sd">Spain (22 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 17 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 6 milliarder</span>
+<span class="sd">Thailand (18 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 21 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 14 milliarder</span>
+<span class="sd">South Korea (17 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 28 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 13 milliarder</span>
+<span class="sd">Russia (16 kanaler)</span>
+<span class="sd">    Gjennomsnittlig mengde abonnementer: 25 millioner</span>
+<span class="sd">    Gjennomsnittlig mengde videovisninger: 14 milliarder</span>
 <span class="sd">&quot;&quot;&quot;</span>
 </pre></div>
 </div>
@@ -764,6 +887,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-10">Oppgave 10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-11">Oppgave 11</a></li>
 </ul>
 </li>
 </ul>
