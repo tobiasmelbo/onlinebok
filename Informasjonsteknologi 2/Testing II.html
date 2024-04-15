@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,6 +50,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -196,6 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Brukergrensesnitt.html">Brukergrensesnitt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
 </ul>
 </li>
 </ul>
@@ -362,7 +365,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="testing-ii">
-<h1>Testing II<a class="headerlink" href="#testing-ii" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>Testing II<a class="headerlink" href="#testing-ii" title="Permalink to this heading">#</a></h1>
 <p>Når vi skal teste større ting er det hensiktsmessig å lage et <em>testprogram</em>. Det skal vi gjøre ved å bruke den innebygde pakken <code class="docutils literal notranslate"><span class="pre">unittest</span></code>.</p>
 <section id="testing-med-unittest">
 <h2>Testing med <code class="docutils literal notranslate"><span class="pre">unittest</span></code><a class="headerlink" href="#testing-med-unittest" title="Permalink to this heading">#</a></h2>
@@ -460,14 +463,14 @@ document.write(`
 <section id="oppgave-1">
 <h3>Oppgave 1 🌡️<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal vi lage et testprogram før vi lager et program.</p>
-<p>Til slutt skal <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> skal inneholde en klasse <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> som har en temperatur i celsius som argument. <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> skal også ha to metoder. <code class="docutils literal notranslate"><span class="pre">som_kelvin()</span></code> skal returnere temperaturen som kelvin. <code class="docutils literal notranslate"><span class="pre">som_fahrenheit()</span></code> skal returnere temperaturen som fahrenheit.</p>
+<p>Til slutt skal <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> inneholde en klasse <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> som har en temperatur i celsius som argument. <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> skal også ha to metoder. <code class="docutils literal notranslate"><span class="pre">kelvin()</span></code> skal returnere temperaturen som kelvin. <code class="docutils literal notranslate"><span class="pre">fahrenheit()</span></code> skal returnere temperaturen som fahrenheit.</p>
 <ol class="arabic simple">
 <li><p>Lag to filer <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> og <code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code> i samme mappe.</p></li>
 <li><p>Sett opp <code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code> og lag noen tomme testmetoder <code class="docutils literal notranslate"><span class="pre">test_konstruktør</span></code>, <code class="docutils literal notranslate"><span class="pre">test_fahrenheit</span></code> og <code class="docutils literal notranslate"><span class="pre">test_kelvin</span></code>. (Du kan bruke <code class="docutils literal notranslate"><span class="pre">pass</span></code> for å lage metoder som ikke gjør noen ting)</p></li>
 <li><p>Lag noen tester for <code class="docutils literal notranslate"><span class="pre">test_konstruktør</span></code>. Testene kan være:</p></li>
 </ol>
 <ul class="simple">
-<li><p>At man får <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dersom man setter temperaturen til noe under <code class="docutils literal notranslate"><span class="pre">273.15</span></code>.</p></li>
+<li><p>At man får <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dersom man setter temperaturen til noe under <code class="docutils literal notranslate"><span class="pre">-273.15</span></code>.</p></li>
 <li><p>At man får <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom temperaturen ikke er et tall.</p></li>
 </ul>
 <ol class="arabic simple" start="4">

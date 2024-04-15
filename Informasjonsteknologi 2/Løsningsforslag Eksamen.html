@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="nb" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>📄 Løsningsforslag: Eksamen &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Løsningsforslag Eksamen';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Søk" href="../search.html" />
+    <link rel="prev" title="Spill" href="Spill.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../start.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Plotting: Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">Spill: Grunnstofftreneren 🧑‍🔬</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Klasser.html">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brukergrensesnitt.html">Brukergrensesnitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">📄 Løsningsforslag: Eksamen</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Informasjonsteknologi 2/Løsningsforslag Eksamen.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>📄 Løsningsforslag: Eksamen</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksamen-h23">Eksamen H23</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="losningsforslag-eksamen">
+<h1>📄 Løsningsforslag: Eksamen<a class="headerlink" href="#losningsforslag-eksamen" title="Permalink to this heading">#</a></h1>
+<p>Her er mine løsningsforslag til eksamen i Informasjonsteknologi 2.</p>
+<p>Ta kontakt med meg på <a class="reference external" href="mailto:tobiasmelb&#37;&#52;&#48;viken&#46;no">tobiasmelb<span>&#64;</span>viken<span>&#46;</span>no</a> eller Teams hvis du finner noen feil eller om du har noen kommentarer.</p>
+<section id="eksamen-h23">
+<h2>Eksamen H23<a class="headerlink" href="#eksamen-h23" title="Permalink to this heading">#</a></h2>
+<p>Dette er et løsningsforslag til eksamen H23. Du finner denne eksamen også på <a class="reference external" href="https://sokeresultat.udir.no/eksamensoppgaver.html">UDIR sine nettsider (lenke)</a>. Oppgavene er gjengitt her, men med små modifikasjoner.</p>
+<div class="warning admonition">
+<p class="admonition-title">Om eksamen fremover</p>
+<p>Eksamensveiledningen for neste eksamen (V24) gir noen viktige hint om fremtiden for skriftlig eksamen IT2.</p>
+<ul class="simple">
+<li><p>Første del skal dreies i en mer objektorientert retning.</p></li>
+<li><p>Det kan bli bedt om <em>testfunksjoner</em> eller <em>testmetoder</em>. Se <a class="reference internal" href="Testing%20II.html#testing-ii"><span class="std std-ref">Testing II</span></a>.</p></li>
+<li><p>Det kan bli bedt om <em>dynamiske brukergrensesnitt</em>. Se <a class="reference internal" href="Brukergrensesnitt.html#brukergrensesnitt"><span class="std std-ref">Brukergrensesnitt</span></a>.</p></li>
+</ul>
+</div>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Hvilket av følgende er <strong>ikke</strong> et typisk kjennetegn på pseudokode? Velg riktig alternativ.</p>
+<ul class="simple">
+<li><p>Den har uformell syntaks.</p></li>
+<li><p>Den ligner på vanlig menneskespråk.</p></li>
+<li><p>Den kan kjøres direkte på en datamaskin.</p></li>
+<li><p>Den brukes ofte i planleggingsfasen av programmering.</p></li>
+</ul>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Pseudokode har uformell syntaks som ligner på vanlig menneskespråk og brukes ofte i planleggingsfasen av programmering.</p>
+<p>Pseudokode er <strong>ikke</strong> ment til å kjøres direkte på en datamaskin.</p>
+</div>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<p>Hvilken av de følgende påstandene er riktige om for- og while-løkker innen programmering? Velg riktig alternativ.</p>
+<ul class="simple">
+<li><p>En for-løkke kan bare brukes med tallsekvenser.</p></li>
+<li><p>En while-løkke kjører alltid et bestemt antall ganger.</p></li>
+<li><p>En for-løkke er best egnet når du vet hvor mange ganger løkken skal kjøre</p></li>
+<li><p>En while-løkke kan ikke bruke en teller for å holde rede på hvor mange ganger den har kjørt.</p></li>
+</ul>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<ul class="simple">
+<li><p>En for-løkke kan bare brukes med tallsekvenser. ❌</p></li>
+<li><p>En while-løkke kjører alltid et bestemt antall ganger. ❌</p></li>
+<li><p>En for-løkke er best egnet når du vet hvor mange ganger løkken skal kjøre. ✅</p></li>
+<li><p>En while-løkke kan ikke bruke en teller for å holde rede på hvor mange ganger den har kjørt. ❌</p></li>
+</ul>
+<p>En for-løkke er best egnet når du vet hvor mange ganger løkken skal kjøre.</p>
+</div>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Hva er hovedprinsippet bak objektorientert programmering (OOP)? Velg riktig alternativ.</p>
+<ul class="simple">
+<li><p>Å lage lineære og sekvensielle programkoder.</p></li>
+<li><p>Å bryte ned et problem i et sett med funksjoner.</p></li>
+<li><p>Å representere data og funksjoner som objekter.</p></li>
+<li><p>Å minimere bruken av variabler.</p></li>
+</ul>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<ul class="simple">
+<li><p>Å lage lineære og sekvensielle programkoder. ❌</p></li>
+<li><p>Å bryte ned et problem i et sett med funksjoner. ❌</p></li>
+<li><p>Å representere data og funksjoner som objekter. ✅</p></li>
+<li><p>Å minimere bruken av variabler. ❌</p></li>
+</ul>
+<p>Objektorientert programmering handler om å representere ting med objekter. Objekter er abstraksjoner som kan ha attributter (data/informasjon) og metoder (ting som objektet kan gjøre).</p>
+</div>
+</section>
+<section id="oppgave-4">
+<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
+<p>Hvilke av de følgende sekvensene med pseudokode skriver ut tallene fra og med <span class="math notranslate nohighlight">\(1\)</span> til og med <span class="math notranslate nohighlight">\(5\)</span>? Flere alternativer kan være riktige. Velg riktige svar.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Alternativ 1</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">i</span> <span class="n">TO</span> <span class="mi">1</span>
+<span class="n">FOR</span> <span class="n">hver</span> <span class="n">i</span> <span class="n">LESSER</span> <span class="n">OR</span> <span class="n">EQUAL</span> <span class="mi">5</span>
+    <span class="n">PRINT</span> <span class="n">i</span>
+<span class="n">ENDFOR</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Alternativ 2</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">i</span> <span class="n">TO</span> <span class="mi">1</span>
+<span class="n">WHILE</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span>
+    <span class="n">PRINT</span> <span class="n">i</span>
+    <span class="n">INCREMENT</span> <span class="n">i</span>
+<span class="n">ENDWHILE</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--3" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--3">Alternativ 3</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">i</span> <span class="n">TO</span> <span class="mi">0</span>
+<span class="n">FOR</span> <span class="n">hver</span> <span class="n">i</span> <span class="n">LESSER</span> <span class="n">OR</span> <span class="n">EQUAL</span> <span class="mi">4</span>
+    <span class="n">PRINT</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">ENDFOR</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--4" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--4">Alternativ 4</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">i</span> <span class="n">TO</span> <span class="mi">1</span>
+<span class="n">WHILE</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+    <span class="n">PRINT</span> <span class="n">i</span>
+    <span class="n">INCREMENT</span> <span class="n">i</span> <span class="n">BY</span> <span class="mi">2</span>
+<span class="n">ENDWHILE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Riktige alternativ er <span class="math notranslate nohighlight">\(1\)</span> og <span class="math notranslate nohighlight">\(3\)</span>.</p>
+</div>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
+<p>Et system som beregner billettprisen avhengig av kjøperens alder, bruker følgende regler for billettkategorier:</p>
+<ul class="simple">
+<li><p>Hvis brukeren er <span class="math notranslate nohighlight">\(15\)</span> år gammel eller yngre, skal brukeren få barnebillett til <span class="math notranslate nohighlight">\(30\)</span> kroner.</p></li>
+<li><p>Hvis brukeren er <span class="math notranslate nohighlight">\(16\)</span> år gammel eller eldre, skal brukeren få voksenbillett til <span class="math notranslate nohighlight">\(50\)</span> kroner.</p></li>
+<li><p>Hvis brukeren er <span class="math notranslate nohighlight">\(67\)</span> år gammel eller eldre, skal brukeren få pensjonistbillett til <span class="math notranslate nohighlight">\(35\)</span> kroner.</p></li>
+</ul>
+<p>Lag et flytdiagram for et program der brukeren skriver inn alderen på kjøperen og programmet regner ut og skriver ut riktig billettpris.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Bruker <span class="xref myst">draw.io (lenke)</span> til å lage flytdiagrammet.</p>
+<a class="reference internal image-reference" href="../_images/H23_5.png"><img alt="Flytskjema for oppgave 5." class="align-center" src="../_images/H23_5.png" style="width: 266.0px; height: 276.5px;" /></a>
+</div>
+</section>
+<section id="oppgave-6">
+<h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
+<p>Du får i oppgave å finne det nest største tallet i en liste med tall. Dersom det finnes flere tall som er størst, skal ingen av disse regnes som nest størst.</p>
+<p>a) Under finner du fire alternative løsninger for denne oppgaven skrevet i pseudokode. Hvilke to løsninger er riktige?</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Alternativ 1</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">størst</span> <span class="n">TO</span> <span class="n">negativt</span> <span class="n">uendelig</span> <span class="n">tall</span> 
+<span class="n">FOR</span> <span class="n">hvert</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+        <span class="n">IF</span> <span class="n">tall</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">størst</span>
+        <span class="n">SET</span> <span class="n">størst</span> <span class="n">TO</span> <span class="n">tall</span>
+    <span class="n">ENDIF</span>
+<span class="n">ENDFOR</span>
+<span class="n">Fjern</span> <span class="n">størst</span> <span class="n">fra</span> <span class="n">listen</span>
+<span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">negativt</span> <span class="n">uendelig</span> <span class="n">tall</span>
+<span class="n">FOR</span> <span class="n">hvert</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+    <span class="n">IF</span> <span class="n">tall</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">nestStørst</span>
+        <span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">tall</span>
+    <span class="n">ENDIF</span>
+<span class="n">ENDFOR</span>
+<span class="n">DISPLAY</span> <span class="n">nestStørst</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Alternativ 2</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">størst</span> <span class="n">TO</span> <span class="n">første</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+<span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">andre</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+<span class="n">IF</span> <span class="n">nestStørst</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">størst</span>
+    <span class="n">Bytt</span> <span class="n">størst</span> <span class="n">og</span> <span class="n">nestStørst</span>
+<span class="n">ENDIF</span>
+<span class="n">FOR</span> <span class="n">hvert</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span> <span class="n">med</span> <span class="n">start</span> <span class="n">fra</span> <span class="n">tredje</span> <span class="n">tall</span>
+    <span class="n">IF</span> <span class="n">tall</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">størst</span>
+        <span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">størst</span>
+        <span class="n">SET</span> <span class="n">størst</span> <span class="n">TO</span> <span class="n">tall</span>
+    <span class="n">ELSEIF</span> <span class="n">tall</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">nestStørst</span> <span class="n">AND</span> <span class="n">tall</span> <span class="n">NOT</span> <span class="n">EQUAL</span> <span class="n">TO</span> <span class="n">størst</span>
+        <span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">tall</span>
+    <span class="n">ENDIF</span>
+<span class="n">ENDFOR</span>
+<span class="n">DISPLAY</span> <span class="n">nestStørst</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--3" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--3">Alternativ 3</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">størst</span> <span class="n">TO</span> <span class="n">negativt</span> <span class="n">uendelig</span> <span class="n">tall</span>
+<span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">negativt</span> <span class="n">uendelig</span> <span class="n">tall</span> 
+<span class="n">FOR</span> <span class="n">hvert</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+    <span class="n">IF</span> <span class="n">tall</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">størst</span>
+        <span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">størst</span>
+        <span class="n">SET</span> <span class="n">størst</span> <span class="n">TO</span> <span class="n">tall</span>
+    <span class="n">ELSEIF</span> <span class="n">tall</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">nestStørst</span>
+        <span class="n">SET</span> <span class="n">nestStørst</span> <span class="n">TO</span> <span class="n">tall</span>
+    <span class="n">ENDIF</span>
+<span class="n">ENDFOR</span>
+<span class="n">DISPLAY</span> <span class="n">nestStørst</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--4" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--4">Alternativ 4</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Sorter</span> <span class="n">listen</span> <span class="n">i</span> <span class="n">synkende</span> <span class="n">rekkefølge</span> 
+<span class="n">FOR</span> <span class="n">hvert</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+    <span class="n">IF</span> <span class="n">tall</span> <span class="n">NOT</span> <span class="n">EQUAL</span> <span class="n">TO</span> <span class="n">neste</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+        <span class="n">DISPLAY</span> <span class="n">neste</span> <span class="n">tall</span> <span class="n">i</span> <span class="n">listen</span>
+        <span class="n">avbryt</span> <span class="k">for</span><span class="o">-</span><span class="n">løkken</span>
+    <span class="n">ENDIF</span>
+<span class="n">ENDFOR</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Det finnes moteksempler som gjør at alternativ <span class="math notranslate nohighlight">\(2\)</span> og <span class="math notranslate nohighlight">\(3\)</span> ikke stemmer.</p>
+<p>Pseudokode 2 fungerer ikke hvis man starter med to like store tall i listen, som også har størst verdi.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[(6), (6), 3, 5] -&gt; størst, nest_størst = 6, 6
+[6, 6, (3), 5] -&gt; størst, nest_størst = 6, 6
+[6, 6, 3, (5)] -&gt; størst, nest_størst = 6, 6 ❌
+</pre></div>
+</div>
+<p>Pseudokode 3 fungerer ikke hvis det er flere like store tall som er størst.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[6, 6, 3, 5] -&gt; størst, nest_størst = -inf, -inf
+[(6), 6, 3, 5] -&gt; størst, nest_størst = 6, -inf
+[6, (6), 3, 5] -&gt; størst, nest_størst = 6, 6
+[6, 6, (3), 5] -&gt; størst, nest_størst = 6, 6
+[6, 6, 3, (5)] -&gt; størst, nest_størst = 6, 6 ❌
+</pre></div>
+</div>
+<p>Da gjenstår alternativ <span class="math notranslate nohighlight">\(1\)</span> og <span class="math notranslate nohighlight">\(4\)</span> som riktige.</p>
+</div>
+<p>b) Vurder og sammenlikn de to løsningene du valgte i punkt a.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Alternativ <span class="math notranslate nohighlight">\(1\)</span> kan tolkes på en måte som gjør programmet riktig, men også på en måte som blir feil.</p>
+<p>Den første for-løkken i alternativ <span class="math notranslate nohighlight">\(1\)</span> finner det største tallet. Dette fjernes så fra listen. Deretter finner den andre for-løkken det gjenværende største tallet, som blir det nest største tallet.</p>
+<p>Problemet med alternativet er at man må tolke linjen <code class="docutils literal notranslate"><span class="pre">Fjern</span> <span class="pre">størst</span> <span class="pre">fra</span> <span class="pre">listen</span></code> som <code class="docutils literal notranslate"><span class="pre">Fjern</span> <span class="pre">alle</span> <span class="pre">elementer</span> <span class="pre">med</span> <span class="pre">verdi</span> <span class="pre">lik</span> <span class="pre">størst</span> <span class="pre">fra</span> <span class="pre">listen</span></code>. Hvis bare et av de største tallene fjernes, vil dette ikke funke.</p>
+<p>Med den første tolkningen blir en mulig gjennomgang av algoritmen <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">6]</span> <span class="pre">-&gt;</span> <span class="pre">[4,</span> <span class="pre">5]</span> <span class="pre">-&gt;</span> <span class="pre">5</span></code> som er riktig.</p>
+<p>… men med den alternative tolkningen blir gjennomgangen <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">6]</span> <span class="pre">-&gt;</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6]</span> <span class="pre">-&gt;</span> <span class="pre">6</span></code> som er feil.</p>
+<p>Alternativ <span class="math notranslate nohighlight">\(4\)</span> er relativt enkel å forstå. Her er en gjennomgang av algoritmen med et eksempel.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">5,</span> <span class="pre">4]</span> <span class="pre">-&gt;</span> <span class="pre">[5,</span> <span class="pre">5,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">1]</span> <span class="pre">-&gt;</span> <span class="pre">[(5),</span> <span class="pre">5,</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">1]</span> <span class="pre">-&gt;</span> <span class="pre">[5,</span> <span class="pre">(5),</span> <span class="pre">4,</span> <span class="pre">3,</span> <span class="pre">1]</span> <span class="pre">-&gt;</span> <span class="pre">4</span></code></p>
+<p>Skulle man implementert denne pseudokoden avhenger det av at man har en enkel måte å sortere en liste på. På denne måten er dette en pseudokode som bygger mer på abstraksjon enn de andre algoritmene. Denne pseudokoden ville nok vært kjempefin for andre som bruker <code class="docutils literal notranslate"><span class="pre">Python</span></code>, fordi vi har en enkel, innebygd funksjon <code class="docutils literal notranslate"><span class="pre">Sorted()</span></code> som gir oss en sortert versjon, men den kunne vært vanskeligere å implementere for noen som bruker et lavnivåspråk.</p>
+</div>
+</section>
+<section id="oppgave-7">
+<h3>Oppgave 7<a class="headerlink" href="#oppgave-7" title="Permalink to this heading">#</a></h3>
+<p>Elementene i en liste skal sorteres etter i stigende rekkefølge etter følgende algoritme:</p>
+<ul class="simple">
+<li><p>Man sammenlikner hvert element fra venstre til høyre i listen med neste element, og hvis elementet er større enn neste element, bytter de plass.</p></li>
+<li><p>Deretter går man videre til neste element og sammenlikner på nytt frem til hele listen er gjennomgått.</p></li>
+<li><p>Dette gjentas til hele listen gjennomgås uten at det forekommer noen ombyttinger.</p></li>
+</ul>
+<p>Under finner du deler av pseudokoden for denne algoritmen. Her er <code class="docutils literal notranslate"><span class="pre">a</span></code> en liste med <code class="docutils literal notranslate"><span class="pre">n</span></code> elementer, og <code class="docutils literal notranslate"><span class="pre">a[i]</span></code> er elementet på plass <code class="docutils literal notranslate"><span class="pre">i</span></code> i listen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SET</span> <span class="n">i</span> <span class="n">TO</span> <span class="mi">0</span>
+<span class="n">FOR</span> <span class="n">hver</span> <span class="n">i</span> <span class="n">LESSER</span> <span class="n">THAN</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">IF</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">CALL</span> <span class="n">bytt_plass</span><span class="p">()</span>
+    <span class="n">ENDIF</span>
+<span class="n">ENDFOR</span>
+</pre></div>
+</div>
+<p>a) Hva blir innholdet i listen etter at vi har kjørt programmet representert ved pseudokoden over for listen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">[8,</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">12]</span></code>? Velg riktig alternativ.</p>
+<ol class="arabic simple">
+<li><p>[5, 8, 2, 6, 12]</p></li>
+<li><p>[5, 2, 8, 6, 12]</p></li>
+<li><p>[5, 2, 6, 8, 12]</p></li>
+<li><p>[2, 5, 6, 8, 12]</p></li>
+</ol>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Riktig alternativ er alternativ nummer <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<ol class="arabic simple">
+<li><p>[5, 8, 2, 6, 12] ❌</p></li>
+<li><p>[5, 2, 8, 6, 12] ❌</p></li>
+<li><p>[5, 2, 6, 8, 12] ✅</p></li>
+<li><p>[2, 5, 6, 8, 12] ❌</p></li>
+</ol>
+<p>Her er en tenkt gjennomgang av pseudokoden for listen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">[8,</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">12]</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">[(8),</span> <span class="pre">5,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">12]</span> <span class="pre">-&gt;</span> <span class="pre">[5,</span> <span class="pre">(8),</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">12]</span> <span class="pre">-&gt;</span> <span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">(8),</span> <span class="pre">6,</span> <span class="pre">12]</span> <span class="pre">-&gt;</span> <span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">(8),</span> <span class="pre">12]</span> <span class="pre">-&gt;</span> <span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">8,</span> <span class="pre">(12)]</span> <span class="pre">-&gt;</span> <span class="pre">[5,</span> <span class="pre">2,</span> <span class="pre">6,</span> <span class="pre">8,</span> <span class="pre">12]</span></code></p>
+<p>Vi ser at listen ikke er ferdigsortert. Denne prosessen må gjentas helt til det ikke forekommer noen ombyttinger.</p>
+</div>
+<p>b) Utvid pseudokoden slik at programmet den representerer, sorterer ferdig listen <code class="docutils literal notranslate"><span class="pre">a</span></code> i stigende rekkefølge etter algoritmen som vist øverst. Forklar endringene du gjør. Obs! Du må også lage pseudokode for funksjonen <code class="docutils literal notranslate"><span class="pre">bytt_plass()</span></code>.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Her er mitt forslag på pseudkode for hele sorteringsalgoritmen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION</span> <span class="n">bytt_plass</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">SET</span> <span class="n">c</span> <span class="n">TO</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">SET</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="n">TO</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">SET</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">TO</span> <span class="n">c</span>
+<span class="n">ENDFUNCTION</span>
+
+<span class="n">SET</span> <span class="n">har_byttet</span> <span class="n">TO</span> <span class="kc">True</span>
+<span class="n">WHILE</span> <span class="n">har_byttet</span> <span class="n">EQUALS</span> <span class="kc">True</span>
+    <span class="n">SET</span> <span class="n">i</span> <span class="n">TO</span> <span class="mi">0</span>
+    <span class="n">SET</span> <span class="n">har_byttet</span> <span class="n">TO</span> <span class="kc">False</span>
+    <span class="n">FOR</span> <span class="n">hver</span> <span class="n">i</span> <span class="n">LESSER</span> <span class="n">THAN</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">IF</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="n">GREATER</span> <span class="n">THAN</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">CALL</span> <span class="n">bytt_plass</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">SET</span> <span class="n">har_byttet</span> <span class="n">TO</span> <span class="kc">True</span>
+        <span class="n">ENDIF</span>
+    <span class="n">ENDFOR</span>
+<span class="n">ENDWHILE</span>
+</pre></div>
+</div>
+<p>I funksjonen <code class="docutils literal notranslate"><span class="pre">bytt_plass(a,</span> <span class="pre">i)</span></code> bruker jeg en midlertidig variabel <code class="docutils literal notranslate"><span class="pre">c</span></code> for å kunne bytte om på variablene <code class="docutils literal notranslate"><span class="pre">a[i]</span></code> og <code class="docutils literal notranslate"><span class="pre">a[i+1]</span></code>. For å forstå hvorfor kan det være hjelpsomt å se på et tankeeksempel: Vi ser for oss to glass; ett glass med saft, og ett glass med vann. Hvis jeg ønsker å bytte om på hvilket glass som har saften, kan jeg bruke et tredje glass. Se på bildet.</p>
+<img alt="Et bilde over tankeeksperimentet med vann og saft." src="../_images/vann_og_saft.png" />
+<p>I tillegg bruker jeg en tilstandsvariabel <code class="docutils literal notranslate"><span class="pre">har_byttet</span></code> som er <code class="docutils literal notranslate"><span class="pre">True</span></code> fra begynnelsen av, men som settes til <code class="docutils literal notranslate"><span class="pre">False</span></code> for hver gjennomgang av listen. Hvis det skjer et bytte settes den til <code class="docutils literal notranslate"><span class="pre">True</span></code>. Når det ikke har skjedd noen bytting, forblir <code class="docutils literal notranslate"><span class="pre">har_byttet</span></code> som <code class="docutils literal notranslate"><span class="pre">False</span></code> og while-løkken avsluttes.</p>
+</div>
+<p>c) Implementer pseudokoden i ditt programmeringsspråk. Listen skal leses inn automatisk, og den ferdig sorterte listen skal skrives til terminalvinduet eller vises i programmet.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Her er en implementasjon av pseudokoden i Python. Jeg stusser litt med formuleringen av at <em>listen skal leses inn automatisk</em> og tolker det heller som at vi skal lage en funksjon som fungerer med lister som argument.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sortert</span><span class="p">(</span><span class="n">a</span> <span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">bytt_plass</span><span class="p">(</span><span class="n">a</span> <span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">i</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
+
+    <span class="n">har_byttet</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">while</span> <span class="n">har_byttet</span><span class="p">:</span>
+        <span class="n">har_byttet</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">bytt_plass</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="n">har_byttet</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="c1"># Bruker listen fra oppgaven som eksempel</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sortert</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="sd">&quot;&quot;&quot; Utskrift </span>
+<span class="sd">print(a)          -&gt; [8, 5, 2, 6, 12]</span>
+<span class="sd">print(sortert(a)) -&gt; [2, 5, 6, 8, 12]</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Informasjonsteknologi 2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Spill.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Spill</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksamen-h23">Eksamen H23</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

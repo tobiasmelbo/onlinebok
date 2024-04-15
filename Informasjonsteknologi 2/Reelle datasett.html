@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,6 +50,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -196,6 +198,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Brukergrensesnitt.html">Brukergrensesnitt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
 </ul>
 </li>
 </ul>
@@ -401,7 +404,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;&quot;1 Olje- og gassutvinning&quot;&#39;, &#39;&quot;Klimagasser i alt&quot;&#39;, &#39;&quot;1990&quot;&#39;, &#39;8217\n&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;\tSET a[i] TO c\t\n&#39;]
 </pre></div>
 </div>
 </div>
@@ -453,7 +456,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2a2cb42cf527e05bba1f9bd924dea44d07ace4f4471404d7631f34f0ee44241a.png" src="../_images/2a2cb42cf527e05bba1f9bd924dea44d07ace4f4471404d7631f34f0ee44241a.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">19</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="c1"># Går igjennom linjene og legger data i lister.</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">linjer</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">19</span>     <span class="n">årstall</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>     <span class="n">co2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="n">xverdier</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">årstall</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
 </div>
 </div>
 <section id="en-annen-metode">

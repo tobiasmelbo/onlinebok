@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,6 +50,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -198,6 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Brukergrensesnitt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
 </ul>
 </li>
 </ul>
@@ -352,8 +355,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-visualisering-av-data">Eksempel: Visualisering av data 📈</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjonen">Dokumentasjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 📈</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 📈</a></li>
 </ul>
 </li>
 </ul>
@@ -495,7 +498,17 @@ document.write(`
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <p>Her er noen oppgaver til inspirasjon, men det beste er å finne på noe du har lyst til å lage selv.</p>
 <section id="oppgave-1">
-<h3>Oppgave 1 📈<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 1 🎈<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Lag et enkelt quiz-spill. Det kan f.eks handle om</p>
+<ul class="simple">
+<li><p>Å øve på gangetabellen eller enkel regning.</p></li>
+<li><p>Å skrive navn (f.eks Bly) fra kjemisk symbol (Pb). Her er en datafil du kan bruke: <a class="reference download internal" download="" href="../_downloads/a046a486d1e82f527d919022b45f6afd/grunnstoffer.csv"><span class="xref download myst">grunnstoffer.csv</span></a></p></li>
+<li><p>… eller noe annet.</p></li>
+</ul>
+<p>Bruk gjerne <code class="docutils literal notranslate"><span class="pre">st.balloons()</span></code> eller <code class="docutils literal notranslate"><span class="pre">st.success()</span></code> når brukeren får riktig og <code class="docutils literal notranslate"><span class="pre">st.error()</span></code> når brukeren har feil.</p>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2 📈<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Ta utgangspunkt i datafilen <a class="reference download internal" download="" href="../_downloads/1d7950e184fbb326d5df4648ccaa54be/konsumprisindeks.csv"><span class="xref download myst">konsumprisindeks.csv</span></a>.</p>
 <aside class="sidebar">
 <p>Man kan regne om kr i år <span class="math notranslate nohighlight">\(x\)</span> til kr i år <span class="math notranslate nohighlight">\(2023\)</span> med formelen</p>
@@ -505,17 +518,7 @@ document.write(`
 <li><p>Lag en app som visualiserer utviklingen av konsumprisindeks både med en tabell og med et linjediagram.</p></li>
 <li><p>Utvid appen med en kalkulator som lar deg velge et år <span class="math notranslate nohighlight">\(x\)</span> i fortiden og en viss sum med penger. Skriv så ut hvor mye penger dette ville tilsvart i <span class="math notranslate nohighlight">\(2023\)</span>.</p></li>
 </ol>
-<p>Test kalkulatoren din opp mot den fra <a class="reference external" href="https://www.ssb.no/kalkulatorer/priskalkulator">SSB</a>.</p>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🎈<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Lag et enkelt quiz-spill. Det kan f.eks handle om</p>
-<ul class="simple">
-<li><p>Å skrive navn (f.eks Bly) fra kjemisk symbol (Pb). Her er en datafil du kan bruke: <a class="reference download internal" download="" href="../_downloads/a046a486d1e82f527d919022b45f6afd/grunnstoffer.csv"><span class="xref download myst">grunnstoffer.csv</span></a></p></li>
-<li><p>Å øve på gangetabellen eller enkel regning.</p></li>
-<li><p>… eller noe annet.</p></li>
-</ul>
-<p>Bruk gjerne <code class="docutils literal notranslate"><span class="pre">st.balloons()</span></code> eller <code class="docutils literal notranslate"><span class="pre">st.success()</span></code> når brukeren får riktig og <code class="docutils literal notranslate"><span class="pre">st.error()</span></code> når brukeren har feil.</p>
+<p>Test kalkulatoren din opp mot den fra <a class="reference external" href="https://www.ssb.no/kalkulatorer/priskalkulator">SSB (nettside)</a>.</p>
 </section>
 </section>
 </section>
@@ -593,8 +596,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-visualisering-av-data">Eksempel: Visualisering av data 📈</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjonen">Dokumentasjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 📈</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 📈</a></li>
 </ul>
 </li>
 </ul>
