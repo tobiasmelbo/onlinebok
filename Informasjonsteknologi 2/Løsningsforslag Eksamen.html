@@ -360,6 +360,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-10">Oppgave 10</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-11">Oppgave 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-12">Oppgave 12</a></li>
 </ul>
 </li>
 </ul>
@@ -818,6 +819,282 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="oppgave-12">
+<h3>Oppgave 12<a class="headerlink" href="#oppgave-12" title="Permalink to this heading">#</a></h3>
+<p>I denne oppgaven skal du lage et spill som heter Manic Mansion.</p>
+<p>I Manic Mansion styrer spilleren et menneske som prøver å hente hjem sauene sine en etter en. På veien må mennesket ta seg forbi hindringer og unngå å bli tatt av spøkelser.</p>
+<p>Spillet starter med et spillebrett, et menneske, et spøkelse, tre hindringer og tre sauer. Mennesket skal styres av spilleren, og målet med spillet er å komme seg over på den andre siden av brettet og hente en sau flest mulig ganger uten å være i kontakt med noen av spøkelsene.</p>
+<p>Du bør sette av om lag to timer til denne oppgaven.</p>
+<p>Krav:</p>
+<ul class="simple">
+<li><p>Ved oppstart skal spillet bestå av et spillebrett, et menneskeobjekt, et spøkelsesobjekt, tre hindringsobjekter og tre saueobjekter.</p></li>
+<li><p>Det skal være en liten frisone både på venstre og høyre side av spillebrettet hvor kun mennesker og sauer kan oppholde seg, mens det ikke kan være spøkelser eller hindringer der.</p></li>
+<li><p>Spøkelses- og hindringsobjektene plasseres på tilfeldige steder på spillebrettet, menneskeobjektet i frisonen på venstre side av spillebrettet og sauene på tilfeldige steder i frisonen på høyre side av spillebrettet. Ingen objekter skal være oppå hverandre.</p></li>
+<li><p>Ulike typer objekter skal være visuelt forskjellige.</p></li>
+<li><p>Menneskeobjektet starter i ro og kan bevege seg i rolig hastighet opp, ned, til venstre eller til høyre. Retningen styres med piltaster (alternativt tastene W, S, A og D).</p></li>
+<li><p>Spøkelsesobjektene starter på et tilfeldig sted på spillebrettet, men altså ikke i noen av frisonene. Spøkelsesobjektene beveger seg med konstart fart i en tilfeldig retning. Spøkelsesobjektene kan bevege seg på skrå i flere forskjellige vinkler. Når et spøkelse treffer kanten av spillebrettet eller kanten på en av frisonene, endrer spøkelset retning. Spøkelset blokkeres ikke av hindringer eller av andre spøkelser, men går tvers gjennom dem.</p></li>
+<li><p>Når menneskeobjektet treffer en hinding eller kanten av spillebrettet, blokkeres menneskeobjektet helt til retningen endres.</p></li>
+<li><p>Når menneskeobjektet treffer et saueobjekt, skal det følgende skje:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Saueobjektet fjernes fra spillebrettet (dette representerer at mennesket bærer sauen). (Alternativt: Saueobjektet «festes» til menneskeobjektet og følger mennesekeobjektets bevegelser.)</p></li>
+<li><p>Farten til menneskeobjektet reduseres.</p></li>
+<li><p>Fram til saueobjektet er levert på den andre siden, vil en kollisjon mellom menneskeobjektet og et annet saueobjekt føre til at spillet stoppes.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Når menneskeobjektet kommer tilbake til startsonen på venstre side av spillebrettet, skal det følgende skje:</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Spilleren får et poeng.</p></li>
+<li><p>Farten til menneskeobjektet økes til samme fart som ved spillets start.</p></li>
+<li><p>Et nytt saueobjekt plasseres et tilfeldig sted i frisonen til høyre på spillebrettet.</p></li>
+<li><p>Et nytt spøkelsesobjekt og et nytt hindringsobjekt plasseres på tilfeldige steder på spillebrettet.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Når menneskeobjektet, med eller uten sau, treffer et spøkelsesobjekt, skal spillet stoppes.</p></li>
+</ul>
+<p>På figuren under ser du et forslag til en objektorientert modell for spillet.</p>
+<img alt="images/H23_12.jpg" src="images/H23_12.jpg" />
+<p>a) Forkar modellen.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p><code class="docutils literal notranslate"><span class="pre">Spillebrett</span></code> er en klasse som inneholder flere <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code>-objekter i en liste. Hvert <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> har noen felles attributter <code class="docutils literal notranslate"><span class="pre">xPosisjon</span></code> og <code class="docutils literal notranslate"><span class="pre">yPosisjon</span></code>, samt to metoder <code class="docutils literal notranslate"><span class="pre">plassering()</span></code>, som jeg antar gir en plassering til objektet, og <code class="docutils literal notranslate"><span class="pre">flytt()</span></code> som jeg antar flytter på posisjonen til objektet.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> har en del subklasser som arver fra den. <code class="docutils literal notranslate"><span class="pre">Menneske</span></code> har en heltallig <code class="docutils literal notranslate"><span class="pre">fart</span></code>, et heltallig <code class="docutils literal notranslate"><span class="pre">poeng</span></code> og en sannhetsverdi <code class="docutils literal notranslate"><span class="pre">bærerSau</span></code> som sier om mennesket bærer et <code class="docutils literal notranslate"><span class="pre">Sau</span></code>-objekt eller ikke. I tillegg har <code class="docutils literal notranslate"><span class="pre">Menneske</span></code> metodene <code class="docutils literal notranslate"><span class="pre">beveg()</span></code>, <code class="docutils literal notranslate"><span class="pre">reduserFart()</span></code>, <code class="docutils literal notranslate"><span class="pre">økPoeng()</span></code>, <code class="docutils literal notranslate"><span class="pre">bærSau()</span></code> og <code class="docutils literal notranslate"><span class="pre">sjekkKollisjon()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Spøkelse</span></code> arver fra <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> og har en ekstra metode <code class="docutils literal notranslate"><span class="pre">endreRetning()</span></code>. <code class="docutils literal notranslate"><span class="pre">Hindring</span></code> arver også fra <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code>, men har ingen ekstra metoder eller attributter. Den siste klassen <code class="docutils literal notranslate"><span class="pre">Sau</span></code> arver også fra <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> og har en attributt <code class="docutils literal notranslate"><span class="pre">blirBåret</span></code> som en sannhetsverdi og en metode <code class="docutils literal notranslate"><span class="pre">blirLøftet()</span></code> som jeg antar er en del av den valgfrie funksjonaliteten rundt at sauen skal «følge med» spilleren, i tillegg til metoden <code class="docutils literal notranslate"><span class="pre">fjernSau()</span></code>.</p>
+</div>
+<p>b) Ta utgangspunkt i modellen, gjør tilpasninger av egenskaper og metoder der du mener det er nødvendig, og implementer spillet slik det er beskrevet i kravene. Tilpasningene du gjør, skal dokumenteres med kommentarer i programkoden.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<p>Her er mitt forslag på en løsning. At man skal kunne implementere alle kravene under tidsfristen for denne oppgaven anser jeg som en smule optimistisk, selv om det kan være mulig.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Her er spillet som jeg mener oppfyller kravene. Her er noen tilpasninger jeg har gjort til modellen.</span>
+
+<span class="sd">1. Metodenavn og attributtnavn er skrevet om til Python-konvensjon.</span>
+<span class="sd">        - I tillegg er xPosisjon bare x, og yPosisjon bare y.</span>
+<span class="sd">2. plassering()-metoden, som jeg antar skal brukes til å sette en posisjon, er heller tatt med i konstruktøren.</span>
+<span class="sd">3. Spillebrettet inneholder ekstra attributter som trygg_sone, objekt_størrelse, og lister for de ulike typene spillobjekter.</span>
+<span class="sd">        - Årsaken til listene for de ulike typene spillobjekter er at det gjør koden for kollisjoner mye enklere.</span>
+<span class="sd">4. Fjernet flytt()-metoden for SpillObjekt-objekter.</span>
+<span class="sd">        - Bare Spøkelse og Menneske skal kunne bevege seg i min implementasjon.</span>
+<span class="sd">5. Menneske har fått bare to metoder, beveg() og sjekk.</span>
+<span class="sd">        - beveg() brukes for logikken for å flytte spilleren og hindre bevegelse.</span>
+<span class="sd">        - sjekk() brukes for logikken rundt kollisjon med Spøkelse, Sau eller ved å legge fra seg Sau.</span>
+<span class="sd">6. Fjernet metoder og attributter fra Sau.</span>
+<span class="sd">        - Sau-objekter gjør ingenting. Logikken med bæring osv gjøres i Menneske.</span>
+<span class="sd">7. Lagt til diverse attributter for de ulike objektene for bevegelseslogikk, størrelse, retning, hastighet og farge.</span>
+
+<span class="sd">Jeg har ikke lagt til funksjonalitet for å vise poeng, fordi oppgaven ikke spør om dette spesifikt i kravene.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pygame</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span><span class="p">,</span> <span class="n">choice</span>
+
+<span class="k">class</span> <span class="nc">Spillebrett</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">høyde</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">bredde</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">trygg_sone</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">objekt_størrelse</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="o">=</span> <span class="n">høyde</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bredde</span> <span class="o">=</span> <span class="n">bredde</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">=</span> <span class="n">trygg_sone</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">objekt_størrelse</span> <span class="o">=</span> <span class="n">objekt_størrelse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spøkelser</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sauer</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hindringer</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span> <span class="nf">avslutt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Avslutter spillet</span>
+        <span class="k">global</span> <span class="n">running</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span> <span class="nf">legg_til_objekt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Legger til objekter i riktige lister, og sjekker om de overlapper eksisterende objekter.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Menneske</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Hindring</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hindringer</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># Hvis den nye hindringen ikke kolliderer med noen andre</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">hindringer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Hvis den kolliderer, prøv igjen.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Hindring</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Spøkelse</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spøkelser</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># Hvis det nye spøkelset ikke kolliderer med noen andre spøkelser</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">spøkelser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Hvis det kolliderer, prøv igjen</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Spøkelse</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Sau</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sauer</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="c1"># Hvis den nye sauen ikke kolldierer med noen andre</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sauer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Hvis den kolliderer, prøv igjen</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Sau</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">)))</span>
+    
+    <span class="k">def</span> <span class="nf">fjern_objekt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fjerner objekter.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Hindring</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hindringer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Spøkelse</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">spøkelser</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Sau</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sauer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">objekter</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">SpillObjekt</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;gray&quot;</span>
+
+    <span class="k">def</span> <span class="nf">oppdater</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tegner objekter og oppdaterer rect-objektet deres.&quot;&quot;&quot;</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Menneske</span><span class="p">(</span><span class="n">SpillObjekt</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">=</span> <span class="mi">4</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">poeng</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">har_sau</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span> <span class="nf">beveg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Beveger spilleren avhengig av retning. Kontrollerer bevegelse i møte med vegger og hinder.&quot;&quot;&quot;</span>
+        <span class="c1"># Bestemmer retning</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_d</span><span class="p">]</span> <span class="ow">or</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_a</span><span class="p">]</span> <span class="ow">or</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_w</span><span class="p">]</span> <span class="ow">or</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_s</span><span class="p">]</span> <span class="ow">or</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        
+        <span class="c1"># Sjekker fremtidig kollisjon med Hindring ved å lage en boks i retningen spilleren er på vei og sjekke kollisjon med den.</span>
+        <span class="n">sjekk_boks</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sjekk_boks</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">hindringer</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Sjekker kantene også</span>
+            <span class="k">if</span> <span class="n">sjekk_boks</span><span class="o">.</span><span class="n">left</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">sjekk_boks</span><span class="o">.</span><span class="n">top</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">sjekk_boks</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span> <span class="ow">and</span> <span class="n">sjekk_boks</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">sjekk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sjekker spill-logikk som kollisjon med spøkelse, sau og levering av sau&quot;&quot;&quot;</span>
+        <span class="c1"># Sjekker kollisjon med Spøkelse</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">spøkelser</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">avslutt</span><span class="p">()</span>
+        
+        <span class="c1"># Sjekker kollisjon med Sau</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">sauer</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">har_sau</span><span class="p">:</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">avslutt</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">sauer</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">har_sau</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;darkgreen&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">har_sau</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">fjern_objekt</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">sauer</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidelist</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">sauer</span><span class="p">)])</span>
+        
+        <span class="c1"># Sjekker om spilleren får levert en Sau</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">har_sau</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">poeng</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">=</span> <span class="mi">4</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">har_sau</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Hindring</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">)))</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Spøkelse</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">)))</span>
+            <span class="n">sb</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Sau</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">)))</span>
+
+
+<span class="k">class</span> <span class="nc">Spøkelse</span><span class="p">(</span><span class="n">SpillObjekt</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="n">choice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span>
+
+    <span class="k">def</span> <span class="nf">oppdater</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Tegner, oppdaterer posisjon og håndterer retningsendring av spøkelset.&quot;&quot;&quot;</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hastighet</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="k">class</span> <span class="nc">Hindring</span><span class="p">(</span><span class="n">SpillObjekt</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Sau</span><span class="p">(</span><span class="n">SpillObjekt</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+
+<span class="c1"># Initialiserer spillebrettet og sb.objekt_størrelse</span>
+<span class="n">sb</span> <span class="o">=</span> <span class="n">Spillebrett</span><span class="p">(</span><span class="n">bredde</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="n">høyde</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="n">trygg_sone</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">objekt_størrelse</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Initialiserer Pygame-objekter</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span><span class="p">))</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="c1"># Initialiserer SpillObjekter</span>
+<span class="n">spiller</span> <span class="o">=</span> <span class="n">Menneske</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">),</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">spiller</span><span class="p">)</span>
+<span class="n">sb</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Spøkelse</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Hindring</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">)))</span>
+    <span class="n">sb</span><span class="o">.</span><span class="n">legg_til_objekt</span><span class="p">(</span><span class="n">Sau</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">),</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekt_størrelse</span><span class="p">)))</span>
+
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># Avslutter løkken</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Tegner bakgrunnen</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Tegner trygge soner</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">))</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">sb</span><span class="o">.</span><span class="n">bredde</span> <span class="o">-</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">trygg_sone</span><span class="p">,</span> <span class="n">sb</span><span class="o">.</span><span class="n">høyde</span><span class="p">))</span>
+
+    <span class="c1"># Oppdaterer objekter</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sb</span><span class="o">.</span><span class="n">objekter</span><span class="p">:</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">oppdater</span><span class="p">()</span>
+
+    <span class="c1"># Oppdaterer og beveger spilleren</span>
+    <span class="n">spiller</span><span class="o">.</span><span class="n">beveg</span><span class="p">()</span>
+
+    <span class="c1"># Sjekker spillerens kollisjon med sau eller spøkelse og om spilleren skal gi fra seg en sau</span>
+    <span class="n">spiller</span><span class="o">.</span><span class="n">sjekk</span><span class="p">()</span>
+
+    <span class="c1"># Oppdaterer hele skjermen</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+    <span class="c1"># Forsikrer at spillet kjører i maksimalt 60 FPS.</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="c1"># Avslutter spillet</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -891,6 +1168,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-10">Oppgave 10</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-11">Oppgave 11</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-12">Oppgave 12</a></li>
 </ul>
 </li>
 </ul>
