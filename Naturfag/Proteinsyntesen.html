@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Proteinsyntesen (under arbeid) &#8212; Programmering med Tobias.</title>
+    <title>🧬 Proteinsyntesen &#8212; Programmering med Tobias.</title>
   
   
   
@@ -63,9 +63,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Naturfag/Proteinsyntesen';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="🕹️ Spill: Grunnstofftreneren" href="Spill%20Grunnstofftreneren.html" />
+    <link rel="prev" title="☢️ Isotoper og henfall" href="Isotoper%20og%20henfall.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -150,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
@@ -174,10 +178,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="Isotoper%20og%20henfall.html">Isotoper og henfall ☢️</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Spill%20Grunnstofftreneren.html">Spill: Grunnstofftreneren 🧑‍🔬</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Naturfag.html">Naturfag 🦠</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html"><code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code> Trådløs kommunikasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Isotoper%20og%20henfall.html">☢️ Isotoper og henfall</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">🧬 Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -335,7 +340,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Proteinsyntesen (under arbeid)</h1>
+    <h1>🧬 Proteinsyntesen</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -350,7 +355,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-og-trna">mRNA og tRNA</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-1-lage-mrna">Del 1: Lage mRNA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-2-lage-aminosyrer">Del 2: Lage aminosyrer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -362,11 +377,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="proteinsyntesen-under-arbeid">
-<span id="proteinsyntesen"></span><h1>Proteinsyntesen (under arbeid)<a class="headerlink" href="#proteinsyntesen-under-arbeid" title="Permalink to this heading">#</a></h1>
+  <section id="proteinsyntesen">
+<span id="id1"></span><h1>🧬 Proteinsyntesen<a class="headerlink" href="#proteinsyntesen" title="Permalink to this heading">#</a></h1>
 <div class="note admonition">
-<p class="admonition-title">Forutsetninger</p>
-<p>Jeg anbefaler at man har vært igjennom disse delkapitlene før man går gjennom dette prosjektet.</p>
+<p class="admonition-title">Til læreren 🧑‍🏫</p>
+<p>Jeg anbefaler at man har litt kjennskap til disse emnene før man går gjennom dette prosjektet.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#variabler-og-syntaks"><span class="std std-ref">Variabler og syntaks</span></a></p></li>
 <li><p><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html#lokker"><span class="std std-ref">Løkker</span></a></p></li>
@@ -376,25 +391,24 @@ document.write(`
 <section id="hva-er-proteinsyntesen">
 <h2>Hva er proteinsyntesen?<a class="headerlink" href="#hva-er-proteinsyntesen" title="Permalink to this heading">#</a></h2>
 <p>Proteiner er livsnødvendige stoffer som finnes i alt fra skjelett til muskler, hår, hud, blod og organer.</p>
-<p>Proteiner består av lange kjeder med aminosyrer. Aminosyrene fungerer litt som legoklosser, og det er i all hovedsak 20 forskjellige aminosyrer som bygger opp proteiner. Rekkefølgen og utseendet av den lange kjeden med aminosyrer er det som bestemmer egenskapene til proteinet.</p>
-<p>Kroppen må sette sammen disse legoklossene i riktig rekkefølge for at proteinet skal gjøre det det er ment til å gjøre.</p>
+<p>Proteiner består av lange kjeder med aminosyrer. Det er <span class="math notranslate nohighlight">\(20\)</span> forskjellige aminosyrer som bygger opp proteiner i kroppen. Rekkefølgen av aminosyrer og den tredimensjonale formen til proteinet bestemmer egenskapene til proteinet.</p>
+<p>Aminosyrene fungerer litt som legoklosser. Hvis man har <span class="math notranslate nohighlight">\(20\)</span> forskjellige typer legoklosser kan man lage mye forskjellig, som en monstertruck, en ridder eller en krokodille. På samme måte kan man lage mange forskjellige proteiner av bare <span class="math notranslate nohighlight">\(20\)</span> aminosyrer.</p>
 <section id="dna-molekylet">
 <h3>DNA-molekylet 🧬<a class="headerlink" href="#dna-molekylet" title="Permalink to this heading">#</a></h3>
 <p>Når man bygger lego så har man ofte en slags manual, eller en oppskrift, på hvordan man skal sette sammen klossene for å få en bil, en tiger eller en Millenium Falcon™️. Hvor sitter denne <em>oppskriften</em> i kroppen? Vel, den sitter som en kode lagret i hver enkelt celle; i et molekyl som heter <em>DNA-molekylet</em> 🧬</p>
-<p>DNA-molekylet ser ut som en dobbel spiral. Hvert «trappetrinn» består av et par baser. Det er fire baser å velge mellom i DNA: Adenin, Tymin, Cytosin og Guanin (eller bare A, T, C og G). Disse kommer alltid i par, så hvis det står A på den ene siden, så står det T på den andre. Står det C på den ene siden, så står det G på den andre siden.</p>
+<p>DNA-molekylet ser ut som en dobbel spiral. Hvert «trappetrinn» består av et basepar. Det er fire baser å velge mellom i DNA: Adenin, Tymin, Cytosin og Guanin. Disse kommer alltid i par, så hvis det er adenin på den ene siden, så er det tymin på den andre siden. Er det cytosin på den ene siden, så er det guanin på den andre siden.</p>
 <p>Vi kan se for oss at en bit av DNA-molekylet ser slik ut:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TACACCTAGCATATT</span>
-<span class="n">ATGTGGATCGTATAA</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TAGTTCGGG</span>
+<span class="n">ATCAAGCCC</span>
 </pre></div>
 </div>
-<p>DNA-molekylet befinner seg i cellekjernen. For at denne biten med DNA skal kunne bli til et protein så må den kopieres, flyttes ut og leses av.</p>
+<p>DNA-molekylet befinner seg i cellekjernen, men selve byggeprosessen skjer utenfor cellekjernen, på <em>ribosomene</em>. Man flytter ikke DNA-molekylet ut, men lager en kopi av den ene siden i DNA. Kopien kaller vi for <em>mRNA</em>.</p>
 </section>
 <section id="mrna-og-trna">
 <h3>mRNA og tRNA<a class="headerlink" href="#mrna-og-trna" title="Permalink to this heading">#</a></h3>
-<p>Inne i cellekjernen kopieres en bit av DNA om til et nytt molekyl som heter mRNA.</p>
-<p>Selv om det er to sider til et DNA-molekyl, trenger vi bare å se på en side.</p>
+<p>Når vi lager mRNA ser vi på en av sidene av DNA-molekylet.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span><span class="p">:</span>
-<span class="n">TACACCTAGCATATT</span>
+<span class="n">TAGTTCGGG</span>
 </pre></div>
 </div>
 <p>Når mRNA skal kopiere dette segmentet så tar vi de motsatte baseparene, men basen Tymin byttes ut med Uracil.</p>
@@ -406,15 +420,17 @@ document.write(`
 </ul>
 <p>Kopien av DNA-molekylet over ser da slik ut.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
-<span class="n">AUGUGGAUCGUAUAA</span>
+<span class="n">AUCAAGCCC</span>
 </pre></div>
 </div>
-<p>Dette mRNA-molekylet sendes så ut av cellekjernen og til ribosomene i cellen. En kombinasjon av tre baser kalles for en <em>triplett</em>. Hver triplett koder for en aminosyre eller et signal. Hver tRNA-bit gjenkjenner en triplett og setter riktig aminosyre der. Dermed bygges proteinet i riktig rekkefølge.</p>
+<p>Dette mRNA-molekylet sendes så ut av cellekjernen og til ribosomene i cellen. En kombinasjon av tre baser kalles for en <em>triplett</em> eller <em>kodon</em>. Hver triplett koder for en aminosyre eller et signal. Hver tRNA-bit gjenkjenner en triplett og setter riktig aminosyre der. Dermed bygges proteinet i riktig rekkefølge.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
-<span class="n">AUG</span> <span class="n">UGG</span> <span class="n">AUC</span> <span class="n">GUA</span> <span class="n">UAA</span>
+<span class="n">AUC</span> <span class="n">AAG</span> <span class="n">CCC</span>
 
 <span class="n">Tilsvarer</span> <span class="n">aminosyrene</span><span class="p">:</span>
-<span class="n">Metionin</span><span class="p">(</span><span class="n">START</span><span class="p">)</span> <span class="n">Tryptofan</span> <span class="n">Isoleucin</span> <span class="n">Valin</span> <span class="n">STOPP</span>
+<span class="n">Isoleucin</span>
+<span class="n">Lysin</span>
+<span class="n">Prolin</span>
 </pre></div>
 </div>
 <p>En triplett (AUG) koder for starten av proteinet. Denne koder også for metionin. Det er også tre tripletter som koder for et sluttsignal av proteinsyntesen (UAA, UAG, UGA).</p>
@@ -423,6 +439,137 @@ document.write(`
 </section>
 <section id="programmering-av-proteinsyntesen">
 <h2>Programmering av proteinsyntesen<a class="headerlink" href="#programmering-av-proteinsyntesen" title="Permalink to this heading">#</a></h2>
+<section id="del-1-lage-mrna">
+<h3>Del 1: Lage mRNA<a class="headerlink" href="#del-1-lage-mrna" title="Permalink to this heading">#</a></h3>
+<p>Vi kan representere en bit av DNA som en tekst <code class="docutils literal notranslate"><span class="pre">DNA</span> <span class="pre">=</span> <span class="pre">&quot;TAGTTCGGG&quot;</span></code> i Python. Målet vårt er å lage en tråd med mRNA fra basene i DNA. For å oversette basene bruker vi en ordbok.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En DNA-tråd, representert som en tekst.</span>
+<span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;TAGTTCGGG&quot;</span>
+
+<span class="c1"># Ordbok som oversetter fra baser i DNA til baser i mRNA</span>
+<span class="n">DNA_til_mRNA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;T&quot;</span> <span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;C&quot;</span> <span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G&quot;</span> <span class="p">:</span> <span class="s2">&quot;C&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># En tom mRNA-Tråd</span>
+<span class="n">mRNA</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># Tar alle basene i DNA, oversetter, og setter inn i mRNA-tråden</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">DNA</span><span class="p">:</span>
+    <span class="n">mRNA</span> <span class="o">+=</span> <span class="n">DNA_til_mRNA</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+
+<span class="c1"># Skriver ut DNA og mRNA</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DNA:  &quot;</span><span class="p">,</span> <span class="n">DNA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mRNA: &quot;</span><span class="p">,</span> <span class="n">mRNA</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DNA:   TAGTTCGGG
+mRNA:  AUCAAGCCC
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="del-2-lage-aminosyrer">
+<h3>Del 2: Lage aminosyrer<a class="headerlink" href="#del-2-lage-aminosyrer" title="Permalink to this heading">#</a></h3>
+<p>Nå gjenstår det bare å lage aminosyrer fra triplettene på mRNA-tråden. For å oversette bruker vi en <em>kodontabell</em>, en oversikt over hvilke tripletter som tilsvarer hvilke aminosyrer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En DNA-tråd, representert som en tekst.</span>
+<span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;TAGTTCGGG&quot;</span>
+
+<span class="c1"># Ordbok som oversetter fra baser i DNA til baser i mRNA</span>
+<span class="n">DNA_til_mRNA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span> <span class="p">:</span> <span class="s2">&quot;U&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;T&quot;</span> <span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;C&quot;</span> <span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G&quot;</span> <span class="p">:</span> <span class="s2">&quot;C&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># En tom mRNA-Tråd</span>
+<span class="n">mRNA</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+<span class="c1"># Tar alle basene i DNA, oversetter, og setter inn i mRNA-tråden</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">DNA</span><span class="p">:</span>
+    <span class="n">mRNA</span> <span class="o">+=</span> <span class="n">DNA_til_mRNA</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+
+<span class="c1"># Skriver ut DNA og mRNA</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DNA:  &quot;</span><span class="p">,</span> <span class="n">DNA</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mRNA: &quot;</span><span class="p">,</span> <span class="n">mRNA</span><span class="p">)</span>
+
+<span class="c1"># Ordbok som oversetter fra tripletter til aminosyrer.</span>
+<span class="n">kodontabell</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;UUU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Fenylalanin&quot;</span><span class="p">,</span>     <span class="s2">&quot;UCU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Serin&quot;</span><span class="p">,</span>    <span class="s2">&quot;UAU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Tyrosin&quot;</span><span class="p">,</span>       <span class="s2">&quot;UGU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cystein&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UUC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Fenylalanin&quot;</span><span class="p">,</span>     <span class="s2">&quot;UCC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Serin&quot;</span><span class="p">,</span>    <span class="s2">&quot;UAC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Tyrosin&quot;</span><span class="p">,</span>       <span class="s2">&quot;UGC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Cystein&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UUA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Leucin&quot;</span><span class="p">,</span>          <span class="s2">&quot;UCA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Serin&quot;</span><span class="p">,</span>    <span class="s2">&quot;UAA&quot;</span> <span class="p">:</span> <span class="s2">&quot;STOPP&quot;</span><span class="p">,</span>         <span class="s2">&quot;UGA&quot;</span> <span class="p">:</span> <span class="s2">&quot;STOPP&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;UUG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Leucin&quot;</span><span class="p">,</span>          <span class="s2">&quot;UCG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Serin&quot;</span><span class="p">,</span>    <span class="s2">&quot;UAG&quot;</span> <span class="p">:</span> <span class="s2">&quot;STOPP&quot;</span><span class="p">,</span>         <span class="s2">&quot;UGG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Tryptofan&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CUU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Leucin&quot;</span><span class="p">,</span>          <span class="s2">&quot;CCU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prolin&quot;</span><span class="p">,</span>   <span class="s2">&quot;CAU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Histidin&quot;</span><span class="p">,</span>      <span class="s2">&quot;CGU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Arginin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CUC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Leucin&quot;</span><span class="p">,</span>          <span class="s2">&quot;CCC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prolin&quot;</span><span class="p">,</span>   <span class="s2">&quot;CAC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Histidin&quot;</span><span class="p">,</span>      <span class="s2">&quot;CGC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Arginin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CUA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Leucin&quot;</span><span class="p">,</span>          <span class="s2">&quot;CCA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prolin&quot;</span><span class="p">,</span>   <span class="s2">&quot;CAA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glutamin&quot;</span><span class="p">,</span>      <span class="s2">&quot;CGA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Arginin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CUG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Leucin&quot;</span><span class="p">,</span>          <span class="s2">&quot;CCG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prolin&quot;</span><span class="p">,</span>   <span class="s2">&quot;CAG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glutamin&quot;</span><span class="p">,</span>      <span class="s2">&quot;CGG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Arginin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;AUU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Isoleucin&quot;</span><span class="p">,</span>       <span class="s2">&quot;ACU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Threonin&quot;</span><span class="p">,</span> <span class="s2">&quot;AAU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Asparagin&quot;</span><span class="p">,</span>     <span class="s2">&quot;AGU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Serin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;AUC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Isoleucin&quot;</span><span class="p">,</span>       <span class="s2">&quot;ACC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Threonin&quot;</span><span class="p">,</span> <span class="s2">&quot;AAC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Asparagin&quot;</span><span class="p">,</span>     <span class="s2">&quot;AGC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Serin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;AUA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Isoleucin&quot;</span><span class="p">,</span>       <span class="s2">&quot;ACA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Threonin&quot;</span><span class="p">,</span> <span class="s2">&quot;AAA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Lysin&quot;</span><span class="p">,</span>         <span class="s2">&quot;AGA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Arginin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;AUG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Metionin(START)&quot;</span><span class="p">,</span> <span class="s2">&quot;ACG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Threonin&quot;</span><span class="p">,</span> <span class="s2">&quot;AAG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Lysin&quot;</span><span class="p">,</span>         <span class="s2">&quot;AGG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Arginin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GUU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Valin&quot;</span><span class="p">,</span>           <span class="s2">&quot;GCU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Alanin&quot;</span><span class="p">,</span>   <span class="s2">&quot;GAU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Asparaginsyre&quot;</span><span class="p">,</span> <span class="s2">&quot;GGU&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glycin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GUC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Valin&quot;</span><span class="p">,</span>           <span class="s2">&quot;GCC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Alanin&quot;</span><span class="p">,</span>   <span class="s2">&quot;GAC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Asparaginsyre&quot;</span><span class="p">,</span> <span class="s2">&quot;GGC&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glycin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GUA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Valin&quot;</span><span class="p">,</span>           <span class="s2">&quot;GCA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Alanin&quot;</span><span class="p">,</span>   <span class="s2">&quot;GAA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glutaminsyre&quot;</span><span class="p">,</span>  <span class="s2">&quot;GGA&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glycin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GUG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Valin&quot;</span><span class="p">,</span>           <span class="s2">&quot;GCG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Alanin&quot;</span><span class="p">,</span>   <span class="s2">&quot;GAG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glutaminsyre&quot;</span><span class="p">,</span>  <span class="s2">&quot;GGG&quot;</span> <span class="p">:</span> <span class="s2">&quot;Glycin&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Henter ut tre og tre baser fra mRNA, setter de inn i ordboken og skriver ut aminosyren.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mRNA</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+  <span class="n">triplett</span> <span class="o">=</span> <span class="n">mRNA</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">kodontabell</span><span class="p">[</span><span class="n">triplett</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DNA:   TAGTTCGGG
+mRNA:  AUCAAGCCC
+Isoleucin
+Lysin
+Prolin
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Informasjon om kodoner og aminosyrer er hentet fra <a class="reference external" href="https://sml.snl.no/kodon">SNL (lenke)</a> og <a class="reference external" href="https://www.mn.uio.no/ibv/tjenester/kunnskap/plantefys/leksikon/k/kodon.html">Institutt for biovitenskap - UIO (lenke)</a>.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<p>Her er en kjørbar demo av programmet om proteinsyntesen som du kan bruke til å svare på spørsmålene under.</p>
+<iframe src="https://trinket.io/embed/python3/6db3fe7e7b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Skriv inn en selvvalgt DNA-sekvens i programmet.</p>
+<p>Se om du klarer å lage en sekvens med aminosyrer som starter med <code class="docutils literal notranslate"><span class="pre">Metionin(START)</span></code> og slutter med <code class="docutils literal notranslate"><span class="pre">STOPP</span></code>.</p>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Notér aminosyrene du får skrevet ut 📝</p></li>
+<li><p>Modifiser en av bokstavene i DNA-sekvensen din.</p></li>
+</ol>
+<p>Skjer det noen endring i aminosyrene? Kan dette brukes til å forklare mutasjoner?</p>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Notér aminosyrene du får skrevet ut 📝</p></li>
+<li><p>Legg til en bokstav i begynnelsen av DNA-sekvensen din.</p></li>
+</ol>
+<p>Hvilken endring skjer i aminosyrene dine? Hvordan er denne mutasjonen annerledes enn mutasjonen i forrige oppgave?</p>
+</section>
 </section>
 </section>
 
@@ -457,6 +604,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Isotoper%20og%20henfall.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">☢️ Isotoper og henfall</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Spill%20Grunnstofftreneren.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">🕹️ Spill: Grunnstofftreneren</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -480,7 +645,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna-og-trna">mRNA og tRNA</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-1-lage-mrna">Del 1: Lage mRNA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-2-lage-aminosyrer">Del 2: Lage aminosyrer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
