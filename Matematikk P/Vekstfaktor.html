@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tallfølger &#8212; Programmering med Tobias.</title>
+    <title>Vekstfaktor &#8212; Programmering med Tobias.</title>
   
   
   
@@ -65,11 +65,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk 1T/Tallfølger';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk P/Vekstfaktor';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Numeriske metoder" href="Numeriske%20metoder.html" />
-    <link rel="prev" title="Matematikk 1T 📗" href="Matematikk%201T.html" />
+    <link rel="next" title="Matematikk 1T 📗" href="../Matematikk%201T/Matematikk%201T.html" />
+    <link rel="prev" title="Matematikk P 📕" href="Matematikk%20P.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -185,13 +185,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%20P/Matematikk%20P.html">Matematikk P 📕</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk%20P/Vekstfaktor.html">Vekstfaktor</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Matematikk%20P.html">Matematikk P 📕</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Vekstfaktor</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Matematikk%201T.html">Matematikk 1T 📗</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Numeriske%20metoder.html">Numeriske metoder</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Numeriske%20metoder.html">Numeriske metoder</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -263,7 +263,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Matematikk 1T/Tallfølger.ipynb" target="_blank"
+      <li><a href="../_sources/Matematikk P/Vekstfaktor.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -345,7 +345,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tallfølger</h1>
+    <h1>Vekstfaktor</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -355,16 +355,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-formel">Programmere tallfølger med formel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-algoritme">Programmere tallfølger med algoritme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-for">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-while">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7: Utfordring</a></li>
 </ul>
 </li>
 </ul>
@@ -378,27 +373,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="tallfolger">
-<h1>Tallfølger<a class="headerlink" href="#tallfolger" title="Permalink to this heading">#</a></h1>
-<p>Tallfølger er tall som kommer i rekkefølge etter hverandre. Noen tallfølger gis med en formel, og andre gis ved en slags algoritme.</p>
-<div class="note admonition">
-<p class="admonition-title">Forutsetninger</p>
-<p>Denne siden forutsetter at man er kjent med innholdet i disse delkapitlene:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#variabler-og-syntaks"><span class="std std-ref">Variabler og syntaks</span></a></p></li>
-<li><p><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html#kalkulatorer-og-pakker"><span class="std std-ref">Kalkulatorer og pakker</span></a></p></li>
-<li><p><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html#lokker"><span class="std std-ref">Løkker</span></a></p></li>
-<li><p><a class="reference internal" href="../Grunnleggende/Lister.html#lister"><span class="std std-ref">Lister</span></a></p></li>
-</ul>
-</div>
-<p>Her kommer noen vanlige tallfølger. Formlene under er gitt for tallene <span class="math notranslate nohighlight">\(n\in \{1, 2, 3, \dots\}\)</span>.</p>
+  <section id="vekstfaktor">
+<h1>Vekstfaktor<a class="headerlink" href="#vekstfaktor" title="Permalink to this heading">#</a></h1>
+<p>Vekstfaktor er det tallet man ganger med for at noe skal endre seg med en viss prosent.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Navn</div>
+Endring</div>
 </div>
 </div>
 </div>
@@ -406,7 +390,7 @@ Navn</div>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Formel</div>
+Prosentfaktor</div>
 </div>
 </div>
 </div>
@@ -414,261 +398,255 @@ Formel</div>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-Tall</div>
+Vekstfaktor</div>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">De naturlige tallene</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(20\%\)</span> økning</p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(n\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(0.20\)</span></p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\{1, 2, 3, 4, \dots\}\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(v=1.20\)</span></p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Kvadrattallene</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(10\%\)</span> økning</p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(n^2\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(0.10\)</span></p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\{1, 4, 9, 16, \dots\}\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(v=1.10\)</span></p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Rektangeltallene</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(5\%\)</span> økning</p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(n(n+1)\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(0.05\)</span></p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\{2, 6, 12, 20, \dots\}\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(v=1.05\)</span></p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Trekanttallene</p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(5\%\)</span> reduksjon</p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\frac{n(n+1)}{2}\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(0.05\)</span></p>
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(\{1, 3, 6, 10, \dots\}\)</span></p>
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(v=0.95\)</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(10\%\)</span> reduksjon</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(0.10\)</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(v=0.90\)</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(20\%\)</span> reduksjon</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(0.20\)</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(v=0.80\)</span></p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section id="programmere-tallfolger-med-formel">
-<h2>Programmere tallfølger med formel<a class="headerlink" href="#programmere-tallfolger-med-formel" title="Permalink to this heading">#</a></h2>
-<p>Vi kan enkelt programmere tallfølger med formel. Da kan vi finne ulike summer. Vi kan også finne hvilke tall som er i følgen, og hvilke som ikke er det.</p>
-<p>La oss finne summen av de <span class="math notranslate nohighlight">\(20\)</span> første kvadrattallene og undersøke om tallet <span class="math notranslate nohighlight">\(289\)</span> er et kvadrattall.</p>
+<section id="programmering-av-vekstfaktor-med-for">
+<h2>Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">for</span></code><a class="headerlink" href="#programmering-av-vekstfaktor-med-for" title="Permalink to this heading">#</a></h2>
+<p>La oss se på et eksempel. Jeg setter inn <span class="math notranslate nohighlight">\(10\,000\)</span> kr i en bankkonto med <span class="math notranslate nohighlight">\(5\%\)</span> årlig rente. Hvor mye får jeg i rente hvert år og hvordan vil pengene mine se ut i de neste årene?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Summen starter som null</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">penger</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">prosentfaktor</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">prosentfaktor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">penger</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span> <span class="c1"># For-løkken går fra 1 til én mindre enn den siste parameteren, altså 20.</span>
-    <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span>          <span class="c1"># Legger til summen. n**2 er formelen for kvadrattallene.</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>     <span class="c1"># Skriver ut indeks (plassering) og tall i tallfølgen.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summen er </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">penger</span> <span class="o">=</span> <span class="n">penger</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">penger</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 1
-2 4
-3 9
-4 16
-5 25
-6 36
-7 49
-8 64
-9 81
-10 100
-11 121
-12 144
-13 169
-14 196
-15 225
-16 256
-17 289
-18 324
-19 361
-20 400
-Summen er 2870
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 10000
+1 10500.0
+2 11025.0
+3 11576.25
+4 12155.06
 </pre></div>
 </div>
 </div>
 </div>
-<p>Som vi ser er tallet <span class="math notranslate nohighlight">\(289\)</span> et kvadrattall, det er nummer 17 i følgen. I tillegg er summen av de <span class="math notranslate nohighlight">\(20\)</span> første kvadrattallene lik <span class="math notranslate nohighlight">\(2870\)</span>.</p>
+<p>Jeg kan også finne hvor mye rente jeg har fått hvert år ved å gange pengene med prosentfaktoren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">penger</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">prosentfaktor</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">prosentfaktor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">penger</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">rente</span> <span class="o">=</span> <span class="n">penger</span> <span class="o">*</span> <span class="n">prosentfaktor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rente:&quot;</span><span class="p">,</span> <span class="n">rente</span><span class="p">)</span>
+    <span class="n">penger</span> <span class="o">=</span> <span class="n">penger</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">penger</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 10000
+Rente: 500.0
+1 10500.0
+Rente: 525.0
+2 11025.0
+Rente: 551.25
+3 11576.25
+Rente: 578.8125
+4 12155.06
+Rente: 607.7531250000001
+5 12762.82
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="programmere-tallfolger-med-algoritme">
-<h2>Programmere tallfølger med algoritme<a class="headerlink" href="#programmere-tallfolger-med-algoritme" title="Permalink to this heading">#</a></h2>
-<p>Det er ikke like lett å finne en formel for alle tallfølger. Noen ganger er det enklere å programmere tallfølgen fra en algoritme.</p>
-<p>La oss se på <em>fibonaccitallene</em>. De er gitt ved denne algoritmen.</p>
-<ul class="simple">
-<li><p>Start med tallene <span class="math notranslate nohighlight">\(\{0, 1\}\)</span></p></li>
-<li><p>Hvert neste tall er summen av de to forrige tallene.</p></li>
-</ul>
-<p>La oss programmere starten på denne tallfølgen.</p>
+<section id="programmering-av-vekstfaktor-med-while">
+<h2>Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#programmering-av-vekstfaktor-med-while" title="Permalink to this heading">#</a></h2>
+<p>Hvis vi ikke helt vet hvor mange ganger en løkke skal kjøre passer en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke bedre.</p>
+<p>La oss si at jeg har en bil til <span class="math notranslate nohighlight">\(200\,000\)</span> kr. Den avtar i verdi med <span class="math notranslate nohighlight">\(9\%\)</span> hvert år. Hvor mange år går det før den har blitt verdt <span class="math notranslate nohighlight">\(50\,000\)</span> kr?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fib</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">verdi</span> <span class="o">=</span> <span class="mi">200000</span>
+<span class="n">prosentfaktor</span> <span class="o">=</span> <span class="mf">0.09</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">prosentfaktor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">verdi</span><span class="p">)</span>
 
-<span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="n">ny_fib</span> <span class="o">=</span> <span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fib</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># Tar summen av det siste og det nest siste tallet i listen.</span>
-    <span class="n">fib</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ny_fib</span><span class="p">)</span>         <span class="c1"># Legger inn tallet i listen.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">verdi</span> <span class="o">&gt;</span> <span class="mi">50000</span><span class="p">:</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">verdi</span> <span class="o">=</span> <span class="n">verdi</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">verdi</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 200000
+1 182000.0
+2 165620.0
+3 150714.2
+4 137149.92200000002
+5 124806.42902000003
+6 113573.85040820003
+7 103352.20387146203
+8 94050.50552303044
+9 85585.96002595771
+10 77883.22362362152
+11 70873.73349749559
+12 64495.09748272099
+13 58690.5387092761
+14 53408.39022544125
+15 48601.635105151545
 </pre></div>
 </div>
 </div>
 </div>
-<p>Dette programmet legger inn det neste tallet i listen som summen av de to siste tallene så lenge listens lengde er under 10. Derfor skriver programmet ut de første ti fibonaccitallene.</p>
+<p>Det har altså tatt <span class="math notranslate nohighlight">\(15\)</span> år før verdien har blitt under <span class="math notranslate nohighlight">\(50\,000\)</span> kr.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
 <h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
-<p>Hvis kvadrattallene er tallene med formel <span class="math notranslate nohighlight">\(n^2\)</span> når <span class="math notranslate nohighlight">\(n\in \{1, 2, 3, \dots\}\)</span> så må tallene med formel <span class="math notranslate nohighlight">\(n^3\)</span> hete <em>kubikktallene</em>.</p>
-<p>Skriv ut summen av de første <span class="math notranslate nohighlight">\(20\)</span> kubikktallene og undersøk om <span class="math notranslate nohighlight">\(6859\)</span> er et kubikktall.</p>
+<p>I en skål ligger det <span class="math notranslate nohighlight">\(200\,000\)</span> bakterier. Antallet bakterier øker med 40% hvert minutt.</p>
+<p>Hvor lang tid tar det før det er <span class="math notranslate nohighlight">\(2\,000\,000\)</span> bakterier?</p>
 </section>
 <section id="oppgave-2">
 <h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Skriv ut de første 20 toerpotensene <span class="math notranslate nohighlight">\(2^n\)</span>. Har du sett disse tallene før?</p>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
-<blockquote>
-<div><p>Se på koden for fibonaccitallene i eksempelet over.</p>
-</div></blockquote>
-<p><em>Det gylne snitt</em> <span class="math notranslate nohighlight">\(\phi\approx 1.618\)</span> er et viktig tall i matematikken. Hvis vi tar <em>forholdet</em> mellom et fibonaccitall og det forrige tallet, så vil verdien til dette forholdet bli mer og mer lik det gylne snitt desto lengre ut vi kommer i tallfølgen.</p>
-<p>Det vil si at <span class="math notranslate nohighlight">\(\phi \approx \frac{fib_n}{fib_{n-1}}\)</span> når <span class="math notranslate nohighlight">\(n\)</span> er tilstrekkelig stor. For eksempel er <span class="math notranslate nohighlight">\(\frac{13}{8}\approx 1.625\)</span> og <span class="math notranslate nohighlight">\(\frac{34}{21}\approx 1.619\)</span></p>
-<p>Lag et program som regner ut det gylne snitt ved å bruke fibonaccitallene.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Fasit: Det gylne snitt</p>
-<p>Det gylne snitt <span class="math notranslate nohighlight">\(\phi\)</span> er omtrent lik <span class="math notranslate nohighlight">\(1.618033988749895\)</span>.</p>
-</div>
-</section>
-<section id="oppgave-4">
-<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Permalink to this heading">#</a></h3>
-<p><em>Tribonaccitallene</em> er gitt ved følgende algoritme.</p>
-<ul class="simple">
-<li><p>Start med tallene <span class="math notranslate nohighlight">\(\{0, 1, 1\}\)</span></p></li>
-<li><p>Det neste tallet er summen av de tre forrige tallene.</p></li>
-</ul>
-<p>Lag et program som skriver ut de første 20 tribonaccitallene.</p>
-</section>
-<section id="oppgave-5">
-<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Permalink to this heading">#</a></h3>
-<p><em>Fakultet</em> (<em>factorial</em>) er definert på denne måten.</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(n! = n \cdot (n-1) \cdot (n-2) \cdot ... \cdot 3 \cdot 2 \cdot 1\)</span></p></li>
-</ul>
-<p>For eksempel er <span class="math notranslate nohighlight">\(5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120\)</span></p>
-<p>Lag et program som finner <span class="math notranslate nohighlight">\(n!\)</span> (<span class="math notranslate nohighlight">\(n\)</span> fakultet) for et gitt heltall <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>Bruk programmet til å finne <span class="math notranslate nohighlight">\(12!\)</span>.</p>
-<p>Svar: <input id="textInput1" type="text"><a id="response1"></a></p>
-<script>
-document.getElementById("textInput1").addEventListener("keypress", function(event) {
-  var inputText = this.value.trim().toLowerCase();
-  if (event.key === "Enter") {
-    if (inputText === "479001600") {
-      document.getElementById("response1").innerHTML = " ✅";
-    } else {
-      document.getElementById("response1").innerHTML = " ❌";
-    }
-  }
-});
-</script>
-</section>
-<section id="oppgave-6">
-<h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Permalink to this heading">#</a></h3>
-<blockquote>
-<div><p>I denne oppgaven kan det være nyttig å se tilbake på <a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#rest-og-heltallsdivisjon"><span class="std std-ref">Rest og heltallsdivisjon</span></a></p>
-</div></blockquote>
-<p>Lag et program som skriver ut alle primtallene under <span class="math notranslate nohighlight">\(100\)</span>.</p>
-</section>
-<section id="oppgave-7-utfordring">
-<h3>Oppgave 7: Utfordring<a class="headerlink" href="#oppgave-7-utfordring" title="Permalink to this heading">#</a></h3>
-<p><em>Collatz-følgen</em> til et tall er definert på følgende måte</p>
-<ol class="arabic simple">
-<li><p>Del tallet på to hvis det er et partall.</p></li>
-<li><p>Gang tallet med tre og legg til 1 hvis det er et oddetall.</p></li>
-</ol>
-<p>Starter vi med tallet <span class="math notranslate nohighlight">\(12\)</span> blir collatz-følgen</p>
-<p><span class="math notranslate nohighlight">\(12 \rightarrow 6 \rightarrow 3 \rightarrow 10 \rightarrow 5 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1\)</span></p>
-<p>Summen av tallene i denne følgen er <span class="math notranslate nohighlight">\(67\)</span>.</p>
-<p>Finn summen av tallene i Collatz-følgen til tallet <span class="math notranslate nohighlight">\(111\)</span>. Du kan anta at følgen stopper på tallet <span class="math notranslate nohighlight">\(1\)</span>.</p>
-<p>Svar: <input id="textInput2" type="text"><a id="response2"></a></p>
-<script>
-document.getElementById("textInput2").addEventListener("keypress", function(event) {
-  var inputText = this.value.trim().toLowerCase();
-  if (event.key === "Enter") {
-    if (inputText === "86149") {
-      document.getElementById("response2").innerHTML = " ✅";
-    } else {
-      document.getElementById("response2").innerHTML = " ❌";
-    }
-  }
-});
-</script>
-<div class="note admonition">
-<p class="admonition-title">Collatz’ formodning (<em>Collatz’ conjecture</em>)</p>
-<p>Antagelsen om at vi ender på tallet <span class="math notranslate nohighlight">\(1\)</span> er rimelig, men det er ingen som har klart å bevise at dette gjelder for alle positive heltall. Dette matematiske problemet kalles Collatz’ formodning (<em>Collatz’ conjecture</em>) og er et uløst problem i matematikken, til tross for at konseptet egentlig er ganske enkelt å forstå.</p>
-</div>
+<p>Jeg har <span class="math notranslate nohighlight">\(20\,000\)</span> kr på sparekonto. Hvert år setter jeg inn <span class="math notranslate nohighlight">\(27\,500\)</span> kr. Renten er på <span class="math notranslate nohighlight">\(5.5\%\)</span>.</p>
+<p>Hvor lang tid tar det før jeg har <span class="math notranslate nohighlight">\(300\,000\)</span> kr på konto?</p>
 </section>
 </section>
 </section>
@@ -686,7 +664,7 @@ document.getElementById("textInput2").addEventListener("keypress", function(even
         },
         kernelOptions: {
             name: "python3",
-            path: "./Matematikk 1T"
+            path: "./Matematikk P"
         },
         predefinedOutput: true
     }
@@ -705,20 +683,20 @@ document.getElementById("textInput2").addEventListener("keypress", function(even
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Matematikk%201T.html"
+       href="Matematikk%20P.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Matematikk 1T 📗</p>
+        <p class="prev-next-title">Matematikk P 📕</p>
       </div>
     </a>
     <a class="right-next"
-       href="Numeriske%20metoder.html"
+       href="../Matematikk%201T/Matematikk%201T.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Numeriske metoder</p>
+        <p class="prev-next-title">Matematikk 1T 📗</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -740,16 +718,11 @@ document.getElementById("textInput2").addEventListener("keypress", function(even
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-formel">Programmere tallfølger med formel</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-algoritme">Programmere tallfølger med algoritme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-for">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-while">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7: Utfordring</a></li>
 </ul>
 </li>
 </ul>

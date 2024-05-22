@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
@@ -183,12 +183,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%20P/Matematikk%20P.html">Matematikk P 📕</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%20P/Vekstfaktor.html">Vekstfaktor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Numeriske%20metoder.html">Numeriske metoder</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
@@ -352,7 +356,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-med-unittest">Testing med <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🌡️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 </ul>
 </li>
 </ul>
@@ -465,35 +468,26 @@ document.write(`
 <section id="oppgave-1">
 <h3>Oppgave 1 🌡️<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>I denne oppgaven skal vi lage et testprogram før vi lager et program.</p>
-<p>Til slutt skal <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> inneholde en klasse <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> som har en temperatur i celsius som argument. <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> skal også ha to metoder. <code class="docutils literal notranslate"><span class="pre">kelvin()</span></code> skal returnere temperaturen som kelvin. <code class="docutils literal notranslate"><span class="pre">fahrenheit()</span></code> skal returnere temperaturen som fahrenheit.</p>
+<p>Til slutt skal <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> inneholde en klasse <code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> som har en attributt <code class="docutils literal notranslate"><span class="pre">c</span></code> som skal tilsvare grader i celsius og settes i konstruktøren.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Temperatur</span></code> skal også ha to metoder.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">som_kelvin()</span></code> skal returnere temperaturen som kelvin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">som_fahrenheit()</span></code> skal returnere temperaturen som fahrenheit.</p></li>
+</ul>
 <ol class="arabic simple">
 <li><p>Lag to filer <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> og <code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code> i samme mappe.</p></li>
-<li><p>Sett opp <code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code> og lag noen tomme testmetoder <code class="docutils literal notranslate"><span class="pre">test_konstruktør</span></code>, <code class="docutils literal notranslate"><span class="pre">test_fahrenheit</span></code> og <code class="docutils literal notranslate"><span class="pre">test_kelvin</span></code>. (Du kan bruke <code class="docutils literal notranslate"><span class="pre">pass</span></code> for å lage metoder som ikke gjør noen ting)</p></li>
-<li><p>Lag noen tester for <code class="docutils literal notranslate"><span class="pre">test_konstruktør</span></code>. Testene kan være:</p></li>
+<li><p>Sett opp <code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code> og lag noen tomme testmetoder <code class="docutils literal notranslate"><span class="pre">test_konstruktør</span></code>, <code class="docutils literal notranslate"><span class="pre">test_som_fahrenheit</span></code> og <code class="docutils literal notranslate"><span class="pre">test_som_kelvin</span></code>. (Du kan bruke <code class="docutils literal notranslate"><span class="pre">pass</span></code> for å lage metoder som ikke gjør noen ting)</p></li>
 </ol>
+<p>Her er noen krav som du må teste med testmetodene dine.</p>
 <ul class="simple">
-<li><p>At man får <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dersom man setter temperaturen til noe under <code class="docutils literal notranslate"><span class="pre">-273.15</span></code>.</p></li>
-<li><p>At man får <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom temperaturen ikke er et tall.</p></li>
+<li><p>Man skal få en <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> dersom man setter temperaturen til <code class="docutils literal notranslate"><span class="pre">-273.15</span></code> eller under.</p></li>
+<li><p>Man skal få en <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom temperaturen man setter ikke er et tall.</p></li>
+<li><p>For en temperatur <code class="docutils literal notranslate"><span class="pre">0.0</span></code> skal man få ut <code class="docutils literal notranslate"><span class="pre">32.0</span></code> grader fahrenheit, og <code class="docutils literal notranslate"><span class="pre">237.15</span></code> grader kelvin.</p></li>
+<li><p>For en temperatur <code class="docutils literal notranslate"><span class="pre">100.0</span></code> skal man få ut <code class="docutils literal notranslate"><span class="pre">212.0</span></code> grader fahrenheit og <code class="docutils literal notranslate"><span class="pre">373.15</span></code> grader kelvin.</p></li>
 </ul>
-<ol class="arabic simple" start="4">
-<li><p>Lag noen tester for <code class="docutils literal notranslate"><span class="pre">test_fahrenheit</span></code>. Testene kan være:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Noen eksempler på temperaturer som er forventet. Finn gjerne en kalkulator eller tabell på nett.</p></li>
-</ul>
-<ol class="arabic simple" start="5">
-<li><p>Lag noen tester for <code class="docutils literal notranslate"><span class="pre">test_kelvin</span></code>. Testene kan være:</p></li>
-</ol>
-<ul class="simple">
-<li><p>Noen eksempler på temperaturer som er forventet. Finn gjerne en kalkulator eller tabell på nett.</p></li>
-</ul>
-<ol class="arabic simple" start="6">
+<ol class="arabic simple" start="3">
 <li><p>Lag <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> og sjekk at alle testene går gjennom med <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">test_temperatur.py</span></code> underveis.</p></li>
 </ol>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
-<p>Finn et av de objektorienterte programmene du har laget tidligere. Lag et testprogram for dette.</p>
 </section>
 </section>
 </section>
@@ -568,7 +562,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-med-unittest">Testing med <code class="docutils literal notranslate"><span class="pre">unittest</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🌡️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
 </ul>
 </li>
 </ul>

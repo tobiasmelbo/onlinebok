@@ -164,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20enkle%20datasett.html">Plotting: Enkle Datasett</a></li>
@@ -185,12 +185,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%20P/Matematikk%20P.html">Matematikk P 📕</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk%20P/Vekstfaktor.html">Vekstfaktor</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Numeriske%20metoder.html">Numeriske metoder</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Reelle%20datasett.html">Reelle datasett</a></li>
@@ -354,6 +358,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-lineaere-funksjoner">Eksempel: Lineære funksjoner</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-inn-verdier-i-modellen">Sette inn verdier i modellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andre-matematiske-funksjoner">Andre matematiske funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -375,7 +383,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]</span> <span class="c1"># År etter 2015</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">]</span> <span class="c1"># Konsumprisindeks</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">122.8</span><span class="p">]</span> <span class="c1"># Konsumprisindeks</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;År etter 2015&quot;</span><span class="p">)</span>
@@ -385,7 +393,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/14613183b93ea74c8d711e9dfb2f3efae7407181a490f0901d4e2cd1b204b9be.png" src="../_images/14613183b93ea74c8d711e9dfb2f3efae7407181a490f0901d4e2cd1b204b9be.png" />
+<img alt="../_images/a3a50b26cc0b5e22d821fea134ec7392ffe17a4662170f82af9cec056050ee5b.png" src="../_images/a3a50b26cc0b5e22d821fea134ec7392ffe17a4662170f82af9cec056050ee5b.png" />
 </div>
 </div>
 <p>Hvilken type matematisk funksjon tror du passer best her? En lineær funksjon? En andregradsfunksjon? Eller kanskje en eksponentiell funksjon?</p>
@@ -403,7 +411,7 @@ document.write(`
 
 <span class="c1"># Datapunkter (i arrays)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">122.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
 
 <span class="c1"># Definerer den matematiske funksjonen</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -424,15 +432,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: 3.4119048825839484
-b: -6776.255005495699
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: 2.911904761909067
+b: -5767.7547619176175
 </pre></div>
 </div>
-<img alt="../_images/c0160ebf74bf17378517afcafdfb2f1198e803d86541a72837f1ec2831f98331.png" src="../_images/c0160ebf74bf17378517afcafdfb2f1198e803d86541a72837f1ec2831f98331.png" />
+<img alt="../_images/bf424b49d9889eac6e06f4ab03e4983b8f9154ff3d78c0633fcbf067cf69f49e.png" src="../_images/bf424b49d9889eac6e06f4ab03e4983b8f9154ff3d78c0633fcbf067cf69f49e.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen fant altså koeffisientene til å være <span class="math notranslate nohighlight">\(a\approx 3.41\)</span> og <span class="math notranslate nohighlight">\(b\approx -6776.26\)</span>. Det vil si at funksjonsuttrykket for grafen kan skrives som <span class="math notranslate nohighlight">\(f(x)=3.41x - 6776.26\)</span>.</p>
-<p>Siden koeffisienten <span class="math notranslate nohighlight">\(a\approx 3.41\)</span> kan vi si at konsumprisindeksen i gjennomsnitt stiger med <span class="math notranslate nohighlight">\(3.41\)</span> per år, ifølge modellen vår.</p>
+<p><code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen fant altså koeffisientene til å være <span class="math notranslate nohighlight">\(a\approx 2.91\)</span> og <span class="math notranslate nohighlight">\(b\approx -5767.75\)</span>. Det vil si at funksjonsuttrykket for grafen kan skrives som <span class="math notranslate nohighlight">\(f(x)=2.91x - 5767.75\)</span>.</p>
+<p>Siden koeffisienten <span class="math notranslate nohighlight">\(a\approx 3.41\)</span> kan vi si at konsumprisindeksen i gjennomsnitt stiger med <span class="math notranslate nohighlight">\(2.91\)</span> per år, ifølge modellen vår.</p>
 <div class="note admonition">
 <p class="admonition-title">Noen kommentarer til koden</p>
 <ul class="simple">
@@ -456,7 +464,7 @@ b: -6776.255005495699
 
 <span class="c1"># Datapunkter (i arrays)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">122.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
 
 <span class="c1"># Definerer den matematiske funksjonen</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -471,16 +479,16 @@ b: -6776.255005495699
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KPI i 2030 (modell): 149.91190614971583
-KPI i 2005 (modell): 64.6142840851171
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KPI i 2030 (modell): 143.41190475778876
+KPI i 2005 (modell): 70.61428571006218
 </pre></div>
 </div>
 </div>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Hvordan passer modellen?</p>
-<p>Modellen sier altså at konsumprisindeksen i <span class="math notranslate nohighlight">\(2030\)</span> kommer til å bli omtrent <span class="math notranslate nohighlight">\(149.91\)</span>.</p>
-<p>Den sier også at konsumprisindeksen i <span class="math notranslate nohighlight">\(2005\)</span> var omtrent <span class="math notranslate nohighlight">\(64.61\)</span>. Den var faktisk <span class="math notranslate nohighlight">\(82.3\)</span>.</p>
+<p>Modellen sier altså at konsumprisindeksen i <span class="math notranslate nohighlight">\(2030\)</span> kommer til å bli omtrent <span class="math notranslate nohighlight">\(143.41\)</span>.</p>
+<p>Den sier også at konsumprisindeksen i <span class="math notranslate nohighlight">\(2005\)</span> var omtrent <span class="math notranslate nohighlight">\(70.61\)</span>. Den var faktisk <span class="math notranslate nohighlight">\(82.3\)</span>.</p>
 <p>Det kan være flere grunner for at modellen vår ikke passer godt med virkeligheten.</p>
 <ol class="arabic simple">
 <li><p>Vi har for få datapunkter.</p></li>
@@ -501,7 +509,7 @@ KPI i 2005 (modell): 64.6142840851171
 
 <span class="c1"># Datapunkter (i arrays)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span> <span class="c1"># År etter 2015</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">128.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">122.8</span><span class="p">])</span> <span class="c1"># Konsumprisindeks</span>
 
 <span class="c1"># Definerer den matematiske funksjonen</span>
 <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
@@ -523,25 +531,92 @@ KPI i 2005 (modell): 64.6142840851171
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: 0.4297619048563457
-b: -1731.5369051521418
-c: 1744218.5753940183
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a: 0.1797608181738
+b: -722.7825181950592
+c: 726638.397852397
 </pre></div>
 </div>
-<img alt="../_images/5f9b150bb85c64bb923b5395e233a9e885f288aadcb8f98266c959f20e8e92c2.png" src="../_images/5f9b150bb85c64bb923b5395e233a9e885f288aadcb8f98266c959f20e8e92c2.png" />
+<img alt="../_images/2897867dafa75ee7e86431ce396e19feeecb3fa013d3a8982932ac7e5d0ae52b.png" src="../_images/2897867dafa75ee7e86431ce396e19feeecb3fa013d3a8982932ac7e5d0ae52b.png" />
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen fant altså koeffisientene til å være <span class="math notranslate nohighlight">\(a\approx 0.43\)</span>, <span class="math notranslate nohighlight">\(b\approx -1731.54\)</span> og <span class="math notranslate nohighlight">\(c\approx 1744218.58\)</span>. Det vil si at funksjonsuttrykket for grafen kan skrives som <span class="math notranslate nohighlight">\(f(x)=0.43x^2 - 1731.54x + 1744218.58\)</span>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> funksjonen fant altså koeffisientene til å være <span class="math notranslate nohighlight">\(a\approx 0.18\)</span>, <span class="math notranslate nohighlight">\(b\approx -722.78\)</span> og <span class="math notranslate nohighlight">\(c\approx 726638.40\)</span>. Det vil si at funksjonsuttrykket for grafen kan skrives som <span class="math notranslate nohighlight">\(f(x)=0.18x^2 - 722.78x + 7266387.40\)</span>.</p>
 <p>På samme måte kan vi også finne modeller med andre matematiske funksjonstyper som</p>
 <ul class="simple">
 <li><p>Tredjegradsfunksjoner <span class="math notranslate nohighlight">\(f(x)=ax^3+bx^2+cx+d\)</span></p></li>
 <li><p>Eksponentialfunksjoner <span class="math notranslate nohighlight">\(f(x)=ab^x\)</span></p></li>
 <li><p>Potensfunksjoner <span class="math notranslate nohighlight">\(f(x)=ax^b\)</span></p></li>
-<li><p>Sinusfunksjoner <span class="math notranslate nohighlight">\(f(x)=A*sin(kx + \phi) + d\)</span></p></li>
+<li><p>Sinusfunksjoner <span class="math notranslate nohighlight">\(f(x)=A\cdot sin(kx + \phi) + d\)</span></p></li>
 </ul>
 <blockquote>
 <div><p>Kilde til data om konsumprisindeks: <a class="reference external" href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen">SSB</a></p>
 </div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<p>Konsumprisindeksen for boligprisene for brukte boliger i Oslo og Bærum har utviklet seg på følgende måte.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>2015</p></th>
+<th class="head"><p>2016</p></th>
+<th class="head"><p>2017</p></th>
+<th class="head"><p>2018</p></th>
+<th class="head"><p>2019</p></th>
+<th class="head"><p>2020</p></th>
+<th class="head"><p>2021</p></th>
+<th class="head"><p>2022</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(100.0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(115.5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(124.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(125.5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(130.4\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(137.3\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(152.1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(158.9\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>a) Lag en linær modell for konsumprisindeksen. Hva blir konsumprisindeksen for brukte boliger i <span class="math notranslate nohighlight">\(2023\)</span>, ifølge modellen? Hva med i <span class="math notranslate nohighlight">\(2030\)</span>?</p>
+<div class="hint admonition">
+<p class="admonition-title">Finne endring i verdi fra KPI.</p>
+<p>Man kan finne en tilnærming for hvor mye en bolig er verdt, gitt at den følger indeksen, ved å bruke formelen</p>
+<div class="math notranslate nohighlight">
+\[\text{verdi}_{\text{år}} = \frac{KPI_{\text{år}}}{KPI_{\text{tidligere år}}} \cdot \text{verdi}_{\text{tidligere år}}\]</div>
+<p>For eksempel vil en bolig som er verdt <span class="math notranslate nohighlight">\(3\,000\,000\)</span> kr i <span class="math notranslate nohighlight">\(2016\)</span> stige i verdi til</p>
+<div class="math notranslate nohighlight">
+\[\text{verdi}_{2020}=\frac{\text{KPI}_{2020}}{\text{KPI}_{2016}}\cdot 3\,000\,000 = \frac{137.3}{115.5}\cdot 3\,000\,000\approx 3\,566\,234 \text{kr}\]</div>
+</div>
+<p>b) Hvis man kjøper en bolig for <span class="math notranslate nohighlight">\(4\,000\,000\)</span> kr i <span class="math notranslate nohighlight">\(2023\)</span>, hvor mye vil boligen være verdt i <span class="math notranslate nohighlight">\(2030\)</span> ved å bruke modellen din?</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mf">115.5</span><span class="p">,</span> <span class="mf">124.24</span><span class="p">,</span> <span class="mf">125.5</span><span class="p">,</span> <span class="mf">130.4</span><span class="p">,</span> <span class="mf">137.3</span><span class="p">,</span> <span class="mf">152.1</span><span class="p">,</span> <span class="mf">158.9</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI (2023):&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># KPI (2023): 164.74499999594627</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KPI (2030):&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="mi">2030</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="c1"># KPI (2030): 218.02666666271762</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Boligen blir verdt:&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2030</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4000000</span><span class="p">),</span> <span class="s2">&quot;i 2030&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Da får vi at boligen blir verdt <span class="math notranslate nohighlight">\(5\,293\,676\)</span> i <span class="math notranslate nohighlight">\(2030\)</span>.</p>
+</div>
+<blockquote>
+<div><p>Kilde til data om konsumprisindeks: <a class="reference external" href="https://www.ssb.no/statbank/table/07230/">SSB</a></p>
+</div></blockquote>
+</section>
 </section>
 </section>
 
@@ -615,6 +690,10 @@ c: 1744218.5753940183
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-lineaere-funksjoner">Eksempel: Lineære funksjoner</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-inn-verdier-i-modellen">Sette inn verdier i modellen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#andre-matematiske-funksjoner">Andre matematiske funksjoner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
