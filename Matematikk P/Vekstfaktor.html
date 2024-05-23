@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 🤓</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
 </ul>
@@ -358,8 +358,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-for">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-while">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🦠</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 💸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🧙‍♀️</a></li>
 </ul>
 </li>
 </ul>
@@ -639,14 +640,55 @@ Rente: 607.7531250000001
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
 <section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 1 🦠<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
 <p>I en skål ligger det <span class="math notranslate nohighlight">\(200\,000\)</span> bakterier. Antallet bakterier øker med 40% hvert minutt.</p>
-<p>Hvor lang tid tar det før det er <span class="math notranslate nohighlight">\(2\,000\,000\)</span> bakterier?</p>
+<p>Hvor lang tid tar det før det er over <span class="math notranslate nohighlight">\(2\,000\,000\)</span> bakterier?</p>
 </section>
 <section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 2 💸<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
 <p>Jeg har <span class="math notranslate nohighlight">\(20\,000\)</span> kr på sparekonto. Hvert år setter jeg inn <span class="math notranslate nohighlight">\(27\,500\)</span> kr. Renten er på <span class="math notranslate nohighlight">\(5.5\%\)</span>.</p>
-<p>Hvor lang tid tar det før jeg har <span class="math notranslate nohighlight">\(300\,000\)</span> kr på konto?</p>
+<p>Hvor lang tid tar det før jeg har over <span class="math notranslate nohighlight">\(300\,000\)</span> kr på konto?</p>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3 🧙‍♀️<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<p>Ånei! En heks har kastet en forbannelse på meg som gjør at jeg krymper. Jeg er <span class="math notranslate nohighlight">\(180\)</span> cm høy nå, men jeg krymper <span class="math notranslate nohighlight">\(1\%\)</span> per år.</p>
+<p>a) Hvor lang tid tar det før jeg blir under <span class="math notranslate nohighlight">\(100\)</span> cm høy?</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">høyde</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">prosentfaktor</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">prosentfaktor</span>
+
+<span class="k">while</span> <span class="n">høyde</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">høyde</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">høyde</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Når det har gått <span class="math notranslate nohighlight">\(59\)</span> år, har jeg blitt under <span class="math notranslate nohighlight">\(100\)</span> cm høy.</p>
+</div>
+<p>Det viser seg at forbannelsen blir sterkere over tid! Forbannelsen dobles faktisk hvert år, slik at hvis jeg krymper <span class="math notranslate nohighlight">\(1\%\)</span> det første året, så krymper jeg <span class="math notranslate nohighlight">\(2\%\)</span> året etter, og <span class="math notranslate nohighlight">\(4\%\)</span> året etter det igjen.</p>
+<p>b) Hvor lang tid tar det før jeg blir <span class="math notranslate nohighlight">\(100\)</span> cm høy nå?</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">år</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">høyde</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">prosentfaktor</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">prosentfaktor</span>
+
+<span class="k">while</span> <span class="n">høyde</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">år</span> <span class="o">=</span> <span class="n">år</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">høyde</span> <span class="o">=</span> <span class="n">høyde</span> <span class="o">*</span> <span class="n">vekstfaktor</span>
+    <span class="n">prosentfaktor</span> <span class="o">=</span> <span class="n">prosentfaktor</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">prosentfaktor</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">år</span><span class="p">,</span> <span class="n">høyde</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Når det har gått <span class="math notranslate nohighlight">\(6\)</span> år, har jeg blitt under <span class="math notranslate nohighlight">\(100\)</span> cm høy.</p>
+</div>
 </section>
 </section>
 </section>
@@ -721,8 +763,9 @@ Rente: 607.7531250000001
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-for">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-vekstfaktor-med-while">Programmering av vekstfaktor med <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🦠</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 💸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🧙‍♀️</a></li>
 </ul>
 </li>
 </ul>
