@@ -7,7 +7,7 @@ Hei! 👋 Jeg heter Tobias og jobber som lærer på videregående 🤓
 Jeg skriver denne nettboken for å dele undervisningsopplegg og fagstoff om programmering i Python 🐍
 
 ## 📖 Boken
-Du finner en lenke til boken [her](https://tobiasmelbo.github.io/onlinebok). Boken er åpen og gratis for alle som skulle ønske å bruke den. Den oppdateres ofte, derfor anbefaler jeg å bruke nettsiden, men man kan laste den ned og printe ut hvis man skulle ønske det også.
+Du finner en lenke til boken [her](https://tobiasmelbo.github.io/onlinebok). Boken er åpen og gratis for alle som skulle ønske å bruke den. Den oppdateres ofte, derfor anbefaler jeg å bruke nettsiden, men man kan laste ned sider og printe de ut hvis man skulle ønske det også.
 
 ## 📚 Kapitler
 Boken er inndelt på følgende måte.
