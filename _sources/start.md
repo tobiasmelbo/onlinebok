@@ -15,10 +15,9 @@ Hvert kapittel og hvert prosjekt har en kommentar som denne. Her beskriver jeg h
 
 - {ref}`Grunnleggende Python` er ment som en introduksjon til noen grunnleggende konsepter i Python.
 
-- {ref}`Avansert Python` tar de grunnleggende tingene videre for de som skal programmere mye.
-
 - {ref}`Dataanalyse og plotting` handler om dataanalyse og plotting og er ment for de fagene hvor elever skal analysere reelle datasett.
 
+- {ref}`Avansert Python` tar de grunnleggende tingene videre for de som vil nå det neste nivået.
 ```
 
 Send meg en mail : 📧 tobiasmelb@viken.no eller tobiasmelb@afk.no

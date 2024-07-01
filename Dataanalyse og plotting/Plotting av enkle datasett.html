@@ -1,75 +1,71 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="nb" >
+<html lang="nb" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Plotting: Enkle Datasett &#8212; Programmering med Tobias.</title>
+    <title>Enkle Datasett &#8212; Programmering med Tobias.</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../_static/tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=507867d0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Plotting av enkle datasett';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Plotting: Reelle datasett" href="Plotting%20av%20reelle%20datasett%20med%20Pandas.html" />
-    <link rel="prev" title="Plotting: Matematiske funksjoner" href="Plotting%20av%20matematiske%20funksjoner.html" />
+    <link rel="next" title="Reelle datasett" href="Plotting%20av%20reelle%20datasett%20med%20Pandas.html" />
+    <link rel="prev" title="Matematiske funksjoner" href="Plotting%20av%20matematiske%20funksjoner.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -79,19 +75,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,12 +113,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,6 +141,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../start.html">
@@ -141,10 +152,22 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     <p class="title logo__title">Programmering med Tobias.</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Søk</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -155,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Kalkulatorer%20og%20pakker.html">Kalkulatorer og pakker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
@@ -163,40 +186,42 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20matematiske%20funksjoner.html">Plotting: Matematiske funksjoner</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Plotting: Enkle Datasett</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Plotting: Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20av%20reelle%20datasett%20med%20Pandas.html">Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Regresjon.html">Regresjon</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 🤓</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Mengder%20og%20tupler.html">Mengder og tupler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%20P/Matematikk%20P.html">Matematikk P 📕</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%20P/Matematikk%20P.html">Matematikk P 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%20P/Vekstfaktor.html">Vekstfaktor</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk%201T/Matematikk%201T.html">Matematikk 1T 📗</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Tallf%C3%B8lger.html">Tallfølger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk%201T/Numeriske%20metoder.html">Numeriske metoder</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Reelle%20datasett.html">Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
@@ -208,7 +233,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Spill.html">Spill</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -224,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -233,14 +258,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -315,26 +340,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -345,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Plotting: Enkle Datasett</h1>
+    <h1>Enkle Datasett</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -374,13 +401,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section id="plotting-enkle-datasett">
-<span id="id1"></span><h1>Plotting: Enkle Datasett<a class="headerlink" href="#plotting-enkle-datasett" title="Permalink to this heading">#</a></h1>
+  <section id="enkle-datasett">
+<span id="plotting-enkle-datasett"></span><h1>Enkle Datasett<a class="headerlink" href="#enkle-datasett" title="Link to this heading">#</a></h1>
 <p>Noen datasett har så få datapunkter at man kan skrive de inn i Python selv.</p>
 <p>La oss se på et sett med data som handler om konsumprisindeks.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>2015</p></th>
 <th class="head"><p>2016</p></th>
@@ -404,6 +431,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>Vi kan skrive dette inn i Python som lister på denne måten:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]</span> <span class="c1"># År etter 2015</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">122.8</span><span class="p">]</span> <span class="c1"># Konsumprisindeks</span>
@@ -413,7 +441,7 @@ document.write(`
 <div><p>Kilde til data om konsumprisindeks: <a class="reference external" href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen">SSB</a></p>
 </div></blockquote>
 <section id="linjediagram">
-<h2>Linjediagram<a class="headerlink" href="#linjediagram" title="Permalink to this heading">#</a></h2>
+<h2>Linjediagram<a class="headerlink" href="#linjediagram" title="Link to this heading">#</a></h2>
 <p>For å lage et linjediagram mellom punktene kan vi bruke <code class="docutils literal notranslate"><span class="pre">plot()</span></code>-funksjonen som ligger i <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -431,12 +459,21 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/693954c4993563b610f6d7ea323e1bf34fec61ffeb2cb8ef11e4b3e345a1f1c7.png" src="../_images/693954c4993563b610f6d7ea323e1bf34fec61ffeb2cb8ef11e4b3e345a1f1c7.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">]</span> <span class="c1"># År etter 2015</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">103.6</span><span class="p">,</span> <span class="mf">105.5</span><span class="p">,</span> <span class="mf">108.4</span><span class="p">,</span> <span class="mf">110.8</span><span class="p">,</span> <span class="mf">112.2</span><span class="p">,</span> <span class="mf">116.1</span><span class="p">,</span> <span class="mf">122.8</span><span class="p">]</span> <span class="c1"># Konsumprisindeks</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="punktdiagram">
-<h2>Punktdiagram<a class="headerlink" href="#punktdiagram" title="Permalink to this heading">#</a></h2>
+<h2>Punktdiagram<a class="headerlink" href="#punktdiagram" title="Link to this heading">#</a></h2>
 <p>Noen ganger ønsker vi å plotte datapunktene som punkter. Da bruker vi <code class="docutils literal notranslate"><span class="pre">scatter()</span></code>-funksjonen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -454,12 +491,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ba8d0971ae78f32d4c132bba477f2b609c6790c130a81c469a72b08ee43679b.png" src="../_images/1ba8d0971ae78f32d4c132bba477f2b609c6790c130a81c469a72b08ee43679b.png" />
+<img alt="../_images/8f08020e04fcca60d449493454a8a8f2e51b5de297d34b4f3ba6e5c3a1b2727c.png" src="../_images/8f08020e04fcca60d449493454a8a8f2e51b5de297d34b4f3ba6e5c3a1b2727c.png" />
 </div>
 </div>
 </section>
 <section id="soylediagram">
-<h2>Søylediagram<a class="headerlink" href="#soylediagram" title="Permalink to this heading">#</a></h2>
+<h2>Søylediagram<a class="headerlink" href="#soylediagram" title="Link to this heading">#</a></h2>
 <p>Vi kan lage søylediagrammer med <code class="docutils literal notranslate"><span class="pre">bar()</span></code>-funksjonen fra <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <p>For å bruke et <code class="docutils literal notranslate"><span class="pre">bar()</span></code> trenger vi</p>
 <ul class="simple">
@@ -480,7 +517,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/59b6471407c9c0c4d82f0b76fb5f87fa2cea51f0f1f4865dcf7d98436c2b23cf.png" src="../_images/59b6471407c9c0c4d82f0b76fb5f87fa2cea51f0f1f4865dcf7d98436c2b23cf.png" />
+<img alt="../_images/34ef80c14b2d497931708e26ee3e2557b678175d319ba8e5db028cbef04db275.png" src="../_images/34ef80c14b2d497931708e26ee3e2557b678175d319ba8e5db028cbef04db275.png" />
 </div>
 </div>
 <p>Vi kan også legge til en fargeliste for å skille på kategoriene.</p>
@@ -499,7 +536,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b8848205a9a98e2b77c7030d06781a68665d232428a62122d50c1b9e64050293.png" src="../_images/b8848205a9a98e2b77c7030d06781a68665d232428a62122d50c1b9e64050293.png" />
+<img alt="../_images/23dfd3117efa1091be0579d46da2ef236e9f8078363c51a31b95717071c479bf.png" src="../_images/23dfd3117efa1091be0579d46da2ef236e9f8078363c51a31b95717071c479bf.png" />
 </div>
 </div>
 <div class="tip admonition">
@@ -509,7 +546,7 @@ document.write(`
 </div>
 </section>
 <section id="sektordiagram">
-<h2>Sektordiagram<a class="headerlink" href="#sektordiagram" title="Permalink to this heading">#</a></h2>
+<h2>Sektordiagram<a class="headerlink" href="#sektordiagram" title="Link to this heading">#</a></h2>
 <p>Vi kan lage sektordiagrammer eller kakediagrammer med <code class="docutils literal notranslate"><span class="pre">plt.pie()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -526,16 +563,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bec2ef15e0abb923e3a4265f8ba2ce3e32a1627ae9253024baf87f0e345e32fb.png" src="../_images/bec2ef15e0abb923e3a4265f8ba2ce3e32a1627ae9253024baf87f0e345e32fb.png" />
+<img alt="../_images/d502db004bc668c90d79c94b7571ae3261fa4c1694ccd97e13ce644f5fe4b275.png" src="../_images/d502db004bc668c90d79c94b7571ae3261fa4c1694ccd97e13ce644f5fe4b275.png" />
 </div>
 </div>
 <p>Vi ser at sektordiagrammet fungerer ganske likt som søylediagrammet. Parameteren <code class="docutils literal notranslate"><span class="pre">autopct</span></code> gjør sånn at de prosentvise inndelingene skrives inn i hver sektor.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Permalink to this heading">#</a></h2>
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
 <p>Finn høyden til medelevene dine.</p>
 <p>Del høydene opp i blokker på 10cm og tell hvor mange som havner i hver blokk.</p>
 <p>Det kan for eksempel se slik ut:</p>
@@ -549,10 +586,10 @@ document.write(`
 <p>Lag et søylediagram av høydene. Du kan ta utgangspunkt i tabellen over hvis du ikke har klassekamerater 😶‍🌫️</p>
 </section>
 <section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
 <p>I denne oppgaven skal vi lage et sektordiagram over utdanningsnivå i den norske befolkningen.</p>
 <p>Under er et sett med data over høyest oppnådd utdanningsnivå i befolkningen i 2022.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Utdanningsnivå</p></th>
 <th class="head"><p>Antall mennesker</p></th>
@@ -576,15 +613,16 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>Lag et sektordiagram som viser fordelingen over. Husk tittel.</p>
 <blockquote>
 <div><p>Kilde til data om utdanningsnivå: <a class="reference external" href="https://www.ssb.no/utdanning/utdanningsniva/statistikk/befolkningens-utdanningsniva">SSB</a></p>
 </div></blockquote>
 </section>
 <section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Permalink to this heading">#</a></h3>
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
 <p>I denne oppgaven skal vi sammenlikne lønnssutvikling 💸</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Årstall</p></th>
 <th class="head"><p>Lønn: Undervisning</p></th>
@@ -626,6 +664,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>Tabellen over viser utviklingen i gjennomsnittslønnen for undervisningssektoren sammenliknet med gjennomsnittslønnen for alle næringer.</p>
 <ol class="arabic simple">
 <li><p>Lag et linjediagram over lønnsutviklingen i undervisningssektoren.</p></li>
@@ -665,11 +704,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Plotting%20av%20matematiske%20funksjoner.html"
@@ -677,7 +715,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Plotting: Matematiske funksjoner</p>
+        <p class="prev-next-title">Matematiske funksjoner</p>
       </div>
     </a>
     <a class="right-next"
@@ -685,14 +723,11 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Plotting: Reelle datasett</p>
+        <p class="prev-next-title">Reelle datasett</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -700,6 +735,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -738,6 +774,7 @@ By Tobias Melbø
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -757,8 +794,8 @@ By Tobias Melbø
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,0 +1,51 @@
+Atomnr,Navn,Symbol,Elektronkonfigurasjon,Tilstand_ved_romtemperatur
+1,Hydrogen,H,[1],Gass
+2,Helium,He,[2],Gass
+3,Litium,Li,[2 1],Fast
+4,Beryllium,Be,[2 2],Fast
+5,Bor,B,[2 3],Fast
+6,Karbon,C,[2 4],Fast
+7,Nitrogen,N,[2 5],Gass
+8,Oksygen,O,[2 6],Gass
+9,Fluor,F,[2 7],Gass
+10,Neon,Ne,[2 8],Gass
+11,Natrium,Na,[2 8 1],Fast
+12,Magnesium,Mg,[2 8 2],Fast
+13,Aluminium,Al,[2 8 3],Fast
+14,Silisium,Si,[2 8 4],Fast
+15,Fosfor,P,[2 8 5],Fast
+16,Svovel,S,[2 8 6],Fast
+17,Klor,Cl,[2 8 7],Gass
+18,Argon,Ar,[2 8 8],Gass
+19,Kalium,K,[2 8 8 1],Fast
+20,Kalsium,Ca,[2 8 8 2],Fast
+21,Scandium,Sc,[2 8 9 2],Fast
+22,Titan,Ti,[2 8 10 2],Fast
+23,Vanadium,V,[2 8 11 2],Fast
+24,Krom,Cr,[2 8 13 1],Fast
+25,Mangan,Mn,[2 8 13 2],Fast
+26,Jern,Fe,[2 8 14 2],Fast
+27,Kobolt,Co,[2 8 15 2],Fast
+28,Nikkel,Ni,[2 8 16 2],Fast
+29,Kobber,Cu,[2 8 18 1],Fast
+30,Sink,Zn,[2 8 18 2],Fast
+31,Gallium,Ga,[2 8 18 3],Fast
+32,Germanium,Ge,[2 8 18 4],Fast
+33,Arsen,As,[2 8 18 5],Fast
+34,Selen,Se,[2 8 18 6],Fast
+35,Brom,Br,[2 8 18 7],Væske
+36,Krypton,Kr,[2 8 18 8],Gass
+37,Rubidium,Rb,[2 8 18 8 1],Fast
+38,Strontium,Sr,[2 8 18 8 2],Fast
+39,Yttrium,Y,[2 8 18 9 2],Fast
+40,Zirkonium,Zr,[2 8 18 10 2],Fast
+41,Niob,Nb,[2 8 18 12 1],Fast
+42,Molybden,Mo,[2 8 18 13 1],Fast
+43,Technetium,Tc,[2 8 18 13 2],Fast
+44,Ruthenium,Ru,[2 8 18 15 1],Fast
+45,Rhodium,Rh,[2 8 18 16 1],Fast
+46,Palladium,Pd,[2 8 18 18],Fast
+47,Sølv,Ag,[2 8 18 18 1],Fast
+48,Kadmium,Cd,[2 8 18 18 2],Fast
+49,Indium,In,[2 8 18 18 3],Fast
+50,Tinn,Sn,[2 8 18 18 4],Fast
