@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+
+<html lang="nb" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Isotoper og henfall &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=507867d0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Naturfag/Isotoper og henfall';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Proteinsyntesen" href="Proteinsyntesen.html" />
+    <link rel="prev" title="Trådløs kommunikasjon Micro:bit" href="Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Søk</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../start.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 🤓</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Formatering%20med%20f-strings.html">Formatering med f-strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Mengder%20og%20tupler.html">Mengder og tupler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Rutenett.html">Rutenett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Algoritmer.html">Algoritmer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Naturfag.html">Naturfag 🦠</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Isotoper og henfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Dokumentasjon.html">Dokumentasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Brukergrensesnitt.html">Brukergrensesnitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Spill.html">Spill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Naturfag/Isotoper og henfall.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Isotoper og henfall</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typer-henfall">Typer henfall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#henfallskjeder">Henfallskjeder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-finne-henfallstype">Programmering: Finne henfallstype</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="isotoper-og-henfall">
+<span id="id1"></span><h1>Isotoper og henfall<a class="headerlink" href="#isotoper-og-henfall" title="Link to this heading">#</a></h1>
+<p>Du har sikkert hørt om grunnstoffene før, men visste du at det finnes mange forskjellige versjoner av grunnstoffene, og at noen av disse er radioaktive?</p>
+<p>Atomkjernen består av <strong>protoner</strong> og <strong>nøytroner</strong>. Antallet protoner bestemmer hvilket grunnstoff det er snakk om. Hvis et stoff har atomkjerner med <span class="math notranslate nohighlight">\(6\)</span> protoner, så er stoffet karbon.</p>
+<p>Antallet nøytroner kan variere. Karbon med <span class="math notranslate nohighlight">\(6\)</span> protoner og <span class="math notranslate nohighlight">\(6\)</span> nøytroner har navnet <em>Karbon-12</em>, mens karbon med <span class="math notranslate nohighlight">\(6\)</span> protoner og <span class="math notranslate nohighlight">\(8\)</span> nøytroner har navnet <em>Karbon-14</em>. Disse kalles for <strong>isotoper</strong> av karbon.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Isotop</p></th>
+<th class="head"><p>Nukleoner</p></th>
+<th class="head"><p>Symbolsk</p></th>
+<th class="head text-left"><p>Henfall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Karbon-12</p></td>
+<td><p><span class="math notranslate nohighlight">\(6\)</span> protoner, <span class="math notranslate nohighlight">\(6\)</span> nøytroner</p></td>
+<td><p><span class="math notranslate nohighlight">\(^{12}_6C\)</span></p></td>
+<td class="text-left"><p>Stabil</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Karbon-13</p></td>
+<td><p><span class="math notranslate nohighlight">\(6\)</span> protoner, <span class="math notranslate nohighlight">\(7\)</span> nøytroner</p></td>
+<td><p><span class="math notranslate nohighlight">\(^{13}_6C\)</span></p></td>
+<td class="text-left"><p>Stabil</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Karbon-14</p></td>
+<td><p><span class="math notranslate nohighlight">\(6\)</span> protoner, <span class="math notranslate nohighlight">\(8\)</span> nøytroner</p></td>
+<td><p><span class="math notranslate nohighlight">\(^{14}_6C\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\beta -\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Noen isotoper er stabile og noen er radioaktive. Radioaktive isotoper sender ut stråling på forskjellige måter. Vi skal se på noen av disse.</p>
+<section id="typer-henfall">
+<h2>Typer henfall<a class="headerlink" href="#typer-henfall" title="Link to this heading">#</a></h2>
+<p>Når en radioaktiv isotop sender ut stråling sier vi at den <strong>henfaller</strong>. Radioaktive isotoper kan henfalle på flere forskjellige måter. Vi skal se på fire forskjellige typer henfall.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span>-henfall: En atomkjerne sender ut en heliumkjerne, som består av to protoner og to nøytroner.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta ^-\)</span>-henfall: En atomkjerne sender ut et elektron og et antinøytrino.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta ^+\)</span>-henfall: En atomkjerne sender ut et positron og et nøytrino.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\gamma\)</span>-henfall: En atomkjerne sender ut elektromagnetisk stråling med høy energi.</p></li>
+</ul>
+<p>Her er en oversikt over mange tusen forskjellige isotoper og hvordan de henfaller.</p>
+<img alt="Oversikt over henfallstyper. Langs x-aksen er antall nøytroner. Langs y-aksen er antall protoner." class="align-center" src="../_images/henfallstyper.png" />
+<p>Den blå fargen betyr <span class="math notranslate nohighlight">\(\beta ^+\)</span>-henfall, rosa betyr <span class="math notranslate nohighlight">\(\beta ^-\)</span>-henfall og den gule betyr <span class="math notranslate nohighlight">\(\alpha\)</span>-henfall.</p>
+<div class="hint admonition">
+<p class="admonition-title">Tenk</p>
+<p>Hva kan du si kjennetegner isotopene som henfaller med <span class="math notranslate nohighlight">\(\beta ^+\)</span>, <span class="math notranslate nohighlight">\(\beta ^-\)</span> og <span class="math notranslate nohighlight">\(\alpha\)</span> ved å se på figuren?</p>
+</div>
+<p>Når en isotop henfaller med <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta ^-\)</span> eller <span class="math notranslate nohighlight">\(\beta ^+\)</span> så endres atomkjernen, og vi får en helt annen isotop.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Henfallstype</p></th>
+<th class="head"><p>Endring</p></th>
+<th class="head text-left"><p>Eksempel på hvordan kjernen henfaller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
+<td><p>-2 protoner og -2 nøytroner</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(^{238}_{92}U \rightarrow ^{234}_{90}Th\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\beta ^-\)</span></p></td>
+<td><p>-1 nøytroner og +1 protoner</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(^{14}_{6}C \rightarrow ^{14}_{7}N\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(\beta ^+\)</span></p></td>
+<td><p>-1 protoner og + 1 nøytroner</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(^{23}_{12}Mg \rightarrow ^{23}_{11}Na\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(\gamma\)</span></p></td>
+<td><p>ingen endring i antall partikler</p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(^{99m}_{43}Tc \rightarrow ^{99}_{43}Tc + energi\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Isotoper kan henfalle på forskjellige måter</p>
+<p>Astat-219 har <span class="math notranslate nohighlight">\(93.6\%\)</span> sannsynlighet for å henfalle med <span class="math notranslate nohighlight">\(\alpha\)</span>-henfall, men det er også <span class="math notranslate nohighlight">\(6.4\%\)</span> sannsynlighet for at den henfaller med  <span class="math notranslate nohighlight">\(\beta ^-\)</span>. Figuren over viser den mest sannsynlige henfallstypen.</p>
+</div>
+</section>
+<section id="henfallskjeder">
+<h2>Henfallskjeder<a class="headerlink" href="#henfallskjeder" title="Link to this heading">#</a></h2>
+<p>Ustabile isotoper henfaller og blir til et isotop av et annet stoff. Resultatet kan også være radioaktivt og henfalle igjen.</p>
+<p>Da får vi det som kalles en henfallskjede. Her er et eksempel på henfallskjeden til Radon-214.</p>
+<p><span class="math notranslate nohighlight">\(^{214}_{86}Ra \rightarrow ^{210}_{84}Po \rightarrow ^{206}_{82}Pb\)</span></p>
+<div class="hint admonition">
+<p class="admonition-title">Tenk</p>
+<p>Forsøk å se hvilke typer henfall som har skjedd ved hvert steg i henfallskjeden. Hvilke partikler har blitt sendt ut?</p>
+</div>
+</section>
+<section id="programmering-finne-henfallstype">
+<h2>Programmering: Finne henfallstype<a class="headerlink" href="#programmering-finne-henfallstype" title="Link to this heading">#</a></h2>
+<p>Her er et lite program som gjør at man kan slå opp den mest sannsynlige henfallstypen for en gitt isotop.</p>
+<iframe src="https://trinket.io/embed/python3/a7139d117f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<p>Programmet spør om en isotop og printer hvordan denne isotopen henfaller. Her er utskriften fra programmet når vi skriver inn <code class="docutils literal notranslate"><span class="pre">U-238</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Isotop</span><span class="p">:</span> <span class="n">U</span><span class="o">-</span><span class="mi">238</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+<p>Vi ser at Uran-238 mest sannsynlig vil henfalle med <span class="math notranslate nohighlight">\(\alpha\)</span>-henfall.</p>
+<blockquote>
+<div><p>Data om henfallstyper er hentet fra <strong>The NUBASE 2020 evaluation of nuclear physics properties</strong> - F.G. Kondev, M. Wang, W.J. Huang, S. Naimi, and G. Audi, Chin. Phys. C45, 030001 (2021)</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Bruk programmet i eksempelet over til å finne hvordan stoffene henfaller</p>
+</div></blockquote>
+<p>Hvordan henfaller disse stoffene? Finn hvilke isotoper de henfaller til.</p>
+<ol class="arabic simple">
+<li><p>Po-211</p></li>
+<li><p>K-40</p></li>
+<li><p>Ra-226</p></li>
+<li><p>F-18</p></li>
+</ol>
+<p>Blir noen av stoffene til stabile isotoper? (etter ett henfall)</p>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<p>Undersøk denne henfallskjeden.</p>
+<p><span class="math notranslate nohighlight">\(^{213}_{84}Po \rightarrow ^{209}_{82}Pb \rightarrow ^{209}_{83}Bi \rightarrow ^{205}_{81}Tl\)</span></p>
+<p>Hvilke henfall har skjedd? Hvis vi antar at en isotop har henfalt gjennom alle stegene, hvilke partikler har totalt blitt sendt ut som ioniserende stråling?</p>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Bruk programmet i eksempelet over til å finne hvordan stoffene henfaller</p>
+</div></blockquote>
+<p>Finn hele henfallskjeden til Uran-238.</p>
+</section>
+<section id="oppgave-4-utfordring">
+<h3>Oppgave 4 (utfordring)<a class="headerlink" href="#oppgave-4-utfordring" title="Link to this heading">#</a></h3>
+<iframe src="https://trinket.io/embed/python3/5c51cd5818" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<p>Modifiser dette programmet til å kunne skrive ut hele henfallskjeden for en radioaktiv isotop.</p>
+<ul class="simple">
+<li><p>Ordboken <code class="docutils literal notranslate"><span class="pre">henfallstype</span></code> lar deg finne henfallstyper. Setter du inn <code class="docutils literal notranslate"><span class="pre">&quot;U-238&quot;</span></code>, får du ut <code class="docutils literal notranslate"><span class="pre">&quot;A&quot;</span></code>.</p></li>
+<li><p>Ordboken <code class="docutils literal notranslate"><span class="pre">atomnummer</span></code> lar deg finne atomnummer (antall protoner) fra det kjemiske symbolet. Setter du inn <code class="docutils literal notranslate"><span class="pre">&quot;Po&quot;</span></code> så får du ut <code class="docutils literal notranslate"><span class="pre">&quot;84&quot;</span></code>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Naturfag"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Proteinsyntesen.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Proteinsyntesen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typer-henfall">Typer henfall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#henfallskjeder">Henfallskjeder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-finne-henfallstype">Programmering: Finne henfallstype</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4-utfordring">Oppgave 4 (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+
+
+<html lang="nb" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Reelle datasett &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=507867d0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Plotting av reelle datasett med Pandas';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Søk" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Søk</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../start.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 🤓</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Formatering%20med%20f-strings.html">Formatering med f-strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Mengder%20og%20tupler.html">Mengder og tupler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Rutenett.html">Rutenett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Algoritmer.html">Algoritmer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Dokumentasjon.html">Dokumentasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Brukergrensesnitt.html">Brukergrensesnitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Spill.html">Spill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Dataanalyse og plotting/Plotting av reelle datasett med Pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Reelle datasett</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lese-inn-i-pandas">Lese inn i Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotte-data-fra-pandas">Plotte data fra Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="reelle-datasett">
+<span id="plotting-reelle-datasett"></span><h1>Reelle datasett<a class="headerlink" href="#reelle-datasett" title="Link to this heading">#</a></h1>
+<p>Å skrive inn mange datapunkter er døllt og tar lang tid. Buuu! 👎 Tenk om vi kunne lese inn data fra store datafiler. Hadde ikke det vært nyttig?</p>
+<p>La meg introdusere deg for <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Denne Python-pakken lar oss lese inn data fra datafiler helt automatisk! 🤯</p>
+<p>Mange Python-installasjoner inkluderer denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code> i terminalvinduet.</p>
+<section id="lese-inn-i-pandas">
+<h2>Lese inn i Pandas<a class="headerlink" href="#lese-inn-i-pandas" title="Link to this heading">#</a></h2>
+<p>La oss ta utgangspunkt i et datasett fra SSB om konsumprisindeksen fra og med 1930 til og med 2023.</p>
+<p>Du kan laste ned datafilen <a class="reference download internal" download="" href="../_downloads/7890a897250b5972e2b5eec6e6f9616b/konsumprisindeks.csv"><span class="xref download myst">her</span></a>.</p>
+<p>Hvis vi åpner filen <code class="docutils literal notranslate"><span class="pre">konsumprisindeks.csv</span></code> får vi en fil hvor de første linjene ser slik ut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">År</span><span class="p">;</span><span class="n">Årsgj</span><span class="o">.</span><span class="n">snitt2</span><span class="p">;</span><span class="n">Jan</span><span class="p">;</span><span class="n">Feb</span><span class="p">;</span><span class="n">Mar</span><span class="p">;</span><span class="n">Apr</span><span class="p">;</span><span class="n">Mai</span><span class="p">;</span><span class="n">Jun</span><span class="p">;</span><span class="n">Jul</span><span class="p">;</span><span class="n">Aug</span><span class="p">;</span><span class="n">Sep</span><span class="p">;</span><span class="n">Okt</span><span class="p">;</span><span class="n">Nov</span><span class="p">;</span><span class="n">Des</span>
+<span class="mi">2023</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">127</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">9</span>
+<span class="mi">2022</span><span class="p">;</span><span class="mi">122</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">119</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">119</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">121</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">121</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">122</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">124</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">123</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">9</span>
+<span class="mi">2021</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">115</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">115</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">118</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">118</span><span class="p">,</span><span class="mi">9</span>
+<span class="mi">2020</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">7</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">113</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">9</span>
+<span class="mi">2019</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">3</span>
+<span class="mi">2018</span><span class="p">;</span><span class="mi">108</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">106</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">7</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">108</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">108</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">8</span>
+</pre></div>
+</div>
+<p>Hver linje (bortsett fra den første) inneholder informasjon om konsumprisindeksen hvert år. Den første verdien er året (f.eks <code class="docutils literal notranslate"><span class="pre">2023</span></code>), så kommer årsgjennomsnittet (f.eks <code class="docutils literal notranslate"><span class="pre">129,6</span></code>) og så kommer konsumprisindeksen hver måned etter det. Alle disse verdiene er adskilt med en semikolon <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p>
+<p>Vi kan lese inn data fra en <code class="docutils literal notranslate"><span class="pre">csv-fil</span></code> i Pandas på denne måten:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;konsumprisindeks.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1"># Leser filen og spesifiserer at data skilles med semikolon &quot;;&quot; og desimaltall skrives med &quot;,&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># Printer ut de tre første linjene.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     År  Årsgj.snitt2    Jan    Feb    Mar    Apr    Mai    Jun    Jul    Aug  \
+0  2023         129.6  126.1  126.6  127.6  129.0  129.6  130.4  130.9  129.9   
+1  2022         122.8  117.8  119.1  119.8  121.2  121.5  122.6  124.2  123.9   
+2  2021         116.1  114.1  114.9  114.6  115.0  114.9  115.3  116.3  116.3   
+
+     Sep    Okt    Nov    Des  
+0  129.8  131.1  131.8  131.9  
+1  125.6  126.0  125.8  125.9  
+2  117.5  117.2  118.1  118.9  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotte-data-fra-pandas">
+<h2>Plotte data fra Pandas<a class="headerlink" href="#plotte-data-fra-pandas" title="Link to this heading">#</a></h2>
+<p>Vi kan enkelt trekke ut de kolonnene vi ønsker og plotte de på denne måten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;konsumprisindeks.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1"># Leser filen og spesifiserer at data skilles med semikolon &quot;;&quot; og desimaltall skrives med &quot;,&quot;</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;År&quot;</span><span class="p">]</span>            <span class="c1"># Henter ut x-verdier fra kolonnen &quot;År&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Årsgj.snitt2&quot;</span><span class="p">]</span>  <span class="c1"># Henter ut y-verdier fra kolonnen &quot;Årsgj.snitt2&quot;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Lager plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>     <span class="c1"># Viser rutenett</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>     <span class="c1"># Viser plottet</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5cf11e17bca3c7f516149ead9676ba48f85f4b8a01ce0cefafaa2d6d81315dc1.png" src="../_images/5cf11e17bca3c7f516149ead9676ba48f85f4b8a01ce0cefafaa2d6d81315dc1.png" />
+</div>
+</div>
+<p>Wow! Nå har vi fått plottet konsumprisindeksen over <span class="math notranslate nohighlight">\(93\)</span> år! Tenk hvor lang tid det hadde tatt hvis vi måtte skrive inn hvert punkt!</p>
+<blockquote>
+<div><p>Kilde til data om konsumprisindeks: <a class="reference external" href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen">SSB</a>.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<p>I denne oppgaven skal vi plotte boligprisindeks for brukte boliger i Oslo/Bærum fra og med <span class="math notranslate nohighlight">\(1992\)</span> til og med <span class="math notranslate nohighlight">\(2022\)</span>.</p>
+<p>Last ned datafilen <a class="reference download internal" download="" href="../_downloads/ef68b0926da75b5f8902876563042a9a/boligpriser.csv"><span class="xref download myst">her</span></a>.</p>
+<p>Starten av datafilen står under. Legg merke til at desimaltallene er skrevet med punktum <code class="docutils literal notranslate"><span class="pre">.</span></code> her, ikke komma <code class="docutils literal notranslate"><span class="pre">,</span></code> som i eksempelet over. Legg også merke til at navnet på kolonnene må skrives <em>helt</em> likt som i filen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Region&quot;</span><span class="p">;</span><span class="s2">&quot;Boligtype&quot;</span><span class="p">;</span><span class="s2">&quot;År&quot;</span><span class="p">;</span><span class="s2">&quot;Prisindeks for brukte boliger&quot;</span>
+<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1992&quot;</span><span class="p">;</span><span class="mf">13.6</span>
+<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1993&quot;</span><span class="p">;</span><span class="mf">14.1</span>
+<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1994&quot;</span><span class="p">;</span><span class="mf">16.9</span>
+<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1995&quot;</span><span class="p">;</span><span class="mf">17.8</span>
+</pre></div>
+</div>
+<p>Lag et plott over prisindeksen for brukte boliger over alle årene.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Dataanalyse og plotting"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lese-inn-i-pandas">Lese inn i Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotte-data-fra-pandas">Plotte data fra Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

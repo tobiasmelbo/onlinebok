@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+
+
+<html lang="nb" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Klasser &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=507867d0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Klasser';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Arv" href="Arv.html" />
+    <link rel="prev" title="Informasjonsteknologi 2 💾" href="Informasjonsteknologi%202.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Søk</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../start.html">
+                    Introduksjon
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 🤓</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Formatering%20med%20f-strings.html">Formatering med f-strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Mengder%20og%20tupler.html">Mengder og tupler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Rutenett.html">Rutenett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Algoritmer.html">Algoritmer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Brukergrensesnitt.html">Brukergrensesnitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Informasjonsteknologi 2/Klasser.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Klasser</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objekter">Objekter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Klasser</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-eksempel-teller">Et enkelt eksempel: Teller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruktoren-og-metoder">Konstruktøren og metoder</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-nytt-eksempel-mario">Et nytt eksempel: Mario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-flere-objekter-i-en-liste">Eksempel: Flere objekter i en liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-metoden"><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dunder-metoder">Dunder-metoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem-metoden"><code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-metoden"><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🚗</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏫</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 💸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🅿️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6 📦</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7 ➗ (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="klasser">
+<h1>Klasser<a class="headerlink" href="#klasser" title="Link to this heading">#</a></h1>
+<p>Python er et objektorientert programmeringsspråk. Nesten alt i Python er objekter.</p>
+<ul class="simple">
+<li><p>Strings er objekter</p></li>
+<li><p>Lister er objekter</p></li>
+<li><p>Ordbøker er objekter</p></li>
+<li><p>Pakker er objekter</p></li>
+<li><p>Filer er objekter</p></li>
+<li><p>… og masse, masse mer</p></li>
+</ul>
+<p><em>Men hva er egentlig et objekt?</em></p>
+<section id="objekter">
+<h2>Objekter<a class="headerlink" href="#objekter" title="Link to this heading">#</a></h2>
+<p>Kort sagt kan vi si at et <em>objekt</em> er noe som kan</p>
+<ol class="arabic simple">
+<li><p>inneholde data (attributter)</p></li>
+<li><p>gjøre ting (metoder)</p></li>
+</ol>
+<section id="id1">
+<h3>Klasser<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>For å lage et objekt må vi spesifisere hvilke data som objektet kan inneholde, og hvilke ting objektet kan gjøre.</p>
+<p>En slik oppskrift kalles for en <em>klasse</em>.</p>
+</section>
+</section>
+<section id="et-enkelt-eksempel-teller">
+<h2>Et enkelt eksempel: Teller<a class="headerlink" href="#et-enkelt-eksempel-teller" title="Link to this heading">#</a></h2>
+<p>La oss lage en enkel klasse i Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Teller</span><span class="p">:</span>
+    <span class="c1"># Konstruktøren</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">antall</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Metode</span>
+    <span class="k">def</span> <span class="nf">tell</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">antall</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">Teller</span><span class="p">()</span> <span class="c1"># Oppretter et objekt av klassen &quot;Teller&quot; og kaller det for &quot;t&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Teller:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">antall</span><span class="p">)</span> <span class="c1"># Skriver ut antall</span>
+<span class="n">t</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="c1"># Teller en gang</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Teller:&quot;</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">antall</span><span class="p">)</span> <span class="c1"># Skriver ut antall</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Teller: 0
+Teller: 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dette programmet lager en klasse <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Deretter opprettes et objekt <code class="docutils literal notranslate"><span class="pre">t</span></code> som er av klassen <code class="docutils literal notranslate"><span class="pre">Teller</span></code>. Så bruker vi <code class="docutils literal notranslate"><span class="pre">tell()</span></code>-metoden (som er innebygd i objektet <code class="docutils literal notranslate"><span class="pre">t</span></code>) for å telle oppover. Hver gang vi gjør et kall på <code class="docutils literal notranslate"><span class="pre">tell()</span></code>-metoden, øker antallet.</p>
+<section id="konstruktoren-og-metoder">
+<h3>Konstruktøren og metoder<a class="headerlink" href="#konstruktoren-og-metoder" title="Link to this heading">#</a></h3>
+<p><em>Konstruktøren</em> <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> er en spesiell metode som lar oss definere hva som skal skje når et objekt opprettes. Når vi oppretter et objekt så kjøres konstruktøren. Det er vanlig å sette objekters attributter her.</p>
+<p><em>Metoder</em> er funksjoner som definerer hva et objekt kan gjøre.</p>
+</section>
+</section>
+<section id="et-nytt-eksempel-mario">
+<h2>Et nytt eksempel: Mario<a class="headerlink" href="#et-nytt-eksempel-mario" title="Link to this heading">#</a></h2>
+<p>La oss ta et eksempel fra spill-verden. En nær og kjær folkehelt og rørlegger fra Brooklyn, New York: Mario.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    ____▒▒▒▒▒
+    —-▒▒▒▒▒▒▒▒▒
+    —–▓▓▓░░▓░
+    —▓░▓░░░▓░░░
+    —▓░▓▓░░░▓░░░
+    —▓▓░░░░▓▓▓▓
+    ——░░░░░░░░
+    —-▓▓▒▓▓▓▒▓▓
+    –▓▓▓▒▓▓▓▒▓▓▓
+    ▓▓▓▓▒▒▒▒▒▓▓▓▓
+    ░░▓▒░▒▒▒░▒▓░░
+    ░░░▒▒▒▒▒▒▒░░░
+    ░░▒▒▒▒▒▒▒▒▒░░
+    —-▒▒▒ ——▒▒▒
+    –▓▓▓———-▓▓▓
+    ▓▓▓▓———-▓▓▓▓
+</pre></div>
+</div>
+<p>Selv om det første Super Mario Bros ble skrevet i Assembly, som teknisk sett ikke er et objektorientert språk, kan vi se for oss at Mario er et objekt. Han har en posisjon, kan gå til venstre og høyre, og kan hoppe.</p>
+<p>La oss lage en klasse som gjør at vi kan lage <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Mario</span><span class="p">:</span>
+    <span class="c1"># Konstruktøren (constructor)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liten</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="c1"># Metoder</span>
+    <span class="k">def</span> <span class="nf">beveg_høyre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mario har bevegd seg til høyre.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skriv_posisjon</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">beveg_venstre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mario har bevegd seg til venstre.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skriv_posisjon</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">hopp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Boing!&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skriv_posisjon</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">fall</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mario faller.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skriv_posisjon</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">spis_sopp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">liten</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">liten</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mario vokser!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1000 poeng!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">skriv_posisjon</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mario er ved (&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+
+<span class="n">mario</span> <span class="o">=</span> <span class="n">Mario</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Instansierer et mario-objekt.</span>
+<span class="n">mario</span><span class="o">.</span><span class="n">beveg_høyre</span><span class="p">()</span> <span class="c1"># Beveger mario til høyre</span>
+<span class="n">mario</span><span class="o">.</span><span class="n">hopp</span><span class="p">()</span> <span class="c1"># Får mario til å hoppe</span>
+<span class="n">mario</span><span class="o">.</span><span class="n">spis_sopp</span><span class="p">()</span> <span class="c1"># Får mario til å spise en sopp</span>
+<span class="n">mario</span><span class="o">.</span><span class="n">fall</span><span class="p">()</span> <span class="c1"># Får mario til å falle</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mario har bevegd seg til høyre.
+Mario er ved ( 1 , 0 )
+Boing!
+Mario er ved ( 1 , 1 )
+Mario vokser!
+Mario faller.
+Mario er ved ( 1 , 0 )
+</pre></div>
+</div>
+</div>
+</div>
+<p>Legg merke til konstruktøren i <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen. <code class="docutils literal notranslate"><span class="pre">self</span></code>-argumentet er nødvendig for å kunne sette data som objektet skal inneholde, men utenom <code class="docutils literal notranslate"><span class="pre">self</span></code> har funksjonen to argumenter, <code class="docutils literal notranslate"><span class="pre">x</span></code> og <code class="docutils literal notranslate"><span class="pre">y</span></code>. Disse gjør at vi kan (og må) definere en startposisjon når vi oppretter <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekter, som du ser i koden når vi lager et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt med <code class="docutils literal notranslate"><span class="pre">Mario(0,</span> <span class="pre">0)</span></code>.</p>
+<p>I tillegg kan vi se at metodene <code class="docutils literal notranslate"><span class="pre">beveg_høyre()</span></code>, <code class="docutils literal notranslate"><span class="pre">beveg_venstre()</span></code>, <code class="docutils literal notranslate"><span class="pre">hopp()</span></code> og <code class="docutils literal notranslate"><span class="pre">fall()</span></code> kaller på en annen metode i samme objekt ved navn <code class="docutils literal notranslate"><span class="pre">skriv_posisjon()</span></code>. Det gjør at objektets posisjon skrives ut hver gang objektet flyttes på.</p>
+</section>
+<section id="eksempel-flere-objekter-i-en-liste">
+<h2>Eksempel: Flere objekter i en liste<a class="headerlink" href="#eksempel-flere-objekter-i-en-liste" title="Link to this heading">#</a></h2>
+<p>Vi ønsker ofte å lagre objekter i lister.</p>
+<p>Farger lagres ofte digitalt som en kombinasjon av rød, grønn og blå. Hver verdi lagres i intervallet <span class="math notranslate nohighlight">\([0,255]\)</span>. Vi kan for eksempel representere sort som <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, hvit som <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">255)</span></code>, rød som <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">0,</span> <span class="pre">0)</span></code>, grønn som <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">255,</span> <span class="pre">0)</span></code>, blå som <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">255)</span></code> og gul som <code class="docutils literal notranslate"><span class="pre">(255,</span> <span class="pre">255,</span> <span class="pre">0)</span></code>.</p>
+<p>La oss lage en klasse <code class="docutils literal notranslate"><span class="pre">Farge</span></code> som gjør at vi kan lage <code class="docutils literal notranslate"><span class="pre">Farge</span></code>-objekter med forskjellige farger. Deretter kan vi lagre disse i en liste.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">class</span> <span class="nc">Farge</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="c1"># Rød verdi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span> <span class="c1"># Grønn verdi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># Blå verdi</span>
+
+<span class="c1"># Lager en tom liste</span>
+<span class="n">fargeliste</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Legger inn tre tilfeldige Farge-objekter i listen</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">fargeliste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Farge</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># Skriver ut objektene i listen</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fargeliste</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001FEC3A386B0&gt;
+&lt;__main__.Farge object at 0x000001FEC3B691C0&gt;
+&lt;__main__.Farge object at 0x000001FEC3A54FB0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Som vi ser er det enkelt å lage flere objekter og legge de inn i en liste.</p>
+<p>Vi ser også at det er tre objekter i listen <code class="docutils literal notranslate"><span class="pre">fargeliste</span></code>, men utskriften sier oss lite om hvilken farge det er.</p>
+<section id="str-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden<a class="headerlink" href="#str-metoden" title="Link to this heading">#</a></h3>
+<p>Hvis vi ønsker å endre på hvordan objekter skrives ut kan vi legge til en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-funksjon i klassen vår. Denne funksjonen skal returnere en string som <code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen skal skrive ut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">class</span> <span class="nc">Farge</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="c1"># Rød verdi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">g</span> <span class="c1"># Grønn verdi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># Blå verdi</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">g</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">b</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="c1"># Lager en tom liste</span>
+<span class="n">fargeliste</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Legger inn tre tilfeldige Farge-objekter i listen</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">fargeliste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Farge</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+
+<span class="c1"># Skriver ut objektene i listen</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fargeliste</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(191, 240, 38)
+(114, 239, 143)
+(239, 67, 117)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at <code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen skriver ut dataene på måten som vi spesifiserte i <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden!</p>
+</section>
+</section>
+<section id="a-sjekke-typen-til-et-objekt">
+<h2>Å sjekke typen til et objekt.<a class="headerlink" href="#a-sjekke-typen-til-et-objekt" title="Link to this heading">#</a></h2>
+<p>Noen ganger ønsker vi å sjekke om et objekt har riktig type. For å gjøre det kan vi bruke <code class="docutils literal notranslate"><span class="pre">type()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elev</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+    
+<span class="k">class</span> <span class="nc">Lærer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+
+<span class="c1"># En funksjon som tar inn et objekt og hilser ulikt avhengig av hvilken type objekt det er.</span>
+<span class="k">def</span> <span class="nf">hils</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Elev</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hei, &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">navn</span> <span class="o">+</span> <span class="s2">&quot;. Har du gjort leksene dine?&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Lærer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hei, &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">navn</span> <span class="o">+</span> <span class="s2">&quot;. Har du drukket kaffen din enda?&quot;</span><span class="p">)</span>
+
+<span class="c1"># Lager en elev og hilser</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">Elev</span><span class="p">(</span><span class="s2">&quot;Bernica&quot;</span><span class="p">)</span>
+<span class="n">hils</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+
+<span class="c1"># Lager en lærer og hilser</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="n">Lærer</span><span class="p">(</span><span class="s2">&quot;Tobias&quot;</span><span class="p">)</span>
+<span class="n">hils</span><span class="p">(</span><span class="n">person2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hei, Bernica. Har du gjort leksene dine?
+Hei, Tobias. Har du drukket kaffen din enda?
+</pre></div>
+</div>
+</div>
+</div>
+<p>Funksjonen <code class="docutils literal notranslate"><span class="pre">hils()</span></code> svarer ulikt til ulike objekter ved å sjekke hvilken type objekt det er med <code class="docutils literal notranslate"><span class="pre">type()</span></code>-funksjonen.</p>
+</section>
+<section id="dunder-metoder">
+<h2>Dunder-metoder<a class="headerlink" href="#dunder-metoder" title="Link to this heading">#</a></h2>
+<p>Dunder-metoder (<em>double-underscore methods</em>) er metoder som har navn som starter og slutter med <code class="docutils literal notranslate"><span class="pre">__</span></code>. Vi har sett to eksempler allerede; <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> og <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>. Dunder-metoder kan utvide objekters funksjonalitet til å fungere med eksisterende operatorer og funksjoner som å printe med <code class="docutils literal notranslate"><span class="pre">print()</span></code>, indeksere med <code class="docutils literal notranslate"><span class="pre">[]</span></code>, legge til med <code class="docutils literal notranslate"><span class="pre">+=</span></code> osv…</p>
+<section id="getitem-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden<a class="headerlink" href="#getitem-metoden" title="Link to this heading">#</a></h3>
+<p>Vi kan indeksere i et objekt med klammeparantes <code class="docutils literal notranslate"><span class="pre">[]</span></code> som en liste hvis vi utvider klassen med <code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elevliste</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liste</span> <span class="o">=</span> <span class="n">liste</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+        <span class="k">return</span> <span class="n">string</span>
+    
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">elevliste</span> <span class="o">=</span> <span class="n">Elevliste</span><span class="p">([</span><span class="s2">&quot;Lasse&quot;</span><span class="p">,</span> <span class="s2">&quot;Isak&quot;</span><span class="p">,</span> <span class="s2">&quot;Nicolai&quot;</span><span class="p">,</span> <span class="s2">&quot;Stian&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lasse Isak Nicolai Stian 
+Isak
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="len-metoden">
+<h3><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden<a class="headerlink" href="#len-metoden" title="Link to this heading">#</a></h3>
+<p>Vi kan bruke <code class="docutils literal notranslate"><span class="pre">len()</span></code>-funksjonen på objektet vårt hvis vi utvider klassen vår med <code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elevliste</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">liste</span> <span class="o">=</span> <span class="n">liste</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">:</span>
+            <span class="n">string</span> <span class="o">+=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span>
+        <span class="k">return</span> <span class="n">string</span>
+    
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">liste</span><span class="p">)</span>
+
+<span class="n">elevliste</span> <span class="o">=</span> <span class="n">Elevliste</span><span class="p">([</span><span class="s2">&quot;Linnea&quot;</span><span class="p">,</span> <span class="s2">&quot;André&quot;</span><span class="p">,</span> <span class="s2">&quot;Kieran&quot;</span><span class="p">,</span> <span class="s2">&quot;Isak&quot;</span><span class="p">,</span> <span class="s2">&quot;Nicolai&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elevliste</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">elevliste</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linnea André Kieran Isak Nicolai 
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dunder-metoder lar oss altså spesifisere hvordan vi ønsker at objektene våre skal fungere i koden med de operatorene og funksjonene som vi kjenner til fra før av. En oversikt over flere dunder-metoder kan du finne i dokumentasjonen <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html">her</a>.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1 🍄<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<p>Kopier <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen fra eksemplet over.</p>
+<p>Det finnes en sopp i posisjonen <span class="math notranslate nohighlight">\((2,1)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt som starter i <span class="math notranslate nohighlight">\((0,0)\)</span>.</p></li>
+<li><p>Bruk metodene for å simulere at <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objektet går bort, hopper, tar soppen og lander igjen.</p></li>
+</ol>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2 🚗<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<p>I denne oppgaven skal vi lage en enkel klasse.</p>
+<ol class="arabic simple">
+<li><p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Bil</span></code>. Bil-objekter skal ha en attributt <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> som en string. <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> skal settes som argument til konstruktøren.</p></li>
+<li><p>Legg til en metode som heter <code class="docutils literal notranslate"><span class="pre">tut()</span></code>. Denne skal printe en tutelyd som tekst (f.eks <code class="docutils literal notranslate"><span class="pre">Tut!</span></code>).</p></li>
+<li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekt, skriv ut bilmerket og bruk <code class="docutils literal notranslate"><span class="pre">tut()</span></code>-metoden til objektet.</p></li>
+</ol>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3 🏫<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>. Den skal inneholde en attributt <code class="docutils literal notranslate"><span class="pre">liste</span></code> som er en liste som er tom fra starten av.</p>
+<ol class="arabic simple">
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">leggTil()</span></code> som legger inn en karakter i listen.</p></li>
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">seksere()</span></code> som returnerer antall seksere i listen.</p></li>
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">gjennomsnitt()</span></code> som returnerer gjennomsnittet av karakterene.</p></li>
+</ol>
+<p>Opprett et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>, legg inn 5 karakterer som tall, skriv ut antall seksere og gjennomsnittet ved å bruke metodene til objektet.</p>
+<p>Bonus: Utvid klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som gjør at man får en hensiktsmessig utskrift når printer et <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>-objekt.</p>
+</section>
+<section id="oppgave-4">
+<h3>Oppgave 4 💸<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+<p>Lag en Python-klasse kalt «Bankkonto» med «kontonummer» og «saldo» som attributter. Disse skal settes som argument til konstruktøren.</p>
+<ol class="arabic simple">
+<li><p>Legg til metoder for innskudd og uttak fra kontoen, og skriv ut saldoen etter hver operasjon.</p></li>
+<li><p>Legg til en feilmelding når man prøver å ta ut mer penger enn man har.</p></li>
+<li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code>-objekt og test om metodene dine fungerer som de skal.</p></li>
+</ol>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5 🅿️<a class="headerlink" href="#oppgave-5" title="Link to this heading">#</a></h3>
+<p>Kopier inn klassen <code class="docutils literal notranslate"><span class="pre">Bil</span></code> fra den tidligere oppgaven.</p>
+<ol class="arabic simple">
+<li><p>Utvid <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som returnerer bilmerket slik at vi kan bruke <code class="docutils literal notranslate"><span class="pre">print()</span></code> på <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter.</p></li>
+</ol>
+<p>Lag en ny klasse <code class="docutils literal notranslate"><span class="pre">PHus</span></code> som skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">plasser</span></code> som er tom fra starten av, i tillegg skal man kunne legge inn en maksgrense for antall biler som argument til konstruktøren.</p>
+<ol class="arabic simple" start="2">
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">parker()</span></code> som legger en bil inn i <code class="docutils literal notranslate"><span class="pre">plasser</span></code>-listen, men dersom antall biler er over maksgrensen skal det printes at det ikke er plass og at bilen ikke ble lagt til.</p></li>
+<li><p>Utvid klassen <code class="docutils literal notranslate"><span class="pre">PHus</span></code> med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som skriver ut bilmerkene til alle bilene som er parkert.</p></li>
+<li><p>Lag et <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objekt og legg inn <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter helt til maksgrensen er nådd. Skriv ut <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objektet til slutt.</p></li>
+</ol>
+</section>
+<section id="oppgave-6">
+<h3>Oppgave 6 📦<a class="headerlink" href="#oppgave-6" title="Link to this heading">#</a></h3>
+<p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Varelager</span></code> som inneholder en liste over varer. Listen skal være tom når objektet dannes.</p>
+<p>Varene skal være ordbøker med nøklene <code class="docutils literal notranslate"><span class="pre">nanv</span></code>, <code class="docutils literal notranslate"><span class="pre">pris</span></code> og <code class="docutils literal notranslate"><span class="pre">antall_på_lager</span></code>.</p>
+<p>Legg til metoder for å legge til varer i lageret, fjerne varer fra lageret og skrive ut en liste over tilgjengelige varer.</p>
+</section>
+<section id="oppgave-7-utfordring">
+<h3>Oppgave 7 ➗ (utfordring)<a class="headerlink" href="#oppgave-7-utfordring" title="Link to this heading">#</a></h3>
+<p>I denne oppgaven skal du lage en klasse <code class="docutils literal notranslate"><span class="pre">Brøk</span></code>. Her er noen krav:</p>
+<ul class="simple">
+<li><p>Klassen skal ha attributtene <code class="docutils literal notranslate"><span class="pre">teller</span></code> og <code class="docutils literal notranslate"><span class="pre">nevner</span></code> som settes som argument til konstruktøren.</p></li>
+<li><p>Den skal ha en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som skriver ut <code class="docutils literal notranslate"><span class="pre">{teller}/{nevner}</span></code>.</p></li>
+<li><p>Den skal ha en metode forkort som forkorter brøken hvis det er mulig.</p></li>
+<li><p>Den skal ha <code class="docutils literal notranslate"><span class="pre">__mul__()</span></code>- og <code class="docutils literal notranslate"><span class="pre">__div__()</span></code>-metoder for å håndtere multiplikasjon og divisjon med heltall og med andre Brøk-objekter.</p></li>
+<li><p>Den skal ha en <code class="docutils literal notranslate"><span class="pre">__pow__()</span></code>-metode for å håndtere at brøken blir opphøyd i et heltall (både positivt og negativt)</p></li>
+<li><p>Den skal ha <code class="docutils literal notranslate"><span class="pre">__sub__()</span></code>- og <code class="docutils literal notranslate"><span class="pre">__add__()</span></code>-metoder for å håndtere addisjon og subtraksjon med heltall og andre Brøk-objekter.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Informasjonsteknologi 2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Informasjonsteknologi%202.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Informasjonsteknologi 2 💾</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Arv.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Arv</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objekter">Objekter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Klasser</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-eksempel-teller">Et enkelt eksempel: Teller</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruktoren-og-metoder">Konstruktøren og metoder</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-nytt-eksempel-mario">Et nytt eksempel: Mario</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-flere-objekter-i-en-liste">Eksempel: Flere objekter i en liste</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#str-metoden"><code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoden</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dunder-metoder">Dunder-metoder</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getitem-metoden"><code class="docutils literal notranslate"><span class="pre">__getitem__()</span></code>-metoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-metoden"><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍄</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🚗</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏫</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 💸</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🅿️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6 📦</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7 ➗ (utfordring)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
