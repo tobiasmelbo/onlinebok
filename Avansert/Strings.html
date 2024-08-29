@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -59,10 +59,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Strings';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Formatering med f-strings" href="Formatering%20med%20f-strings.html" />
+    <link rel="next" title="Filer" href="Filer.html" />
     <link rel="prev" title="Avansert Python 🤓" href="Avansert%20Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
@@ -187,7 +189,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Avansert%20Python.html">Avansert Python 🤓</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Formatering%20med%20f-strings.html">Formatering med f-strings</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Lister%20II.html">Lister II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mengder%20og%20tupler.html">Mengder og tupler</a></li>
@@ -208,7 +210,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -371,19 +373,30 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Strings</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-repetere">Legge til og repetere</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeksering-og-lokker">Indeksering og løkker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-upper-og-string-lower"><code class="docutils literal notranslate"><span class="pre">string.upper()</span></code> og <code class="docutils literal notranslate"><span class="pre">string.lower()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-replace"><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-split"><code class="docutils literal notranslate"><span class="pre">string.split()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-strip"><code class="docutils literal notranslate"><span class="pre">string.strip()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formatering-med-f-strings">Formatering med f-strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avrunding">Avrunding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#store-og-sma-tall">Store og små tall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plassering">Plassering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧑‍💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎮</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🅰️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🖥️</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -659,6 +672,125 @@ Kontakt meg på arnhild@soppbloggen.no
 </div>
 </div>
 </section>
+</section>
+<section id="formatering-med-f-strings">
+<span id="id1"></span><h1>Formatering med f-strings<a class="headerlink" href="#formatering-med-f-strings" title="Link to this heading">#</a></h1>
+<p>Du er sikkert kjent med at man kan sette inn Pythonske uttrykk i strings ved å bruke f-string-formatering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> ganger </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> blir </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 ganger 2 blir 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Her kommer det en del ekstra triks med f-strings som gjør at du kan lage helt sykt kule utskrifter i terminalen.</p>
+<section id="avrunding">
+<h2>Avrunding<a class="headerlink" href="#avrunding" title="Link to this heading">#</a></h2>
+<p>Vi kan runde av tall ved å bruke <code class="docutils literal notranslate"><span class="pre">:</span></code> etterfulgt av <code class="docutils literal notranslate"><span class="pre">.2f</span></code>, der tallet står for antall desimaler.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Areal (to desimaler): </span><span class="si">{</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Areal (fem desimaler): </span><span class="si">{</span><span class="n">pi</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Areal (to desimaler): 12.57
+Areal (fem desimaler): 12.56637
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="store-og-sma-tall">
+<h2>Store og små tall<a class="headerlink" href="#store-og-sma-tall" title="Link to this heading">#</a></h2>
+<p>For store tall kan man spesifisere <code class="docutils literal notranslate"><span class="pre">,</span></code> som et skille for tusen-plassene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lønn</span> <span class="o">=</span> <span class="mf">1234567.891011</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Med , som skille: </span><span class="si">{</span><span class="n">lønn</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Med , som skille og to desimaler: </span><span class="si">{</span><span class="n">lønn</span><span class="si">:</span><span class="s2">,.2f</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Med , som skille: 1,234,567.891011 kr
+Med , som skille og to desimaler: 1,234,567.89 kr
+</pre></div>
+</div>
+</div>
+</div>
+<p>Man kan også bruke skrive ut med <code class="docutils literal notranslate"><span class="pre">e</span></code>-notasjon, som gir svaret på standardform.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">AU</span> <span class="o">=</span> <span class="mi">149_597_870_700</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;En astronomisk enhet er definert som </span><span class="si">{</span><span class="n">AU</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standardform: </span><span class="si">{</span><span class="n">AU</span><span class="si">:</span><span class="s2">e</span><span class="si">}</span><span class="s2"> meter&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standardform med to desimaler: </span><span class="si">{</span><span class="n">AU</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2"> meter.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>En astronomisk enhet er definert som 149597870700 meter.
+Standardform: 1.495979e+11 meter
+Standardform med to desimaler: 1.50e+11 meter.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plassering">
+<h2>Plassering<a class="headerlink" href="#plassering" title="Link to this heading">#</a></h2>
+<p>Vi kan sette av ekstra plass til uttrykket som skal settes inn ved å bruke <code class="docutils literal notranslate"><span class="pre">:</span></code> etterfulgt av et tall.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---</span><span class="si">{</span><span class="s1">&#39;Python🐍&#39;</span><span class="si">:</span><span class="s2">20</span><span class="si">}</span><span class="s2">---&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---Python🐍             ---
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan også sette stringen vår…</p>
+<ul class="simple">
+<li><p>… til venstre med <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p>… til høyre med <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p>… eller sentrert med <code class="docutils literal notranslate"><span class="pre">^</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---</span><span class="si">{</span><span class="s1">&#39;Python🐍&#39;</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2">---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---</span><span class="si">{</span><span class="s1">&#39;Python🐍&#39;</span><span class="si">:</span><span class="s2">&gt;20</span><span class="si">}</span><span class="s2">---&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;---</span><span class="si">{</span><span class="s1">&#39;Python🐍&#39;</span><span class="si">:</span><span class="s2">^20</span><span class="si">}</span><span class="s2">---&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---Python🐍             ---
+---             Python🐍---
+---      Python🐍       ---
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
@@ -779,6 +911,45 @@ Kontakt meg på arnhild@soppbloggen.no
 </div>
 </div>
 </section>
+<section id="oppgave-4">
+<h3>Oppgave 4 🖥️<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+<p>Fortnite-Fillip skal spare til å kjøpe seg en 4K OLED gaming-skjerm med 240 Hz til <span class="math notranslate nohighlight">\(7\,000\)</span> kr.</p>
+<p>Han får <span class="math notranslate nohighlight">\(400\)</span> i starten av hver måned for å gjøre husarbeid. I tillegg får han <span class="math notranslate nohighlight">\(5\%\)</span> månedlig rente på pengene sine.</p>
+<p>Skriv ut en spareplan som en fin tabell. Den skal dekke hver måned helt til han har nok penger.</p>
+<div class="hint dropdown admonition">
+<p class="admonition-title">Hint: Eksempelutskrift</p>
+<p>Her er et eksempel på en tabell.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Måned</span>   <span class="o">|</span>  <span class="n">Penger</span>  <span class="o">|</span>  <span class="n">Rente</span>   <span class="o">|</span>  <span class="n">Månedslønn</span>   
+<span class="o">------------------------------------------------</span>
+    <span class="mi">0</span>     <span class="o">|</span>   <span class="mf">0.00</span>   <span class="o">|</span>   <span class="mf">0.00</span>   <span class="o">|</span>      <span class="mi">400</span>      
+    <span class="mi">1</span>     <span class="o">|</span>  <span class="mf">400.00</span>  <span class="o">|</span>   <span class="mf">8.00</span>   <span class="o">|</span>      <span class="mi">400</span>      
+    <span class="mi">2</span>     <span class="o">|</span>  <span class="mf">808.00</span>  <span class="o">|</span>  <span class="mf">16.16</span>   <span class="o">|</span>      <span class="mi">400</span>      
+    <span class="mi">3</span>     <span class="o">|</span> <span class="mf">1224.16</span>  <span class="o">|</span>  <span class="mf">24.48</span>   <span class="o">|</span>      <span class="mi">400</span> 
+</pre></div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">penger</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">måned</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">månedslønn</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">prosentfaktor</span> <span class="o">=</span> <span class="mf">0.02</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Måned&#39;</span><span class="si">:</span><span class="s2">^10</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="s1">&#39;Penger&#39;</span><span class="si">:</span><span class="s2">^10</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="s1">&#39;Rente&#39;</span><span class="si">:</span><span class="s2">^10</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="s1">&#39;Månedslønn&#39;</span><span class="si">:</span><span class="s2">^15</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">48</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">penger</span> <span class="o">&lt;</span> <span class="mi">7000</span><span class="p">:</span>
+    <span class="c1"># Skriver ut en linje</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">måned</span><span class="si">:</span><span class="s2">^10</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="n">penger</span><span class="si">:</span><span class="s2">^10.2f</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="n">prosentfaktor</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">penger</span><span class="si">:</span><span class="s2">^10.2f</span><span class="si">}</span><span class="s2">|</span><span class="si">{</span><span class="n">månedslønn</span><span class="si">:</span><span class="s2">^15</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Legger til renten (i parantes) og månedslønnen</span>
+    <span class="n">penger</span> <span class="o">+=</span> <span class="p">(</span><span class="n">penger</span> <span class="o">*</span> <span class="n">prosentfaktor</span><span class="p">)</span> <span class="o">+</span> <span class="n">månedslønn</span>
+
+    <span class="c1"># Øker måneden</span>
+    <span class="n">måned</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -822,11 +993,11 @@ Kontakt meg på arnhild@soppbloggen.no
       </div>
     </a>
     <a class="right-next"
-       href="Formatering%20med%20f-strings.html"
+       href="Filer.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Formatering med f-strings</p>
+        <p class="prev-next-title">Filer</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -846,19 +1017,30 @@ Kontakt meg på arnhild@soppbloggen.no
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Strings</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-repetere">Legge til og repetere</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeksering-og-lokker">Indeksering og løkker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-upper-og-string-lower"><code class="docutils literal notranslate"><span class="pre">string.upper()</span></code> og <code class="docutils literal notranslate"><span class="pre">string.lower()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-replace"><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-split"><code class="docutils literal notranslate"><span class="pre">string.split()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-strip"><code class="docutils literal notranslate"><span class="pre">string.strip()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formatering-med-f-strings">Formatering med f-strings</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avrunding">Avrunding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#store-og-sma-tall">Store og små tall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plassering">Plassering</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧑‍💻</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎮</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🅰️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🖥️</a></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
