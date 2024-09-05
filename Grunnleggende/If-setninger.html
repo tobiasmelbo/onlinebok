@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d89fa5cb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -102,8 +103,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -167,14 +168,6 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../start.html">
-                    Introduksjon
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
@@ -375,9 +368,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">If-setninger</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🗣️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 ✖️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🎲</a></li>
 </ul>
 </li>
 </ul>
@@ -626,7 +619,7 @@ True
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<h3>Oppgave 1 🗣️<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
 <p>I denne oppgaven skal du lage utsagn og skrive ut booleans (sannhetsverdier).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Skriver ut True</span>
 </pre></div>
@@ -641,7 +634,7 @@ True
 </ol>
 </section>
 <section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<h3>Oppgave 2 ✖️<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p><em>Se <span class="xref std std-ref">Kalkulatorer og pakker</span> for hvordan man kan få input og generere tilfeldige tall</em>.</p>
 </div></blockquote>
@@ -660,11 +653,11 @@ True
 <p>Hvis svaret er riktig skal programmet skrive ut at svaret er riktig. Hvis svaret er feil skal programmet skrive ut at svaret er feil og hva som er det riktige svaret.</p>
 </section>
 <section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<h3>Oppgave 3 🎲<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p><em>Se <span class="xref std std-ref">Kalkulatorer og pakker</span> for hvordan man kan generere tilfeldige tall</em>.</p>
 </div></blockquote>
-<p>I rollespill som <em>Dungeons &amp; Dragons</em> 🎲 bruker man ofte en 20-sidet terning.</p>
+<p>I rollespill som <em>Dungeons &amp; Dragons</em> bruker man ofte en 20-sidet terning.</p>
 <p>En trollmann 🧙‍♂️ skal slå en zombie 🧟 med staven sin.</p>
 <p>For at trollmannen skal treffe, så må terningkastet <code class="docutils literal notranslate"><span class="pre">d</span></code> være høyere enn beskyttelsesgraden til zombien.</p>
 <p>En zombie har beskyttelsesgrad <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
@@ -752,9 +745,9 @@ True
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">If-setninger</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🗣️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 ✖️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🎲</a></li>
 </ul>
 </li>
 </ul>

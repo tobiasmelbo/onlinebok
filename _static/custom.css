@@ -1,0 +1,31 @@
+/* Sjekk https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/styling.html#configure-pygments-theme */
+
+html[data-theme="dark"] {
+    --pst-color-primary: #89b4fa;
+    --pst-color-secondary: #f5e0dc;
+    --pst-color-accent: #f5c2e7;
+    --pst-color-success: #a6e3a1;
+    --pst-color-info: #89b4fa;
+    --pst-color-warning: #fab387;
+    --pst-color-danger: #f38ba8;
+    --pst-color-background: #1e1e2e;
+    --pst-color-on-background: #313244;
+    --pst-color-surface: #313244;
+}
+
+html[data-theme="light"] {
+    --pst-color-primary: #7287fd;
+    --pst-color-secondary: #dc8a78;
+    --pst-color-accent: #ea76cb;
+    --pst-color-success: #40a02b;
+    --pst-color-info: #1e66f5	;
+    --pst-color-warning: #fe640b;
+    --pst-color-danger: #d20f39;
+    --pst-color-background: #eff1f5;
+    --pst-color-on-background: #ccd0da;
+    --pst-color-surface: #ccd0da;
+}
+
+:root {
+    --mystnb-source-margin-color: #7287fd;
+}

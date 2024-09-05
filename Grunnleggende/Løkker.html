@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d89fa5cb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -104,8 +105,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -169,14 +170,6 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../start.html">
-                    Introduksjon
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
@@ -379,10 +372,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧑‍🤝‍🧑</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🔢</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🟩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 ➗</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
@@ -495,7 +488,7 @@ document.write(`
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<h3>Oppgave 1 🧑‍🤝‍🧑<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
 <p>Bruk en <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkke til å skrive ut alle partallene opp til og med <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
 <blockquote>
 <div><p>Hint: Begynn med koden fra eksempelet for <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker først.</p>
@@ -524,31 +517,30 @@ document.write(`
 </div>
 </section>
 <section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
-<p>Bruk en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke til å skrive ut alle partallene opp til og med <code class="docutils literal notranslate"><span class="pre">20</span></code>.</p>
+<h3>Oppgave 2 🔢<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<p>Bruk en <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke til å skrive ut alle oddetallene opp til og med <code class="docutils literal notranslate"><span class="pre">19</span></code>.</p>
 <div class="note dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
-<span class="mi">2</span>
-<span class="mi">4</span>
-<span class="mi">6</span>
-<span class="mi">8</span>
-<span class="mi">10</span>
-<span class="mi">12</span>
-<span class="mi">14</span>
-<span class="mi">16</span>
-<span class="mi">18</span>
-<span class="mi">20</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">3</span>
+<span class="mi">5</span>
+<span class="mi">7</span>
+<span class="mi">9</span>
+<span class="mi">11</span>
+<span class="mi">13</span>
+<span class="mi">15</span>
+<span class="mi">17</span>
+<span class="mi">19</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<h3>Oppgave 3 🟩<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
 <p>Kvadrattallene er de tallene som har en heltallig kvadratrot, dvs <span class="math notranslate nohighlight">\(\{1, 4, 9, 16, 25, \dots\}\)</span></p>
 <p>Bruk en løkke til å skrive ut alle kvadrattallene opp til og med 100.</p>
 <div class="note dropdown admonition">
@@ -572,7 +564,7 @@ document.write(`
 </div>
 </section>
 <section id="oppgave-4">
-<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+<h3>Oppgave 4 ➗<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
 <p>Faktorer er tall som et tall er delbart på. For eksempel har tallet <span class="math notranslate nohighlight">\(8\)</span> faktorene <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(2\)</span>, <span class="math notranslate nohighlight">\(4\)</span> og <span class="math notranslate nohighlight">\(8\)</span>.</p>
 <p>Lag et program som tar et heltall <code class="docutils literal notranslate"><span class="pre">a</span></code> som input og skriver ut alle faktorene til tallet.</p>
 <div class="hint dropdown admonition">
@@ -733,10 +725,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧑‍🤝‍🧑</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🔢</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🟩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 ➗</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
 </ul>
 </li>
