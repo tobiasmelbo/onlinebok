@@ -1,10 +1,5 @@
 /* Sjekk https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/styling.html#configure-pygments-theme */
 
-/* TODO 
-- Fikse outline på catppuccin latte -> kanskje --pst-color-on-surface?
-- Fikse font color?
-*/
-
 html[data-theme="dark"] {
     --pst-color-primary: #89b4fa;
     --pst-color-secondary: #f5e0dc;
@@ -16,6 +11,9 @@ html[data-theme="dark"] {
     --pst-color-background: #1e1e2e;
     --pst-color-on-background: #313244;
     --pst-color-surface: #313244;
+    --pst-color-border: #6c7086;
+    --pst-color-text-base: #cdd6f4;
+    --pst-color-text-muted: #bac2de;
 }
 
 html[data-theme="light"] {
@@ -29,6 +27,9 @@ html[data-theme="light"] {
     --pst-color-background: #eff1f5;
     --pst-color-on-background: #ccd0da;
     --pst-color-surface: #ccd0da;
+    --pst-color-border: #9ca0b0;
+    --pst-color-text-base: #4c4f69;
+    --pst-color-text-muted :#5c5f77;
 }
 
 :root {

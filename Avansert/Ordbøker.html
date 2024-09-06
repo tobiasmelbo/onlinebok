@@ -32,11 +32,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d89fa5cb" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ca9100cb" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -368,9 +368,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter"><code class="docutils literal notranslate"><span class="pre">Counter</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎒</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🔤</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🌹</a></li>
 </ul>
 </li>
 </ul>
@@ -387,7 +389,7 @@ document.write(`
   <section id="ordboker">
 <span id="id1"></span><h1>Ordbøker<a class="headerlink" href="#ordboker" title="Link to this heading">#</a></h1>
 <p>Ordbøker (<em>dictionaries</em>) er en samling av objekter, som lister, tupler og mengder.</p>
-<p>I <a class="reference internal" href="../Grunnleggende/Lister.html#lister"><span class="std std-ref">Lister</span></a> lagrer vi data i en rekkefølge. I ordbøker lagrer vi data i par med <code class="docutils literal notranslate"><span class="pre">keys</span></code> og <code class="docutils literal notranslate"><span class="pre">values</span></code>, nøkler og verdier. En nøkkel er forbundet med sin verdi.</p>
+<p>I <a class="reference internal" href="../Grunnleggende/Lister.html#lister"><span class="std std-ref">Lister</span></a> lagrer vi data i en rekkefølge. I ordbøker lagrer vi data i par med <code class="docutils literal notranslate"><span class="pre">keys</span></code> og <code class="docutils literal notranslate"><span class="pre">values</span></code>. En nøkkel er forbundet med sin verdi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">land</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;NO&quot;</span> <span class="p">:</span> <span class="s2">&quot;Norge&quot;</span><span class="p">,</span> <span class="s2">&quot;SE&quot;</span> <span class="p">:</span> <span class="s2">&quot;Sverige&quot;</span><span class="p">}</span>
@@ -404,7 +406,7 @@ Sverige
 </div>
 </div>
 </div>
-<p>I koden over lager vi landkoder.  <code class="docutils literal notranslate"><span class="pre">&quot;NO&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;SE&quot;</span></code> er nøklene, og <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;Sverige&quot;</span></code> er de tilhørende verdiene. Vi knytter sammen nøklene og verdiene med kolon <code class="docutils literal notranslate"><span class="pre">:</span></code>. For å hente verdier fra ordboken <code class="docutils literal notranslate"><span class="pre">land</span></code> så skriver vi inn nøkkelen med <code class="docutils literal notranslate"><span class="pre">land[&quot;NO&quot;]</span></code> og så får vi ut verdien <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code>.</p>
+<p>I koden over lager vi landkoder.  <code class="docutils literal notranslate"><span class="pre">&quot;NO&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;SE&quot;</span></code> er keys, og <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;Sverige&quot;</span></code> er de tilhørende verdiene. Vi knytter sammen keys og verdiene med kolon <code class="docutils literal notranslate"><span class="pre">:</span></code>. For å hente verdier fra ordboken <code class="docutils literal notranslate"><span class="pre">land</span></code> så skriver vi inn en key med <code class="docutils literal notranslate"><span class="pre">land[&quot;NO&quot;]</span></code> og så får vi ut verdien <code class="docutils literal notranslate"><span class="pre">&quot;Norge&quot;</span></code>.</p>
 <p>Dersom vi skal sette sammen en enkel ordbok så er det vanlig å gjøre det over flere linjer. Det er litt mer oversiktlig enn eksemplet over.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -492,7 +494,7 @@ Sverige
 <span class="p">}</span>
 
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">land</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nøkkel:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>         <span class="c1"># Skriver ut nøkkelen</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nøkkel:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>        <span class="c1"># Skriver ut nøkkelen</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Verdi:&quot;</span><span class="p">,</span> <span class="n">land</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>   <span class="c1"># Skriver ut verdien til nøkkelen</span>
 </pre></div>
 </div>
@@ -506,6 +508,42 @@ Verdi: Sverige
 </div>
 </div>
 </div>
+</section>
+<section id="counter">
+<h2><code class="docutils literal notranslate"><span class="pre">Counter</span></code><a class="headerlink" href="#counter" title="Link to this heading">#</a></h2>
+<p>En <code class="docutils literal notranslate"><span class="pre">Counter</span></code> er en spesiell ordbok som fungerer ekstremt godt til å telle opp ting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;😎😋😎😆😉😉😉😉😉😊😊😋😆😘😅😘😆😉😋😉😋😅😍😉😋😎😍😆😋😆😉😍</span><span class="se">\</span>
+<span class="s2">    😉😉😅😘😅😋😅😊😋😎😎😅😘😍😍😘😆😎😋😆😍😍😉😘😉😅😍😘😉😆😋😆😉😊</span><span class="se">\</span>
+<span class="s2">    😆😉😎😅😘😆😋😊😊😉😉😎😆😋😍😅😊😅😆😅😆😘😋😅😆😎😊😎😘😘😍😉😊😍&quot;</span>
+
+<span class="c1"># Lager en counter</span>
+<span class="n">tekst_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+
+<span class="c1"># Går gjennom hver emoji</span>
+<span class="k">for</span> <span class="n">emoji</span> <span class="ow">in</span> <span class="n">tekst</span><span class="p">:</span>
+    <span class="n">tekst_counter</span><span class="p">[</span><span class="n">emoji</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="c1"># Skriver ut alle counts</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst_counter</span><span class="p">)</span>
+
+<span class="c1"># Skriver ut topp 3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;😉&#39;: 19, &#39;😆&#39;: 15, &#39;😋&#39;: 13, &#39;😅&#39;: 12, &#39;😘&#39;: 11, &#39;😍&#39;: 11, &#39;😎&#39;: 10, &#39;😊&#39;: 9, &#39; &#39;: 8})
+[(&#39;😉&#39;, 19), (&#39;😆&#39;, 15), (&#39;😋&#39;, 13)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hvis vi hadde tatt <code class="docutils literal notranslate"><span class="pre">tekst_counter[emoji]</span> <span class="pre">+=</span> <span class="pre">1</span></code> på en vanlig ordbok, hadde vi fått en <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<p>Det finnes måter rundt dette, men å bruke en <code class="docutils literal notranslate"><span class="pre">Counter</span></code> er det enkleste.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -548,7 +586,73 @@ document.getElementById("textInput").addEventListener("keypress", function(event
     }
   }
 });
-</script></section>
+</script>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3 🌹<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Dette er en fortsettelse av <a class="reference internal" href="Mengder%20og%20tupler.html#romeo-og-julie-1"><span class="std std-ref">denne oppgaven om mengder</span></a></p>
+</div></blockquote>
+<p>Shakespeares fortelling om den forbudte forelskelsen mellom Romeo Montague og Juliet Capulet er en rivende kjærlighetshistorie med mange dramatiske vendinger.</p>
+<p>Last ned filen <a class="reference download internal" download="" href="../_downloads/6c04ff190cae1921409b3b1c342fce6c/romeo_and_juliet.txt"><code class="xref download docutils literal notranslate"><span class="pre">romeo_and_juliet.txt</span></code></a></p>
+<p><strong>Skriv ut de ti mest brukte ordene i hele tekstfilen og hvor mange ganger de har blitt brukt.</strong></p>
+<ul class="simple">
+<li><p>Små og store bokstaver teller ikke som forskjellige ord.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Word&quot;</span></code> telles som det samme ordet som <code class="docutils literal notranslate"><span class="pre">&quot;word&quot;</span></code></p></li>
+</ul>
+</li>
+<li><p>Tegnene <code class="docutils literal notranslate"><span class="pre">&quot;,&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;)&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;(&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;:&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;]&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;[&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;?&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;!&quot;</span></code> skal ignoreres.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Word!&quot;</span></code> telles som det samme ordet som <code class="docutils literal notranslate"><span class="pre">&quot;Word&quot;</span></code> og <code class="docutils literal notranslate"><span class="pre">&quot;Word.&quot;</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Denne listen kan være til hjelp for å rense ordene.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tegn</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Tekst tatt fra <a class="reference external" href="https://www.gutenberg.org/ebooks/1513">Project Gutenberg (lenke)</a>.</p>
+</div></blockquote>
+<div class="hint dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">THE</span>  <span class="p">:</span>  <span class="mi">874</span>
+<span class="n">AND</span>  <span class="p">:</span>  <span class="mi">803</span>
+<span class="n">TO</span>   <span class="p">:</span>  <span class="mi">623</span>
+<span class="n">I</span>    <span class="p">:</span>  <span class="mi">580</span>
+<span class="n">A</span>    <span class="p">:</span>  <span class="mi">541</span>
+<span class="n">OF</span>   <span class="p">:</span>  <span class="mi">518</span>
+<span class="n">IN</span>   <span class="p">:</span>  <span class="mi">393</span>
+<span class="n">IS</span>   <span class="p">:</span>  <span class="mi">366</span>
+<span class="n">YOU</span>  <span class="p">:</span>  <span class="mi">362</span>
+<span class="n">THAT</span> <span class="p">:</span>  <span class="mi">361</span>
+</pre></div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="k">def</span> <span class="nf">fjern_tegn</span><span class="p">(</span><span class="n">word</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hjelpefunksjon for å fjerne tegn som ikke er bokstaver fra ordene&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">tegn</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;)&quot;</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">]:</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tegn</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">word</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;romeo_and_juliet.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">word_dict</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+                <span class="n">word_dict</span><span class="p">[</span><span class="n">fjern_tegn</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">())]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">word_dict</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">5</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">5</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -618,9 +722,11 @@ document.getElementById("textInput").addEventListener("keypress", function(event
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter"><code class="docutils literal notranslate"><span class="pre">Counter</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎒</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🔤</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🌹</a></li>
 </ul>
 </li>
 </ul>
