@@ -375,7 +375,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 😍</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🌹</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 ✍️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ⚖️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🌹</a></li>
 </ul>
 </li>
 </ul>
@@ -506,7 +508,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;🍏&#39;, &#39;📗&#39;, &#39;🥒&#39;, &#39;🟩&#39;, &#39;🥦&#39;, &#39;👽&#39;, &#39;💸&#39;, &#39;💚&#39;, &#39;🟢&#39;, &#39;🫑&#39;, &#39;🥬&#39;, &#39;🦠&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;🍏&#39;, &#39;🥦&#39;, &#39;🫑&#39;, &#39;💚&#39;, &#39;🟢&#39;, &#39;👽&#39;, &#39;💸&#39;, &#39;🟩&#39;, &#39;🦠&#39;, &#39;🥒&#39;, &#39;📗&#39;, &#39;🥬&#39;}
 Det finnes 12 forskjellige emojis i teksten.
 </pre></div>
 </div>
@@ -547,7 +549,7 @@ Pythonsk</div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Objekter som er i enten <span class="math notranslate nohighlight">\(A\)</span> eller <span class="math notranslate nohighlight">\(B\)</span>. Alle objekter.</p>
+<p class="sd-card-text">Objekter som er i <span class="math notranslate nohighlight">\(A\)</span> eller <span class="math notranslate nohighlight">\(B\)</span>. Alle objekter.</p>
 </div>
 </div>
 </div>
@@ -638,10 +640,10 @@ Pythonsk</div>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
 <span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A union B: </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A snitt B: </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A uten B:  </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;B uten A:  </span><span class="si">{</span><span class="n">B</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A union B: </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># eller A.union(B)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A snitt B: </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># eller A.intersection(B)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A uten B:  </span><span class="si">{</span><span class="n">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># eller A.difference(B)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;B uten A:  </span><span class="si">{</span><span class="n">B</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># eller B.difference(A)</span>
 </pre></div>
 </div>
 </div>
@@ -683,7 +685,17 @@ B uten A:  {5, 6}
 </div>
 </section>
 <section id="oppgave-2">
-<span id="romeo-og-julie-1"></span><h3>Oppgave 2 🌹<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<h3>Oppgave 2 ✍️<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">unike_ord()</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">setning</span></code> og returnerer hvor mange <em>unike</em> ord det er i setningen.</p>
+<p>Store og små bokstaver skal ikke skille ordene. <code class="docutils literal notranslate"><span class="pre">&quot;Ord&quot;</span></code> er det samme som <code class="docutils literal notranslate"><span class="pre">&quot;ord&quot;</span></code>.</p>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3 ⚖️<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">like_ord()</span></code> som tar inn to strings, <code class="docutils literal notranslate"><span class="pre">setning1</span></code> og <code class="docutils literal notranslate"><span class="pre">setning2</span></code>, og returnerer en liste over alle ordene som finnes i begge setningene.</p>
+<p>Store og små bokstaver skal ikke skille ordene. <code class="docutils literal notranslate"><span class="pre">&quot;Ord&quot;</span></code> er det samme som <code class="docutils literal notranslate"><span class="pre">&quot;ord&quot;</span></code>.</p>
+</section>
+<section id="oppgave-4">
+<span id="romeo-og-julie-1"></span><h3>Oppgave 4 🌹<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
 <p>Shakespeares fortelling om den forbudte forelskelsen mellom Romeo Montague og Juliet Capulet er en rivende kjærlighetshistorie med mange dramatiske vendinger.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/6c04ff190cae1921409b3b1c342fce6c/romeo_and_juliet.txt"><code class="xref download docutils literal notranslate"><span class="pre">romeo_and_juliet.txt</span></code></a></p>
 <p><strong>Finn ut hvor mange unike ord det er i hele tekstfilen.</strong></p>
@@ -811,7 +823,9 @@ B uten A:  {5, 6}
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 😍</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🌹</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 ✍️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ⚖️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🌹</a></li>
 </ul>
 </li>
 </ul>
