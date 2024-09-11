@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ca9100cb" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Ordbøker';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Rutenett" href="Rutenett.html" />
+    <link rel="next" title="Reelle datasett" href="Reelle%20datasett.html" />
     <link rel="prev" title="Mengder og tupler" href="Mengder%20og%20tupler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
@@ -187,6 +187,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Lister%20II.html">Lister II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mengder%20og%20tupler.html">Mengder og tupler</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Rutenett.html">Rutenett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Algoritmer.html">Algoritmer</a></li>
@@ -388,7 +389,7 @@ document.write(`
                   
   <section id="ordboker">
 <span id="id1"></span><h1>Ordbøker<a class="headerlink" href="#ordboker" title="Link to this heading">#</a></h1>
-<p>Ordbøker (<em>dictionaries</em>) er en samling av objekter, som lister, tupler og mengder.</p>
+<p>Ordbøker (<em>dictionaries</em>) er samlinger av objekter, som lister, tupler og mengder.</p>
 <p>I <a class="reference internal" href="../Grunnleggende/Lister.html#lister"><span class="std std-ref">Lister</span></a> lagrer vi data i en rekkefølge. I ordbøker lagrer vi data i par med <code class="docutils literal notranslate"><span class="pre">keys</span></code> og <code class="docutils literal notranslate"><span class="pre">values</span></code>. En nøkkel er forbundet med sin verdi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -516,9 +517,7 @@ Verdi: Sverige
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
-<span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;😎😋😎😆😉😉😉😉😉😊😊😋😆😘😅😘😆😉😋😉😋😅😍😉😋😎😍😆😋😆😉😍</span><span class="se">\</span>
-<span class="s2">    😉😉😅😘😅😋😅😊😋😎😎😅😘😍😍😘😆😎😋😆😍😍😉😘😉😅😍😘😉😆😋😆😉😊</span><span class="se">\</span>
-<span class="s2">    😆😉😎😅😘😆😋😊😊😉😉😎😆😋😍😅😊😅😆😅😆😘😋😅😆😎😊😎😘😘😍😉😊😍&quot;</span>
+<span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;😎😋😎😆😉😉😉😉😉😊😊😋😆😘😅😘😆😉😋😉😋😅😍😉😋😎😍😆😋😆😉&quot;</span>
 
 <span class="c1"># Lager en counter</span>
 <span class="n">tekst_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
@@ -536,8 +535,8 @@ Verdi: Sverige
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;😉&#39;: 19, &#39;😆&#39;: 15, &#39;😋&#39;: 13, &#39;😅&#39;: 12, &#39;😘&#39;: 11, &#39;😍&#39;: 11, &#39;😎&#39;: 10, &#39;😊&#39;: 9, &#39; &#39;: 8})
-[(&#39;😉&#39;, 19), (&#39;😆&#39;, 15), (&#39;😋&#39;, 13)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;😉&#39;: 9, &#39;😋&#39;: 6, &#39;😆&#39;: 5, &#39;😎&#39;: 3, &#39;😊&#39;: 2, &#39;😘&#39;: 2, &#39;😅&#39;: 2, &#39;😍&#39;: 2})
+[(&#39;😉&#39;, 9), (&#39;😋&#39;, 6), (&#39;😆&#39;, 5)]
 </pre></div>
 </div>
 </div>
@@ -702,11 +701,11 @@ document.getElementById("textInput").addEventListener("keypress", function(event
       </div>
     </a>
     <a class="right-next"
-       href="Rutenett.html"
+       href="Reelle%20datasett.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Rutenett</p>
+        <p class="prev-next-title">Reelle datasett</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
