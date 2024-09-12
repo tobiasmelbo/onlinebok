@@ -1,0 +1,82 @@
+[
+    {
+        "gjenstand": "Helbredende Trylledrikk",
+        "antall": 10
+    },
+    {
+        "gjenstand": "Magisk Pergament",
+        "antall": 5
+    },
+    {
+        "gjenstand": "Dolk",
+        "antall": 15
+    },
+    {
+        "gjenstand": "Tau (15 meter)",
+        "antall": 8
+    },
+    {
+        "gjenstand": "Lykt",
+        "antall": 12
+    },
+    {
+        "gjenstand": "Lett-som-en-plett-sekk",
+        "antall": 2
+    },
+    {
+        "gjenstand": "Magibok",
+        "antall": 3
+    },
+    {
+        "gjenstand": "Urter",
+        "antall": 20
+    },
+    {
+        "gjenstand": "Edelstener",
+        "antall": 7
+    },
+    {
+        "gjenstand": "Piler (kogger)",
+        "antall": 25
+    },
+    {
+        "gjenstand": "Beskyttelse av lær",
+        "antall": 4
+    },
+    {
+        "gjenstand": "Jernsverd",
+        "antall": 6
+    },
+    {
+        "gjenstand": "Skjold",
+        "antall": 5
+    },
+    {
+        "gjenstand": "Fakkel",
+        "antall": 30
+    },
+    {
+        "gjenstand": "Telt",
+        "antall": 3
+    },
+    {
+        "gjenstand": "Fiskestav",
+        "antall": 10
+    },
+    {
+        "gjenstand": "Kompass",
+        "antall": 8
+    },
+    {
+        "gjenstand": "Kart",
+        "antall": 10
+    },
+    {
+        "gjenstand": "Vannflaske",
+        "antall": 15
+    },
+    {
+        "gjenstand": "Brød",
+        "antall": 25
+    }
+]
