@@ -60,6 +60,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Reelle datasett';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
@@ -371,6 +373,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎮</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🏹</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ✨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🎬</a></li>
 </ul>
 </li>
 </ul>
@@ -490,12 +493,12 @@ document.write(`
 <h3>Oppgave 1 🎮<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
 <p>Jeg har rundet hundrevis av spill og kategorisert de i en <code class="docutils literal notranslate"><span class="pre">.csv</span></code>-fil.</p>
 <p>Last ned filen <a class="reference external" href="https://raw.githubusercontent.com/tobiasmelbo/om_meg/main/list.csv">her (lenke)</a></p>
-<ol class="arabic simple">
-<li><p>Skriv ut hvor mange spill det er.</p></li>
-<li><p>Lag en oversikt over hvor mange 1-ere, 2-ere, 3-ere, 4-ere og 5-ere det er.</p></li>
-<li><p>Lag en oversikt over spillkonsollene og hvor mange spill det er til hver konsoll.</p></li>
-<li><p>(ekstra) Regn ut summen av de registrerte tidene i timer.</p></li>
-</ol>
+<ul class="simple">
+<li><p>Skriv ut antallet spill i listen.</p></li>
+<li><p>Skriv ut hvor mange 1-ere, 2-ere, 3-ere, 4-ere og 5-ere det er.</p></li>
+<li><p>Skriv ut hvor mange spill det er til de <span class="math notranslate nohighlight">\(8\)</span> mest populære spillkonsollene, i synkende rekkefølge.</p></li>
+<li><p>(BONUS) Regn ut summen av de registrerte tidene i timer.</p></li>
+</ul>
 </section>
 <section id="oppgave-2">
 <h3>Oppgave 2 🏹<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
@@ -575,6 +578,92 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="oppgave-4">
+<h3>Oppgave 4 🎬<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+<p>Norsk filmindustri har produsert noen sykt bra filmer gjennom tidene.</p>
+<p>Last ned filen <a class="reference download internal" download="" href="../_downloads/4145c134b999f38636706377d9916942/filmer.csv"><code class="xref download docutils literal notranslate"><span class="pre">filmer.csv</span></code></a>.</p>
+<ul class="simple">
+<li><p>Lag en fin tabell. Brukeren skal kunne velge om man skal skrive ut i alfabetisk rekkefølge, eller etter utgivelse.</p></li>
+<li><p>Skriv ut de tre mest sette filmene på kino.</p></li>
+<li><p>Skriv ut de tre filmene med flest strømminger.</p></li>
+</ul>
+<div class="hint dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Her er en mulig utskrift når brukeren sorterer etter år.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Navn</span>                                     <span class="o">|</span> <span class="n">År</span>   <span class="o">|</span> <span class="n">Kinobesøk</span>  <span class="o">|</span> <span class="n">Strømminger</span>
+<span class="n">Gutta</span> <span class="n">boys</span>                               <span class="o">|</span> <span class="mi">1999</span> <span class="o">|</span> <span class="mi">95266</span>      <span class="o">|</span> <span class="mi">122787</span>
+<span class="n">OSLO</span>                                     <span class="o">|</span> <span class="mi">2000</span> <span class="o">|</span> <span class="mi">9770</span>       <span class="o">|</span> <span class="mi">2665576</span>
+<span class="n">Kongen</span> <span class="n">og</span> <span class="n">krigen</span>                         <span class="o">|</span> <span class="mi">2000</span> <span class="o">|</span> <span class="mi">165423</span>     <span class="o">|</span> <span class="mi">452270</span>
+<span class="n">Torpedo</span><span class="p">:</span> <span class="n">Lånekassen</span>                      <span class="o">|</span> <span class="mi">2003</span> <span class="o">|</span> <span class="mi">91845</span>      <span class="o">|</span> <span class="mi">774350</span>
+<span class="n">Forelsket</span><span class="p">:</span> <span class="n">Ytre</span> <span class="n">Enebakk</span>                  <span class="o">|</span> <span class="mi">2005</span> <span class="o">|</span> <span class="mi">123380</span>     <span class="o">|</span> <span class="mi">2645774</span>
+<span class="n">Jordskjelvet</span>                             <span class="o">|</span> <span class="mi">2006</span> <span class="o">|</span> <span class="mi">19524</span>      <span class="o">|</span> <span class="mi">827497</span>
+<span class="n">Forræderen</span>                               <span class="o">|</span> <span class="mi">2006</span> <span class="o">|</span> <span class="mi">107483</span>     <span class="o">|</span> <span class="mi">308763</span>
+<span class="n">Spinnville</span> <span class="n">Sondre</span>                        <span class="o">|</span> <span class="mi">2012</span> <span class="o">|</span> <span class="mi">113911</span>     <span class="o">|</span> <span class="mi">2945296</span>
+<span class="n">Skogen</span>                                   <span class="o">|</span> <span class="mi">2013</span> <span class="o">|</span> <span class="mi">87957</span>      <span class="o">|</span> <span class="mi">1570959</span>
+<span class="n">Krigen</span>                                   <span class="o">|</span> <span class="mi">2014</span> <span class="o">|</span> <span class="mi">58819</span>      <span class="o">|</span> <span class="mi">2387531</span>
+<span class="n">Knerten</span> <span class="n">blir</span> <span class="n">kildesortert</span>                <span class="o">|</span> <span class="mi">2014</span> <span class="o">|</span> <span class="mi">62394</span>      <span class="o">|</span> <span class="mi">873722</span>
+<span class="n">BLÜCHER</span>                                  <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">187871</span>     <span class="o">|</span> <span class="mi">1809530</span>
+<span class="n">Enda</span> <span class="n">en</span> <span class="n">krigsfilm</span>                        <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">107948</span>     <span class="o">|</span> <span class="mi">1311115</span>
+<span class="n">Tante</span> <span class="n">jobber</span> <span class="k">for</span> <span class="n">NAV</span>                     <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">40630</span>      <span class="o">|</span> <span class="mi">2751636</span>
+<span class="n">Sommer</span> <span class="n">i</span> <span class="n">Narvik</span>                          <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">90659</span>      <span class="o">|</span> <span class="mi">175462</span>
+<span class="n">Thor</span> <span class="n">Heyerdahl</span>                           <span class="o">|</span> <span class="mi">2016</span> <span class="o">|</span> <span class="mi">169827</span>     <span class="o">|</span> <span class="mi">387362</span>
+<span class="n">Olsenbanden</span> <span class="n">på</span> <span class="n">førstegangstjeneste</span>       <span class="o">|</span> <span class="mi">2018</span> <span class="o">|</span> <span class="mi">78856</span>      <span class="o">|</span> <span class="mi">1279729</span>
+<span class="n">Knerten</span><span class="p">:</span> <span class="n">På</span> <span class="n">farten</span>                       <span class="o">|</span> <span class="mi">2019</span> <span class="o">|</span> <span class="mi">125345</span>     <span class="o">|</span> <span class="mi">834912</span>
+<span class="n">Andre</span> <span class="n">Verdenskrig</span>                        <span class="o">|</span> <span class="mi">2022</span> <span class="o">|</span> <span class="mi">137491</span>     <span class="o">|</span> <span class="mi">287087</span>
+<span class="n">WW2</span><span class="p">:</span> <span class="n">Oslo</span>                                <span class="o">|</span> <span class="mi">2024</span> <span class="o">|</span> <span class="mi">163686</span>     <span class="o">|</span> <span class="mi">2788605</span>
+
+ <span class="o">---</span> <span class="n">Mest</span> <span class="n">sette</span> <span class="n">filmer</span> <span class="n">på</span> <span class="n">kino</span> <span class="o">---</span>
+<span class="n">BLÜCHER</span>              <span class="mi">187871</span> <span class="n">kinobesøk</span>
+<span class="n">Thor</span> <span class="n">Heyerdahl</span>       <span class="mi">169827</span> <span class="n">kinobesøk</span>
+<span class="n">Kongen</span> <span class="n">og</span> <span class="n">krigen</span>     <span class="mi">165423</span> <span class="n">kinobesøk</span>
+
+ <span class="o">---</span> <span class="n">Mest</span> <span class="n">strømmet</span> <span class="o">---</span>
+<span class="n">Spinnville</span> <span class="n">Sondre</span>    <span class="mi">2945296</span> <span class="n">strømminger</span>
+<span class="n">WW2</span><span class="p">:</span> <span class="n">Oslo</span>            <span class="mi">2788605</span> <span class="n">strømminger</span>
+<span class="n">Tante</span> <span class="n">jobber</span> <span class="k">for</span> <span class="n">NAV</span> <span class="mi">2751636</span> <span class="n">strømminger</span>
+</pre></div>
+</div>
+</div>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># Bruker velger sorteringsmetode</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Velg sortering. 1: alfabetisk. 2: etter år&quot;</span><span class="p">)</span>
+<span class="n">valg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Valg: &quot;</span><span class="p">))</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filmer.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">header</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+
+<span class="c1"># Sorterer med hensyn på valget fra brukeren</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">valg</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Fin tabell</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">40</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">40</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Bruker Counter for å bruke most_common()-metoden</span>
+<span class="n">kinobesøk</span><span class="p">,</span> <span class="n">strømminger</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(),</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">kinobesøk</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">strømminger</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="c1"># Skriver ut mest sette filmer på kino</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> --- Mest sette filmer på kino ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kinobesøk</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">20</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> kinobesøk&quot;</span><span class="p">)</span>
+
+<span class="c1"># Skriver ut mest strømmet</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> --- Mest strømmet ---&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strømminger</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">20</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> strømminger&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -648,6 +737,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎮</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🏹</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ✨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🎬</a></li>
 </ul>
 </li>
 </ul>
