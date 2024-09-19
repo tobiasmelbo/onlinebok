@@ -373,7 +373,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 ✔️</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🥴</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🪴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 📏</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 📦</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🪴</a></li>
 </ul>
 </li>
 </ul>
@@ -519,6 +521,7 @@ document.write(`
 <span class="n">er_sortert</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">False</span>
 </pre></div>
 </div>
+<p>Du får lov til å bruke <code class="docutils literal notranslate"><span class="pre">sorted()</span></code>-funksjonen for å sjekke.</p>
 </section>
 <section id="oppgave-2">
 <h3>Oppgave 2 🥴<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
@@ -540,8 +543,40 @@ document.write(`
 </div>
 </section>
 <section id="oppgave-3">
-<h3>Oppgave 3 🪴<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
-<p>En sorteringsalgoritme ved navn <em>Gnome sort</em> er beskrevet på følgende måte.</p>
+<h3>Oppgave 3 📏<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">max()</span></code> som går gjennom en liste og returnerer den største verdien.</p>
+<p>Å gi funksjonen navnet <code class="docutils literal notranslate"><span class="pre">max()</span></code> overskriver den innebygde <code class="docutils literal notranslate"><span class="pre">max()</span></code>-funksjonen som ligger i Python.</p>
+<blockquote>
+<div><p>Tips: Man kan gi en uendelig stor verdi med <code class="docutils literal notranslate"><span class="pre">float(&quot;inf&quot;)</span></code> og en uendelig liten verdi med <code class="docutils literal notranslate"><span class="pre">float(&quot;-inf&quot;)</span></code></p>
+</div></blockquote>
+</section>
+<section id="oppgave-4">
+<h3>Oppgave 4 📦<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+<p>En enkel, men ganske dårlig, sorteringsalgoritme kan beskrives på følgende måte.</p>
+<ol class="arabic simple">
+<li><p>Lag en tom liste <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p></li>
+<li><p>Ta ut den største verdien og legg den inn i <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p></li>
+<li><p>Når den opprinnelige listen er tom, returner <code class="docutils literal notranslate"><span class="pre">out</span></code>.</p></li>
+</ol>
+<p>Implementer algoritmen som en funksjon <code class="docutils literal notranslate"><span class="pre">max_sort()</span></code> i Python.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Legg merke til at jeg kjører <code class="docutils literal notranslate"><span class="pre">liste.copy()</span></code> for å unngå at listen som puttes inn faktisk blir tømt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_sort</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+    <span class="n">liste</span> <span class="o">=</span> <span class="n">liste</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">størst</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span>
+        <span class="n">liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">størst</span><span class="p">)</span>
+        <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">størst</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="oppgave-5">
+<h3>Oppgave 5 🪴<a class="headerlink" href="#oppgave-5" title="Link to this heading">#</a></h3>
+<p>Sorteringsalgoritmen <em>Gnome sort</em> er beskrevet på følgende måte.</p>
 <p>En hagegnom skal sortere en rad med blomsterpotter i stigende rekkefølge.</p>
 <ol class="arabic simple">
 <li><p>Hvis hagegnomen er ved første potte, så går han et steg videre.</p></li>
@@ -627,7 +662,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 ✔️</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🥴</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🪴</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 📏</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 📦</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🪴</a></li>
 </ul>
 </li>
 </ul>
