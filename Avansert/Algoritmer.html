@@ -471,6 +471,9 @@ document.write(`
 <p class="admonition-title">Python 🐍: Bubble sort</p>
 <p>En implementasjon av Bubble sort i Python kan se ut på følgende måte:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+    <span class="c1"># Lager en kopi av listen slik at vi ikke endrer på den opprinnelige listen in-place.</span>
+    <span class="n">liste</span> <span class="o">=</span> <span class="n">liste</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
     <span class="c1"># For å holde styr på om det er byttet (starter som sant for å starte while-løkken)</span>
     <span class="n">byttet</span> <span class="o">=</span> <span class="kc">True</span>
 
@@ -544,8 +547,7 @@ document.write(`
 </section>
 <section id="oppgave-3">
 <h3>Oppgave 3 📏<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
-<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">max()</span></code> som går gjennom en liste og returnerer den største verdien.</p>
-<p>Å gi funksjonen navnet <code class="docutils literal notranslate"><span class="pre">max()</span></code> overskriver den innebygde <code class="docutils literal notranslate"><span class="pre">max()</span></code>-funksjonen som ligger i Python.</p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">nest_størst()</span></code> som går gjennom en liste og returnerer den nest største verdien i listen.</p>
 <blockquote>
 <div><p>Tips: Man kan gi en uendelig stor verdi med <code class="docutils literal notranslate"><span class="pre">float(&quot;inf&quot;)</span></code> og en uendelig liten verdi med <code class="docutils literal notranslate"><span class="pre">float(&quot;-inf&quot;)</span></code></p>
 </div></blockquote>
