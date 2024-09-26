@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -180,7 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Funksjoner.html">Funksjoner</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 🤓</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 💪</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
@@ -374,7 +374,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧍‍♀️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎲</a></li>
 </ul>
 </li>
 </ul>
@@ -556,36 +555,6 @@ Gamma
 <li><p>Skriv ut gjennomsnittet av høydene.</p></li>
 </ol>
 </section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🎲<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
-<p>Lag en tom liste <code class="docutils literal notranslate"><span class="pre">liste</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[]</span>
-</pre></div>
-</div>
-<p>Fyll listen med <span class="math notranslate nohighlight">\(100\)</span> forskjellige tilfeldige tall mellom <span class="math notranslate nohighlight">\(1\)</span> og <span class="math notranslate nohighlight">\(6\)</span> 🎲</p>
-<ol class="arabic simple">
-<li><p>Finn gjennomsnittet til listen. Kjør programmet et par ganger.</p></li>
-<li><p>Gjør at programmet ditt lager <span class="math notranslate nohighlight">\(1000\)</span> forskjellige tall.</p></li>
-<li><p>Finn gjennomsnittet nå.</p></li>
-</ol>
-<p>Prøv gjerne med flere terningkast.</p>
-<p>Hva tror du den gjennomsnittlige verdien blir om vi gjør dette med uendelig mange terningkast?</p>
-<div class="note dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<p>Dette programmet tar <span class="math notranslate nohighlight">\(100\)</span> terningkast og finner gjennomsnittet.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-
-<span class="n">liste</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Man kan enkelt bytte ut <span class="math notranslate nohighlight">\(100\)</span> med et annet tall.</p>
-<p>Vi ser at når vi øker antallet terningkast blir gjennomsnittet likere og likere <span class="math notranslate nohighlight">\(3.5\)</span>. Det er også det tallet det skal nærme seg når vi gjør uendelig mange terningkast.</p>
-</div>
-</section>
 </section>
 </section>
 
@@ -660,7 +629,6 @@ Gamma
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ga-igjennom-alle-elementer">Gå igjennom alle elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧍‍♀️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎲</a></li>
 </ul>
 </li>
 </ul>
