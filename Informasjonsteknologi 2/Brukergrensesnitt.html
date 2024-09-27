@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -374,9 +374,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-enkelt-objektorientert-system-for-parkeringshus">Eksempel: Enkelt objektorientert system for parkeringshus 🚗</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjonen">Dokumentasjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎈</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 📈</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏋️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 📈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🏋️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring) 🎈</a></li>
 </ul>
 </li>
 </ul>
@@ -561,12 +561,7 @@ document.write(`
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <p>Her er noen oppgaver til inspirasjon, men det beste er å finne på noe du har lyst til å lage selv.</p>
 <section id="oppgave-1">
-<h3>Oppgave 1 🎈<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
-<p>Lag et program som trener brukeren på gangetabellen.</p>
-<p>Bruk gjerne <code class="docutils literal notranslate"><span class="pre">st.balloons()</span></code> eller <code class="docutils literal notranslate"><span class="pre">st.success()</span></code> når brukeren får riktig og <code class="docutils literal notranslate"><span class="pre">st.error()</span></code> når brukeren har feil.</p>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 📈<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<h3>Oppgave 1 📈<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
 <p>Ta utgangspunkt i datafilen <a class="reference download internal" download="" href="../_downloads/1d7950e184fbb326d5df4648ccaa54be/konsumprisindeks.csv"><span class="xref download myst">konsumprisindeks.csv</span></a>.</p>
 <aside class="sidebar">
 <p>Man kan regne om kr i år <span class="math notranslate nohighlight">\(x\)</span> til kr i år <span class="math notranslate nohighlight">\(2023\)</span> med formelen</p>
@@ -578,10 +573,52 @@ document.write(`
 </ol>
 <p>Test kalkulatoren din opp mot den fra <a class="reference external" href="https://www.ssb.no/kalkulatorer/priskalkulator">SSB (nettside)</a>.</p>
 </section>
-<section id="oppgave-3">
-<h3>Oppgave 3 🏋️<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<section id="oppgave-2">
+<h3>Oppgave 2 🏋️<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
 <p>Lag en treningsapp. Brukeren skal kunne legge inn informasjon om en treningsøkt, som skal lagres til en datafil.</p>
 <p>Det skal også være mulig å analysere tidligere treningsøkter i appen.</p>
+</section>
+<section id="oppgave-3-utfordring">
+<h3>Oppgave 3 (utfordring) 🎈<a class="headerlink" href="#oppgave-3-utfordring" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>I denne oppgaven vil du du trenge å se på <code class="docutils literal notranslate"><span class="pre">st.session_state()</span></code></p>
+</div></blockquote>
+<p>Lag et program med grensesnitt som trener brukeren på gangetabellen.</p>
+<p>Bruk gjerne <code class="docutils literal notranslate"><span class="pre">st.balloons()</span></code> eller <code class="docutils literal notranslate"><span class="pre">st.success()</span></code> når brukeren får riktig og <code class="docutils literal notranslate"><span class="pre">st.error()</span></code> når brukeren har feil.</p>
+<div class="note dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Dette er en overraskende vanskelig oppgave på grunn av hvordan streamlit fungerer.</p>
+<p>Siden hele siden refresher ved hver eneste input i felter eller tastetrykk er vi nødt til å lagre ting i <code class="docutils literal notranslate"><span class="pre">st.session_state()</span></code>-ordboke, som ligger lagret selv om man refresher.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># Setter svarene i session_state-ordboken</span>
+<span class="k">if</span> <span class="s2">&quot;a&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># Skriver spørsmålet</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hva er </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2"> ganger </span><span class="si">{</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">)</span>
+
+<span class="c1"># Input-felt</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">number_input</span><span class="p">(</span><span class="s2">&quot;Skriv inn svaret:&quot;</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Svar-knapp</span>
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;Svar&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="s2">&quot;riktig :)&quot;</span><span class="p">)</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">balloons</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;feil &quot;</span><span class="p">)</span>
+
+<span class="c1"># Ny-oppgave-knapp</span>
+<span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">button</span><span class="p">(</span><span class="s2">&quot;Ny oppgave&quot;</span><span class="p">):</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">rerun</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -657,9 +694,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-enkelt-objektorientert-system-for-parkeringshus">Eksempel: Enkelt objektorientert system for parkeringshus 🚗</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dokumentasjonen">Dokumentasjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎈</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 📈</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏋️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 📈</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🏋️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-utfordring">Oppgave 3 (utfordring) 🎈</a></li>
 </ul>
 </li>
 </ul>
