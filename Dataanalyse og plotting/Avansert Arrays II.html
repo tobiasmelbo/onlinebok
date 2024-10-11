@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Avansert Arrays II';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Enkle Datasett" href="Plotting%20Enkle%20datasett.html" />
+    <link rel="next" title="Enkle datasett" href="Plotting%20Enkle%20datasett.html" />
     <link rel="prev" title="Arrays" href="Arrays.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
@@ -194,7 +194,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -412,23 +412,23 @@ document.write(`
 <p>Arrays fungerer som vektorer fra matematikken.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
 
 <span class="c1"># Sum</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">5</span> <span class="mi">7</span> <span class="mi">9</span><span class="p">]</span>
 
 <span class="c1"># Differanse</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span> <span class="o">-</span><span class="mi">3</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
 
 <span class="c1"># Produkt</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">10</span> <span class="mi">18</span><span class="p">]</span>
 
 <span class="c1"># Skalarprodukt/prikkprodukt</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="mi">11</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="mi">32</span>
 
 <span class="c1"># Kryssprodukt</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span> <span class="mi">6</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -518,8 +518,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [10.  7.  2.  4.  4.  3.  1.  2.  5.  6.]
-Sortert array: [ 1.  2.  2.  3.  4.  4.  5.  6.  7. 10.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [ 9.  1.  4.  6.  5.  4.  6. 10.  1.  4.]
+Sortert array: [ 1.  1.  4.  4.  4.  5.  6.  6.  9. 10.]
 </pre></div>
 </div>
 </div>
@@ -777,7 +777,7 @@ Element i posisjon [1][1]:  5
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Enkle Datasett</p>
+        <p class="prev-next-title">Enkle datasett</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
