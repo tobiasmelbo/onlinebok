@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+
+
+<html lang="nb" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Avansert: Arrays II &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=507867d0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Avansert Arrays II';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Enkle Datasett" href="Plotting%20Enkle%20datasett.html" />
+    <link rel="prev" title="Arrays" href="Arrays.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Søk</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 💪</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Mengder%20og%20tupler.html">Mengder og tupler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Reelle%20datasett.html">Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Rutenett.html">Rutenett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Algoritmer.html">Algoritmer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Avansert: Arrays II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Brukergrensesnitt.html">Brukergrensesnitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Klasser.html">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Arv.html">Arv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Dokumentasjon.html">Dokumentasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/Spill.html">Spill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Informasjonsteknologi%202/L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Dataanalyse og plotting/Avansert Arrays II.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Avansert: Arrays II</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorregning">Vektorregning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-funksjonen"><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-funksjonen"><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-funksjonen"><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flip-funksjonen"><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-funksjonen"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-elementer">Legge til og trekke fra elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="avansert-arrays-ii">
+<span id="id1"></span><h1>Avansert: Arrays II<a class="headerlink" href="#avansert-arrays-ii" title="Link to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Forutsetninger</p>
+<p>Denne delen forutsetter at man har vært gjennom delkapitlet <a class="reference internal" href="Arrays.html#arrays"><span class="std std-ref">Arrays</span></a>.</p>
+</div>
+<p>Her kommer det litt mer om arrays.</p>
+<section id="vektorregning">
+<h2>Vektorregning<a class="headerlink" href="#vektorregning" title="Link to this heading">#</a></h2>
+<p>Arrays fungerer som vektorer fra matematikken.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># Sum</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># Differanse</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Produkt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="c1"># Skalarprodukt/prikkprodukt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="mi">11</span>
+
+<span class="c1"># Kryssprodukt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="o">-</span><span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="arange-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen<a class="headerlink" href="#arange-funksjonen" title="Link to this heading">#</a></h2>
+<p>For å lage arrays med tall i stigende rekkefølge kan vi bruke <code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>        <span class="c1"># Alle tall fra og med 0 til 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>     <span class="c1"># Alle tall fra og med 1 til 10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Alle tall fra og med 0 til 10, men med steglengde 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9]
+[1 2 3 4 5 6 7 8 9]
+[0 2 4 6 8]
+</pre></div>
+</div>
+</div>
+</div>
+<p>På samme måte som i <code class="docutils literal notranslate"><span class="pre">range()</span></code>-funksjonen er slutten i <code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen ikke inkluderende. Det vil si at den bare går <em>til</em> sluttverdien, ikke <em>til og med</em>.</p>
+</section>
+<section id="concatenate-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen<a class="headerlink" href="#concatenate-funksjonen" title="Link to this heading">#</a></h2>
+<p>Hvis vi ønsker å legge sammen arrays til nye større arrays kan vi bruke <code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">arr1</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3 1 2 3]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zeros-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen<a class="headerlink" href="#zeros-funksjonen" title="Link to this heading">#</a></h2>
+<p>Hvis vi ønsker å fylle en array med mange nuller så kan vi bruke <code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen. Legger vi en tuppel (f.eks <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">3)</span></code>) inn som argument, så får vi en todimensjonell array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># Lager en array med 5 nuller</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span> <span class="c1"># Lager en 5x5 array med nuller</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 0. 0. 0. 0.]
+[[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Det finnes også en funksjon som heter <code class="docutils literal notranslate"><span class="pre">ones()</span></code>. Kanskje du klarer å tenke deg frem til hva den gjør?</p>
+</section>
+<section id="sort-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen<a class="headerlink" href="#sort-funksjonen" title="Link to this heading">#</a></h2>
+<p>For å få en sortert array (stigende) kan vi bruke <code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Lager et array med nuller.</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+    <span class="n">arr</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Setter hvert element til en tilfeldig verdi.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> <span class="c1"># Skriver ut arrayet.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sortert array:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span> <span class="c1"># Skriver ut det sorterte arrayet.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [10.  7.  2.  4.  4.  3.  1.  2.  5.  6.]
+Sortert array: [ 1.  2.  2.  3.  4.  4.  5.  6.  7. 10.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="flip-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen<a class="headerlink" href="#flip-funksjonen" title="Link to this heading">#</a></h2>
+<p>For å få en reversert array kan vi bruke <code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reversert array:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [1 2 3 4 5 6 7 8 9]
+Reversert array: [9 8 7 6 5 4 3 2 1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reshape-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen<a class="headerlink" href="#reshape-funksjonen" title="Link to this heading">#</a></h2>
+<p>Hvis vi ønsker å gjøre endre på formen til en array kan vi bruke <code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Lager en array med tallene fra og med en til 10.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array:&quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Omformet (3, 3):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span> <span class="c1"># Omformer arrayet til (3, 3). 3 rader og 3 kolonner.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [1 2 3 4 5 6 7 8 9]
+Omformet (3, 3):
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="finne-elementer-indeksere">
+<h2>Finne elementer (indeksere)<a class="headerlink" href="#finne-elementer-indeksere" title="Link to this heading">#</a></h2>
+<p>Vi kan indeksere og arrays på denne måten. Dette fungerer på samme måte som for lister både i én og to dimensjoner.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Skriver ut første element i listen</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan indeksere 2d-arrays på denne måten.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="c1"># Hele arrayen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element i posisjon [0][0]: &quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># Skriver elementet i første rad og første kolonne</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Element i posisjon [1][1]: &quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Skriver elementet i andre rad og andre kolonne</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+Element i posisjon [0][0]:  1
+Element i posisjon [1][1]:  5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="shape-funksjonen">
+<h2><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen<a class="headerlink" href="#shape-funksjonen" title="Link to this heading">#</a></h2>
+<p>Vi ønsker noen ganger å se hvilken form en array har. Til det kan vi bruke <code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at formen på arrayet er 2x3. To rader og tre kolonner.</p>
+</section>
+<section id="legge-til-og-trekke-fra-elementer">
+<h2>Legge til og trekke fra elementer<a class="headerlink" href="#legge-til-og-trekke-fra-elementer" title="Link to this heading">#</a></h2>
+<p>Vi kan legge til elementer i arrays ved å bruke <code class="docutils literal notranslate"><span class="pre">append()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># Lager et array som kalles arr</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>   <span class="c1"># Legger til elementet 4 på slutten av arrayet</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[1 2 3 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan trekke fra elementer i arrays ved å bruke <code class="docutils literal notranslate"><span class="pre">delete()</span></code>-funksjonen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="c1"># Lager et array som kalles arr</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1"># Fjerner elementet med indeks 0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 2 3]
+[2 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at <code class="docutils literal notranslate"><span class="pre">np.append()</span></code> og <code class="docutils literal notranslate"><span class="pre">np.delete()</span></code> fungerer annerledes enn <code class="docutils literal notranslate"><span class="pre">append()</span></code>- og <code class="docutils literal notranslate"><span class="pre">pop()</span></code>-metodene i Python.</p>
+<p><code class="docutils literal notranslate"><span class="pre">append()</span></code>- og <code class="docutils literal notranslate"><span class="pre">pop()</span></code> legger til eller fjerner elementer i en liste <em>in-place</em>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.append()</span></code> og <code class="docutils literal notranslate"><span class="pre">np.delete()</span></code> returnerer en ny array. Enten med et nytt element, eller med et element fjernet.</p>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<section id="oppgave-1">
+<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<p>I denne oppgaven skal du lage flere arrays.</p>
+<ol class="arabic simple">
+<li><p>Skriv ut en array som inneholder alle oddetallene fra og med 1 til og med 19.</p></li>
+<li><p>Skriv ut en array som inneholder alle oddetallene fra og med 1 til og med 19, baklengs.</p></li>
+<li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med nuller.</p></li>
+<li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med enere.</p></li>
+</ol>
+</section>
+<section id="oppgave-2">
+<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+<p>Lag en array med lengde 9 fylt med tilfeldige tall mellom 1 og 10 (inkluderende).</p>
+<ol class="arabic simple">
+<li><p>Skriv ut arrayet.</p></li>
+<li><p>Skriv ut arrayet, sortert.</p></li>
+<li><p>Skriv ut det sorterte arrayet, omformet til (3, 3).</p></li>
+</ol>
+</section>
+<section id="oppgave-3">
+<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+<p>Skriv ut gangetabellen med alle tallene fra og med <code class="docutils literal notranslate"><span class="pre">1</span></code> til og med <code class="docutils literal notranslate"><span class="pre">10</span></code> ved å lage en todimensjonell array.</p>
+<p>En mulig utskrift kan se slik ut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span>  <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span>   <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span>  <span class="mi">10</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">2</span>   <span class="mi">4</span>   <span class="mi">6</span>   <span class="mi">8</span>  <span class="mi">10</span>  <span class="mi">12</span>  <span class="mi">14</span>  <span class="mi">16</span>  <span class="mi">18</span>  <span class="mi">20</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">3</span>   <span class="mi">6</span>   <span class="mi">9</span>  <span class="mi">12</span>  <span class="mi">15</span>  <span class="mi">18</span>  <span class="mi">21</span>  <span class="mi">24</span>  <span class="mi">27</span>  <span class="mi">30</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">4</span>   <span class="mi">8</span>  <span class="mi">12</span>  <span class="mi">16</span>  <span class="mi">20</span>  <span class="mi">24</span>  <span class="mi">28</span>  <span class="mi">32</span>  <span class="mi">36</span>  <span class="mi">40</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">5</span>  <span class="mi">10</span>  <span class="mi">15</span>  <span class="mi">20</span>  <span class="mi">25</span>  <span class="mi">30</span>  <span class="mi">35</span>  <span class="mi">40</span>  <span class="mi">45</span>  <span class="mi">50</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">6</span>  <span class="mi">12</span>  <span class="mi">18</span>  <span class="mi">24</span>  <span class="mi">30</span>  <span class="mi">36</span>  <span class="mi">42</span>  <span class="mi">48</span>  <span class="mi">54</span>  <span class="mi">60</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">7</span>  <span class="mi">14</span>  <span class="mi">21</span>  <span class="mi">28</span>  <span class="mi">35</span>  <span class="mi">42</span>  <span class="mi">49</span>  <span class="mi">56</span>  <span class="mi">63</span>  <span class="mi">70</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">8</span>  <span class="mi">16</span>  <span class="mi">24</span>  <span class="mi">32</span>  <span class="mi">40</span>  <span class="mi">48</span>  <span class="mi">56</span>  <span class="mi">64</span>  <span class="mi">72</span>  <span class="mi">80</span><span class="p">]</span>
+ <span class="p">[</span>  <span class="mi">9</span>  <span class="mi">18</span>  <span class="mi">27</span>  <span class="mi">36</span>  <span class="mi">45</span>  <span class="mi">54</span>  <span class="mi">63</span>  <span class="mi">72</span>  <span class="mi">81</span>  <span class="mi">90</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">10</span>  <span class="mi">20</span>  <span class="mi">30</span>  <span class="mi">40</span>  <span class="mi">50</span>  <span class="mi">60</span>  <span class="mi">70</span>  <span class="mi">80</span>  <span class="mi">90</span> <span class="mi">100</span><span class="p">]]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Hint: Det kan være lurt å starte med å lage en array som <code class="docutils literal notranslate"><span class="pre">np.zeros((10,</span> <span class="pre">10)).astype(int)</span></code>. <code class="docutils literal notranslate"><span class="pre">.astype()</span></code>-metoden endrer arrayet slik at det i utgangspunktet blir fylt med heltall, ikke flyttall. Deretter må vi lage løkker for å indeksere og sette elementer i arrayet.</p>
+</div></blockquote>
+<p>Bonus: Modifiser programmet slik at man kan skrive inn dimensjonene for gangetabellen</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Dataanalyse og plotting"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Arrays.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Arrays</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Plotting%20Enkle%20datasett.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Enkle Datasett</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vektorregning">Vektorregning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arange-funksjonen"><code class="docutils literal notranslate"><span class="pre">arange()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-funksjonen"><code class="docutils literal notranslate"><span class="pre">concatenate()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros-funksjonen"><code class="docutils literal notranslate"><span class="pre">zeros()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-funksjonen"><code class="docutils literal notranslate"><span class="pre">sort()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flip-funksjonen"><code class="docutils literal notranslate"><span class="pre">flip()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshape-funksjonen"><code class="docutils literal notranslate"><span class="pre">reshape()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-elementer">Legge til og trekke fra elementer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
