@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -196,7 +196,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -212,7 +212,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -382,13 +383,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#union-og-snitt">Union og snitt</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 😍</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 ✍️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ⚖️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🌹</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -517,7 +512,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;👽&#39;, &#39;🫑&#39;, &#39;🍏&#39;, &#39;🦠&#39;, &#39;🥬&#39;, &#39;📗&#39;, &#39;🟢&#39;, &#39;🟩&#39;, &#39;🥒&#39;, &#39;💚&#39;, &#39;🥦&#39;, &#39;💸&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;📗&#39;, &#39;🥒&#39;, &#39;👽&#39;, &#39;🟢&#39;, &#39;🥦&#39;, &#39;🥬&#39;, &#39;🦠&#39;, &#39;💸&#39;, &#39;🍏&#39;, &#39;💚&#39;, &#39;🫑&#39;, &#39;🟩&#39;}
 Det finnes 12 forskjellige emojis i teksten.
 </pre></div>
 </div>
@@ -670,8 +665,8 @@ B uten A:  {5, 6}
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1 😍<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 😍</p>
 <p>Under er to strings, <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;😎😋😎😆😉😉😉😉😉😊😊😋😆😘😅😘😆😉😋😉😋😅😍😉😋😎😍😆😋😆😉😍😉😉😅😘😅😋😅😊😋😎😎😅😘😍😍😘😆😎😋😆😍😍😉😘😉😅😍😘😉😆😋😆😉😊😆😉😎😅😘😆😋😊😊😉😉😎😆😋😍😅😊😅😆😅😆😘😋😅😆😎😊😎😘😘😍😉😊😍&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;🥲🥰🥲😍😘😚🥲😙😙😘😚😘😍🥲😍😗🥲😘😙😗😙🥰🥲😘😘😘🥲😚😘🥲🥰😗😚🥰😘😙😚😍😙😚😗😙🥲😗😙😚🥰😚😙😘🥲😙🥰🥰🥲🥲🥰🥲😚🥲🥰😗🥰🥰😙😘😙🥰🥰😗🥲😍😘😘😗🥰😚😚🥲😘😙😍🥰🥰🥰😗😙😙😘😚😗😚😚🥰😘😚🥰🥰😘😘&quot;</span>
@@ -692,19 +687,19 @@ B uten A:  {5, 6}
 <li><p><code class="docutils literal notranslate"><span class="pre">{'😚',</span> <span class="pre">'🥲',</span> <span class="pre">'🥰',</span> <span class="pre">'😙',</span> <span class="pre">'😗'}</span></code></p></li>
 </ol>
 </div>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 ✍️<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 ✍️</p>
 <p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">unike_ord()</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">setning</span></code> og returnerer hvor mange <em>unike</em> ord det er i setningen.</p>
 <p>Store og små bokstaver skal ikke skille ordene. <code class="docutils literal notranslate"><span class="pre">&quot;Ord&quot;</span></code> er det samme som <code class="docutils literal notranslate"><span class="pre">&quot;ord&quot;</span></code>.</p>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3 ⚖️<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 ⚖️</p>
 <p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">like_ord()</span></code> som tar inn to strings, <code class="docutils literal notranslate"><span class="pre">setning1</span></code> og <code class="docutils literal notranslate"><span class="pre">setning2</span></code>, og returnerer en liste over alle ordene som finnes i begge setningene.</p>
 <p>Store og små bokstaver skal ikke skille ordene. <code class="docutils literal notranslate"><span class="pre">&quot;Ord&quot;</span></code> er det samme som <code class="docutils literal notranslate"><span class="pre">&quot;ord&quot;</span></code>.</p>
-</section>
-<section id="oppgave-4">
-<span id="romeo-og-julie-1"></span><h3>Oppgave 4 🌹<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition" id="romeo-og-julie-1">
+<p class="admonition-title">Oppgave 4 🌹</p>
 <p>Shakespeares fortelling om den forbudte forelskelsen mellom Romeo Montague og Juliet Capulet er en rivende kjærlighetshistorie med mange dramatiske vendinger.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/6c04ff190cae1921409b3b1c342fce6c/romeo_and_juliet.txt"><code class="xref download docutils literal notranslate"><span class="pre">romeo_and_juliet.txt</span></code></a></p>
 <p><strong>Finn ut hvor mange unike ord det er i hele tekstfilen.</strong></p>
@@ -735,7 +730,7 @@ B uten A:  {5, 6}
 <p>Jeg fant <span class="math notranslate nohighlight">\(4344\)</span> unike ord med kravene gitt i oppgaven.</p>
 <p>Det finnes sikkert andre, bedre måter å fjerne rare ord på.</p>
 </div>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fjern_tegn</span><span class="p">(</span><span class="n">word</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Hjelpefunksjon for å fjerne tegn som ikke er bokstaver fra ordene&quot;&quot;&quot;</span>
@@ -755,7 +750,7 @@ B uten A:  {5, 6}
 </pre></div>
 </div>
 </div>
-</section>
+</div>
 </section>
 </section>
 
@@ -830,13 +825,7 @@ B uten A:  {5, 6}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#union-og-snitt">Union og snitt</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 😍</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 ✍️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ⚖️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🌹</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

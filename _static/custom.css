@@ -2,8 +2,8 @@
 
 html[data-theme="dark"] {
     --pst-color-primary: #89b4fa;
-    --pst-color-secondary: #f5e0dc;
-    --pst-color-accent: #f5c2e7;
+    --pst-color-secondary: #b4befe;
+    --pst-color-accent: #cba6f7;
     --pst-color-success: #a6e3a1;
     --pst-color-info: #89b4fa;
     --pst-color-warning: #fab387;
@@ -14,12 +14,20 @@ html[data-theme="dark"] {
     --pst-color-border: #313244;
     --pst-color-text-base: #cdd6f4;
     --pst-color-text-muted: #bac2de;
+    --pst-color-table-row-hover-bg: #7287fd;
+
+    /* Admonition backgrounds */
+    --pst-color-accent-bg: #f5c2e700;
+    --pst-color-success-bg: #a6e3a100;
+    --pst-color-info-bg: #89b4fa00;
+    --pst-color-warning-bg: #fab38700;
+    --pst-color-danger-bg: #f38ba800;
 }
 
 html[data-theme="light"] {
-    --pst-color-primary: #7287fd;
-    --pst-color-secondary: #dc8a78;
-    --pst-color-accent: #ea76cb;
+    --pst-color-primary: #1e66f5;
+    --pst-color-secondary: #7287fd;
+    --pst-color-accent: #8839ef;
     --pst-color-success: #40a02b;
     --pst-color-info: #1e66f5	;
     --pst-color-warning: #fe640b;
@@ -30,6 +38,14 @@ html[data-theme="light"] {
     --pst-color-border: #ccd0da;
     --pst-color-text-base: #4c4f69;
     --pst-color-text-muted :#5c5f77;
+    --pst-color-table-row-hover-bg: #babbf1;
+
+    /* Admonition backgrounds */
+    --pst-color-accent-bg: #dc8a7800;
+    --pst-color-success-bg: #40a02b00;
+    --pst-color-info-bg: #1e66f500;
+    --pst-color-warning-bg: #fe640b00;
+    --pst-color-danger-bg: #d20f3900;
 }
 
 :root {
@@ -40,4 +56,42 @@ html[data-theme="light"] {
     --mystnb-source-border-color: var(--pst-color-border);
     --mystnb-stdout-border-color: var(--pst-color-border);
     --mystnb-stderr-border-color: var(--pst-color-border);
+}
+
+
+/*
+Following are the custom admonitions.
+- task
+- written-task
+- solution
+*/
+
+/*
+Pydata icons https://sphinx-design.readthedocs.io/en/pydata-theme/badges_buttons.html 
+Usage: --pst-icon-<name in table>
+alternatively: "\<unicode>" where <unicode> is found here https://fontawesome.com/v4/icon/code
+*/
+
+/* Task admonition */
+div.task {
+    border-left-color: var(--pst-color-accent)
+}
+div.task .admonition-title {
+    background-color: var(--pst-color-accent-bg)
+}
+div.task .admonition-title::after {
+    color: var(--pst-color-accent);
+    content: var(--pst-icon-pencil);
+}
+
+/* Solution admonition */
+div.solution {
+    border-left-color: var(--pst-color-info)
+}
+div.solution .admonition-title {
+    background-color: var(--pst-color-info-bg)
+}
+div.solution .admonition-title::after {
+    color: var(--pst-color-info);
+    content: "\f15c";
 }

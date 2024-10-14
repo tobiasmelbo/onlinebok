@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -196,7 +196,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -212,7 +212,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -377,15 +378,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumenter-og-return-verdier">Argumenter og <code class="docutils literal notranslate"><span class="pre">return</span></code>-verdier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-argumenter">Flere argumenter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 👋</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎢</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🧑‍🤝‍🧑</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 📐</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 ➗</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6-utfordring">Oppgave 6 🧠 (utfordring)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -471,45 +464,45 @@ document.write(`
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1 👋<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 👋</p>
 <p>Lag en funksjon som tar et navn som argument og skriver ut <code class="docutils literal notranslate"><span class="pre">Hei,</span> <span class="pre">&lt;navn&gt;!</span></code></p>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🎢<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🎢</p>
 <p>I denne oppgaven skal vi lage den matematiske funksjonen <span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p>
 <ol class="arabic simple">
 <li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> som returnerer verdien <code class="docutils literal notranslate"><span class="pre">x**2</span></code>. Prøv den med noen verdier.</p></li>
 <li><p>Bruk en for-løkke til å sette inn tallene <span class="math notranslate nohighlight">\([0, 10]\)</span> i funksjonen. Skriv ut resultatene.</p></li>
 </ol>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3 🧑‍🤝‍🧑<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 🧑‍🤝‍🧑</p>
 <p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">er_partall(x)</span></code>som sjekker om et tall <code class="docutils literal notranslate"><span class="pre">x</span></code> er et partall.</p>
 <p>Funksjonen skal returnere <code class="docutils literal notranslate"><span class="pre">True</span></code> om <code class="docutils literal notranslate"><span class="pre">x</span></code> er et partall, og <code class="docutils literal notranslate"><span class="pre">False</span></code> om det ikke er det.</p>
-</section>
-<section id="oppgave-4">
-<h3>Oppgave 4 📐<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 📐</p>
 <aside class="sidebar">
 <p>Med Pytagoras læresetning kan vi finne den lengste siden i en rettvinklet trekant med formelen <span class="math notranslate nohighlight">\(c = \sqrt{a^2+b^2}\)</span>.</p>
 </aside>
 <p>Lag en funksjon som tar lengden av to sider <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> som argumenter og returnerer lengden av den lengste siden <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
 <p>Test funksjonen med trekanten <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">4</span></code>. Dette skal gi <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
-</section>
-<section id="oppgave-5">
-<h3>Oppgave 5 ➗<a class="headerlink" href="#oppgave-5" title="Link to this heading">#</a></h3>
+</div>
+<div class="admonition-oppgave-5 admonition">
+<p class="admonition-title">Oppgave 5 ➗</p>
 <blockquote>
 <div><p>I denne oppgaven kan det være nyttig å se tilbake på <a class="reference internal" href="Variabler%20og%20syntaks.html#rest-og-heltallsdivisjon"><span class="std std-ref">Rest og heltallsdivisjon</span></a></p>
 </div></blockquote>
 <p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">er_primtall(x)</span></code> som skjekker om et tall <code class="docutils literal notranslate"><span class="pre">x</span></code> er et primtall. Den skal returnere <code class="docutils literal notranslate"><span class="pre">True</span></code> dersom tallet er et primtall og <code class="docutils literal notranslate"><span class="pre">False</span></code> dersom det ikke er det.</p>
-</section>
-<section id="oppgave-6-utfordring">
-<h3>Oppgave 6 🧠 (utfordring)<a class="headerlink" href="#oppgave-6-utfordring" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 6 🧠 (utfordring)</p>
 <p><em>Pytagoreiske tripler</em> er tre og tre tall som passer i likningen <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span>. Det enkleste eksemplet er <span class="math notranslate nohighlight">\(a=3\)</span>, <span class="math notranslate nohighlight">\(b=4\)</span> og <span class="math notranslate nohighlight">\(c=5\)</span>. Vi kan skrive det som <span class="math notranslate nohighlight">\((3,4,5)\)</span>.</p>
 <p>a) Skriv ut alle pytagoreiske tripler bestående av heltall under <span class="math notranslate nohighlight">\(100\)</span>.</p>
 <p><em>Primitive pytagoreiske tripler</em> er de triplene som ikke deler en felles faktor større enn <span class="math notranslate nohighlight">\(1\)</span>. Med andre ord er <span class="math notranslate nohighlight">\((3,4,5)\)</span> en primitiv pytagoreisk trippel, men ikke <span class="math notranslate nohighlight">\((6,8,10)\)</span> fordi <span class="math notranslate nohighlight">\(6\)</span>, <span class="math notranslate nohighlight">\(8\)</span> og <span class="math notranslate nohighlight">\(10\)</span> deler en faktor <span class="math notranslate nohighlight">\(2\)</span>.</p>
 <p>b) Modifiser programmet til å bare skrive ut de primitive pytagoreiske triplene.</p>
-</section>
+</div>
 </section>
 </section>
 
@@ -579,15 +572,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumenter-og-return-verdier">Argumenter og <code class="docutils literal notranslate"><span class="pre">return</span></code>-verdier</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-argumenter">Flere argumenter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 👋</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🎢</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🧑‍🤝‍🧑</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 📐</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 ➗</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6-utfordring">Oppgave 6 🧠 (utfordring)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

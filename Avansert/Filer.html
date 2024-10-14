@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -194,7 +194,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -210,7 +210,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -385,12 +386,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysere-tall-fra-fil">Analysere tall fra fil</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧪</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🕹️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🐍</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -602,8 +598,8 @@ S�lv,Ag,[2 8 18 18 1],Fast
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1 🧪<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 🧪</p>
 <p>I denne oppgaven skal vi håndtere filen <code class="docutils literal notranslate"><span class="pre">atomer.txt</span></code> som inneholder informasjon om mange grunnstoffer.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/fd03fb73bd441e1fdd721e55aacbb008/atomer.txt"><code class="xref download docutils literal notranslate"><span class="pre">atomer.txt</span></code></a>.</p>
 <p>Skriv ut navnene til alle grunnstoffene som <em>ikke</em> er i fast form ved romtemperatur.</p>
@@ -613,7 +609,7 @@ S�lv,Ag,[2 8 18 18 1],Fast
 <span class="o">...</span>
 </pre></div>
 </div>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
@@ -640,16 +636,16 @@ S�lv,Ag,[2 8 18 18 1],Fast
 </pre></div>
 </div>
 </div>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🕹️<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🕹️</p>
 <p>Elevene på en skole var med i en spillkonkurranse. Navnene deres og poengene deres ble samlet i datafilen under.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/ffeac4299bad41f5b67f7540b69db84f/score.txt"><code class="xref download docutils literal notranslate"><span class="pre">score.txt</span></code></a>.</p>
 <ol class="arabic simple">
 <li><p>Hva var gjennomsnittlig score?</p></li>
 <li><p>Hvem hadde flest poeng?</p></li>
 </ol>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <p>Her er et løsningsforslag som løser begge oppgavene.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;score.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -687,16 +683,16 @@ S�lv,Ag,[2 8 18 18 1],Fast
 </pre></div>
 </div>
 </div>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3 🐍<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 🐍</p>
 <p>Ånei! En hel haug med Python-slanger* har infisert risåkeren min!</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/5f3c5b8420bb0551398e42ddb4565b9b/slanger.txt"><code class="xref download docutils literal notranslate"><span class="pre">slanger.txt</span></code></a></p>
 <p>Hvor mange slanger er det i gjennomsnitt per rad i åkeren min?</p>
 <blockquote>
 <div><p>(*) må ikke forveksles med pytonslanger.</p>
 </div></blockquote>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;slanger.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">totalt_slanger</span> <span class="o">=</span> <span class="mi">0</span>
@@ -717,7 +713,7 @@ S�lv,Ag,[2 8 18 18 1],Fast
 </pre></div>
 </div>
 </div>
-</section>
+</div>
 </section>
 </section>
 
@@ -797,12 +793,7 @@ S�lv,Ag,[2 8 18 18 1],Fast
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analysere-tall-fra-fil">Analysere tall fra fil</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🧪</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🕹️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🐍</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

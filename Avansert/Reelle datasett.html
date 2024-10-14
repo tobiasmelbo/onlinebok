@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -196,7 +196,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -212,7 +212,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -377,13 +378,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-filer">CSV-filer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-filer">JSON-filer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎮</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🏹</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ✨</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🎬</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -496,8 +491,8 @@ document.write(`
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1 🎮<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 🎮</p>
 <p>Jeg har rundet hundrevis av spill og kategorisert de i en <code class="docutils literal notranslate"><span class="pre">.csv</span></code>-fil.</p>
 <p>Last ned filen <a class="reference external" href="https://raw.githubusercontent.com/tobiasmelbo/om_meg/main/list.csv">her (lenke)</a></p>
 <ul class="simple">
@@ -506,13 +501,13 @@ document.write(`
 <li><p>Skriv ut hvor mange spill det er til de <span class="math notranslate nohighlight">\(8\)</span> mest populære spillkonsollene, i synkende rekkefølge.</p></li>
 <li><p>(BONUS) Regn ut summen av de registrerte tidene i timer.</p></li>
 </ul>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🏹<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🏹</p>
 <p>Handelsmannen Knoteknut Glimretå er en handelsmann som selger utstyr til eventyrere.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/34178facabdee5f4babc5510030c53ce/gnome_merchant_inventory.json"><code class="xref download docutils literal notranslate"><span class="pre">gnome_merchant_inventory.json</span></code></a>.</p>
 <p>Skriv ut en oversikt over de seks tingene han har mest av.</p>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
@@ -539,13 +534,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3 ✨<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 ✨</p>
 <p>Stjernestasjonen Epsilon-9 har et register over romskipene fra føderasjonen som har besøkt stasjonen.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/0645d4e99ebfe9c1b51174add00e3b50/starship_registry.csv"><code class="xref download docutils literal notranslate"><span class="pre">starship_registry.csv</span></code></a>.</p>
 <p>Skriv ut en fin tabell over alle besøkene i kronologisk rekkefølge.</p>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;starship_registry.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
@@ -584,9 +579,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</section>
-<section id="oppgave-4">
-<h3>Oppgave 4 🎬<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 🎬</p>
 <p>Norsk filmindustri har produsert noen sykt bra filmer gjennom tidene.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/4145c134b999f38636706377d9916942/filmer.csv"><code class="xref download docutils literal notranslate"><span class="pre">filmer.csv</span></code></a>.</p>
 <ul class="simple">
@@ -631,7 +626,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
@@ -670,7 +665,7 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</section>
+</div>
 </section>
 </section>
 
@@ -740,13 +735,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-filer">CSV-filer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-filer">JSON-filer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎮</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🏹</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 ✨</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🎬</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -196,7 +196,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -212,7 +212,8 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -378,12 +379,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter"><code class="docutils literal notranslate"><span class="pre">Counter</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎒</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🔤</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🌹</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -558,8 +554,8 @@ Verdi: Sverige
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1 🎒<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 🎒</p>
 <p>Lag en ordbok <code class="docutils literal notranslate"><span class="pre">elev</span></code> som skal ha fag som nøkler og karakterer som verdier. Den kan starte slik</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elev</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Norsk&quot;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
@@ -572,9 +568,9 @@ Verdi: Sverige
 <li><p>Lag en løkke som skriver ut alle fagene og karakterene med en setning <code class="docutils literal notranslate"><span class="pre">Eleven</span> <span class="pre">har</span> <span class="pre">&lt;karakter&gt;</span> <span class="pre">i</span> <span class="pre">faget</span> <span class="pre">&lt;fag&gt;</span></code>.</p></li>
 <li><p>Finn og skriv ut karaktersnittet til eleven.</p></li>
 </ol>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🔤<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🔤</p>
 <p>Vi finner en <em>ordsum</em> ved å gi hver bokstav en tallverdi basert på plasseringen i alfabetet.</p>
 <ul class="simple">
 <li><p>For eksempel er ordsummen av ordet <code class="docutils literal notranslate"><span class="pre">BOB</span></code> lik <span class="math notranslate nohighlight">\(2 + 15 + 2 = 19\)</span></p></li>
@@ -597,9 +593,9 @@ document.getElementById("textInput").addEventListener("keypress", function(event
   }
 });
 </script>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3 🌹<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 🌹</p>
 <blockquote>
 <div><p>Dette er en fortsettelse av <a class="reference internal" href="Mengder%20og%20tupler.html#romeo-og-julie-1"><span class="std std-ref">denne oppgaven om mengder</span></a></p>
 </div></blockquote>
@@ -665,7 +661,7 @@ document.getElementById("textInput").addEventListener("keypress", function(event
 </pre></div>
 </div>
 </div>
-</section>
+</div>
 </section>
 </section>
 
@@ -736,12 +732,7 @@ document.getElementById("textInput").addEventListener("keypress", function(event
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter"><code class="docutils literal notranslate"><span class="pre">Counter</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🎒</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🔤</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🌹</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

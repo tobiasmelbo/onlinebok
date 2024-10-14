@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk/Tallfølger';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="(T) Numeriske metoder" href="Numeriske%20metoder.html" />
+    <link rel="next" title="Kvadratrøtter" href="Kvadratr%C3%B8tter.html" />
     <link rel="prev" title="Vekstfaktor" href="Vekstfaktor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
@@ -196,7 +196,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -212,7 +212,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Matematikk.html">Matematikk 📕</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Numeriske%20metoder.html">(T) Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Numeriske%20metoder.html">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -377,16 +378,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-formel">Programmere tallfølger med formel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-algoritme">Programmere tallfølger med algoritme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7: Utfordring</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -633,39 +625,39 @@ Summen er 2870
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 📦</p>
 <p>Hvis kvadrattallene er tallene med formel <span class="math notranslate nohighlight">\(n^2\)</span> når <span class="math notranslate nohighlight">\(n\in \{1, 2, 3, \dots\}\)</span> så må tallene med formel <span class="math notranslate nohighlight">\(n^3\)</span> hete <em>kubikktallene</em>.</p>
 <p>Skriv ut summen av de første <span class="math notranslate nohighlight">\(20\)</span> kubikktallene og undersøk om <span class="math notranslate nohighlight">\(6859\)</span> er et kubikktall.</p>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 ✌️</p>
 <p>Skriv ut de første 20 toerpotensene <span class="math notranslate nohighlight">\(2^n\)</span>. Har du sett disse tallene før?</p>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 🐚</p>
 <blockquote>
 <div><p>Se på koden for fibonaccitallene i eksempelet over.</p>
 </div></blockquote>
 <p><em>Det gylne snitt</em> <span class="math notranslate nohighlight">\(\phi\approx 1.618\)</span> er et viktig tall i matematikken. Hvis vi tar <em>forholdet</em> mellom et fibonaccitall og det forrige tallet, så vil verdien til dette forholdet bli mer og mer lik det gylne snitt desto lengre ut vi kommer i tallfølgen.</p>
 <p>Det vil si at <span class="math notranslate nohighlight">\(\phi \approx \frac{fib_n}{fib_{n-1}}\)</span> når <span class="math notranslate nohighlight">\(n\)</span> er tilstrekkelig stor. For eksempel er <span class="math notranslate nohighlight">\(\frac{13}{8}\approx 1.625\)</span> og <span class="math notranslate nohighlight">\(\frac{34}{21}\approx 1.619\)</span></p>
 <p>Lag et program som regner ut det gylne snitt ved å bruke fibonaccitallene.</p>
-<div class="dropdown admonition">
+<div class="tip dropdown admonition">
 <p class="admonition-title">Fasit: Det gylne snitt</p>
 <p>Det gylne snitt <span class="math notranslate nohighlight">\(\phi\)</span> er omtrent lik <span class="math notranslate nohighlight">\(1.618033988749895\)</span>.</p>
 </div>
-</section>
-<section id="oppgave-4">
-<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 3️⃣</p>
 <p><em>Tribonaccitallene</em> er gitt ved følgende algoritme.</p>
 <ul class="simple">
 <li><p>Start med tallene <span class="math notranslate nohighlight">\(\{0, 1, 1\}\)</span></p></li>
 <li><p>Det neste tallet er summen av de tre forrige tallene.</p></li>
 </ul>
 <p>Lag et program som skriver ut de første 20 tribonaccitallene.</p>
-</section>
-<section id="oppgave-5">
-<h3>Oppgave 5<a class="headerlink" href="#oppgave-5" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 5 🃏</p>
 <p><em>Fakultet</em> (<em>factorial</em>) er definert på denne måten.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(n! = n \cdot (n-1) \cdot (n-2) \cdot ... \cdot 3 \cdot 2 \cdot 1\)</span></p></li>
@@ -686,16 +678,16 @@ document.getElementById("textInput1").addEventListener("keypress", function(even
   }
 });
 </script>
-</section>
-<section id="oppgave-6">
-<h3>Oppgave 6<a class="headerlink" href="#oppgave-6" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 6 🔢</p>
 <blockquote>
 <div><p>I denne oppgaven kan det være nyttig å se tilbake på <a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#rest-og-heltallsdivisjon"><span class="std std-ref">Rest og heltallsdivisjon</span></a></p>
 </div></blockquote>
 <p>Lag et program som skriver ut alle primtallene under <span class="math notranslate nohighlight">\(100\)</span>.</p>
-</section>
-<section id="oppgave-7-utfordring">
-<h3>Oppgave 7: Utfordring<a class="headerlink" href="#oppgave-7-utfordring" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 7 (utfordring)</p>
 <p><em>Collatz-følgen</em> til et tall er definert på følgende måte</p>
 <ol class="arabic simple">
 <li><p>Del tallet på to hvis det er et partall.</p></li>
@@ -722,7 +714,7 @@ document.getElementById("textInput2").addEventListener("keypress", function(even
 <p class="admonition-title">Collatz’ formodning (<em>Collatz’ conjecture</em>)</p>
 <p>Antagelsen om at vi ender på tallet <span class="math notranslate nohighlight">\(1\)</span> er rimelig, men det er ingen som har klart å bevise at dette gjelder for alle positive heltall. Dette matematiske problemet kalles Collatz’ formodning (<em>Collatz’ conjecture</em>) og er et uløst problem i matematikken, til tross for at konseptet egentlig er ganske enkelt å forstå.</p>
 </div>
-</section>
+</div>
 </section>
 </section>
 
@@ -766,11 +758,11 @@ document.getElementById("textInput2").addEventListener("keypress", function(even
       </div>
     </a>
     <a class="right-next"
-       href="Numeriske%20metoder.html"
+       href="Kvadratr%C3%B8tter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">(T) Numeriske metoder</p>
+        <p class="prev-next-title">Kvadratrøtter</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -792,16 +784,7 @@ document.getElementById("textInput2").addEventListener("keypress", function(even
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-formel">Programmere tallfølger med formel</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmere-tallfolger-med-algoritme">Programmere tallfølger med algoritme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7: Utfordring</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

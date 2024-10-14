@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>(T) Numeriske metoder &#8212; Programmering med Tobias.</title>
+    <title>Numeriske metoder (T) &#8212; Programmering med Tobias.</title>
   
   
   
@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=b2f4d2c5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
     <link rel="next" title="Informasjonsteknologi 2 💾" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html" />
-    <link rel="prev" title="Tallfølger" href="Tallf%C3%B8lger.html" />
+    <link rel="prev" title="Kvadratrøtter" href="Kvadratr%C3%B8tter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -196,7 +196,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle Datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
@@ -212,7 +212,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="Matematikk.html">Matematikk 📕</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">(T) Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -365,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>(T) Numeriske metoder</h1>
+    <h1>Numeriske metoder (T)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,13 +377,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullpunkter">Nullpunkter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-uten-hjelpemidler">Oppgave 3 (uten hjelpemidler)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -394,8 +389,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="t-numeriske-metoder">
-<h1>(T) Numeriske metoder<a class="headerlink" href="#t-numeriske-metoder" title="Link to this heading">#</a></h1>
+  <section id="numeriske-metoder-t">
+<h1>Numeriske metoder (T)<a class="headerlink" href="#numeriske-metoder-t" title="Link to this heading">#</a></h1>
 <p>Numeriske metoder handler om å finne tilnærmede løsninger (eller <em>approksimasjoner</em> ☝️🤓).</p>
 <section id="nullpunkter">
 <h2>Nullpunkter<a class="headerlink" href="#nullpunkter" title="Link to this heading">#</a></h2>
@@ -444,28 +439,28 @@ document.write(`
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1</p>
 <p>Finn nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^4-10x^3+35x^2-50x+24, D_f=[0, 5]\)</span> ved å bruke den numeriske metoden.</p>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsning</p>
 <p>Nullpunktene er ved <code class="docutils literal notranslate"><span class="pre">x=1</span></code>, <code class="docutils literal notranslate"><span class="pre">x=2</span></code>, <code class="docutils literal notranslate"><span class="pre">x=3</span></code> og <code class="docutils literal notranslate"><span class="pre">x=4</span></code>.</p>
 </div>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2</p>
 <p>Finn nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-\frac{1}{4}\)</span>, <span class="math notranslate nohighlight">\(D_f=[-1,1]\)</span></p>
 <ol class="arabic simple">
 <li><p>Ved å regne for hånd.</p></li>
 <li><p>Ved å bruke den numeriske metoden.</p></li>
 </ol>
-<div class="note dropdown admonition">
+<div class="solution dropdown admonition">
 <p class="admonition-title">Løsning</p>
 <p>Nullpunktene er ved <code class="docutils literal notranslate"><span class="pre">x=-0.5</span></code> og <code class="docutils literal notranslate"><span class="pre">x=0.5</span></code>.</p>
 </div>
-</section>
-<section id="oppgave-3-uten-hjelpemidler">
-<h3>Oppgave 3 (uten hjelpemidler)<a class="headerlink" href="#oppgave-3-uten-hjelpemidler" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 (uten hjelpemidler)</p>
 <p>Klaudia prøver å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-3x+2, D_f=[0, 3]\)</span> med programmet under.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
@@ -479,9 +474,9 @@ document.write(`
 </pre></div>
 </div>
 <p>Hva finner hun? Forsøk å svare uten å lage programmet selv.</p>
-</section>
-<section id="oppgave-4">
-<h3>Oppgave 4<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4</p>
 <p>Janis prøver å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-x-2\)</span> med programmet under.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
@@ -495,7 +490,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Han vet det skal finnes to nullpunkter, men han finner bare ett. Forklar hvorfor, og hva han kan gjøre for å fikse det!</p>
-</section>
+</div>
 </section>
 </section>
 
@@ -530,12 +525,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Tallf%C3%B8lger.html"
+       href="Kvadratr%C3%B8tter.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Tallfølger</p>
+        <p class="prev-next-title">Kvadratrøtter</p>
       </div>
     </a>
     <a class="right-next"
@@ -564,13 +559,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullpunkter">Nullpunkter</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3-uten-hjelpemidler">Oppgave 3 (uten hjelpemidler)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 
