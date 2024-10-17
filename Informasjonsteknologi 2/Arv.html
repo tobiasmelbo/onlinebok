@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -377,13 +377,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 💸</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🏫</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -524,7 +518,6 @@ Pris for elbil: 25
 <section id="objektorienterte-modeller-uml">
 <h2>Objektorienterte modeller: UML<a class="headerlink" href="#objektorienterte-modeller-uml" title="Link to this heading">#</a></h2>
 <p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
-<a class="reference internal image-reference" href="../_images/klassemodell.png"><img alt="Et bilde av en klassemodell. UML-diagrammer har bokser tre deler. En med navnet, en med attributtene, og en med metodene. Bildet avbilder flere klasser, og da går det en pil fra subklassene til superklassen." class="align-center" src="../_images/klassemodell.png" style="width: 598.5px; height: 527.5px;" /></a>
 <p>I UML-diagrammer er det vanlig å representere klasser som bokser med tre deler; en del for navnet til klassen, en del for attributtene og en del for metodene. Pilene representerer arv. Subklasser har piler som peker til superklasser.</p>
 <p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Det vil si at klassene får flere, mere spesifikke, egenskaper. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>. Det vil si at klassene får færre, mer generelle, egenskaper.</p>
 <p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://draw.io/">Draw.io</a>.</p>
@@ -532,8 +525,8 @@ Pris for elbil: 25
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1 🚗<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 🚗</p>
 <p>Kopier alle klassene fra eksempelet med bompengesystemet.</p>
 <ol class="arabic simple">
 <li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">bom(x)</span></code> som tar inn et objekt <code class="docutils literal notranslate"><span class="pre">x</span></code>. Funksjonen skal skrive ut hvilken type kjøretøy som kjører igjennom bommen, hvilket merke den har og hva prisen blir.</p></li>
@@ -542,9 +535,9 @@ Pris for elbil: 25
 <blockquote>
 <div><p>Mulig utskrift: <code class="docutils literal notranslate"><span class="pre">En</span> <span class="pre">ELBil</span> <span class="pre">med</span> <span class="pre">merke</span> <span class="pre">Tesla</span> <span class="pre">har</span> <span class="pre">passert</span> <span class="pre">og</span> <span class="pre">må</span> <span class="pre">betale</span> <span class="pre">25kr</span></code>.</p>
 </div></blockquote>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🐄<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🐄</p>
 <p>I denne oppgaven skal vi organisere husdyr.</p>
 <ol class="arabic simple">
 <li><p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Husdyr</span></code>. Alle <code class="docutils literal notranslate"><span class="pre">Husdyr</span></code>-objekter skal ha en attributt <code class="docutils literal notranslate"><span class="pre">navn</span></code> som settes som argument til konstruktøren.</p></li>
@@ -561,9 +554,9 @@ Pris for elbil: 25
 <blockquote>
 <div><p>Mulig utskrift: <code class="docutils literal notranslate"><span class="pre">Bertha</span> <span class="pre">sier</span> <span class="pre">Kykkeliky!</span></code></p>
 </div></blockquote>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3 💸<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 💸</p>
 <p>I denne oppgaven skal vi lage et system for bankkontoer.</p>
 <ol class="arabic simple">
 <li><p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code>. En bankkonto skal ha en <code class="docutils literal notranslate"><span class="pre">saldo</span></code> (tall) som settes som argument til konstruktøren.</p></li>
@@ -577,9 +570,9 @@ Pris for elbil: 25
 <li><p>Opprett et <code class="docutils literal notranslate"><span class="pre">Sparekonto</span></code>-objekt og et <code class="docutils literal notranslate"><span class="pre">Brukskonto</span></code>-objekt med like mye penger i saldo. Hvor mye penger har hver konto i saldo etter fem oppdateringer?</p></li>
 </ol>
 <p>Bonus: Gjør slik at man får en feilmelding (eller bare printet til terminalen) når man forsøker å opprette et objekt av <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code> (altså ikke <code class="docutils literal notranslate"><span class="pre">Sparekonto</span></code> eller <code class="docutils literal notranslate"><span class="pre">Brukskonto</span></code>). Dette kan du gjøre ved å endre på <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>-metoden eller <code class="docutils literal notranslate"><span class="pre">__new__()</span></code>-metoden.</p>
-</section>
-<section id="oppgave-4">
-<h3>Oppgave 4 🏫<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 🏫</p>
 <p>I denne oppgaven skal vi lage et system for skoler.</p>
 <ol class="arabic simple">
 <li><p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Person</span></code> som skal ha attributten <code class="docutils literal notranslate"><span class="pre">navn</span></code> som settes som argument til konstruktøren.</p></li>
@@ -600,7 +593,7 @@ Pris for elbil: 25
 <li><p>Test klassene ved å lage objekter, bruke metoder og skrive ut objekter.</p></li>
 <li><p>Tegn klassehierarkiet.</p></li>
 </ol>
-</section>
+</div>
 </section>
 </section>
 
@@ -672,13 +665,7 @@ Pris for elbil: 25
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🚗</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🐄</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 💸</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 🏫</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

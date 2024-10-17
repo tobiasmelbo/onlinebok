@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -60,6 +60,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Avansert Arrays II';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
@@ -383,12 +385,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-elementer">Legge til og trekke fra elementer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -518,8 +515,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [ 4. 10. 10.  1.  9.  3.  3.  2.  7.  5.]
-Sortert array: [ 1.  2.  3.  3.  4.  5.  7.  9. 10. 10.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array: [7. 1. 1. 2. 7. 4. 1. 7. 1. 7.]
+Sortert array: [1. 1. 1. 1. 2. 4. 7. 7. 7. 7.]
 </pre></div>
 </div>
 </div>
@@ -690,8 +687,8 @@ Element i posisjon [1][1]:  5
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1</p>
 <p>I denne oppgaven skal du lage flere arrays.</p>
 <ol class="arabic simple">
 <li><p>Skriv ut en array som inneholder alle oddetallene fra og med 1 til og med 19.</p></li>
@@ -699,18 +696,18 @@ Element i posisjon [1][1]:  5
 <li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med nuller.</p></li>
 <li><p>Skriv ut en 2d-array med dimensjonene (5, 5) og som er fylt med enere.</p></li>
 </ol>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2</p>
 <p>Lag en array med lengde 9 fylt med tilfeldige tall mellom 1 og 10 (inkluderende).</p>
 <ol class="arabic simple">
 <li><p>Skriv ut arrayet.</p></li>
 <li><p>Skriv ut arrayet, sortert.</p></li>
-<li><p>Skriv ut det sorterte arrayet, omformet til (3, 3).</p></li>
+<li><p>Skriv ut det sorterte arrayet, omformet til et <span class="math notranslate nohighlight">\(3\)</span>x<span class="math notranslate nohighlight">\(3\)</span>-rutenett.</p></li>
 </ol>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3</p>
 <p>Skriv ut gangetabellen med alle tallene fra og med <code class="docutils literal notranslate"><span class="pre">1</span></code> til og med <code class="docutils literal notranslate"><span class="pre">10</span></code> ved å lage en todimensjonell array.</p>
 <p>En mulig utskrift kan se slik ut:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span>  <span class="mi">1</span>   <span class="mi">2</span>   <span class="mi">3</span>   <span class="mi">4</span>   <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span>  <span class="mi">10</span><span class="p">]</span>
@@ -729,7 +726,7 @@ Element i posisjon [1][1]:  5
 <div><p>Hint: Det kan være lurt å starte med å lage en array som <code class="docutils literal notranslate"><span class="pre">np.zeros((10,</span> <span class="pre">10)).astype(int)</span></code>. <code class="docutils literal notranslate"><span class="pre">.astype()</span></code>-metoden endrer arrayet slik at det i utgangspunktet blir fylt med heltall, ikke flyttall. Deretter må vi lage løkker for å indeksere og sette elementer i arrayet.</p>
 </div></blockquote>
 <p>Bonus: Modifiser programmet slik at man kan skrive inn dimensjonene for gangetabellen</p>
-</section>
+</div>
 </section>
 </section>
 
@@ -807,12 +804,7 @@ Element i posisjon [1][1]:  5
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finne-elementer-indeksere">Finne elementer (indeksere)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-funksjonen"><code class="docutils literal notranslate"><span class="pre">shape()</span></code>-funksjonen</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-trekke-fra-elementer">Legge til og trekke fra elementer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 

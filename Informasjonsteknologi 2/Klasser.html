@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -394,16 +394,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-metoden"><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍄</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🚗</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏫</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 💸</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🅿️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6 📦</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7 ➗ (utfordring)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -593,9 +584,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000002A2222378F0&gt;
-&lt;__main__.Farge object at 0x000002A22357F7A0&gt;
-&lt;__main__.Farge object at 0x000002A2235C3BC0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x00000267C781C530&gt;
+&lt;__main__.Farge object at 0x00000267C781F980&gt;
+&lt;__main__.Farge object at 0x00000267C781C4D0&gt;
 </pre></div>
 </div>
 </div>
@@ -635,9 +626,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(148, 174, 21)
-(154, 61, 237)
-(39, 27, 166)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(104, 1, 242)
+(246, 109, 59)
+(229, 202, 66)
 </pre></div>
 </div>
 </div>
@@ -756,46 +747,46 @@ Isak
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3>Oppgave 1 🍄<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 🍄</p>
 <p>Kopier <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-klassen fra eksemplet over.</p>
 <p>Det finnes en sopp i posisjonen <span class="math notranslate nohighlight">\((2,1)\)</span>.</p>
 <ol class="arabic simple">
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objekt som starter i <span class="math notranslate nohighlight">\((0,0)\)</span>.</p></li>
 <li><p>Bruk metodene for å simulere at <code class="docutils literal notranslate"><span class="pre">Mario</span></code>-objektet går bort, hopper, tar soppen og lander igjen.</p></li>
 </ol>
-</section>
-<section id="oppgave-2">
-<h3>Oppgave 2 🚗<a class="headerlink" href="#oppgave-2" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🚗</p>
 <p>I denne oppgaven skal vi lage en enkel klasse.</p>
 <ol class="arabic simple">
 <li><p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Bil</span></code>. Bil-objekter skal ha en attributt <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> som en string. <code class="docutils literal notranslate"><span class="pre">bilmerke</span></code> skal settes som argument til konstruktøren.</p></li>
 <li><p>Legg til en metode som heter <code class="docutils literal notranslate"><span class="pre">tut()</span></code>. Denne skal printe en tutelyd som tekst (f.eks <code class="docutils literal notranslate"><span class="pre">Tut!</span></code>).</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekt, skriv ut bilmerket og bruk <code class="docutils literal notranslate"><span class="pre">tut()</span></code>-metoden til objektet.</p></li>
 </ol>
-</section>
-<section id="oppgave-3">
-<h3>Oppgave 3 🏫<a class="headerlink" href="#oppgave-3" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 🏫</p>
 <p>Lag en klasse som heter <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>. Den skal inneholde en attributt <code class="docutils literal notranslate"><span class="pre">liste</span></code> som er en liste som er tom fra starten av.</p>
 <ol class="arabic simple">
-<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">leggTil()</span></code> som legger inn en karakter i listen.</p></li>
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">legg_til()</span></code> som legger inn en karakter i listen.</p></li>
 <li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">seksere()</span></code> som returnerer antall seksere i listen.</p></li>
 <li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">gjennomsnitt()</span></code> som returnerer gjennomsnittet av karakterene.</p></li>
 </ol>
 <p>Opprett et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>, legg inn 5 karakterer som tall, skriv ut antall seksere og gjennomsnittet ved å bruke metodene til objektet.</p>
 <p>Bonus: Utvid klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som gjør at man får en hensiktsmessig utskrift når printer et <code class="docutils literal notranslate"><span class="pre">Karakterliste</span></code>-objekt.</p>
-</section>
-<section id="oppgave-4">
-<h3>Oppgave 4 💸<a class="headerlink" href="#oppgave-4" title="Link to this heading">#</a></h3>
-<p>Lag en Python-klasse kalt «Bankkonto» med «kontonummer» og «saldo» som attributter. Disse skal settes som argument til konstruktøren.</p>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 💸</p>
+<p>Lag en Python-klasse <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code> med <code class="docutils literal notranslate"><span class="pre">kontonummer</span></code> og <code class="docutils literal notranslate"><span class="pre">saldo</span></code> som attributter. Disse skal settes som argument til konstruktøren.</p>
 <ol class="arabic simple">
 <li><p>Legg til metoder for innskudd og uttak fra kontoen, og skriv ut saldoen etter hver operasjon.</p></li>
 <li><p>Legg til en feilmelding når man prøver å ta ut mer penger enn man har.</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code>-objekt og test om metodene dine fungerer som de skal.</p></li>
 </ol>
-</section>
-<section id="oppgave-5">
-<h3>Oppgave 5 🅿️<a class="headerlink" href="#oppgave-5" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 5 🅿️</p>
 <p>Kopier inn klassen <code class="docutils literal notranslate"><span class="pre">Bil</span></code> fra den tidligere oppgaven.</p>
 <ol class="arabic simple">
 <li><p>Utvid <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som returnerer bilmerket slik at vi kan bruke <code class="docutils literal notranslate"><span class="pre">print()</span></code> på <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter.</p></li>
@@ -806,15 +797,15 @@ Isak
 <li><p>Utvid klassen <code class="docutils literal notranslate"><span class="pre">PHus</span></code> med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som skriver ut bilmerkene til alle bilene som er parkert.</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objekt og legg inn <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter helt til maksgrensen er nådd. Skriv ut <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objektet til slutt.</p></li>
 </ol>
-</section>
-<section id="oppgave-6">
-<h3>Oppgave 6 📦<a class="headerlink" href="#oppgave-6" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 6 📦</p>
 <p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Varelager</span></code> som inneholder en liste over varer. Listen skal være tom når objektet dannes.</p>
 <p>Varene skal være ordbøker med nøklene <code class="docutils literal notranslate"><span class="pre">nanv</span></code>, <code class="docutils literal notranslate"><span class="pre">pris</span></code> og <code class="docutils literal notranslate"><span class="pre">antall_på_lager</span></code>.</p>
 <p>Legg til metoder for å legge til varer i lageret, fjerne varer fra lageret og skrive ut en liste over tilgjengelige varer.</p>
-</section>
-<section id="oppgave-7-utfordring">
-<h3>Oppgave 7 ➗ (utfordring)<a class="headerlink" href="#oppgave-7-utfordring" title="Link to this heading">#</a></h3>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 7 ➗ (utfordring)</p>
 <p>I denne oppgaven skal du lage en klasse <code class="docutils literal notranslate"><span class="pre">Brøk</span></code>. Her er noen krav:</p>
 <ul class="simple">
 <li><p>Klassen skal ha attributtene <code class="docutils literal notranslate"><span class="pre">teller</span></code> og <code class="docutils literal notranslate"><span class="pre">nevner</span></code> som settes som argument til konstruktøren.</p></li>
@@ -824,7 +815,7 @@ Isak
 <li><p>Den skal ha en <code class="docutils literal notranslate"><span class="pre">__pow__()</span></code>-metode for å håndtere at brøken blir opphøyd i et heltall (både positivt og negativt)</p></li>
 <li><p>Den skal ha <code class="docutils literal notranslate"><span class="pre">__sub__()</span></code>- og <code class="docutils literal notranslate"><span class="pre">__add__()</span></code>-metoder for å håndtere addisjon og subtraksjon med heltall og andre Brøk-objekter.</p></li>
 </ul>
-</section>
+</div>
 </section>
 </section>
 
@@ -911,16 +902,7 @@ Isak
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#len-metoden"><code class="docutils literal notranslate"><span class="pre">__len__()</span></code>-metoden</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1 🍄</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2 🚗</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-3">Oppgave 3 🏫</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-4">Oppgave 4 💸</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-5">Oppgave 5 🅿️</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6 📦</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7-utfordring">Oppgave 7 ➗ (utfordring)</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 
