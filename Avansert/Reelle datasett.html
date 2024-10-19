@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -199,7 +199,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Pandas.html">Avansert: Pandas</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
@@ -376,6 +375,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">Dataframes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soyler">Søyler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rader">Rader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrering">Filtrering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gjennomsnitt-og-sum">Gjennomsnitt og sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sortering">Sortering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-filer">CSV-filer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-filer">JSON-filer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
@@ -393,12 +402,176 @@ document.write(`
   <section id="reelle-datasett">
 <span id="id1"></span><h1>Reelle datasett<a class="headerlink" href="#reelle-datasett" title="Link to this heading">#</a></h1>
 <p>Som jegere i en data-jungel har vi lært å jakte, slakte og partere data-byttet vårt – men det viser seg at vi egentlig ikke hadde trengt å jakte lengre, fordi det finnes data-biff ferdig partert i butikken – i form av fint formaterte <code class="docutils literal notranslate"><span class="pre">.csv</span></code>- og <code class="docutils literal notranslate"><span class="pre">.json</span></code>-filer.</p>
+<p>Med <code class="docutils literal notranslate"><span class="pre">pandas</span></code> er det å åpne og analysere datafiler en lek, men før vi ser på datafilene, må vi bli kjent med <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>-objekter.</p>
+<section id="dataframes">
+<h2>Dataframes<a class="headerlink" href="#dataframes" title="Link to this heading">#</a></h2>
+<p>Den viktigste datatypen fra <code class="docutils literal notranslate"><span class="pre">pandas</span></code> er <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<p>En dataframe er en ordbok hvor keys er navn for kolonner, og values er data i hver kolonne.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Navn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Aelar&#39;</span><span class="p">,</span> <span class="s1">&#39;Thalia&#39;</span><span class="p">,</span> <span class="s1">&#39;Gorath&#39;</span><span class="p">,</span> <span class="s1">&#39;Elara&#39;</span><span class="p">,</span> <span class="s1">&#39;Borin&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ranger&#39;</span><span class="p">,</span> <span class="s1">&#39;Wizard&#39;</span><span class="p">,</span> <span class="s1">&#39;Barbarian&#39;</span><span class="p">,</span> <span class="s1">&#39;Rogue&#39;</span><span class="p">,</span> <span class="s1">&#39;Cleric&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Alder&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span>
+    <span class="s1">&#39;Rase&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Half-Orc&#39;</span><span class="p">,</span> <span class="s1">&#39;Halfling&#39;</span><span class="p">,</span> <span class="s1">&#39;Dwarf&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Level&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Navn      Class  Alder      Rase  Level
+0   Aelar     Ranger    120       Elf      5
+1  Thalia     Wizard     35     Human      7
+2  Gorath  Barbarian     28  Half-Orc      6
+3   Elara      Rogue     25  Halfling      4
+4   Borin     Cleric    150     Dwarf      8
+</pre></div>
+</div>
+</div>
+</div>
+<section id="soyler">
+<h3>Søyler<a class="headerlink" href="#soyler" title="Link to this heading">#</a></h3>
+<p>Man kan hente all data fra en søyle ved å bruke søylens navn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Navn&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Navn&quot;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     Aelar
+1    Thalia
+2    Gorath
+3     Elara
+4     Borin
+Name: Navn, dtype: object
+
+[&#39;Aelar&#39;, &#39;Thalia&#39;, &#39;Gorath&#39;, &#39;Elara&#39;, &#39;Borin&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rader">
+<h3>Rader<a class="headerlink" href="#rader" title="Link to this heading">#</a></h3>
+<p>Man kan hente en spesifikk rad ved å bruke <code class="docutils literal notranslate"><span class="pre">iloc()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Navn      Borin
+Class    Cleric
+Alder       150
+Rase      Dwarf
+Level         8
+Name: 4, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="filtrering">
+<h3>Filtrering<a class="headerlink" href="#filtrering" title="Link to this heading">#</a></h3>
+<p>Man kan også enkelt filtrere resultater.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Level&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">])</span> <span class="c1"># Henter ut alle som har level større enn eller likt 6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Navn      Class  Alder      Rase  Level
+1  Thalia     Wizard     35     Human      7
+2  Gorath  Barbarian     28  Half-Orc      6
+4   Borin     Cleric    150     Dwarf      8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gjennomsnitt-og-sum">
+<h3>Gjennomsnitt og sum<a class="headerlink" href="#gjennomsnitt-og-sum" title="Link to this heading">#</a></h3>
+<p>Gjennomsnitt og sum finner man også lett.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gjennomsnittlig alder: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Alder&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s2"> år&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sum av hvert level: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Level&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gjennomsnittlig alder: 71.6 år
+Sum av hvert level: 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sortering">
+<h3>Sortering<a class="headerlink" href="#sortering" title="Link to this heading">#</a></h3>
+<p>Man kan sortere en DataFrame etter verdier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Alder&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Navn      Class  Alder      Rase  Level
+4   Borin     Cleric    150     Dwarf      8
+0   Aelar     Ranger    120       Elf      5
+1  Thalia     Wizard     35     Human      7
+2  Gorath  Barbarian     28  Half-Orc      6
+3   Elara      Rogue     25  Halfling      4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
+<p>Det er også innebygd <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>-funksjonalitet i <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Navn&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alder&quot;</span><span class="p">,</span> <span class="s2">&quot;Level&quot;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d033094877699a2247d091059e2defd02e4a00ff1c9391098024a1797171be98.png" src="../_images/d033094877699a2247d091059e2defd02e4a00ff1c9391098024a1797171be98.png" />
+</div>
+</div>
+</section>
+<section id="lagre-filer">
+<h3>Lagre filer<a class="headerlink" href="#lagre-filer" title="Link to this heading">#</a></h3>
+<p>Når man har en dataframe, kan man enkelt lagre den som en <code class="docutils literal notranslate"><span class="pre">.csv</span></code> eller <code class="docutils literal notranslate"><span class="pre">.json</span></code>-fil.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;adventurers.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;adventurers.json&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="csv-filer">
 <h2>CSV-filer<a class="headerlink" href="#csv-filer" title="Link to this heading">#</a></h2>
 <p>Filer med <code class="docutils literal notranslate"><span class="pre">.csv</span></code> er tekstfiler som følger en (litt slapp) standard.</p>
 <ul class="simple">
 <li><p>Hver linje (rad) representerer et dataobjekt, for eksempel et spill, en bil eller en person.</p></li>
-<li><p>Hver linje er delt opp i kolonner med et <em>delimiter</em>-tegn, i dette tilfellet <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p></li>
+<li><p>Hver linje er delt opp i kolonner med et <em>delimiter</em>- eller <em>separator</em>-tegn, i dette tilfellet <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Plassering</span><span class="p">,</span><span class="n">Spillnavn</span><span class="p">,</span><span class="n">Konsoll</span>
 <span class="mi">1</span><span class="p">,</span><span class="s2">&quot;Mario Kart DS&quot;</span><span class="p">,</span><span class="n">DS</span>
@@ -410,36 +583,36 @@ document.write(`
 <p>Filer med <code class="docutils literal notranslate"><span class="pre">.csv</span></code> har ofte en første rad (eller flere rader) som forklarer hva hver kolonne representerer. Dette kalles en <em>header</em>. I tillegg brukes det noen ganger en annen delimiter enn <code class="docutils literal notranslate"><span class="pre">,</span></code>, for eksempel <code class="docutils literal notranslate"><span class="pre">;</span></code> eller <code class="docutils literal notranslate"><span class="pre">\t</span></code>, til tross for at det heter <em>comma</em>-separated values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;spill_enkel.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span> <span class="c1"># Hopper over headeren</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">(),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;spill_enkel.csv&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;50</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 | Mario Kart DS                                      | DS
-2 | Hey You, Pikachu!                                  | N64
-3 | WarioWare, Inc.: Mega MicroGame$                   | GBA
-4 | Horse Life 4: My Horse, My Friend, My Champion     | 3DS
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Plassering                                       Spillnavn Konsoll
+0           1                                   Mario Kart DS      DS
+1           2                               Hey You, Pikachu!     N64
+2           3                WarioWare, Inc.: Mega MicroGame$     GBA
+3           4  Horse Life 4: My Horse, My Friend, My Champion     3DS
 </pre></div>
 </div>
 </div>
 </div>
-<p>Å skrive <code class="docutils literal notranslate"><span class="pre">delimiter=&quot;,&quot;</span></code> er egentlig overflødig, fordi det er standard, men sånn kan man enkelt endre til en annen delimiter.</p>
 <div class="hint admonition">
-<p class="admonition-title">Hvorfor bruke csv.reader()? 🤔</p>
-<p>Man <em>kan</em> håndtere en <code class="docutils literal notranslate"><span class="pre">.csv</span></code>-fil slik vi har lært å håndtere vanlige filer, ved å ta hver linje av filen og splitte linjene på et tegn.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;1,&quot;Mario Kart DS&quot;,DS&#39;     -&gt;  [&#39;1&#39;, &#39;Mario Kart DS&#39;, &#39;DS&#39;]           ✅
-&#39;2,&quot;Hey You, Pikachu!&quot;,PC&#39; -&gt;  [&#39;2&#39;, &#39;&quot;Hey You&#39;, &#39;Pikachu!&quot;&#39;, &#39;N64&#39;]  ❌
+<p class="admonition-title">Spesifisere separator og desimaltegn</p>
+<p>Man kan spesifisere separator og desimaltegn som ekstra argumenter til <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>.</p>
+<p>Dette er nyttig hvis vi har en datafil som bruker andre tegn for separator og komma.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2023</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">127</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">9</span>
+<span class="mi">2022</span><span class="p">;</span><span class="mi">122</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">119</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">119</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">121</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">121</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">122</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">124</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">123</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">9</span>
+<span class="mi">2021</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">115</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">115</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">118</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">118</span><span class="p">,</span><span class="mi">9</span>
 </pre></div>
 </div>
-<p>… men hvis vi gjør det ser vi at linjene blir splittet feil.</p>
-<p>Når vi bruker <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code> ignoreres delimiteren når den står med mellomrom etter. Dette fikser problemet. Det er mange andre ting man kan gjøre med <code class="docutils literal notranslate"><span class="pre">csv.reader()</span></code>, men det kan du lese om i <a class="reference external" href="https://docs.python.org/3/library/csv.html">dokumentasjonen (lenke)</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datafil.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </section>
 <section id="json-filer">
@@ -467,32 +640,68 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;spill_enkel.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;spill_enkel.json&quot;</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="c1"># x er hver &quot;plassering&quot;, som er key for hvert spill. </span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="s2">&quot;Navn&quot;</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;50</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="s2">&quot;Konsoll&quot;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;Navn&quot;</span><span class="p">])</span> <span class="c1"># Henter navnet fra plassering 1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 | Mario Kart DS                                      | DS
-2 | Hey You, Pikachu!                                  | N64
-3 | WarioWare, Inc.: Mega MicroGame$                   | GBA
-4 | Horse Life 4: My Horse, My Friend, My Champion     | 3DS
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     1                  2                                 3  \
+Navn     Mario Kart DS  Hey You, Pikachu!  WarioWare, Inc.: Mega MicroGame$   
+Konsoll             DS                N64                               GBA   
+
+                                                      4  
+Navn     Horse Life 4: My Horse, My Friend, My Champion  
+Konsoll                                             3DS  
+
+Mario Kart DS
 </pre></div>
 </div>
 </div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Manglende data</p>
+<p>Hvis man går gjennom en kolonne, kan man droppe de radene som ikke har data i den kolonnen ved å bruke <code class="docutils literal notranslate"><span class="pre">df.dropna()</span></code>-metoden.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rating</span><span class="p">,</span><span class="n">Title</span><span class="p">,</span><span class="n">Console</span><span class="p">,</span><span class="n">Time</span><span class="p">(</span><span class="n">Optional</span><span class="p">)</span>
+<span class="mi">5</span><span class="p">,</span><span class="n">Bloodborne</span><span class="p">,</span><span class="n">PS4</span><span class="p">,</span><span class="mi">16</span><span class="n">h54m19s</span>
+<span class="mi">4</span><span class="p">,</span><span class="n">Katamari</span> <span class="n">Damacy</span><span class="p">,</span><span class="n">PS2</span><span class="p">,</span><span class="mi">4</span><span class="n">h42m58s</span>
+<span class="mi">3</span><span class="p">,</span><span class="n">Dead</span> <span class="n">Cells</span><span class="p">,</span><span class="n">PC</span><span class="p">,</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;list.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Time(Optional)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">16</span><span class="n">h54m19s</span>
+<span class="mi">4</span><span class="n">h42m58s</span>
+</pre></div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Dokumentasjonen</p>
+<p>Dokumentasjonen for <code class="docutils literal notranslate"><span class="pre">pandas</span></code> finner du <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">her (lenke)</a>.</p>
+<p>Husk, å kunne lese dokumentasjon er en viktig ferdighet for en aspirerende programmerer! 🤓</p>
 </div>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 1 🎮</p>
+<p class="admonition-title">Oppgave 1 🅰️</p>
+<p>Lag din egen DataFrame. Første kolonne skal være <code class="docutils literal notranslate"><span class="pre">Fag</span></code> og andre kolonne skal være <code class="docutils literal notranslate"><span class="pre">Karakter</span></code>. Du kan finne på fag og karakterer.</p>
+<ul class="simple">
+<li><p>Finn snittkarakteren.</p></li>
+<li><p>Lag et søylediagram med labels som navnene på fagene og verdiene (høydene) som karakterene.</p></li>
+<li><p>Bruk <code class="docutils literal notranslate"><span class="pre">pandas</span></code> til å lagre dette som en datafil <code class="docutils literal notranslate"><span class="pre">karakterer.csv</span></code>.</p></li>
+</ul>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🎮</p>
 <p>Jeg har rundet hundrevis av spill og kategorisert de i en <code class="docutils literal notranslate"><span class="pre">.csv</span></code>-fil.</p>
 <p>Last ned filen <a class="reference external" href="https://raw.githubusercontent.com/tobiasmelbo/om_meg/main/list.csv">her (lenke)</a></p>
 <ul class="simple">
@@ -501,87 +710,77 @@ document.write(`
 <li><p>Skriv ut hvor mange spill det er til de <span class="math notranslate nohighlight">\(8\)</span> mest populære spillkonsollene, i synkende rekkefølge.</p></li>
 <li><p>(BONUS) Regn ut summen av de registrerte tidene i timer.</p></li>
 </ul>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;list.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Antall spill</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Antall spill: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fordeling av ratings</span>
+<span class="n">rating_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Rating&quot;</span><span class="p">]:</span>
+    <span class="n">rating_counter</span><span class="p">[</span><span class="n">rating</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Ratings&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">rating_counter</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Populære konsoller</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Topp 8 konsoller&quot;</span><span class="p">)</span>
+<span class="n">console_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">console</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Console&quot;</span><span class="p">]:</span>
+    <span class="n">console_counter</span><span class="p">[</span><span class="n">console</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">console_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Total tid</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Total tid:&quot;</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Time(Optional)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">():</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span> <span class="n">Antall</span> <span class="n">spill</span><span class="p">:</span> <span class="mi">498</span>
+<span class="o">-&gt;</span> <span class="n">Ratings</span>
+<span class="mi">1</span> <span class="p">:</span> <span class="mi">41</span>
+<span class="mi">2</span> <span class="p">:</span> <span class="mi">91</span>
+<span class="mi">3</span> <span class="p">:</span> <span class="mi">200</span>
+<span class="mi">4</span> <span class="p">:</span> <span class="mi">134</span>
+<span class="mi">5</span> <span class="p">:</span> <span class="mi">32</span>
+<span class="o">-&gt;</span> <span class="n">Topp</span> <span class="mi">8</span> <span class="n">konsoller</span>
+<span class="n">PC</span>   <span class="p">:</span> <span class="mi">366</span>
+<span class="n">PSX</span>  <span class="p">:</span> <span class="mi">18</span>
+<span class="n">PS3</span>  <span class="p">:</span> <span class="mi">15</span>
+<span class="n">X360</span> <span class="p">:</span> <span class="mi">15</span>
+<span class="n">SNES</span> <span class="p">:</span> <span class="mi">12</span>
+<span class="n">GCN</span>  <span class="p">:</span> <span class="mi">12</span>
+<span class="n">N64</span>  <span class="p">:</span> <span class="mi">10</span>
+<span class="n">GBA</span>  <span class="p">:</span> <span class="mi">9</span>
+<span class="o">-&gt;</span> <span class="n">Total</span> <span class="n">tid</span><span class="p">:</span>
+<span class="mi">156</span> <span class="n">days</span> <span class="mi">01</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">43</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 2 🏹</p>
+<p class="admonition-title">Oppgave 3 🏹</p>
 <p>Handelsmannen Knoteknut Glimretå er en handelsmann som selger utstyr til eventyrere.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/34178facabdee5f4babc5510030c53ce/gnome_merchant_inventory.json"><code class="xref download docutils literal notranslate"><span class="pre">gnome_merchant_inventory.json</span></code></a>.</p>
 <p>Skriv ut en oversikt over de seks tingene han har mest av.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-
-<span class="c1"># Lager ordbok over ting med &quot;Navn&quot; : &quot;Mengde&quot;</span>
-<span class="n">ting</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;gnome_merchant_inventory.json&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="c1"># Legger inn antallet til hver ting</span>
-        <span class="n">ting</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;gjenstand&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;antall&quot;</span><span class="p">]</span> 
-
-<span class="c1"># Skriver ut de vanligste tingene. most_common gir tupler.</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ting</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Fakkel</span>          <span class="p">:</span> <span class="mi">30</span>
-<span class="n">Piler</span> <span class="p">(</span><span class="n">kogger</span><span class="p">)</span>  <span class="p">:</span> <span class="mi">25</span>
-<span class="n">Brød</span>            <span class="p">:</span> <span class="mi">25</span>
-<span class="n">Urter</span>           <span class="p">:</span> <span class="mi">20</span>
-<span class="n">Dolk</span>            <span class="p">:</span> <span class="mi">15</span>
-<span class="n">Vannflaske</span>      <span class="p">:</span> <span class="mi">15</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 3 ✨</p>
+<p class="admonition-title">Oppgave 4 ✨</p>
 <p>Stjernestasjonen Epsilon-9 har et register over romskipene fra føderasjonen som har besøkt stasjonen.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/0645d4e99ebfe9c1b51174add00e3b50/starship_registry.csv"><code class="xref download docutils literal notranslate"><span class="pre">starship_registry.csv</span></code></a>.</p>
 <p>Skriv ut en fin tabell over alle besøkene i kronologisk rekkefølge.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;starship_registry.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">(),</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">))</span>
-
-<span class="n">sortert_liste</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sortert_liste</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;15</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">:</span><span class="s2">&lt;20</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NX</span><span class="o">-</span><span class="mi">01</span>      <span class="o">|</span> <span class="n">Enterprise</span>      <span class="o">|</span> <span class="n">NX</span>                   <span class="o">|</span> <span class="mi">2151</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">16</span>      <span class="o">|</span> <span class="n">Jonathan</span> <span class="n">Archer</span>      <span class="o">|</span> <span class="mi">8</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1071</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Shenzhou</span>    <span class="o">|</span> <span class="n">Walker</span>               <span class="o">|</span> <span class="mi">2256</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>      <span class="o">|</span> <span class="n">Philippa</span> <span class="n">Georgiou</span>    <span class="o">|</span> <span class="mi">23</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">21166</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Discovery</span>   <span class="o">|</span> <span class="n">Crossfield</span>           <span class="o">|</span> <span class="mi">2256</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span>      <span class="o">|</span> <span class="n">Gabriel</span> <span class="n">Lorca</span>        <span class="o">|</span> <span class="mi">22</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">638</span>    <span class="o">|</span> <span class="n">USS</span> <span class="n">Farragut</span>    <span class="o">|</span> <span class="n">Constitution</span>         <span class="o">|</span> <span class="mi">2257</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">21</span>      <span class="o">|</span> <span class="n">Christopher</span> <span class="n">Pike</span>     <span class="o">|</span> <span class="mi">9</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Enterprise</span>  <span class="o">|</span> <span class="n">Constitution</span>         <span class="o">|</span> <span class="mi">2265</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span>      <span class="o">|</span> <span class="n">James</span> <span class="n">T</span><span class="o">.</span> <span class="n">Kirk</span>        <span class="o">|</span> <span class="mi">5</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1709</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Hood</span>        <span class="o">|</span> <span class="n">Constitution</span>         <span class="o">|</span> <span class="mi">2267</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span>      <span class="o">|</span> <span class="n">Thomas</span> <span class="n">Harris</span>        <span class="o">|</span> <span class="mi">21</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1777</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Lexington</span>   <span class="o">|</span> <span class="n">Constitution</span>         <span class="o">|</span> <span class="mi">2270</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">19</span>      <span class="o">|</span> <span class="n">Burtell</span>              <span class="o">|</span> <span class="mi">19</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1860</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Intrepid</span>    <span class="o">|</span> <span class="n">Miranda</span>              <span class="o">|</span> <span class="mi">2270</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">19</span>      <span class="o">|</span> <span class="n">Markel</span>               <span class="o">|</span> <span class="mi">17</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">2544</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Potemkin</span>    <span class="o">|</span> <span class="n">Constitution</span>         <span class="o">|</span> <span class="mi">2275</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">12</span>      <span class="o">|</span> <span class="n">Robert</span> <span class="n">Wesley</span>        <span class="o">|</span> <span class="mi">20</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1864</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Reliant</span>     <span class="o">|</span> <span class="n">Miranda</span>              <span class="o">|</span> <span class="mi">2285</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>      <span class="o">|</span> <span class="n">Clark</span> <span class="n">Terrell</span>        <span class="o">|</span> <span class="mi">12</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">65530</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Grissom</span>     <span class="o">|</span> <span class="n">Oberth</span>               <span class="o">|</span> <span class="mi">2286</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">23</span>      <span class="o">|</span> <span class="n">Esteban</span>              <span class="o">|</span> <span class="mi">15</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span><span class="o">-</span><span class="n">A</span> <span class="o">|</span> <span class="n">USS</span> <span class="n">Enterprise</span>  <span class="o">|</span> <span class="n">Constitution</span> <span class="n">Refit</span>   <span class="o">|</span> <span class="mi">2286</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">18</span>      <span class="o">|</span> <span class="n">James</span> <span class="n">T</span><span class="o">.</span> <span class="n">Kirk</span>        <span class="o">|</span> <span class="mi">5</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">2000</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Excelsior</span>   <span class="o">|</span> <span class="n">Excelsior</span>            <span class="o">|</span> <span class="mi">2290</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>      <span class="o">|</span> <span class="n">Hikaru</span> <span class="n">Sulu</span>          <span class="o">|</span> <span class="mi">10</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">2893</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Stargazer</span>   <span class="o">|</span> <span class="n">Constellation</span>        <span class="o">|</span> <span class="mi">2333</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">22</span>      <span class="o">|</span> <span class="n">Jean</span><span class="o">-</span><span class="n">Luc</span> <span class="n">Picard</span>      <span class="o">|</span> <span class="mi">1</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span><span class="o">-</span><span class="n">D</span> <span class="o">|</span> <span class="n">USS</span> <span class="n">Enterprise</span>  <span class="o">|</span> <span class="n">Galaxy</span>               <span class="o">|</span> <span class="mi">2364</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">03</span>      <span class="o">|</span> <span class="n">Jean</span><span class="o">-</span><span class="n">Luc</span> <span class="n">Picard</span>      <span class="o">|</span> <span class="mi">7</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">3890</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Hathaway</span>    <span class="o">|</span> <span class="n">Constellation</span>        <span class="o">|</span> <span class="mi">2365</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span>      <span class="o">|</span> <span class="n">William</span> <span class="n">T</span><span class="o">.</span> <span class="n">Riker</span>     <span class="o">|</span> <span class="mi">18</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">71807</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Hood</span>        <span class="o">|</span> <span class="n">Excelsior</span>            <span class="o">|</span> <span class="mi">2365</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">05</span>      <span class="o">|</span> <span class="n">Robert</span> <span class="n">DeSoto</span>        <span class="o">|</span> <span class="mi">16</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">58928</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Sutherland</span>  <span class="o">|</span> <span class="n">Nebula</span>               <span class="o">|</span> <span class="mi">2368</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">10</span>      <span class="o">|</span> <span class="n">Shelby</span>               <span class="o">|</span> <span class="mi">14</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">71909</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Defiant</span>     <span class="o">|</span> <span class="n">Defiant</span>              <span class="o">|</span> <span class="mi">2370</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">08</span>      <span class="o">|</span> <span class="n">Benjamin</span> <span class="n">Sisko</span>       <span class="o">|</span> <span class="mi">4</span>
-<span class="n">NX</span><span class="o">-</span><span class="mi">74205</span>   <span class="o">|</span> <span class="n">USS</span> <span class="n">Defiant</span>     <span class="o">|</span> <span class="n">Defiant</span>              <span class="o">|</span> <span class="mi">2371</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">28</span>      <span class="o">|</span> <span class="n">Benjamin</span> <span class="n">Sisko</span>       <span class="o">|</span> <span class="mi">11</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">74656</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Voyager</span>     <span class="o">|</span> <span class="n">Intrepid</span>             <span class="o">|</span> <span class="mi">2371</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">24</span>      <span class="o">|</span> <span class="n">Kathryn</span> <span class="n">Janeway</span>      <span class="o">|</span> <span class="mi">3</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">71099</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Lakota</span>      <span class="o">|</span> <span class="n">Excelsior</span>            <span class="o">|</span> <span class="mi">2372</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">07</span>      <span class="o">|</span> <span class="n">Erika</span> <span class="n">Benteen</span>        <span class="o">|</span> <span class="mi">13</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span><span class="o">-</span><span class="n">E</span> <span class="o">|</span> <span class="n">USS</span> <span class="n">Enterprise</span>  <span class="o">|</span> <span class="n">Sovereign</span>            <span class="o">|</span> <span class="mi">2372</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">25</span>      <span class="o">|</span> <span class="n">Jean</span><span class="o">-</span><span class="n">Luc</span> <span class="n">Picard</span>      <span class="o">|</span> <span class="mi">6</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">80102</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Prometheus</span>  <span class="o">|</span> <span class="n">Prometheus</span>           <span class="o">|</span> <span class="mi">2374</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span>      <span class="o">|</span> <span class="n">Doctor</span>               <span class="o">|</span> <span class="mi">2</span>
-<span class="n">NCC</span><span class="o">-</span><span class="mi">74657</span>  <span class="o">|</span> <span class="n">USS</span> <span class="n">Voyager</span><span class="o">-</span><span class="n">B</span>   <span class="o">|</span> <span class="n">Intrepid</span>             <span class="o">|</span> <span class="mi">2379</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">24</span>      <span class="o">|</span> <span class="n">Miral</span> <span class="n">Paris</span>          <span class="o">|</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 4 🎬</p>
+<p class="admonition-title">Oppgave 5 🎬</p>
 <p>Norsk filmindustri har produsert noen sykt bra filmer gjennom tidene.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/4145c134b999f38636706377d9916942/filmer.csv"><code class="xref download docutils literal notranslate"><span class="pre">filmer.csv</span></code></a>.</p>
 <ul class="simple">
@@ -589,82 +788,6 @@ document.write(`
 <li><p>Skriv ut de tre mest sette filmene på kino.</p></li>
 <li><p>Skriv ut de tre filmene med flest strømminger.</p></li>
 </ul>
-<div class="hint dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<p>Her er en mulig utskrift når brukeren sorterer etter år.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Navn</span>                                     <span class="o">|</span> <span class="n">År</span>   <span class="o">|</span> <span class="n">Kinobesøk</span>  <span class="o">|</span> <span class="n">Strømminger</span>
-<span class="n">Gutta</span> <span class="n">boys</span>                               <span class="o">|</span> <span class="mi">1999</span> <span class="o">|</span> <span class="mi">95266</span>      <span class="o">|</span> <span class="mi">122787</span>
-<span class="n">OSLO</span>                                     <span class="o">|</span> <span class="mi">2000</span> <span class="o">|</span> <span class="mi">9770</span>       <span class="o">|</span> <span class="mi">2665576</span>
-<span class="n">Kongen</span> <span class="n">og</span> <span class="n">krigen</span>                         <span class="o">|</span> <span class="mi">2000</span> <span class="o">|</span> <span class="mi">165423</span>     <span class="o">|</span> <span class="mi">452270</span>
-<span class="n">Torpedo</span><span class="p">:</span> <span class="n">Lånekassen</span>                      <span class="o">|</span> <span class="mi">2003</span> <span class="o">|</span> <span class="mi">91845</span>      <span class="o">|</span> <span class="mi">774350</span>
-<span class="n">Forelsket</span><span class="p">:</span> <span class="n">Ytre</span> <span class="n">Enebakk</span>                  <span class="o">|</span> <span class="mi">2005</span> <span class="o">|</span> <span class="mi">123380</span>     <span class="o">|</span> <span class="mi">2645774</span>
-<span class="n">Jordskjelvet</span>                             <span class="o">|</span> <span class="mi">2006</span> <span class="o">|</span> <span class="mi">19524</span>      <span class="o">|</span> <span class="mi">827497</span>
-<span class="n">Forræderen</span>                               <span class="o">|</span> <span class="mi">2006</span> <span class="o">|</span> <span class="mi">107483</span>     <span class="o">|</span> <span class="mi">308763</span>
-<span class="n">Spinnville</span> <span class="n">Sondre</span>                        <span class="o">|</span> <span class="mi">2012</span> <span class="o">|</span> <span class="mi">113911</span>     <span class="o">|</span> <span class="mi">2945296</span>
-<span class="n">Skogen</span>                                   <span class="o">|</span> <span class="mi">2013</span> <span class="o">|</span> <span class="mi">87957</span>      <span class="o">|</span> <span class="mi">1570959</span>
-<span class="n">Krigen</span>                                   <span class="o">|</span> <span class="mi">2014</span> <span class="o">|</span> <span class="mi">58819</span>      <span class="o">|</span> <span class="mi">2387531</span>
-<span class="n">Knerten</span> <span class="n">blir</span> <span class="n">kildesortert</span>                <span class="o">|</span> <span class="mi">2014</span> <span class="o">|</span> <span class="mi">62394</span>      <span class="o">|</span> <span class="mi">873722</span>
-<span class="n">BLÜCHER</span>                                  <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">187871</span>     <span class="o">|</span> <span class="mi">1809530</span>
-<span class="n">Enda</span> <span class="n">en</span> <span class="n">krigsfilm</span>                        <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">107948</span>     <span class="o">|</span> <span class="mi">1311115</span>
-<span class="n">Tante</span> <span class="n">jobber</span> <span class="k">for</span> <span class="n">NAV</span>                     <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">40630</span>      <span class="o">|</span> <span class="mi">2751636</span>
-<span class="n">Sommer</span> <span class="n">i</span> <span class="n">Narvik</span>                          <span class="o">|</span> <span class="mi">2015</span> <span class="o">|</span> <span class="mi">90659</span>      <span class="o">|</span> <span class="mi">175462</span>
-<span class="n">Thor</span> <span class="n">Heyerdahl</span>                           <span class="o">|</span> <span class="mi">2016</span> <span class="o">|</span> <span class="mi">169827</span>     <span class="o">|</span> <span class="mi">387362</span>
-<span class="n">Olsenbanden</span> <span class="n">på</span> <span class="n">førstegangstjeneste</span>       <span class="o">|</span> <span class="mi">2018</span> <span class="o">|</span> <span class="mi">78856</span>      <span class="o">|</span> <span class="mi">1279729</span>
-<span class="n">Knerten</span><span class="p">:</span> <span class="n">På</span> <span class="n">farten</span>                       <span class="o">|</span> <span class="mi">2019</span> <span class="o">|</span> <span class="mi">125345</span>     <span class="o">|</span> <span class="mi">834912</span>
-<span class="n">Andre</span> <span class="n">Verdenskrig</span>                        <span class="o">|</span> <span class="mi">2022</span> <span class="o">|</span> <span class="mi">137491</span>     <span class="o">|</span> <span class="mi">287087</span>
-<span class="n">WW2</span><span class="p">:</span> <span class="n">Oslo</span>                                <span class="o">|</span> <span class="mi">2024</span> <span class="o">|</span> <span class="mi">163686</span>     <span class="o">|</span> <span class="mi">2788605</span>
-
- <span class="o">---</span> <span class="n">Mest</span> <span class="n">sette</span> <span class="n">filmer</span> <span class="n">på</span> <span class="n">kino</span> <span class="o">---</span>
-<span class="n">BLÜCHER</span>              <span class="mi">187871</span> <span class="n">kinobesøk</span>
-<span class="n">Thor</span> <span class="n">Heyerdahl</span>       <span class="mi">169827</span> <span class="n">kinobesøk</span>
-<span class="n">Kongen</span> <span class="n">og</span> <span class="n">krigen</span>     <span class="mi">165423</span> <span class="n">kinobesøk</span>
-
- <span class="o">---</span> <span class="n">Mest</span> <span class="n">strømmet</span> <span class="o">---</span>
-<span class="n">Spinnville</span> <span class="n">Sondre</span>    <span class="mi">2945296</span> <span class="n">strømminger</span>
-<span class="n">WW2</span><span class="p">:</span> <span class="n">Oslo</span>            <span class="mi">2788605</span> <span class="n">strømminger</span>
-<span class="n">Tante</span> <span class="n">jobber</span> <span class="k">for</span> <span class="n">NAV</span> <span class="mi">2751636</span> <span class="n">strømminger</span>
-</pre></div>
-</div>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-
-<span class="c1"># Bruker velger sorteringsmetode</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Velg sortering. 1: alfabetisk. 2: etter år&quot;</span><span class="p">)</span>
-<span class="n">valg</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Valg: &quot;</span><span class="p">))</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;filmer.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">header</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
-
-<span class="c1"># Sorterer med hensyn på valget fra brukeren</span>
-<span class="n">data</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">valg</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
-
-<span class="c1"># Fin tabell</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">40</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">header</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">40</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">10</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Bruker Counter for å bruke most_common()-metoden</span>
-<span class="n">kinobesøk</span><span class="p">,</span> <span class="n">strømminger</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(),</span> <span class="n">Counter</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="n">kinobesøk</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="n">strømminger</span><span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-
-<span class="c1"># Skriver ut mest sette filmer på kino</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> --- Mest sette filmer på kino ---&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kinobesøk</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">20</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> kinobesøk&quot;</span><span class="p">)</span>
-
-<span class="c1"># Skriver ut mest strømmet</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> --- Mest strømmet ---&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">strømminger</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">20</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> strømminger&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -733,6 +856,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">Dataframes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soyler">Søyler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rader">Rader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrering">Filtrering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gjennomsnitt-og-sum">Gjennomsnitt og sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sortering">Sortering</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-filer">CSV-filer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#json-filer">JSON-filer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
