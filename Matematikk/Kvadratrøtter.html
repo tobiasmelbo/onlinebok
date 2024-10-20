@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -65,6 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk/Kvadratrøtter';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Numeriske metoder (T)" href="Numeriske%20metoder.html" />
+    <link rel="prev" title="Tallfølger" href="Tallf%C3%B8lger.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -127,8 +129,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -170,7 +170,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
@@ -209,9 +209,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Matematikk.html">Matematikk 📕</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Kvadratrøtter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Numeriske%20metoder.html">Numeriske metoder (T)</a></li>
 </ul>
 </details></li>
@@ -377,10 +378,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herons-algoritme-for-hand">Herons algoritme for hånd ✍️</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herons-algoritme-med-python">Herons algoritme med Python 🐍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave">Oppgave</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -394,7 +392,7 @@ document.write(`
                   
   <section id="kvadratrotter">
 <h1>Kvadratrøtter<a class="headerlink" href="#kvadratrotter" title="Link to this heading">#</a></h1>
-<p>Hva er kvadratroten av <span class="math notranslate nohighlight">\(16\)</span>? Det er selvfølgelig <span class="math notranslate nohighlight">\(4\)</span> fordi <span class="math notranslate nohighlight">\(4\cdot 4=16\)</span>. Da skriver vi <span class="math notranslate nohighlight">\(\sqrt{16}=4\)</span>.</p>
+<p>Hva er kvadratroten av <span class="math notranslate nohighlight">\(16\)</span>? Jo, <span class="math notranslate nohighlight">\(4\)</span>, fordi <span class="math notranslate nohighlight">\(4\cdot 4=16\)</span>. Da skriver vi <span class="math notranslate nohighlight">\(\sqrt{16}=4\)</span>.</p>
 <div class="note admonition">
 <p class="admonition-title">Definisjon: Kvadratrot</p>
 <p>Kvadratroten av et tall <span class="math notranslate nohighlight">\(N\)</span> er det positive tallet som ganget med seg selv gir <span class="math notranslate nohighlight">\(N\)</span>. Vi skriver det tallet som <span class="math notranslate nohighlight">\(\sqrt{N}\)</span>.</p>
@@ -431,18 +429,130 @@ document.write(`
 <p>Sammenlikn svaret ditt med svaret fra en kalkulator.</p>
 </div>
 <p>Vi kan fortsette å regne så lenge vi ønsker og få en bedre og bedre approksimasjon, men det blir kanskje litt kjedelig. La oss overlate resten av regningen til datamaskinen, som klarer å regne tusenvis av steg på bare noen få millisekunder.</p>
-<p>Før datamaskinen kan regne ut kvadratrøtter, må vi oversette algoritmen til noe datamaskinen forstår – vi må <strong>programmere</strong>.</p>
+<p>Men, før datamaskinen kan regne ut kvadratrøtter, må vi oversette algoritmen til et språk som datamaskinen forstår – vi må <strong>programmere</strong>.</p>
 </section>
 <section id="herons-algoritme-med-python">
 <h2>Herons algoritme med Python 🐍<a class="headerlink" href="#herons-algoritme-med-python" title="Link to this heading">#</a></h2>
+<p>Det er lett å finne kvadratrøtter ved å bruke <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>-funksjonen fra <code class="docutils literal notranslate"><span class="pre">math</span></code>-pakken.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142135623730951
+</pre></div>
+</div>
+</div>
+</div>
+<p>Effektivt og enkelt, men det lærer oss ingenting om algoritmene som ligger under. <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> blir en <code class="docutils literal notranslate"><span class="pre">black-box</span></code>, en funksjon vi putter ting inn i og får ting ut fra, men uten å vite hva som egentlig skjer inne i boksen.</p>
+<p>La oss lage vårt eget program som kjører Herons algoritme noen ganger.</p>
+<div class="task admonition">
+<p class="admonition-title">Prøv selv!</p>
+<p>Prøv å implementere Herons algoritme i Python selv!</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">rot</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+	<span class="n">rot</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">rot</span> <span class="o">+</span> <span class="n">N</span><span class="o">/</span><span class="n">rot</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">rot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+1.4166666666666665
+1.4142156862745097
+1.4142135623746899
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi ser at Heron’s algoritme fort blir ganske sikker på desimalene, men i stedet for å kjøre algoritmen fast <span class="math notranslate nohighlight">\(4\)</span> ganger, kan vi heller stoppe den når vi er fornøyd.</p>
+<p>Vi vet at algoritmen blir nærmere og nærmere den riktige verdien. Differansen mellom <code class="docutils literal notranslate"><span class="pre">neste</span></code> og <code class="docutils literal notranslate"><span class="pre">forrige</span></code> sier oss noe om hvor forskjellig den neste iterasjonen blir fra den forrige.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">forrige</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">neste</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">forrige</span> <span class="o">+</span> <span class="n">N</span><span class="o">/</span><span class="n">forrige</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">neste</span><span class="p">)</span>
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">neste</span> <span class="o">-</span> <span class="n">forrige</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.000001</span><span class="p">:</span>
+	<span class="n">forrige</span> <span class="o">=</span> <span class="n">neste</span>
+	<span class="n">neste</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">forrige</span> <span class="o">+</span> <span class="n">N</span><span class="o">/</span><span class="n">forrige</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">neste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+1.4166666666666665
+1.4142156862745097
+1.4142135623746899
+1.414213562373095
+</pre></div>
+</div>
+</div>
+</div>
+<p>Flott! Nå gjenstår det bare å tilpasse <code class="docutils literal notranslate"><span class="pre">while</span></code>-løkken med en enda mindre verdi <code class="docutils literal notranslate"><span class="pre">1e-15</span></code>, pakke alt inn i en funksjon, og bare skrive ut den siste verdien vi regner ut.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+	<span class="n">forrige</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="n">neste</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">forrige</span> <span class="o">+</span> <span class="n">N</span><span class="o">/</span><span class="n">forrige</span><span class="p">)</span>
+	<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">neste</span> <span class="o">-</span> <span class="n">forrige</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-15</span><span class="p">:</span>
+		<span class="n">forrige</span> <span class="o">=</span> <span class="n">neste</span>
+		<span class="n">neste</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">forrige</span> <span class="o">+</span> <span class="n">N</span><span class="o">/</span><span class="n">forrige</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">neste</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.414213562373095
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nå har vi vår egen implementasjon av <code class="docutils literal notranslate"><span class="pre">sqrt()</span></code>-funksjonen. Rått! 🤓</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<section id="oppgave">
-<h3>Oppgave<a class="headerlink" href="#oppgave" title="Link to this heading">#</a></h3>
-<p>ide? flippe formelen? blir kanskje noe diff-likning typ eller?</p>
-</section>
+<blockquote>
+<div><p>Ta gjerne utgangspunkt i det siste eksempelet når du gjør disse oppgavene.</p>
+</div></blockquote>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 #️⃣</p>
+<p>Utvid programmet til å skrive ut hvor mange iterasjoner algoritmen har regnet.</p>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 ⁉️</p>
+<p>Programmet vårt reagerer litt rart på noen ting.</p>
+<ul class="simple">
+<li><p>Hva skjer når man kjører programmet vårt med <span class="math notranslate nohighlight">\(0\)</span>?</p></li>
+<li><p>Hva skjer når man kjører programmet vårt med et negativt tall?</p></li>
+</ul>
+<p>Fiks programmet med <code class="docutils literal notranslate"><span class="pre">if</span></code>-setninger slik at:</p>
+<ol class="arabic simple">
+<li><p>Kvadratroten av <code class="docutils literal notranslate"><span class="pre">0</span></code> blir nøyaktig lik <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Programmet skriver ut <code class="docutils literal notranslate"><span class="pre">Kan</span> <span class="pre">ikke</span> <span class="pre">ta</span> <span class="pre">kvadratroten</span> <span class="pre">av</span> <span class="pre">et</span> <span class="pre">negativt</span> <span class="pre">tall!</span></code> når man skriver inn et negativt tall.</p></li>
+</ol>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 1️⃣</p>
+<p>Undersøk hvor viktig den første gjetningen er ved å…</p>
+<ol class="arabic simple">
+<li><p>… ta kvadratroten av et veldig stort tall</p></li>
+<li><p>… gjøre forskjellige første gjetninger</p></li>
+<li><p>… se hvor mange iterasjoner algoritmen har måtte regne for å komme frem til et svar</p></li>
+</ol>
+<p>Hva tenker du er en god første gjetning? Kanskje <span class="math notranslate nohighlight">\(\frac{N}{2}\)</span>, eller <span class="math notranslate nohighlight">\(\frac{N}{10}\)</span>? Eller kanskje det ikke har så mye å si?</p>
+</div>
 </section>
 </section>
 
@@ -476,6 +586,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Tallf%C3%B8lger.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Tallfølger</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Numeriske%20metoder.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Numeriske metoder (T)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -494,10 +622,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herons-algoritme-for-hand">Herons algoritme for hånd ✍️</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herons-algoritme-med-python">Herons algoritme med Python 🐍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave">Oppgave</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 
