@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Numeriske metoder (T) &#8212; Programmering med Tobias.</title>
+    <title>Numeriske metoder &#8212; Programmering med Tobias.</title>
   
   
   
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk/Numeriske metoder';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Informasjonsteknologi 2 💾" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html" />
+    <link rel="next" title="Numerisk derivasjon (R)" href="Numerisk%20derivasjon.html" />
     <link rel="prev" title="Kvadratrøtter" href="Kvadratr%C3%B8tter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
@@ -213,7 +213,8 @@
 <li class="toctree-l2"><a class="reference internal" href="Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tallf%C3%B8lger.html">Tallfølger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Numeriske metoder (T)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Numerisk%20derivasjon.html">Numerisk derivasjon (R)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -366,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Numeriske metoder (T)</h1>
+    <h1>Numeriske metoder</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,7 +377,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullpunkter">Nullpunkter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force-metoden">Brute-force-metoden</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -389,11 +390,23 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="numeriske-metoder-t">
-<h1>Numeriske metoder (T)<a class="headerlink" href="#numeriske-metoder-t" title="Link to this heading">#</a></h1>
+  <section id="numeriske-metoder">
+<h1>Numeriske metoder<a class="headerlink" href="#numeriske-metoder" title="Link to this heading">#</a></h1>
 <p>Numeriske metoder handler om å finne tilnærmede løsninger (eller <em>approksimasjoner</em> ☝️🤓).</p>
-<section id="nullpunkter">
-<h2>Nullpunkter<a class="headerlink" href="#nullpunkter" title="Link to this heading">#</a></h2>
+<p>La oss se på hvordan man kan finne nullpunkter numerisk.</p>
+<div class="hint admonition">
+<p class="admonition-title">Finner vi nullpunkter, kan vi også løse likninger!</p>
+<p>La oss si at vi har en likning $<span class="math notranslate nohighlight">\(x^2 = 3x - 2\)</span>$.</p>
+<p>For å løse denne likningen kan vi enkelt skrive den om til $<span class="math notranslate nohighlight">\(x^2 - 3x + 2 = 0\)</span>$</p>
+<p>Deretter kan vi løse likningen ved å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 - 3x + 2\)</span>.</p>
+<p>Derfsom vi kan finne nullpunkter, kan vi også løse likninger.</p>
+</div>
+<section id="brute-force-metoden">
+<h2>Brute-force-metoden<a class="headerlink" href="#brute-force-metoden" title="Link to this heading">#</a></h2>
+<div class="hint admonition">
+<p class="admonition-title">Brute force 💪</p>
+<p><em>Brute force</em> er en betegnelse for algoritmer som er enkle, men ikke nødvendigvis så effektive eller nøyaktige. Vi skal se på bedre numeriske metoder senere!</p>
+</div>
 <p>For å finne nullpunkter kan vi bruke et kult fortegnstriks!</p>
 <p>Først bestemmer vi oss for to punkter på en funksjon med en fast avstand <span class="math notranslate nohighlight">\(d\)</span> fra hverandre, f.eks <span class="math notranslate nohighlight">\(A=(x, f(x))\)</span> og <span class="math notranslate nohighlight">\(B=(x + d, f(x + d))\)</span>. Deretter gjentar vi stegene:</p>
 <ol class="arabic simple">
@@ -460,23 +473,7 @@ document.write(`
 </div>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 3 (uten hjelpemidler)</p>
-<p>Klaudia prøver å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-3x+2, D_f=[0, 3]\)</span> med programmet under.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">+=</span> <span class="mf">0.1</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Hva finner hun? Forsøk å svare uten å lage programmet selv.</p>
-</div>
-<div class="task admonition">
-<p class="admonition-title">Oppgave 4</p>
+<p class="admonition-title">Oppgave 3</p>
 <p>Janis prøver å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-x-2\)</span> med programmet under.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span>
@@ -490,6 +487,25 @@ document.write(`
 </pre></div>
 </div>
 <p>Han vet det skal finnes to nullpunkter, men han finner bare ett. Forklar hvorfor, og hva han kan gjøre for å fikse det!</p>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4</p>
+<p>Klaudia prøver å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-3x+2, D_f=[0, 3]\)</span> med programmet under.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mf">0.1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Hva finner hun? Forsøk å svare uten å lage programmet.</p></li>
+<li><p>Modifiser programmet slik at det fungerer som Klaudia ønsker.</p></li>
+</ol>
 </div>
 </section>
 </section>
@@ -534,11 +550,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html"
+       href="Numerisk%20derivasjon.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Informasjonsteknologi 2 💾</p>
+        <p class="prev-next-title">Numerisk derivasjon (R)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -558,7 +574,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullpunkter">Nullpunkter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force-metoden">Brute-force-metoden</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
