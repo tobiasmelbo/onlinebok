@@ -377,6 +377,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-approksimasjon">En approksimasjon</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-liten-forbedring">En liten forbedring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
@@ -395,6 +396,8 @@ document.write(`
 <p>Den deriverte i et punkt <span class="math notranslate nohighlight">\(x\)</span> er gitt ved</p>
 <div class="math notranslate nohighlight">
 \[f'(x)=\lim_{\Delta x\to 0}\frac{f(x+\Delta x) - f(x)}{\Delta x}\]</div>
+<section id="en-approksimasjon">
+<h2>En approksimasjon<a class="headerlink" href="#en-approksimasjon" title="Link to this heading">#</a></h2>
 <p>Hvis vi bare gjør <span class="math notranslate nohighlight">\(\Delta x\)</span> liten nok, kan vi få en grei verdi fra følgende approksimasjon</p>
 <div class="note admonition">
 <p class="admonition-title">Approksimasjon: Derivert</p>
@@ -427,6 +430,7 @@ document.write(`
 <p>Prøv gjerne å sette inn mindre og mindre verdier for <code class="docutils literal notranslate"><span class="pre">dx</span></code>. Da vil du se at approksimasjonen blir rar rundt <code class="docutils literal notranslate"><span class="pre">dx</span> <span class="pre">=</span> <span class="pre">1e-15</span></code>. Årsaken for dette er at desimaltall er håndtert på en spesiell måte i datamaskinen, som gjør at deling med veldig små tall gir uventede resultater.</p>
 <p>Det er veier rundt dette, men approksimasjonene våre er greie nok med <span class="math notranslate nohighlight">\(\Delta x &lt; 10^{-10}\)</span> uansett.</p>
 </div>
+</section>
 <section id="en-liten-forbedring">
 <h2>En liten forbedring<a class="headerlink" href="#en-liten-forbedring" title="Link to this heading">#</a></h2>
 <p>I definisjonen vår for den deriverte lager vi et punkt til høyre for punktet <span class="math notranslate nohighlight">\(x\)</span>, finner den gjennomsnittlige vekstfarten mellom punktene, og så lenge <span class="math notranslate nohighlight">\(\Delta x\)</span> er liten nok, er dette en god approksimasjon for den deriverte.</p>
@@ -573,6 +577,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-approksimasjon">En approksimasjon</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-liten-forbedring">En liten forbedring</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
