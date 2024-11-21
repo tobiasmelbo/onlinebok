@@ -60,6 +60,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Arv';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
@@ -521,7 +529,24 @@ Pris for elbil: 25
 <h2>Objektorienterte modeller: UML<a class="headerlink" href="#objektorienterte-modeller-uml" title="Link to this heading">#</a></h2>
 <p>Når vi har en del klasser som arver fra hverandre kan det være hensiktsmessig å lage en oversikt, en <em>modell</em>.</p>
 <p>I UML-diagrammer er det vanlig å representere klasser som bokser med tre deler; en del for navnet til klassen, en del for attributtene og en del for metodene. Pilene representerer arv. Subklasser har piler som peker til superklasser.</p>
-<p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Det vil si at klassene får flere, mere spesifikke, egenskaper. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>. Det vil si at klassene får færre, mer generelle, egenskaper.</p>
+<pre  class="mermaid">
+        ---
+title: Klassediagram/UML
+---
+classDiagram
+	class Kjøretøy
+	Kjøretøy : +str merke
+	Kjøretøy : +tut()
+	class Lastebil
+	Lastebil : +int pris = 200
+	class Bil
+	Bil : +int pris = 50
+	class ELBil
+	ELBil : +int pris = 25
+	Kjøretøy &lt;|-- Lastebil
+	Kjøretøy &lt;|-- Bil
+	Bil &lt;|-- ELBil
+    </pre><p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Det vil si at klassene får flere, mere spesifikke, egenskaper. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>. Det vil si at klassene får færre, mer generelle, egenskaper.</p>
 <p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://draw.io/">Draw.io</a>.</p>
 </section>
 <hr class="docutils" />

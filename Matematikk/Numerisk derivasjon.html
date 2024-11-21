@@ -510,6 +510,42 @@ document.write(`
 </div>
 <p>Hva gjør dette programmet? Hva vil det skrive ut? Svar først, så sjekk svaret ditt ved å kjøre koden.</p>
 </div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 ➗</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">diff_f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mf">0.01</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">dx</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">diff_f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Svar på disse oppgavene uten å kjøre koden først.</p>
+<ol class="arabic simple">
+<li><p>Hva blir skrevet ut av programmet? Hvis det skrives ut et tall, si omtrent hvilket tall.</p></li>
+<li><p>Kom med to forbedringer som kan gjøre svaret bedre.</p></li>
+</ol>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 ❓</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dx</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">dx</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Svar på disse oppgavene uten å kjøre koden først.</p>
+<ol class="arabic simple">
+<li><p>Hva skrives ut av den første <code class="docutils literal notranslate"><span class="pre">print</span></code>-linjen? Hvis det skrives ut et tall, gi en omtrentlig verdi.</p></li>
+<li><p>Hva skrives ut av den andre <code class="docutils literal notranslate"><span class="pre">print</span></code>-linjen? Hvis det skrives ut et tall, gi en omtrentlig verdi.</p></li>
+</ol>
+</div>
 </section>
 </section>
 
