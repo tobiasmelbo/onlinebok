@@ -386,7 +386,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inneholderklasser">Inneholderklasser</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -538,16 +541,54 @@ classDiagram
 	Kjøretøy : +str merke
 	Kjøretøy : +tut()
 	class Lastebil
-	Lastebil : +int pris = 200
+	Lastebil : +int pris
 	class Bil
-	Bil : +int pris = 50
+	Bil : +int pris
 	class ELBil
-	ELBil : +int pris = 25
+	ELBil : +int pris
 	Kjøretøy &lt;|-- Lastebil
 	Kjøretøy &lt;|-- Bil
 	Bil &lt;|-- ELBil
     </pre><p>Denne modellen viser hvilke klasser som arver fra hvilke. Dette kalles et <em>klassehierarki</em>. Desto lengre nedover i modellen vi kommer, desto mer <em>spesialiserte</em> blir klassene. Det vil si at klassene får flere, mere spesifikke, egenskaper. Beveger vi oss oppover i modellen blir klassene mer <em>generaliserte</em>. Det vil si at klassene får færre, mer generelle, egenskaper.</p>
 <p>For å lage modeller anbefaler jeg å bruke <a class="reference external" href="https://draw.io/">Draw.io</a>.</p>
+<section id="inneholderklasser">
+<h3>Inneholderklasser<a class="headerlink" href="#inneholderklasser" title="Link to this heading">#</a></h3>
+<p>En annen relasjon mellom klasser er at en klasse kan inneholde en annen klasse. Det kan vi også vise i modellene våre.</p>
+<p>La oss se på et eksempel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Elev</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+
+<span class="k">class</span> <span class="nc">Klasse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elever</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">legg_til</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">elev</span> <span class="p">:</span> <span class="n">Elev</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">elever</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elev</span><span class="p">)</span>
+
+<span class="n">klasse</span> <span class="o">=</span> <span class="n">Klasse</span><span class="p">(</span><span class="s2">&quot;VG3&quot;</span><span class="p">)</span>
+<span class="n">klasse</span><span class="o">.</span><span class="n">legg_til</span><span class="p">(</span><span class="n">Elev</span><span class="p">(</span><span class="s2">&quot;Omar&quot;</span><span class="p">))</span>
+<span class="n">klasse</span><span class="o">.</span><span class="n">legg_til</span><span class="p">(</span><span class="n">Elev</span><span class="p">(</span><span class="s2">&quot;Theodor&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å representere at en klasse kan inneholde andre klasser kan vi bruke en egen pil.</p>
+<pre  class="mermaid">
+        ---
+title: Klassediagram/UML
+---
+classDiagram
+	class Elev
+    Elev : +str navn
+    class Klasse
+    Klasse : +str navn
+    Klasse : legg_til(Elev)
+    Klasse o-- Elev
+    </pre></section>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -691,7 +732,10 @@ classDiagram
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-bompengesystem">Eksempel: Bompengesystem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utvidet-eksempel-bompengesystem">Utvidet eksempel: Bompengesystem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objektorienterte-modeller-uml">Objektorienterte modeller: UML</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inneholderklasser">Inneholderklasser</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
