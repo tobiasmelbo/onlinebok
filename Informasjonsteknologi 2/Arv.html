@@ -663,6 +663,42 @@ classDiagram
 <li><p>Tegn klassehierarkiet.</p></li>
 </ol>
 </div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 5</p>
+<p>Implementér følgende klassediagram som et objektorientert program i Python 🐍</p>
+<pre  class="mermaid">
+        classDiagram
+	class Party
+	Party : +list members
+	Party : +add_member(member)
+	Party : +remove_member(member) 
+	class Member
+	Member : +str name
+	Member : +int max_HP
+	Member : +int HP
+    Member : +int MP
+	class Warrior
+	Warrior : +shout()
+	class Priest
+	Priest : +heal(member)
+	class Rogue
+	Rogue : +hide()
+	Party o-- Member
+	Member &lt;|-- Warrior
+	Member &lt;|-- Priest
+	Member &lt;|-- Rogue
+    </pre><p>Her er noen krav:</p>
+<ul class="simple">
+<li><p>Metodene <code class="docutils literal notranslate"><span class="pre">shout()</span></code> og <code class="docutils literal notranslate"><span class="pre">hide()</span></code> skal bare printe noe til terminalvinduet.</p></li>
+<li><p>Metoden <code class="docutils literal notranslate"><span class="pre">heal(member)</span></code> skal:</p>
+<ul>
+<li><p>øke <code class="docutils literal notranslate"><span class="pre">HP</span></code> for <code class="docutils literal notranslate"><span class="pre">member</span></code> med <code class="docutils literal notranslate"><span class="pre">5</span></code>, men bare opp til <code class="docutils literal notranslate"><span class="pre">max_HP</span></code>.</p></li>
+<li><p>bruke opp <code class="docutils literal notranslate"><span class="pre">5</span></code> <code class="docutils literal notranslate"><span class="pre">MP</span></code>, og bare funke dersom en <code class="docutils literal notranslate"><span class="pre">Priest</span></code> har mer enn <code class="docutils literal notranslate"><span class="pre">5</span></code> <code class="docutils literal notranslate"><span class="pre">MP</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Legg til <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metoder for å få en hensiktsmessig utskrift når man printer de ulike objektene.</p></li>
+</ul>
+</div>
 </section>
 </section>
 
