@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Likninger &#8212; Programmering med Tobias.</title>
+    <title>Newtons metode (R) &#8212; Programmering med Tobias.</title>
   
   
   
@@ -62,9 +62,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk/Likninger';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk/Newtons metode';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Informasjonsteknologi 2 💾" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html" />
+    <link rel="prev" title="Numerisk derivasjon (R)" href="Numerisk%20derivasjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -127,8 +129,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -170,7 +170,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
@@ -209,11 +209,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Matematikk.html">Matematikk 📕</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Vekstfaktor.html">Vekstfaktor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tallf%C3%B8lger.html">Tallfølger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Numeriske%20metoder.html">Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Numerisk%20derivasjon.html">Numerisk derivasjon (R)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Newtons metode (R)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -282,7 +284,7 @@
       
       
       
-      <li><a href="../_sources/Matematikk/Likninger.ipynb" target="_blank"
+      <li><a href="../_sources/Matematikk/Newtons metode.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Likninger</h1>
+    <h1>Newtons metode (R)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,9 +378,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faktorisere-uttrykk">Faktorisere uttrykk</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lose-likninger">Løse likninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likningssett">Likningssett</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-metode-for-hand">Newtons metode for hånd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-metode-med-python">Newtons metode med Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -390,130 +392,145 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="likninger">
-<h1>Likninger<a class="headerlink" href="#likninger" title="Link to this heading">#</a></h1>
-<p>Visste du at man kan løse likninger og faktorisere i Python? CAS i GeoGebra er bare <em>så gammeldags</em> 🙄</p>
-<p>Vi kan løse likninger i Python ved å bruke pakken <code class="docutils literal notranslate"><span class="pre">sympy</span></code>. Den ligger installert hvis man bruker Spyder, men kan installeres ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sympy</span></code> i terminalvinduet.</p>
-<section id="faktorisere-uttrykk">
-<h2>Faktorisere uttrykk<a class="headerlink" href="#faktorisere-uttrykk" title="Link to this heading">#</a></h2>
-<p>Vi kan enkelt faktorisere ulike uttrykk i Python med <code class="docutils literal notranslate"><span class="pre">sympy.factor()</span></code>.</p>
-<p>I programmet under faktoriserer vi uttrykket <span class="math notranslate nohighlight">\(x^2 - x - 2\)</span>.</p>
+  <section id="newtons-metode-r">
+<h1>Newtons metode (R)<a class="headerlink" href="#newtons-metode-r" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Du bør være kjent med [Numerisk derivasjon](Numerisk derivasjon) før du starter her.</p>
+</div></blockquote>
+<p>Newtons metode er en algoritme som <em>kan</em> finne nullpunkter for en funksjon.</p>
+<div class="hint dropdown admonition">
+<p class="admonition-title">Påminnelse: Finner vi nullpunkter, kan vi også løse likninger!</p>
+<p>La oss si at vi har en likning</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}x^2 = 3x - 2$$.\\For å løse denne likningen kan vi enkelt skrive den om til \\$$x^2 - 3x + 2 = 0\end{aligned}\end{align} \]</div>
+<p>Deretter kan vi løse likningen ved å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 - 3x + 2\)</span>.</p>
+<p>Dersom vi kan finne nullpunkter, kan vi også løse likninger.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Newtons metode</p>
+<p>Hvis man velger et punkt <span class="math notranslate nohighlight">\(x_0\)</span> i nærheten av nullpunktet til <span class="math notranslate nohighlight">\(f(x)\)</span>, vil en bedre approksimasjon være gitt ved</p>
+<div class="math notranslate nohighlight">
+\[x_{n+1}=x_n - \frac{f(x_n)}{f'(x_n)}\]</div>
+</div>
+<p>Merk deg: <strong>Algoritmen finner bare ett nullpunkt om gangen</strong>.</p>
+<section id="newtons-metode-for-hand">
+<h2>Newtons metode for hånd<a class="headerlink" href="#newtons-metode-for-hand" title="Link to this heading">#</a></h2>
+<p>Prinsippet bak metoden er å gjette en verdi <span class="math notranslate nohighlight">\(x_0\)</span> for nullpunktet, så finne nullpunktet <span class="math notranslate nohighlight">\(x_1\)</span> til tangenten. Dette nullpunktet er som regel nærmere nullpunktet til funksjonen enn den forrige verdien. Gjentar vi dette så får vi en bedre og bedre approksimasjon.</p>
+<p>La oss utlede formelen. Hvis vi starter med en verdi <span class="math notranslate nohighlight">\(x_n\)</span> får vi at stigningstallet til tangenten blir <span class="math notranslate nohighlight">\(f'(x_n)=\frac{f(x_n) - 0}{x_n-x_{n+1}}\)</span>.</p>
+<p>Dette kan vi skrive om til formelen</p>
+<p><span class="math notranslate nohighlight">\(x_{n+1}=x_n - \frac{f(x_n)}{f'(x_n)}\)</span>.</p>
+<p>La oss prøve dette på en funksjon <span class="math notranslate nohighlight">\(f(x)=x^2-2\)</span>. Jeg gjetter at det første nullpunktet er i nærheten av <span class="math notranslate nohighlight">\(1\)</span>. Vi kan også finne at <span class="math notranslate nohighlight">\(f'(x)=2x\)</span>.</p>
+<p>Den første iterasjonen blir:</p>
+<p><span class="math notranslate nohighlight">\(x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}=  1 - \frac{f(1)}{f'(1)} = 1 - \frac{(1^2-2)}{2\cdot 1} = 1 - \frac{-1}{2} = \frac{3}{2} = 1.5\)</span></p>
+<p>Den andre iterasjonen blir:</p>
+<p><span class="math notranslate nohighlight">\(x_2 = x_1 - \frac{f(x_1)}{f'(x_1)} = \frac{3}{2} - \frac{f(\frac{3}{2})}{f'(\frac{3}{2})} = \frac{17}{12} \approx 1.4166...\)</span></p>
+</section>
+<section id="newtons-metode-med-python">
+<h2>Newtons metode med Python<a class="headerlink" href="#newtons-metode-med-python" title="Link to this heading">#</a></h2>
+<p>La oss først se på en implementasjon av Newtons metode når vi har den deriverte funksjonen <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
 
-<span class="c1"># Definerer variabel</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
 
-<span class="c1"># Faktoriserer uttrykk</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">factor</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(x - 2)*(x + 1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5
+1.4166666666666667
+1.4142156862745099
+1.4142135623746899
+1.4142135623730951
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ganske greit, hva? Okei. Det er ikke alltid at vi klarer å finne den deriverte funksjonen. Da må vi bruke numerisk derivasjon. La oss implementere dette også.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># Numerisk derivasjon med fremoverdifferanse</span>
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mf">1e-8</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5000000030387355
+1.4166666661602108
+1.4142156862852249
+1.4142135623746772
+1.414213562373095
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nice! Da trenger vi ikke å derivere funksjonen vi jobber med for hånd.</p>
+<p>La oss se på en siste versjon hvor vi bruker en while-løkke for å stoppe når vi har fått en ønsket nøyaktighet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># Numerisk derivasjon med fremoverdifferanse</span>
+<span class="k">def</span> <span class="nf">df</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="mf">1e-8</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">dx</span><span class="p">)</span>
+
+<span class="n">forrige</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">neste</span> <span class="o">=</span> <span class="n">forrige</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">forrige</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">forrige</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">neste</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="n">neste</span> <span class="o">-</span> <span class="n">forrige</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-8</span><span class="p">:</span>
+    <span class="n">forrige</span> <span class="o">=</span> <span class="n">neste</span>
+    <span class="n">neste</span> <span class="o">=</span> <span class="n">forrige</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">forrige</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">forrige</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">neste</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5000000030387355
+1.4166666661602108
+1.4142156862852249
+1.4142135623746772
+1.414213562373095
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="lose-likninger">
-<h2>Løse likninger<a class="headerlink" href="#lose-likninger" title="Link to this heading">#</a></h2>
-<p>Vi skal finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2-5x+6\)</span>.</p>
-<p>Det er det samme som å løse likningen <span class="math notranslate nohighlight">\(x^2-5x+6=0\)</span>. Dette kan vi løse i Python.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="c1"># Definerer variabelen</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-
-<span class="c1"># Definerer likningen</span>
-<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Finner løsning/løsninger</span>
-<span class="n">svar</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">svar</span><span class="p">)</span>
-</pre></div>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Finn en approksimasjon for nullpunktet med to iterasjoner av Newtons metode (til <span class="math notranslate nohighlight">\(x_2\)</span>). Sammenlikn med en eksakt løsning.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x^2-4\)</span> med <span class="math notranslate nohighlight">\(x_0 = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x^2-4\)</span> med <span class="math notranslate nohighlight">\(x_0 = -1\)</span></p></li>
+</ol>
 </div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Bruk Newtons metode i Python til å finne nullpunktet til <span class="math notranslate nohighlight">\(f(x)=e^x - 2\)</span>.</p>
+<p>Hvilken verdi er det du egentlig har funnet en approksimasjon for?</p>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Vi finner altså nullpunktene ved <span class="math notranslate nohighlight">\(x=2\)</span> og <span class="math notranslate nohighlight">\(x=3\)</span>. Det vil si at løsningsmengden til likningen <span class="math notranslate nohighlight">\(x^2-5x+6=0\)</span> er <span class="math notranslate nohighlight">\(L=\{2,3\}\)</span>.</p>
-<div class="admonition-ingen-losning admonition">
-<p class="admonition-title">Ingen løsning ❎</p>
-<p>type: note
-Du har sikkert hørt at noen likninger ikke har noen løsning, for eksempel likningen <span class="math notranslate nohighlight">\(x**2=-1\)</span>. Vi kan prøve å løse den i Python.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Da får vi ut</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="n">I</span><span class="p">,</span> <span class="n">I</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Vi får altså to løsninger, <span class="math notranslate nohighlight">\(x=-i\)</span> og <span class="math notranslate nohighlight">\(x=i\)</span>, men disse løsningene er ikke <em>reelle</em>. Siden vi bare jobber med reelle tall <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> i Matematikk 1T, så gjelder ikke disse løsningene. Det vil altså si at <span class="math notranslate nohighlight">\(L=Ø\)</span>.</p>
-<p>For å bare få reelle løsninger kan vi heller bruke</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">real_roots</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Da får vi</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[]</span>
-</pre></div>
-</div>
-<p>Altså at det ikke er noen reelle løsninger på likningen.</p>
-</div>
-</section>
-<section id="likningssett">
-<h2>Likningssett<a class="headerlink" href="#likningssett" title="Link to this heading">#</a></h2>
-<p>Vi skal løse likningssettet</p>
-<p><span class="math notranslate nohighlight">\(
-\left\{ 
-    \begin{array}{l}
-        2x-y=-6 &amp;\\
-        x+y=0
-    \end{array} 
-\right.
-\)</span></p>
-<p>Vi kan enkelt definere variabler, likninger og få løsningene på denne måten.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="c1"># Definerer variabler</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-
-<span class="c1"># Definerer likninger</span>
-<span class="n">eq1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">eq2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="c1"># Finner løsning av likninger med hensyn på variabler</span>
-<span class="n">svar</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">([</span><span class="n">eq1</span><span class="p">,</span> <span class="n">eq2</span><span class="p">],</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">svar</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{x: -2, y: 2}
-</pre></div>
-</div>
-</div>
-</div>
-<p>Vi får løsningene <span class="math notranslate nohighlight">\(x=-2\)</span> og <span class="math notranslate nohighlight">\(y=2\)</span>. Programmet kan modifiseres ved å legge til flere likninger eller symboler om det trengs.</p>
 </section>
 </section>
 
@@ -547,6 +564,24 @@ Du har sikkert hørt at noen likninger ikke har noen løsning, for eksempel likn
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Numerisk%20derivasjon.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Numerisk derivasjon (R)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Informasjonsteknologi 2 💾</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -563,9 +598,9 @@ Du har sikkert hørt at noen likninger ikke har noen løsning, for eksempel likn
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faktorisere-uttrykk">Faktorisere uttrykk</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lose-likninger">Løse likninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likningssett">Likningssett</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-metode-for-hand">Newtons metode for hånd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#newtons-metode-med-python">Newtons metode med Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 
