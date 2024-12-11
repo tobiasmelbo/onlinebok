@@ -65,6 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Regresjon';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Intro til Micro:bit" href="../Microbit%20Intro.html" />
+    <link rel="prev" title="Reelle datasett" href="Plotting%20Reelle%20datasett.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -127,8 +129,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -170,7 +170,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
@@ -193,12 +193,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../Avansert/Algoritmer.html">Algoritmer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Regresjon</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
@@ -570,6 +571,20 @@ c: 726638.397852397
 <li><p>Potensfunksjoner <span class="math notranslate nohighlight">\(f(x)=ax^b\)</span></p></li>
 <li><p>Sinusfunksjoner <span class="math notranslate nohighlight">\(f(x)=A\cdot sin(kx + \phi) + d\)</span></p></li>
 </ul>
+<div class="warning admonition">
+<p class="admonition-title">Eksponentiell og potensregresjon</p>
+<p>Når vi gjør regresjon med potenser og eksponentialfunksjoner kan vi ende opp med å få noen helt utrolig store tall fordi vi ender opp med tall som <span class="math notranslate nohighlight">\(e^{2015}\)</span> osv…</p>
+<p>Den enkleste måten for å fikse dette er å normalisere datasettet.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2015</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>I stedet for <em>år</em> bruker vi altså <em>år etter</em> et visst år.</p>
+</div>
 <blockquote>
 <div><p>Kilde til data om konsumprisindeks: <a class="reference external" href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen">SSB</a></p>
 </div></blockquote>
@@ -674,6 +689,24 @@ c: 726638.397852397
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Plotting%20Reelle%20datasett.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Reelle datasett</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Microbit%20Intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
