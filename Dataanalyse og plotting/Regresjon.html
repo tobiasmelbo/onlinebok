@@ -570,7 +570,7 @@ c: 726638.397852397
 </ul>
 <div class="warning admonition">
 <p class="admonition-title">Eksponentiell og potensregresjon</p>
-<p>Når vi gjør regresjon med potenser og eksponentialfunksjoner kan vi ende opp med å få noen helt utrolig store tall fordi vi ender opp med tall som <span class="math notranslate nohighlight">\(e^{2015}\)</span> osv…</p>
+<p>Når vi gjør regresjon med potenser og eksponentialfunksjoner kan vi ende opp med å få noen helt utrolig store tall fordi vi ender opp med tall som <span class="math notranslate nohighlight">\(e^{2015}\)</span> osv… Det takler ikke regresjonsverktøyene våre.</p>
 <p>Den enkleste måten for å fikse dette er å normalisere datasettet.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">,</span> <span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">])</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2015</span><span class="p">)</span>
@@ -580,7 +580,7 @@ c: 726638.397852397
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>I stedet for <em>år</em> bruker vi altså <em>år etter</em> et visst år.</p>
+<p>I stedet for <em>år</em> bruker vi altså <em>år etter</em>.</p>
 </div>
 <blockquote>
 <div><p>Kilde til data om konsumprisindeks: <a class="reference external" href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen">SSB</a></p>

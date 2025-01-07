@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -385,7 +385,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mottaker">Mottaker</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave">Oppgave</a></li>
 </ul>
             </nav>
         </div>
@@ -407,9 +406,9 @@ document.write(`
 <p>Hver gruppe må velge seg et unikt gruppenummer mellom <span class="math notranslate nohighlight">\(0\)</span> og <span class="math notranslate nohighlight">\(255\)</span>.</p>
 <section id="bade-sender-og-mottaker">
 <h2>Både sender og mottaker 📡<a class="headerlink" href="#bade-sender-og-mottaker" title="Link to this heading">#</a></h2>
-<p>Vi må importere <code class="docutils literal notranslate"><span class="pre">radio</span></code>-pakken hvis vi skal bruke radio.</p>
+<p>La oss gjøre sånn at Micro:bit kan sende meldinger over radio!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">radio</span>
+<span class="kn">import</span> <span class="nn">radio</span> <span class="c1"># Vi må importere radiopakken for å bruke radioen</span>
 
 <span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># Velg et eget gruppenummer</span>
 
@@ -425,6 +424,20 @@ document.write(`
         <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave</p>
+<ul class="simple">
+<li><p>Gå sammen i grupper med flere Micro:bits</p></li>
+<li><p>Velg dere et gruppenummer mellom <span class="math notranslate nohighlight">\(0\)</span> og <span class="math notranslate nohighlight">\(255\)</span></p></li>
+<li><p>Bestem dere for en beskjed dere vil sende.</p></li>
+<li><p>Last opp koden til Micro:bit og test</p></li>
+</ul>
+</div>
+<p>Idéer til modifikasjoner:</p>
+<ul class="simple">
+<li><p>Få Micro:bit til å sende en beskjed dersom man trykker <code class="docutils literal notranslate"><span class="pre">a</span></code>, og en annen om man trykker <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+<li><p>Få Micro:bit til å si beskjeden med <code class="docutils literal notranslate"><span class="pre">speech</span></code>-modulen.</p></li>
+</ul>
 </section>
 <section id="teste-signalstyrke">
 <h2>Teste signalstyrke 📶<a class="headerlink" href="#teste-signalstyrke" title="Link to this heading">#</a></h2>
@@ -460,16 +473,16 @@ document.write(`
         <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">rssi</span><span class="p">))</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="oppgave">
-<h2>Oppgave<a class="headerlink" href="#oppgave" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
+<div class="task admonition">
+<p class="admonition-title">Oppgave</p>
+<ul class="simple">
 <li><p>Sett opp sender og mottaker etter koden over.</p></li>
 <li><p>Varier avstanden mellom sender og mottakker. Hvor langt kan dere gå før dere ikke får signal?</p></li>
 <li><p>Forsøk å putte senderen i en mikrobølgeovn (ikke skru den på 💀).</p></li>
 <li><p>Er mikrobølgeovnen helt tett for stråling?</p></li>
-</ol>
+</ul>
+</div>
+</section>
 </section>
 </section>
 
@@ -543,7 +556,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mottaker">Mottaker</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave">Oppgave</a></li>
 </ul>
   </nav></div>
 
