@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -377,7 +377,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-grunnleggende-eksempel">Et grunnleggende eksempel.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
 </ul>
             </nav>
         </div>
@@ -393,43 +394,162 @@ document.write(`
 <h1>Spill<a class="headerlink" href="#spill" title="Link to this heading">#</a></h1>
 <p>Å lage spill er en fin måte å øve seg på objektorientert programmering. For å lage spill kommer vi til å bruke <code class="docutils literal notranslate"><span class="pre">pygame</span></code>-pakken.</p>
 <p>Du kan finne dokumentasjonen til Pygame på <a class="reference external" href="https://www.pygame.org/docs/">denne nettsiden</a>.</p>
-<section id="et-grunnleggende-eksempel">
-<h2>Et grunnleggende eksempel.<a class="headerlink" href="#et-grunnleggende-eksempel" title="Link to this heading">#</a></h2>
+<section id="boilerplate">
+<h2>Boilerplate<a class="headerlink" href="#boilerplate" title="Link to this heading">#</a></h2>
 <p>Her er et enkelt eksempel som viser hvordan vi kan sette opp et spill med <code class="docutils literal notranslate"><span class="pre">pygame</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
- 
+
 <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-
-<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span> <span class="c1"># Setter skjermen til 500x500 piksler.</span>
-
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
 <span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
 
+<span class="c1"># Main loop</span>
 <span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
-
 <span class="k">while</span> <span class="n">running</span><span class="p">:</span>
-    <span class="c1"># Avslutter løkken</span>
+    <span class="c1"># Event-handling</span>
+    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="c1"># Update</span>
+    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+    <span class="c1"># Render</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Før hovedløkken initialiserer vi noen objekter. Hovedløkken kan tenkes på som tre deler som gjøres etter hverandre.</p>
+<ol class="arabic simple">
+<li><p><strong>Event-handling</strong> skal håndtere input fra brukeren.</p></li>
+<li><p><strong>Update</strong> skal oppdatere spillobjektene våre.</p></li>
+<li><p><strong>Render</strong> skal tegne spillobjektene på skjermen.</p></li>
+</ol>
+<p>Kjører vi programmet får vi bare en hvit skjerm. La oss lage et spill ut av dette.</p>
+</section>
+<section id="et-enkelt-spill">
+<h2>Et enkelt spill<a class="headerlink" href="#et-enkelt-spill" title="Link to this heading">#</a></h2>
+<p>La oss lage et enkelt spill som viser hvordan noen grunnleggende elementer i <code class="docutils literal notranslate"><span class="pre">pygame</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+<span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">SpillObjekt</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Spiller</span><span class="p">(</span><span class="n">SpillObjekt</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="k">elif</span> <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="mi">5</span>
+        <span class="k">if</span> <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;up&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="k">elif</span> <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;down&quot;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="mi">5</span>
+
+        <span class="k">for</span> <span class="n">fiende</span> <span class="ow">in</span> <span class="n">fiender</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="o">.</span><span class="n">colliderect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">,</span> <span class="n">fiende</span><span class="o">.</span><span class="n">rect</span><span class="p">):</span>
+                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Fiende</span><span class="p">(</span><span class="n">SpillObjekt</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mi">5</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vx</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vy</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+
+<span class="c1"># Initialisere actions-ordbok</span>
+<span class="n">actions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;left&quot;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;right&quot;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;up&quot;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;down&quot;</span> <span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="c1"># Initialisere spillobjekter</span>
+<span class="n">spiller</span> <span class="o">=</span> <span class="n">Spiller</span><span class="p">(</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">fiender</span> <span class="o">=</span> <span class="p">[</span><span class="n">Fiende</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">screen</span><span class="o">.</span><span class="n">get_height</span><span class="p">()))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="c1"># Event-handling</span>
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
             <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="c1"># Fyller skjermen med hvit farge</span>
-    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;up&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;down&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Her skal vi putte spillets logikk, som å tegne figurer og oppdatere posisjonen deres.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="c1"># Oppdaterer hele skjermen</span>
-    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
-
-    <span class="c1"># Forsikrer at spillet kjører i maksimalt 60 FPS.</span>
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;right&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;up&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">:</span>
+                <span class="n">actions</span><span class="p">[</span><span class="s2">&quot;down&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Update</span>
+    <span class="n">spiller</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">fiende</span> <span class="ow">in</span> <span class="n">fiender</span><span class="p">:</span>
+        <span class="n">fiende</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
     <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 
-<span class="c1"># Avslutter spillet</span>
-<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+    <span class="c1"># Render</span>
+    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fiende</span> <span class="ow">in</span> <span class="n">fiender</span><span class="p">:</span>
+        <span class="n">fiende</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+    <span class="n">spiller</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Dette spillet viser en hvit skjerm og avslutter programmet om vi lukker vinduet.</p>
+<p>Phew! La oss se nærmere på noen deler.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">actions</span></code> er en ordbok som holder styr over hvilke knapper som er trykket på.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> er en generell klasse for objekter i spillet vårt. <code class="docutils literal notranslate"><span class="pre">Spiller</span></code> og <code class="docutils literal notranslate"><span class="pre">Fiende</span></code> arver av dette.</p></li>
+<li><p>Hvert <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> har en <code class="docutils literal notranslate"><span class="pre">Rect</span></code> (fra <code class="docutils literal notranslate"><span class="pre">pygame</span></code>) som må oppdateres og tegnes på skjermen.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Spiller</span></code> kan beveges på ved å bruke tastene.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fiende</span></code> starter med fart i en tilfeldig diagonal retning og spretter av veggene.</p></li>
+<li><p>Når en fiende kolliderer med en spiller, så stoppes spillet.</p></li>
+</ul>
+<p>Man kan utvide og forbedre dette spillet på mange måter! Knock yourself out!</p>
 </section>
 </section>
 
@@ -497,7 +617,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-grunnleggende-eksempel">Et grunnleggende eksempel.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
 </ul>
   </nav></div>
 
