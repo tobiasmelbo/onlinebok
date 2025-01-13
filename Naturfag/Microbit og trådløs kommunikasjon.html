@@ -467,7 +467,7 @@ document.write(`
 
 <span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">signal</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">recieve_full</span><span class="p">()</span>
+    <span class="n">signal</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive_full</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">signal</span><span class="p">:</span>
         <span class="n">message</span><span class="p">,</span> <span class="n">rssi</span><span class="p">,</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="n">signal</span>
         <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">rssi</span><span class="p">))</span>

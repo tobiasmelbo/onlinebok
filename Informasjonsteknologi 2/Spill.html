@@ -389,6 +389,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -497,8 +498,6 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">spiller</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 
-
-<span class="c1"># Initialisere spillobjekter</span>
 <span class="k">class</span> <span class="nc">SpillObjekt</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
@@ -560,7 +559,7 @@ document.write(`
     <span class="n">spill</span><span class="o">.</span><span class="n">main_loop</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Man kan utvide og forbedre dette spillet på mange måter, men det fungerer godt som et skjelett for å lage spill videre. Her er noen sentrale deler:</p>
+<p>Man kan utvide og forbedre dette spillet på mange måter, men det fungerer godt som et skjelett for å lage spill videre. Her er en forklaring for noen sentrale deler:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Spill</span></code>-klassen håndterer overordnede ting som skjermen <code class="docutils literal notranslate"><span class="pre">screen</span></code>, klokken <code class="docutils literal notranslate"><span class="pre">clock</span></code>, en ordbok over hvilke knapper som blir trykket på <code class="docutils literal notranslate"><span class="pre">actions</span></code>, spilleren <code class="docutils literal notranslate"><span class="pre">spiller</span></code> og en liste over fiendene <code class="docutils literal notranslate"><span class="pre">fiender</span></code>. Den har også en hovedløkke <code class="docutils literal notranslate"><span class="pre">main_loop()</span></code> som kjører de forskjellige delene av spillet som <code class="docutils literal notranslate"><span class="pre">handle_events()</span></code>, <code class="docutils literal notranslate"><span class="pre">update()</span></code> og <code class="docutils literal notranslate"><span class="pre">render()</span></code>.</p>
 <ul>
@@ -569,11 +568,11 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">render()</span></code> er en metode hvor spillets grafikk tegnes.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code>-klassen er en klasse for objektene i spillet vårt. Alle spillobjekter har en <span class="math notranslate nohighlight">\(x\)</span>-posisjon <code class="docutils literal notranslate"><span class="pre">x</span></code>, <span class="math notranslate nohighlight">\(y\)</span>-posisjon <code class="docutils literal notranslate"><span class="pre">y</span></code>, en bredde <code class="docutils literal notranslate"><span class="pre">width</span></code>, en høyde <code class="docutils literal notranslate"><span class="pre">height</span></code>, en RGB-tuppel <code class="docutils literal notranslate"><span class="pre">color</span></code> og <code class="docutils literal notranslate"><span class="pre">rect</span></code> som er et <code class="docutils literal notranslate"><span class="pre">Rect</span></code>-objekt som oppdateres med <code class="docutils literal notranslate"><span class="pre">update()</span></code> og tegnes med <code class="docutils literal notranslate"><span class="pre">render()</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code>-klassen er en klasse for objektene i spillet vårt. Alle spillobjekter har en <span class="math notranslate nohighlight">\(x\)</span>-posisjon <code class="docutils literal notranslate"><span class="pre">x</span></code>, en <span class="math notranslate nohighlight">\(y\)</span>-posisjon <code class="docutils literal notranslate"><span class="pre">y</span></code>, en bredde <code class="docutils literal notranslate"><span class="pre">width</span></code>, en høyde <code class="docutils literal notranslate"><span class="pre">height</span></code>, en RGB-tuppel <code class="docutils literal notranslate"><span class="pre">color</span></code> og <code class="docutils literal notranslate"><span class="pre">rect</span></code> som er et <code class="docutils literal notranslate"><span class="pre">Rect</span></code>-objekt som oppdateres med <code class="docutils literal notranslate"><span class="pre">update()</span></code> og tegnes med <code class="docutils literal notranslate"><span class="pre">render()</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Spiller</span></code>-klassen arver fra <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> og har en egen farge og en fast bredde og høyde. Den har også en egen <code class="docutils literal notranslate"><span class="pre">update()</span></code>-metode som gjør at man kan flytte på spilleren.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Fiende</span></code>-klassen arver fra <code class="docutils literal notranslate"><span class="pre">SpillObjekt</span></code> og har en egen farge og en fast bredde og høyde. Den har også en egen <code class="docutils literal notranslate"><span class="pre">update()</span></code>-metode som gjør at den flyr rundt på skjermen og spretter av kantene.</p></li>
 </ul>
-<p>Her er et UML-diagram for spillet.</p>
+<p>Her er et UML-diagram for spillet:</p>
 <pre  class="mermaid">
         ---
 title: Klassediagram/UML
@@ -618,6 +617,25 @@ direction LR
     Spiller --&gt; SpillObjekt
     Fiende --&gt; SpillObjekt
     </pre></section>
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="task admonition">
+<p class="admonition-title">Oppgave: Arkanoid 🕹️</p>
+<p>Lag din egen versjon av spillet <strong>Arkanoid</strong>.</p>
+<ul class="simple">
+<li><p>Spillet skal ha et <code class="docutils literal notranslate"><span class="pre">Spiller</span></code>-objekt, et <code class="docutils literal notranslate"><span class="pre">Ball</span></code>-objekt og flere <code class="docutils literal notranslate"><span class="pre">Boks</span></code>-objekter.</p></li>
+<li><p>Ballen skal sprette av <code class="docutils literal notranslate"><span class="pre">Spiller</span></code>-objektet, kantene på skjermen (oppe, venstre, høyre) og <code class="docutils literal notranslate"><span class="pre">Boks</span></code>-objektene.</p></li>
+<li><p>Når ballen spretter av en boks, skal boksen fjernes fra spillet.</p></li>
+<li><p>Når ballen går utenfor den nedre kanten av skjermen skal spillet avsluttes og <code class="docutils literal notranslate"><span class="pre">&quot;Game</span> <span class="pre">over!&quot;</span></code> skrives ut i terminalvinduet.</p></li>
+<li><p>Når alle boksene er borte fra skjermen skal spillet avsluttes og <code class="docutils literal notranslate"><span class="pre">&quot;Du</span> <span class="pre">vant!&quot;</span></code> skrives ut i terminalvinduet.</p></li>
+</ul>
+<p>Ekstra utvidelser:</p>
+<ul class="simple">
+<li><p>Gjør at man ikke kan bevege spilleren utenfor skjermen.</p></li>
+<li><p>Gjør at boksene har opp til tre liv (tilfeldig), og en spesifikk farge for hvert antall liv. Når antall liv når <code class="docutils literal notranslate"><span class="pre">0</span></code> så fjernes boksen.</p></li>
+</ul>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -686,6 +704,7 @@ direction LR
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 
