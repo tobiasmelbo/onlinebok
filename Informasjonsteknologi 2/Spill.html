@@ -389,6 +389,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-tekst">Eksempel: Tekst</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -617,6 +618,44 @@ direction LR
     Spiller --&gt; SpillObjekt
     Fiende --&gt; SpillObjekt
     </pre></section>
+<section id="eksempel-tekst">
+<h2>Eksempel: Tekst<a class="headerlink" href="#eksempel-tekst" title="Link to this heading">#</a></h2>
+<p>La oss legge til en metode i <code class="docutils literal notranslate"><span class="pre">Spill</span></code>-klassen som håndterer skriving av tekst.</p>
+<p>Tekst trenger en en overflate å tegne på, en skrifttype, en farge og en posisjon hvor det skal tegnes.</p>
+<p>La oss ta spillet vi laget over og legge til en timer som viser hvor lenge man har overlevd.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spill</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Kode fra tidligere</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_tid</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Metoder fra tidligere</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">skriv_tekst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">,</span> <span class="n">string</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">font</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">color</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">center</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="c1"># Lager tekst. Andre parameter er anti-alias. Sett til True for glatt og fin tekst.</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+        <span class="c1"># Henter rektangelet rundt teksten, med sentrum der man ønsker.</span>
+        <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span> <span class="o">=</span> <span class="n">center</span><span class="p">)</span>
+        <span class="c1"># Setter teksten på overflaten man spesifiserte.</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+
+    <span class="c1"># Modifiserer render-metoden for å legge til teksten.</span>
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Tegner tiden siden starttiden i sekunder på toppen av skjermen i midten.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">skriv_tekst</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">font</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+            
+            <span class="k">for</span> <span class="n">fiende</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fiender</span><span class="p">:</span>
+                <span class="n">fiende</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">spiller</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <div class="task admonition">
@@ -633,6 +672,26 @@ direction LR
 <ul class="simple">
 <li><p>Gjør at man ikke kan bevege spilleren utenfor skjermen.</p></li>
 <li><p>Gjør at boksene har opp til tre liv (tilfeldig), og en spesifikk farge for hvert antall liv. Når antall liv når <code class="docutils literal notranslate"><span class="pre">0</span></code> så fjernes boksen.</p></li>
+</ul>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave: Flappy Bird 🐦</p>
+<p>Lag din egen versjon av spillet <strong>Flappy Bird</strong>.</p>
+<ul class="simple">
+<li><p>Spillet skal ha et <code class="docutils literal notranslate"><span class="pre">Fugl</span></code>-objekt på midten av skjermen som faller.</p>
+<ul>
+<li><p>Hvis man trykker på en hoppknapp skal den hoppe litt opp.</p></li>
+</ul>
+</li>
+<li><p>Det skal starte <code class="docutils literal notranslate"><span class="pre">Rør</span></code>-objekter ved tilfeldige steder på kanten av skjermen.</p>
+<ul>
+<li><p>Det skal være et <code class="docutils literal notranslate"><span class="pre">Rør</span></code>-objekt på toppen av skjermen og et på bunnen av skjermen slik at man kan passere på midten.</p></li>
+</ul>
+</li>
+<li><p>Hvis <code class="docutils literal notranslate"><span class="pre">Fugl</span></code> treffer et <code class="docutils literal notranslate"><span class="pre">Rør</span></code> skal man tape.</p></li>
+<li><p>Hvis <code class="docutils literal notranslate"><span class="pre">Fugl</span></code> faller under banen skal man tape.</p></li>
+<li><p>Hver gang man passerer et par med <code class="docutils literal notranslate"><span class="pre">Rør</span></code> skal man få et poeng.</p></li>
+<li><p>Poengene skal være synlige. Skriv de også ut i terminalen ved <em>GAME OVER</em>.</p></li>
 </ul>
 </div>
 </section>
@@ -704,6 +763,7 @@ direction LR
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-tekst">Eksempel: Tekst</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
