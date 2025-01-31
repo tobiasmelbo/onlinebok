@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -474,7 +474,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>For å kjøre testprogrammet bruker vi <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">test_sirkelregner.py</span></code> i terminalvinduet.</p>
+<p>For å kjøre testprogrammet bruker vi <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">-v</span> <span class="pre">test_sirkelregner.py</span></code> i terminalvinduet.</p>
 <p>Da får vi utskriften:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ran</span> <span class="mi">2</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.000</span><span class="n">s</span>
 
@@ -507,8 +507,57 @@ document.write(`
 <li><p>For en temperatur <code class="docutils literal notranslate"><span class="pre">100.0</span></code> skal man få ut <code class="docutils literal notranslate"><span class="pre">212.0</span></code> grader fahrenheit og <code class="docutils literal notranslate"><span class="pre">373.15</span></code> grader kelvin.</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><p>Lag <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> og sjekk at alle testene går gjennom med <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">test_temperatur.py</span></code> underveis.</p></li>
+<li><p>Lag <code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code> og sjekk at alle testene går gjennom med <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">-v</span> <span class="pre">test_temperatur.py</span></code> underveis.</p></li>
 </ol>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p><code class="docutils literal notranslate"><span class="pre">test_temperatur.py</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">temperatur</span> <span class="kn">import</span> <span class="n">Temperatur</span>
+
+<span class="k">class</span> <span class="nc">TestTemperatur</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_konstruktør</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Sjekker at man får ValueError ved c &lt; -273.15</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">Temperatur</span><span class="p">,</span> <span class="o">-</span><span class="mf">273.15</span><span class="p">)</span>
+
+        <span class="c1"># Sjekker at man får TypeError ved feil type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">Temperatur</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">Temperatur</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">Temperatur</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">test_som_kelvin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Tester 0 og 100 grader celsius.</span>
+        <span class="n">t_0</span> <span class="o">=</span> <span class="n">Temperatur</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">t_100</span> <span class="o">=</span> <span class="n">Temperatur</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">t_0</span><span class="o">.</span><span class="n">som_kelvin</span><span class="p">(),</span> <span class="mf">273.15</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">t_100</span><span class="o">.</span><span class="n">som_kelvin</span><span class="p">(),</span> <span class="mf">373.15</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_som_fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Tester 0 og 100 grader celsius.</span>
+        <span class="n">t_0</span> <span class="o">=</span> <span class="n">Temperatur</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">t_100</span> <span class="o">=</span> <span class="n">Temperatur</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">t_0</span><span class="o">.</span><span class="n">som_fahrenheit</span><span class="p">(),</span> <span class="mf">32.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="n">t_100</span><span class="o">.</span><span class="n">som_fahrenheit</span><span class="p">(),</span> <span class="mi">212</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">temperatur.py</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Temperatur</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Typen for temperaturen må være et tall.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mf">273.15</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Temperaturen kan ikke være -273.15 eller under.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>
+    
+    <span class="k">def</span> <span class="nf">som_fahrenheit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span>
+
+    <span class="k">def</span> <span class="nf">som_kelvin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">+</span> <span class="mf">273.15</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>

@@ -389,7 +389,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-tekst">Eksempel: Tekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-tekst">Tips: Tekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-trykke-bare-en-gang">Tips: Trykke bare én gang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -618,8 +619,8 @@ direction LR
     Spiller --&gt; SpillObjekt
     Fiende --&gt; SpillObjekt
     </pre></section>
-<section id="eksempel-tekst">
-<h2>Eksempel: Tekst<a class="headerlink" href="#eksempel-tekst" title="Link to this heading">#</a></h2>
+<section id="tips-tekst">
+<h2>Tips: Tekst<a class="headerlink" href="#tips-tekst" title="Link to this heading">#</a></h2>
 <p>La oss legge til en metode i <code class="docutils literal notranslate"><span class="pre">Spill</span></code>-klassen som håndterer skriving av tekst.</p>
 <p>Tekst trenger en en overflate å tegne på, en skrifttype, en farge og en posisjon hvor det skal tegnes.</p>
 <p>La oss ta spillet vi laget over og legge til en timer som viser hvor lenge man har overlevd.</p>
@@ -655,6 +656,48 @@ direction LR
             <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 </pre></div>
 </div>
+</section>
+<section id="tips-trykke-bare-en-gang">
+<h2>Tips: Trykke bare én gang<a class="headerlink" href="#tips-trykke-bare-en-gang" title="Link to this heading">#</a></h2>
+<p>Måten vi satt opp input i <code class="docutils literal notranslate"><span class="pre">actions</span></code> passer godt til å lage spill hvor man holder knapper, men det blir vanskelig å trykke på en knapp bare én gang.</p>
+<p>La oss si at vi lager et spill hvor man skal kunne hoppe, men man må slippe knappen for å kunne hoppe igjen. Tenk <em>Flappy Bird</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Spill</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Konstruktør</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Andre metoder</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">handle_input</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">jump</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYUP</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Fugl</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Konstruktør og metoder</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">spill</span><span class="o">.</span><span class="n">jump</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-=</span> <span class="mi">10</span>
+            <span class="n">spill</span><span class="o">.</span><span class="n">jump</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Når vi trykker ned knappen <code class="docutils literal notranslate"><span class="pre">UP</span></code> blir <code class="docutils literal notranslate"><span class="pre">spill.jump</span> <span class="pre">==</span> <span class="pre">True</span></code>, og fuglen hopper. For at fuglen skal kunne hoppe igjen må man slippe knappen og så trykke den <strong>ned</strong> igjen.</p>
+<p>Ønsker man flere slike knapper kan man for eksempel lage en ny ordbok <code class="docutils literal notranslate"><span class="pre">pressed_actions</span></code> som håndterer knapper på denne måten i tillegg til <code class="docutils literal notranslate"><span class="pre">actions</span></code> som håndterer holding av knapper, men det mest elegante hadde vært å lage en egen klasse <code class="docutils literal notranslate"><span class="pre">Action</span></code> som har attributtene <code class="docutils literal notranslate"><span class="pre">held</span></code> og <code class="docutils literal notranslate"><span class="pre">pressed</span></code>. Å lage et sånt system overlates til leseren 👽</p>
 </section>
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
@@ -763,7 +806,8 @@ direction LR
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boilerplate">Boilerplate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksempel-tekst">Eksempel: Tekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-tekst">Tips: Tekst</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-trykke-bare-en-gang">Tips: Trykke bare én gang</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
