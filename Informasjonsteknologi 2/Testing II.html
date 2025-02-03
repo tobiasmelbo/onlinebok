@@ -60,6 +60,14 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Testing II';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
@@ -558,6 +566,48 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 👽</p>
+<p>I denne oppgaven skal du lage en klasse <code class="docutils literal notranslate"><span class="pre">Starport</span></code> og noen romskip av klassen <code class="docutils literal notranslate"><span class="pre">Starship</span></code>.</p>
+<pre  class="mermaid">
+        classDiagram
+	Starport : +list dock
+	Starport : +int amount_of_docks
+	Starport : dock(Starship)
+	Starport : undock(Starship)
+
+	Starship --o Starport
+	Starship : +str name
+	Starship : +int passengers
+
+	Explorer --&gt; Starship
+	Explorer : +str captain_name
+	Battleship --&gt; Starship
+	Battleship : +str faction
+	Transporter --&gt; Starship
+	Transporter : +list[str] goods
+    </pre><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">starport</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="k">class</span> <span class="nc">TestStarport</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">test_dock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+
+	<span class="k">def</span> <span class="nf">test_undock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="k">pass</span>
+</pre></div>
+</div>
+<p>Lag et testprogram. Du kan ta utgangspunkt i programmet over. Her er noen krav.</p>
+<ul class="simple">
+<li><p>I <code class="docutils literal notranslate"><span class="pre">dock</span></code> kan det ikke være over halvparten <code class="docutils literal notranslate"><span class="pre">Battleships</span></code>. Da skal man få en <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> når man prøver å docke et til.</p></li>
+<li><p>En <code class="docutils literal notranslate"><span class="pre">Transporter</span></code> får ikke docke med <code class="docutils literal notranslate"><span class="pre">&quot;Gleep&quot;</span></code> eller <code class="docutils literal notranslate"><span class="pre">&quot;OopGloop&quot;</span></code>. Da skal man få en <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. Disse stoffene er bannlyst.</p></li>
+<li><p>Det er ikke lov å docke et <code class="docutils literal notranslate"><span class="pre">Battleship</span></code> med faction <code class="docutils literal notranslate"><span class="pre">&quot;Borg&quot;</span></code> eller <code class="docutils literal notranslate"><span class="pre">&quot;Glorg&quot;</span></code>. Disse skaper bare trøbbel.</p></li>
+<li><p>Skip av typen <code class="docutils literal notranslate"><span class="pre">Explorer</span></code> kan docke, men ikke om kapteinen heter <code class="docutils literal notranslate"><span class="pre">Pean-Juc</span> <span class="pre">Bicard</span></code>. Han er også bannlyst fra stasjonen.</p></li>
+<li><p>Det skal ikke være mulig å fylle <code class="docutils literal notranslate"><span class="pre">dock</span></code> mer enn <code class="docutils literal notranslate"><span class="pre">amount_of_docks</span></code>.</p></li>
+<li><p>Når man kjører <code class="docutils literal notranslate"><span class="pre">undock(ship)</span></code> skal man fjerne et skip fra <code class="docutils literal notranslate"><span class="pre">dock</span></code>.</p></li>
+</ul>
+<p>Lag ferdig <code class="docutils literal notranslate"><span class="pre">starport.py</span></code> slik at den passerer alle testene dine.</p>
 </div>
 </section>
 </section>
