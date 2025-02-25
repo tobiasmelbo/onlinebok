@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -380,7 +380,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Strings</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-repetere">Legge til og repetere</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeksering-og-lokker">Indeksering og løkker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-upper-og-string-lower"><code class="docutils literal notranslate"><span class="pre">string.upper()</span></code> og <code class="docutils literal notranslate"><span class="pre">string.lower()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-replace"><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code></a></li>
@@ -409,40 +408,28 @@ document.write(`
                   
   <section id="strings">
 <h1>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h1>
-<p>En string er en datatype som samler symboler i en rekkefølge.</p>
-<p>I denne delen skal vi fikse og trikse på strings.</p>
-<section id="legge-til-og-repetere">
-<h2>Legge til og repetere<a class="headerlink" href="#legge-til-og-repetere" title="Link to this heading">#</a></h2>
-<p>Vi kan legge sammen strings ved a plusse <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;💜&quot;</span>
-<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;🐍&quot;</span>
+<p>Strings er tekst og kan bestå av bokstaver og andre tegn.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;yippee&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;🐍&quot;</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
+</pre></div>
+</div>
+<p>De kan legges sammen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;🐍&quot;</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">+</span> <span class="n">s3</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>💜🐍
+<p>… og de kan til og med ganges med heltall</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;🐍&quot;</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">s2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>Vi kan repetere strings ved å gange.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🐍&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍🐍
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="indeksering-og-lokker">
 <h2>Indeksering og løkker<a class="headerlink" href="#indeksering-og-lokker" title="Link to this heading">#</a></h2>
 <p>Vi kan indeksere i en string akkurat som i en liste.</p>
@@ -537,14 +524,14 @@ jeg elsker python 🐍
 
 <span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">tekst</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>     <span class="c1"># Erstatter mellomrom &quot; &quot; med &quot;&quot; (ingenting).</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">tekst</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Jeg&quot;</span><span class="p">,</span> <span class="s2">&quot;Du&quot;</span><span class="p">))</span> <span class="c1"># Erstatter &quot;Jeg&quot; med &quot;Du&quot; </span>
-<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">tekst</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;!&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">))</span>     <span class="c1"># Erstatter &quot;!&quot; med &quot;&quot; (ingenting)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tekst</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">tekst</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;🐍&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>     <span class="c1"># Fjerner &quot;🐍&quot; ved å erstatte den med &quot;&quot; &lt;- tom string</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jeg elsker Python! 🐍 -&gt; JegelskerPython!🐍
 Jeg elsker Python! 🐍 -&gt; Du elsker Python! 🐍
-Jeg elsker Python! 🐍 -&gt; Jeg elsker Python? 🐍
+Jeg elsker Python! 🐍 -&gt; Jeg elsker Python! 
 </pre></div>
 </div>
 </div>
@@ -1039,7 +1026,6 @@ Standardform med to desimaler: 1.50e+11 meter.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Strings</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-og-repetere">Legge til og repetere</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeksering-og-lokker">Indeksering og løkker</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-upper-og-string-lower"><code class="docutils literal notranslate"><span class="pre">string.upper()</span></code> og <code class="docutils literal notranslate"><span class="pre">string.lower()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-replace"><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code></a></li>

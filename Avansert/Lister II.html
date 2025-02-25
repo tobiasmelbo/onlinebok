@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -782,6 +782,38 @@ margollellaraP
 </div>
 <p>Dette programmet konverterer listen med tall om til en liste med strings. Det blir <code class="docutils literal notranslate"><span class="pre">[&quot;1&quot;,</span> <span class="pre">&quot;2&quot;,</span> <span class="pre">&quot;3&quot;]</span></code></p>
 </div>
+<div class="hint admonition">
+<p class="admonition-title">map-funksjonen 🗺️</p>
+<p>Noen ganger ønsker vi å bruke en funksjon på alle verdiene i en liste.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">kvadrer</span><span class="p">(</span><span class="n">x</span> <span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="n">liste</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">kvadrer</span><span class="p">,</span> <span class="n">liste</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">liste</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Legg merke til at vi må gjøre <code class="docutils literal notranslate"><span class="pre">map</span></code>-objektet til en <code class="docutils literal notranslate"><span class="pre">list</span></code> hvis vi skal printe ut resultatet.</p>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">filter-funksjonen 🗺️</p>
+<p>Funksjonen <code class="docutils literal notranslate"><span class="pre">filter</span></code> lar oss gå gjennom en liste med en funksjon og bare beholde de resultatene som gir <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">er_oddetall</span><span class="p">(</span><span class="n">x</span> <span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+<span class="n">liste</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">er_oddetall</span><span class="p">,</span> <span class="n">liste</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">liste</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Legg merke til at vi må gjøre <code class="docutils literal notranslate"><span class="pre">filter</span></code>-objektet til en <code class="docutils literal notranslate"><span class="pre">list</span></code> hvis vi skal printe ut resultatet. Ellers kan vi beholde det sånn det står.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -823,7 +855,21 @@ document.getElementById("textInput").addEventListener("keypress", function(event
 </script>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 3 🪞</p>
+<p class="admonition-title">Oppgave 3 ✂️</p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">fjern_lange_ord</span></code> som tar inn en liste <code class="docutils literal notranslate"><span class="pre">liste</span></code> og returnerer en liste hvor alle strings med lengde <span class="math notranslate nohighlight">\(&gt;4\)</span> er fjernet.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fjern_lange_ord</span><span class="p">([</span><span class="s2">&quot;Lorem&quot;</span><span class="p">,</span> <span class="s2">&quot;ipsum&quot;</span><span class="p">,</span> <span class="s2">&quot;dolor&quot;</span><span class="p">,</span> <span class="s2">&quot;sit&quot;</span><span class="p">,</span> <span class="s2">&quot;amet&quot;</span><span class="p">]))</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="s2">&quot;sit&quot;</span><span class="p">,</span> <span class="s2">&quot;amet&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fjern_lange_ord</span><span class="p">(</span><span class="n">liste</span> <span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">liste</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 🪞</p>
 <p>Tallet <span class="math notranslate nohighlight">\(11\)</span> er det samme baklengs og forlengs. Tallet <span class="math notranslate nohighlight">\(42\)</span> er ikke det.</p>
 <p>Vi kan anta at alle tallene fra og med <span class="math notranslate nohighlight">\(1\)</span> til og med <span class="math notranslate nohighlight">\(9\)</span> også er de samme baklengs og forlengs.</p>
 <p>Hva er summen av alle tallene under <span class="math notranslate nohighlight">\(1000\)</span> hvor tallet er det samme baklengs og forlengs?</p>
@@ -842,13 +888,13 @@ document.getElementById("oppg3").addEventListener("keypress", function(event) {
 </script>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 4 🔢</p>
+<p class="admonition-title">Oppgave 5 🔢</p>
 <p>En tverrsum (<em>digital sum</em>) er summen av sifrene i et tall.</p>
 <p>For eksempel er tverrsummen av <span class="math notranslate nohighlight">\(123 \rightarrow 1+2+3 = 6\)</span> og <span class="math notranslate nohighlight">\(456\rightarrow 4+5+6 = 15\)</span>.</p>
 <p>a) Lag en funksjon <code class="docutils literal notranslate"><span class="pre">digsum(n)</span></code> som tar et heltall <code class="docutils literal notranslate"><span class="pre">n</span></code> og returnerer tverrsummen.</p>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digsum</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digsum</span><span class="p">(</span><span class="n">n</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="c1"># For hvert siffer</span>
     <span class="k">for</span> <span class="n">siffer</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -857,7 +903,7 @@ document.getElementById("oppg3").addEventListener("keypress", function(event) {
 </pre></div>
 </div>
 <p>Alternativt kan vi bruke list comprehension</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digsum</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digsum</span><span class="p">(</span><span class="n">n</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">siffer</span><span class="p">)</span> <span class="k">for</span> <span class="n">siffer</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
 </pre></div>
 </div>
@@ -868,7 +914,7 @@ document.getElementById("oppg3").addEventListener("keypress", function(event) {
 <div class="solution dropdown admonition">
 <p class="admonition-title">Løsningsforslag</p>
 <p>La oss bruke funksjonen <code class="docutils literal notranslate"><span class="pre">digsum(n)</span></code> fra a).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digroot</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digroot</span><span class="p">(</span><span class="n">n</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="n">n_string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="c1"># Mens vi har flere sifre enn 1</span>
     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_string</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -891,7 +937,7 @@ document.getElementById("oppg3").addEventListener("keypress", function(event) {
 </div>
 <p>Ser du et mønster?</p>
 <p>Det viser seg faktisk at det finnes en enkel formel for å finne den gjentatte tverrsummen.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digroot</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">digroot</span><span class="p">(</span><span class="n">n</span> <span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">else</span><span class="p">:</span>
