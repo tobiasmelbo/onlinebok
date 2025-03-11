@@ -65,6 +65,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Naturfag/Halveringstid';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Proteinsyntesen" href="Proteinsyntesen.html" />
+    <link rel="prev" title="Isotoper og henfall" href="Isotoper%20og%20henfall.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -127,8 +129,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -170,7 +170,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
@@ -203,9 +203,10 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Naturfag.html">Naturfag 🦠</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Naturfag.html">Naturfag 🦠</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="Isotoper%20og%20henfall.html">Isotoper og henfall</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Halveringstid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Proteinsyntesen.html">Proteinsyntesen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
@@ -379,8 +380,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formler-og-kalkulatorer">Formler og kalkulatorer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulasjon">Simulasjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formel-antall-kjerner">Formel: Antall kjerner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-terningkast">Modell: Terningkast</a></li>
 </ul>
             </nav>
         </div>
@@ -394,14 +395,14 @@ document.write(`
                   
   <section id="halveringstid">
 <h1>Halveringstid<a class="headerlink" href="#halveringstid" title="Link to this heading">#</a></h1>
-<p>Halveringstid er tiden det tar før et stoff har blitt redusert til halvparten av det opprinnelige.</p>
-<p>La oss si at vi starter med <span class="math notranslate nohighlight">\(100 000\)</span> atomkjerner av Karbon-14. Halveringstiden til Karbon-14 er omtrent 5730 år. Det vil si at vi kan lage følgende tabell</p>
+<p>Halveringstid er tiden det tar før et mengden av et stoff har blitt redusert til halvparten av det opprinnelige.</p>
+<p>La oss si at vi starter med <span class="math notranslate nohighlight">\(100\,000\)</span> atomkjerner av Karbon-14. Halveringstiden til Karbon-14 er omtrent 5700 år.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Tid</p></th>
 <th class="head"><p>Antall atomer</p></th>
 <th class="head"><p>Prosent</p></th>
-<th class="head text-left"><p>Halvveringer</p></th>
+<th class="head text-left"><p>Halveringer</p></th>
 </tr>
 </thead>
 <tbody>
@@ -410,17 +411,17 @@ document.write(`
 <td><p><span class="math notranslate nohighlight">\(100\%\)</span></p></td>
 <td class="text-left"><p>0 halveringer</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>5730 år</p></td>
+<tr class="row-odd"><td class="text-left"><p>5700 år</p></td>
 <td><p><span class="math notranslate nohighlight">\(50 000\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(50\%\)</span></p></td>
 <td class="text-left"><p>1 halvering</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>11460 år</p></td>
+<tr class="row-even"><td class="text-left"><p>11400 år</p></td>
 <td><p><span class="math notranslate nohighlight">\(25 000\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(25\%\)</span></p></td>
 <td class="text-left"><p>2 halveringer</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>17190 år</p></td>
+<tr class="row-odd"><td class="text-left"><p>17100 år</p></td>
 <td><p><span class="math notranslate nohighlight">\(12 500\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(12.5\%\)</span></p></td>
 <td class="text-left"><p>3 halveringer</p></td>
@@ -428,23 +429,26 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>Forholdet mellom mengden Karbon-12 og Karbon-14 er relativt konstant gjennom livet til levende organismer, fordi de hele tiden tilfører nytt Karbon-12 og Karbon-14. Når en levende organisme dør, så vil mengden Karbon-14 avta på grunn av radioaktivitet, mens mengden Karbon-12 holde seg konstant. Dette kan vi bruke til å vite hvor gamle levninger av levende organismer er.</p>
-<p>Halvveringstiden til andre radioaktive isotoper brukes for eksempel også til å regne ut jordens alder.</p>
-<section id="formler-og-kalkulatorer">
-<h2>Formler og kalkulatorer<a class="headerlink" href="#formler-og-kalkulatorer" title="Link to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">Aldersbestemmelse ⌛</p>
+<p>Forholdet mellom mengden Karbon-12 og Karbon-14 er relativt konstant gjennom livet til levende organismer, fordi de hele tiden tilfører nytt Karbon-12 og Karbon-14.</p>
+<p>Kroppen bryr seg ikke om hvilken type karbon den tar opp, fordi stoffene fungerer likt kjemisk.</p>
+<p>Når en levende organisme dør, så vil mengden Karbon-14 avta på grunn av radioaktivitet, mens mengden Karbon-12 holde seg konstant. Dette kan vi bruke til å vite hvor gamle levninger av levende organismer er.</p>
+</div>
+<section id="formel-antall-kjerner">
+<h2>Formel: Antall kjerner<a class="headerlink" href="#formel-antall-kjerner" title="Link to this heading">#</a></h2>
 <p>Denne formelen lar oss regne ut mengden av et radioaktivt stoff ved tiden <span class="math notranslate nohighlight">\(t\)</span>. <span class="math notranslate nohighlight">\(N_0\)</span> er mengden vi starter med og <span class="math notranslate nohighlight">\(t_{1/2}\)</span> er halveringstiden.</p>
 <div class="math notranslate nohighlight">
 \[
-N(t) = N_0\cdot (0.5)^{\frac{t}{t_{1/2}}}
+N(t) = N_0\cdot 0.5^{\frac{t}{t_{1/2}}}
 \]</div>
-<div class="admonition-eksempel-hvor-mange-atomkjerner-karbon-14-har-vi-igjen-etter-2500-ar admonition">
-<p class="admonition-title">Eksempel: Hvor mange atomkjerner Karbon-14 har vi igjen etter <span class="math notranslate nohighlight">\(2500\)</span> år?</p>
-<p>class: tip
-Halveringstiden til Karbon-14 er <span class="math notranslate nohighlight">\(5730\)</span> år. Hvis vi starter med <span class="math notranslate nohighlight">\(100000\)</span> atomkjerner, og ser på hvor mange vi har etter <span class="math notranslate nohighlight">\(2500\)</span> år kan vi regne det ut ved å bruke formelen i Python.</p>
+<div class="note admonition">
+<p class="admonition-title">Eksempel: Hvor mange atomkjerner Karbon-14 har vi igjen etter <span class="math notranslate nohighlight">\(2000\)</span> år?</p>
+<p>Halveringstiden til Karbon-14 er <span class="math notranslate nohighlight">\(5730\)</span> år. Hvis vi starter med <span class="math notranslate nohighlight">\(100\,000\)</span> atomkjerner, og ser på hvor mange vi har etter <span class="math notranslate nohighlight">\(2000\)</span> år kan vi regne det ut ved å bruke formelen i Python.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variabler</span>
-<span class="n">N_0</span> <span class="o">=</span> <span class="mi">100000</span>
-<span class="n">t_halv</span> <span class="o">=</span> <span class="mi">5730</span>
-<span class="n">t</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">N_0</span> <span class="o">=</span> <span class="mi">100000</span> <span class="c1"># Startverdi</span>
+<span class="n">t_halv</span> <span class="o">=</span> <span class="mi">5700</span> <span class="c1"># Halveringstid</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">2000</span> <span class="c1"># Tid</span>
 
 <span class="c1"># Formel</span>
 <span class="n">N</span> <span class="o">=</span> <span class="n">N_0</span><span class="o">*</span><span class="mf">0.5</span><span class="o">**</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t_halv</span><span class="p">)</span>
@@ -452,11 +456,260 @@ Halveringstiden til Karbon-14 er <span class="math notranslate nohighlight">\(57
 <span class="nb">print</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Dette enkle programmet sier oss at det er igjen omtrent <span class="math notranslate nohighlight">\(73903\)</span> atomkjerner etter <span class="math notranslate nohighlight">\(2500\)</span> år.</p>
+<p>Dette enkle programmet sier oss at det er igjen omtrent <span class="math notranslate nohighlight">\(78\,411\)</span> atomkjerner igjen etter <span class="math notranslate nohighlight">\(2000\)</span> år.</p>
+<p><strong>Husk å sørge for at halveringstiden og tiden har samme enhet! Her er begge enhetene i år, for eksempel.</strong></p>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave</p>
+<p>Jeg kjøpte meg en vakker liten klump med Gull-194 til en billig penge.</p>
+<p><em>Halveringstiden til Gull-194 er omtrent <span class="math notranslate nohighlight">\(1.584\)</span> dager.</em></p>
+<ol class="arabic simple">
+<li><p>Hvor mange prosent av gullklumpen min mister jeg i løpet av en uke?</p></li>
+<li><p>Bruk programmet på siden <a class="reference internal" href="Isotoper%20og%20henfall.html#isotoper-og-henfall"><span class="std std-ref">Isotoper og henfall</span></a> for å finne henfallstypen og hva gullet har blitt om til.</p></li>
+<li><p>Hvilken type stråling har jeg blitt utsatt for ved å ha denne klumpen i huset mitt?</p></li>
+</ol>
+<p>Bruk gjerne <a class="reference external" href="https://ptable.com/?lang=no#Isotoper/Count">periodesystemet (lenke)</a> for å utforske andre isotoper når du er ferdig.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag I</p>
+<p>a) Jeg bruker formelen <span class="math notranslate nohighlight">\(N=N_0 \cdot 0.5^{\frac{t}{t_{1/2}}}\)</span></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">N_0</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># 100 prosent</span>
+<span class="n">t_halv</span> <span class="o">=</span> <span class="mf">1.583</span> <span class="c1"># Halveringstiden i dager</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">7</span> <span class="c1"># Tiden i dager</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">N_0</span> <span class="o">*</span> <span class="mf">0.5</span><span class="o">**</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t_halv</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">4.664985556509657</span>
+</pre></div>
+</div>
+<p>Jeg sitter altså igjen med litt under <span class="math notranslate nohighlight">\(5\%\)</span> av det jeg startet med.</p>
+</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag II</p>
+<p>Gull-194 henfaller på følgende måte med <span class="math notranslate nohighlight">\(\beta^+\)</span>-henfall.</p>
+<div class="math notranslate nohighlight">
+\[^{194}_{79}\text{Au}\rightarrow ^{194}_{78}\text{Pt}\]</div>
+<p>Det vil si at omtrent <span class="math notranslate nohighlight">\(95\%\)</span> av gullet mitt har blitt til platina. Ikke så verst! Denne isotopen er også stabil.</p>
+</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag III</p>
+<p>Jeg blir utsatt for gammastråling. Henfall med <span class="math notranslate nohighlight">\(\beta^+\)</span> sender ut positroner, men disse treffer som regel på elektroner nesten med en gang. Da annihileres positronet og elektronet og sender ut gammastråling. Avhengig av hvor stor denne klumpen var, så har jeg kanskje fått en ganske heftig stråledose.</p>
+</div>
 </div>
 </section>
-<section id="simulasjon">
-<h2>Simulasjon<a class="headerlink" href="#simulasjon" title="Link to this heading">#</a></h2>
+<section id="modell-terningkast">
+<h2>Modell: Terningkast<a class="headerlink" href="#modell-terningkast" title="Link to this heading">#</a></h2>
+<p>En radioaktiv atomkjerne har en viss sannsynlighet for å henfalle, men det er helt tilfeldig når den gjør det. For å modellere dette kan vi bruke terninger.</p>
+<div class="note admonition">
+<p class="admonition-title">Terningkastforsøk 🎲</p>
+<p>Ta <span class="math notranslate nohighlight">\(20\)</span> terninger. Til hvert tidssteg kaster du/dere terningene og fjerner alle med <span class="math notranslate nohighlight">\(1\)</span>. Fyll ut en tabell som den under.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tidssteg</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Terninger</p></td>
+<td><p>20</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Hver terning representerer en radioaktiv atomkjerne. Samlingen av mange terninger kan representere en klump med en radioaktiv isotop.</p>
+<ul class="simple">
+<li><p>Hva blir halveringstiden omtrent for den radioaktive isotopen vi modellerer her?</p></li>
+</ul>
+<p><em>Hvis flere gjør forsøket kan man summere opp alle kolonnene for å få et bedre datamateriale.</em></p>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Andre isotoper 🎲</p>
+<p>Hvis du har tilgang til andre terninger enn den vanlige <strong>D6</strong>-terningen kan du modellere hva det vil si å ha andre isotoper med andre halveringstider.</p>
+<ol class="arabic simple">
+<li><p>Hvordan tror du halveringstiden blir for en <strong>D4</strong>, <strong>D8</strong>, <strong>D10</strong>, <strong>D12</strong> eller <strong>D20</strong> i forhold til en <strong>D6</strong>?</p></li>
+<li><p>Test hypotesen din.</p></li>
+</ol>
+</div>
+<p>Å kaste terninger er gøy, men man må kaste utrolig mange terninger for å få et godt tallmateriale. La oss heller gjøre dette forsøket i Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">terninger</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">terninger</span><span class="p">)</span> 
+
+    <span class="c1"># For hvert kast</span>
+    <span class="n">enere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Start med null enere</span>
+    
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">terninger</span><span class="p">):</span>
+        <span class="c1"># For hver terning som er igjen</span>
+        <span class="k">if</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Terningkast</span>
+            <span class="n">enere</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">terninger</span> <span class="o">-=</span> <span class="n">enere</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 20
+1 17
+2 16
+3 14
+4 10
+5 10
+6 10
+7 9
+8 7
+9 6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint dropdown admonition">
+<p class="admonition-title">Alternativ: Micro:bit</p>
+<p>Vi kan også lage samme type simulering med <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code>. Kopier gjerne koden under.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># Startverdi</span>
+<span class="n">N_0</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># Setter opp terninger</span>
+<span class="n">terninger</span> <span class="o">=</span> <span class="n">N_0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">was_pressed</span><span class="p">():</span>
+        <span class="c1"># Viser antall terninger</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">scroll</span><span class="p">(</span><span class="n">terninger</span><span class="p">)</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">button_b</span><span class="o">.</span><span class="n">was_pressed</span><span class="p">():</span>
+        <span class="c1"># Simulerer henfall</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">ARROW_S</span><span class="p">)</span>
+        <span class="n">audio</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Sound</span><span class="o">.</span><span class="n">HAPPY</span><span class="p">)</span>
+        <span class="n">enere</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">terninger</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">enere</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">terninger</span> <span class="o">-=</span> <span class="n">enere</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pin_logo</span><span class="o">.</span><span class="n">is_touched</span><span class="p">():</span>
+        <span class="c1"># Starter om simulasjonen</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">YES</span><span class="p">)</span>
+        <span class="n">audio</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Sound</span><span class="o">.</span><span class="n">SLIDE</span><span class="p">)</span>
+        <span class="n">terninger</span> <span class="o">=</span> <span class="n">N_0</span>
+        <span class="n">sleep</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="hint dropdown admonition">
+<p class="admonition-title">Alternativ: Micro:bit II</p>
+<p>Her er en enda mer visuell versjon av simuleringen i Micro:bit. Denne er koden mest for å leke med, ikke for å forstå. Læreren din forstår den sikkert ikke! 🤣</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="c1"># Lager rader med piksler. &quot;9&quot; betyr full styrke</span>
+<span class="n">piksler</span> <span class="o">=</span> <span class="s2">&quot;99999:99999:99999:99999:99999&quot;</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">piksler</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">was_pressed</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">piksler</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">piksler</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;9&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">piksler</span> <span class="o">=</span> <span class="n">piksler</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;0&quot;</span> <span class="o">+</span> <span class="n">piksler</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+
+    <span class="k">if</span> <span class="n">button_b</span><span class="o">.</span><span class="n">was_pressed</span><span class="p">():</span>
+        <span class="n">piksler</span> <span class="o">=</span> <span class="s2">&quot;99999:99999:99999:99999:99999&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave</p>
+<p>Utforsk programmet over. Du kan for eksempel:</p>
+<ul class="simple">
+<li><p>Gjøre at man starter med mange flere terninger.</p></li>
+<li><p>Bytte på tallet i <code class="docutils literal notranslate"><span class="pre">randint(1,</span> <span class="pre">6)</span></code> til noe annet, for eksempel <code class="docutils literal notranslate"><span class="pre">randint(1,</span> <span class="pre">20)</span></code> for å simulere en isotop med en annen halveringstid.</p></li>
+</ul>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave</p>
+<p>Hvis man fjerner i gjennomsnitt <span class="math notranslate nohighlight">\(\frac{1}{6}\)</span> av terningene hvert tidssteg blir en teoretisk modell for antall terninger:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{terninger} = N_0 \cdot \left(\frac{5}{6}\right)^n
+\]</div>
+<p>Når <span class="math notranslate nohighlight">\(N_0\)</span> er antall terninger man starter med og <span class="math notranslate nohighlight">\(n\)</span> er hvert tidssteg. I eksempelet vårt blir det teoretiske antall terninger etter ett tidssteg lik <span class="math notranslate nohighlight">\(20 \cdot (\frac{5}{6})^1\approx 16.67\)</span>.</p>
+<p>Modifiser programmet over:</p>
+<ol class="arabic simple">
+<li><p>Skriv også ut teoretisk antall for terningene etter hvert tidssteg. Hvordan skiller det «eksperimentelle» seg fra det teoretiske?</p></li>
+<li><p>Øk mengden terninger. Er skillet fortsatt like stort mellom teori og eksperiment?</p></li>
+</ol>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag I</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">N_0</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">terninger</span> <span class="o">=</span> <span class="n">N_0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">terninger</span><span class="p">,</span> <span class="n">N_0</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># For hvert kast</span>
+    <span class="n">enere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Start med null enere</span>
+    
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">terninger</span><span class="p">):</span>
+        <span class="c1"># For hver terning som er igjen</span>
+        <span class="k">if</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Terningkast</span>
+            <span class="n">enere</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">terninger</span> <span class="o">-=</span> <span class="n">enere</span>
+</pre></div>
+</div>
+</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag II</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">N_0</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">terninger</span> <span class="o">=</span> <span class="n">N_0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">terninger</span><span class="p">,</span> <span class="n">N_0</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="c1"># For hvert kast</span>
+    <span class="n">enere</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Start med null enere</span>
+    
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">terninger</span><span class="p">):</span>
+        <span class="c1"># For hver terning som er igjen</span>
+        <span class="k">if</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Terningkast</span>
+            <span class="n">enere</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">terninger</span> <span class="o">-=</span> <span class="n">enere</span>
+</pre></div>
+</div>
+<p>Vi ser at forskjellen mellom den teoretiske modellen og eksperimentet blir mye mindre (i prosent) når vi bruker flere terninger! I statistikk kaller vi dette for <strong>de store talls lov</strong>.</p>
+</div>
+</div>
 </section>
 </section>
 
@@ -490,6 +743,24 @@ Halveringstiden til Karbon-14 er <span class="math notranslate nohighlight">\(57
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Isotoper%20og%20henfall.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Isotoper og henfall</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Proteinsyntesen.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Proteinsyntesen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -506,8 +777,8 @@ Halveringstiden til Karbon-14 er <span class="math notranslate nohighlight">\(57
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formler-og-kalkulatorer">Formler og kalkulatorer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulasjon">Simulasjon</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formel-antall-kjerner">Formel: Antall kjerner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modell-terningkast">Modell: Terningkast</a></li>
 </ul>
   </nav></div>
 
