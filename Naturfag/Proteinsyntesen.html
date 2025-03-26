@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -380,11 +380,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-proteinsyntesen">Hva er proteinsyntesen?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna">mRNA</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna">mRNA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-1-lage-mrna">Del 1: Lage mRNA</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-2-lage-aminosyrer">Del 2: Lage aminosyrer</a></li>
@@ -404,39 +401,27 @@ document.write(`
                   
   <section id="proteinsyntesen">
 <span id="id1"></span><h1>Proteinsyntesen<a class="headerlink" href="#proteinsyntesen" title="Link to this heading">#</a></h1>
-<div class="note admonition">
-<p class="admonition-title">Til læreren 🧑‍🏫</p>
-<p>Jeg anbefaler at man har litt kjennskap til disse emnene før man går gjennom dette prosjektet.</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#variabler-og-syntaks"><span class="std std-ref">Variabler og syntaks</span></a></p></li>
-<li><p><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html#lokker"><span class="std std-ref">Løkker</span></a></p></li>
-<li><p><a class="reference internal" href="../Grunnleggende/Lister.html#lister"><span class="std std-ref">Lister</span></a></p></li>
-</ul>
-</div>
-<section id="hva-er-proteinsyntesen">
-<h2>Hva er proteinsyntesen?<a class="headerlink" href="#hva-er-proteinsyntesen" title="Link to this heading">#</a></h2>
 <p>Proteiner er livsnødvendige stoffer som finnes i alt fra skjelett til muskler, hår, hud, blod og organer.</p>
 <p>Proteiner består av lange kjeder med aminosyrer. Det er <span class="math notranslate nohighlight">\(20\)</span> forskjellige aminosyrer som bygger opp proteiner i kroppen. Rekkefølgen av aminosyrer, og den tredimensjonale formen, bestemmer egenskapene til proteinet.</p>
 <p>Aminosyrene fungerer litt som legoklosser. Hvis man har <span class="math notranslate nohighlight">\(20\)</span> forskjellige typer legoklosser kan man lage mye forskjellig, som et hus 🏠, en hest 🐎 eller en krokodille 🐊. På samme måte kan man lage mange forskjellige proteiner av bare <span class="math notranslate nohighlight">\(20\)</span> aminosyrer.</p>
 <section id="dna-molekylet">
-<h3>DNA-molekylet 🧬<a class="headerlink" href="#dna-molekylet" title="Link to this heading">#</a></h3>
-<p>Når man bygger lego så har man ofte en slags manual, eller en oppskrift, på hvordan man skal sette sammen klossene for å få en bil 🚗, en tiger 🐅 eller en Millenium Falcon™️. Hvor sitter denne <em>oppskriften</em> i kroppen? Vel, den sitter som en kode lagret i hver enkelt celle; i et molekyl som heter <em>DNA-molekylet</em> 🧬</p>
+<h2>DNA-molekylet 🧬<a class="headerlink" href="#dna-molekylet" title="Link to this heading">#</a></h2>
+<p>Når man bygger lego så har man ofte en slags manual, eller en oppskrift, på hvordan man skal sette sammen klossene for å få en bil 🚗, en tiger 🐅 eller en Millenium Falcon™️. I kroppen sitter denne oppskriften som en kode lagret i hver enkelt celle; i et molekyl som heter <em>DNA-molekylet</em> 🧬</p>
 <p>DNA-molekylet ser ut som en spiraltrapp. Hvert «trappetrinn» består av et basepar. Det er fire baser å velge mellom i DNA: Adenin, Tymin, Cytosin og Guanin. Disse kommer alltid i par, så hvis det er adenin på den ene siden, så er det tymin på den andre siden, og hvis det er cytosin på den ene siden, så er det guanin på den andre siden.</p>
 <p>Sånn kan en bit av DNA se ut:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TAGTTCGGG</span>
-<span class="n">ATCAAGCCC</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TACCTATCTGGACCAACT</span>
+<span class="n">ATGGATAGACCTGGTTGA</span>
 </pre></div>
 </div>
 </section>
 <section id="mrna">
-<h3>mRNA<a class="headerlink" href="#mrna" title="Link to this heading">#</a></h3>
-<p>DNA-molekylet befinner seg i cellekjernen, men selve byggeprosessen skjer utenfor cellekjernen, på <em>ribosomene</em>. Man flytter ikke DNA-molekylet ut, men lager en kopi av den ene siden i DNA. Kopien kaller vi for <em>mRNA</em>.</p>
-<p>Når vi lager mRNA ser vi på en av sidene av DNA-molekylet.</p>
+<h2>mRNA<a class="headerlink" href="#mrna" title="Link to this heading">#</a></h2>
+<p>DNA-molekylet befinner seg i cellekjernen, men selve byggeprosessen skjer utenfor cellekjernen, på <em>ribosomene</em>. Man flytter ikke DNA-molekylet ut, men lager en kopi av den ene siden i DNA. Kopien kaller vi for <strong>mRNA</strong>. Det er et enzym som heter <strong>RNA-polymerase</strong> leser av DNA og lager mRNA. Den går langs en spesifikk side av DNA-molekylet.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DNA</span><span class="p">:</span>
-<span class="n">TAGTTCGGG</span>
+<span class="n">TACCTATCTGGACCAACT</span>
 </pre></div>
 </div>
-<p>Når mRNA skal kopiere dette segmentet så tar vi de motsatte baseparene, men basen Tymin byttes ut med Uracil.</p>
+<p>Når <strong>RNA-polymerase</strong> skal kopiere dette segmentet så tar vi de motsatte baseparene, men basen Tymin byttes ut med Uracil.</p>
 <ul class="simple">
 <li><p>A -&gt; U</p></li>
 <li><p>T -&gt; A</p></li>
@@ -445,32 +430,44 @@ document.write(`
 </ul>
 <p>Kopien av DNA-molekylet over ser da slik ut.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
-<span class="n">AUCAAGCCC</span>
+<span class="n">AUGGAUAGACCUGGUUGA</span>
 </pre></div>
 </div>
 <p>Dette mRNA-molekylet sendes så ut av cellekjernen og til ribosomene. Der leses det av tre og tre baser, noe som heter <em>tripletter</em> eller <em>kodoner</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mRNA</span><span class="p">:</span>
-<span class="n">AUC</span> <span class="n">AAG</span> <span class="n">CCC</span>
+<span class="n">AUG</span> <span class="n">GAU</span> <span class="n">AGA</span> <span class="n">CCU</span> <span class="n">GGU</span> <span class="n">UGA</span>
 
 <span class="n">Tilsvarer</span> <span class="n">aminosyrene</span><span class="p">:</span>
-<span class="n">Isoleucin</span>
-<span class="n">Lysin</span>
+<span class="n">Metionin</span><span class="p">(</span><span class="n">START</span><span class="p">)</span>
+<span class="n">Asparaginsyre</span>
+<span class="n">Arginin</span>
 <span class="n">Prolin</span>
+<span class="n">Glycin</span>
+<span class="n">STOPP</span>
 </pre></div>
 </div>
-<p>En triplett (AUG) koder for starten av proteinet. Denne koder også for metionin. Det er også tre tripletter som koder for et stoppsignal (UAA, UAG, UGA).</p>
-<p>Proteiner består vanligvis av hundrevis og noen ganger tusenvis av aminosyrer. Da blir det litt vanskelig å sitte å oversette base for base for å finne ut hvordan proteinet vil se ut fra en DNA-sekvens. Heldigvis har vi datamaskiner som kan gjøre dette litt kjappere, og det er det vi skal gjøre i dette programmeringsprosjektet.</p>
-</section>
+<p>En triplett (AUG) koder for starten av proteinet. Denne koder også for metionin. Det betyr altså at alle proteiner starter med å ha metionin som sin første aminosyre, men noen ganger blir deler kuttet av før proteinet er helt ferdig, så ikke alle proteiner i kroppen starter med metionin.</p>
+<p>Det er også tre av triplettene som koder for et stoppsignal (UAA, UAG, UGA). Da får man ikke en ny aminosyre, men det signaliseres at proteinet er ferdig.</p>
+<p>Proteiner består vanligvis av hundrevis og noen ganger tusenvis av aminosyrer. La oss gjennomføre hele proteinsyntesen med Python 🐍</p>
+<div class="admonition-hvilken-side-skal-man-lese-av admonition">
+<p class="admonition-title">Hvilken side skal man lese av?</p>
+<p>Hver side av DNA-tråden har en start og en slutt. Den ene siden kalles for <code class="docutils literal notranslate"><span class="pre">5'</span></code> og den andre siden kalles for <code class="docutils literal notranslate"><span class="pre">3'</span></code>. Navnet kommer av hvor fosfatgruppen er bundet til sukkermolekylet. <code class="docutils literal notranslate"><span class="pre">5'</span></code>-siden ender med en fosfatgruppe, og <code class="docutils literal notranslate"><span class="pre">3'</span></code>-siden ender med en sukkergruppe.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">3</span><span class="s1">&#39;) TACCTATCTGGACCAACT (5&#39;</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">5</span><span class="s1">&#39;) ATGGATAGACCTGGTTGA (3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>RNA-polymerase leser fra <code class="docutils literal notranslate"><span class="pre">3'</span></code> til <code class="docutils literal notranslate"><span class="pre">5'</span></code> slik som alle eksemplene på denne siden, men legg merke til at mange lærebøker og ressurser på internett ofte skriver DNA-molekyler i retningen <code class="docutils literal notranslate"><span class="pre">5'</span> <span class="pre">-&gt;</span> <span class="pre">3'</span></code>. Hvis man har en DNA-tråd skrevet med <code class="docutils literal notranslate"><span class="pre">5'</span> <span class="pre">-&gt;</span> <span class="pre">3'</span></code> holder det faktisk bare å bytte ut <code class="docutils literal notranslate"><span class="pre">T</span></code> med <code class="docutils literal notranslate"><span class="pre">U</span></code> for å få <code class="docutils literal notranslate"><span class="pre">mRNA</span></code>.</p>
+</div>
 </section>
 <section id="programmering-av-proteinsyntesen">
 <h2>Programmering av proteinsyntesen<a class="headerlink" href="#programmering-av-proteinsyntesen" title="Link to this heading">#</a></h2>
 <section id="del-1-lage-mrna">
 <h3>Del 1: Lage mRNA<a class="headerlink" href="#del-1-lage-mrna" title="Link to this heading">#</a></h3>
-<p>Vi kan representere en bit av DNA som en tekst <code class="docutils literal notranslate"><span class="pre">DNA</span> <span class="pre">=</span> <span class="pre">&quot;TAGTTCGGG&quot;</span></code> i Python. Målet vårt er å lage en tråd med mRNA fra basene i DNA. For å oversette basene bruker vi en ordbok.</p>
+<p>Vi kan representere en bit av DNA som en string i Python. Målet vårt er å lage en tråd med mRNA fra basene i DNA. For å oversette basene bruker vi en ordbok.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En DNA-tråd, representert som en tekst.</span>
-<span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;TAGTTCGGG&quot;</span>
+<span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;TACCTATCTGGACCAACT&quot;</span>
 
 <span class="c1"># Ordbok som oversetter fra baser i DNA til baser i mRNA</span>
 <span class="n">DNA_til_mRNA</span> <span class="o">=</span> <span class="p">{</span>
@@ -494,8 +491,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DNA:   TAGTTCGGG
-mRNA:  AUCAAGCCC
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DNA:   TACCTATCTGGACCAACT
+mRNA:  AUGGAUAGACCUGGUUGA
 </pre></div>
 </div>
 </div>
@@ -507,7 +504,7 @@ mRNA:  AUCAAGCCC
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># En DNA-tråd, representert som en tekst.</span>
-<span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;TAGTTCGGG&quot;</span>
+<span class="n">DNA</span> <span class="o">=</span> <span class="s2">&quot;TACCTATCTGGACCAACT&quot;</span>
 
 <span class="c1"># Ordbok som oversetter fra baser i DNA til baser i mRNA</span>
 <span class="n">DNA_til_mRNA</span> <span class="o">=</span> <span class="p">{</span>
@@ -556,11 +553,14 @@ mRNA:  AUCAAGCCC
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DNA:   TAGTTCGGG
-mRNA:  AUCAAGCCC
-Isoleucin
-Lysin
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DNA:   TACCTATCTGGACCAACT
+mRNA:  AUGGAUAGACCUGGUUGA
+Metionin(START)
+Asparaginsyre
+Arginin
 Prolin
+Glycin
+STOPP
 </pre></div>
 </div>
 </div>
@@ -573,7 +573,7 @@ Prolin
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <p>Bruk dette programmet til å svare på spørsmålene under.</p>
-<iframe src="https://trinket.io/embed/python3/6db3fe7e7b" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+<iframe src="https://trinket.io/embed/python3/ac41a5022d68" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 1</p>
 <p>Skriv inn en selvvalgt DNA-sekvens i programmet.</p>
@@ -583,10 +583,10 @@ Prolin
 <p class="admonition-title">Oppgave 2</p>
 <p>Skriv inn en selvvalgt DNA-sekvens i programmet.</p>
 <ol class="arabic simple">
-<li><p>Notér aminosyrene du får skrevet ut 📝</p></li>
+<li><p>Noter aminosyrene du får skrevet ut 📝</p></li>
 <li><p>Modifiser en av bokstavene i DNA-sekvensen din.</p></li>
 </ol>
-<p>Skjer det noen endring i aminosyrene? Kan dette brukes til å forklare mutasjoner?</p>
+<p>Skjer det noen endring i aminosyrene?</p>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 3</p>
@@ -595,7 +595,7 @@ Prolin
 <li><p>Notér aminosyrene du får skrevet ut 📝</p></li>
 <li><p>Fjern en bokstav i begynnelsen av DNA-sekvensen din.</p></li>
 </ol>
-<p>Hvilken endring skjer i aminosyrene dine? Hvordan er denne mutasjonen annerledes enn mutasjonen i forrige oppgave?</p>
+<p>Hvilken endring skjer i aminosyrene dine? Hvordan er endringen i forhold til endringen i den forrige oppgaven?</p>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 4</p>
@@ -686,11 +686,8 @@ Prolin
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hva-er-proteinsyntesen">Hva er proteinsyntesen?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna">mRNA</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-molekylet">DNA-molekylet 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mrna">mRNA</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmering-av-proteinsyntesen">Programmering av proteinsyntesen</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-1-lage-mrna">Del 1: Lage mRNA</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#del-2-lage-aminosyrer">Del 2: Lage aminosyrer</a></li>
