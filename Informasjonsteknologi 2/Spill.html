@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -392,6 +392,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-tekst">Tips: Tekst</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-trykke-bare-en-gang">Tips: Trykke bare én gang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-musepekeren-og-klikking">Tips: Musepekeren og klikking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -636,7 +637,7 @@ direction LR
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Metoder fra tidligere</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">skriv_tekst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">,</span> <span class="n">string</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">font</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">color</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">center</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">draw_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">,</span> <span class="n">string</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">font</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">color</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">center</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
         <span class="c1"># Lager tekst. Andre parameter er anti-alias. Sett til True for glatt og fin tekst.</span>
         <span class="n">text</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
         <span class="c1"># Henter rektangelet rundt teksten, med sentrum der man ønsker.</span>
@@ -649,7 +650,7 @@ direction LR
             <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
 
             <span class="c1"># Tegner tiden siden starttiden i sekunder på toppen av skjermen i midten.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">skriv_tekst</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">font</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">get_ticks</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_time</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">font</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
             
             <span class="k">for</span> <span class="n">fiende</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fiender</span><span class="p">:</span>
                 <span class="n">fiende</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
@@ -699,6 +700,72 @@ direction LR
 </div>
 <p>Når vi trykker ned knappen <code class="docutils literal notranslate"><span class="pre">UP</span></code> blir <code class="docutils literal notranslate"><span class="pre">spill.jump</span> <span class="pre">==</span> <span class="pre">True</span></code>, og fuglen hopper. For at fuglen skal kunne hoppe igjen må man slippe knappen og så trykke den <strong>ned</strong> igjen.</p>
 <p>Ønsker man flere slike knapper kan man for eksempel lage en ny ordbok <code class="docutils literal notranslate"><span class="pre">pressed_actions</span></code> som håndterer knapper på denne måten i tillegg til <code class="docutils literal notranslate"><span class="pre">actions</span></code> som håndterer holding av knapper, men det mest elegante hadde vært å lage en egen klasse <code class="docutils literal notranslate"><span class="pre">Action</span></code> som har attributtene <code class="docutils literal notranslate"><span class="pre">held</span></code> og <code class="docutils literal notranslate"><span class="pre">pressed</span></code>. Å lage et sånt system overlates til leseren 👽</p>
+</section>
+<section id="tips-musepekeren-og-klikking">
+<h2>Tips: Musepekeren og klikking<a class="headerlink" href="#tips-musepekeren-og-klikking" title="Link to this heading">#</a></h2>
+<p>Vi ønsker ofte å kunne hente posisjonen til musepekeren og å kunne registrere trykk. La oss se på en liten demo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">Spill</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boks</span> <span class="o">=</span> <span class="n">Boks</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">main_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handle_events</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">handle_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">boks</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">collidepoint</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">pos</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du trykket på boksen!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Viser boksen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boks</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+        <span class="c1"># Viser tekst</span>
+        <span class="n">mouse_pos</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pos</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">mouse_pos</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">font</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">draw_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">,</span> <span class="n">string</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">font</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">,</span> <span class="n">color</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">center</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+        <span class="n">text_rect</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span><span class="n">center</span> <span class="o">=</span> <span class="n">center</span><span class="p">)</span>
+        <span class="n">surface</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">text_rect</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Boks</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bredde</span><span class="p">,</span> <span class="n">høyde</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Rect</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">bredde</span> <span class="o">//</span> <span class="mi">2</span><span class="p">),</span> <span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="n">høyde</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)),</span> <span class="p">(</span><span class="n">bredde</span><span class="p">,</span> <span class="n">høyde</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">spill</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+
+<span class="n">spill</span> <span class="o">=</span> <span class="n">Spill</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">spill</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+    <span class="n">spill</span><span class="o">.</span><span class="n">main_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Her er noen ting vi kan merke oss:</p>
+<ul class="simple">
+<li><p>For å merke klikk kan vi bruke <code class="docutils literal notranslate"><span class="pre">pygame.MOUSEBUTTONDOWN</span></code>. Deretter kan vi sjekke om musens posisjon ligger oppå en <code class="docutils literal notranslate"><span class="pre">Rect</span></code> ved å bruke <code class="docutils literal notranslate"><span class="pre">Rect.collidepoint(point)</span></code>-metoden. Events med <code class="docutils literal notranslate"><span class="pre">MOUSEBUTTON</span></code> har posisjonen til musepekeren pakket inn i attributten <code class="docutils literal notranslate"><span class="pre">event.pos</span></code>.</p></li>
+<li><p>For å hente musepekerens posisjon kontinuerlig kan vi bruke <code class="docutils literal notranslate"><span class="pre">pygame.mouse.get_pos()</span></code>.</p></li>
+</ul>
 </section>
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
@@ -809,6 +876,7 @@ direction LR
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#et-enkelt-spill">Et enkelt spill</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-tekst">Tips: Tekst</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-trykke-bare-en-gang">Tips: Trykke bare én gang</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-musepekeren-og-klikking">Tips: Musepekeren og klikking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
