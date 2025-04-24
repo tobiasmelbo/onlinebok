@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+
+<html lang="nb" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kryptografi &#8212; Programmering med Tobias.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=507867d0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+    <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Kryptografi';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="📄 Løsningsforslag: Eksamen" href="L%C3%B8sningsforslag%20Eksamen.html" />
+    <link rel="prev" title="Spill" href="Spill.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nb"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../start.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Programmering med Tobias.</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Søk</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/If-setninger.html">If-setninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/L%C3%B8kker.html">Løkker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Lister.html">Lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 💪</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Mengder%20og%20tupler.html">Mengder og tupler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Reelle%20datasett.html">Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Rutenett.html">Rutenett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Algoritmer.html">Algoritmer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Regresjon.html">Regresjon</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Naturfag/Naturfag.html">Naturfag 🦠</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Microbit%20og%20tr%C3%A5dl%C3%B8s%20kommunikasjon.html">Trådløs kommunikasjon <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Isotoper%20og%20henfall.html">Isotoper og henfall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Halveringstid.html">Halveringstid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Proteinsyntesen.html">Proteinsyntesen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numerisk%20derivasjon.html">Numerisk derivasjon (R)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Newtons%20metode.html">Newtons metode (R)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Brukergrensesnitt.html">Brukergrensesnitt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Klasser.html">Klasser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Unntak.html">Unntak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing.html">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Testing%20II.html">Testing II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Kryptografi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Informasjonsteknologi 2/Kryptografi.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Søk" aria-label="Søk" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kryptografi</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisk-kryptering">Symmetrisk kryptering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetrisk-kryptering">Asymmetrisk kryptering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing">Hashing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="kryptografi">
+<h1>Kryptografi<a class="headerlink" href="#kryptografi" title="Link to this heading">#</a></h1>
+<p>Kryptografi handler om å gjøre ting hemmelig. Vi tar <em>klartekst</em> og gjør det om til <em>kryptert</em> tekst.</p>
+<ul class="simple">
+<li><p><em>Klartekst</em> er en beskjed som skal sendes. F.eks <code class="docutils literal notranslate"><span class="pre">&quot;Den</span> <span class="pre">grå</span> <span class="pre">ulv</span> <span class="pre">ber</span> <span class="pre">deg</span> <span class="pre">møte</span> <span class="pre">ved</span> <span class="pre">havnen.&quot;</span></code></p></li>
+<li><p><em>Kryptert tekst</em> er helt uleselig, og helst helt uknekkelig. F.eks <code class="docutils literal notranslate"><span class="pre">&quot;XeLHfB2Hz1Q+Xpj6Nxck9bcSaEs1OejbEuXBc8gGfTAdmJlS/cs9A7FPFN0qy+Dc6U0j67c+lnY=&quot;</span></code></p></li>
+<li><p><em>Nøkkelen</em> er måten man gjør <em>klartekst</em> til <em>kryptert tekst</em> eller tilbake.</p></li>
+</ul>
+<p>Ting man sender trådløst eller over internett kan i teorien avlyttes av hvem som helst. Derfor må vi sørge for at beskjedene vi sender er kryptert, spesielt om vi sender passord eller liknende. <code class="docutils literal notranslate"><span class="pre">HTTPS</span></code> er et eksempel på en protokoll som brukes for å sørge for at data sendes kryptert over internett.</p>
+<section id="symmetrisk-kryptering">
+<h2>Symmetrisk kryptering<a class="headerlink" href="#symmetrisk-kryptering" title="Link to this heading">#</a></h2>
+<p>Når både sender og mottaker bruker <strong>samme nøkkel</strong> kalles det for symmetrisk kryptering.</p>
+<pre  class="mermaid">
+        ---
+title: Symmetrisk kryptering
+---
+flowchart LR
+	id1(Klartekst) -- Nøkkel --&gt; id2(Kryptert)
+	id2(Kryptert) -- Nøkkel --&gt; id3(Klartekst)
+    </pre><div class="note admonition">
+<p class="admonition-title">Cæsarschiffer (caesar cipher)</p>
+<p>Cæsarschiffer er en enkel måte å kryptere tekst. Man tar hver bokstav og flytter den tre hakk til høyre i alfabetet. Den som dekrypterer trenger bare å flytte bokstavene tre hakk tilbake.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Kryptering</span>
+<span class="s2">&quot;hei&quot;</span> <span class="o">-&gt;</span> <span class="s2">&quot;khl&quot;</span>
+
+<span class="n">Dekryptering</span>
+<span class="s2">&quot;khl&quot;</span> <span class="o">-&gt;</span> <span class="s2">&quot;hei&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="asymmetrisk-kryptering">
+<h2>Asymmetrisk kryptering<a class="headerlink" href="#asymmetrisk-kryptering" title="Link to this heading">#</a></h2>
+<p>Ved asymmetrisk kryptering har alle brukere en <em>offentlig nøkkel</em> som gjør at man kan kryptere meldinger før man sender de til en bruker. Denne nøkkelen kan ikke brukes til å dekryptere meldingen.</p>
+<p>Hver bruker har også en <em>privat nøkkel</em> som gjør at bare den brukeren kan dekryptere meldinger som blir sendt til brukeren og som er kryptert med den offentlige nøkkelen.</p>
+<p>Se for deg at hver bruker har sin egen postkasse. Man kan sende brev til hverandre, men det er bare den som har nøkkelen til postkassen som kan lese brevet.</p>
+<pre  class="mermaid">
+        ---
+title: Asymmetrisk kryptering
+---
+flowchart LR
+	id1(Klartekst) -- Offentlig nøkkel --&gt; id2(Kryptert)
+	id2(Kryptert) -- Privat nøkkel --&gt; id3(Klartekst)
+    </pre></section>
+<section id="hashing">
+<h2>Hashing<a class="headerlink" href="#hashing" title="Link to this heading">#</a></h2>
+<p><em>Hashing</em> går <strong>en vei</strong>. Det vil si at klartekst blir rotet til og ikke kan bli gjort tilbake. Dette brukes ofte til signaturer og lagring av passord.</p>
+<p>Når du lagrer et passord blir det <em>hashet</em>. Et hashet passord blir så lagret i databasen. Når du prøver å logge inn blir forsøket ditt hashet og sammenlignet med den lagrede hashen. Små endringer, som en endret bokstav, gir en helt annerledes hash.</p>
+<p>Hvis databasen over alle passordene blir hacket ligger ikke alle passordene åpne i klartekst, men som hashete passord. Da må man cracke ett og ett passord uansett.</p>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 1 ✍️</p>
+<p>Forklar begrepene med egne ord.</p>
+<ul class="simple">
+<li><p>Kryptografi</p></li>
+<li><p>Symmetrisk kryptering</p></li>
+<li><p>Asymmetrisk kryptering</p></li>
+<li><p>Hashing</p></li>
+</ul>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 🔒</p>
+<ol class="arabic simple">
+<li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">cæsarschiffer(klartekst</span> <span class="pre">:</span> <span class="pre">str)</span></code> som tar en klartekst og lager en kryptert tekst.</p></li>
+</ol>
+<p>Du kan få bruk for disse ordbøkene.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bokstav_verdi</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot; &quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;A&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">&quot;G&quot;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="s2">&quot;I&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="s2">&quot;J&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;K&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s2">&quot;L&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="s2">&quot;M&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="s2">&quot;N&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="s2">&quot;O&quot;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="s2">&quot;P&quot;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="s2">&quot;Q&quot;</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span><span class="s2">&quot;S&quot;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="s2">&quot;T&quot;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;U&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span><span class="s2">&quot;V&quot;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="s2">&quot;W&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span><span class="s2">&quot;X&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">,</span><span class="s2">&quot;Y&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span><span class="s2">&quot;Z&quot;</span><span class="p">:</span><span class="mi">26</span><span class="p">,</span><span class="s2">&quot;Æ&quot;</span><span class="p">:</span><span class="mi">27</span><span class="p">,</span><span class="s2">&quot;Ø&quot;</span><span class="p">:</span><span class="mi">28</span><span class="p">,</span><span class="s2">&quot;Å&quot;</span><span class="p">:</span><span class="mi">29</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">:</span><span class="mi">31</span><span class="p">}</span>
+<span class="n">verdi_bokstav</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">:</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">:</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="mi">6</span><span class="p">:</span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="mi">7</span><span class="p">:</span><span class="s2">&quot;G&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">:</span><span class="s2">&quot;H&quot;</span><span class="p">,</span><span class="mi">9</span><span class="p">:</span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">:</span><span class="s2">&quot;J&quot;</span><span class="p">,</span><span class="mi">11</span><span class="p">:</span><span class="s2">&quot;K&quot;</span><span class="p">,</span><span class="mi">12</span><span class="p">:</span><span class="s2">&quot;L&quot;</span><span class="p">,</span><span class="mi">13</span><span class="p">:</span><span class="s2">&quot;M&quot;</span><span class="p">,</span><span class="mi">14</span><span class="p">:</span><span class="s2">&quot;N&quot;</span><span class="p">,</span><span class="mi">15</span><span class="p">:</span><span class="s2">&quot;O&quot;</span><span class="p">,</span><span class="mi">16</span><span class="p">:</span><span class="s2">&quot;P&quot;</span><span class="p">,</span><span class="mi">17</span><span class="p">:</span><span class="s2">&quot;Q&quot;</span><span class="p">,</span><span class="mi">18</span><span class="p">:</span><span class="s2">&quot;R&quot;</span><span class="p">,</span><span class="mi">19</span><span class="p">:</span><span class="s2">&quot;S&quot;</span><span class="p">,</span><span class="mi">20</span><span class="p">:</span><span class="s2">&quot;T&quot;</span><span class="p">,</span><span class="mi">21</span><span class="p">:</span><span class="s2">&quot;U&quot;</span><span class="p">,</span><span class="mi">22</span><span class="p">:</span><span class="s2">&quot;V&quot;</span><span class="p">,</span><span class="mi">23</span><span class="p">:</span><span class="s2">&quot;W&quot;</span><span class="p">,</span><span class="mi">24</span><span class="p">:</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="mi">25</span><span class="p">:</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span><span class="mi">26</span><span class="p">:</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span><span class="mi">27</span><span class="p">:</span><span class="s2">&quot;Æ&quot;</span><span class="p">,</span><span class="mi">28</span><span class="p">:</span><span class="s2">&quot;Ø&quot;</span><span class="p">,</span><span class="mi">29</span><span class="p">:</span><span class="s2">&quot;Å&quot;</span><span class="p">,</span><span class="mi">30</span><span class="p">:</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="mi">31</span><span class="p">:</span><span class="s2">&quot;.&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">dekrypter_cæsarschiffer(kryptert_text</span> <span class="pre">:</span> <span class="pre">str)</span></code> som tar en kryptert tekst og returnerer ren tekst.</p></li>
+</ol>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 🔑</p>
+<p>Utvid programmet over til å ta med en nøkkel <code class="docutils literal notranslate"><span class="pre">nøkkel</span></code> som bestemmer hvor mange bokstaver man skal flytte bokstavene bort i alfabetet.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cæsarschiffer(klartekst</span> <span class="pre">:</span> <span class="pre">str,</span> <span class="pre">nøkkel</span> <span class="pre">:</span> <span class="pre">int)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dekrypter_cæsarschiffer(kryptert_tekst</span> <span class="pre">:</span> <span class="pre">str,</span> <span class="pre">nøkkel</span> <span class="pre">:</span> <span class="pre">int)</span></code></p></li>
+</ul>
+<p>Hvis <code class="docutils literal notranslate"><span class="pre">nøkkel</span> <span class="pre">=</span> <span class="pre">3</span></code> skal man flytte tre bokstaver bort. Hvis <code class="docutils literal notranslate"><span class="pre">nøkkel</span> <span class="pre">=</span> <span class="pre">4</span></code> skal man flytte fire bokstaver bort osv.</p>
+<p>Forklar hvordan dette er et eksempel på <strong>symmetrisk kryptering</strong>.</p>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 🔓</p>
+<p>Cæsarschiffer er ikke en veldig sikker krypteringsalgoritme og kan lett hackes.</p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">brute_force_cæsarschiffer(kryptert_tekst)</span></code> som skriver ut alle mulige klartekster fra en kryptert tekst.</p>
+<p>Bruk funksjonen din til å finne klarteksten og nøkkelen (hvor langt bokstavene er flyttet) for de hemmelige meldingene under. Jeg har brukt samme ordbok som står over.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">YVGIKFFFFZNKFLOTGRFLXUTZOKXF</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XURRFLUXFOTOZOGZOØK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">YZUVFXOMNZFZNKXKFIXOSOTGRFYIÆS</span></code></p></li>
+</ul>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 5 📦</p>
+<p>For å lage en hash fra en string kan vi bruke algoritmen <code class="docutils literal notranslate"><span class="pre">sha256</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha256</span>
+<span class="n">passord</span> <span class="o">=</span> <span class="s2">&quot;hei!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sha256</span><span class="p">(</span><span class="n">passord</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">09e12748</span><span class="n">eef69d3fd9f517860038a8ecfdedebb552efb039c75235bff21ae5e4</span>
+</pre></div>
+</div>
+<p>Under er det oppgitt data fra en database som har blitt lekket på nett. Finn hvilken bruker som har passordet <code class="docutils literal notranslate"><span class="pre">passord123</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">worf_security,1a1397f6ca212c319a4b70e263a01218230c61176dfaa1098418cf8768b12556</span>
+<span class="sd">fortnite_fillip,7ca720a27c141af0574dc4619df536fc31e95ecc969f8be795d7e0fca68978ad</span>
+<span class="sd">chief_keef,94b86bc53ce89e4757cc5047862cbe2be6ab7902fbfe6571e0b44142b3c49fa5</span>
+<span class="sd">bladee_fan39,880f024abdce121b84ab9b903fa567b8588ad2a994d3a7c82a1358d5e97df0f6</span>
+<span class="sd">trond_svendsen,5d243bfcd9c584265d3c5de50319528e46ed229c596d52f435e902d23471ba0c</span>
+<span class="sd">liluglymane,175bd23b3dab446b842da75a60636e77ea1933cf2c8fee138cba8160fb11194c</span>
+<span class="sd">gwyn_the_lord_of_cinder,38e3c13dd5c9c363f9c1a7aaf3f33022dc957e2bed4262c9d3442f906ac3a268</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Informasjonsteknologi 2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Spill.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Spill</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="L%C3%B8sningsforslag%20Eksamen.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">📄 Løsningsforslag: Eksamen</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetrisk-kryptering">Symmetrisk kryptering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#asymmetrisk-kryptering">Asymmetrisk kryptering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hashing">Hashing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Tobias Melbø
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
