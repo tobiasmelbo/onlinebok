@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Avansert Python 💪 &#8212; Programmering med Tobias.</title>
+    <title>Reelle datasett: Derivasjon (R) &#8212; Programmering med Tobias.</title>
   
   
   
@@ -60,13 +60,9 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Avansert Python';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Matematikk/Datasett - Derivasjon';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Strings" href="Strings.html" />
-    <link rel="prev" title="Funksjoner" href="../Grunnleggende/Funksjoner.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -129,6 +125,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -170,7 +168,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
@@ -180,17 +178,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Funksjoner.html">Funksjoner</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Avansert Python 💪</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="Strings.html">Strings</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Avansert/Avansert%20Python.html">Avansert Python 💪</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Strings.html">Strings</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="Filer.html">Filer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Lister%20II.html">Lister II</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Mengder%20og%20tupler.html">Mengder og tupler</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ordb%C3%B8ker.html">Ordbøker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Rutenett.html">Rutenett</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Algoritmer.html">Algoritmer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Filer.html">Filer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Lister%20II.html">Lister II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Mengder%20og%20tupler.html">Mengder og tupler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Ordb%C3%B8ker.html">Ordbøker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Reelle%20datasett.html">Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Rutenett.html">Rutenett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Avansert/Algoritmer.html">Algoritmer</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -211,13 +209,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../Naturfag/Spill%20Grunnstofftreneren.html">🕹️ Spill: Grunnstofftreneren</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Matematikk/Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Vekstfaktor.html">Vekstfaktor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Tallf%C3%B8lger.html">Tallfølger</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numeriske%20metoder.html">Numeriske metoder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Numerisk%20derivasjon.html">Numerisk derivasjon (R)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Matematikk/Newtons%20metode.html">Newtons metode (R)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Matematikk.html">Matematikk 📕</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Vekstfaktor.html">Vekstfaktor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tallf%C3%B8lger.html">Tallfølger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Kvadratr%C3%B8tter.html">Kvadratrøtter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Numeriske%20metoder.html">Numeriske metoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Numerisk%20derivasjon.html">Numerisk derivasjon (R)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Newtons%20metode.html">Newtons metode (R)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Informasjonsteknologi%202/Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -287,7 +285,7 @@
       
       
       
-      <li><a href="../_sources/Avansert/Avansert Python.ipynb" target="_blank"
+      <li><a href="../_sources/Matematikk/Datasett - Derivasjon.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -369,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Avansert Python 💪</h1>
+    <h1>Reelle datasett: Derivasjon (R)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -383,31 +381,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="avansert-python">
-<span id="id1"></span><h1>Avansert Python 💪<a class="headerlink" href="#avansert-python" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p><em>La oss temme Python-slangen 🐍</em></p>
-</div></blockquote>
-<p>Vi skal</p>
-<ul class="simple">
-<li><p>… lære mer om <code class="docutils literal notranslate"><span class="pre">strings</span></code> og <code class="docutils literal notranslate"><span class="pre">lister</span></code> 📃</p></li>
-<li><p>… skrive til og lese fra filer 📂</p></li>
-<li><p>… lære om datatypene <code class="docutils literal notranslate"><span class="pre">mengder</span></code>, <code class="docutils literal notranslate"><span class="pre">tupler</span></code> og <code class="docutils literal notranslate"><span class="pre">ordbøker</span></code> 🗃️</p></li>
-<li><p>… jobbe med <code class="docutils literal notranslate"><span class="pre">.csv</span></code>- og <code class="docutils literal notranslate"><span class="pre">.json</span></code>-filer 📂</p></li>
-<li><p>… lese og lage <em>flytskjema</em> og <em>pseudokode</em> 💬</p></li>
-<li><p>… utfordre hjernen ved å jobbe med <em>rutenett</em> og <em>algoritmer</em> 🧠</p></li>
-</ul>
-<div class="note admonition">
-<p class="admonition-title">Til læreren 🧑‍🏫</p>
-<p>Denne modulen bygger videre på <a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html#grunnleggende-python"><span class="std std-ref">Grunnleggende Python 🐍</span></a> og er ment for:</p>
-<ul class="simple">
-<li><p>Elever som bruker Python 🐍 i Informasjonsteknologi 1 eller 2.</p></li>
-<li><p>Spesielt interesserte elever i teoretisk matte og fysikk.</p></li>
-<li><p>Lærere som vil bli gode og selvsikre kodere i Python.</p></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+  <section id="reelle-datasett-derivasjon-r">
+<h1>Reelle datasett: Derivasjon (R)<a class="headerlink" href="#reelle-datasett-derivasjon-r" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -423,7 +398,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Avansert"
+            path: "./Matematikk"
         },
         predefinedOutput: true
     }
@@ -440,24 +415,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../Grunnleggende/Funksjoner.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Funksjoner</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Strings.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Strings</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

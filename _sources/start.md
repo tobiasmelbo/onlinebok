@@ -28,7 +28,7 @@ Hvert delkapittel avsluttes med praktiske oppgaver for å teste og styrke ferdig
 ```{admonition} Kunstig intelligens 🧠
 :class: note
 
-Denne nettboken er fullt og helt skrevet av meg. Den inneholder ingen tekst eller bilder generert av kunstig intelligens med unntak av noen KI-genererte datafiler.
+Denne nettboken er fullt og helt skrevet av meg. Den inneholder ingen tekst eller bilder generert av kunstig intelligens med unntak av noen KI-genererte datafiler. KI-generert innhold er tydelig markert.
 ```
 
 Har du spørsmål eller tilbakemeldinger? Ikke nøl med å ta kontakt via e-post: 📧 melbotobias@gmail.com

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -422,8 +422,8 @@ document.write(`
 <p>Prinsippet bak metoden er å gjette en verdi <span class="math notranslate nohighlight">\(x_0\)</span> for nullpunktet, så finne nullpunktet <span class="math notranslate nohighlight">\(x_1\)</span> til tangenten. Dette nullpunktet er som regel nærmere nullpunktet til funksjonen enn den forrige verdien. Gjentar vi dette så får vi en bedre og bedre approksimasjon.</p>
 <p>La oss utlede formelen. Hvis vi starter med en verdi <span class="math notranslate nohighlight">\(x_n\)</span> får vi at stigningstallet til tangenten blir <span class="math notranslate nohighlight">\(f'(x_n)=\frac{f(x_n) - 0}{x_n-x_{n+1}}\)</span>.</p>
 <p>Dette kan vi skrive om til formelen</p>
-<p><span class="math notranslate nohighlight">\(x_{n+1}=x_n - \frac{f(x_n)}{f'(x_n)}\)</span>.</p>
-<p>La oss prøve dette på en funksjon <span class="math notranslate nohighlight">\(f(x)=x^2-2\)</span>. Jeg gjetter at det første nullpunktet er i nærheten av <span class="math notranslate nohighlight">\(1\)</span>. Vi kan også finne at <span class="math notranslate nohighlight">\(f'(x)=2x\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(x_{n+1}=x_n - \frac{f(x_n)}{f'(x_n)}\)</span></p>
+<p>La oss prøve dette på en funksjon <span class="math notranslate nohighlight">\(f(x)=x^2-2\)</span>. Jeg gjetter at det første nullpunktet er i nærheten av <span class="math notranslate nohighlight">\(1\)</span>. Vi ser også at <span class="math notranslate nohighlight">\(f'(x)=2x\)</span>.</p>
 <p>Den første iterasjonen blir:</p>
 <p><span class="math notranslate nohighlight">\(x_1 = x_0 - \frac{f(x_0)}{f'(x_0)}=  1 - \frac{f(1)}{f'(1)} = 1 - \frac{(1^2-2)}{2\cdot 1} = 1 - \frac{-1}{2} = \frac{3}{2} = 1.5\)</span></p>
 <p>Den andre iterasjonen blir:</p>
@@ -541,7 +541,7 @@ document.write(`
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 3</p>
-<p>Forklar at du bruke Newton’s metode til å finne approksimere kvadratroten <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> av et hvilket som helst positivt tall <span class="math notranslate nohighlight">\(N\)</span>.</p>
+<p>Forklar at du bruke Newton’s metode til å approksimere kvadratroten <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> av et hvilket som helst positivt tall <span class="math notranslate nohighlight">\(N\)</span>.</p>
 <p>Bonus: Vis at dette er ekvivalent med Herons metode (se: <a class="reference internal" href="Kvadratr%C3%B8tter.html#kvadratrotter"><span class="std std-ref">Kvadratrøtter</span></a>)</p>
 </div>
 </section>

@@ -432,9 +432,6 @@ flowchart LR
 </pre></div>
 </div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </section>
 <section id="asymmetrisk-kryptering">
 <h2>Asymmetrisk kryptering<a class="headerlink" href="#asymmetrisk-kryptering" title="Link to this heading">#</a></h2>
@@ -451,9 +448,9 @@ flowchart LR
     </pre></section>
 <section id="hashing">
 <h2>Hashing<a class="headerlink" href="#hashing" title="Link to this heading">#</a></h2>
-<p><em>Hashing</em> går <strong>en vei</strong>. Det vil si at klartekst blir rotet til og ikke kan bli gjort tilbake. Dette brukes ofte til signaturer og lagring av passord.</p>
-<p>Når du lagrer et passord blir det <em>hashet</em>. Et hashet passord blir så lagret i databasen. Når du prøver å logge inn blir forsøket ditt hashet og sammenlignet med den lagrede hashen. Små endringer, som en endret bokstav, gir en helt annerledes hash.</p>
-<p>Hvis databasen over alle passordene blir hacket ligger ikke alle passordene åpne i klartekst, men som hashete passord. Da må man cracke ett og ett passord uansett.</p>
+<p><em>Hashing</em> går <strong>én vei</strong>. Det vil si at klartekst blir rotet til og ikke kan bli gjort tilbake. Dette brukes ofte til signaturer og lagring av passord.</p>
+<p>Når du lager et passord blir det <em>hashet</em>. Et hashet passord blir så lagret i databasen. Når du prøver å logge inn blir forsøket ditt hashet og sammenlignet med den lagrede hashen. Små endringer, som en endret bokstav, gir en helt annerledes hash.</p>
+<p>Hvis databasen over alle passordene blir hacket ligger ikke alle passordene åpne i klartekst, men som hashede passord.</p>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -494,7 +491,7 @@ flowchart LR
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 4 🔓</p>
-<p>Cæsarschiffer er ikke en veldig sikker krypteringsalgoritme og kan lett hackes.</p>
+<p>Cæsarschiffer er ikke en veldig sikker krypteringsalgoritme og kan lett angripes ved <em>brute force</em>, det vil si å prøve mange kombinasjoner og se hva som stemmer.</p>
 <p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">brute_force_cæsarschiffer(kryptert_tekst)</span></code> som skriver ut alle mulige klartekster fra en kryptert tekst.</p>
 <p>Bruk funksjonen din til å finne klarteksten og nøkkelen (hvor langt bokstavene er flyttet) for de hemmelige meldingene under. Jeg har brukt samme ordbok som står over.</p>
 <ul class="simple">
@@ -514,7 +511,7 @@ flowchart LR
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">09e12748</span><span class="n">eef69d3fd9f517860038a8ecfdedebb552efb039c75235bff21ae5e4</span>
 </pre></div>
 </div>
-<p>Under er det oppgitt data fra en database som har blitt lekket på nett. Finn hvilken bruker som har passordet <code class="docutils literal notranslate"><span class="pre">passord123</span></code>.</p>
+<p>Under er det oppgitt data fra en (fiktiv) database som har blitt lekket på nett. Finn hvilken bruker som har passordet <code class="docutils literal notranslate"><span class="pre">passord123</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">worf_security,1a1397f6ca212c319a4b70e263a01218230c61176dfaa1098418cf8768b12556</span>
 <span class="sd">fortnite_fillip,7ca720a27c141af0574dc4619df536fc31e95ecc969f8be795d7e0fca68978ad</span>
