@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -380,6 +380,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksamen-v25">Eksamen V25</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksamen-h23">Eksamen H23</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -389,7 +393,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Oppgave 9</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-10">Oppgave 10</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-11">Oppgave 11</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-12">Oppgave 12</a></li>
@@ -410,6 +414,139 @@ document.write(`
 <h1>📄 Løsningsforslag: Eksamen<a class="headerlink" href="#losningsforslag-eksamen" title="Link to this heading">#</a></h1>
 <p>Her er mine løsningsforslag til eksamen i Informasjonsteknologi 2.</p>
 <p>Ta kontakt med meg på <a class="reference external" href="mailto:tobiasmelb&#37;&#52;&#48;afk&#46;no">tobiasmelb<span>&#64;</span>afk<span>&#46;</span>no</a> om du finner noen feil eller om du har noen kommentarer.</p>
+<section id="eksamen-v25">
+<h2>Eksamen V25<a class="headerlink" href="#eksamen-v25" title="Link to this heading">#</a></h2>
+<section id="oppgave-9">
+<h3>Oppgave 9<a class="headerlink" href="#oppgave-9" title="Link to this heading">#</a></h3>
+<p>Oppgaven er å lage en skogbrannsimulasjon. Her er kravene gitt i oppgaven.</p>
+<ul class="simple">
+<li><p>Ved oppstart består simuleringen av et tomt rutenett.</p></li>
+<li><p>Hver celle i rutenettet kan bli et tre, og sannsynligheten for at en tom celle blir et tre, kan ved oppstart f.eks. være 0,3 %.</p></li>
+<li><p>Etter som det vokser fram trær i skogen, kan et lynnedslag slå ned i et tre og starte en skogbrann. Sannsynligheten for at et tre blir truffet av lyn, kan f.eks. settes til 0,03 %.</p></li>
+<li><p>Om lynet slår ned i et tre, begynner det å brenne, og skogbrannen sprer seg etter følgende regler:</p></li>
+<li><p>Ved lynnedslag er det et tre som begynner å brenne.</p></li>
+<li><p>Ved neste trinn i simuleringen har treet lynet slo ned i, brent opp og blitt en blank celle. Trærne som sto ved siden av treet der lynet slo ned, brenner.</p></li>
+<li><p>Simuleringen fortsetter på samme vis ved at alle trær som står ved et tre som nettopp brant opp, nå brenner.</p></li>
+<li><p>Skogen vokser ikke mens skogbrannen pågår. Det betyr at mens det pågår en brann, representerer hvert trinn i simuleringen veldig mye mindre tid enn mens skogen vokser.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Programmet bruker pakken PyGame. Installer ved å skrive</span>
+
+<span class="sd">    &gt;pip install pygame</span>
+
+<span class="sd">i terminalvinduet.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">Spill</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Rute</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">)]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Holder styr på om det er skogbrann eller ikke</span>
+
+    <span class="k">def</span> <span class="nf">main_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Avslutter spillet</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Skogen vokser</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span><span class="p">:</span>
+            <span class="c1"># Lag trær</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span>
+                    <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">rute</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+                            <span class="n">rute</span><span class="o">.</span><span class="n">tre</span> <span class="o">=</span> <span class="kc">True</span>
+            
+            <span class="c1"># Start skogbrann</span>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># 0.03% sjanse for skogbrann per tid</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span> <span class="o">=</span> <span class="kc">True</span>
+                
+                <span class="n">ruter_med_trær</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span> 
+                        <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                            <span class="n">ruter_med_trær</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rute</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ruter_med_trær</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">ruter_med_trær</span><span class="p">)</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">True</span>
+                
+        
+        <span class="c1"># Skogen brenner</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># Liste som holder styr på de som skal begynne å brenne</span>
+            <span class="n">branner</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">pågående_brann</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span>
+                    <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span><span class="p">:</span>
+                        <span class="n">pågående_brann</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">rute</span><span class="o">.</span><span class="n">tre</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">False</span>
+
+                        <span class="c1"># Naboer</span>
+                        <span class="k">for</span> <span class="n">retning</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]:</span>
+                            <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">bredde</span> <span class="ow">and</span> <span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                                <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="ow">and</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                                    <span class="n">nabo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+                                    <span class="k">if</span> <span class="n">nabo</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                                        <span class="n">branner</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nabo</span><span class="p">)</span>
+            
+            <span class="c1"># Start branner i nabotrær</span>
+            <span class="k">for</span> <span class="n">rute</span> <span class="ow">in</span> <span class="n">branner</span><span class="p">:</span>
+                <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="c1"># Stopper skogbrannen hvis ingenting brenner</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">pågående_brann</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Tikker klokken videre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Tegner trær</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span>
+                <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">((</span><span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">)))</span>
+                <span class="k">elif</span> <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span><span class="p">:</span>
+                    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">((</span><span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">)))</span>
+                
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Rute</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tre</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">spill</span> <span class="o">=</span> <span class="n">Spill</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">spill</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+    <span class="n">spill</span><span class="o">.</span><span class="n">main_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
 <section id="eksamen-h23">
 <h2>Eksamen H23<a class="headerlink" href="#eksamen-h23" title="Link to this heading">#</a></h2>
 <p>Dette er et løsningsforslag til eksamen H23. Du finner denne eksamen også på <a class="reference external" href="https://sokeresultat.udir.no/eksamensoppgaver.html">UDIR sine nettsider (lenke)</a>. Oppgavene er gjengitt her, men med små modifikasjoner.</p>
@@ -742,8 +879,8 @@ document.write(`
 <h3>Oppgave 8<a class="headerlink" href="#oppgave-8" title="Link to this heading">#</a></h3>
 <p>Kommer</p>
 </section>
-<section id="oppgave-9">
-<h3>Oppgave 9<a class="headerlink" href="#oppgave-9" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h3>Oppgave 9<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Kommer</p>
 </section>
 <section id="oppgave-10">
@@ -1185,6 +1322,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksamen-v25">Eksamen V25</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksamen-h23">Eksamen H23</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">Oppgave 1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-2">Oppgave 2</a></li>
@@ -1194,7 +1335,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-6">Oppgave 6</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-7">Oppgave 7</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-8">Oppgave 8</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-9">Oppgave 9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Oppgave 9</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-10">Oppgave 10</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-11">Oppgave 11</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-12">Oppgave 12</a></li>
