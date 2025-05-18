@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Reelle datasett &#8212; Programmering med Tobias.</title>
+    <title>Reelle datasett: Derivasjon (R/FYS) &#8212; Programmering med Tobias.</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -62,11 +62,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Plotting Reelle datasett';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Dataanalyse og plotting/Derivasjon Datasett';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Regresjon" href="Regresjon.html" />
-    <link rel="prev" title="Matematiske funksjoner" href="Plotting%20Matematiske%20funksjoner.html" />
+    <link rel="next" title="Intro til Micro:bit" href="../Microbit%20Intro.html" />
+    <link rel="prev" title="Regresjon" href="Regresjon.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -198,9 +198,9 @@
 <li class="toctree-l2"><a class="reference internal" href="Avansert%20Arrays%20II.html">Avansert: Arrays II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20Enkle%20datasett.html">Enkle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Plotting%20Matematiske%20funksjoner.html">Matematiske funksjoner</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Reelle datasett</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plotting%20Reelle%20datasett.html">Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Regresjon.html">Regresjon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Derivasjon%20Datasett.html">Reelle datasett: Derivasjon (R/FYS)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Reelle datasett: Derivasjon (R/FYS)</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../Microbit%20Intro.html">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></a></li>
@@ -288,7 +288,7 @@
       
       
       
-      <li><a href="../_sources/Dataanalyse og plotting/Plotting Reelle datasett.ipynb" target="_blank"
+      <li><a href="../_sources/Dataanalyse og plotting/Derivasjon Datasett.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,7 +372,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Reelle datasett</h1>
+    <h1>Reelle datasett: Derivasjon (R/FYS)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,9 +382,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lese-inn-i-pandas">Lese inn i Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotte-data-fra-pandas">Plotte data fra Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-derivasjon-pa-et-datasett">Numerisk derivasjon på et datasett</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-fysisk-tolkning">En fysisk tolkning</a></li>
 </ul>
             </nav>
         </div>
@@ -396,96 +395,154 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="reelle-datasett">
-<span id="plotting-reelle-datasett"></span><h1>Reelle datasett<a class="headerlink" href="#reelle-datasett" title="Link to this heading">#</a></h1>
-<p>Å skrive inn mange datapunkter er døllt og tar lang tid. Buuu! 👎 Tenk om vi kunne lese inn data fra store datafiler. Hadde ikke det vært nyttig?</p>
-<p>La meg introdusere deg for <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Denne Python-pakken lar oss lese inn data fra datafiler helt automatisk! 🤯</p>
-<p>Mange Python-installasjoner inkluderer denne pakken, men man kan også installere pakken ved å skrive <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code> i terminalvinduet.</p>
-<section id="lese-inn-i-pandas">
-<h2>Lese inn i Pandas<a class="headerlink" href="#lese-inn-i-pandas" title="Link to this heading">#</a></h2>
-<p>La oss ta utgangspunkt i et datasett fra SSB om konsumprisindeksen fra og med 1930 til og med 2023.</p>
-<p>Du kan laste ned datafilen <a class="reference download internal" download="" href="../_downloads/7890a897250b5972e2b5eec6e6f9616b/konsumprisindeks.csv"><span class="xref download myst">her</span></a>.</p>
-<p>Hvis vi åpner filen <code class="docutils literal notranslate"><span class="pre">konsumprisindeks.csv</span></code> får vi en fil hvor de første linjene ser slik ut:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">År</span><span class="p">;</span><span class="n">Årsgj</span><span class="o">.</span><span class="n">snitt2</span><span class="p">;</span><span class="n">Jan</span><span class="p">;</span><span class="n">Feb</span><span class="p">;</span><span class="n">Mar</span><span class="p">;</span><span class="n">Apr</span><span class="p">;</span><span class="n">Mai</span><span class="p">;</span><span class="n">Jun</span><span class="p">;</span><span class="n">Jul</span><span class="p">;</span><span class="n">Aug</span><span class="p">;</span><span class="n">Sep</span><span class="p">;</span><span class="n">Okt</span><span class="p">;</span><span class="n">Nov</span><span class="p">;</span><span class="n">Des</span>
-<span class="mi">2023</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">127</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">130</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">129</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">131</span><span class="p">,</span><span class="mi">9</span>
-<span class="mi">2022</span><span class="p">;</span><span class="mi">122</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">119</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">119</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">121</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">121</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">122</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">124</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">123</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">126</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">125</span><span class="p">,</span><span class="mi">9</span>
-<span class="mi">2021</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">115</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">114</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">115</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">116</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">117</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">118</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">118</span><span class="p">,</span><span class="mi">9</span>
-<span class="mi">2020</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">7</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">113</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">112</span><span class="p">,</span><span class="mi">9</span>
-<span class="mi">2019</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">110</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">111</span><span class="p">,</span><span class="mi">3</span>
-<span class="mi">2018</span><span class="p">;</span><span class="mi">108</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">106</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">7</span><span class="p">;</span><span class="mi">107</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">108</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">108</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">109</span><span class="p">,</span><span class="mi">8</span>
-</pre></div>
-</div>
-<p>Hver linje (bortsett fra den første) inneholder informasjon om konsumprisindeksen hvert år. Den første verdien er året (f.eks <code class="docutils literal notranslate"><span class="pre">2023</span></code>), så kommer årsgjennomsnittet (f.eks <code class="docutils literal notranslate"><span class="pre">129,6</span></code>) og så kommer konsumprisindeksen hver måned etter det. Alle disse verdiene er adskilt med en semikolon <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p>
-<p>Vi kan lese inn data fra en <code class="docutils literal notranslate"><span class="pre">csv-fil</span></code> i Pandas på denne måten:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;konsumprisindeks.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1"># Leser filen og spesifiserer at data skilles med semikolon &quot;;&quot; og desimaltall skrives med &quot;,&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># Printer ut de tre første linjene.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     År  Årsgj.snitt2    Jan    Feb    Mar    Apr    Mai    Jun    Jul    Aug  \
-0  2024         133.6  132.0  132.3  132.6  133.7  133.5  133.8  134.5  133.3   
-1  2023         129.6  126.1  126.6  127.6  129.0  129.6  130.4  130.9  129.9   
-2  2022         122.8  117.8  119.1  119.8  121.2  121.5  122.6  124.2  123.9   
-
-     Sep    Okt    Nov    Des  
-0  133.7  134.5  134.9  134.8  
-1  129.8  131.1  131.8  131.9  
-2  125.6  126.0  125.8  125.9  
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="plotte-data-fra-pandas">
-<h2>Plotte data fra Pandas<a class="headerlink" href="#plotte-data-fra-pandas" title="Link to this heading">#</a></h2>
-<p>Vi kan enkelt trekke ut de kolonnene vi ønsker og plotte de på denne måten.</p>
+  <section id="reelle-datasett-derivasjon-r-fys">
+<h1>Reelle datasett: Derivasjon (R/FYS)<a class="headerlink" href="#reelle-datasett-derivasjon-r-fys" title="Link to this heading">#</a></h1>
+<p>Endring er veldig viktig i naturvitenskap.</p>
+<section id="numerisk-derivasjon-pa-et-datasett">
+<h2>Numerisk derivasjon på et datasett<a class="headerlink" href="#numerisk-derivasjon-pa-et-datasett" title="Link to this heading">#</a></h2>
+<p>La oss ta et fysisk eksempel med ekte data om en terning som faller. Datasettet finner du <a class="reference download internal" download="" href="../_downloads/c878c124a33bc051459f5959353a4e23/fallende_terning.csv"><span class="xref download myst">her</span></a>. Datasettet er samlet inn ved hjelp av video og <a class="reference external" href="https://opensourcephysics.github.io/tracker-website/">Tracker</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;konsumprisindeks.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="c1"># Leser filen og spesifiserer at data skilles med semikolon &quot;;&quot; og desimaltall skrives med &quot;,&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;År&quot;</span><span class="p">]</span>            <span class="c1"># Henter ut x-verdier fra kolonnen &quot;År&quot;</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Årsgj.snitt2&quot;</span><span class="p">]</span>  <span class="c1"># Henter ut y-verdier fra kolonnen &quot;Årsgj.snitt2&quot;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Lager plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>     <span class="c1"># Viser rutenett</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>     <span class="c1"># Viser plottet</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;tid (sekunder)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y (meter)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab380a91601c18927579bae665af03848faca5c46f538728dd3d44f5f74fcf0a.png" src="../_images/ab380a91601c18927579bae665af03848faca5c46f538728dd3d44f5f74fcf0a.png" />
+<img alt="../_images/accf1be6d865a72909a7f934236f62011ea98795a111f2c543682eb92e9b6bf8.png" src="../_images/accf1be6d865a72909a7f934236f62011ea98795a111f2c543682eb92e9b6bf8.png" />
 </div>
 </div>
-<p>Wow! Nå har vi fått plottet konsumprisindeksen over mange år! Tenk hvor lang tid det hadde tatt hvis vi måtte skrive inn hvert punkt!</p>
-<blockquote>
-<div><p>Kilde til data om konsumprisindeks: <a class="reference external" href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen">SSB</a>.</p>
-</div></blockquote>
-</section>
-<hr class="docutils" />
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<div class="task admonition">
-<p class="admonition-title">Oppgave 1</p>
-<p>I denne oppgaven skal vi plotte boligprisindeks for brukte boliger i Oslo/Bærum fra og med <span class="math notranslate nohighlight">\(1992\)</span> til og med <span class="math notranslate nohighlight">\(2022\)</span>.</p>
-<p>Last ned datafilen <a class="reference download internal" download="" href="../_downloads/ef68b0926da75b5f8902876563042a9a/boligpriser.csv"><span class="xref download myst">her</span></a>.</p>
-<p>Starten av datafilen står under. Legg merke til at desimaltallene er skrevet med punktum <code class="docutils literal notranslate"><span class="pre">.</span></code> her, ikke komma <code class="docutils literal notranslate"><span class="pre">,</span></code> som i eksempelet over. Legg også merke til at navnet på kolonnene må skrives <em>helt</em> likt som i filen.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Region&quot;</span><span class="p">;</span><span class="s2">&quot;Boligtype&quot;</span><span class="p">;</span><span class="s2">&quot;År&quot;</span><span class="p">;</span><span class="s2">&quot;Prisindeks for brukte boliger&quot;</span>
-<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1992&quot;</span><span class="p">;</span><span class="mf">13.6</span>
-<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1993&quot;</span><span class="p">;</span><span class="mf">14.1</span>
-<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1994&quot;</span><span class="p">;</span><span class="mf">16.9</span>
-<span class="s2">&quot;Oslo med Bærum&quot;</span><span class="p">;</span><span class="s2">&quot;Boliger i alt&quot;</span><span class="p">;</span><span class="s2">&quot;1995&quot;</span><span class="p">;</span><span class="mf">17.8</span>
+<p>Hvis vi deriverer posisjonen så får vi farten til en gjenstand. Den deriverte kan vi finne numerisk ved å bruke gjennomsnittlig vekstfart <span class="math notranslate nohighlight">\(v_n=\frac{\Delta y}{\Delta t}=\frac{y_{n + 1} - y_{n}}{t_{n + 1} - t_{n}}\)</span>.</p>
+<div class="note admonition">
+<p class="admonition-title">Tidssteg</p>
+<p>Innsamling av fysiske data er blant annet begrenset av hvor <em>fine</em> tidssteg vi har. Når jeg samlet inn data til dette eksperimentet filmet jeg med et kamera på <span class="math notranslate nohighlight">\(60\)</span> FPS. Det betyr at det blir tatt <span class="math notranslate nohighlight">\(60\)</span> bilder per sekund, noe som gjør at avstanden mellom hver tid blir <span class="math notranslate nohighlight">\(\frac{1}{60}\approx 0.0167\)</span> sekunder.</p>
+<p>Avstanden mellom hver måling i tid blir det samme som <span class="math notranslate nohighlight">\(dx\)</span> i derivasjonen. Desto høyere FPS, desto bedre blir resultatet.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span> <span class="c1"># Vi må stoppe før den siste verdien</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># Endring i y-posisjon</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="c1"># Endring i tid</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dy</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># Ved å bruke fremoverdifferanse mangler vi den siste verdien.</span>
+<span class="c1"># Da kan vi bruke bakoverdifferanse.</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dy</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;tid (sekunder)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;fart (meter per sekund)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>Lag et plott over prisindeksen for brukte boliger over alle årene.</p>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e64d9cd2353fe5e710d085483acb985dcc8628bdf3bebc3e9d204c01258ad5bb.png" src="../_images/e64d9cd2353fe5e710d085483acb985dcc8628bdf3bebc3e9d204c01258ad5bb.png" />
+</div>
+</div>
+<p>Nå har vi derivert numerisk! Legg merke til at farten ser ut til å være ganske lineær.</p>
+<p>Før vi ser videre på den fysiske tolkningen, la oss se på en litt enklere metode for å finne numerisk derivert ved å bruke <code class="docutils literal notranslate"><span class="pre">np.gradient()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="c1"># Derivert av y med hensyn på t</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;tid (sekunder)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;fart (meter per sekund)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d437c164094a62e0da171cf77a48d14e1dc2e4cc8b0fdeeac41f5ed8589745ea.png" src="../_images/d437c164094a62e0da171cf77a48d14e1dc2e4cc8b0fdeeac41f5ed8589745ea.png" />
+</div>
+</div>
+<p>Det var mye enklere. Legg også merke til at vi får litt andre verdier. Disse verdiene er faktisk bedre approksimasjoner for den deriverte, fordi <code class="docutils literal notranslate"><span class="pre">np.gradient()</span></code> bruker sentraldifferanse på alle punktene i midten.</p>
+</section>
+<section id="en-fysisk-tolkning">
+<h2>En fysisk tolkning<a class="headerlink" href="#en-fysisk-tolkning" title="Link to this heading">#</a></h2>
+<p>Farten vi regnet ut så ganske lineær ut. Det er ikke så rart. En ting som faller fritt (uten luftmotsatnd) fra <span class="math notranslate nohighlight">\(y=0\)</span> vil følge kurven <span class="math notranslate nohighlight">\(y(t)=-\frac{1}{2}gt^2\)</span> der <span class="math notranslate nohighlight">\(g\)</span> er en konstant som kalles for <em>tyngdeakselerasjonen</em>. Farten vil da bli gitt ved <span class="math notranslate nohighlight">\(v(t)=y'(t)=-gt\)</span> som er en lineær funksjon. Dette har vi vist at stemmer ved å derivere numerisk!</p>
+<p>La oss bruke regresjon for å finne en verdi for tyngdeakselerasjonen <span class="math notranslate nohighlight">\(g\)</span>. Hvis man slår opp tyngdeakselerasjonen på jorden får man <span class="math notranslate nohighlight">\(g\approx 9.81\)</span>. La oss se hvor godt vårt eksperiment passer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">modell_y</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span> <span class="o">**</span><span class="mi">2</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">modell_y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modellen vår finner en verdi for g = </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2"> m/s^2&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">modell_y</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;g = </span><span class="si">{</span><span class="n">g</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">modell_y</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mf">9.81</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;g = 9.81&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;tid (sekunder)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y (meter)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modellen vår finner en verdi for g = 6.2293999655329975 m/s^2
+</pre></div>
+</div>
+<img alt="../_images/6e6ccb5993f3286b9ca8cff19a18403540ddda9ce8a583ac4f80b7a5fdbef436.png" src="../_images/6e6ccb5993f3286b9ca8cff19a18403540ddda9ce8a583ac4f80b7a5fdbef436.png" />
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Tenk</p>
+<p>Sammenlikn kurven for regresjon med kurven for oppslagsverdien <span class="math notranslate nohighlight">\(g\approx 9.81\)</span>. Hva kan være årsaken for at vi bommer så mye fra oppslagsverdien for <span class="math notranslate nohighlight">\(g\)</span>?</p>
+</div>
+<hr class="docutils" />
+<div class="task admonition">
+<p class="admonition-title">Utforsk din egen problemstilling.</p>
+<p>Finn data om et naturvitenskapelig fenomen eller lag dine egne data f.eks med <a class="reference external" href="https://opensourcephysics.github.io/tracker-website/">Tracker</a> eller mobilappen <em>phyphox</em>.</p>
+<p>Gjennomfør derivasjon og/eller regresjon for å si noe om fenomenet. Det kan for eksempel være</p>
+<ul class="simple">
+<li><p>Å finne en verdi for tyngdeakselerasjonen <span class="math notranslate nohighlight">\(g\)</span> ved å sette opp et fysisk forsøk</p></li>
+<li><p>Sammenlikne ulike ting som faller for å verifisere at de faller med samme akselerasjon</p></li>
+<li><p>Undersøke smittespreding ved å se på COVID-tall.</p></li>
+<li><p>Undersøke data over globale temperaturer</p></li>
+</ul>
+<p>… eller hva som helst annet som interesserer deg.</p>
 </div>
 </section>
 </section>
@@ -521,20 +578,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Plotting%20Matematiske%20funksjoner.html"
+       href="Regresjon.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">forrige</p>
-        <p class="prev-next-title">Matematiske funksjoner</p>
+        <p class="prev-next-title">Regresjon</p>
       </div>
     </a>
     <a class="right-next"
-       href="Regresjon.html"
+       href="../Microbit%20Intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Regresjon</p>
+        <p class="prev-next-title">Intro til <code class="docutils literal notranslate"><span class="pre">Micro:bit</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -554,9 +611,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lese-inn-i-pandas">Lese inn i Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotte-data-fra-pandas">Plotte data fra Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-derivasjon-pa-et-datasett">Numerisk derivasjon på et datasett</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-fysisk-tolkning">En fysisk tolkning</a></li>
 </ul>
   </nav></div>
 
