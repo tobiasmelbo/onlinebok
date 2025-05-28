@@ -406,7 +406,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
@@ -419,7 +419,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/accf1be6d865a72909a7f934236f62011ea98795a111f2c543682eb92e9b6bf8.png" src="../_images/accf1be6d865a72909a7f934236f62011ea98795a111f2c543682eb92e9b6bf8.png" />
+<img alt="../_images/56b752f487ce8d9ff6af813804d0c9eaf1135c0a3bf11ffd949cf1159a37e253.png" src="../_images/56b752f487ce8d9ff6af813804d0c9eaf1135c0a3bf11ffd949cf1159a37e253.png" />
 </div>
 </div>
 <p>Hvis vi deriverer posisjonen så får vi farten til en gjenstand. Den deriverte kan vi finne numerisk ved å bruke gjennomsnittlig vekstfart <span class="math notranslate nohighlight">\(v_n=\frac{\Delta y}{\Delta t}=\frac{y_{n + 1} - y_{n}}{t_{n + 1} - t_{n}}\)</span>.</p>
@@ -433,7 +433,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
@@ -458,7 +458,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e64d9cd2353fe5e710d085483acb985dcc8628bdf3bebc3e9d204c01258ad5bb.png" src="../_images/e64d9cd2353fe5e710d085483acb985dcc8628bdf3bebc3e9d204c01258ad5bb.png" />
+<img alt="../_images/911d2c0d935ee6bd99131b00c596e166e3457b813cec3d4b8eb930b951bb2cd4.png" src="../_images/911d2c0d935ee6bd99131b00c596e166e3457b813cec3d4b8eb930b951bb2cd4.png" />
 </div>
 </div>
 <p>Nå har vi derivert numerisk! Legg merke til at farten ser ut til å være ganske lineær.</p>
@@ -467,8 +467,9 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
@@ -483,14 +484,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d437c164094a62e0da171cf77a48d14e1dc2e4cc8b0fdeeac41f5ed8589745ea.png" src="../_images/d437c164094a62e0da171cf77a48d14e1dc2e4cc8b0fdeeac41f5ed8589745ea.png" />
+<img alt="../_images/67a1f360e8aa0364ee8d181c1040eba30ebb3af3c19f17b7caeddf7e7db2db2e.png" src="../_images/67a1f360e8aa0364ee8d181c1040eba30ebb3af3c19f17b7caeddf7e7db2db2e.png" />
 </div>
 </div>
 <p>Det var mye enklere. Legg også merke til at vi får litt andre verdier. Disse verdiene er faktisk bedre approksimasjoner for den deriverte, fordi <code class="docutils literal notranslate"><span class="pre">np.gradient()</span></code> bruker sentraldifferanse på alle punktene i midten.</p>
 </section>
 <section id="en-fysisk-tolkning">
 <h2>En fysisk tolkning<a class="headerlink" href="#en-fysisk-tolkning" title="Link to this heading">#</a></h2>
-<p>Farten vi regnet ut så ganske lineær ut. Det er ikke så rart. En ting som faller fritt (uten luftmotsatnd) fra <span class="math notranslate nohighlight">\(y=0\)</span> vil følge kurven <span class="math notranslate nohighlight">\(y(t)=-\frac{1}{2}gt^2\)</span> der <span class="math notranslate nohighlight">\(g\)</span> er en konstant som kalles for <em>tyngdeakselerasjonen</em>. Farten vil da bli gitt ved <span class="math notranslate nohighlight">\(v(t)=y'(t)=-gt\)</span> som er en lineær funksjon. Dette har vi vist at stemmer ved å derivere numerisk!</p>
+<p>Farten vi regnet ut så ganske lineær ut. Det er ikke så rart. En ting som faller fritt (uten luftmotsand) fra <span class="math notranslate nohighlight">\(y=0\)</span> vil følge kurven <span class="math notranslate nohighlight">\(y(t)=-\frac{1}{2}gt^2\)</span> der <span class="math notranslate nohighlight">\(g\)</span> er en konstant som kalles for <em>tyngdeakselerasjonen</em>. Farten vil da bli gitt ved <span class="math notranslate nohighlight">\(v(t)=y'(t)=-gt\)</span> som er en lineær funksjon. Dette har vi vist at stemmer ved å derivere numerisk!</p>
 <p>La oss bruke regresjon for å finne en verdi for tyngdeakselerasjonen <span class="math notranslate nohighlight">\(g\)</span>. Hvis man slår opp tyngdeakselerasjonen på jorden får man <span class="math notranslate nohighlight">\(g\approx 9.81\)</span>. La oss se hvor godt vårt eksperiment passer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -498,7 +499,7 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;fallende_terning.csv&quot;</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;t&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
@@ -510,9 +511,9 @@ document.write(`
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Modellen vår finner en verdi for g = </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s2"> m/s^2&quot;</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">modell_y</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;g = </span><span class="si">{</span><span class="n">g</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">modell_y</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mf">9.81</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;g = 9.81&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Posisjon&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">modell_y</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Modell for g = </span><span class="si">{</span><span class="n">g</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">modell_y</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mf">9.81</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Modell for g = 9.81&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;tid (sekunder)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y (meter)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -521,15 +522,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modellen vår finner en verdi for g = 6.2293999655329975 m/s^2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modellen vår finner en verdi for g = 10.786222033935784 m/s^2
 </pre></div>
 </div>
-<img alt="../_images/6e6ccb5993f3286b9ca8cff19a18403540ddda9ce8a583ac4f80b7a5fdbef436.png" src="../_images/6e6ccb5993f3286b9ca8cff19a18403540ddda9ce8a583ac4f80b7a5fdbef436.png" />
+<img alt="../_images/e7f9b1b287069be40c5312d41fd682349afe2cb415043df81d96eb19a4a1c64d.png" src="../_images/e7f9b1b287069be40c5312d41fd682349afe2cb415043df81d96eb19a4a1c64d.png" />
 </div>
-</div>
-<div class="task admonition">
-<p class="admonition-title">Tenk</p>
-<p>Sammenlikn kurven for regresjon med kurven for oppslagsverdien <span class="math notranslate nohighlight">\(g\approx 9.81\)</span>. Hva kan være årsaken for at vi bommer så mye fra oppslagsverdien for <span class="math notranslate nohighlight">\(g\)</span>?</p>
 </div>
 <hr class="docutils" />
 <div class="task admonition">
