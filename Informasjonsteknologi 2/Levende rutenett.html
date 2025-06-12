@@ -63,6 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Informasjonsteknologi 2/Levende rutenett';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
+    <link rel="next" title="Kryptografi" href="Kryptografi.html" />
+    <link rel="prev" title="Spill" href="Spill.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
   </head>
@@ -125,8 +127,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -168,7 +168,7 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Grunnleggende/Grunnleggende%20Python.html">Grunnleggende Python 🐍</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html">Variabler og syntaks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Grunnleggende/Input%20og%20pakker.html">Input og pakker</a></li>
@@ -219,7 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../Matematikk/Newtons%20metode.html">Newtons metode (R)</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Informasjonsteknologi%202.html">Informasjonsteknologi 2 💾</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Brukergrensesnitt.html">Brukergrensesnitt</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Klasser.html">Klasser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Arv.html">Arv</a></li>
@@ -228,6 +228,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Testing%20II.html">Testing II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Dokumentasjon.html">Dokumentasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Spill.html">Spill</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Levende rutenett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Kryptografi.html">Kryptografi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="L%C3%B8sningsforslag%20Eksamen.html">📄 Løsningsforslag: Eksamen</a></li>
 </ul>
@@ -380,7 +381,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-of-life">Game of Life</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-of-life">Game of Life 🦠</a></li>
 </ul>
             </nav>
         </div>
@@ -398,7 +399,7 @@ document.write(`
 <p>Hvorfor i all verden snakker jeg om dette i et kapittel for faget Informasjonsteknologi 2?</p>
 <p>Alt vil bli klart, kjære leser, når vi tar et dypdykk i <strong>Conway’s Game of Life</strong>…</p>
 <section id="game-of-life">
-<h2>Game of Life<a class="headerlink" href="#game-of-life" title="Link to this heading">#</a></h2>
+<h2>Game of Life 🦠<a class="headerlink" href="#game-of-life" title="Link to this heading">#</a></h2>
 <p><strong>Game of Life</strong> er et sett med regler for et rutenett som ble utviklet av John Horton Conway på 70-tallet. Hver rute i rutenettet anses som en <em>celle</em>, og hver celle kan være enten levende eller død. Reglene er som følger:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -423,8 +424,415 @@ document.write(`
 </table>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave: Lag Game of Life</p>
-<p>Under kommer et forslag på en løsning for Game of Life, men prøv gjerne selv først!</p>
+<p class="admonition-title">Oppgave: Lag Game of Life 🦠</p>
+<p>Lag et objektorientert Game of Life med grensesnitt i PyGame.</p>
+<p>Bruk klassen <code class="docutils literal notranslate"><span class="pre">Simulasjon</span></code> for å holde styr på hele rutenettet/spillet og <code class="docutils literal notranslate"><span class="pre">Celle</span></code> for å holde styr på hver individuelle celle.</p>
+<p>Du kan bestemme hvordan du håndterer kantene. En måte er ved å bestemme at alle cellene utenfor kanten er døde. En annen måte er ved å gjøre <em>wrap-around,</em> hvor naboene til cellene på høyre kant blir cellene på venstre kant osv…</p>
+<p>Extra: Utvid programmet til å starte med at alle cellene er døde. Ta mouse-input fra brukeren som registrerer på hvilken celle det klikkes. Klikker man på en celle så dør den eller kommer til live.</p>
+</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag: Game of Life 🦠</p>
+<p>Her er et enkelt løsningsforslag for Game of Life med utvidelsen med tegning.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">En simulasjon med reglene fra Game of Life. </span>
+
+<span class="sd">- Bruk mellomrom for å pause/starte simulasjonen og klikk rutene for å tegne.</span>
+<span class="sd">- Bruk knappen &quot;r&quot; for å restarte simulasjonen.</span>
+
+<span class="sd">Det finnes mange mulige forbedringer, men dettr er bare et forslag. Slå deg løs!</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">Simulasjon</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Setter opp pygame</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># Setter opp skjermen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span> <span class="c1"># (n x n) rutenett</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span> <span class="o">=</span> <span class="mi">20</span> <span class="c1"># Hvor store rutene skal være</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skjerm</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skjerm</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Setter opp rader med celler og tegner de</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rader</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Celle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">simulasjon</span> <span class="o">=</span> <span class="bp">self</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">)]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">)]</span>        
+        <span class="k">for</span> <span class="n">rad</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rader</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">celle</span> <span class="ow">in</span> <span class="n">rad</span><span class="p">:</span>
+                <span class="n">celle</span><span class="o">.</span><span class="n">tegn</span><span class="p">()</span>
+
+        <span class="c1"># Starter med pause</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pause</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Game of Life (Pause)&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">main_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Holder styr på hvilke celler som skal tegnes etter update.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Avslutter spillet</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># Knapper</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">KEYDOWN</span><span class="p">:</span>
+                <span class="c1"># Mellomrom bytter på pause-modus</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_SPACE</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pause</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">pause</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Game of Life&quot;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">pause</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Game of Life (Pause)&quot;</span><span class="p">)</span>
+                <span class="c1"># Knappen &quot;r&quot; starter simulasjonen om igjen</span>
+                <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">K_r</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+            
+            <span class="c1"># Oppdaterer musepekeren</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+                <span class="n">mouse_pos</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pos</span><span class="p">()</span>
+                <span class="c1"># Henter koordinater i rutenettet</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="n">mouse_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span> 
+                <span class="c1"># Henter og oppdaterer cellen</span>
+                <span class="n">celle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rader</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">celle</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
+                    <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+
+        <span class="c1"># Oppdaterer celler</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">pause</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">rad</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rader</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">celle</span> <span class="ow">in</span> <span class="n">rad</span><span class="p">:</span>
+                    <span class="c1"># Henter antall naboer</span>
+                    <span class="n">antall_naboer</span> <span class="o">=</span> <span class="n">celle</span><span class="o">.</span><span class="n">hent_antall_naboer</span><span class="p">()</span>
+                    
+                    <span class="c1"># Levende celle</span>
+                    <span class="k">if</span> <span class="n">celle</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
+                        <span class="c1"># Dør (for få naboer)</span>
+                        <span class="k">if</span> <span class="n">antall_naboer</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+                            <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">False</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+                        <span class="c1"># Dør (for mange naboer)</span>
+                        <span class="k">elif</span> <span class="n">antall_naboer</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                            <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">False</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+
+                    <span class="c1"># Død celle</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1"># Kommer til live</span>
+                        <span class="k">if</span> <span class="n">antall_naboer</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                            <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">True</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+
+        <span class="c1"># Tikker klokken videre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Tegner celler som skal oppdateres</span>
+        <span class="k">for</span> <span class="n">celle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="p">:</span>
+            <span class="n">celle</span><span class="o">.</span><span class="n">tegn</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Tømmer listen etter alle er tegnet</span>
+
+        <span class="c1"># Tegner skjermen på skjermen</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Celle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">simulasjon</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span> <span class="o">=</span> <span class="n">simulasjon</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span> <span class="nf">hent_antall_naboer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        På denne måten kan vi sjekke alle naboene</span>
+<span class="sd">        [-1,-1] [0,-1] [1,-1]</span>
+<span class="sd">        [-1, 0] [0, 0] [1, 0]</span>
+<span class="sd">        [-1, 1] [0, 1] [1, 1]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">antall_naboer</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">retning</span> <span class="ow">in</span> <span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]:</span>
+            <span class="c1"># Ignorerer kantene ved å sjekke bare de som er innenfor simulasjonen</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">bredde</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">høyde</span><span class="p">:</span>
+                    <span class="n">nabo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">rader</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+                    <span class="k">if</span> <span class="n">nabo</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
+                        <span class="n">antall_naboer</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="k">return</span> <span class="n">antall_naboer</span>
+    
+    <span class="k">def</span> <span class="nf">tegn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skjerm</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="n">border_radius</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skjerm</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="n">border_radius</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">simulasjon</span> <span class="o">=</span> <span class="n">Simulasjon</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">simulasjon</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+    <span class="n">simulasjon</span><span class="o">.</span><span class="n">main_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Det er virkelig fascinerende hvordan det oppstår så mange kule «livsformer» og mønstre i så enkle regler. Jeg anbefaler å lese litt videre på <a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia (lenke)</a> om du er interessert.</p>
+<p>Simulasjoner hvor man bestemmer noen enkle regler for naboer til celler kalles for <em>Cellular Automata</em> på engelsk. I oppgavene under får du enda flere av disse å leke deg med.</p>
+<hr class="docutils" />
+<div class="task admonition">
+<p class="admonition-title">Oppgave: Langton’s Ant 🐜</p>
+<p><strong>Langton’s Ant</strong> er en annen kjent <em>Cellular Automaton</em>.</p>
+<p>Reglene er som følger:</p>
+<ul class="simple">
+<li><p>En maur starter i et rutenett med en posisjon og en retning.</p></li>
+<li><p>Hvis mauren er på en hvit rute, snur den <code class="docutils literal notranslate"><span class="pre">90</span></code> grader med klokken, bytter fargen på ruten den står på og beveger seg ett skritt frem.</p></li>
+<li><p>Hvis mauren er på en sort rute, snur den <code class="docutils literal notranslate"><span class="pre">90</span></code> grader mot klokken, bytter fargen på ruten den står på og beveger seg ett skritt frem.</p></li>
+</ul>
+<p>Lag Langton’s Ant. Du må bruke objektorientert programmering med klasser og objekter. Hvordan du håndterer kanten på rutenettet er opp til deg selv.</p>
+<p>Utforsk: Plasser flere maur på skjermen på en gang eller utforsk andre regler for mauren.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">En simulasjon av Langton&#39;s Ant.</span>
+
+<span class="sd">Noen mulige utvidelser:</span>
+<span class="sd">- Tegn mauren.</span>
+<span class="sd">- Lag flere maur på en gang.</span>
+<span class="sd">- Bytt på reglene.</span>
+<span class="sd">- Utforsk med farger.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">class</span> <span class="nc">LangtonsMaur</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rutenett</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maur</span> <span class="o">=</span> <span class="p">[</span><span class="n">Maur</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">langtonsmaur</span><span class="o">=</span><span class="bp">self</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">main_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">handle_events</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">handle_events</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">maur</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">maur</span><span class="p">:</span>
+            <span class="n">maur</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Bytt farge der mauren står</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;for row in range(len(self.rutenett)):</span>
+<span class="sd">            for col in range(len(self.rutenett[0])):</span>
+<span class="sd">                if self.rutenett[row][col] == 1:</span>
+<span class="sd">                    pygame.draw.rect(self.screen, (0, 0, 0), ((col * self.size, row * self.size), (self.size, self.size)))</span>
+<span class="sd">                else:</span>
+<span class="sd">                    pygame.draw.rect(self.screen, (255, 255, 255), ((col * self.size, row * self.size), (self.size, self.size)))&quot;&quot;&quot;</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Maur</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">retning</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">langtonsmaur</span> <span class="p">:</span> <span class="n">LangtonsMaur</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="n">retning</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">langtonsmaur</span> <span class="o">=</span> <span class="n">langtonsmaur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rutenett</span> <span class="o">=</span> <span class="n">langtonsmaur</span><span class="o">.</span><span class="n">rutenett</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retninger</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">roter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">med_klokken</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="c1"># Rotér med klokken. Flytt fremover i retningslisten.</span>
+        <span class="k">if</span> <span class="n">med_klokken</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retninger</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">retninger</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="c1"># Rotér mot klokken. Bakover i retningslisten.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retninger</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">retninger</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">retning</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">retninger</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">gå</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">langtonsmaur</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">langtonsmaur</span><span class="o">.</span><span class="n">dim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">display</span> <span class="p">:</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">):</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">langtonsmaur</span><span class="o">.</span><span class="n">size</span>
+        <span class="c1"># Står på hvit</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rutenett</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rutenett</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">display</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">*</span> <span class="n">size</span><span class="p">),</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">roter</span><span class="p">(</span><span class="n">med_klokken</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gå</span><span class="p">()</span>
+        <span class="c1"># Står på sort</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rutenett</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">][</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">display</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">size</span><span class="p">),</span> <span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">)))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">roter</span><span class="p">(</span><span class="n">med_klokken</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gå</span><span class="p">()</span>
+
+<span class="n">spill</span> <span class="o">=</span> <span class="n">LangtonsMaur</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">spill</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+    <span class="n">spill</span><span class="o">.</span><span class="n">main_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave: Skogbrann 🌲🔥 (Eksamen Informasjonsteknologi 2 V25)</p>
+<p>Til eksamen V25 ble denne formuleringen gitt for en simulasjon av skogbranner.</p>
+<ul class="simple">
+<li><p>Ved oppstart består simuleringen av et tomt rutenett.</p></li>
+<li><p>Hver celle i rutenettet kan bli et tre, og sannsynligheten for at en tom celle blir et tre, kan ved oppstart f.eks. være 0,3 %.</p></li>
+<li><p>Etter som det vokser fram trær i skogen, kan et lynnedslag slå ned i et tre og starte en skogbrann. Sannsynligheten for at et tre blir truffet av lyn, kan f.eks. settes til 0,03 %.</p></li>
+<li><p>Om lynet slår ned i et tre, begynner det å brenne, og skogbrannen sprer seg etter følgende regler:</p>
+<ul>
+<li><p>Ved lynnedslag er det et tre som begynner å brenne.</p></li>
+<li><p>Ved neste trinn i simuleringen har treet lynet slo ned i, brent opp og blitt en blank celle. Trærne som sto ved siden av treet der lynet slo ned, brenner.</p></li>
+<li><p>Simuleringen fortsetter på samme vis ved at alle trær som står ved et tre som nettopp brant opp, nå brenner.</p></li>
+</ul>
+</li>
+</ul>
+<p>Skogen vokser ikke mens skogbrannen pågår. Det betyr at mens det pågår en brann, representerer hvert trinn i simuleringen veldig mye mindre tid enn mens skogen vokser.</p>
+<p>Lag denne simulasjonen visuelt med PyGame. Bruk hensiktsmessig objektorientert programmering.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Programmet bruker pakken PyGame. Installer ved å skrive</span>
+
+<span class="sd">    &gt;pip install pygame</span>
+
+<span class="sd">i terminalvinduet.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">Spill</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Rute</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">)]</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># Holder styr på om det er skogbrann eller ikke</span>
+
+    <span class="k">def</span> <span class="nf">main_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Avslutter spillet</span>
+        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Skogen vokser</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span><span class="p">:</span>
+            <span class="c1"># Lag trær</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span>
+                    <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">rute</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+                            <span class="n">rute</span><span class="o">.</span><span class="n">tre</span> <span class="o">=</span> <span class="kc">True</span>
+            
+            <span class="c1"># Start skogbrann</span>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span> <span class="c1"># 0.03% sjanse for skogbrann per tid</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span> <span class="o">=</span> <span class="kc">True</span>
+                
+                <span class="n">ruter_med_trær</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span> 
+                        <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                            <span class="n">ruter_med_trær</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rute</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ruter_med_trær</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">ruter_med_trær</span><span class="p">)</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">True</span>
+                
+        
+        <span class="c1"># Skogen brenner</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># Liste som holder styr på de som skal begynne å brenne</span>
+            <span class="n">branner</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">pågående_brann</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span>
+                    <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span><span class="p">:</span>
+                        <span class="n">pågående_brann</span> <span class="o">=</span> <span class="kc">True</span>
+                        <span class="n">rute</span><span class="o">.</span><span class="n">tre</span> <span class="o">=</span> <span class="kc">False</span>
+                        <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">False</span>
+
+                        <span class="c1"># Naboer</span>
+                        <span class="k">for</span> <span class="n">retning</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]:</span>
+                            <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">bredde</span> <span class="ow">and</span> <span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                                <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">høyde</span> <span class="ow">and</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                                    <span class="n">nabo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">retning</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+                                    <span class="k">if</span> <span class="n">nabo</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                                        <span class="n">branner</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nabo</span><span class="p">)</span>
+            
+            <span class="c1"># Start branner i nabotrær</span>
+            <span class="k">for</span> <span class="n">rute</span> <span class="ow">in</span> <span class="n">branner</span><span class="p">:</span>
+                <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="c1"># Stopper skogbrannen hvis ingenting brenner</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">pågående_brann</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">skogbrann</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># Tikker klokken videre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Tegner trær</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bredde</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">høyde</span><span class="p">):</span>
+                <span class="n">rute</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruter</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">rute</span><span class="o">.</span><span class="n">tre</span><span class="p">:</span>
+                    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">((</span><span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">)))</span>
+                <span class="k">elif</span> <span class="n">rute</span><span class="o">.</span><span class="n">brenner</span><span class="p">:</span>
+                    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">screen</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">((</span><span class="n">rute</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="n">rute</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">skalering</span><span class="p">)))</span>
+                
+        <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">Rute</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tre</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">brenner</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">spill</span> <span class="o">=</span> <span class="n">Spill</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">spill</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
+    <span class="n">spill</span><span class="o">.</span><span class="n">main_loop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -459,6 +867,24 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Spill.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">forrige</p>
+        <p class="prev-next-title">Spill</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Kryptografi.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">neste</p>
+        <p class="prev-next-title">Kryptografi</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -475,7 +901,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-of-life">Game of Life</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#game-of-life">Game of Life 🦠</a></li>
 </ul>
   </nav></div>
 
@@ -497,6 +923,13 @@ By Tobias Melbø
   
   <div class="footer-item">
     
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
 
   </div>
   
