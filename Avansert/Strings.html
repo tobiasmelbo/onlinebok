@@ -969,7 +969,33 @@ Standardform med to desimaler: 1.50e+11 meter.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vokalfjerner</span><span class="p">(</span><span class="s2">&quot;Jeg elsker Python 🐍&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Jg lskr Pthn 🐍&quot;</span>
 </pre></div>
 </div>
-<p>Du får ikke bruke metode-chaining ved å putte flere metoder etter hverandre. <code class="docutils literal notranslate"><span class="pre">inp_ord.replace(&quot;a&quot;,</span> <span class="pre">&quot;&quot;).replace(&quot;e&quot;,</span> <span class="pre">&quot;&quot;)...</span></code> er <strong>ikke</strong> lov.</p>
+<ul class="simple">
+<li><p>Du får ikke bruke metode-chaining ved å putte flere metoder etter hverandre. <code class="docutils literal notranslate"><span class="pre">inp_ord.replace(&quot;a&quot;,</span> <span class="pre">&quot;&quot;).replace(&quot;e&quot;,</span> <span class="pre">&quot;&quot;)...</span></code> er <strong>ikke</strong> lov.</p></li>
+<li><p>Sørg for at den originale stringen ikke endres. Det kan du gjøre ved å lage en kopi <code class="docutils literal notranslate"><span class="pre">tekst_kopi</span> <span class="pre">=</span> <span class="pre">tekst</span></code>.</p></li>
+</ul>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">vokalfjerner</span><span class="p">(</span><span class="n">tekst</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="c1"># Lager en &quot;kopi&quot; av tekst for å sørge for at den originale teksten ikke endres.</span>
+    <span class="n">tekst_kopi</span> <span class="o">=</span> <span class="n">tekst</span>
+
+    <span class="c1"># Fjerner vokaler</span>
+    <span class="n">vokaler</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;u&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;æ&quot;</span><span class="p">,</span> <span class="s2">&quot;ø&quot;</span><span class="p">,</span> <span class="s2">&quot;å&quot;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">vokal</span> <span class="ow">in</span> <span class="n">vokaler</span><span class="p">:</span>
+        <span class="n">tekst_kopi</span> <span class="o">=</span> <span class="n">tekst_kopi</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">vokal</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tekst_kopi</span>
+
+<span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;Jeg elsker Python 🐍&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fjernet: &quot;</span><span class="p">,</span> <span class="n">vokalfjerner</span><span class="p">(</span><span class="n">tekst</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Original: &quot;</span><span class="p">,</span> <span class="n">tekst</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Fjernet:  Jg lskr Pthn 🐍
+Original:  Jeg elsker Python 🐍
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 7 📏</p>
