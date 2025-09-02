@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -882,7 +882,7 @@ Standardform med to desimaler: 1.50e+11 meter.
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 3 🅰️</p>
-<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">antall_a()</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">s</span></code> og returnerer hvor mange ganger bokstaven <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> er skrevet.</p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">antall_a(s)</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">s</span></code> og returnerer hvor mange ganger bokstaven <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> er skrevet.</p>
 <p>Tell både stor og liten bokstav.</p>
 <p>Her er noen testcases som funksjonen din må oppfylle.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">antall_a</span><span class="p">(</span><span class="s2">&quot;Banan&quot;</span><span class="p">)</span>  <span class="o">-&gt;</span> <span class="mi">2</span>
@@ -960,6 +960,37 @@ Standardform med to desimaler: 1.50e+11 meter.
     <span class="n">måned</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 6 🗣️</p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">vokalfjerner(tekst)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">tekst</span></code> og returnerer en string som har alle vokalene fjernet.</p>
+<p>Vokalene er <code class="docutils literal notranslate"><span class="pre">vokaler</span> <span class="pre">=</span> <span class="pre">[&quot;a&quot;,</span> <span class="pre">&quot;e&quot;,</span> <span class="pre">&quot;i&quot;,</span> <span class="pre">&quot;o&quot;,</span> <span class="pre">&quot;u&quot;,</span> <span class="pre">&quot;y&quot;,</span> <span class="pre">&quot;æ&quot;,</span> <span class="pre">&quot;ø&quot;,</span> <span class="pre">&quot;å&quot;]</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vokalfjerner</span><span class="p">(</span><span class="s2">&quot;Jeg elsker Python 🐍&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Jg lskr Pthn 🐍&quot;</span>
+</pre></div>
+</div>
+<p>Du får ikke bruke metode-chaining ved å putte flere metoder etter hverandre. <code class="docutils literal notranslate"><span class="pre">inp_ord.replace(&quot;a&quot;,</span> <span class="pre">&quot;&quot;).replace(&quot;e&quot;,</span> <span class="pre">&quot;&quot;)...</span></code> er <strong>ikke</strong> lov.</p>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 7 📏</p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">lengste_ord(tekst)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">tekst</span></code> og returnerer det ordet som er lengst i teksten.</p>
+<div class="hint dropdown admonition">
+<p class="admonition-title">Eksempelutskrift</p>
+<p>Her er et eksempel på en tekst og en utskrift.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tekst</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Space: the final frontier. These are the voyages of the starship Enterprise. </span>
+<span class="s2">Its continuing mission: to explore strange new worlds, to seek out new life and new civilizations, </span>
+<span class="s2">to boldly go where no one has gone before.&quot;&quot;&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lengste_ord</span><span class="p">(</span><span class="n">tekst</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="s2">&quot;civilizations&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 8 (utfordring) 🔢</p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">bokstavkomprimer(inp_ord)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">inp_ord</span></code> og returnerer en string hvor alle bokstaver som gjentas etter hverandre erstattes med en bokstav og et tall som representerer hvor mange ganger bokstaven er brukt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;llllmmaooo&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;l4m2ao3&quot;</span>
+</pre></div>
 </div>
 </div>
 </section>
