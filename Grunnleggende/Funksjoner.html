@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -444,6 +444,24 @@ document.write(`
 </ul>
 <p>Derfor skrives <code class="docutils literal notranslate"><span class="pre">4</span></code> ut.</p>
 <p>Nå kan vi lage matematiske funksjoner!</p>
+<div class="hint admonition">
+<p class="admonition-title">Skrive ut punkter</p>
+<p>Vi kan bruke en enkel <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkke for å skrive ut punktene til en funksjon.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">4</span>
+<span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span>
+<span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">1</span> <span class="mi">2</span>
+<span class="mi">2</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="flere-argumenter">
 <h2>Flere argumenter<a class="headerlink" href="#flere-argumenter" title="Link to this heading">#</a></h2>
@@ -500,20 +518,60 @@ document.write(`
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 1 👋</p>
-<p>Lag en funksjon som tar et navn som argument og skriver ut <code class="docutils literal notranslate"><span class="pre">Hei,</span> <span class="pre">&lt;navn&gt;!</span></code></p>
+<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">hils(navn)</span></code> som tar et navn som argument og skriver ut <code class="docutils literal notranslate"><span class="pre">Hei,</span> <span class="pre">&lt;navn&gt;</span></code></p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hils</span><span class="p">(</span><span class="n">navn</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hei,&quot;</span><span class="p">,</span> <span class="n">navn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 2 🎢</p>
 <p>I denne oppgaven skal vi lage den matematiske funksjonen <span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p>
 <ol class="arabic simple">
 <li><p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> som returnerer verdien <code class="docutils literal notranslate"><span class="pre">x**2</span></code>. Prøv den med noen verdier.</p></li>
-<li><p>Bruk en for-løkke til å sette inn tallene <span class="math notranslate nohighlight">\([0, 10]\)</span> i funksjonen. Skriv ut resultatene.</p></li>
+<li><p>Bruk en for-løkke til å skrive ut <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(f(x)\)</span> for tallene <span class="math notranslate nohighlight">\(\{0,1,2,3,\dots,10\}\)</span></p></li>
 </ol>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">2</span> <span class="mi">4</span>
+<span class="mi">3</span> <span class="mi">9</span>
+<span class="mi">4</span> <span class="mi">16</span>
+<span class="mi">5</span> <span class="mi">25</span>
+<span class="mi">6</span> <span class="mi">36</span>
+<span class="mi">7</span> <span class="mi">49</span>
+<span class="mi">8</span> <span class="mi">64</span>
+<span class="mi">9</span> <span class="mi">81</span>
+<span class="mi">10</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 3 🧑‍🤝‍🧑</p>
 <p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">er_partall(x)</span></code>som sjekker om et tall <code class="docutils literal notranslate"><span class="pre">x</span></code> er et partall.</p>
-<p>Funksjonen skal returnere <code class="docutils literal notranslate"><span class="pre">True</span></code> om <code class="docutils literal notranslate"><span class="pre">x</span></code> er et partall, og <code class="docutils literal notranslate"><span class="pre">False</span></code> om det ikke er det.</p>
+<p>Funksjonen skal returnere <code class="docutils literal notranslate"><span class="pre">True</span></code> om <code class="docutils literal notranslate"><span class="pre">x</span></code> er et partall, og <code class="docutils literal notranslate"><span class="pre">False</span></code> om det ikke er det.`</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">er_partall</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Hvis resten når man deler på to er lik null</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 4 📐</p>
@@ -521,7 +579,20 @@ document.write(`
 <p>Med Pytagoras læresetning kan vi finne den lengste siden i en rettvinklet trekant med formelen <span class="math notranslate nohighlight">\(c = \sqrt{a^2+b^2}\)</span>.</p>
 </aside>
 <p>Lag en funksjon som tar lengden av to sider <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> som argumenter og returnerer lengden av den lengste siden <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p>
-<p>Test funksjonen med trekanten <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">4</span></code>. Dette skal gi <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">def</span> <span class="nf">hypotenus</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hypotenus</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">5.0</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 5 ➗</p>
@@ -529,13 +600,57 @@ document.write(`
 <div><p>I denne oppgaven kan det være nyttig å se tilbake på <a class="reference internal" href="Variabler%20og%20syntaks.html#rest-og-heltallsdivisjon"><span class="std std-ref">Rest og heltallsdivisjon</span></a></p>
 </div></blockquote>
 <p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">er_primtall(x)</span></code> som skjekker om et tall <code class="docutils literal notranslate"><span class="pre">x</span></code> er et primtall. Den skal returnere <code class="docutils literal notranslate"><span class="pre">True</span></code> dersom tallet er et primtall og <code class="docutils literal notranslate"><span class="pre">False</span></code> dersom det ikke er det.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<p>Den enkleste sjekken innebærer å sjekke alle tall opp <em>til</em> tallet <span class="math notranslate nohighlight">\(x\)</span>. Hvis <span class="math notranslate nohighlight">\(x\)</span> er delbar med et av tallene, er det ikke et primtall.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">er_primtall</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># 0 og 1 er ikke primtall</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># Vi sjekker om x er delbar med noen av tallene opp til x. Hvis den er delbar er det ikke primtall.</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Sjekken over vil sjekke veldig mange unødvendige tall.</p>
+<p>Vi trenger ikke sjekke opp lengre enn til kvadratroten av <span class="math notranslate nohighlight">\(x\)</span>. Ingen tall har faktorer som er større enn kvadratroten av tallet selv. I tillegg trenger vi ikke sjekke noen partall over <span class="math notranslate nohighlight">\(2\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">def</span> <span class="nf">er_primtall</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="c1"># 0 og 1 er ikke primtall</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># 2 er et partall</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    
+    <span class="c1"># Ingen partall over 2 er primtall</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># Vi sjekker alle oddetall under og opp til og med kvadratroten av tallet.</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 6 🧠 (utfordring)</p>
 <p><em>Pytagoreiske tripler</em> er tre og tre tall som passer i likningen <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span>. Det enkleste eksemplet er <span class="math notranslate nohighlight">\(a=3\)</span>, <span class="math notranslate nohighlight">\(b=4\)</span> og <span class="math notranslate nohighlight">\(c=5\)</span>. Vi kan skrive det som <span class="math notranslate nohighlight">\((3,4,5)\)</span>.</p>
-<p>a) Skriv ut alle pytagoreiske tripler bestående av heltall under <span class="math notranslate nohighlight">\(100\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Skriv ut alle pytagoreiske tripler bestående av heltall under <span class="math notranslate nohighlight">\(100\)</span>.</p></li>
+</ol>
 <p><em>Primitive pytagoreiske tripler</em> er de triplene som ikke deler en felles faktor større enn <span class="math notranslate nohighlight">\(1\)</span>. Med andre ord er <span class="math notranslate nohighlight">\((3,4,5)\)</span> en primitiv pytagoreisk trippel, men ikke <span class="math notranslate nohighlight">\((6,8,10)\)</span> fordi <span class="math notranslate nohighlight">\(6\)</span>, <span class="math notranslate nohighlight">\(8\)</span> og <span class="math notranslate nohighlight">\(10\)</span> deler en faktor <span class="math notranslate nohighlight">\(2\)</span>.</p>
-<p>b) Modifiser programmet til å bare skrive ut de primitive pytagoreiske triplene.</p>
+<ol class="arabic simple" start="2">
+<li><p>Modifiser programmet til å bare skrive ut de primitive pytagoreiske triplene.</p></li>
+</ol>
 </div>
 </section>
 </section>

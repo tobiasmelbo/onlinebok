@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -424,18 +424,6 @@ document.write(`
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">\n</span></code> betyr linjeskifte. Skriver vi ikke <code class="docutils literal notranslate"><span class="pre">\n</span></code> så får vi alt skrevet på samme linje.</p>
-<p>Vi kan også skrive filer ved å bruke <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;løkke.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="n">file</span><span class="o">.</span><span class="n">writeline</span><span class="p">(</span><span class="s2">&quot;Linje &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Da får vi filen <code class="docutils literal notranslate"><span class="pre">løkke.txt</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Linje</span> <span class="mi">0</span>
-<span class="n">Linje</span> <span class="mi">1</span>
-<span class="n">Linje</span> <span class="mi">2</span>
-</pre></div>
-</div>
 <div class="note admonition">
 <p class="admonition-title">Merk deg</p>
 <p>Når vi skriver ting med innrykk etter <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open(&quot;løkke.txt&quot;,</span> <span class="pre">&quot;w&quot;)</span> <span class="pre">as</span> <span class="pre">file:</span></code> så er filen åpen. Det er bare i dette området man har tilgang til <code class="docutils literal notranslate"><span class="pre">file</span></code>. Når man går ut fra innrykkene, så lukkes filen.</p>
@@ -447,7 +435,7 @@ document.write(`
 <p>Tegnet <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">open(&quot;atomer.txt&quot;,</span> <span class="pre">&quot;w&quot;)</span> <span class="pre">as</span> <span class="pre">file:</span></code> står for <em>write</em>. Når vi bruker <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> skriver vi en fil helt fra starten av. Alt som stod der før vil bli slettet.</p>
 <p>Hvis vi ønsker å legge til tekst på en allerede eksisterende fil kan vi bruke <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>. Dette står for <em>append</em>, som betyr <em>å legge til på slutten av</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;atomer.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sølv,Ag,[2,8,18,18,1],Fast&quot;</span><span class="p">)</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sølv,Ag,[2 8 18 18 1],Fast&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Hvis vi kjører dette programmet ser vi at filen <code class="docutils literal notranslate"><span class="pre">atomer.txt</span></code> blir til:</p>
@@ -595,7 +583,7 @@ S�lv,Ag,[2 8 18 18 1],Fast
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gjennomsnitt: 4.6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gjennomsnitt: 3.0
 </pre></div>
 </div>
 </div>
