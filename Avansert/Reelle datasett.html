@@ -409,12 +409,12 @@ document.write(`
                   
   <section id="reelle-datasett">
 <span id="id1"></span><h1>Reelle datasett<a class="headerlink" href="#reelle-datasett" title="Link to this heading">#</a></h1>
-<p>Som jegere i en data-jungel har vi lært å jakte, slakte og partere data-byttet vårt – men det viser seg at vi egentlig ikke hadde trengt å jakte lengre, fordi det finnes data-biff ferdig partert i butikken – i form av fint formaterte <code class="docutils literal notranslate"><span class="pre">.csv</span></code>- og <code class="docutils literal notranslate"><span class="pre">.json</span></code>-filer.</p>
+<p>Vi har å dele opp og analysere datafiler, men det finnes verktøy som gjør denne jobben enda enklere.</p>
 <p>Med <code class="docutils literal notranslate"><span class="pre">pandas</span></code> er det å åpne og analysere datafiler en lek, men før vi ser på datafilene, må vi bli kjent med <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>-objekter.</p>
 <section id="dataframes">
 <h2>Dataframes<a class="headerlink" href="#dataframes" title="Link to this heading">#</a></h2>
 <p>Den viktigste datatypen fra <code class="docutils literal notranslate"><span class="pre">pandas</span></code> er <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
-<p>En dataframe er en ordbok hvor keys er navn for kolonner, og values er data i hver kolonne.</p>
+<p>En dataframe er en ordbok hvor nøklene er navn for kolonner, og verdiene er data i hver kolonne.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -718,62 +718,6 @@ Mario Kart DS
 <li><p>Skriv ut hvor mange spill det er til de <span class="math notranslate nohighlight">\(8\)</span> mest populære spillkonsollene, i synkende rekkefølge.</p></li>
 <li><p>(BONUS) Regn ut summen av de registrerte tidene i timer.</p></li>
 </ul>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-
-<span class="c1"># DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;list.csv&quot;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
-
-<span class="c1"># Antall spill</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Antall spill: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Fordeling av ratings</span>
-<span class="n">rating_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Rating&quot;</span><span class="p">]:</span>
-    <span class="n">rating_counter</span><span class="p">[</span><span class="n">rating</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Ratings&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">rating_counter</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Populære konsoller</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Topp 8 konsoller&quot;</span><span class="p">)</span>
-<span class="n">console_counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">console</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Console&quot;</span><span class="p">]:</span>
-    <span class="n">console_counter</span><span class="p">[</span><span class="n">console</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">console_counter</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">4</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Total tid</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;-&gt; Total tid:&quot;</span><span class="p">)</span>
-<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Time(Optional)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">():</span>
-    <span class="n">s</span> <span class="o">+=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span> <span class="n">Antall</span> <span class="n">spill</span><span class="p">:</span> <span class="mi">511</span>
-<span class="o">-&gt;</span> <span class="n">Ratings</span>
-<span class="mi">1</span> <span class="p">:</span> <span class="mi">41</span>
-<span class="mi">2</span> <span class="p">:</span> <span class="mi">92</span>
-<span class="mi">3</span> <span class="p">:</span> <span class="mi">205</span>
-<span class="mi">4</span> <span class="p">:</span> <span class="mi">140</span>
-<span class="mi">5</span> <span class="p">:</span> <span class="mi">33</span>
-<span class="o">-&gt;</span> <span class="n">Topp</span> <span class="mi">8</span> <span class="n">konsoller</span>
-<span class="n">PC</span>   <span class="p">:</span> <span class="mi">374</span>
-<span class="n">PSX</span>  <span class="p">:</span> <span class="mi">18</span>
-<span class="n">PS3</span>  <span class="p">:</span> <span class="mi">15</span>
-<span class="n">X360</span> <span class="p">:</span> <span class="mi">15</span>
-<span class="n">SNES</span> <span class="p">:</span> <span class="mi">12</span>
-<span class="n">GCN</span>  <span class="p">:</span> <span class="mi">12</span>
-<span class="n">GBA</span>  <span class="p">:</span> <span class="mi">10</span>
-<span class="n">N64</span>  <span class="p">:</span> <span class="mi">10</span>
-<span class="o">-&gt;</span> <span class="n">Total</span> <span class="n">tid</span><span class="p">:</span>
-<span class="mi">160</span> <span class="n">days</span> <span class="mi">05</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="mi">49</span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 3 🏹</p>

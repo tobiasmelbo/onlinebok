@@ -637,13 +637,95 @@ Summen er 2870
 <p class="admonition-title">Oppgave 1 📦</p>
 <p>Hvis kvadrattallene er tallene med formel <span class="math notranslate nohighlight">\(n^2\)</span> når <span class="math notranslate nohighlight">\(n\in \{1, 2, 3, \dots\}\)</span> så må tallene med formel <span class="math notranslate nohighlight">\(n^3\)</span> hete <em>kubikktallene</em>.</p>
 <p>Skriv ut summen av de første <span class="math notranslate nohighlight">\(20\)</span> kubikktallene og undersøk om <span class="math notranslate nohighlight">\(6859\)</span> er et kubikktall.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span><span class="o">**</span><span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summen av de 20 første kubikktallene:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">1</span>
+<span class="mi">2</span> <span class="mi">8</span>
+<span class="mi">3</span> <span class="mi">27</span>
+<span class="mi">4</span> <span class="mi">64</span>
+<span class="mi">5</span> <span class="mi">125</span>
+<span class="mi">6</span> <span class="mi">216</span>
+<span class="mi">7</span> <span class="mi">343</span>
+<span class="mi">8</span> <span class="mi">512</span>
+<span class="mi">9</span> <span class="mi">729</span>
+<span class="mi">10</span> <span class="mi">1000</span>
+<span class="mi">11</span> <span class="mi">1331</span>
+<span class="mi">12</span> <span class="mi">1728</span>
+<span class="mi">13</span> <span class="mi">2197</span>
+<span class="mi">14</span> <span class="mi">2744</span>
+<span class="mi">15</span> <span class="mi">3375</span>
+<span class="mi">16</span> <span class="mi">4096</span>
+<span class="mi">17</span> <span class="mi">4913</span>
+<span class="mi">18</span> <span class="mi">5832</span>
+<span class="mi">19</span> <span class="mi">6859</span>
+<span class="mi">20</span> <span class="mi">8000</span>
+<span class="n">Summen</span> <span class="n">av</span> <span class="n">de</span> <span class="mi">20</span> <span class="n">første</span> <span class="n">kubikktallene</span><span class="p">:</span> <span class="mi">44100</span>
+</pre></div>
+</div>
+<p>Summen blir av de <span class="math notranslate nohighlight">\(20\)</span> første kubikktallene blir <span class="math notranslate nohighlight">\(44\,100\)</span> og vi ser at <span class="math notranslate nohighlight">\(6859\)</span> er et kubikktall. Det er kubikktall nr <span class="math notranslate nohighlight">\(19\)</span>.</p>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 2 ✌️</p>
-<p>Skriv ut de første 20 toerpotensene <span class="math notranslate nohighlight">\(2^n\)</span>. Har du sett disse tallene før?</p>
+<p>Skriv ut de første 20 toerpotensene <span class="math notranslate nohighlight">\(2^n\)</span> hvor <span class="math notranslate nohighlight">\(n \in \{1, 2, 3,...\}\)</span>. Har du sett disse tallene før?</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Toerpotensene er typisk tall for lagring i digitale enheter, f.eks 128 GB, 256 GB etc. Årsaken er at datamaskiner bruker bits, som kan være enten <code class="docutils literal notranslate"><span class="pre">0</span></code> eller <code class="docutils literal notranslate"><span class="pre">1</span></code>. To bits gir fire muligheter <code class="docutils literal notranslate"><span class="pre">00</span></code>, <code class="docutils literal notranslate"><span class="pre">01</span></code>, <code class="docutils literal notranslate"><span class="pre">10</span></code> og <code class="docutils literal notranslate"><span class="pre">11</span></code>. Fire bits gir <span class="math notranslate nohighlight">\(2^4=16\)</span> muligheter. Åtte bits gir <span class="math notranslate nohighlight">\(2^8=256\)</span> muligheter, etc. For effektiv lagring og minne brukes derfor også størrelser i toerpotenser.</p>
+</div>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 3 🐚</p>
+<p class="admonition-title">Oppgave 3 🗼</p>
+<p>Vi kan illustrere de tre første <em>eiffeltallene</em> på denne måten:</p>
+<a class="reference internal image-reference" href="../_images/eiffeltallene.svg"><img alt="eiffeltallene" class="align-center" src="../_images/eiffeltallene.svg" width="400px" /></a>
+<ol class="arabic simple">
+<li><p>Vis at eiffeltall nr. <span class="math notranslate nohighlight">\(n\)</span> er gitt ved formelen <span class="math notranslate nohighlight">\(E_n=\frac{n(n+3)}{2}\)</span></p></li>
+<li><p>Undersøk om tallene <span class="math notranslate nohighlight">\(787\)</span> og <span class="math notranslate nohighlight">\(989\)</span> er eiffeltall og eventuelt hvilket nummer i rekkefølgen de er.</p></li>
+<li><p>Hva er summen av de <span class="math notranslate nohighlight">\(50\)</span> første eiffeltallene?</p></li>
+</ol>
+<blockquote>
+<div><p>Jeg vet ikke hvem som opprinnelig kom på navnet <em>Eiffeltallene</em>. Det er mulig navnet kommer fra Aschehougs bøker i matematikk på VGS.</p>
+</div></blockquote>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<ol class="arabic simple">
+<li><p>Eiffeltallene er satt sammen av trekanttallene <span class="math notranslate nohighlight">\(\frac{n(n+1)}{2}\)</span> og tallene <span class="math notranslate nohighlight">\(\{1, 2, 3, \dots\}\)</span>. Derfor blir formelen</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[E_n=n + \frac{n(n+1)}{2}=\frac{2n + n(n+1)}{2}=\frac{n(2 + (n+1)}{2}=\frac{n(n+3)}{2}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Ved å skrive ut de første <span class="math notranslate nohighlight">\(50\)</span> eiffeltallene kan vi se at <span class="math notranslate nohighlight">\(787\)</span> ikke er et eiffeltall. <span class="math notranslate nohighlight">\(989\)</span> er eifelltall nummer <span class="math notranslate nohighlight">\(43\)</span>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">51</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Vi finner summen med en løkke.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">51</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">+=</span> <span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Summen av de 50 første eiffeltallene er:&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Summen</span> <span class="n">av</span> <span class="n">de</span> <span class="mi">50</span> <span class="n">første</span> <span class="n">eiffeltallene</span> <span class="n">er</span><span class="p">:</span> <span class="mf">23375.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 🐚</p>
 <blockquote>
 <div><p>Se på koden for fibonaccitallene i eksempelet over.</p>
 </div></blockquote>
@@ -656,7 +738,7 @@ Summen er 2870
 </div>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 4 3️⃣</p>
+<p class="admonition-title">Oppgave 5 3️⃣</p>
 <p><em>Tribonaccitallene</em> er gitt ved følgende algoritme.</p>
 <ul class="simple">
 <li><p>Start med tallene <span class="math notranslate nohighlight">\(\{0, 1, 1\}\)</span></p></li>
@@ -665,7 +747,7 @@ Summen er 2870
 <p>Lag et program som skriver ut de første 20 tribonaccitallene.</p>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 5 🃏</p>
+<p class="admonition-title">Oppgave 6 (utfordring) 🃏</p>
 <p><em>Fakultet</em> (<em>factorial</em>) er definert på denne måten.</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(n! = n \cdot (n-1) \cdot (n-2) \cdot ... \cdot 3 \cdot 2 \cdot 1\)</span></p></li>
@@ -688,14 +770,14 @@ document.getElementById("textInput1").addEventListener("keypress", function(even
 </script>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 6 🔢</p>
+<p class="admonition-title">Oppgave 7 (utfordring) 🔢</p>
 <blockquote>
 <div><p>I denne oppgaven kan det være nyttig å se tilbake på <a class="reference internal" href="../Grunnleggende/Variabler%20og%20syntaks.html#rest-og-heltallsdivisjon"><span class="std std-ref">Rest og heltallsdivisjon</span></a></p>
 </div></blockquote>
 <p>Lag et program som skriver ut alle primtallene under <span class="math notranslate nohighlight">\(100\)</span>.</p>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 7 (utfordring)</p>
+<p class="admonition-title">Oppgave 8 (utfordring) 1️⃣</p>
 <p><em>Collatz-følgen</em> til et tall er definert på følgende måte</p>
 <ol class="arabic simple">
 <li><p>Del tallet på to hvis det er et partall.</p></li>
