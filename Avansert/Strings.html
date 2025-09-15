@@ -1025,59 +1025,6 @@ Original:  Jeg elsker Python 🐍
 </div>
 </div>
 </div>
-<div class="task admonition">
-<p class="admonition-title">Oppgave 8 (utfordring) 🔢</p>
-<p>Lag en funksjon <code class="docutils literal notranslate"><span class="pre">bokstavkomprimer(inp_ord)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code> som tar inn en string <code class="docutils literal notranslate"><span class="pre">inp_ord</span></code> og returnerer en string hvor alle bokstaver som gjentas etter hverandre erstattes med en bokstav og et tall som representerer hvor mange ganger bokstaven er brukt.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;llllmmaooo&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;l4m2ao3&quot;</span>
-</pre></div>
-</div>
-<div class="hint dropdown admonition">
-<p class="admonition-title">Hint: Testcases</p>
-<p>Test at funksjonen din fungerer med følgende test-cases. Lim de inn under funksjonen. Får du en <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> har funksjonen din ikke passert testen.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;aaabbc&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;a3b2c1&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;a1b1c1&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;a1&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;aaaaaaa&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;a7&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;aabbaa&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;a2b2a2&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;abbbccccdd&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;a1b3c4d2&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;xyz&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;x1y1z1&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;zzzzzy&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;z5y1&quot;</span>
-<span class="k">assert</span> <span class="n">bokstavkomprimer</span><span class="p">(</span><span class="s2">&quot;aAaA&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;a1A1a1A1&quot;</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>Disse testene ble utviklet av KI med Copilot</p>
-</div></blockquote>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsningsforslag</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bokstavkomprimer</span><span class="p">(</span><span class="n">inp_ord</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="c1"># Håndter tomme strings.</span>
-    <span class="k">if</span> <span class="n">inp_ord</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;&quot;</span>
-
-    <span class="n">ut_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># En string som holder det som skal skrives ut</span>
-    <span class="n">temp</span> <span class="o">=</span> <span class="n">inp_ord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Forrige bokstav i løkken</span>
-    <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp_ord</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">inp_ord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">temp</span><span class="p">:</span>
-            <span class="c1"># Samme bokstav som forrige</span>
-            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># Ny bokstav</span>
-            <span class="n">ut_string</span> <span class="o">+=</span> <span class="n">temp</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-            <span class="n">temp</span> <span class="o">=</span> <span class="n">inp_ord</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="c1"># Få med siste også</span>
-    <span class="n">ut_string</span> <span class="o">+=</span> <span class="n">temp</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ut_string</span>
-
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
