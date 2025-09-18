@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Avansert/Ordbøker';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Søk" href="../search.html" />
-    <link rel="next" title="Reelle datasett" href="Reelle%20datasett.html" />
+    <link rel="next" title="Rutenett" href="Rutenett.html" />
     <link rel="prev" title="Mengder og tupler" href="Mengder%20og%20tupler.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="nb"/>
@@ -187,10 +187,10 @@
 <li class="toctree-l2"><a class="reference internal" href="Lister%20II.html">Lister II</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Mengder%20og%20tupler.html">Mengder og tupler</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Ordbøker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Rutenett.html">Rutenett</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Pseudokode%20og%20flytskjema.html">Pseudokode og flytskjema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Algoritmer.html">Algoritmer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Reelle%20datasett.html">Reelle datasett</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Dataanalyse%20og%20plotting/Dataanalyse%20og%20plotting.html">Dataanalyse og plotting 📈</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -385,6 +385,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#items-keys-og-values"><code class="docutils literal notranslate"><span class="pre">items()</span></code>, <code class="docutils literal notranslate"><span class="pre">keys()</span></code> og <code class="docutils literal notranslate"><span class="pre">values()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter"><code class="docutils literal notranslate"><span class="pre">Counter</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
@@ -521,6 +522,54 @@ Verdi: Sverige
 </div>
 </div>
 </section>
+<section id="items-keys-og-values">
+<h2><code class="docutils literal notranslate"><span class="pre">items()</span></code>, <code class="docutils literal notranslate"><span class="pre">keys()</span></code> og <code class="docutils literal notranslate"><span class="pre">values()</span></code><a class="headerlink" href="#items-keys-og-values" title="Link to this heading">#</a></h2>
+<p>Man kan hente alle keys eller alle values ved å bruke metodene <code class="docutils literal notranslate"><span class="pre">keys</span></code> og <code class="docutils literal notranslate"><span class="pre">values</span></code>. <code class="docutils literal notranslate"><span class="pre">items</span></code> gir ordbokens gjenstander som tupler med <code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">value)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populasjon</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Sverige&quot;</span> <span class="p">:</span> <span class="mf">1.0e7</span><span class="p">,</span>
+    <span class="s2">&quot;Danmark&quot;</span> <span class="p">:</span> <span class="mf">5.9e6</span><span class="p">,</span>
+    <span class="s2">&quot;Norge&quot;</span> <span class="p">:</span> <span class="mf">5.5e6</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">populasjon</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">populasjon</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">populasjon</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;Sverige&#39;, 10000000.0), (&#39;Danmark&#39;, 5900000.0), (&#39;Norge&#39;, 5500000.0)])
+dict_keys([&#39;Sverige&#39;, &#39;Danmark&#39;, &#39;Norge&#39;])
+dict_values([10000000.0, 5900000.0, 5500000.0])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Objektene vi får er ikke lister, men fungerer som regel på samme måte.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populasjon</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Sverige&quot;</span> <span class="p">:</span> <span class="mf">1.0e7</span><span class="p">,</span>
+    <span class="s2">&quot;Danmark&quot;</span> <span class="p">:</span> <span class="mf">5.9e6</span><span class="p">,</span>
+    <span class="s2">&quot;Norge&quot;</span> <span class="p">:</span> <span class="mf">5.5e6</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">populasjon</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Land: </span><span class="si">{</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">8</span><span class="si">}</span><span class="s2"> Populasjon: </span><span class="si">{</span><span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">8.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Land: Sverige  Populasjon: 1.00e+07
+Land: Danmark  Populasjon: 5.90e+06
+Land: Norge    Populasjon: 5.50e+06
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="counter">
 <h2><code class="docutils literal notranslate"><span class="pre">Counter</span></code><a class="headerlink" href="#counter" title="Link to this heading">#</a></h2>
 <p>En <code class="docutils literal notranslate"><span class="pre">Counter</span></code> er en spesiell ordbok som fungerer ekstremt godt til å telle opp ting.</p>
@@ -602,7 +651,18 @@ document.getElementById("textInput").addEventListener("keypress", function(event
 </script>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 3 🌹</p>
+<p class="admonition-title">Oppgave 3 🧠</p>
+<p>Lag en quiz. Spørsmålene og svarene skal lagres som nøkler og verdier i en ordbok.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;Hva er det kjemiske symbolet for gull?&quot;</span> <span class="p">:</span> <span class="s2">&quot;Au&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Hvor mange elektroner har nøytralt oksygen i sitt ytterste skall?&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Brukeren skal spørres om hvert spørsmål og få feedback om svaret deres er galt eller ikke. Etter at quizzen er ferdig skal brukeren får skrevet ut hvor mange poeng den fikk.</p>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 4 🌹</p>
 <blockquote>
 <div><p>Dette er en fortsettelse av <a class="reference internal" href="Mengder%20og%20tupler.html#romeo-og-julie-1"><span class="std std-ref">denne oppgaven om mengder</span></a></p>
 </div></blockquote>
@@ -712,11 +772,11 @@ document.getElementById("textInput").addEventListener("keypress", function(event
       </div>
     </a>
     <a class="right-next"
-       href="Reelle%20datasett.html"
+       href="Rutenett.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">neste</p>
-        <p class="prev-next-title">Reelle datasett</p>
+        <p class="prev-next-title">Rutenett</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -738,6 +798,7 @@ document.getElementById("textInput").addEventListener("keypress", function(event
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#legge-til-endre-og-fjerne-data">Legge til, endre og fjerne data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokker-og-ordboker">Løkker og ordbøker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#items-keys-og-values"><code class="docutils literal notranslate"><span class="pre">items()</span></code>, <code class="docutils literal notranslate"><span class="pre">keys()</span></code> og <code class="docutils literal notranslate"><span class="pre">values()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter"><code class="docutils literal notranslate"><span class="pre">Counter</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
