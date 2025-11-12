@@ -384,13 +384,17 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">Dataframes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soyler">Søyler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolonner">Kolonner</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rader">Rader</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrering">Filtrering</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gjennomsnitt-og-sum">Gjennomsnitt og sum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sortering">Sortering</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manglende-data">Manglende data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-bare-noen-kolonner">Skrive ut bare noen kolonner</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-filer">CSV-filer</a></li>
@@ -444,9 +448,9 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="soyler">
-<h3>Søyler<a class="headerlink" href="#soyler" title="Link to this heading">#</a></h3>
-<p>Man kan hente all data fra en søyle ved å bruke søylens navn.</p>
+<section id="kolonner">
+<h3>Kolonner<a class="headerlink" href="#kolonner" title="Link to this heading">#</a></h3>
+<p>Man kan hente all data fra en kolonne ved å bruke kolonnens navn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Navn&quot;</span><span class="p">])</span>
@@ -553,7 +557,8 @@ Sum av hvert level: 30
 <p>Det er også innebygd <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>-funksjonalitet i <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Navn&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Alder&quot;</span><span class="p">,</span> <span class="s2">&quot;Level&quot;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Alder og Level for DnD-karakterer&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -614,6 +619,155 @@ Sum av hvert level: 30
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;adventurers.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;adventurers.json&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
+</div>
+</section>
+<section id="telle-opp">
+<h3>Telle opp<a class="headerlink" href="#telle-opp" title="Link to this heading">#</a></h3>
+<p>Man kan telle opp hvor mange det er av hver kategori ved å bruke <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>-metoden</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ID&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ha81po&#39;</span><span class="p">,</span> <span class="s1">&#39;4p2186&#39;</span><span class="p">,</span> <span class="s1">&#39;xpa1jx&#39;</span><span class="p">,</span> <span class="s1">&#39;62gb2p&#39;</span><span class="p">,</span> <span class="s1">&#39;goh8ag&#39;</span><span class="p">,</span> <span class="s1">&#39;gxpbjj&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Parkert&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;10:31&quot;</span><span class="p">,</span> <span class="s2">&quot;09:34&quot;</span><span class="p">,</span> <span class="s2">&quot;12:45&quot;</span><span class="p">,</span> <span class="s2">&quot;09:45&quot;</span><span class="p">,</span> <span class="s2">&quot;08:30&quot;</span><span class="p">,</span> <span class="s2">&quot;08:46&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Type&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Bil&quot;</span><span class="p">,</span> <span class="s2">&quot;ELBil&quot;</span><span class="p">,</span> <span class="s2">&quot;Bil&quot;</span><span class="p">,</span> <span class="s2">&quot;Bil&quot;</span><span class="p">,</span> <span class="s2">&quot;ELBil&quot;</span><span class="p">,</span> <span class="s2">&quot;Motorsykkel&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Dratt&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;12:32&quot;</span><span class="p">,</span> <span class="s2">&quot;16:32&quot;</span><span class="p">,</span> <span class="s2">&quot;14:54&quot;</span><span class="p">,</span> <span class="s2">&quot;12:34&quot;</span><span class="p">,</span> <span class="s2">&quot;15:31&quot;</span><span class="p">,</span> <span class="s2">&quot;15:47&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Besøk&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">127</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type
+Bil            3
+ELBil          2
+Motorsykkel    1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="storste-og-minste-verdier">
+<h3>Største og minste verdier<a class="headerlink" href="#storste-og-minste-verdier" title="Link to this heading">#</a></h3>
+<p>Man kan finne de <code class="docutils literal notranslate"><span class="pre">n</span></code> største eller minste verdiene med <code class="docutils literal notranslate"><span class="pre">nsmallest</span></code>- og <code class="docutils literal notranslate"><span class="pre">nlargest</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ID&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ha81po&#39;</span><span class="p">,</span> <span class="s1">&#39;4p2186&#39;</span><span class="p">,</span> <span class="s1">&#39;xpa1jx&#39;</span><span class="p">,</span> <span class="s1">&#39;62gb2p&#39;</span><span class="p">,</span> <span class="s1">&#39;goh8ag&#39;</span><span class="p">,</span> <span class="s1">&#39;gxpbjj&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;Parkert&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;10:31&quot;</span><span class="p">,</span> <span class="s2">&quot;09:34&quot;</span><span class="p">,</span> <span class="s2">&quot;12:45&quot;</span><span class="p">,</span> <span class="s2">&quot;09:45&quot;</span><span class="p">,</span> <span class="s2">&quot;08:30&quot;</span><span class="p">,</span> <span class="s2">&quot;08:46&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Type&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Bil&quot;</span><span class="p">,</span> <span class="s2">&quot;ELBil&quot;</span><span class="p">,</span> <span class="s2">&quot;Bil&quot;</span><span class="p">,</span> <span class="s2">&quot;Bil&quot;</span><span class="p">,</span> <span class="s2">&quot;ELBil&quot;</span><span class="p">,</span> <span class="s2">&quot;Motorsykkel&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Dratt&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;12:32&quot;</span><span class="p">,</span> <span class="s2">&quot;16:32&quot;</span><span class="p">,</span> <span class="s2">&quot;14:54&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;15:31&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="s2">&quot;Besøk&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">127</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Flest besøk ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Besøk&quot;</span><span class="p">))</span> <span class="c1"># De tre bilene som har besøkt hyppigst.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Færrest besøk ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">nsmallest</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Besøk&quot;</span><span class="p">))</span> <span class="c1"># De to bilene som har besøkt minst</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Flest besøk ===
+       ID Parkert         Type  Dratt  Besøk
+5  gxpbjj   08:46  Motorsykkel   None    127
+4  goh8ag   08:30        ELBil  15:31     50
+1  4p2186   09:34        ELBil  16:32     45
+=== Færrest besøk ===
+       ID Parkert Type  Dratt  Besøk
+3  62gb2p   09:45  Bil   None      1
+0  ha81po   10:31  Bil  12:32     32
+</pre></div>
+</div>
+</div>
+</div>
+<p>Man kan også bruke disse på kolonner for å bare få verdiene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Besøk&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5    127
+4     50
+1     45
+Name: Besøk, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="manglende-data">
+<h3>Manglende data<a class="headerlink" href="#manglende-data" title="Link to this heading">#</a></h3>
+<p>Noen ganger mangler vi data, som i <code class="docutils literal notranslate"><span class="pre">DataFramen</span></code> over. Vi kan droppe rader som ikke har gyldig data med <code class="docutils literal notranslate"><span class="pre">dropna()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Dratt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span> <span class="c1"># Får bare tidene som har data. Dropper de som er tomme.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    12:32
+1    16:32
+2    14:54
+4    15:31
+Name: Dratt, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Noen ganger ønsker vi å fylle de tomme plassene med noe. Da bruker vi <code class="docutils literal notranslate"><span class="pre">fillna()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Dratt&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s2">&quot;23:59&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    12:32
+1    16:32
+2    14:54
+3    23:59
+4    15:31
+5    23:59
+Name: Dratt, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="skrive-ut-bare-noen-kolonner">
+<h3>Skrive ut bare noen kolonner<a class="headerlink" href="#skrive-ut-bare-noen-kolonner" title="Link to this heading">#</a></h3>
+<p>Vi kan også skrive ut bare noen kolonner ved å indeksere i en <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> med en liste over kolonnenes navn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;Besøk&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       ID  Besøk
+0  ha81po     32
+1  4p2186     45
+2  xpa1jx     34
+3  62gb2p      1
+4  goh8ag     50
+5  gxpbjj    127
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -715,24 +869,6 @@ Mario Kart DS
 </div>
 </div>
 </div>
-<div class="hint admonition">
-<p class="admonition-title">Manglende data</p>
-<p>Hvis man går gjennom en kolonne, kan man droppe de radene som ikke har data i den kolonnen ved å bruke <code class="docutils literal notranslate"><span class="pre">df.dropna()</span></code>-metoden.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rating</span><span class="p">,</span><span class="n">Title</span><span class="p">,</span><span class="n">Console</span><span class="p">,</span><span class="n">Time</span><span class="p">(</span><span class="n">Optional</span><span class="p">)</span>
-<span class="mi">5</span><span class="p">,</span><span class="n">Bloodborne</span><span class="p">,</span><span class="n">PS4</span><span class="p">,</span><span class="mi">16</span><span class="n">h54m19s</span>
-<span class="mi">4</span><span class="p">,</span><span class="n">Katamari</span> <span class="n">Damacy</span><span class="p">,</span><span class="n">PS2</span><span class="p">,</span><span class="mi">4</span><span class="n">h42m58s</span>
-<span class="mi">3</span><span class="p">,</span><span class="n">Dead</span> <span class="n">Cells</span><span class="p">,</span><span class="n">PC</span><span class="p">,</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;list.csv&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Time(Optional)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">16</span><span class="n">h54m19s</span>
-<span class="mi">4</span><span class="n">h42m58s</span>
-</pre></div>
-</div>
-</div>
 <div class="note admonition">
 <p class="admonition-title">Dokumentasjonen</p>
 <p>Dokumentasjonen for <code class="docutils literal notranslate"><span class="pre">pandas</span></code> finner du <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">her (lenke)</a>.</p>
@@ -767,6 +903,25 @@ Mario Kart DS
 <p>Handelsmannen Knoteknut Glimretå er en handelsmann som selger utstyr til eventyrere.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/34178facabdee5f4babc5510030c53ce/gnome_merchant_inventory.json"><code class="xref download docutils literal notranslate"><span class="pre">gnome_merchant_inventory.json</span></code></a>.</p>
 <p>Skriv ut en oversikt over de seks tingene han har mest av.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s2">&quot;gnome_merchant_inventory.json&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;antall&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         <span class="n">gjenstand</span>  <span class="n">antall</span>
+<span class="mi">13</span>          <span class="n">Fakkel</span>      <span class="mi">30</span>
+<span class="mi">9</span>   <span class="n">Piler</span> <span class="p">(</span><span class="n">kogger</span><span class="p">)</span>      <span class="mi">25</span>
+<span class="mi">19</span>            <span class="n">Brød</span>      <span class="mi">25</span>
+<span class="mi">7</span>            <span class="n">Urter</span>      <span class="mi">20</span>
+<span class="mi">2</span>             <span class="n">Dolk</span>      <span class="mi">15</span>
+<span class="mi">18</span>      <span class="n">Vannflaske</span>      <span class="mi">15</span>
+</pre></div>
+</div>
+</div>
 <blockquote>
 <div><p>Datafilen er generert av ChatGPT</p>
 </div></blockquote>
@@ -776,6 +931,44 @@ Mario Kart DS
 <p>Stjernestasjonen Epsilon-9 har et register over romskipene fra føderasjonen som har besøkt stasjonen.</p>
 <p>Last ned filen <a class="reference download internal" download="" href="../_downloads/0645d4e99ebfe9c1b51174add00e3b50/starship_registry.csv"><code class="xref download docutils literal notranslate"><span class="pre">starship_registry.csv</span></code></a>.</p>
 <p>Skriv ut en fin tabell over alle besøkene i kronologisk rekkefølge.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;starship_registry.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Arrival Date&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">Registry</span> <span class="n">Number</span>   <span class="n">Starship</span> <span class="n">Name</span>               <span class="n">Class</span> <span class="n">Arrival</span> <span class="n">Date</span>       <span class="n">Captain</span> <span class="n">Name</span>  <span class="n">Docking</span> <span class="n">Bay</span>
+<span class="mi">2</span>            <span class="n">NX</span><span class="o">-</span><span class="mi">01</span>      <span class="n">Enterprise</span>                  <span class="n">NX</span>   <span class="mi">2151</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">16</span>    <span class="n">Jonathan</span> <span class="n">Archer</span>            <span class="mi">8</span>       
+<span class="mi">24</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">1071</span>    <span class="n">USS</span> <span class="n">Shenzhou</span>              <span class="n">Walker</span>   <span class="mi">2256</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">11</span>  <span class="n">Philippa</span> <span class="n">Georgiou</span>           <span class="mi">23</span>       
+<span class="mi">23</span>       <span class="n">NCC</span><span class="o">-</span><span class="mi">21166</span>   <span class="n">USS</span> <span class="n">Discovery</span>          <span class="n">Crossfield</span>   <span class="mi">2256</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">11</span>      <span class="n">Gabriel</span> <span class="n">Lorca</span>           <span class="mi">22</span>       
+<span class="mi">11</span>         <span class="n">NCC</span><span class="o">-</span><span class="mi">638</span>    <span class="n">USS</span> <span class="n">Farragut</span>        <span class="n">Constitution</span>   <span class="mi">2257</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">21</span>   <span class="n">Christopher</span> <span class="n">Pike</span>            <span class="mi">9</span>       
+<span class="mi">0</span>         <span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span>  <span class="n">USS</span> <span class="n">Enterprise</span>        <span class="n">Constitution</span>   <span class="mi">2265</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span>      <span class="n">James</span> <span class="n">T</span><span class="o">.</span> <span class="n">Kirk</span>            <span class="mi">5</span>       
+<span class="mi">22</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">1709</span>        <span class="n">USS</span> <span class="n">Hood</span>        <span class="n">Constitution</span>   <span class="mi">2267</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">19</span>      <span class="n">Thomas</span> <span class="n">Harris</span>           <span class="mi">21</span>       
+<span class="mi">19</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">1777</span>   <span class="n">USS</span> <span class="n">Lexington</span>        <span class="n">Constitution</span>   <span class="mi">2270</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">19</span>            <span class="n">Burtell</span>           <span class="mi">19</span>       
+<span class="mi">17</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">1860</span>    <span class="n">USS</span> <span class="n">Intrepid</span>             <span class="n">Miranda</span>   <span class="mi">2270</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">19</span>             <span class="n">Markel</span>           <span class="mi">17</span>       
+<span class="mi">21</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">2544</span>    <span class="n">USS</span> <span class="n">Potemkin</span>        <span class="n">Constitution</span>   <span class="mi">2275</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">12</span>      <span class="n">Robert</span> <span class="n">Wesley</span>           <span class="mi">20</span>       
+<span class="mi">1</span>         <span class="n">NCC</span><span class="o">-</span><span class="mi">1864</span>     <span class="n">USS</span> <span class="n">Reliant</span>             <span class="n">Miranda</span>   <span class="mi">2285</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span>      <span class="n">Clark</span> <span class="n">Terrell</span>           <span class="mi">12</span>       
+<span class="mi">7</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">65530</span>     <span class="n">USS</span> <span class="n">Grissom</span>              <span class="n">Oberth</span>   <span class="mi">2286</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">23</span>            <span class="n">Esteban</span>           <span class="mi">15</span>       
+<span class="mi">14</span>      <span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span><span class="o">-</span><span class="n">A</span>  <span class="n">USS</span> <span class="n">Enterprise</span>  <span class="n">Constitution</span> <span class="n">Refit</span>   <span class="mi">2286</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">18</span>      <span class="n">James</span> <span class="n">T</span><span class="o">.</span> <span class="n">Kirk</span>            <span class="mi">5</span>       
+<span class="mi">5</span>         <span class="n">NCC</span><span class="o">-</span><span class="mi">2000</span>   <span class="n">USS</span> <span class="n">Excelsior</span>           <span class="n">Excelsior</span>   <span class="mi">2290</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span>        <span class="n">Hikaru</span> <span class="n">Sulu</span>           <span class="mi">10</span>       
+<span class="mi">13</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">2893</span>   <span class="n">USS</span> <span class="n">Stargazer</span>       <span class="n">Constellation</span>   <span class="mi">2333</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">22</span>    <span class="n">Jean</span><span class="o">-</span><span class="n">Luc</span> <span class="n">Picard</span>            <span class="mi">1</span>       
+<span class="mi">4</span>       <span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span><span class="o">-</span><span class="n">D</span>  <span class="n">USS</span> <span class="n">Enterprise</span>              <span class="n">Galaxy</span>   <span class="mi">2364</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">03</span>    <span class="n">Jean</span><span class="o">-</span><span class="n">Luc</span> <span class="n">Picard</span>            <span class="mi">7</span>       
+<span class="mi">18</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">3890</span>    <span class="n">USS</span> <span class="n">Hathaway</span>       <span class="n">Constellation</span>   <span class="mi">2365</span><span class="o">-</span><span class="mi">02</span><span class="o">-</span><span class="mi">14</span>   <span class="n">William</span> <span class="n">T</span><span class="o">.</span> <span class="n">Riker</span>           <span class="mi">18</span>       
+<span class="mi">16</span>       <span class="n">NCC</span><span class="o">-</span><span class="mi">71807</span>        <span class="n">USS</span> <span class="n">Hood</span>           <span class="n">Excelsior</span>   <span class="mi">2365</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">05</span>      <span class="n">Robert</span> <span class="n">DeSoto</span>           <span class="mi">16</span>       
+<span class="mi">8</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">58928</span>  <span class="n">USS</span> <span class="n">Sutherland</span>              <span class="n">Nebula</span>   <span class="mi">2368</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">10</span>             <span class="n">Shelby</span>           <span class="mi">14</span>       
+<span class="mi">9</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">71909</span>     <span class="n">USS</span> <span class="n">Defiant</span>             <span class="n">Defiant</span>   <span class="mi">2370</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">08</span>     <span class="n">Benjamin</span> <span class="n">Sisko</span>            <span class="mi">4</span>       
+<span class="mi">15</span>        <span class="n">NX</span><span class="o">-</span><span class="mi">74205</span>     <span class="n">USS</span> <span class="n">Defiant</span>             <span class="n">Defiant</span>   <span class="mi">2371</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">28</span>     <span class="n">Benjamin</span> <span class="n">Sisko</span>           <span class="mi">11</span>       
+<span class="mi">3</span>        <span class="n">NCC</span><span class="o">-</span><span class="mi">74656</span>     <span class="n">USS</span> <span class="n">Voyager</span>            <span class="n">Intrepid</span>   <span class="mi">2371</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">24</span>    <span class="n">Kathryn</span> <span class="n">Janeway</span>            <span class="mi">3</span>       
+<span class="mi">12</span>       <span class="n">NCC</span><span class="o">-</span><span class="mi">71099</span>      <span class="n">USS</span> <span class="n">Lakota</span>           <span class="n">Excelsior</span>   <span class="mi">2372</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">07</span>      <span class="n">Erika</span> <span class="n">Benteen</span>           <span class="mi">13</span>       
+<span class="mi">6</span>       <span class="n">NCC</span><span class="o">-</span><span class="mi">1701</span><span class="o">-</span><span class="n">E</span>  <span class="n">USS</span> <span class="n">Enterprise</span>           <span class="n">Sovereign</span>   <span class="mi">2372</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">25</span>    <span class="n">Jean</span><span class="o">-</span><span class="n">Luc</span> <span class="n">Picard</span>            <span class="mi">6</span>       
+<span class="mi">10</span>       <span class="n">NCC</span><span class="o">-</span><span class="mi">80102</span>  <span class="n">USS</span> <span class="n">Prometheus</span>          <span class="n">Prometheus</span>   <span class="mi">2374</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">06</span>             <span class="n">Doctor</span>            <span class="mi">2</span>       
+<span class="mi">20</span>       <span class="n">NCC</span><span class="o">-</span><span class="mi">74657</span>   <span class="n">USS</span> <span class="n">Voyager</span><span class="o">-</span><span class="n">B</span>            <span class="n">Intrepid</span>   <span class="mi">2379</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">24</span>        <span class="n">Miral</span> <span class="n">Paris</span>            <span class="mi">3</span>     
+</pre></div>
+</div>
+</div>
 <blockquote>
 <div><p>Datafilen er generert av ChatGPT</p>
 </div></blockquote>
@@ -789,6 +982,73 @@ Mario Kart DS
 <li><p>Skriv ut de tre mest sette filmene på kino.</p></li>
 <li><p>Skriv ut de tre filmene med flest strømminger.</p></li>
 </ul>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;filmer.csv&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">sjekk_svar</span><span class="p">():</span>
+    <span class="n">svar</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Velkommen til Norsk Filmindustri. Skriv ALFABETISK eller KRONOLOGISK: &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">svar</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;ALFABETISK&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Navn&quot;</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">svar</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;KRONOLOGISK&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;År&quot;</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Du skrev ikke riktig.&quot;</span><span class="p">)</span>
+        <span class="n">sjekk_svar</span><span class="p">()</span>
+
+<span class="c1"># Sjekker svar</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Oversikt over filmer ===&quot;</span><span class="p">)</span>
+<span class="n">sjekk_svar</span><span class="p">()</span>
+
+<span class="c1"># Skriver ut topp 3 kinofilmer.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Oversikt over topp 3 filmer basert på kinobesøk.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Kinobesøk&quot;</span><span class="p">))</span>
+
+<span class="c1"># Skriver ut topp 3 strømmefilmer</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Oversikt over topp 3 filmer basert på strømming.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Strømminger&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===</span> <span class="n">Oversikt</span> <span class="n">over</span> <span class="n">filmer</span> <span class="o">===</span>
+<span class="n">Velkommen</span> <span class="n">til</span> <span class="n">Norsk</span> <span class="n">Filmindustri</span><span class="o">.</span> <span class="n">Skriv</span> <span class="n">ALFABETISK</span> <span class="n">eller</span> <span class="n">KRONOLOGISK</span><span class="p">:</span> <span class="n">KRONOLOGISK</span>
+                                  <span class="n">Navn</span>    <span class="n">År</span>  <span class="n">Kinobesøk</span>  <span class="n">Strømminger</span>
+<span class="mi">14</span>                          <span class="n">Gutta</span> <span class="n">boys</span>  <span class="mi">1999</span>      <span class="mi">95266</span>       <span class="mi">122787</span>
+<span class="mi">0</span>                                 <span class="n">OSLO</span>  <span class="mi">2000</span>       <span class="mi">9770</span>      <span class="mi">2665576</span>
+<span class="mi">17</span>                    <span class="n">Kongen</span> <span class="n">og</span> <span class="n">krigen</span>  <span class="mi">2000</span>     <span class="mi">165423</span>       <span class="mi">452270</span>
+<span class="mi">4</span>                  <span class="n">Torpedo</span><span class="p">:</span> <span class="n">Lånekassen</span>  <span class="mi">2003</span>      <span class="mi">91845</span>       <span class="mi">774350</span>
+<span class="mi">12</span>             <span class="n">Forelsket</span><span class="p">:</span> <span class="n">Ytre</span> <span class="n">Enebakk</span>  <span class="mi">2005</span>     <span class="mi">123380</span>      <span class="mi">2645774</span>
+<span class="mi">6</span>                         <span class="n">Jordskjelvet</span>  <span class="mi">2006</span>      <span class="mi">19524</span>       <span class="mi">827497</span>
+<span class="mi">16</span>                          <span class="n">Forræderen</span>  <span class="mi">2006</span>     <span class="mi">107483</span>       <span class="mi">308763</span>
+<span class="mi">10</span>                   <span class="n">Spinnville</span> <span class="n">Sondre</span>  <span class="mi">2012</span>     <span class="mi">113911</span>      <span class="mi">2945296</span>
+<span class="mi">5</span>                               <span class="n">Skogen</span>  <span class="mi">2013</span>      <span class="mi">87957</span>      <span class="mi">1570959</span>
+<span class="mi">1</span>                               <span class="n">Krigen</span>  <span class="mi">2014</span>      <span class="mi">58819</span>      <span class="mi">2387531</span>
+<span class="mi">8</span>            <span class="n">Knerten</span> <span class="n">blir</span> <span class="n">kildesortert</span>  <span class="mi">2014</span>      <span class="mi">62394</span>       <span class="mi">873722</span>
+<span class="mi">3</span>                              <span class="n">BLÜCHER</span>  <span class="mi">2015</span>     <span class="mi">187871</span>      <span class="mi">1809530</span>
+<span class="mi">7</span>                    <span class="n">Enda</span> <span class="n">en</span> <span class="n">krigsfilm</span>  <span class="mi">2015</span>     <span class="mi">107948</span>      <span class="mi">1311115</span>
+<span class="mi">11</span>                <span class="n">Tante</span> <span class="n">jobber</span> <span class="k">for</span> <span class="n">NAV</span>  <span class="mi">2015</span>      <span class="mi">40630</span>      <span class="mi">2751636</span>
+<span class="mi">13</span>                     <span class="n">Sommer</span> <span class="n">i</span> <span class="n">Narvik</span>  <span class="mi">2015</span>      <span class="mi">90659</span>       <span class="mi">175462</span>
+<span class="mi">19</span>                      <span class="n">Thor</span> <span class="n">Heyerdahl</span>  <span class="mi">2016</span>     <span class="mi">169827</span>       <span class="mi">387362</span>
+<span class="mi">18</span>  <span class="n">Olsenbanden</span> <span class="n">på</span> <span class="n">førstegangstjeneste</span>  <span class="mi">2018</span>      <span class="mi">78856</span>      <span class="mi">1279729</span>
+<span class="mi">2</span>                   <span class="n">Knerten</span><span class="p">:</span> <span class="n">På</span> <span class="n">farten</span>  <span class="mi">2019</span>     <span class="mi">125345</span>       <span class="mi">834912</span>
+<span class="mi">15</span>                   <span class="n">Andre</span> <span class="n">Verdenskrig</span>  <span class="mi">2022</span>     <span class="mi">137491</span>       <span class="mi">287087</span>
+<span class="mi">9</span>                            <span class="n">WW2</span><span class="p">:</span> <span class="n">Oslo</span>  <span class="mi">2024</span>     <span class="mi">163686</span>      <span class="mi">2788605</span>
+
+<span class="n">Oversikt</span> <span class="n">over</span> <span class="n">topp</span> <span class="mi">3</span> <span class="n">filmer</span> <span class="n">basert</span> <span class="n">på</span> <span class="n">kinobesøk</span><span class="o">.</span>
+                <span class="n">Navn</span>    <span class="n">År</span>  <span class="n">Kinobesøk</span>  <span class="n">Strømminger</span>
+<span class="mi">3</span>            <span class="n">BLÜCHER</span>  <span class="mi">2015</span>     <span class="mi">187871</span>      <span class="mi">1809530</span>
+<span class="mi">19</span>    <span class="n">Thor</span> <span class="n">Heyerdahl</span>  <span class="mi">2016</span>     <span class="mi">169827</span>       <span class="mi">387362</span>
+<span class="mi">17</span>  <span class="n">Kongen</span> <span class="n">og</span> <span class="n">krigen</span>  <span class="mi">2000</span>     <span class="mi">165423</span>       <span class="mi">452270</span>
+
+<span class="n">Oversikt</span> <span class="n">over</span> <span class="n">topp</span> <span class="mi">3</span> <span class="n">filmer</span> <span class="n">basert</span> <span class="n">på</span> <span class="n">strømming</span><span class="o">.</span>
+                    <span class="n">Navn</span>    <span class="n">År</span>  <span class="n">Kinobesøk</span>  <span class="n">Strømminger</span>
+<span class="mi">10</span>     <span class="n">Spinnville</span> <span class="n">Sondre</span>  <span class="mi">2012</span>     <span class="mi">113911</span>      <span class="mi">2945296</span>
+<span class="mi">9</span>              <span class="n">WW2</span><span class="p">:</span> <span class="n">Oslo</span>  <span class="mi">2024</span>     <span class="mi">163686</span>      <span class="mi">2788605</span>
+<span class="mi">11</span>  <span class="n">Tante</span> <span class="n">jobber</span> <span class="k">for</span> <span class="n">NAV</span>  <span class="mi">2015</span>      <span class="mi">40630</span>      <span class="mi">2751636</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -858,13 +1118,17 @@ Mario Kart DS
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">Dataframes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soyler">Søyler</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kolonner">Kolonner</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rader">Rader</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrering">Filtrering</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gjennomsnitt-og-sum">Gjennomsnitt og sum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sortering">Sortering</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manglende-data">Manglende data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-bare-noen-kolonner">Skrive ut bare noen kolonner</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#csv-filer">CSV-filer</a></li>
