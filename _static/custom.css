@@ -1,5 +1,12 @@
 /* Sjekk https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/styling.html#configure-pygments-theme */
 
+
+html {
+    --pst-font-family-base: "Segoe UI", var(--pst-font-family-base-system);
+    --pst-font-family-heading: "Segoe UI", var(--pst-font-family-base-system);
+    --pst-font-family-monospace: "Consolas", var(--pst-font-family-monospace-system);
+}
+
 html[data-theme="dark"] {
     --pst-color-primary: #89b4fa;
     --pst-color-secondary: #b4befe;
@@ -13,6 +20,7 @@ html[data-theme="dark"] {
     --pst-color-surface: #181825;
     --pst-color-border: #313244;
     --pst-color-text-base: #cdd6f4;
+    --pst-color-text-heading: #cdd6f4;
     --pst-color-text-muted: #bac2de;
     --pst-color-table-row-hover-bg: #7287fd;
 
@@ -37,6 +45,7 @@ html[data-theme="light"] {
     --pst-color-surface: #e6e9ef;
     --pst-color-border: #ccd0da;
     --pst-color-text-base: #4c4f69;
+    --pst-color-text-heading: #4c4f69;
     --pst-color-text-muted :#5c5f77;
     --pst-color-table-row-hover-bg: #babbf1;
 
@@ -62,7 +71,6 @@ html[data-theme="light"] {
 /*
 Following are the custom admonitions.
 - task
-- written-task
 - solution
 */
 

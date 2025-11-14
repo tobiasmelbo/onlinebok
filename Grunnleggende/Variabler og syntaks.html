@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=27e5b47b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5dc0fc1c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -405,9 +405,10 @@ document.write(`
 <section id="variabler-og-syntaks">
 <span id="id1"></span><h1>Variabler og syntaks<a class="headerlink" href="#variabler-og-syntaks" title="Link to this heading">#</a></h1>
 <p>En variabel gir et navn til et objekt. Vi lager en variabel ved å gi den et navn og en verdi. Dette gjør vi med likhetstegnet <code class="docutils literal notranslate"><span class="pre">=</span></code> i Python.</p>
+<hr class="docutils" />
 <section id="typer">
 <h2>Typer<a class="headerlink" href="#typer" title="Link to this heading">#</a></h2>
-<p>Variabler kan være av mange forskjellige typer. Vi skal se på flere av disse senere.</p>
+<p>Variabler kan være mange typer objekter.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>                   <span class="c1"># Heltall (integer)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">2.3</span>                 <span class="c1"># Flyttall eller desimaltall (float)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;Hei!&quot;</span>              <span class="c1"># Tekst (string)</span>
@@ -420,6 +421,7 @@ document.write(`
 <p class="admonition-title">Merk deg</p>
 <p>I Python bruker vi punktum <code class="docutils literal notranslate"><span class="pre">.</span></code> for desimaltall, ikke komma <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
 </div>
+<hr class="docutils" />
 </section>
 <section id="kommentarer">
 <span id="id2"></span><h2>Kommentarer<a class="headerlink" href="#kommentarer" title="Link to this heading">#</a></h2>
@@ -433,9 +435,10 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<hr class="docutils" />
 <section id="print-funksjonen">
 <h2><code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen<a class="headerlink" href="#print-funksjonen" title="Link to this heading">#</a></h2>
-<p>Vi ønsker ofte at programmet skal skrive ut noe. Til det bruker vi <code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen.</p>
+<p>For å få noe ut av programmene våre, kan vi bruke <code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -452,24 +455,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen kan også skrive ut en kombinasjon av tekst og variabler ved å bruke <em>f-strings</em>. Da setter vi en <code class="docutils literal notranslate"><span class="pre">f</span></code> før en string, og setter variabler inn med krøllparanteser <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> pluss </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> er lik </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 pluss 3 er lik 5
-</pre></div>
-</div>
-</div>
-</div>
-<p>Vi kan også printe variabler og tekst ved å skille de med komma.</p>
+<p>Vi kan skrive ut flere ting ved å skille tingene med komma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -486,7 +472,22 @@ document.write(`
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">f-strings</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code>-funksjonen kan også skrive ut en kombinasjon av tekst og variabler ved å bruke <em>f-strings</em>. Da setter vi en <code class="docutils literal notranslate"><span class="pre">f</span></code> før en string, og setter variabler inn med krøllparanteser <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> pluss </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> er lik </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="n">pluss</span> <span class="mi">3</span> <span class="n">er</span> <span class="n">lik</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
 </section>
+<hr class="docutils" />
 <section id="regning-og-formler">
 <h2>Regning og formler<a class="headerlink" href="#regning-og-formler" title="Link to this heading">#</a></h2>
 <p>Python har noen symboler for regning.</p>
@@ -592,6 +593,7 @@ document.write(`
 <p>Husk å bruke paranteser dersom du jobber med uttrykk som inneholder flere ledd!</p>
 <p>Skal man for eksempel regne ut <span class="math notranslate nohighlight">\(\frac{1}{2+1}\)</span>, så må man skrive <code class="docutils literal notranslate"><span class="pre">1/(2+1)</span></code>.</p>
 </div>
+<hr class="docutils" />
 </section>
 <section id="rest-og-heltallsdivisjon">
 <span id="id3"></span><h2>Rest og heltallsdivisjon<a class="headerlink" href="#rest-og-heltallsdivisjon" title="Link to this heading">#</a></h2>
