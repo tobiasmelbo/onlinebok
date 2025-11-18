@@ -396,7 +396,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-bare-noen-kolonner">Skrive ut bare noen kolonner</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-lokke-gjennom-liste">Lage løkke gjennom liste</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-lokke-gjennom-dataframe">Lage løkke gjennom DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-ny-kolonne">Lage ny kolonne</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manglende-data">Manglende data</a></li>
 </ul>
@@ -757,8 +757,8 @@ Name: Besøk, dtype: int64
 </div>
 </div>
 </section>
-<section id="lage-lokke-gjennom-liste">
-<h3>Lage løkke gjennom liste<a class="headerlink" href="#lage-lokke-gjennom-liste" title="Link to this heading">#</a></h3>
+<section id="lage-lokke-gjennom-dataframe">
+<h3>Lage løkke gjennom DataFrame<a class="headerlink" href="#lage-lokke-gjennom-dataframe" title="Link to this heading">#</a></h3>
 <p>Vi kan lage løkker som går gjennom vår DataFrame for å regne ut nye ting. La oss si at prisen for parkeringen er <span class="math notranslate nohighlight">\(0.2\)</span> kr per minutt og at vi ønsker å legge til en ny kolonne <code class="docutils literal notranslate"><span class="pre">df[&quot;Pris&quot;]</span></code>.</p>
 <p>For å lage en løkke gjennom en DataFrame kan vi bruke <code class="docutils literal notranslate"><span class="pre">iterrows()</span></code>-metoden. Denne gir oss en indeks og så en <code class="docutils literal notranslate"><span class="pre">Series</span></code> med all data i hver rad.</p>
 <div class="cell docutils container">
@@ -1034,7 +1034,7 @@ Mario Kart DS
 <div class="warning admonition">
 <p class="admonition-title">Får du problemer med æøå eller andre tegn?</p>
 <p>Tekstfiler (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.json</span></code>, <code class="docutils literal notranslate"><span class="pre">.txt</span></code>) kan ha mange typer encoding.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="s2">&quot;datafil.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datafil.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Standard er <code class="docutils literal notranslate"><span class="pre">utf8</span></code> men du finner fortsatt datafiler med andre encodings. Prøv disse også hvis du får problemer:</p>
@@ -1307,7 +1307,7 @@ Mario Kart DS
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-bare-noen-kolonner">Skrive ut bare noen kolonner</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-lokke-gjennom-liste">Lage løkke gjennom liste</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-lokke-gjennom-dataframe">Lage løkke gjennom DataFrame</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-ny-kolonne">Lage ny kolonne</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manglende-data">Manglende data</a></li>
 </ul>
