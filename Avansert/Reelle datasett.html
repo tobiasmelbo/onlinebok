@@ -392,11 +392,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soylediagram">Søylediagram</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sektordiagram">Sektordiagram</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linjediagram">Linjediagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoppe-over-linjer-rader">Hoppe over linjer/rader</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-bare-noen-kolonner">Skrive ut bare noen kolonner</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-lokke-gjennom-dataframe">Lage løkke gjennom DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-ny-kolonne-for-indeks">Sette ny kolonne for indeks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-indekser-og-soylenavn">Hente ut indekser og søylenavn</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-ny-kolonne">Lage ny kolonne</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manglende-data">Manglende data</a></li>
 </ul>
@@ -428,11 +431,11 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Navn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Aelar&#39;</span><span class="p">,</span> <span class="s1">&#39;Thalia&#39;</span><span class="p">,</span> <span class="s1">&#39;Gorath&#39;</span><span class="p">,</span> <span class="s1">&#39;Elara&#39;</span><span class="p">,</span> <span class="s1">&#39;Borin&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;Class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ranger&#39;</span><span class="p">,</span> <span class="s1">&#39;Wizard&#39;</span><span class="p">,</span> <span class="s1">&#39;Barbarian&#39;</span><span class="p">,</span> <span class="s1">&#39;Rogue&#39;</span><span class="p">,</span> <span class="s1">&#39;Cleric&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;Alder&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">150</span><span class="p">],</span>
-    <span class="s1">&#39;Rase&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Half-Orc&#39;</span><span class="p">,</span> <span class="s1">&#39;Halfling&#39;</span><span class="p">,</span> <span class="s1">&#39;Dwarf&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;Level&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+    <span class="s1">&#39;Navn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Aelar&#39;</span><span class="p">,</span> <span class="s1">&#39;Thalia&#39;</span><span class="p">,</span> <span class="s1">&#39;Gorath&#39;</span><span class="p">,</span> <span class="s1">&#39;Elara&#39;</span><span class="p">,</span> <span class="s1">&#39;Borin&#39;</span><span class="p">,</span> <span class="s2">&quot;Gronk&quot;</span><span class="p">],</span>
+    <span class="s1">&#39;Class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ranger&#39;</span><span class="p">,</span> <span class="s1">&#39;Wizard&#39;</span><span class="p">,</span> <span class="s1">&#39;Barbarian&#39;</span><span class="p">,</span> <span class="s1">&#39;Rogue&#39;</span><span class="p">,</span> <span class="s1">&#39;Cleric&#39;</span><span class="p">,</span> <span class="s2">&quot;Rogue&quot;</span><span class="p">],</span>
+    <span class="s1">&#39;Alder&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">34</span><span class="p">],</span>
+    <span class="s1">&#39;Rase&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Elf&#39;</span><span class="p">,</span> <span class="s1">&#39;Human&#39;</span><span class="p">,</span> <span class="s1">&#39;Half-Orc&#39;</span><span class="p">,</span> <span class="s1">&#39;Halfling&#39;</span><span class="p">,</span> <span class="s1">&#39;Dwarf&#39;</span><span class="p">,</span> <span class="s2">&quot;Human&quot;</span><span class="p">],</span>
+    <span class="s1">&#39;Level&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 <span class="p">}</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -448,6 +451,7 @@ document.write(`
 2  Gorath  Barbarian     28  Half-Orc      6
 3   Elara      Rogue     25  Halfling      4
 4   Borin     Cleric    150     Dwarf      8
+5   Gronk      Rogue     34     Human      6
 </pre></div>
 </div>
 </div>
@@ -469,9 +473,10 @@ document.write(`
 2    Gorath
 3     Elara
 4     Borin
+5     Gronk
 Name: Navn, dtype: object
 
-[&#39;Aelar&#39;, &#39;Thalia&#39;, &#39;Gorath&#39;, &#39;Elara&#39;, &#39;Borin&#39;]
+[&#39;Aelar&#39;, &#39;Thalia&#39;, &#39;Gorath&#39;, &#39;Elara&#39;, &#39;Borin&#39;, &#39;Gronk&#39;]
 </pre></div>
 </div>
 </div>
@@ -500,10 +505,14 @@ Name: 4, dtype: object
 </section>
 <section id="filtrering">
 <h3>Filtrering<a class="headerlink" href="#filtrering" title="Link to this heading">#</a></h3>
-<p>Man kan også enkelt filtrere resultater.</p>
+<p>Man kan filtrere resultater med en spesiell type indeksering.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Level&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">])</span> <span class="c1"># Henter ut alle som har level større enn eller likt 6</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Rogue&quot;</span><span class="p">])</span> <span class="c1"># Henter ut alle som er Rogue</span>
 </pre></div>
 </div>
 </div>
@@ -512,6 +521,11 @@ Name: 4, dtype: object
 1  Thalia     Wizard     35     Human      7
 2  Gorath  Barbarian     28  Half-Orc      6
 4   Borin     Cleric    150     Dwarf      8
+5   Gronk      Rogue     34     Human      6
+
+    Navn  Class  Alder      Rase  Level
+3  Elara  Rogue     25  Halfling      4
+5  Gronk  Rogue     34     Human      6
 </pre></div>
 </div>
 </div>
@@ -527,6 +541,7 @@ Name: 4, dtype: object
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Navn   Class  Alder   Rase  Level
 0   Aelar  Ranger    120    Elf      5
 1  Thalia  Wizard     35  Human      7
+5   Gronk   Rogue     34  Human      6
 </pre></div>
 </div>
 </div>
@@ -543,8 +558,8 @@ Name: 4, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gjennomsnittlig alder: 71.6 år
-Sum av hvert level: 30
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gjennomsnittlig alder: 65.33333333333333 år
+Sum av hvert level: 36
 </pre></div>
 </div>
 </div>
@@ -564,6 +579,7 @@ Sum av hvert level: 30
 4   Borin     Cleric    150     Dwarf      8
 0   Aelar     Ranger    120       Elf      5
 1  Thalia     Wizard     35     Human      7
+5   Gronk      Rogue     34     Human      6
 2  Gorath  Barbarian     28  Half-Orc      6
 3   Elara      Rogue     25  Halfling      4
 </pre></div>
@@ -585,7 +601,7 @@ Sum av hvert level: 30
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/098ed5ec2b202989fca0ceab2f78c382959ab02313692a85398f5705828e26da.png" src="../_images/098ed5ec2b202989fca0ceab2f78c382959ab02313692a85398f5705828e26da.png" />
+<img alt="../_images/b1b3f59b2bc5e194deee40a311e094141bab3fe39bf76ea54ea72f73ab8b8745.png" src="../_images/b1b3f59b2bc5e194deee40a311e094141bab3fe39bf76ea54ea72f73ab8b8745.png" />
 </div>
 </div>
 </section>
@@ -600,7 +616,7 @@ Sum av hvert level: 30
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bb274ed5250520acc9654eb7d2943c3cbad4a256649953e45a97848a9bf5f452.png" src="../_images/bb274ed5250520acc9654eb7d2943c3cbad4a256649953e45a97848a9bf5f452.png" />
+<img alt="../_images/9c1c5162eb7d15cbbaa30baebf6785afc28ad00b30e6bb8d3702c77eabf54010.png" src="../_images/9c1c5162eb7d15cbbaa30baebf6785afc28ad00b30e6bb8d3702c77eabf54010.png" />
 </div>
 </div>
 </section>
@@ -648,6 +664,21 @@ Sum av hvert level: 30
 <div class="cell_output docutils container">
 <img alt="../_images/140c354ed9a7550d37613e0098fff04e2f5f270ec8d1a56abed4bee7f86b245f.png" src="../_images/140c354ed9a7550d37613e0098fff04e2f5f270ec8d1a56abed4bee7f86b245f.png" />
 </div>
+</div>
+</section>
+<section id="hoppe-over-linjer-rader">
+<h3>Hoppe over linjer/rader<a class="headerlink" href="#hoppe-over-linjer-rader" title="Link to this heading">#</a></h3>
+<p>Noen datafiler har ekstra linjer i starten av koden som ikke</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Denne</span> <span class="n">datafilen</span> <span class="n">har</span> <span class="n">masse</span> <span class="n">kule</span> <span class="n">data</span><span class="o">.</span>
+
+<span class="n">År</span><span class="p">,</span><span class="n">Kolonne1</span><span class="p">,</span><span class="n">Kolonne2</span><span class="p">,</span><span class="n">Kolonne3</span>
+<span class="mi">2015</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">456</span><span class="p">,</span><span class="mi">789</span>
+<span class="mi">2016</span><span class="p">,</span><span class="mi">987</span><span class="p">,</span><span class="mi">654</span><span class="p">,</span><span class="mi">321</span>
+</pre></div>
+</div>
+<p>For å hoppe over linjer kan vi bruke <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> når vi laster inn data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datafil.csv&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
 <section id="lagre-filer">
@@ -788,6 +819,52 @@ Name: Besøk, dtype: int64
 3  62gb2p   09:45          Bil  12:34      1  02:49  33.8
 4  goh8ag   08:30        ELBil  15:31     50  07:01  84.2
 5  gxpbjj   08:46  Motorsykkel  15:47    127  07:01  84.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sette-ny-kolonne-for-indeks">
+<h3>Sette ny kolonne for indeks<a class="headerlink" href="#sette-ny-kolonne-for-indeks" title="Link to this heading">#</a></h3>
+<p>Noen ganger ønsker vi å endre hvilken kolonne som er indeksen for hvert objekt i vår <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Vi har sett på hvordan man kan bruke <code class="docutils literal notranslate"><span class="pre">index_col</span></code> når man laster inn data tidligere på denne siden.</p>
+<p>Hvis man ønsker å endre hvilken kolonne som er indeks kan man bruke <code class="docutils literal notranslate"><span class="pre">set_index()</span></code>-metoden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Endrer DataFrame til å ha ID som sin indeks</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;ID&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       Parkert         Type  Dratt  Besøk    Tid  Pris
+ID                                                    
+ha81po   10:31          Bil  12:32     32  02:01  24.2
+4p2186   09:34        ELBil  16:32     45  06:58  83.6
+xpa1jx   12:45          Bil  14:54     34  02:09  25.8
+62gb2p   09:45          Bil  12:34      1  02:49  33.8
+goh8ag   08:30        ELBil  15:31     50  07:01  84.2
+gxpbjj   08:46  Motorsykkel  15:47    127  07:01  84.2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="hente-ut-indekser-og-soylenavn">
+<h3>Hente ut indekser og søylenavn<a class="headerlink" href="#hente-ut-indekser-og-soylenavn" title="Link to this heading">#</a></h3>
+<p>For å hente indeksene i en <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> eller <code class="docutils literal notranslate"><span class="pre">Series</span></code> (kolonne) kan vi bruke <code class="docutils literal notranslate"><span class="pre">.index</span></code> attributten. For å hente søylenes navn kan vi bruke <code class="docutils literal notranslate"><span class="pre">.columns</span></code>. Dette er nyttig hvis vi skal iterere over disse.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ha81po&#39;, &#39;4p2186&#39;, &#39;xpa1jx&#39;, &#39;62gb2p&#39;, &#39;goh8ag&#39;, &#39;gxpbjj&#39;]
+[&#39;Parkert&#39;, &#39;Type&#39;, &#39;Dratt&#39;, &#39;Besøk&#39;, &#39;Tid&#39;, &#39;Pris&#39;]
 </pre></div>
 </div>
 </div>
@@ -1039,9 +1116,8 @@ Mario Kart DS
 </div>
 <p>Standard er <code class="docutils literal notranslate"><span class="pre">utf8</span></code> men du finner fortsatt datafiler med andre encodings. Prøv disse også hvis du får problemer:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">latin1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">latin1</span></code> eller <code class="docutils literal notranslate"><span class="pre">ISO-8859-1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">windows-1252</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ISO-8859-1</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ISO-8859-15</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">UTF-8-SIG</span></code></p></li>
 </ul>
@@ -1303,11 +1379,14 @@ Mario Kart DS
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soylediagram">Søylediagram</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sektordiagram">Sektordiagram</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linjediagram">Linjediagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hoppe-over-linjer-rader">Hoppe over linjer/rader</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skrive-ut-bare-noen-kolonner">Skrive ut bare noen kolonner</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-lokke-gjennom-dataframe">Lage løkke gjennom DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-ny-kolonne-for-indeks">Sette ny kolonne for indeks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hente-ut-indekser-og-soylenavn">Hente ut indekser og søylenavn</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lage-ny-kolonne">Lage ny kolonne</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manglende-data">Manglende data</a></li>
 </ul>
