@@ -389,7 +389,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrering">Filtrering</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gjennomsnitt-og-sum">Gjennomsnitt og sum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sortering">Sortering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soylediagram">Søylediagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sektordiagram">Sektordiagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linjediagram">Linjediagram</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
@@ -569,9 +571,9 @@ Sum av hvert level: 30
 </div>
 </div>
 </section>
-<section id="plotting">
-<h3>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
-<p>Det er også innebygd <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>-funksjonalitet i <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<section id="soylediagram">
+<h3>Søylediagram<a class="headerlink" href="#soylediagram" title="Link to this heading">#</a></h3>
+<p>Det er innebygd <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>-funksjonalitet i <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. La oss plotte et søylediagram/stolpediagram (<em>bar-chart</em>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -586,7 +588,25 @@ Sum av hvert level: 30
 <img alt="../_images/098ed5ec2b202989fca0ceab2f78c382959ab02313692a85398f5705828e26da.png" src="../_images/098ed5ec2b202989fca0ceab2f78c382959ab02313692a85398f5705828e26da.png" />
 </div>
 </div>
-<p>Vi kan også plotte data over tid som et linjediagram. La oss se på en datafil fra SSB som viser konsumprisindeksen fra <span class="math notranslate nohighlight">\(1932\)</span> og frem til nå.</p>
+</section>
+<section id="sektordiagram">
+<h3>Sektordiagram<a class="headerlink" href="#sektordiagram" title="Link to this heading">#</a></h3>
+<p>Vi kan også lage et sektordiagram (<em>pie-chart</em>). Her teller vi opp hvor mange som er i hver <code class="docutils literal notranslate"><span class="pre">&quot;Class&quot;</span></code> og så plotter det som et sektordiagram.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;pie&quot;</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%1.1f%%</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/bb274ed5250520acc9654eb7d2943c3cbad4a256649953e45a97848a9bf5f452.png" src="../_images/bb274ed5250520acc9654eb7d2943c3cbad4a256649953e45a97848a9bf5f452.png" />
+</div>
+</div>
+</section>
+<section id="linjediagram">
+<h3>Linjediagram<a class="headerlink" href="#linjediagram" title="Link to this heading">#</a></h3>
+<p>Vi kan plotte data over tid som et linjediagram. La oss se på en datafil fra SSB som viser konsumprisindeksen fra <span class="math notranslate nohighlight">\(1932\)</span> og frem til nå.</p>
 <p>Du kan laste ned datafilen <a class="reference download internal" download="" href="../_downloads/94aba8ae819f2847edf97f8df0f81c4e/konsumprisindeks.csv"><span class="xref download myst">her</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span><span class="n">Årsgj</span><span class="o">.</span><span class="n">snitt2</span><span class="p">;</span><span class="n">Jan</span><span class="p">;</span><span class="n">Feb</span><span class="p">;</span><span class="n">Mar</span><span class="p">;</span><span class="n">Apr</span><span class="p">;</span><span class="n">Mai</span><span class="p">;</span><span class="n">Jun</span><span class="p">;</span><span class="n">Jul</span><span class="p">;</span><span class="n">Aug</span><span class="p">;</span><span class="n">Sep</span><span class="p">;</span><span class="n">Okt</span><span class="p">;</span><span class="n">Nov</span><span class="p">;</span><span class="n">Des</span>
 <span class="mi">2024</span><span class="p">;</span><span class="mi">133</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">132</span><span class="p">,</span><span class="mi">0</span><span class="p">;</span><span class="mi">132</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">132</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">133</span><span class="p">,</span><span class="mi">7</span><span class="p">;</span><span class="mi">133</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">133</span><span class="p">,</span><span class="mi">8</span><span class="p">;</span><span class="mi">134</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">133</span><span class="p">,</span><span class="mi">3</span><span class="p">;</span><span class="mi">133</span><span class="p">,</span><span class="mi">7</span><span class="p">;</span><span class="mi">134</span><span class="p">,</span><span class="mi">5</span><span class="p">;</span><span class="mi">134</span><span class="p">,</span><span class="mi">9</span><span class="p">;</span><span class="mi">134</span><span class="p">,</span><span class="mi">8</span>
@@ -1011,6 +1031,21 @@ Mario Kart DS
 </div>
 </div>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Får du problemer med æøå eller andre tegn?</p>
+<p>Tekstfiler (<code class="docutils literal notranslate"><span class="pre">.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.json</span></code>, <code class="docutils literal notranslate"><span class="pre">.txt</span></code>) kan ha mange typer encoding.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="s2">&quot;datafil.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Standard er <code class="docutils literal notranslate"><span class="pre">utf8</span></code> men du finner fortsatt datafiler med andre encodings. Prøv disse også hvis du får problemer:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">latin1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">windows-1252</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ISO-8859-1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ISO-8859-15</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UTF-8-SIG</span></code></p></li>
+</ul>
+</div>
 <div class="note admonition">
 <p class="admonition-title">Dokumentasjonen</p>
 <p>Dokumentasjonen for <code class="docutils literal notranslate"><span class="pre">pandas</span></code> finner du <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html">her (lenke)</a>.</p>
@@ -1265,7 +1300,9 @@ Mario Kart DS
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtrering">Filtrering</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gjennomsnitt-og-sum">Gjennomsnitt og sum</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sortering">Sortering</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soylediagram">Søylediagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sektordiagram">Sektordiagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linjediagram">Linjediagram</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagre-filer">Lagre filer</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#telle-opp">Telle opp</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storste-og-minste-verdier">Største og minste verdier</a></li>
