@@ -641,7 +641,74 @@ document.write(`
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 1 ⭕</p>
+<p class="admonition-title">Oppgave 1 ❔</p>
+<p>Bestem hva som skrives ut av programmene uten å kjøre de selv!</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Program #0</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Program #1</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hei&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Hei&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--3" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--3">Program #2</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;7&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;15&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--4" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--4">Program #3</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--5" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--5">Program #4</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Utskrift #0: <input id="textInput0" type="text"><a id="response0"></a></br>
+Utskrift #1: <input id="textInput1" type="text"><a id="response1"></a></br>
+Utskrift #2: <input id="textInput2" type="text"><a id="response2"></a></br>
+Utskrift #3: <input id="textInput3" type="text"><a id="response3"></a></br>
+Utskrift #4: <input id="textInput4" type="text"><a id="response4"></a></p>
+<script>
+function checkAnswer(inputId, correctAnswers, responseId) {
+  document.getElementById(inputId).addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      const input = this.value.trim();
+      const isCorrect = correctAnswers.includes(input);
+      document.getElementById(responseId).innerHTML = isCorrect ? " ✅" : " ❌";
+    }
+  });
+}
+checkAnswer("textInput0", ["7"], "response0");
+checkAnswer("textInput1", ["HeiHei", '"HeiHei"', "'HeiHei'"], "response1");
+checkAnswer("textInput2", ["715", "'715'", '"715"'], "response2");
+checkAnswer("textInput3", ["0"], "response3");
+checkAnswer("textInput4", ["2.0", "2"], "response4");
+</script>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 ⭕</p>
 <p>Regn ut følgende matematiske uttrykk med Python</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\quad2\left( 1 + \frac{1}{7}\cdot \frac{2^3}{2} \right)\)</span></p></li>
@@ -663,11 +730,10 @@ document.write(`
 </div>
 <p>Ser du at det er et mønster i svarene?</p>
 <p>Det er fordi uttrykkene kan regnes ut til å være <span class="math notranslate nohighlight">\(\frac{22}{7}\)</span>, <span class="math notranslate nohighlight">\(\frac{333}{106}\)</span> og <span class="math notranslate nohighlight">\(\frac{355}{113}\)</span>. Disse brøkene blir nærmere og nærmere <span class="math notranslate nohighlight">\(\pi\)</span>! 🤓</p>
-<p>Les mer om kjedebrøken for å approksimere <span class="math notranslate nohighlight">\(\pi\)</span> <a class="reference external" href="https://en.wikipedia.org/wiki/Continued_fraction#Continued_fraction_expansion_of_%CF%80_and_its_convergents">her (lenke)</a></p>
 </div>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 2 🔢</p>
+<p class="admonition-title">Oppgave 3 🔢</p>
 <p>Sjekk om disse tallene er delbare med Python.</p>
 <ol class="arabic simple">
 <li><p>Er <span class="math notranslate nohighlight">\(112\)</span> delbart med <span class="math notranslate nohighlight">\(7\)</span>?</p></li>
@@ -690,19 +756,6 @@ document.write(`
 </div>
 <p>Hvis vi bytter ut <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> kan vi se at alle tallene er delbare fordi vi får <span class="math notranslate nohighlight">\(0\)</span> i rest.</p>
 </div>
-</div>
-<div class="task admonition">
-<p class="admonition-title">Oppgave 3 🌡️</p>
-<p>Noen land bruker grader fahrenheit (<span class="math notranslate nohighlight">\(^{\circ}F\)</span>) som måleenhet for temperatur</p>
-<p>Formelen for å regne over fra celsius til fahrenheit er <span class="math notranslate nohighlight">\(^{\circ}F=(^{\circ}C \cdot \frac{9}{5})+32\)</span></p>
-<p>Lag en kalkulator som bruker formelen for å regne om fra celsius til fahrenheit.</p>
-<p>Bruk programmet til å finne hvor mange grader fahrenheit disse temperaturene er:</p>
-<ul class="simple">
-<li><p>Kokepunktet til vann</p></li>
-<li><p>Frysepunktet til vann</p></li>
-<li><p>Kroppstemperaturen til et menneske</p></li>
-<li><p>Temperaturen i dag</p></li>
-</ul>
 </div>
 </section>
 </section>

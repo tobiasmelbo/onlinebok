@@ -32,11 +32,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dedefd7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5dc0fc1c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -407,6 +407,7 @@ document.write(`
 <section id="input-og-pakker">
 <span id="id1"></span><h1>Input og pakker<a class="headerlink" href="#input-og-pakker" title="Link to this heading">#</a></h1>
 <p>I denne delen skal vi lære hvordan vi kan bruke pakker, lage enkle kalkulatorer og generere tilfeldige tall.</p>
+<hr class="docutils" />
 <section id="pakker">
 <h2>Pakker<a class="headerlink" href="#pakker" title="Link to this heading">#</a></h2>
 <p>Python har mange innebygde funksjoner, men noen funksjoner ligger i pakker som vi må importere.</p>
@@ -470,7 +471,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Arne
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cecilie
 6
 </pre></div>
 </div>
@@ -478,6 +479,7 @@ document.write(`
 </div>
 </section>
 </section>
+<hr class="docutils" />
 <section id="input">
 <h2>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
 <p>Vi kan ta input fra brukeren med <code class="docutils literal notranslate"><span class="pre">input()</span></code>-funksjonen.</p>
@@ -494,6 +496,7 @@ document.write(`
 </div>
 <p>Dette programmet tar to tall <code class="docutils literal notranslate"><span class="pre">a</span></code> og <code class="docutils literal notranslate"><span class="pre">b</span></code> og skriver ut summen deres. Prøv det selv!</p>
 </section>
+<hr class="docutils" />
 <section id="avrunding">
 <h2>Avrunding<a class="headerlink" href="#avrunding" title="Link to this heading">#</a></h2>
 <p>Vi kan runde av lange desimaltall ved å bruke <code class="docutils literal notranslate"><span class="pre">round</span></code>-funksjonen. Denne ligger ikke i en pakke og må derfor ikke importeres.</p>
@@ -542,6 +545,31 @@ document.write(`
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 2 🌡️</p>
+<p>Noen land bruker grader fahrenheit (<span class="math notranslate nohighlight">\(^{\circ}F\)</span>) som måleenhet for temperatur</p>
+<p>Formelen for å regne over fra celsius til fahrenheit er <span class="math notranslate nohighlight">\(^{\circ}F=(^{\circ}C \cdot \frac{9}{5})+32\)</span></p>
+<p>Lag en kalkulator som regner om fra celsius til fahrenheit</p>
+<p>Bruk programmet til å finne hvor mange grader fahrenheit disse temperaturene er:</p>
+<ul class="simple">
+<li><p>Kokepunktet til vann</p></li>
+<li><p>Frysepunktet til vann</p></li>
+<li><p>Kroppstemperaturen til et menneske</p></li>
+<li><p>Temperaturen i dag</p></li>
+</ul>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Celsius: &quot;</span><span class="p">))</span>
+<span class="n">F</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span> <span class="o">*</span> <span class="p">(</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span><span class="p">))</span> <span class="o">+</span> <span class="mi">32</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="s2">&quot;grader celsius er&quot;</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="s2">&quot;grader fahrenheit.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Celsius</span><span class="p">:</span> <span class="mi">100</span>
+<span class="mf">100.0</span> <span class="n">grader</span> <span class="n">celsius</span> <span class="n">er</span> <span class="mf">212.0</span> <span class="n">grader</span> <span class="n">fahrenheit</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 3 ⭕</p>
 <aside class="sidebar">
 <p>Formelen for omkretsen til en sirkel er <span class="math notranslate nohighlight">\(2\pi r\)</span>.</p>
 <p>Formelen for arealet til en sirkel er <span class="math notranslate nohighlight">\(\pi r^2\)</span>.</p>

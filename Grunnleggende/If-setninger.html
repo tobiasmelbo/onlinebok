@@ -32,11 +32,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=dedefd7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5dc0fc1c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -383,7 +383,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utsagn">Utsagn</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">If-setninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -400,12 +399,12 @@ document.write(`
 <hr class="docutils" />
 <section id="if-setninger">
 <span id="id1"></span><h1>If-setninger<a class="headerlink" href="#if-setninger" title="Link to this heading">#</a></h1>
-<p>If-setninger (<em><code class="docutils literal notranslate"><span class="pre">if</span></code>-statements</em>) er en måte for å sjekke om et utsagn er sant, og så gjøre en del av koden bare <em>dersom</em> det er sant. Da kan programmet reagere ulikt til forskjellige scenarioer.</p>
+<p>If-setninger (<em><code class="docutils literal notranslate"><span class="pre">if</span></code>-statements</em>) lar programmet reagere på forskjellige måter.</p>
+<hr class="docutils" />
 <section id="utsagn">
 <h2>Utsagn<a class="headerlink" href="#utsagn" title="Link to this heading">#</a></h2>
 <p>Utsagn er påstander som kan være sanne eller usanne. <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>Først må vi lære en måte å uttrykke utsagn på. Dette kan vi gjøre med symboler som vi kaller sammenlikningsoperatorer.</p>
-<p>Under er en oversikt over disse.</p>
+<p>I Python bygges utsagn opp med <em>sammenlikningsoperatorer</em>.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -531,11 +530,49 @@ True
 </div>
 </div>
 </div>
-<p>Der vi får <code class="docutils literal notranslate"><span class="pre">False</span></code> er utsagnet galt. Der vi får <code class="docutils literal notranslate"><span class="pre">True</span></code> er utsagnet riktig. Gå igjennom eksempelet og sørg for at du forstår hvorfor det blir skrevet ut <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code> for de forskjellige utsagnene.</p>
+<p>Python evaluerer utsagnene ved å sammenlikne venstre og høyre side. Hvis utsagnet er sant så blir det <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Likhetstegn i Python</p>
+<p>I Python er det stor forskjell på et enkelt likhetstegn <code class="docutils literal notranslate"><span class="pre">=</span></code> og doble likhetstegn <code class="docutils literal notranslate"><span class="pre">==</span></code></p>
+<ul class="simple">
+<li><p>Enkle likhetstegn <code class="docutils literal notranslate"><span class="pre">=</span></code> brukes til å <strong>sette variabler</strong>.</p></li>
+<li><p>Doble likhetstegn <code class="docutils literal notranslate"><span class="pre">==</span></code> brukes til å <strong>sjekke om noe er likt</strong></p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Logiske operatorer</p>
+<p>Vi kan kombinere flere utsagn med de logiske operatorene <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> og <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
+<ul class="simple">
+<li><p>Hvis jeg ønsker å sjekke at flere utsagn stemmer, altså at begge utsagnene blir sanne, kan jeg bruke <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p></li>
+<li><p>Hvis det holder at ett utsagn stemmer, men jeg ønsker å sjekke flere, kan jeg bruke <code class="docutils literal notranslate"><span class="pre">or</span></code>.</p></li>
+<li><p>Hvis jeg ønsker å sjekke at noe ikke stemmer kan jeg bruke <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p></li>
+</ul>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">and-operatoren</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Sjekker om x er minst 5 og maks 10</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">or-operatoren</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Sjekker om x er 20 eller 1. </span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--3" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--3">not-operatoren</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </section>
+<hr class="docutils" />
 <section id="id2">
 <h2>If-setninger<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>Nå kan vi begynne å skrive if-setninger.</p>
+<p>If-setninger sjekker et utsagn for å bestemme om deler av koden skal kjøres. Det er koden som står med <em>innrykk</em> som kjøres, men bare hvis utsagnet er sant. Man lager selv innrykk med TAB-tasten på tastaturet.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -552,9 +589,8 @@ True
 </div>
 </div>
 </div>
-<p>Legg merke til at linjen med <code class="docutils literal notranslate"><span class="pre">print()</span></code> er skrevet med et innrykk. Dette kan du lage selv ved å trykke på TAB-knappen på tastaturet. Det som er skrevet med innrykk etter en if-setning <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b:</span></code> skjer bare dersom utsagnet <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er sant.</p>
-<p>Forsøk å endre programmet slik at <code class="docutils literal notranslate"><span class="pre">a</span></code> ikke er mindre enn <code class="docutils literal notranslate"><span class="pre">b</span></code>. Da vil du se at linjen med <code class="docutils literal notranslate"><span class="pre">print()</span></code> ikke gjennomføres.</p>
-<p>Vi kan også sjekke flere ulike scenarioer.</p>
+<p>Linjen med <code class="docutils literal notranslate"><span class="pre">print(&quot;a</span> <span class="pre">er</span> <span class="pre">mindre</span> <span class="pre">enn</span> <span class="pre">b&quot;)</span></code> står med innrykk. Denne kjøres bare hvis <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">b</span></code> er sant.</p>
+<p>Vi kan legge til enda flere utsagn med <code class="docutils literal notranslate"><span class="pre">elif</span></code> og <code class="docutils literal notranslate"><span class="pre">else</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
@@ -583,69 +619,78 @@ True
 <li><p>… ellers skriver vi <em>a er større enn b</em>.</p></li>
 </ul>
 </section>
-<section id="logiske-operatorer">
-<h2>Logiske operatorer<a class="headerlink" href="#logiske-operatorer" title="Link to this heading">#</a></h2>
-<p>Vi kan kombinere utsagn med de logiske operatorene <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> og <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
-<p>Hvis jeg ønsker å sjekke at flere utsagn stemmer, altså at <strong>begge</strong> utsagnene blir sanne, kan jeg bruke <code class="docutils literal notranslate"><span class="pre">and</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Sjekker om x er større eller lik 5 *og* mindre enn eller lik 10.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>Hvis det holder at et utsagn stemmer, men jeg ønsker å sjekke flere, kan jeg bruke <code class="docutils literal notranslate"><span class="pre">or</span></code>. Følgende utsagn blir sant dersom et av utsagnene er sant, eller begge.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Sjekker om x er 20 eller 1. </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>Hvis jeg ønsker å sjekke at noe <strong>ikke</strong> stemmer kan jeg bruke <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 1 🗣️</p>
-<p>I denne oppgaven skal du lage utsagn og skrive ut booleans (sannhetsverdier).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># Skriver ut True</span>
+<p class="admonition-title">Oppgave 1</p>
+<p>Hva skrives ut av følgende programmer? Svar uten å kjøre programmene selv.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Program #0</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Lag et utsagn som gir <code class="docutils literal notranslate"><span class="pre">True</span></code> og bruker operatoren <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
-<li><p>Lag et utsagn som gir <code class="docutils literal notranslate"><span class="pre">True</span></code> og bruker operatoren <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
-<li><p>Lag et utsagn som gir <code class="docutils literal notranslate"><span class="pre">True</span></code> og bruker operatoren <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
-<li><p>Lag et utsagn som gir <code class="docutils literal notranslate"><span class="pre">False</span></code> og bruker operatoren <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
-<li><p>Lag et utsagn som gir <code class="docutils literal notranslate"><span class="pre">False</span></code> og bruker operatoren <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
-<li><p>Lag et utsagn som gir <code class="docutils literal notranslate"><span class="pre">False</span></code> og bruker operatoren <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
-</ol>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Program #1</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--3" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--3">Program #2</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--4" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--4">Program #3</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">svar</span> <span class="o">=</span> <span class="mi">21</span>
+
+<span class="k">if</span> <span class="n">svar</span> <span class="o">==</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Riktig&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Feil&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--5" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--5">Program #4</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">67</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Partall&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oddetall&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Utskrift #0: <input id="textInput0" type="text"><a id="response0"></a></br>
+Utskrift #1: <input id="textInput1" type="text"><a id="response1"></a></br>
+Utskrift #2: <input id="textInput2" type="text"><a id="response2"></a></br>
+Utskrift #3: <input id="textInput3" type="text"><a id="response3"></a></br>
+Utskrift #4: <input id="textInput4" type="text"><a id="response4"></a></p>
+<script>
+function checkAnswer(inputId, correctAnswers, responseId) {
+  document.getElementById(inputId).addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      const input = this.value.trim();
+      const isCorrect = correctAnswers.includes(input);
+      document.getElementById(responseId).innerHTML = isCorrect ? " ✅" : " ❌";
+    }
+  });
+}
+checkAnswer("textInput0", ["False"], "response0");
+checkAnswer("textInput1", ["True"], "response1");
+checkAnswer("textInput2", ["True"], "response2");
+checkAnswer("textInput3", ["Feil", "'Feil'", '"Feil"'], "response3");
+checkAnswer("textInput4", ["Oddetall", "'Oddetall'", '"Oddetall"'], "response4");
+</script>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 2 ✖️</p>
@@ -665,6 +710,23 @@ True
 <li><p>Lag en variabel <code class="docutils literal notranslate"><span class="pre">svar</span></code> som skal være et tall fra brukerens input.</p></li>
 </ol>
 <p>Hvis svaret er riktig skal programmet skrive ut at svaret er riktig. Hvis svaret er feil skal programmet skrive ut at svaret er feil og hva som er det riktige svaret.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hva er &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;ganger&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">)</span>
+<span class="n">svar</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Svar:&quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">svar</span> <span class="o">==</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Riktig!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Feil. Riktig svar er&quot;</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -735,7 +797,6 @@ True
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utsagn">Utsagn</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">If-setninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logiske-operatorer">Logiske operatorer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
