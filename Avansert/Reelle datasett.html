@@ -1303,6 +1303,169 @@ Mario Kart DS
 </div>
 </div>
 </div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 6 ⚔️</p>
+<p>Last ned datafilen <a class="reference download internal" download="" href="../_downloads/e2d0b8746e7696c5155233f0180bfd28/raid.csv"><code class="xref download docutils literal notranslate"><span class="pre">raid.csv</span></code></a></p>
+<p>Du skal lage et program som</p>
+<ol class="arabic simple">
+<li><p>Skriver ut de topp 3 mest populære <code class="docutils literal notranslate"><span class="pre">Class</span></code>.</p></li>
+<li><p>Skriver ut hvor mange <code class="docutils literal notranslate"><span class="pre">Priest</span></code> og <code class="docutils literal notranslate"><span class="pre">Paladin</span></code> det er til sammen.</p></li>
+<li><p>Lager et søylediagram eller sektordiagram som viser fordelingen av <code class="docutils literal notranslate"><span class="pre">Race</span></code>.</p></li>
+</ol>
+<p>For å gjennomføre et tokt må noen roller fylles. Vi trenger <span class="math notranslate nohighlight">\(5\)</span> <code class="docutils literal notranslate"><span class="pre">Tank</span></code> og <span class="math notranslate nohighlight">\(10\)</span> <code class="docutils literal notranslate"><span class="pre">Healer</span></code>. Resten får rollen <code class="docutils literal notranslate"><span class="pre">DPS</span></code>. Det er litt begrenset hva hver class kan gjøre.</p>
+<ul class="simple">
+<li><p>Bare <code class="docutils literal notranslate"><span class="pre">Warrior</span></code> eller <code class="docutils literal notranslate"><span class="pre">Druid</span></code> kan være tank.</p></li>
+<li><p>Bare <code class="docutils literal notranslate"><span class="pre">Paladin</span></code> eller <code class="docutils literal notranslate"><span class="pre">Priest</span></code> kan være healer, men <code class="docutils literal notranslate"><span class="pre">Priest</span></code> er dårligere som <code class="docutils literal notranslate"><span class="pre">DPS</span></code> og bør prioriteres som healer over <code class="docutils literal notranslate"><span class="pre">Paladin</span></code>.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Utvid programmet ditt til å skrive ut en oversikt over hele toktet med rollene <code class="docutils literal notranslate"><span class="pre">Tank</span></code>, <code class="docutils literal notranslate"><span class="pre">Healer</span></code> og <code class="docutils literal notranslate"><span class="pre">DPS</span></code> fordelt riktig.</p></li>
+</ol>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;raid.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># De 3 mest populære classes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mest populære classes:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Summen av paladins og priests</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Paladins + Priests:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Priest&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Paladin&quot;</span><span class="p">]))</span>
+
+<span class="c1"># Plotter Race</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Race&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;pie&quot;</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%1.1f%%</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Lager liste over roller. Fyller med DPS først.</span>
+<span class="n">roller</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DPS&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">tanks</span><span class="p">,</span> <span class="n">healers</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span>
+
+<span class="c1"># Legger til roller</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">rad</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">rad</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Priest&quot;</span> <span class="ow">and</span> <span class="n">healers</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">roller</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Healer&quot;</span>
+        <span class="n">healers</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">rad</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Warrior&quot;</span> <span class="ow">and</span> <span class="n">tanks</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">roller</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tank&quot;</span>
+        <span class="n">tanks</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">rad</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Druid&quot;</span> <span class="ow">and</span> <span class="n">tanks</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">roller</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Tank&quot;</span>
+        <span class="n">tanks</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="c1"># Legger til paladin healers hvis ikke priests har fylt opp.</span>
+<span class="k">if</span> <span class="n">healers</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">rad</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Paladin&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">healers</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">roller</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Healer&quot;</span>
+            <span class="n">healers</span> <span class="o">-=</span> <span class="mi">1</span>
+
+<span class="c1"># Lager roller-kolonnen</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;Role&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">roller</span>
+
+<span class="c1"># Skriver ut oversikt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mest</span> <span class="n">populære</span> <span class="n">classes</span><span class="p">:</span>
+<span class="n">Class</span>
+<span class="n">Warrior</span>    <span class="mi">8</span>
+<span class="n">Rogue</span>      <span class="mi">8</span>
+<span class="n">Paladin</span>    <span class="mi">7</span>
+<span class="n">Name</span><span class="p">:</span> <span class="n">count</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+<span class="n">Paladins</span> <span class="o">+</span> <span class="n">Priests</span><span class="p">:</span> <span class="mi">11</span>
+    <span class="n">Level</span>                   <span class="n">Name</span>       <span class="n">Race</span>    <span class="n">Class</span>    <span class="n">Role</span>
+<span class="mi">0</span>      <span class="mi">60</span>                <span class="n">Melbert</span>      <span class="n">Dwarf</span>  <span class="n">Paladin</span>  <span class="n">Healer</span>
+<span class="mi">1</span>      <span class="mi">60</span>             <span class="n">PedroPedro</span>      <span class="n">Human</span>  <span class="n">Warlock</span>     <span class="n">DPS</span>
+<span class="mi">2</span>      <span class="mi">60</span>              <span class="n">KnutOve43</span>      <span class="n">Gnome</span>     <span class="n">Mage</span>     <span class="n">DPS</span>
+<span class="mi">3</span>      <span class="mi">60</span>           <span class="n">exelcelsiorX</span>      <span class="n">Gnome</span>  <span class="n">Warrior</span>    <span class="n">Tank</span>
+<span class="mi">4</span>      <span class="mi">60</span>                <span class="n">Datamus</span>      <span class="n">Dwarf</span>   <span class="n">Hunter</span>     <span class="n">DPS</span>
+<span class="mi">5</span>      <span class="mi">60</span>            <span class="n">AlbionTerje</span>  <span class="n">Night</span> <span class="n">Elf</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">6</span>      <span class="mi">60</span>              <span class="n">CarlaCute</span>      <span class="n">Gnome</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">7</span>      <span class="mi">60</span>               <span class="n">lordrolf</span>      <span class="n">Gnome</span>  <span class="n">Warrior</span>    <span class="n">Tank</span>
+<span class="mi">8</span>      <span class="mi">60</span>                <span class="n">Guthild</span>      <span class="n">Human</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">9</span>      <span class="mi">60</span>                 <span class="n">perryx</span>      <span class="n">Dwarf</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">10</span>     <span class="mi">60</span>     <span class="n">benjamin_reichwald</span>  <span class="n">Night</span> <span class="n">Elf</span>  <span class="n">Warrior</span>    <span class="n">Tank</span>
+<span class="mi">11</span>     <span class="mi">60</span>         <span class="n">commander_data</span>      <span class="n">Dwarf</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">12</span>     <span class="mi">60</span>      <span class="n">martin_mortensrud</span>      <span class="n">Dwarf</span>  <span class="n">Paladin</span>  <span class="n">Healer</span>
+<span class="mi">13</span>     <span class="mi">60</span>              <span class="n">johnperry</span>      <span class="n">Gnome</span>     <span class="n">Mage</span>     <span class="n">DPS</span>
+<span class="mi">14</span>     <span class="mi">60</span>        <span class="n">SugoiOtakuGamer</span>      <span class="n">Dwarf</span>  <span class="n">Paladin</span>  <span class="n">Healer</span>
+<span class="mi">15</span>     <span class="mi">60</span>                <span class="n">xonotic</span>      <span class="n">Human</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">16</span>     <span class="mi">60</span>          <span class="n">protonkanon34</span>      <span class="n">Human</span>     <span class="n">Mage</span>     <span class="n">DPS</span>
+<span class="mi">17</span>     <span class="mi">60</span>         <span class="n">arnebjarne1985</span>      <span class="n">Dwarf</span>  <span class="n">Warrior</span>    <span class="n">Tank</span>
+<span class="mi">18</span>     <span class="mi">60</span>        <span class="n">chiefkeefspleef</span>      <span class="n">Dwarf</span>   <span class="n">Hunter</span>     <span class="n">DPS</span>
+<span class="mi">19</span>     <span class="mi">60</span>                <span class="n">rotleif</span>  <span class="n">Night</span> <span class="n">Elf</span>   <span class="n">Priest</span>  <span class="n">Healer</span>
+<span class="mi">20</span>     <span class="mi">60</span>         <span class="n">xleonhardeuler</span>  <span class="n">Night</span> <span class="n">Elf</span>   <span class="n">Hunter</span>     <span class="n">DPS</span>
+<span class="mi">21</span>     <span class="mi">60</span>        <span class="n">MasterBlaster92</span>      <span class="n">Dwarf</span>  <span class="n">Warrior</span>    <span class="n">Tank</span>
+<span class="mi">22</span>     <span class="mi">60</span>        <span class="n">SteinhardeStian</span>      <span class="n">Gnome</span>     <span class="n">Mage</span>     <span class="n">DPS</span>
+<span class="mi">23</span>     <span class="mi">60</span>                   <span class="n">worf</span>      <span class="n">Gnome</span>  <span class="n">Warlock</span>     <span class="n">DPS</span>
+<span class="mi">24</span>     <span class="mi">60</span>         <span class="n">gleepglorpzoop</span>      <span class="n">Human</span>  <span class="n">Paladin</span>  <span class="n">Healer</span>
+<span class="mi">25</span>     <span class="mi">60</span>            <span class="mi">3</span><span class="n">blue1brown</span>      <span class="n">Human</span>  <span class="n">Paladin</span>  <span class="n">Healer</span>
+<span class="mi">26</span>     <span class="mi">60</span>           <span class="n">agmund_aggro</span>      <span class="n">Gnome</span>  <span class="n">Warrior</span>     <span class="n">DPS</span>
+<span class="mi">27</span>     <span class="mi">60</span>          <span class="n">aimermaster99</span>      <span class="n">Gnome</span>     <span class="n">Mage</span>     <span class="n">DPS</span>
+<span class="mi">28</span>     <span class="mi">60</span>                <span class="n">gamerGF</span>  <span class="n">Night</span> <span class="n">Elf</span>   <span class="n">Hunter</span>     <span class="n">DPS</span>
+<span class="mi">29</span>     <span class="mi">60</span>                 <span class="n">Amelia</span>      <span class="n">Dwarf</span>   <span class="n">Priest</span>  <span class="n">Healer</span>
+<span class="mi">30</span>     <span class="mi">60</span>                  <span class="n">Trond</span>      <span class="n">Human</span>  <span class="n">Warrior</span>     <span class="n">DPS</span>
+<span class="mi">31</span>     <span class="mi">60</span>        <span class="n">politikerforakt</span>  <span class="n">Night</span> <span class="n">Elf</span>    <span class="n">Druid</span>     <span class="n">DPS</span>
+<span class="mi">32</span>     <span class="mi">60</span>               <span class="n">CSMASTER</span>      <span class="n">Human</span>  <span class="n">Warrior</span>     <span class="n">DPS</span>
+<span class="mi">33</span>     <span class="mi">60</span>       <span class="n">jobber_med_excel</span>      <span class="n">Human</span>   <span class="n">Priest</span>  <span class="n">Healer</span>
+<span class="mi">34</span>     <span class="mi">60</span>         <span class="n">royhugo_tromsø</span>      <span class="n">Dwarf</span>   <span class="n">Hunter</span>     <span class="n">DPS</span>
+<span class="mi">35</span>     <span class="mi">60</span>               <span class="n">roblox13</span>      <span class="n">Dwarf</span>   <span class="n">Priest</span>  <span class="n">Healer</span>
+<span class="mi">36</span>     <span class="mi">60</span>       <span class="n">suavementebesame</span>  <span class="n">Night</span> <span class="n">Elf</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">37</span>     <span class="mi">60</span>             <span class="n">niels_bohr</span>      <span class="n">Human</span>    <span class="n">Rogue</span>     <span class="n">DPS</span>
+<span class="mi">38</span>     <span class="mi">60</span>                <span class="n">Barry56</span>      <span class="n">Human</span>  <span class="n">Paladin</span>  <span class="n">Healer</span>
+<span class="mi">39</span>     <span class="mi">60</span>  <span class="n">InTheShadowOfTheHorns</span>      <span class="n">Human</span>  <span class="n">Paladin</span>     <span class="n">DPS</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 7 💸</p>
+<p>Last ned filen <a class="reference download internal" download="" href="../_downloads/74a0e67c017b796ee99380ae87e77c06/l%C3%B8nnsutvikling.csv"><code class="xref download docutils literal notranslate"><span class="pre">lønnsutvikling.csv</span></code></a>.</p>
+<p>Tobias er lektor på VGS, men lurer på om han skal bytte jobb. Du har fått datafilen <code class="docutils literal notranslate"><span class="pre">lønnsutvikling.csv</span></code> som viser lønnsutviklingen siden <span class="math notranslate nohighlight">\(2015\)</span> i forskjellige relevante yrker for Tobias. Encoding for filen er <code class="docutils literal notranslate"><span class="pre">latin1</span></code> (<code class="docutils literal notranslate"><span class="pre">ISO</span> <span class="pre">8859-1</span></code>).</p>
+<p>Du skal lage et program som</p>
+<ol class="arabic simple">
+<li><p>Lager et linjediagram som viser utviklingen i gjennomsnittslønnen for de forskjellige yrkene siden <span class="math notranslate nohighlight">\(2015\)</span>.</p></li>
+<li><p>Lager en tabell over hvert yrke som viser hvor mange prosent gjennomsnittslønnen har steget <em>totalt</em> f.o.m <span class="math notranslate nohighlight">\(2015\)</span> t.o.m <span class="math notranslate nohighlight">\(2024\)</span> og hvor mange prosent gjennomsnittslønnen har steget <em>per år</em></p></li>
+<li><p>Regner ut en <em>projisert årslønn</em> i <span class="math notranslate nohighlight">\(2030\)</span> ved å anta at stigningen fortsetter med den gjennomsnittlige prosentvise økningen per år som du regnet ut i forrige deloppgave.</p></li>
+</ol>
+<blockquote>
+<div><p>Kilde for datafil: SSB Tabell 11418 Yrkesfordelt månedslønn, etter år, statistikkvariabel, yrke og statistikkmål (2025)</p>
+</div></blockquote>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;lønnsutvikling.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin1&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Linjediagram</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;år&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Lønnsutvikling for ulike yrker siden 2015&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Prosent økning siden 2015</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s2">&quot;YRKE&quot;</span><span class="si">:</span><span class="s2">45</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s2">&quot;PROSENT ØKNING&quot;</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s2">&quot;P. PER ÅR&quot;</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="s2">&quot;LØNN 2030&quot;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">kol</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">kol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;år&quot;</span><span class="p">,</span> <span class="s2">&quot;statistikkvariabel&quot;</span><span class="p">]:</span>
+        <span class="n">gjennomsnitt</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">kol</span><span class="p">])</span> <span class="c1"># Liste over gjennomsnitt</span>
+        <span class="n">yrke</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kol</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="c1"># Litt finere navn på yrke</span>
+        <span class="n">snitt_økning</span> <span class="o">=</span> <span class="p">(</span><span class="n">gjennomsnitt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">gjennomsnitt</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span> <span class="c1"># Siste delt på første lønn *100</span>
+        <span class="n">økning_per_år</span> <span class="o">=</span> <span class="p">(</span><span class="n">snitt_økning</span> <span class="o">-</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="c1"># Økning fordelt utover hvert år</span>
+        <span class="n">vekstfaktor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">økning_per_år</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># Vekstfaktor for projisering fremover</span>
+        <span class="n">lønn_2030</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">gjennomsnitt</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">vekstfaktor</span> <span class="o">**</span> <span class="mi">6</span> <span class="c1"># 12 * månedslønn * vekstfaktoren 6 ganger for å få året 2030.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">yrke</span><span class="si">:</span><span class="s2">45</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">snitt_økning</span><span class="si">:</span><span class="s2">^14.2f</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">økning_per_år</span><span class="si">:</span><span class="s2">^9.2f</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">lønn_2030</span><span class="si">:</span><span class="s2">^9.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">YRKE</span>                                          <span class="n">PROSENT</span> <span class="n">ØKNING</span> <span class="o">|</span> <span class="n">P</span><span class="o">.</span> <span class="n">PER</span> <span class="n">ÅR</span> <span class="o">|</span> <span class="n">LØNN</span> <span class="mi">2030</span>
+<span class="n">Ledere</span> <span class="n">av</span> <span class="n">utdanning</span> <span class="n">og</span> <span class="n">undervisning</span><span class="p">:</span>              <span class="mf">138.56</span>     <span class="o">|</span>   <span class="mf">3.86</span>    <span class="o">|</span> <span class="mf">1115200.62</span>
+<span class="n">Universitets</span><span class="o">-</span> <span class="n">og</span> <span class="n">høyskolelektorer</span><span class="o">/-</span><span class="n">lærere</span><span class="p">:</span>        <span class="mf">128.52</span>     <span class="o">|</span>   <span class="mf">2.85</span>    <span class="o">|</span> <span class="mf">865417.58</span>
+<span class="n">Lektorer</span> <span class="n">mv</span><span class="o">.</span> <span class="p">(</span><span class="n">videregående</span> <span class="n">skole</span><span class="p">):</span>                <span class="mf">133.77</span>     <span class="o">|</span>   <span class="mf">3.38</span>    <span class="o">|</span> <span class="mf">880095.69</span>
+<span class="n">Programvareutviklere</span><span class="p">:</span>                             <span class="mf">142.23</span>     <span class="o">|</span>   <span class="mf">4.22</span>    <span class="o">|</span> <span class="mf">1171685.78</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
