@@ -506,16 +506,18 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisering av data&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisering av boligpriser&quot;</span><span class="p">)</span>
 
-<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Her er en oversikt over boligpriser i Oslo/Bærum for brukte boliger.&quot;</span><span class="p">)</span>
+<span class="c1"># Lager DataFrame. Riktig encoding og separator. Hopper over &quot;tittel&quot; og setter indeks til årstallene.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;boligpriser.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin1&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;boligpriser.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;boligpriser.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="c1"># Viser graf</span>
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Graf&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">line_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
 
-<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">use_container_width</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">st</span><span class="o">.</span><span class="n">line_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;År&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Prisindeks for brukte boliger&quot;</span><span class="p">)</span>
+<span class="c1"># Viser tabell over data.</span>
+<span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Tabell&quot;</span><span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -529,7 +531,57 @@ document.write(`
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 <p>Her er noen oppgaver til inspirasjon, men det beste er å finne på noe du har lyst til å lage selv.</p>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 1 📈</p>
+<p class="admonition-title">Oppgave 1 🏠</p>
+<p>Ta utgangspunkt i datafilen <a class="reference download internal" download="" href="../_downloads/2d7b3b896f542e5da77f95c894e95a78/boligpriser.csv"><span class="xref download myst">boligpris.csv</span></a> og programmet i eksempelet over.</p>
+<p>Brukeren skal få velge mellom å vise alle kolonnene, én region eller å sammenlikne to regioner.</p>
+<p>For å velge modus kan du bruke en <code class="docutils literal notranslate"><span class="pre">st.radio()</span></code> og for å velge region eller regioner kan du bruke <code class="docutils literal notranslate"><span class="pre">st.selectbox()</span></code>.</p>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisering av boligpriser&quot;</span><span class="p">)</span>
+
+<span class="c1"># Lager DataFrame. Riktig encoding og separator. Hopper over &quot;tittel&quot; og setter indeks til årstallene.</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;boligpriser.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin1&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Valg av modus</span>
+<span class="n">valg</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span><span class="s2">&quot;Velg modus&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Alle&quot;</span><span class="p">,</span> <span class="s2">&quot;En region&quot;</span><span class="p">,</span> <span class="s2">&quot;Sammenlikning&quot;</span><span class="p">])</span>
+
+<span class="c1"># Alle grafer</span>
+<span class="k">if</span> <span class="n">valg</span> <span class="o">==</span> <span class="s2">&quot;Alle&quot;</span><span class="p">:</span>    
+    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Graf&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">line_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Tabell&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Bare én graf</span>
+<span class="k">elif</span> <span class="n">valg</span> <span class="o">==</span> <span class="s2">&quot;En region&quot;</span><span class="p">:</span>
+    <span class="n">valgt_region</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;Velg region&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Graf&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">line_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">valgt_region</span><span class="p">)</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Tabell&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">valgt_region</span><span class="p">])</span>
+
+<span class="c1"># Sammenlikning</span>
+<span class="k">elif</span> <span class="n">valg</span> <span class="o">==</span> <span class="s2">&quot;Sammenlikning&quot;</span><span class="p">:</span>
+    <span class="n">valgt_region1</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;Velg region 1:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">valgt_region2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s2">&quot;Velg region 2:&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">valgt_region1</span><span class="p">])</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Graf&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">line_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">valgt_region1</span><span class="p">,</span> <span class="n">valgt_region2</span><span class="p">])</span>
+
+    <span class="n">st</span><span class="o">.</span><span class="n">header</span><span class="p">(</span><span class="s2">&quot;Tabell&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="n">valgt_region1</span><span class="p">,</span> <span class="n">valgt_region2</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="task admonition">
+<p class="admonition-title">Oppgave 2 📈</p>
 <p>Ta utgangspunkt i datafilen <a class="reference download internal" download="" href="../_downloads/1d7950e184fbb326d5df4648ccaa54be/konsumprisindeks.csv"><span class="xref download myst">konsumprisindeks.csv</span></a>.</p>
 <aside class="sidebar">
 <p>Man kan regne om kr i år <span class="math notranslate nohighlight">\(x\)</span> til kr i år <span class="math notranslate nohighlight">\(2023\)</span> med formelen</p>
@@ -542,12 +594,12 @@ document.write(`
 <p>Test kalkulatoren din opp mot den fra <a class="reference external" href="https://www.ssb.no/kalkulatorer/priskalkulator">SSB (nettside)</a>.</p>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 2 🏋️</p>
+<p class="admonition-title">Oppgave 3 (utfordring) 🏋️</p>
 <p>Lag en treningsapp. Brukeren skal kunne legge inn informasjon om en treningsøkt, som skal lagres til en datafil.</p>
 <p>Det skal også være mulig å analysere tidligere treningsøkter i appen.</p>
 </div>
 <div class="task admonition">
-<p class="admonition-title">Oppgave 3 (utfordring) 🎈</p>
+<p class="admonition-title">Oppgave 4 (utfordring) 🎈</p>
 <blockquote>
 <div><p>I denne oppgaven vil du du trenge å se på <code class="docutils literal notranslate"><span class="pre">st.session_state()</span></code></p>
 </div></blockquote>
