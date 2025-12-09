@@ -589,9 +589,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x00000276101D1070&gt;
-&lt;__main__.Farge object at 0x00000276101E1100&gt;
-&lt;__main__.Farge object at 0x00000276101E0BF0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001F44B37C4A0&gt;
+&lt;__main__.Farge object at 0x000001F44D154D10&gt;
+&lt;__main__.Farge object at 0x000001F44D154680&gt;
 </pre></div>
 </div>
 </div>
@@ -631,9 +631,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64, 168, 255)
-(247, 129, 85)
-(42, 113, 187)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(114, 118, 147)
+(52, 255, 75)
+(60, 166, 1)
 </pre></div>
 </div>
 </div>
@@ -646,7 +646,7 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Farge object at 0x00000276101D1070&gt;, &lt;__main__.Farge object at 0x00000276101D3230&gt;, &lt;__main__.Farge object at 0x00000276101D1760&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Farge object at 0x000001F44B37C4A0&gt;, &lt;__main__.Farge object at 0x000001F44D154D10&gt;, &lt;__main__.Farge object at 0x000001F44D154B00&gt;]
 </pre></div>
 </div>
 </div>
@@ -680,7 +680,7 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(211, 3, 44), (49, 81, 33), (6, 6, 128)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(209, 115, 233), (101, 121, 233), (223, 187, 17)]
 </pre></div>
 </div>
 </div>
@@ -794,16 +794,16 @@ Klasse: [&#39;Lasse&#39;, &#39;Isak&#39;, &#39;Nicolai&#39;, &#39;Stian&#39;]
 <p>Noen attributter bør ikke hentes eller endres utenfor klassens metoder. Det finnes tre forskjellige nivåer for tilgangskontroll.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Public</span></code> er for ting som er greit å lese og endre utenfor klassens metoder.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Private</span></code> er for ting som <em>ikke</em> skal leses eller endres utenfor klassens metoder. Vi bruker enkel understrek <code class="docutils literal notranslate"><span class="pre">_</span></code> før navnet på attributten for å vise at den er private.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Protected</span></code> er for ting som <strong>absolutt ikke</strong> skal leses eller endres utenfor klassens metoder. Vi bruker dobbel understrek <code class="docutils literal notranslate"><span class="pre">__</span></code> før navnet på attributten for å vise at den er protected.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Protected</span></code> er for ting som <em>ikke</em> skal leses eller endres utenfor klassens metoder. Vi bruker enkel understrek <code class="docutils literal notranslate"><span class="pre">_</span></code> før navnet på attributten for å vise at den er private.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Private</span></code> er for ting som <strong>absolutt ikke</strong> skal leses eller endres utenfor klassens metoder. Vi bruker dobbel understrek <code class="docutils literal notranslate"><span class="pre">__</span></code> før navnet på attributten for å vise at den er protected.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Bankkonto</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kontonavn</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">saldo</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pin</span> <span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kontonavn</span> <span class="o">=</span> <span class="n">kontonavn</span> <span class="c1"># Public: Greit å endre</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">=</span> <span class="n">saldo</span>        <span class="c1"># Private: Ikke greit å endre utenfor klassen</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__pin</span> <span class="o">=</span> <span class="n">pin</span>           <span class="c1"># Protected: Absolutt ikke greit å endre utenfor klassen!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">=</span> <span class="n">saldo</span>        <span class="c1"># Protected: Ikke greit å endre utenfor klassen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__pin</span> <span class="o">=</span> <span class="n">pin</span>           <span class="c1"># Private: Absolutt ikke greit å endre utenfor klassen!</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="n">Bankkonto</span><span class="p">(</span><span class="s2">&quot;Sparekonto&quot;</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;2343&quot;</span><span class="p">)</span>
 <span class="n">b</span><span class="o">.</span><span class="n">kontonavn</span> <span class="o">=</span> <span class="s2">&quot;Feriesparing&quot;</span> <span class="c1"># Helt greit</span>
