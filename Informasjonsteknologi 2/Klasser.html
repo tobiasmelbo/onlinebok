@@ -398,6 +398,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-dunder-metoder">Flere dunder-metoder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tilgangskontroll">Tilgangskontroll</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -588,9 +589,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x000001D993448B00&gt;
-&lt;__main__.Farge object at 0x000001D995324AA0&gt;
-&lt;__main__.Farge object at 0x000001D995324A70&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Farge object at 0x00000276101D1070&gt;
+&lt;__main__.Farge object at 0x00000276101E1100&gt;
+&lt;__main__.Farge object at 0x00000276101E0BF0&gt;
 </pre></div>
 </div>
 </div>
@@ -630,9 +631,9 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(195, 136, 180)
-(222, 34, 43)
-(165, 30, 120)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(64, 168, 255)
+(247, 129, 85)
+(42, 113, 187)
 </pre></div>
 </div>
 </div>
@@ -645,7 +646,7 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Farge object at 0x000001D993448B00&gt;, &lt;__main__.Farge object at 0x000001D9953115B0&gt;, &lt;__main__.Farge object at 0x000001D9953115E0&gt;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;__main__.Farge object at 0x00000276101D1070&gt;, &lt;__main__.Farge object at 0x00000276101D3230&gt;, &lt;__main__.Farge object at 0x00000276101D1760&gt;]
 </pre></div>
 </div>
 </div>
@@ -679,7 +680,7 @@ Mario er ved ( 1 , 0 )
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(204, 197, 108), (255, 235, 129), (40, 147, 122)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(211, 3, 44), (49, 81, 33), (6, 6, 128)]
 </pre></div>
 </div>
 </div>
@@ -788,6 +789,32 @@ Klasse: [&#39;Lasse&#39;, &#39;Isak&#39;, &#39;Nicolai&#39;, &#39;Stian&#39;]
 </div>
 <p>Dunder-metoder lar oss altså spesifisere hvordan vi ønsker at objektene våre skal fungere i koden med de operatorene og funksjonene som vi kjenner til fra før av. En oversikt over flere dunder-metoder kan du finne i dokumentasjonen <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html">her</a>.</p>
 </section>
+<section id="tilgangskontroll">
+<h2>Tilgangskontroll<a class="headerlink" href="#tilgangskontroll" title="Link to this heading">#</a></h2>
+<p>Noen attributter bør ikke hentes eller endres utenfor klassens metoder. Det finnes tre forskjellige nivåer for tilgangskontroll.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Public</span></code> er for ting som er greit å lese og endre utenfor klassens metoder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Private</span></code> er for ting som <em>ikke</em> skal leses eller endres utenfor klassens metoder. Vi bruker enkel understrek <code class="docutils literal notranslate"><span class="pre">_</span></code> før navnet på attributten for å vise at den er private.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Protected</span></code> er for ting som <strong>absolutt ikke</strong> skal leses eller endres utenfor klassens metoder. Vi bruker dobbel understrek <code class="docutils literal notranslate"><span class="pre">__</span></code> før navnet på attributten for å vise at den er protected.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Bankkonto</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kontonavn</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">saldo</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pin</span> <span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kontonavn</span> <span class="o">=</span> <span class="n">kontonavn</span> <span class="c1"># Public: Greit å endre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">=</span> <span class="n">saldo</span>        <span class="c1"># Private: Ikke greit å endre utenfor klassen</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__pin</span> <span class="o">=</span> <span class="n">pin</span>           <span class="c1"># Protected: Absolutt ikke greit å endre utenfor klassen!</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">Bankkonto</span><span class="p">(</span><span class="s2">&quot;Sparekonto&quot;</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="s2">&quot;2343&quot;</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">kontonavn</span> <span class="o">=</span> <span class="s2">&quot;Feriesparing&quot;</span> <span class="c1"># Helt greit</span>
+<span class="n">b</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">+=</span> <span class="mi">100</span>              <span class="c1"># Ikke greit!</span>
+<span class="n">b</span><span class="o">.</span><span class="n">__pin</span> <span class="o">=</span> <span class="s2">&quot;1234&quot;</span>             <span class="c1"># Ikke greit på noen måte! Nei, nei!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Legg merke til at Python ikke hindrer deg fra å bruke attributter som er private eller protected utenfor klassen. Hensikten med tilgangskontrollen er å signalisere til deg selv og andre at denne attributten ikke skal aksesseres utenfor klassen selv. Hvis man ignorerer dette, så kan feil skje. Poenget er å gi en tydelig beskjed, ikke å være en faktisk sikkerhetsventil. I andre programmeringsspråk, som Java, er tilgangskontrollen litt strengere, men det finnes fortsatt veier rundt tilgangskontrollen der også.</p>
+</section>
 <hr class="docutils" />
 <section id="oppgaver">
 <h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
@@ -842,10 +869,11 @@ Klasse: [&#39;Lasse&#39;, &#39;Isak&#39;, &#39;Nicolai&#39;, &#39;Stian&#39;]
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 4 💸</p>
-<p>Lag en Python-klasse <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code> med <code class="docutils literal notranslate"><span class="pre">kontonummer</span></code> og <code class="docutils literal notranslate"><span class="pre">saldo</span></code> som attributter. Disse skal settes som argument til konstruktøren.</p>
+<p>Lag en Python-klasse <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code> med <code class="docutils literal notranslate"><span class="pre">kontonummer</span></code>, <code class="docutils literal notranslate"><span class="pre">_saldo</span></code> og <code class="docutils literal notranslate"><span class="pre">__pin</span></code> som attributter. Disse skal settes som argument til konstruktøren.</p>
 <ol class="arabic simple">
 <li><p>Legg til metoder for innskudd og uttak fra kontoen, og skriv ut saldoen etter hver operasjon.</p></li>
-<li><p>Legg til en feilmelding når man prøver å ta ut mer penger enn man har.</p></li>
+<li><p>Legg til at man må skrive riktig pin-kode for å kunne ta ut eller sette inn penger. Legg til en feilmelding med <code class="docutils literal notranslate"><span class="pre">print</span></code> når man skriver feil pin-kode.</p></li>
+<li><p>Legg til en feilmelding med <code class="docutils literal notranslate"><span class="pre">print</span></code> når man prøver å ta ut mer penger enn man har.</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">Bankkonto</span></code>-objekt og test om metodene dine fungerer som de skal.</p></li>
 </ol>
 </div>
@@ -855,16 +883,16 @@ Klasse: [&#39;Lasse&#39;, &#39;Isak&#39;, &#39;Nicolai&#39;, &#39;Stian&#39;]
 <ol class="arabic simple">
 <li><p>Utvid <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-klassen med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som returnerer bilmerket slik at vi kan bruke <code class="docutils literal notranslate"><span class="pre">print()</span></code> på <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter.</p></li>
 </ol>
-<p>Lag en ny klasse <code class="docutils literal notranslate"><span class="pre">PHus</span></code> som skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">plasser</span></code> som er tom fra starten av, i tillegg skal man kunne legge inn en maksgrense for antall biler som argument til konstruktøren.</p>
+<p>Lag en ny klasse <code class="docutils literal notranslate"><span class="pre">PHus</span></code> som skal inneholde en liste <code class="docutils literal notranslate"><span class="pre">_plasser</span></code> som er tom fra starten av, i tillegg skal man kunne legge inn en maksgrense for antall biler som argument til konstruktøren.</p>
 <ol class="arabic simple" start="2">
-<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">parker()</span></code> som legger en bil inn i <code class="docutils literal notranslate"><span class="pre">plasser</span></code>-listen, men dersom antall biler er over maksgrensen skal det printes at det ikke er plass og at bilen ikke ble lagt til.</p></li>
+<li><p>Lag en metode <code class="docutils literal notranslate"><span class="pre">parker()</span></code> som legger en bil inn i <code class="docutils literal notranslate"><span class="pre">_plasser</span></code>-listen, men dersom antall biler er over maksgrensen skal det printes at det ikke er plass og at bilen ikke ble lagt til.s</p></li>
 <li><p>Utvid klassen <code class="docutils literal notranslate"><span class="pre">PHus</span></code> med en <code class="docutils literal notranslate"><span class="pre">__str__()</span></code>-metode som skriver ut bilmerkene til alle bilene som er parkert.</p></li>
 <li><p>Lag et <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objekt og legg inn <code class="docutils literal notranslate"><span class="pre">Bil</span></code>-objekter helt til maksgrensen er nådd. Skriv ut <code class="docutils literal notranslate"><span class="pre">PHus</span></code>-objektet til slutt.</p></li>
 </ol>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 6 📦</p>
-<p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Varelager</span></code> som inneholder en liste over varer. Listen skal være tom når objektet dannes.</p>
+<p>Lag en klasse <code class="docutils literal notranslate"><span class="pre">Varelager</span></code> som inneholder en liste over varer <code class="docutils literal notranslate"><span class="pre">_varer</span></code>. Listen skal være tom når objektet dannes.</p>
 <p>Varene skal være ordbøker med nøklene <code class="docutils literal notranslate"><span class="pre">navn</span></code>, <code class="docutils literal notranslate"><span class="pre">pris</span></code> og <code class="docutils literal notranslate"><span class="pre">antall_på_lager</span></code>.</p>
 <p>Legg til metoder for å legge til varer i lageret, fjerne varer fra lageret og skrive ut en liste over tilgjengelige varer.</p>
 </div>
@@ -976,6 +1004,7 @@ Klasse: [&#39;Lasse&#39;, &#39;Isak&#39;, &#39;Nicolai&#39;, &#39;Stian&#39;]
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sjekke-typen-til-et-objekt">Å sjekke typen til et objekt.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flere-dunder-metoder">Flere dunder-metoder</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tilgangskontroll">Tilgangskontroll</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
