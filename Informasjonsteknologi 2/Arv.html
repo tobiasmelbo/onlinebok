@@ -595,7 +595,27 @@ classDiagram
     SkoleKlasse : +list elever
     SkoleKlasse : legg_til(Elev)
     SkoleKlasse o-- Elev
-    </pre></section>
+    </pre><div class="hint admonition">
+<p class="admonition-title">Public og Private i UML</p>
+<p>I et UML-diagram bruker vi <code class="docutils literal notranslate"><span class="pre">+</span></code> før en attributt eller metode for å vise at den er <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">#</span></code> for å vise at den er <code class="docutils literal notranslate"><span class="pre">protected</span></code> og <code class="docutils literal notranslate"><span class="pre">-</span></code> for a å vise at den er <code class="docutils literal notranslate"><span class="pre">private</span></code>.</p>
+<p>Klassen</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SpareKonto</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span> <span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">saldo</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pin</span> <span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kontonavn</span> <span class="o">=</span> <span class="n">navn</span> <span class="c1"># Public</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">=</span> <span class="n">saldo</span>   <span class="c1"># Protected</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__pin</span> <span class="o">=</span> <span class="n">pin</span>      <span class="c1"># Private</span>
+</pre></div>
+</div>
+<p>Representeres som</p>
+<pre  class="mermaid">
+        classDiagram
+	class Bankkonto{
+		+str kontonavn
+		#float saldo
+		-str pin
+	}
+    </pre></div>
+</section>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
