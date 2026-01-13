@@ -384,6 +384,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skape-feilmeldinger-med-raise">Skape feilmeldinger med <code class="docutils literal notranslate"><span class="pre">raise</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstrakte-klasser">Abstrakte klasser</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unnga-feilmeldinger-med-try-og-except">Unngå feilmeldinger med <code class="docutils literal notranslate"><span class="pre">try</span></code> og <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
@@ -636,24 +637,56 @@ Forklaring</div>
 </div>
 </div>
 <p>Vi får en hensiktsmessig feilmelding om vi bruker metoden på feil måte.</p>
-<div class="tip admonition">
-<p class="admonition-title">Hvordan hindre at objekter lages av en spesiell klasse</p>
-<p>Noen ganger ønsker vi at man ikke skal kunne lage objekter av en klasse.</p>
-<p>For å hindre dette kan vi modifisere konstruktøren til å sende en feilmelding om man lager et objekt av samme <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
+</section>
+<section id="abstrakte-klasser">
+<h2>Abstrakte klasser<a class="headerlink" href="#abstrakte-klasser" title="Link to this heading">#</a></h2>
+<p>Se for deg et kjøretøy. Du tenker kanskje på en bil? Et fly? En motorsykkel? Men se for deg noe som <strong>bare</strong> er et kjøretøy. Klarer du det? Neppe. Det er fordi konseptet <em>kjøretøy</em> er et abstrakt konsept, men som omfatter mange andre typer objekter i verden.</p>
+<p>En <strong>abstrakt</strong> klasse er en klasse som man ikke skal lage objekter av, men som andre objekter arver fra. Det blir på en måte et skjelett for videre klasser. Alle biler er kjøretøy, men det finnes ikke noe i verden som <em>bare er et kjøretøy</em>.</p>
+<p>Hvis vi lager klasser kan vi forhindre at en klasse lages i konstruktøren ved å bruke <code class="docutils literal notranslate"><span class="pre">raise</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">Kjøretøy</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Du kan ikke lage objekter av klassen Kjøretøy. Bruk subklassene i stedet.&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
+
+<span class="k">class</span> <span class="nc">Bil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Brukeren kan fortsatt lage objekter av subklassene, men om brukeren prøver å lage et objekt med</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bil</span> <span class="o">=</span> <span class="n">Kjøretøy</span><span class="p">(</span><span class="s2">&quot;Volvo&quot;</span><span class="p">)</span>
+</div>
+</div>
+<p>Vi kan lage en bil, men vi kan ikke lage et generelt kjøretøy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bil</span> <span class="o">=</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Ferrari&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bil</span><span class="o">.</span><span class="n">merke</span><span class="p">)</span>
+<span class="n">kjøretøy</span> <span class="o">=</span> <span class="n">Kjøretøy</span><span class="p">(</span><span class="s2">&quot;Lamborghini&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Så får brukeren feilmeldingen:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">Exception</span><span class="p">:</span> <span class="n">Du</span> <span class="n">kan</span> <span class="n">ikke</span> <span class="n">lage</span> <span class="n">objekter</span> <span class="n">av</span> <span class="n">klassen</span> <span class="n">Kjøretøy</span><span class="o">.</span> <span class="n">Bruk</span> <span class="n">subklassene</span> <span class="n">i</span> <span class="n">stedet</span><span class="o">.</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ferrari
 </pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">bil</span> <span class="o">=</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Ferrari&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">bil</span><span class="o">.</span><span class="n">merke</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">kjøretøy</span> <span class="o">=</span> <span class="n">Kjøretøy</span><span class="p">(</span><span class="s2">&quot;Lamborghini&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[6], line 4,</span> in <span class="ni">Kjøretøy.__init__</span><span class="nt">(self, merke)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">Kjøretøy</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Du kan ikke lage objekter av klassen Kjøretøy. Bruk subklassene i stedet.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
+
+<span class="ne">Exception</span>: Du kan ikke lage objekter av klassen Kjøretøy. Bruk subklassene i stedet.
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -708,6 +741,25 @@ Forklaring</div>
 </div>
 </div>
 </div>
+<div class="hint admonition">
+<p class="admonition-title">Alternativ: Counter-klassen</p>
+<p>Alternativt kan vi importerer klassen Counter som vi har sett på tidligere.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">poeng</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">({</span><span class="s2">&quot;Yosef&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Hannah&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+
+<span class="n">vinnere</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Yosef&quot;</span><span class="p">,</span> <span class="s2">&quot;Matheus&quot;</span><span class="p">,</span> <span class="s2">&quot;Hannah&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">vinnere</span><span class="p">:</span>
+    <span class="n">poeng</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">poeng</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;Yosef&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Hannah&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Matheus&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
 </section>
 <hr class="docutils" />
 <section id="oppgaver">
@@ -722,17 +774,61 @@ Forklaring</div>
     <span class="k">def</span> <span class="nf">sett_inn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stallplasser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="k">class</span> <span class="nc">Hund</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">Dyr</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
 
-<span class="k">class</span> <span class="nc">Hest</span><span class="p">:</span>
+<span class="k">class</span> <span class="nc">Hund</span><span class="p">(</span><span class="n">Dyr</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">navn</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Hest</span><span class="p">(</span><span class="n">Dyr</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">navn</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Modifiser klassen <code class="docutils literal notranslate"><span class="pre">Stall</span></code> slik at man får en feilmelding med <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom man prøver å kjøre <code class="docutils literal notranslate"><span class="pre">sett_inn</span></code> med et objekt som <strong>ikke</strong> er en <code class="docutils literal notranslate"><span class="pre">Hest</span></code>.</p>
-<p>Feilmeldingen skal også si hvilken type objekt du har forsøkt å legge inn som ikke passer.</p>
+<ol class="arabic simple">
+<li><p>Sørg for at klassen <code class="docutils literal notranslate"><span class="pre">Dyr</span></code> er <em>abstrakt</em>. Man skal få en feilmelding <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom man prøver å lage et objekt av klassen <code class="docutils literal notranslate"><span class="pre">Dyr</span></code>, men det skal gå an å lage objekter av subklassene.</p></li>
+<li><p>Modifiser klassen <code class="docutils literal notranslate"><span class="pre">Stall</span></code> slik at man får en feilmelding med <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> dersom man prøver å kjøre <code class="docutils literal notranslate"><span class="pre">sett_inn</span></code> med et objekt som <strong>ikke</strong> er en <code class="docutils literal notranslate"><span class="pre">Hest</span></code>.</p></li>
+</ol>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Stall</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stallplasser</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span> <span class="nf">sett_inn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Hest</span><span class="p">):</span> <span class="c1"># Bruker isinstance i tilfelle vi legger til subklasser av hest (f.eks Ponny)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stallplasser</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Du kan ikke sette inn noe annet enn en hest i en stall.&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Dyr</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">Dyr</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Du kan ikke lage et objekt av klassen Dyr. Bruk subklassene.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">navn</span> <span class="o">=</span> <span class="n">navn</span>
+
+<span class="k">class</span> <span class="nc">Hund</span><span class="p">(</span><span class="n">Dyr</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">navn</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Hest</span><span class="p">(</span><span class="n">Dyr</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">navn</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">navn</span><span class="p">)</span>
+
+
+<span class="n">hund</span> <span class="o">=</span> <span class="n">Hund</span><span class="p">(</span><span class="s2">&quot;Liz&quot;</span><span class="p">)</span>
+<span class="n">hest</span> <span class="o">=</span> <span class="n">Hest</span><span class="p">(</span><span class="s2">&quot;Thelma&quot;</span><span class="p">)</span>
+<span class="n">stall</span> <span class="o">=</span> <span class="n">Stall</span><span class="p">()</span>
+<span class="n">stall</span><span class="o">.</span><span class="n">sett_inn</span><span class="p">(</span><span class="n">hest</span><span class="p">)</span>
+
+<span class="c1"># Skal gi feilmelding:</span>
+<span class="c1"># d = Dyr(&quot;Annabelle&quot;)</span>
+<span class="c1"># stall.sett_inn(hund)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -802,6 +898,7 @@ Forklaring</div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skape-feilmeldinger-med-raise">Skape feilmeldinger med <code class="docutils literal notranslate"><span class="pre">raise</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstrakte-klasser">Abstrakte klasser</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unnga-feilmeldinger-med-try-og-except">Unngå feilmeldinger med <code class="docutils literal notranslate"><span class="pre">try</span></code> og <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>

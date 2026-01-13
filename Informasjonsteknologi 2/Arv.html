@@ -628,8 +628,51 @@ classDiagram
 <li><p>Test funksjonen ved å lage et objekt av hver type, <code class="docutils literal notranslate"><span class="pre">Bil</span></code>, <code class="docutils literal notranslate"><span class="pre">Lastebil</span></code> og <code class="docutils literal notranslate"><span class="pre">ELBil</span></code>.</p></li>
 </ol>
 <blockquote>
-<div><p>Mulig utskrift: <code class="docutils literal notranslate"><span class="pre">En</span> <span class="pre">ELBil</span> <span class="pre">med</span> <span class="pre">merke</span> <span class="pre">Tesla</span> <span class="pre">har</span> <span class="pre">passert</span> <span class="pre">og</span> <span class="pre">må</span> <span class="pre">betale</span> <span class="pre">25kr</span></code>.</p>
+<div><p>Mulig utskrift: <code class="docutils literal notranslate"><span class="pre">En</span> <span class="pre">ELBil</span> <span class="pre">med</span> <span class="pre">merke</span> <span class="pre">Tesla</span> <span class="pre">har</span> <span class="pre">passert</span> <span class="pre">og</span> <span class="pre">må</span> <span class="pre">betale</span> <span class="pre">25</span> <span class="pre">kr</span></code>.</p>
 </div></blockquote>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsningsforslag</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
+    
+    <span class="k">def</span> <span class="nf">tut</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tut!&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Lastebil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="k">class</span> <span class="nc">Bil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">class</span> <span class="nc">ELBil</span><span class="p">(</span><span class="n">Bil</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">merke</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pris</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="k">def</span> <span class="nf">bom</span><span class="p">(</span><span class="n">x</span> <span class="p">:</span> <span class="n">Kjøretøy</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Lastebil</span><span class="p">:</span>
+        <span class="n">type_kjøretøy</span> <span class="o">=</span> <span class="s2">&quot;Lastebil&quot;</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bil</span><span class="p">:</span>
+        <span class="n">type_kjøretøy</span> <span class="o">=</span> <span class="s2">&quot;Bil&quot;</span>
+    <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">ELBil</span><span class="p">:</span>
+        <span class="n">type_kjøretøy</span> <span class="o">=</span> <span class="s2">&quot;ELBil&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;En </span><span class="si">{</span><span class="n">type_kjøretøy</span><span class="si">}</span><span class="s2"> med merke </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">merke</span><span class="si">}</span><span class="s2"> har passert og må betale </span><span class="si">{</span><span class="n">x</span><span class="o">.</span><span class="n">pris</span><span class="si">}</span><span class="s2"> kr&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Lastebil</span><span class="p">(</span><span class="s2">&quot;Mercedes&quot;</span><span class="p">),</span> <span class="n">Bil</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">),</span> <span class="n">ELBil</span><span class="p">(</span><span class="s2">&quot;Tesla&quot;</span><span class="p">)]:</span>
+    <span class="n">bom</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">En</span> <span class="n">Lastebil</span> <span class="n">med</span> <span class="n">merke</span> <span class="n">Mercedes</span> <span class="n">har</span> <span class="n">passert</span> <span class="n">og</span> <span class="n">må</span> <span class="n">betale</span> <span class="mi">200</span> <span class="n">kr</span>
+<span class="n">En</span> <span class="n">Bil</span> <span class="n">med</span> <span class="n">merke</span> <span class="n">Toyota</span> <span class="n">har</span> <span class="n">passert</span> <span class="n">og</span> <span class="n">må</span> <span class="n">betale</span> <span class="mi">50</span> <span class="n">kr</span>
+<span class="n">En</span> <span class="n">ELBil</span> <span class="n">med</span> <span class="n">merke</span> <span class="n">Tesla</span> <span class="n">har</span> <span class="n">passert</span> <span class="n">og</span> <span class="n">må</span> <span class="n">betale</span> <span class="mi">25</span> <span class="n">kr</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="task admonition">
 <p class="admonition-title">Oppgave 2 🐄</p>
