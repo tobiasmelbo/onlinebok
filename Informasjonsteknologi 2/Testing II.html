@@ -585,11 +585,11 @@ document.write(`
 	Starship : +str name
 	Starship : +int passengers
 
-	Explorer --&gt; Starship
+	Explorer --|&gt; Starship
 	Explorer : +str captain_name
-	Battleship --&gt; Starship
+	Battleship --|&gt; Starship
 	Battleship : +str faction
-	Transporter --&gt; Starship
+	Transporter --|&gt; Starship
 	Transporter : +list[str] goods
     </pre><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">starport</span>
 <span class="kn">import</span> <span class="nn">unittest</span>
