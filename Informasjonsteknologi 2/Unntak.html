@@ -648,7 +648,7 @@ Forklaring</div>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kjøretøy</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">merke</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="n">Kjøretøy</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Du kan ikke lage objekter av klassen Kjøretøy. Bruk subklassene i stedet.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Du kan ikke lage objekter av klassen Kjøretøy. Bruk subklassene i stedet.&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">merke</span> <span class="o">=</span> <span class="n">merke</span>
 
 <span class="k">class</span> <span class="nc">Bil</span><span class="p">(</span><span class="n">Kjøretøy</span><span class="p">):</span>
