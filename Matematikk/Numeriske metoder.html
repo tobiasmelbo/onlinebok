@@ -383,7 +383,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force-metoden">Brute-force-metoden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullpunkter">Nullpunkter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topp-eller-bunnpunkter">Topp- eller bunnpunkter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
@@ -399,27 +400,30 @@ document.write(`
   <section id="numeriske-metoder">
 <h1>Numeriske metoder<a class="headerlink" href="#numeriske-metoder" title="Link to this heading">#</a></h1>
 <p>Numeriske metoder handler om å finne tilnærmede løsninger (eller <em>approksimasjoner</em> ☝️🤓).</p>
-<p>La oss se på hvordan man kan finne nullpunkter numerisk.</p>
-<div class="hint admonition">
+<p>Vi skal se på to enkle algoritmer</p>
+<ul class="simple">
+<li><p>… en algoritme for å finne <strong>nullpunkter</strong></p></li>
+<li><p>… og en algoritme for å finne <strong>topp- eller bunnpunkter</strong></p></li>
+</ul>
+<div class="note admonition">
 <p class="admonition-title">Finner vi nullpunkter, kan vi også løse likninger!</p>
-<p>La oss si at vi har en likning <span class="math notranslate nohighlight">\(x^2 = 3x - 2\)</span>.</p>
-<p>For å løse denne likningen kan vi skrive den om til <span class="math notranslate nohighlight">\(x^2 - 3x + 2 = 0\)</span></p>
+<p>Vi ønsker å løse likningen <span class="math notranslate nohighlight">\(x^2 = 3x - 2\)</span>.</p>
+<p>Vi skriver den om til <span class="math notranslate nohighlight">\(x^2 - 3x + 2 = 0\)</span></p>
 <p>Deretter kan vi løse likningen ved å finne nullpunktene til funksjonen <span class="math notranslate nohighlight">\(f(x)=x^2 - 3x + 2\)</span>.</p>
 <p>Dersom vi kan finne nullpunkter, kan vi også løse likninger!</p>
 </div>
-<section id="brute-force-metoden">
-<h2>Brute-force-metoden<a class="headerlink" href="#brute-force-metoden" title="Link to this heading">#</a></h2>
-<div class="hint admonition">
-<p class="admonition-title">Brute force 💪</p>
-<p><em>Brute force</em> er en betegnelse for algoritmer som er enkle, men ikke nødvendigvis så effektive eller nøyaktige. Vi skal se på bedre numeriske metoder senere!</p>
-</div>
+<section id="nullpunkter">
+<h2>Nullpunkter<a class="headerlink" href="#nullpunkter" title="Link to this heading">#</a></h2>
 <p>For å finne nullpunkter kan vi bruke et kult fortegnstriks!</p>
+<div class="note admonition">
+<p class="admonition-title">Algoritmen</p>
 <p>Først bestemmer vi oss for to punkter på en funksjon med en fast avstand <span class="math notranslate nohighlight">\(d\)</span> fra hverandre, f.eks <span class="math notranslate nohighlight">\(A=(x, f(x))\)</span> og <span class="math notranslate nohighlight">\(B=(x + d, f(x + d))\)</span>. Deretter gjentar vi stegene:</p>
 <ol class="arabic simple">
 <li><p>Gang sammen funksjonsverdiene <span class="math notranslate nohighlight">\(f(x)\cdot f(x+d)\)</span></p></li>
 <li><p>Hvis resultatet blir et negativt tall, eller null, er <span class="math notranslate nohighlight">\(x\)</span>-verdien rett ved et nullpunkt. Skriv ut <span class="math notranslate nohighlight">\(x\)</span>-verdien.</p></li>
 <li><p>Øk <span class="math notranslate nohighlight">\(x\)</span>-verdien med et lite steg.</p></li>
 </ol>
+</div>
 <p>Vi kan minske avstanden mellom punktene, og stegene vi tar, for å få et enda mer nøyaktig svar.</p>
 <p>Her er en demo i GeoGebra for å vise hvordan denne algoritmen fungerer.</p>
 <iframe scrolling="no" title="Å finne nullpunkter numerisk" src="https://www.geogebra.org/material/iframe/id/hjrsnrwa/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="700px" height="500px" style="border:0px;"> </iframe>
@@ -452,7 +456,54 @@ document.write(`
 <p>Vi ser at vi får nullpunkter ved <span class="math notranslate nohighlight">\(x\approx 1\)</span> og <span class="math notranslate nohighlight">\(x\approx 2\)</span>.</p>
 <div class="warning admonition">
 <p class="admonition-title">Valg av steglengde</p>
-<p>Vi må velge <span class="math notranslate nohighlight">\(d\)</span> til å være tilstrekkelig liten. Hvis <span class="math notranslate nohighlight">\(d\)</span> er for stor (f.eks <span class="math notranslate nohighlight">\(d=0.1\)</span>), kan programmet ende opp med å skrive ut samme nullpunkt flere ganger, og gi oss et veldig unøyaktig svar.</p>
+<p>Vi må velge <span class="math notranslate nohighlight">\(d\)</span> til å være tilstrekkelig liten. Hvis <span class="math notranslate nohighlight">\(d\)</span> er for stor (f.eks <span class="math notranslate nohighlight">\(d=0.1\)</span>), kan programmet ende opp med å skrive ut samme nullpunkt flere ganger, eller gi oss et veldig unøyaktig svar.</p>
+</div>
+</section>
+<section id="topp-eller-bunnpunkter">
+<h2>Topp- eller bunnpunkter<a class="headerlink" href="#topp-eller-bunnpunkter" title="Link to this heading">#</a></h2>
+<p>Toppunkter er punkter hvor funksjonen går fra å stige til å synke. Bunnpunkter er punkter hvor funksjonen går fra å synke til å stige. Vi kan lage en algoritme for å finne disse.</p>
+<div class="note admonition">
+<p class="admonition-title">Algoritmen</p>
+<p>Finn en <span class="math notranslate nohighlight">\(x\)</span>-verdi til venstre for topp eller bunnpunktet. Finn ut om <span class="math notranslate nohighlight">\(f\)</span> stiger eller synker i <span class="math notranslate nohighlight">\(x\)</span>. Bestem deg også for en liten verdi <span class="math notranslate nohighlight">\(d\)</span>.</p>
+<ul class="simple">
+<li><p>Hvis du vet at funksjonen stiger i <span class="math notranslate nohighlight">\(x\)</span>, så øker du <span class="math notranslate nohighlight">\(x\)</span> med <span class="math notranslate nohighlight">\(d\)</span> så lenge <span class="math notranslate nohighlight">\(f(x) \leq f(x + d)\)</span>.</p></li>
+<li><p>Hvis du vet at funksjonen synker i <span class="math notranslate nohighlight">\(x\)</span>, så øker du <span class="math notranslate nohighlight">\(x\)</span> med <span class="math notranslate nohighlight">\(d\)</span> så lenge <span class="math notranslate nohighlight">\(f(x) \geq f(x + d)\)</span>.</p></li>
+</ul>
+<p>Skriv ut <span class="math notranslate nohighlight">\(x\)</span>-verdien og <span class="math notranslate nohighlight">\(y\)</span>-verdien. Dette er et topp- eller bunnpunkt.</p>
+</div>
+<p>La oss prøve å finne bunnpunktet til funksjonen fra de tidligere eksemplene. Denne funksjonen <em>synker</em> ved <span class="math notranslate nohighlight">\(x=0\)</span> fordi det er positivt fortegn før <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funksjonen vi skal sjekke</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Setter x til venstre for ekstremalpunktet</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mf">0.0001</span> <span class="c1"># En liten d-verdi</span>
+
+<span class="c1"># Flytter x mot høyre (med øvre grense)</span>
+<span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="n">d</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bunnpunkt ved:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y =&quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bunnpunkt ved:
+x = 1.5
+y = -0.25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="info admonition">
+<p class="admonition-title">Lokale maksimum/minimum</p>
+<p>Algoritmen vår finner topp- eller bunnpunkter. Disse er ekstremalpunkter, men de er ikke nødvendigvis de største eller minste verdiene som funksjonen kan ha. Vi skiller mellom <em>lokale</em> ekstremalpunkter og <em>globale</em> ekstremalpunkter (minima/maksima).</p>
+<a class="reference internal image-reference" href="../_images/minimum_maksimum.png"><img alt="graf som viser forskjellen mellom lokale og globale ekstremalpunkt" class="align-center" src="../_images/minimum_maksimum.png" style="width: 400px;" /></a>
+<p>Litt avhengig av hvor vi starter kan vi finne forskjellige ekstremalpunkter.</p>
 </div>
 </section>
 <hr class="docutils" />
@@ -580,7 +631,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brute-force-metoden">Brute-force-metoden</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nullpunkter">Nullpunkter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topp-eller-bunnpunkter">Topp- eller bunnpunkter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
