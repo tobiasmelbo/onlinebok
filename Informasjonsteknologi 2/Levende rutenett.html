@@ -434,7 +434,7 @@ document.write(`
 <p class="admonition-title">Løsningsforslag: Game of Life 🦠</p>
 <p>Her er et enkelt løsningsforslag for Game of Life med utvidelsen med tegning.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">pygame</span><span class="o">,</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pygame</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">En simulasjon med reglene fra Game of Life. </span>
@@ -473,8 +473,8 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
     
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Holder styr på hvilke celler som skal tegnes etter update.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Holder styr på hvilke celler som skal oppdateres og tegnes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skal_oppdateres</span> <span class="o">=</span> <span class="p">[]</span>
 
         <span class="c1"># Avslutter spillet</span>
         <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
@@ -504,7 +504,7 @@ document.write(`
                 <span class="n">celle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rader</span><span class="p">[</span><span class="n">y</span><span class="p">][</span><span class="n">x</span><span class="p">]</span>
                 <span class="k">if</span> <span class="ow">not</span> <span class="n">celle</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
                     <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">True</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+                    <span class="n">celle</span><span class="o">.</span><span class="n">tegn</span><span class="p">()</span>
 
         <span class="c1"># Oppdaterer celler</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">pause</span><span class="p">:</span>
@@ -517,28 +517,31 @@ document.write(`
                     <span class="k">if</span> <span class="n">celle</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
                         <span class="c1"># Dør (for få naboer)</span>
                         <span class="k">if</span> <span class="n">antall_naboer</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-                            <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">False</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_oppdateres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
                         <span class="c1"># Dør (for mange naboer)</span>
                         <span class="k">elif</span> <span class="n">antall_naboer</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
-                            <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">False</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_oppdateres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
 
                     <span class="c1"># Død celle</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="c1"># Kommer til live</span>
-                        <span class="k">if</span> <span class="n">antall_naboer</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-                            <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">True</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">antall_naboer</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> 
+                            <span class="bp">self</span><span class="o">.</span><span class="n">skal_oppdateres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">celle</span><span class="p">)</span>
+        
+        <span class="c1"># Oppdaterer cellene</span>
+        <span class="k">for</span> <span class="n">celle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">skal_oppdateres</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">celle</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
+                <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">celle</span><span class="o">.</span><span class="n">levende</span> <span class="o">=</span> <span class="kc">True</span>
 
         <span class="c1"># Tikker klokken videre</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># Tegner celler som skal oppdateres</span>
-        <span class="k">for</span> <span class="n">celle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">celle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">skal_oppdateres</span><span class="p">:</span>
             <span class="n">celle</span><span class="o">.</span><span class="n">tegn</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">skal_tegnes</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Tømmer listen etter alle er tegnet</span>
 
         <span class="c1"># Tegner skjermen på skjermen</span>
         <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
@@ -571,9 +574,9 @@ document.write(`
     
     <span class="k">def</span> <span class="nf">tegn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">levende</span><span class="p">:</span>
-            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skjerm</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="n">border_radius</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skjerm</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skjerm</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">),</span> <span class="n">border_radius</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skjerm</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">simulasjon</span><span class="o">.</span><span class="n">skalering</span><span class="p">))</span>
 
 <span class="n">simulasjon</span> <span class="o">=</span> <span class="n">Simulasjon</span><span class="p">()</span>
 <span class="k">while</span> <span class="n">simulasjon</span><span class="o">.</span><span class="n">running</span><span class="p">:</span>
