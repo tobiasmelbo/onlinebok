@@ -654,10 +654,17 @@ document.write(`
 <p>Tabellen over viser utviklingen i gjennomsnittslønnen for undervisningssektoren sammenliknet med gjennomsnittslønnen for alle næringer.</p>
 <ol class="arabic simple">
 <li><p>Lag et linjediagram over lønnsutviklingen i undervisningssektoren.</p></li>
-<li><p>Lag et annet linjediagram over lønnsutviklingen i alle sektorer.</p></li>
+<li><p>Legg til lønnsutviklingen i alle sektorer i samme plot ved å bruke <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> igjen.</p></li>
 </ol>
-<p>Sørg for at du har med <code class="docutils literal notranslate"><span class="pre">label</span></code> og <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> sånn at man kan skille diagrammene.</p>
 <p>Sammenlikn utviklingen og skriv en liten kommentar over hva du ser.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tips for fin formatering</p>
+<ul class="simple">
+<li><p>Legg til et argument <code class="docutils literal notranslate"><span class="pre">color</span> <span class="pre">=</span> </code> for hvert <code class="docutils literal notranslate"><span class="pre">plot</span></code> for å skille funksjonene.</p></li>
+<li><p>Legg til et argument <code class="docutils literal notranslate"><span class="pre">label</span> <span class="pre">=</span> </code> for hvert <code class="docutils literal notranslate"><span class="pre">plot</span></code> for å gi de to plottene forskjellige navn.</p></li>
+<li><p>Legg til en linje <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> for å få opp en oversikt over de forskjellige plottene.</p></li>
+</ul>
+</div>
 <blockquote>
 <div><p>Kilde til data om gjennomsnittlig årslønn per sektor: <a class="reference external" href="https://www.ssb.no/statbank/table/11417/">SSB</a></p>
 </div></blockquote>
